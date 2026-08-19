@@ -1,0 +1,21 @@
+{
+  "format": 1,
+  "version": "1",
+  "files": [
+    {
+      "path": "quiz_logic.py",
+      "sha256": "fa65655780b8531a45f09fef6c62c3929903e548a8f4fff42587df056944be14",
+      "url": "quiz_logic.py?kotomi_sha256=fa65655780b8531a45f09fef6c62c3929903e548a8f4fff42587df056944be14"
+    },
+    {
+      "path": "translations/en.xml",
+      "sha256": "77622f44cfcb24d77aa77e4edb3950d92ad8c3f42e0e6079555f04347b2398f9",
+      "url": "translations/en.xml?kotomi_sha256=77622f44cfcb24d77aa77e4edb3950d92ad8c3f42e0e6079555f04347b2398f9"
+    },
+    {
+      "path": "translations/pl.xml",
+      "sha256": "0a59cec8e18e29df681f4fe3fd0377891105f61795b5e7f6d6245834f06a3f2c",
+      "url": "translations/pl.xml?kotomi_sha256=0a59cec8e18e29df681f4fe3fd0377891105f61795b5e7f6d6245834f06a3f2c"
+    }
+  ]
+}
