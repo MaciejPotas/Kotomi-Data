@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="13" id="nouns" label="Nouns" schema="noun">
+  <editor required="translation kana" optional="kanji romaji" metadata="category cases" />
+  <words>
+    <word id="bag" translation="torba" kana="かばん" kanji="鞄" type="noun" category="thing">
+      <cases language="pl" nominative="torba" genitive="torby" accusative="torbę" instrumental="torbą" locative="torbie" />
+    </word>
+    <word id="book" translation="książka" kana="ほん" kanji="本" type="noun" category="text">
+      <cases language="pl" nominative="książka" genitive="książki" accusative="książkę" instrumental="książką" locative="książce" />
+    </word>
+    <word id="box" translation="pudełko" kana="はこ" kanji="箱" type="noun" category="thing">
+      <cases language="pl" nominative="pudełko" genitive="pudełka" accusative="pudełko" instrumental="pudełkiem" locative="pudełku" />
+    </word>
+    <word id="car" translation="samochód" kana="くるま" kanji="車" type="noun" category="vehicle">
+      <cases language="pl" nominative="samochód" genitive="samochodu" accusative="samochód" instrumental="samochodem" locative="samochodzie" />
+    </word>
+    <word id="clothes" translation="ubrania" kana="ふく" kanji="服" type="noun" category="thing">
+      <cases language="pl" nominative="ubrania" genitive="ubrań" accusative="ubrania" instrumental="ubraniami" locative="ubraniach" />
+    </word>
+    <word id="coffee" translation="kawa" kana="コーヒー" kanji="珈琲" type="noun" category="drink">
+      <cases language="pl" nominative="kawa" genitive="kawy" accusative="kawę" instrumental="kawą" locative="kawie" />
+    </word>
+    <word id="daidokoro" translation="kuchnia" kana="だいどころ" kanji="台所" type="noun" category="place">
+      <cases language="pl" nominative="kuchnia" genitive="kuchni" dative="kuchni" accusative="kuchnię" instrumental="kuchnią" locative="kuchni" vocative="kuchnio" />
+    </word>
+    <word id="email" translation="mail" kana="めーる" kanji="メール" type="noun" category="text">
+      <cases language="pl" nominative="mail" genitive="maila" accusative="mail" instrumental="mailem" locative="mailu" />
+    </word>
+    <word id="friend" translation="przyjaciel" kana="ともだち" kanji="友達" type="noun" category="person">
+      <cases language="pl" nominative="przyjaciel" genitive="przyjaciela" accusative="przyjaciela" instrumental="przyjacielem" locative="przyjacielu" />
+    </word>
+    <word id="fune" translation="łódź" kana="ふね" kanji="船" type="noun" category="vehicle">
+      <cases language="pl" nominative="łódź" genitive="łodzi" dative="łodzi" accusative="łódź" instrumental="łodzią" locative="łodzi" vocative="łodzi" />
+    </word>
+    <word id="gohan" translation="ryż" kana="ごはん" kanji="御飯" type="noun" category="food">
+      <cases language="pl" nominative="ryż" genitive="ryżu" accusative="ryż" instrumental="ryżem" locative="ryżu" />
+    </word>
+    <word id="home" translation="dom" kana="うち" kanji="家" type="noun" category="place">
+      <cases language="pl" nominative="dom" genitive="domu" accusative="dom" instrumental="domem" locative="domu" />
+    </word>
+    <word id="inu" translation="pies" kana="いぬ" kanji="犬" type="noun" category="animal">
+      <cases language="pl" nominative="pies" genitive="psa" dative="psu" accusative="psa" instrumental="psem" locative="psie" vocative="psie" />
+    </word>
+    <word id="jikan" translation="czas" kana="じかん" kanji="時間" type="noun" category="availability_reason">
+      <cases language="pl" nominative="czas" genitive="czasu" accusative="czas" instrumental="czasem" locative="czasie" />
+    </word>
+    <word id="keikaku" translation="plan działania" kana="けいかく" kanji="計画" type="noun" category="availability_reason">
+      <cases language="pl" nominative="plan działania" genitive="planu działania" accusative="plan działania" instrumental="planem działania" locative="planie działania" />
+    </word>
+    <word id="kaigan" translation="plaża" kana="かいがん" kanji="海岸" type="noun" category="place">
+      <cases language="pl" nominative="plaża" genitive="plaży" accusative="plażę" instrumental="plażą" locative="plaży" />
+    </word>
+    <word id="letter" translation="list" kana="てがみ" kanji="手紙" type="noun" category="text">
+      <cases language="pl" nominative="list" genitive="listu" accusative="list" instrumental="listem" locative="liście" />
+    </word>
+    <word id="manga" translation="manga" kana="まんが" kanji="漫画" type="noun" category="text">
+      <cases language="pl" nominative="manga" genitive="mangi" accusative="mangę" instrumental="mangą" locative="mandze" />
+    </word>
+    <word id="meal" translation="posiłek" kana="しょくじ" kanji="食事" type="noun" category="food">
+      <cases language="pl" nominative="posiłek" genitive="posiłku" accusative="posiłek" instrumental="posiłkiem" locative="posiłku" />
+    </word>
+    <word id="mother" translation="mama" kana="おかあさん" kanji="お母さん" type="noun" category="person">
+      <cases language="pl" nominative="mama" genitive="mamy" accusative="mamę" instrumental="mamą" locative="mamie" />
+    </word>
+    <word id="motorcycle" translation="motocykl" kana="バイク" type="noun" category="vehicle">
+      <cases language="pl" nominative="motocykl" genitive="motocykla" accusative="motocykl" instrumental="motocyklem" locative="motocyklu" />
+    </word>
+    <word id="music" translation="muzyka" kana="おんがく" kanji="音楽" type="noun" category="media">
+      <cases language="pl" nominative="muzyka" genitive="muzyki" accusative="muzykę" instrumental="muzyką" locative="muzyce" />
+    </word>
+    <word id="newspaper" translation="gazeta" kana="しんぶん" kanji="新聞" type="noun" category="text">
+      <cases language="pl" nominative="gazeta" genitive="gazety" accusative="gazetę" instrumental="gazetą" locative="gazecie" />
+    </word>
+    <word id="note" translation="notatka" kana="めも" kanji="メモ" type="noun" category="text">
+      <cases language="pl" nominative="notatka" genitive="notatki" accusative="notatkę" instrumental="notatką" locative="notatce" />
+    </word>
+    <word id="okane" translation="pieniądze" kana="おかね" kanji="お金" type="noun" category="availability_reason">
+      <cases language="pl" nominative="pieniądze" genitive="pieniędzy" accusative="pieniądze" instrumental="pieniędzmi" locative="pieniądzach" />
+    </word>
+    <word id="pan" translation="chleb" kana="パン" type="noun" category="food">
+      <cases language="pl" nominative="chleb" genitive="chleba" accusative="chleb" instrumental="chlebem" locative="chlebie" />
+    </word>
+    <word id="park" translation="park" kana="こうえん" kanji="公園" type="noun" category="place">
+      <cases language="pl" nominative="park" genitive="parku" accusative="park" instrumental="parkiem" locative="parku" />
+    </word>
+    <word id="ringo" translation="jabłko" kana="りんご" kanji="林檎" type="noun" category="food">
+      <cases language="pl" nominative="jabłko" genitive="jabłka" accusative="jabłko" instrumental="jabłkiem" locative="jabłku" />
+    </word>
+    <word id="room" translation="pokój" kana="へや" kanji="部屋" type="noun" category="place">
+      <cases language="pl" nominative="pokój" genitive="pokoju" accusative="pokój" instrumental="pokojem" locative="pokoju" />
+    </word>
+    <word id="school" translation="szkoła" kana="がっこう" kanji="学校" type="noun" category="place">
+      <cases language="pl" nominative="szkoła" genitive="szkoły" accusative="szkołę" instrumental="szkołą" locative="szkole" />
+    </word>
+    <word id="shigoto" translation="praca" kana="しごと" kanji="仕事" type="noun" category="availability_reason">
+      <cases language="pl" nominative="praca" genitive="pracy" accusative="pracę" instrumental="pracą" locative="pracy" />
+    </word>
+    <word id="sister" translation="siostra" kana="あね" kanji="姉" type="noun" category="person">
+      <cases language="pl" nominative="siostra" genitive="siostry" accusative="siostrę" instrumental="siostrą" locative="siostrze" />
+    </word>
+    <word id="song" translation="piosenka" kana="うた" kanji="歌" type="noun" category="media">
+      <cases language="pl" nominative="piosenka" genitive="piosenki" accusative="piosenkę" instrumental="piosenką" locative="piosence" />
+    </word>
+    <word id="station" translation="stacja" kana="えき" kanji="駅" type="noun" category="place">
+      <cases language="pl" nominative="stacja" genitive="stacji" accusative="stację" instrumental="stacją" locative="stacji" />
+    </word>
+    <word id="sushi" translation="sushi" kana="すし" kanji="寿司" type="noun" category="food">
+      <cases language="pl" nominative="sushi" genitive="sushi" accusative="sushi" instrumental="sushi" locative="sushi" />
+    </word>
+    <word id="taiikukan" translation="sala gimnastyczna" kana="たいいくかん" kanji="体育館" type="noun" category="place">
+      <cases language="pl" nominative="sala gimnastyczna" genitive="sali gimnastycznej" dative="sali gimnastycznej" accusative="salę gimnastyczną" instrumental="salą gimnastyczną" locative="sali gimnastycznej" vocative="salo gimnastyczna" />
+    </word>
+    <word id="tea" translation="herbata" kana="おちゃ" kanji="お茶" type="noun" category="drink">
+      <cases language="pl" nominative="herbata" genitive="herbaty" accusative="herbatę" instrumental="herbatą" locative="herbacie" />
+    </word>
+    <word id="teacher" translation="nauczyciel" kana="せんせい" kanji="先生" type="noun" category="person">
+      <cases language="pl" nominative="nauczyciel" genitive="nauczyciela" accusative="nauczyciela" instrumental="nauczycielem" locative="nauczycielu" />
+    </word>
+    <word id="television" translation="telewizja" kana="テレビ" type="noun" category="thing">
+      <cases language="pl" nominative="telewizja" genitive="telewizji" accusative="telewizję" instrumental="telewizją" locative="telewizji" />
+    </word>
+    <word id="tori" translation="ptak" kana="とり" kanji="鳥" type="noun" category="animal">
+      <cases language="pl" nominative="ptak" genitive="ptaka" dative="ptakowi" accusative="ptaka" instrumental="ptakiem" locative="ptaku" vocative="ptaku" />
+    </word>
+    <word id="water" translation="woda" kana="みず" kanji="水" type="noun" category="drink">
+      <cases language="pl" nominative="woda" genitive="wody" accusative="wodę" instrumental="wodą" locative="wodzie" />
+    </word>
+    <word id="yakusoku" translation="obietnica" kana="やくそく" kanji="約束" type="noun" category="abstract">
+      <cases language="pl" nominative="obietnica" genitive="obietnicy" accusative="obietnicę" instrumental="obietnicą" locative="obietnicy" />
+    </word>
+    <word id="yotei" translation="plan" kana="よてい" kanji="予定" type="noun" category="availability_reason">
+      <cases language="pl" nominative="plan" genitive="planu" accusative="plan" instrumental="planem" locative="planie" />
+    </word>
+    <word id="youji" translation="sprawa do załatwienia" kana="ようじ" kanji="用事" type="noun" category="abstract">
+      <cases language="pl" nominative="sprawa do załatwienia" genitive="sprawy do załatwienia" accusative="sprawę do załatwienia" instrumental="sprawą do załatwienia" locative="sprawie do załatwienia" />
+    </word>
+  </words>
+</dictionary>

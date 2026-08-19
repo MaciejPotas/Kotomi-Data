@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<grammar_rules schema_version="13">
+  <noun_categories>
+    <category id="concrete" label="Concrete" selectable="false" />
+    <category id="person" label="Person" parent="concrete" selectable="true" />
+    <category id="animal" label="Animal" parent="concrete" selectable="true" />
+    <category id="place" label="Place" parent="concrete" selectable="true" />
+    <category id="food" label="Food" parent="concrete" selectable="true" />
+    <category id="drink" label="Drink" parent="concrete" selectable="true" />
+    <category id="text" label="Text" parent="concrete" selectable="true" />
+    <category id="media" label="Audible media" selectable="true" />
+    <category id="vehicle" label="Vehicle" parent="concrete" selectable="true" />
+    <category id="thing" label="Thing" parent="concrete" selectable="true" />
+    <category id="abstract" label="Abstract" selectable="true" />
+    <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
+  </noun_categories>
+  <roles>
+    <role id="object" label="Object" particle="を" />
+    <role id="location" label="Location" particle="で" accepts="place" />
+    <role id="destination" label="Destination" particle="へ" accepts="place" />
+    <role id="companion" label="Companion" particle="と" accepts="person animal" />
+    <role id="target" label="Target" particle="に" />
+    <role id="vehicle" label="Vehicle" particle="に" accepts="vehicle" />
+    <role id="subject" label="Subject" particle="が" />
+  </roles>
+  <features>
+    <feature id="reporting" label="Reporting verb" />
+    <feature id="progressive_auxiliary" label="Progressive auxiliary" />
+  </features>
+</grammar_rules>

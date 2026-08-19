@@ -1,0 +1,1678 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="13" id="adjectives" label="Adjectives" schema="adjective">
+  <editor required="translation kana type" optional="kanji romaji" metadata="describes forms">
+    <forms>
+      <form name="predicate_plain_nonpast" />
+      <form name="predicate_polite_nonpast" />
+      <form name="predicate_plain_negative" />
+      <form name="predicate_polite_negative" />
+      <form name="predicate_plain_past" />
+      <form name="predicate_polite_past" />
+      <form name="predicate_plain_past_negative" />
+      <form name="predicate_polite_past_negative" />
+      <form name="attributive_nonpast" />
+      <form name="connective" />
+      <form name="adverbial" />
+      <form name="conditional" />
+      <form name="nominalized" />
+      <form name="appearance_sou" />
+      <form name="excessive_sugiru" />
+    </forms>
+  </editor>
+  <words>
+    <word id="akai" translation="czerwony" kana="あかい" kanji="赤い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest czerwony" context="none" style="plain non-past" kana="あかい" />
+        <form name="predicate_polite_nonpast" translation="jest czerwony" context="none" style="polite non-past" kana="あかいです" />
+        <form name="predicate_plain_negative" translation="nie jest czerwony" context="none" style="plain negative" kana="あかくない" />
+        <form name="predicate_polite_negative" translation="nie jest czerwony" context="none" style="polite negative" kana="あかくないです" />
+        <form name="predicate_plain_past" translation="był czerwony" context="none" style="plain past" kana="あかかった" />
+        <form name="predicate_polite_past" translation="był czerwony" context="none" style="polite past" kana="あかかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był czerwony" context="none" style="plain past negative" kana="あかくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był czerwony" context="none" style="polite past negative" kana="あかくなかったです" />
+        <form name="attributive_nonpast" translation="czerwony" context="none" style="before noun" kana="あかい" />
+        <form name="connective" translation="czerwony" context="none" style="connective" kana="あかくて" />
+        <form name="adverbial" translation="czerwony" context="none" style="adverbial" kana="あかく" />
+        <form name="conditional" translation="czerwony" context="none" style="conditional" kana="あかければ" />
+        <form name="nominalized" translation="czerwony" context="none" style="nominalized noun" kana="あかさ" />
+        <form name="appearance_sou" translation="czerwony" context="none" style="looks" kana="あかそう" />
+        <form name="excessive_sugiru" translation="czerwony" context="none" style="too much" kana="あかすぎる" />
+      </forms>
+    </word>
+    <word id="akarui" translation="jasny" kana="あかるい" kanji="明るい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest jasny" context="none" kana="あかるい" />
+        <form name="predicate_polite_nonpast" translation="jest jasny" context="none" kana="あかるいです" />
+        <form name="predicate_plain_negative" translation="nie jest jasny" context="none" kana="あかるくない" />
+        <form name="predicate_polite_negative" translation="nie jest jasny" context="none" style="polite negative" kana="あかるくないです" />
+        <form name="predicate_plain_past" translation="był jasny" context="none" kana="あかるかった" />
+        <form name="predicate_polite_past" translation="był jasny" context="none" style="polite past" kana="あかるかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był jasny" context="none" style="plain past negative" kana="あかるくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był jasny" context="none" style="polite past negative" kana="あかるくなかったです" />
+        <form name="attributive_nonpast" translation="jasny" context="none" kana="あかるい" />
+        <form name="connective" translation="jasny" context="none" kana="あかるくて" />
+        <form name="adverbial" translation="jasny" context="none" style="adverbial" kana="あかるく" />
+        <form name="conditional" translation="jasny" context="none" style="conditional" kana="あかるければ" />
+        <form name="nominalized" translation="jasny" context="none" style="nominalized noun" kana="あかるさ" />
+        <form name="appearance_sou" translation="jasny" context="none" style="looks" kana="あかるそう" />
+        <form name="excessive_sugiru" translation="jasny" context="none" style="too much" kana="あかるすぎる" />
+      </forms>
+    </word>
+    <word id="amai" translation="słodki" kana="あまい" kanji="甘い" type="i_adjective">
+      <describes categories="food drink" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest słodki" context="none" style="plain non-past" kana="あまい" />
+        <form name="predicate_polite_nonpast" translation="jest słodki" context="none" style="polite non-past" kana="あまいです" />
+        <form name="predicate_plain_negative" translation="nie jest słodki" context="none" style="plain negative" kana="あまくない" />
+        <form name="predicate_polite_negative" translation="nie jest słodki" context="none" style="polite negative" kana="あまくないです" />
+        <form name="predicate_plain_past" translation="był słodki" context="none" style="plain past" kana="あまかった" />
+        <form name="predicate_polite_past" translation="był słodki" context="none" style="polite past" kana="あまかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był słodki" context="none" style="plain past negative" kana="あまくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był słodki" context="none" style="polite past negative" kana="あまくなかったです" />
+        <form name="attributive_nonpast" translation="słodki" context="none" style="before noun" kana="あまい" />
+        <form name="connective" translation="słodki" context="none" style="connective" kana="あまくて" />
+        <form name="adverbial" translation="słodki" context="none" style="adverbial" kana="あまく" />
+        <form name="conditional" translation="słodki" context="none" style="conditional" kana="あまければ" />
+        <form name="nominalized" translation="słodki" context="none" style="nominalized noun" kana="あまさ" />
+        <form name="appearance_sou" translation="słodki" context="none" style="looks" kana="あまそう" />
+        <form name="excessive_sugiru" translation="słodki" context="none" style="too much" kana="あますぎる" />
+      </forms>
+    </word>
+    <word id="anzen" translation="bezpieczny" kana="あんぜん" kanji="安全" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest bezpieczny" context="none" style="plain non-past" kana="あんぜんだ" />
+        <form name="predicate_polite_nonpast" translation="jest bezpieczny" context="none" style="polite non-past" kana="あんぜんです" />
+        <form name="predicate_plain_negative" translation="nie jest bezpieczny" context="none" style="plain negative" kana="あんぜんじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest bezpieczny" context="none" style="polite negative" kana="あんぜんではありません" />
+        <form name="predicate_plain_past" translation="był bezpieczny" context="none" style="plain past" kana="あんぜんだった" />
+        <form name="predicate_polite_past" translation="był bezpieczny" context="none" style="polite past" kana="あんぜんでした" />
+        <form name="predicate_plain_past_negative" translation="nie był bezpieczny" context="none" style="plain past negative" kana="あんぜんではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był bezpieczny" context="none" style="polite past negative" kana="あんぜんではありませんでした" />
+        <form name="attributive_nonpast" translation="bezpieczny" context="none" style="before noun" kana="あんぜんな" />
+        <form name="connective" translation="bezpieczny" context="none" style="connective" kana="あんぜんで" />
+        <form name="adverbial" translation="bezpieczny" context="none" style="adverbial" kana="あんぜんに" />
+        <form name="conditional" translation="bezpieczny" context="none" style="conditional" kana="あんぜんなら" />
+        <form name="nominalized" translation="bezpieczny" context="none" style="nominalized noun" kana="あんぜんさ" />
+        <form name="appearance_sou" translation="bezpieczny" context="none" style="looks" kana="あんぜんそう" />
+        <form name="excessive_sugiru" translation="bezpieczny" context="none" style="too much" kana="あんぜんすぎる" />
+      </forms>
+    </word>
+    <word id="aoi" translation="niebieski" kana="あおい" kanji="青い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest niebieski" context="none" style="plain non-past" kana="あおい" />
+        <form name="predicate_polite_nonpast" translation="jest niebieski" context="none" style="polite non-past" kana="あおいです" />
+        <form name="predicate_plain_negative" translation="nie jest niebieski" context="none" style="plain negative" kana="あおくない" />
+        <form name="predicate_polite_negative" translation="nie jest niebieski" context="none" style="polite negative" kana="あおくないです" />
+        <form name="predicate_plain_past" translation="był niebieski" context="none" style="plain past" kana="あおかった" />
+        <form name="predicate_polite_past" translation="był niebieski" context="none" style="polite past" kana="あおかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był niebieski" context="none" style="plain past negative" kana="あおくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był niebieski" context="none" style="polite past negative" kana="あおくなかったです" />
+        <form name="attributive_nonpast" translation="niebieski" context="none" style="before noun" kana="あおい" />
+        <form name="connective" translation="niebieski" context="none" style="connective" kana="あおくて" />
+        <form name="adverbial" translation="niebieski" context="none" style="adverbial" kana="あおく" />
+        <form name="conditional" translation="niebieski" context="none" style="conditional" kana="あおければ" />
+        <form name="nominalized" translation="niebieski" context="none" style="nominalized noun" kana="あおさ" />
+        <form name="appearance_sou" translation="niebieski" context="none" style="looks" kana="あおそう" />
+        <form name="excessive_sugiru" translation="niebieski" context="none" style="too much" kana="あおすぎる" />
+      </forms>
+    </word>
+    <word id="arai" translation="szorstki" kana="あらい" kanji="荒い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest szorstki" context="none" style="plain non-past" kana="あらい" />
+        <form name="predicate_polite_nonpast" translation="jest szorstki" context="none" style="polite non-past" kana="あらいです" />
+        <form name="predicate_plain_negative" translation="nie jest szorstki" context="none" style="plain negative" kana="あらくない" />
+        <form name="predicate_polite_negative" translation="nie jest szorstki" context="none" style="polite negative" kana="あらくないです" />
+        <form name="predicate_plain_past" translation="był szorstki" context="none" style="plain past" kana="あらかった" />
+        <form name="predicate_polite_past" translation="był szorstki" context="none" style="polite past" kana="あらかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był szorstki" context="none" style="plain past negative" kana="あらくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był szorstki" context="none" style="polite past negative" kana="あらくなかったです" />
+        <form name="attributive_nonpast" translation="szorstki" context="none" style="before noun" kana="あらい" />
+        <form name="connective" translation="szorstki" context="none" style="connective" kana="あらくて" />
+        <form name="adverbial" translation="szorstki" context="none" style="adverbial" kana="あらく" />
+        <form name="conditional" translation="szorstki" context="none" style="conditional" kana="あらければ" />
+        <form name="nominalized" translation="szorstki" context="none" style="nominalized noun" kana="あらさ" />
+        <form name="appearance_sou" translation="szorstki" context="none" style="looks" kana="あらそう" />
+        <form name="excessive_sugiru" translation="szorstki" context="none" style="too much" kana="あらすぎる" />
+      </forms>
+    </word>
+    <word id="atarashii" translation="nowy" kana="あたらしい" kanji="新しい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest nowy" context="none" style="plain non-past" kana="あたらしい" />
+        <form name="predicate_polite_nonpast" translation="jest nowy" context="none" style="polite non-past" kana="あたらしいです" />
+        <form name="predicate_plain_negative" translation="nie jest nowy" context="none" style="plain negative" kana="あたらしくない" />
+        <form name="predicate_polite_negative" translation="nie jest nowy" context="none" style="polite negative" kana="あたらしくないです" />
+        <form name="predicate_plain_past" translation="był nowy" context="none" style="plain past" kana="あたらしかった" />
+        <form name="predicate_polite_past" translation="był nowy" context="none" style="polite past" kana="あたらしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był nowy" context="none" style="plain past negative" kana="あたらしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był nowy" context="none" style="polite past negative" kana="あたらしくなかったです" />
+        <form name="attributive_nonpast" translation="nowy" context="none" style="before noun" kana="あたらしい" />
+        <form name="connective" translation="nowy" context="none" style="connective" kana="あたらしくて" />
+        <form name="adverbial" translation="nowy" context="none" style="adverbial" kana="あたらしく" />
+        <form name="conditional" translation="nowy" context="none" style="conditional" kana="あたらしければ" />
+        <form name="nominalized" translation="nowy" context="none" style="nominalized noun" kana="あたらしさ" />
+        <form name="appearance_sou" translation="nowy" context="none" style="looks" kana="あたらしそう" />
+        <form name="excessive_sugiru" translation="nowy" context="none" style="too much" kana="あたらしすぎる" />
+      </forms>
+    </word>
+    <word id="atatakai" translation="ciepły" kana="あたたかい" kanji="暖かい" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest ciepły" context="none" style="plain non-past" kana="あたたかい" />
+        <form name="predicate_polite_nonpast" translation="jest ciepły" context="none" style="polite non-past" kana="あたたかいです" />
+        <form name="predicate_plain_negative" translation="nie jest ciepły" context="none" style="plain negative" kana="あたたかくない" />
+        <form name="predicate_polite_negative" translation="nie jest ciepły" context="none" style="polite negative" kana="あたたかくないです" />
+        <form name="predicate_plain_past" translation="był ciepły" context="none" style="plain past" kana="あたたかかった" />
+        <form name="predicate_polite_past" translation="był ciepły" context="none" style="polite past" kana="あたたかかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był ciepły" context="none" style="plain past negative" kana="あたたかくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był ciepły" context="none" style="polite past negative" kana="あたたかくなかったです" />
+        <form name="attributive_nonpast" translation="ciepły" context="none" style="before noun" kana="あたたかい" />
+        <form name="connective" translation="ciepły" context="none" style="connective" kana="あたたかくて" />
+        <form name="adverbial" translation="ciepły" context="none" style="adverbial" kana="あたたかく" />
+        <form name="conditional" translation="ciepły" context="none" style="conditional" kana="あたたかければ" />
+        <form name="nominalized" translation="ciepły" context="none" style="nominalized noun" kana="あたたかさ" />
+        <form name="appearance_sou" translation="ciepły" context="none" style="looks" kana="あたたかそう" />
+        <form name="excessive_sugiru" translation="ciepły" context="none" style="too much" kana="あたたかすぎる" />
+      </forms>
+    </word>
+    <word id="atsui" translation="gorący" kana="あつい" kanji="暑い" type="i_adjective">
+      <describes categories="place" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest gorący" context="none" style="plain non-past" kana="あつい" />
+        <form name="predicate_polite_nonpast" translation="jest gorący" context="none" style="polite non-past" kana="あついです" />
+        <form name="predicate_plain_negative" translation="nie jest gorący" context="none" style="plain negative" kana="あつくない" />
+        <form name="predicate_polite_negative" translation="nie jest gorący" context="none" style="polite negative" kana="あつくないです" />
+        <form name="predicate_plain_past" translation="był gorący" context="none" style="plain past" kana="あつかった" />
+        <form name="predicate_polite_past" translation="był gorący" context="none" style="polite past" kana="あつかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był gorący" context="none" style="plain past negative" kana="あつくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był gorący" context="none" style="polite past negative" kana="あつくなかったです" />
+        <form name="attributive_nonpast" translation="gorący" context="none" style="before noun" kana="あつい" />
+        <form name="connective" translation="gorący" context="none" style="connective" kana="あつくて" />
+        <form name="adverbial" translation="gorący" context="none" style="adverbial" kana="あつく" />
+        <form name="conditional" translation="gorący" context="none" style="conditional" kana="あつければ" />
+        <form name="nominalized" translation="gorący" context="none" style="nominalized noun" kana="あつさ" />
+        <form name="appearance_sou" translation="gorący" context="none" style="looks" kana="あつそう" />
+        <form name="excessive_sugiru" translation="gorący" context="none" style="too much" kana="あつすぎる" />
+      </forms>
+    </word>
+    <word id="azayaka" translation="żywy" kana="あざやか" kanji="鮮やか" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest wyrazisty" context="none" style="plain non-past" kana="あざやかだ" />
+        <form name="predicate_polite_nonpast" translation="jest wyrazisty" context="none" style="polite non-past" kana="あざやかです" />
+        <form name="predicate_plain_negative" translation="nie jest wyrazisty" context="none" style="plain negative" kana="あざやかじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest wyrazisty" context="none" style="polite negative" kana="あざやかではありません" />
+        <form name="predicate_plain_past" translation="był wyrazisty" context="none" style="plain past" kana="あざやかだった" />
+        <form name="predicate_polite_past" translation="był wyrazisty" context="none" style="polite past" kana="あざやかでした" />
+        <form name="predicate_plain_past_negative" translation="nie był wyrazisty" context="none" style="plain past negative" kana="あざやかではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był wyrazisty" context="none" style="polite past negative" kana="あざやかではありませんでした" />
+        <form name="attributive_nonpast" translation="wyrazisty" context="none" style="before noun" kana="あざやかな" />
+        <form name="connective" translation="wyrazisty" context="none" style="connective" kana="あざやかで" />
+        <form name="adverbial" translation="żywy" context="none" style="adverbial" kana="あざやかに" />
+        <form name="conditional" translation="żywy" context="none" style="conditional" kana="あざやかなら" />
+        <form name="nominalized" translation="żywy" context="none" style="nominalized noun" kana="あざやかさ" />
+        <form name="appearance_sou" translation="żywy" context="none" style="looks" kana="あざやかそう" />
+        <form name="excessive_sugiru" translation="żywy" context="none" style="too much" kana="あざやかすぎる" />
+      </forms>
+    </word>
+    <word id="chiisai" translation="mały" kana="ちいさい" kanji="小さい" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest mały" context="none" kana="ちいさい" />
+        <form name="predicate_polite_nonpast" translation="jest mały" context="none" kana="ちいさいです" />
+        <form name="predicate_plain_negative" translation="nie jest mały" context="none" kana="ちいさくない" />
+        <form name="predicate_polite_negative" translation="nie jest mały" context="none" kana="ちいさくないです" />
+        <form name="predicate_plain_past" translation="był mały" context="none" kana="ちいさかった" />
+        <form name="predicate_polite_past" translation="był mały" context="none" kana="ちいさかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był mały" context="none" kana="ちいさくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był mały" context="none" kana="ちいさくなかったです" />
+        <form name="attributive_nonpast" translation="mały" context="none" kana="ちいさい" />
+        <form name="connective" translation="mały" context="none" kana="ちいさくて" />
+        <form name="adverbial" translation="mały" context="none" style="adverbial" kana="ちいさく" />
+        <form name="conditional" translation="mały" context="none" style="conditional" kana="ちいさければ" />
+        <form name="nominalized" translation="mały" context="none" style="nominalized noun" kana="ちいささ" />
+        <form name="appearance_sou" translation="mały" context="none" style="looks" kana="ちいさそう" />
+        <form name="excessive_sugiru" translation="mały" context="none" style="too much" kana="ちいさすぎる" />
+      </forms>
+    </word>
+    <word id="chikai" translation="bliski" kana="ちかい" kanji="近い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest bliski" context="none" style="plain non-past" kana="ちかい" />
+        <form name="predicate_polite_nonpast" translation="jest bliski" context="none" style="polite non-past" kana="ちかいです" />
+        <form name="predicate_plain_negative" translation="nie jest bliski" context="none" style="plain negative" kana="ちかくない" />
+        <form name="predicate_polite_negative" translation="nie jest bliski" context="none" style="polite negative" kana="ちかくないです" />
+        <form name="predicate_plain_past" translation="był bliski" context="none" style="plain past" kana="ちかかった" />
+        <form name="predicate_polite_past" translation="był bliski" context="none" style="polite past" kana="ちかかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był bliski" context="none" style="plain past negative" kana="ちかくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był bliski" context="none" style="polite past negative" kana="ちかくなかったです" />
+        <form name="attributive_nonpast" translation="bliski" context="none" style="before noun" kana="ちかい" />
+        <form name="connective" translation="bliski" context="none" style="connective" kana="ちかくて" />
+        <form name="adverbial" translation="bliski" context="none" style="adverbial" kana="ちかく" />
+        <form name="conditional" translation="bliski" context="none" style="conditional" kana="ちかければ" />
+        <form name="nominalized" translation="bliski" context="none" style="nominalized noun" kana="ちかさ" />
+        <form name="appearance_sou" translation="bliski" context="none" style="looks" kana="ちかそう" />
+        <form name="excessive_sugiru" translation="bliski" context="none" style="too much" kana="ちかすぎる" />
+      </forms>
+    </word>
+    <word id="fukuzatsu" translation="skomplikowany" kana="ふくざつ" kanji="複雑" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest skomplikowany" context="none" style="plain non-past" kana="ふくざつだ" />
+        <form name="predicate_polite_nonpast" translation="jest skomplikowany" context="none" style="polite non-past" kana="ふくざつです" />
+        <form name="predicate_plain_negative" translation="nie jest skomplikowany" context="none" style="plain negative" kana="ふくざつじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest skomplikowany" context="none" style="polite negative" kana="ふくざつではありません" />
+        <form name="predicate_plain_past" translation="był skomplikowany" context="none" style="plain past" kana="ふくざつだった" />
+        <form name="predicate_polite_past" translation="był skomplikowany" context="none" style="polite past" kana="ふくざつでした" />
+        <form name="predicate_plain_past_negative" translation="nie był skomplikowany" context="none" style="plain past negative" kana="ふくざつではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był skomplikowany" context="none" style="polite past negative" kana="ふくざつではありませんでした" />
+        <form name="attributive_nonpast" translation="skomplikowany" context="none" style="before noun" kana="ふくざつな" />
+        <form name="connective" translation="skomplikowany" context="none" style="connective" kana="ふくざつで" />
+        <form name="adverbial" translation="skomplikowany" context="none" style="adverbial" kana="ふくざつに" />
+        <form name="conditional" translation="skomplikowany" context="none" style="conditional" kana="ふくざつなら" />
+        <form name="nominalized" translation="skomplikowany" context="none" style="nominalized noun" kana="ふくざつさ" />
+        <form name="appearance_sou" translation="skomplikowany" context="none" style="looks" kana="ふくざつそう" />
+        <form name="excessive_sugiru" translation="skomplikowany" context="none" style="too much" kana="ふくざつすぎる" />
+      </forms>
+    </word>
+    <word id="furui" translation="stary" kana="ふるい" kanji="古い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest stary" context="none" style="plain non-past" kana="ふるい" />
+        <form name="predicate_polite_nonpast" translation="jest stary" context="none" style="polite non-past" kana="ふるいです" />
+        <form name="predicate_plain_negative" translation="nie jest stary" context="none" style="plain negative" kana="ふるくない" />
+        <form name="predicate_polite_negative" translation="nie jest stary" context="none" style="polite negative" kana="ふるくないです" />
+        <form name="predicate_plain_past" translation="był stary" context="none" style="plain past" kana="ふるかった" />
+        <form name="predicate_polite_past" translation="był stary" context="none" style="polite past" kana="ふるかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był stary" context="none" style="plain past negative" kana="ふるくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był stary" context="none" style="polite past negative" kana="ふるくなかったです" />
+        <form name="attributive_nonpast" translation="stary" context="none" style="before noun" kana="ふるい" />
+        <form name="connective" translation="stary" context="none" style="connective" kana="ふるくて" />
+        <form name="adverbial" translation="stary" context="none" style="adverbial" kana="ふるく" />
+        <form name="conditional" translation="stary" context="none" style="conditional" kana="ふるければ" />
+        <form name="nominalized" translation="stary" context="none" style="nominalized noun" kana="ふるさ" />
+        <form name="appearance_sou" translation="stary" context="none" style="looks" kana="ふるそう" />
+        <form name="excessive_sugiru" translation="stary" context="none" style="too much" kana="ふるすぎる" />
+      </forms>
+    </word>
+    <word id="ganko" translation="uparty" kana="がんこ" kanji="頑固" type="na_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest uparty" context="none" style="plain non-past" kana="がんこだ" />
+        <form name="predicate_polite_nonpast" translation="jest uparty" context="none" style="polite non-past" kana="がんこです" />
+        <form name="predicate_plain_negative" translation="nie jest uparty" context="none" style="plain negative" kana="がんこじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest uparty" context="none" style="polite negative" kana="がんこではありません" />
+        <form name="predicate_plain_past" translation="był uparty" context="none" style="plain past" kana="がんこだった" />
+        <form name="predicate_polite_past" translation="był uparty" context="none" style="polite past" kana="がんこでした" />
+        <form name="predicate_plain_past_negative" translation="nie był uparty" context="none" style="plain past negative" kana="がんこではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był uparty" context="none" style="polite past negative" kana="がんこではありませんでした" />
+        <form name="attributive_nonpast" translation="uparty" context="none" style="before noun" kana="がんこな" />
+        <form name="connective" translation="uparty" context="none" style="connective" kana="がんこで" />
+        <form name="adverbial" translation="uparty" context="none" style="adverbial" kana="がんこに" />
+        <form name="conditional" translation="uparty" context="none" style="conditional" kana="がんこなら" />
+        <form name="nominalized" translation="uparty" context="none" style="nominalized noun" kana="がんこさ" />
+        <form name="appearance_sou" translation="uparty" context="none" style="looks" kana="がんこそう" />
+        <form name="excessive_sugiru" translation="uparty" context="none" style="too much" kana="がんこすぎる" />
+      </forms>
+    </word>
+    <word id="genki" translation="energiczny" kana="げんき" kanji="元気" type="na_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest energiczny" context="none" style="plain non-past" kana="げんきだ" />
+        <form name="predicate_polite_nonpast" translation="jest energiczny" context="none" style="polite non-past" kana="げんきです" />
+        <form name="predicate_plain_negative" translation="nie jest energiczny" context="none" style="plain negative" kana="げんきじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest energiczny" context="none" style="polite negative" kana="げんきではありません" />
+        <form name="predicate_plain_past" translation="był energiczny" context="none" style="plain past" kana="げんきだった" />
+        <form name="predicate_polite_past" translation="był energiczny" context="none" style="polite past" kana="げんきでした" />
+        <form name="predicate_plain_past_negative" translation="nie był energiczny" context="none" style="plain past negative" kana="げんきではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był energiczny" context="none" style="polite past negative" kana="げんきではありませんでした" />
+        <form name="attributive_nonpast" translation="energiczny" context="none" style="before noun" kana="げんきな" />
+        <form name="connective" translation="energiczny" context="none" style="connective" kana="げんきで" />
+        <form name="adverbial" translation="energiczny" context="none" style="adverbial" kana="げんきに" />
+        <form name="conditional" translation="energiczny" context="none" style="conditional" kana="げんきなら" />
+        <form name="nominalized" translation="energiczny" context="none" style="nominalized noun" kana="げんきさ" />
+        <form name="appearance_sou" translation="energiczny" context="none" style="looks" kana="げんきそう" />
+        <form name="excessive_sugiru" translation="energiczny" context="none" style="too much" kana="げんきすぎる" />
+      </forms>
+    </word>
+    <word id="hadazamui" translation="chłodny" kana="はだざむい" kanji="肌寒い" type="i_adjective">
+      <describes categories="place" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest chłodny" context="none" style="plain non-past" kana="はだざむい" />
+        <form name="predicate_polite_nonpast" translation="jest chłodny" context="none" style="polite non-past" kana="はだざむいです" />
+        <form name="predicate_plain_negative" translation="nie jest chłodny" context="none" style="plain negative" kana="はだざむくない" />
+        <form name="predicate_polite_negative" translation="nie jest chłodny" context="none" style="polite negative" kana="はだざむくないです" />
+        <form name="predicate_plain_past" translation="był chłodny" context="none" style="plain past" kana="はだざむかった" />
+        <form name="predicate_polite_past" translation="był chłodny" context="none" style="polite past" kana="はだざむかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był chłodny" context="none" style="plain past negative" kana="はだざむくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był chłodny" context="none" style="polite past negative" kana="はだざむくなかったです" />
+        <form name="attributive_nonpast" translation="chłodny" context="none" style="before noun" kana="はだざむい" />
+        <form name="connective" translation="chłodny" context="none" style="connective" kana="はだざむくて" />
+        <form name="adverbial" translation="chłodny" context="none" style="adverbial" kana="はだざむく" />
+        <form name="conditional" translation="chłodny" context="none" style="conditional" kana="はだざむければ" />
+        <form name="nominalized" translation="chłodny" context="none" style="nominalized noun" kana="はだざむさ" />
+        <form name="appearance_sou" translation="chłodny" context="none" style="looks" kana="はだざむそう" />
+        <form name="excessive_sugiru" translation="chłodny" context="none" style="too much" kana="はだざむすぎる" />
+      </forms>
+    </word>
+    <word id="hayai" translation="szybki" kana="はやい" kanji="速い" type="i_adjective">
+      <describes categories="person animal vehicle" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest szybki" context="none" style="plain non-past" kana="はやい" />
+        <form name="predicate_polite_nonpast" translation="jest szybki" context="none" style="polite non-past" kana="はやいです" />
+        <form name="predicate_plain_negative" translation="nie jest szybki" context="none" style="plain negative" kana="はやくない" />
+        <form name="predicate_polite_negative" translation="nie jest szybki" context="none" style="polite negative" kana="はやくないです" />
+        <form name="predicate_plain_past" translation="był szybki" context="none" style="plain past" kana="はやかった" />
+        <form name="predicate_polite_past" translation="był szybki" context="none" style="polite past" kana="はやかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był szybki" context="none" style="plain past negative" kana="はやくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był szybki" context="none" style="polite past negative" kana="はやくなかったです" />
+        <form name="attributive_nonpast" translation="szybki" context="none" style="before noun" kana="はやい" />
+        <form name="connective" translation="szybki" context="none" style="connective" kana="はやくて" />
+        <form name="adverbial" translation="szybki" context="none" style="adverbial" kana="はやく" />
+        <form name="conditional" translation="szybki" context="none" style="conditional" kana="はやければ" />
+        <form name="nominalized" translation="szybki" context="none" style="nominalized noun" kana="はやさ" />
+        <form name="appearance_sou" translation="szybki" context="none" style="looks" kana="はやそう" />
+        <form name="excessive_sugiru" translation="szybki" context="none" style="too much" kana="はやすぎる" />
+      </forms>
+    </word>
+    <word id="heikinteki" translation="przeciętny" kana="へいきんてき" kanji="平均的" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest przeciętny" context="none" style="plain non-past" kana="へいきんてきだ" />
+        <form name="predicate_polite_nonpast" translation="jest przeciętny" context="none" style="polite non-past" kana="へいきんてきです" />
+        <form name="predicate_plain_negative" translation="nie jest przeciętny" context="none" style="plain negative" kana="へいきんてきじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest przeciętny" context="none" style="polite negative" kana="へいきんてきではありません" />
+        <form name="predicate_plain_past" translation="był przeciętny" context="none" style="plain past" kana="へいきんてきだった" />
+        <form name="predicate_polite_past" translation="był przeciętny" context="none" style="polite past" kana="へいきんてきでした" />
+        <form name="predicate_plain_past_negative" translation="nie był przeciętny" context="none" style="plain past negative" kana="へいきんてきではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był przeciętny" context="none" style="polite past negative" kana="へいきんてきではありませんでした" />
+        <form name="attributive_nonpast" translation="przeciętny" context="none" style="before noun" kana="へいきんてきな" />
+        <form name="connective" translation="przeciętny" context="none" style="connective" kana="へいきんてきで" />
+        <form name="adverbial" translation="przeciętny" context="none" style="adverbial" kana="へいきんてきに" />
+        <form name="conditional" translation="przeciętny" context="none" style="conditional" kana="へいきんてきなら" />
+        <form name="nominalized" translation="przeciętny" context="none" style="nominalized noun" kana="へいきんてきさ" />
+        <form name="appearance_sou" translation="przeciętny" context="none" style="looks" kana="へいきんてきそう" />
+        <form name="excessive_sugiru" translation="przeciętny" context="none" style="too much" kana="へいきんてきすぎる" />
+      </forms>
+    </word>
+    <word id="hen" translation="dziwny" kana="へん" kanji="変" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest dziwny" context="none" style="plain non-past" kana="へんだ" />
+        <form name="predicate_polite_nonpast" translation="jest dziwny" context="none" style="polite non-past" kana="へんです" />
+        <form name="predicate_plain_negative" translation="nie jest dziwny" context="none" style="plain negative" kana="へんじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest dziwny" context="none" style="polite negative" kana="へんではありません" />
+        <form name="predicate_plain_past" translation="był dziwny" context="none" style="plain past" kana="へんだった" />
+        <form name="predicate_polite_past" translation="był dziwny" context="none" style="polite past" kana="へんでした" />
+        <form name="predicate_plain_past_negative" translation="nie był dziwny" context="none" style="plain past negative" kana="へんではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był dziwny" context="none" style="polite past negative" kana="へんではありませんでした" />
+        <form name="attributive_nonpast" translation="dziwny" context="none" style="before noun" kana="へんな" />
+        <form name="connective" translation="dziwny" context="none" style="connective" kana="へんで" />
+        <form name="adverbial" translation="dziwny" context="none" style="adverbial" kana="へんに" />
+        <form name="conditional" translation="dziwny" context="none" style="conditional" kana="へんなら" />
+        <form name="nominalized" translation="dziwny" context="none" style="nominalized noun" kana="へんさ" />
+        <form name="appearance_sou" translation="dziwny" context="none" style="looks" kana="へんそう" />
+        <form name="excessive_sugiru" translation="dziwny" context="none" style="too much" kana="へんすぎる" />
+      </forms>
+    </word>
+    <word id="hidoi" translation="okropny" kana="ひどい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest okropny" context="none" style="plain non-past" kana="ひどい" />
+        <form name="predicate_polite_nonpast" translation="jest okropny" context="none" style="polite non-past" kana="ひどいです" />
+        <form name="predicate_plain_negative" translation="nie jest okropny" context="none" style="plain negative" kana="ひどくない" />
+        <form name="predicate_polite_negative" translation="nie jest okropny" context="none" style="polite negative" kana="ひどくないです" />
+        <form name="predicate_plain_past" translation="był okropny" context="none" style="plain past" kana="ひどかった" />
+        <form name="predicate_polite_past" translation="był okropny" context="none" style="polite past" kana="ひどかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był okropny" context="none" style="plain past negative" kana="ひどくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był okropny" context="none" style="polite past negative" kana="ひどくなかったです" />
+        <form name="attributive_nonpast" translation="okropny" context="none" style="before noun" kana="ひどい" />
+        <form name="connective" translation="okropny" context="none" style="connective" kana="ひどくて" />
+        <form name="adverbial" translation="okropny" context="none" style="adverbial" kana="ひどく" />
+        <form name="conditional" translation="okropny" context="none" style="conditional" kana="ひどければ" />
+        <form name="nominalized" translation="okropny" context="none" style="nominalized noun" kana="ひどさ" />
+        <form name="appearance_sou" translation="okropny" context="none" style="looks" kana="ひどそう" />
+        <form name="excessive_sugiru" translation="okropny" context="none" style="too much" kana="ひどすぎる" />
+      </forms>
+    </word>
+    <word id="hikui" translation="niski" kana="ひくい" kanji="低い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest niski" context="none" style="plain non-past" kana="ひくい" />
+        <form name="predicate_polite_nonpast" translation="jest niski" context="none" style="polite non-past" kana="ひくいです" />
+        <form name="predicate_plain_negative" translation="nie jest niski" context="none" style="plain negative" kana="ひくくない" />
+        <form name="predicate_polite_negative" translation="nie jest niski" context="none" style="polite negative" kana="ひくくないです" />
+        <form name="predicate_plain_past" translation="był niski" context="none" style="plain past" kana="ひくかった" />
+        <form name="predicate_polite_past" translation="był niski" context="none" style="polite past" kana="ひくかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był niski" context="none" style="plain past negative" kana="ひくくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był niski" context="none" style="polite past negative" kana="ひくくなかったです" />
+        <form name="attributive_nonpast" translation="niski" context="none" style="before noun" kana="ひくい" />
+        <form name="connective" translation="niski" context="none" style="connective" kana="ひくくて" />
+        <form name="adverbial" translation="niski" context="none" style="adverbial" kana="ひくく" />
+        <form name="conditional" translation="niski" context="none" style="conditional" kana="ひくければ" />
+        <form name="nominalized" translation="niski" context="none" style="nominalized noun" kana="ひくさ" />
+        <form name="appearance_sou" translation="niski" context="none" style="looks" kana="ひくそう" />
+        <form name="excessive_sugiru" translation="niski" context="none" style="too much" kana="ひくすぎる" />
+      </forms>
+    </word>
+    <word id="hiroi" translation="szeroki" kana="ひろい" kanji="広い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest szeroki" context="none" style="plain non-past" kana="ひろい" />
+        <form name="predicate_polite_nonpast" translation="jest szeroki" context="none" style="polite non-past" kana="ひろいです" />
+        <form name="predicate_plain_negative" translation="nie jest szeroki" context="none" style="plain negative" kana="ひろくない" />
+        <form name="predicate_polite_negative" translation="nie jest szeroki" context="none" style="polite negative" kana="ひろくないです" />
+        <form name="predicate_plain_past" translation="był szeroki" context="none" style="plain past" kana="ひろかった" />
+        <form name="predicate_polite_past" translation="był szeroki" context="none" style="polite past" kana="ひろかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był szeroki" context="none" style="plain past negative" kana="ひろくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był szeroki" context="none" style="polite past negative" kana="ひろくなかったです" />
+        <form name="attributive_nonpast" translation="szeroki" context="none" style="before noun" kana="ひろい" />
+        <form name="connective" translation="szeroki" context="none" style="connective" kana="ひろくて" />
+        <form name="adverbial" translation="szeroki" context="none" style="adverbial" kana="ひろく" />
+        <form name="conditional" translation="szeroki" context="none" style="conditional" kana="ひろければ" />
+        <form name="nominalized" translation="szeroki" context="none" style="nominalized noun" kana="ひろさ" />
+        <form name="appearance_sou" translation="szeroki" context="none" style="looks" kana="ひろそう" />
+        <form name="excessive_sugiru" translation="szeroki" context="none" style="too much" kana="ひろすぎる" />
+      </forms>
+    </word>
+    <word id="ijou" translation="nienormalny" kana="いじょう" kanji="異常" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest nienormalny" context="none" style="plain non-past" kana="いじょうだ" />
+        <form name="predicate_polite_nonpast" translation="jest nienormalny" context="none" style="polite non-past" kana="いじょうです" />
+        <form name="predicate_plain_negative" translation="nie jest nienormalny" context="none" style="plain negative" kana="いじょうじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest nienormalny" context="none" style="polite negative" kana="いじょうではありません" />
+        <form name="predicate_plain_past" translation="był nienormalny" context="none" style="plain past" kana="いじょうだった" />
+        <form name="predicate_polite_past" translation="był nienormalny" context="none" style="polite past" kana="いじょうでした" />
+        <form name="predicate_plain_past_negative" translation="nie był nienormalny" context="none" style="plain past negative" kana="いじょうではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był nienormalny" context="none" style="polite past negative" kana="いじょうではありませんでした" />
+        <form name="attributive_nonpast" translation="nienormalny" context="none" style="before noun" kana="いじょうな" />
+        <form name="connective" translation="nienormalny" context="none" style="connective" kana="いじょうで" />
+        <form name="adverbial" translation="nienormalny" context="none" style="adverbial" kana="いじょうに" />
+        <form name="conditional" translation="nienormalny" context="none" style="conditional" kana="いじょうなら" />
+        <form name="nominalized" translation="nienormalny" context="none" style="nominalized noun" kana="いじょうさ" />
+        <form name="appearance_sou" translation="nienormalny" context="none" style="looks" kana="いじょうそう" />
+        <form name="excessive_sugiru" translation="nienormalny" context="none" style="too much" kana="いじょうすぎる" />
+      </forms>
+    </word>
+    <word id="juuyou" translation="ważny" kana="じゅうよう" kanji="重要" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest ważny" context="none" style="plain non-past" kana="じゅうようだ" />
+        <form name="predicate_polite_nonpast" translation="jest ważny" context="none" style="polite non-past" kana="じゅうようです" />
+        <form name="predicate_plain_negative" translation="nie jest ważny" context="none" style="plain negative" kana="じゅうようじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest ważny" context="none" style="polite negative" kana="じゅうようではありません" />
+        <form name="predicate_plain_past" translation="był ważny" context="none" style="plain past" kana="じゅうようだった" />
+        <form name="predicate_polite_past" translation="był ważny" context="none" style="polite past" kana="じゅうようでした" />
+        <form name="predicate_plain_past_negative" translation="nie był ważny" context="none" style="plain past negative" kana="じゅうようではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był ważny" context="none" style="polite past negative" kana="じゅうようではありませんでした" />
+        <form name="attributive_nonpast" translation="ważny" context="none" style="before noun" kana="じゅうような" />
+        <form name="connective" translation="ważny" context="none" style="connective" kana="じゅうようで" />
+        <form name="adverbial" translation="ważny" context="none" style="adverbial" kana="じゅうように" />
+        <form name="conditional" translation="ważny" context="none" style="conditional" kana="じゅうようなら" />
+        <form name="nominalized" translation="ważny" context="none" style="nominalized noun" kana="じゅうようさ" />
+        <form name="appearance_sou" translation="ważny" context="none" style="looks" kana="じゅうようそう" />
+        <form name="excessive_sugiru" translation="ważny" context="none" style="too much" kana="じゅうようすぎる" />
+      </forms>
+    </word>
+    <word id="kanashii" translation="smutny" kana="かなしい" kanji="悲しい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest smutny" context="none" style="plain non-past" kana="かなしい" />
+        <form name="predicate_polite_nonpast" translation="jest smutny" context="none" style="polite non-past" kana="かなしいです" />
+        <form name="predicate_plain_negative" translation="nie jest smutny" context="none" style="plain negative" kana="かなしくない" />
+        <form name="predicate_polite_negative" translation="nie jest smutny" context="none" style="polite negative" kana="かなしくないです" />
+        <form name="predicate_plain_past" translation="był smutny" context="none" style="plain past" kana="かなしかった" />
+        <form name="predicate_polite_past" translation="był smutny" context="none" style="polite past" kana="かなしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był smutny" context="none" style="plain past negative" kana="かなしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był smutny" context="none" style="polite past negative" kana="かなしくなかったです" />
+        <form name="attributive_nonpast" translation="smutny" context="none" style="before noun" kana="かなしい" />
+        <form name="connective" translation="smutny" context="none" style="connective" kana="かなしくて" />
+        <form name="adverbial" translation="smutny" context="none" style="adverbial" kana="かなしく" />
+        <form name="conditional" translation="smutny" context="none" style="conditional" kana="かなしければ" />
+        <form name="nominalized" translation="smutny" context="none" style="nominalized noun" kana="かなしさ" />
+        <form name="appearance_sou" translation="smutny" context="none" style="looks" kana="かなしそう" />
+        <form name="excessive_sugiru" translation="smutny" context="none" style="too much" kana="かなしすぎる" />
+      </forms>
+    </word>
+    <word id="kantan" translation="łatwy" kana="かんたん" kanji="簡単" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest łatwy" context="none" style="plain non-past" kana="かんたんだ" />
+        <form name="predicate_polite_nonpast" translation="jest łatwy" context="none" style="polite non-past" kana="かんたんです" />
+        <form name="predicate_plain_negative" translation="nie jest łatwy" context="none" style="plain negative" kana="かんたんじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest łatwy" context="none" style="polite negative" kana="かんたんではありません" />
+        <form name="predicate_plain_past" translation="był łatwy" context="none" style="plain past" kana="かんたんだった" />
+        <form name="predicate_polite_past" translation="był łatwy" context="none" style="polite past" kana="かんたんでした" />
+        <form name="predicate_plain_past_negative" translation="nie był łatwy" context="none" style="plain past negative" kana="かんたんではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był łatwy" context="none" style="polite past negative" kana="かんたんではありませんでした" />
+        <form name="attributive_nonpast" translation="łatwy" context="none" style="before noun" kana="かんたんな" />
+        <form name="connective" translation="łatwy" context="none" style="connective" kana="かんたんで" />
+        <form name="adverbial" translation="łatwy" context="none" style="adverbial" kana="かんたんに" />
+        <form name="conditional" translation="łatwy" context="none" style="conditional" kana="かんたんなら" />
+        <form name="nominalized" translation="łatwy" context="none" style="nominalized noun" kana="かんたんさ" />
+        <form name="appearance_sou" translation="łatwy" context="none" style="looks" kana="かんたんそう" />
+        <form name="excessive_sugiru" translation="łatwy" context="none" style="too much" kana="かんたんすぎる" />
+      </forms>
+    </word>
+    <word id="karai" translation="ostry" kana="からい" kanji="辛い" type="i_adjective">
+      <describes categories="food drink" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest ostry" context="none" style="plain non-past" kana="からい" />
+        <form name="predicate_polite_nonpast" translation="jest ostry" context="none" style="polite non-past" kana="からいです" />
+        <form name="predicate_plain_negative" translation="nie jest ostry" context="none" style="plain negative" kana="からくない" />
+        <form name="predicate_polite_negative" translation="nie jest ostry" context="none" style="polite negative" kana="からくないです" />
+        <form name="predicate_plain_past" translation="był ostry" context="none" style="plain past" kana="からかった" />
+        <form name="predicate_polite_past" translation="był ostry" context="none" style="polite past" kana="からかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był ostry" context="none" style="plain past negative" kana="からくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był ostry" context="none" style="polite past negative" kana="からくなかったです" />
+        <form name="attributive_nonpast" translation="ostry" context="none" style="before noun" kana="からい" />
+        <form name="connective" translation="ostry" context="none" style="connective" kana="からくて" />
+        <form name="adverbial" translation="ostry" context="none" style="adverbial" kana="からく" />
+        <form name="conditional" translation="ostry" context="none" style="conditional" kana="からければ" />
+        <form name="nominalized" translation="ostry" context="none" style="nominalized noun" kana="からさ" />
+        <form name="appearance_sou" translation="ostry" context="none" style="looks" kana="からそう" />
+        <form name="excessive_sugiru" translation="ostry" context="none" style="too much" kana="からすぎる" />
+      </forms>
+    </word>
+    <word id="karui" translation="lekki" kana="かるい" kanji="軽い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest lekki" context="none" style="plain non-past" kana="かるい" />
+        <form name="predicate_polite_nonpast" translation="jest lekki" context="none" style="polite non-past" kana="かるいです" />
+        <form name="predicate_plain_negative" translation="nie jest lekki" context="none" style="plain negative" kana="かるくない" />
+        <form name="predicate_polite_negative" translation="nie jest lekki" context="none" style="polite negative" kana="かるくないです" />
+        <form name="predicate_plain_past" translation="był lekki" context="none" style="plain past" kana="かるかった" />
+        <form name="predicate_polite_past" translation="był lekki" context="none" style="polite past" kana="かるかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był lekki" context="none" style="plain past negative" kana="かるくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był lekki" context="none" style="polite past negative" kana="かるくなかったです" />
+        <form name="attributive_nonpast" translation="lekki" context="none" style="before noun" kana="かるい" />
+        <form name="connective" translation="lekki" context="none" style="connective" kana="かるくて" />
+        <form name="adverbial" translation="lekki" context="none" style="adverbial" kana="かるく" />
+        <form name="conditional" translation="lekki" context="none" style="conditional" kana="かるければ" />
+        <form name="nominalized" translation="lekki" context="none" style="nominalized noun" kana="かるさ" />
+        <form name="appearance_sou" translation="lekki" context="none" style="looks" kana="かるそう" />
+        <form name="excessive_sugiru" translation="lekki" context="none" style="too much" kana="かるすぎる" />
+      </forms>
+    </word>
+    <word id="katai" translation="twardy" kana="かたい" kanji="硬い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest twardy" context="none" style="plain non-past" kana="かたい" />
+        <form name="predicate_polite_nonpast" translation="jest twardy" context="none" style="polite non-past" kana="かたいです" />
+        <form name="predicate_plain_negative" translation="nie jest twardy" context="none" style="plain negative" kana="かたくない" />
+        <form name="predicate_polite_negative" translation="nie jest twardy" context="none" style="polite negative" kana="かたくないです" />
+        <form name="predicate_plain_past" translation="był twardy" context="none" style="plain past" kana="かたかった" />
+        <form name="predicate_polite_past" translation="był twardy" context="none" style="polite past" kana="かたかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był twardy" context="none" style="plain past negative" kana="かたくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był twardy" context="none" style="polite past negative" kana="かたくなかったです" />
+        <form name="attributive_nonpast" translation="twardy" context="none" style="before noun" kana="かたい" />
+        <form name="connective" translation="twardy" context="none" style="connective" kana="かたくて" />
+        <form name="adverbial" translation="twardy" context="none" style="adverbial" kana="かたく" />
+        <form name="conditional" translation="twardy" context="none" style="conditional" kana="かたければ" />
+        <form name="nominalized" translation="twardy" context="none" style="nominalized noun" kana="かたさ" />
+        <form name="appearance_sou" translation="twardy" context="none" style="looks" kana="かたそう" />
+        <form name="excessive_sugiru" translation="twardy" context="none" style="too much" kana="かたすぎる" />
+      </forms>
+    </word>
+    <word id="kawaii" translation="uroczy" kana="かわいい" kanji="可愛い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest uroczy" context="none" style="plain non-past" kana="かわいい" />
+        <form name="predicate_polite_nonpast" translation="jest uroczy" context="none" style="polite non-past" kana="かわいいです" />
+        <form name="predicate_plain_negative" translation="nie jest uroczy" context="none" style="plain negative" kana="かわいくない" />
+        <form name="predicate_polite_negative" translation="nie jest uroczy" context="none" style="polite negative" kana="かわいくないです" />
+        <form name="predicate_plain_past" translation="był uroczy" context="none" style="plain past" kana="かわいかった" />
+        <form name="predicate_polite_past" translation="był uroczy" context="none" style="polite past" kana="かわいかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był uroczy" context="none" style="plain past negative" kana="かわいくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był uroczy" context="none" style="polite past negative" kana="かわいくなかったです" />
+        <form name="attributive_nonpast" translation="uroczy" context="none" style="before noun" kana="かわいい" />
+        <form name="connective" translation="uroczy" context="none" style="connective" kana="かわいくて" />
+        <form name="adverbial" translation="uroczy" context="none" style="adverbial" kana="かわいく" />
+        <form name="conditional" translation="uroczy" context="none" style="conditional" kana="かわいければ" />
+        <form name="nominalized" translation="uroczy" context="none" style="nominalized noun" kana="かわいさ" />
+        <form name="appearance_sou" translation="uroczy" context="none" style="looks" kana="かわいそう" />
+        <form name="excessive_sugiru" translation="uroczy" context="none" style="too much" kana="かわいすぎる" />
+      </forms>
+    </word>
+    <word id="kiiroi" translation="żółty" kana="きいろい" kanji="黄色い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest żółty" context="none" style="plain non-past" kana="きいろい" />
+        <form name="predicate_polite_nonpast" translation="jest żółty" context="none" style="polite non-past" kana="きいろいです" />
+        <form name="predicate_plain_negative" translation="nie jest żółty" context="none" style="plain negative" kana="きいろくない" />
+        <form name="predicate_polite_negative" translation="nie jest żółty" context="none" style="polite negative" kana="きいろくないです" />
+        <form name="predicate_plain_past" translation="był żółty" context="none" style="plain past" kana="きいろかった" />
+        <form name="predicate_polite_past" translation="był żółty" context="none" style="polite past" kana="きいろかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był żółty" context="none" style="plain past negative" kana="きいろくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był żółty" context="none" style="polite past negative" kana="きいろくなかったです" />
+        <form name="attributive_nonpast" translation="żółty" context="none" style="before noun" kana="きいろい" />
+        <form name="connective" translation="żółty" context="none" style="connective" kana="きいろくて" />
+        <form name="adverbial" translation="żółty" context="none" style="adverbial" kana="きいろく" />
+        <form name="conditional" translation="żółty" context="none" style="conditional" kana="きいろければ" />
+        <form name="nominalized" translation="żółty" context="none" style="nominalized noun" kana="きいろさ" />
+        <form name="appearance_sou" translation="żółty" context="none" style="looks" kana="きいろそう" />
+        <form name="excessive_sugiru" translation="żółty" context="none" style="too much" kana="きいろすぎる" />
+      </forms>
+    </word>
+    <word id="kiken" translation="niebezpieczny" kana="きけん" kanji="危険" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest niebezpieczny" context="none" style="plain non-past" kana="きけんだ" />
+        <form name="predicate_polite_nonpast" translation="jest niebezpieczny" context="none" style="polite non-past" kana="きけんです" />
+        <form name="predicate_plain_negative" translation="nie jest niebezpieczny" context="none" style="plain negative" kana="きけんじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest niebezpieczny" context="none" style="polite negative" kana="きけんではありません" />
+        <form name="predicate_plain_past" translation="był niebezpieczny" context="none" style="plain past" kana="きけんだった" />
+        <form name="predicate_polite_past" translation="był niebezpieczny" context="none" style="polite past" kana="きけんでした" />
+        <form name="predicate_plain_past_negative" translation="nie był niebezpieczny" context="none" style="plain past negative" kana="きけんではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był niebezpieczny" context="none" style="polite past negative" kana="きけんではありませんでした" />
+        <form name="attributive_nonpast" translation="niebezpieczny" context="none" style="before noun" kana="きけんな" />
+        <form name="connective" translation="niebezpieczny" context="none" style="connective" kana="きけんで" />
+        <form name="adverbial" translation="niebezpieczny" context="none" style="adverbial" kana="きけんに" />
+        <form name="conditional" translation="niebezpieczny" context="none" style="conditional" kana="きけんなら" />
+        <form name="nominalized" translation="niebezpieczny" context="none" style="nominalized noun" kana="きけんさ" />
+        <form name="appearance_sou" translation="niebezpieczny" context="none" style="looks" kana="きけんそう" />
+        <form name="excessive_sugiru" translation="niebezpieczny" context="none" style="too much" kana="きけんすぎる" />
+      </forms>
+    </word>
+    <word id="kirei" translation="czysty" kana="きれい" kanji="綺麗" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest czysty" context="none" kana="きれいだ" />
+        <form name="predicate_polite_nonpast" translation="jest czysty" context="none" kana="きれいです" />
+        <form name="predicate_plain_negative" translation="nie jest czysty" context="none" kana="きれいじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest czysty" context="none" kana="きれいじゃありません" />
+        <form name="predicate_plain_past" translation="był czysty" context="none" kana="きれいだった" />
+        <form name="predicate_polite_past" translation="był czysty" context="none" kana="きれいでした" />
+        <form name="predicate_plain_past_negative" translation="nie był czysty" context="none" kana="きれいじゃなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był czysty" context="none" kana="きれいじゃありませんでした" />
+        <form name="attributive_nonpast" translation="czysty" context="none" kana="きれいな" />
+        <form name="connective" translation="czysty" context="none" kana="きれいで" />
+        <form name="adverbial" translation="czysty" context="none" style="adverbial" kana="きれいに" />
+        <form name="conditional" translation="czysty" context="none" style="conditional" kana="きれいなら" />
+        <form name="nominalized" translation="czysty" context="none" style="nominalized noun" kana="きれいさ" />
+        <form name="appearance_sou" translation="czysty" context="none" style="looks" kana="きれいそう" />
+        <form name="excessive_sugiru" translation="czysty" context="none" style="too much" kana="きれいすぎる" />
+      </forms>
+    </word>
+    <word id="kitanai" translation="brudny" kana="きたない" kanji="汚い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest brudny" context="none" style="plain non-past" kana="きたない" />
+        <form name="predicate_polite_nonpast" translation="jest brudny" context="none" style="polite non-past" kana="きたないです" />
+        <form name="predicate_plain_negative" translation="nie jest brudny" context="none" style="plain negative" kana="きたなくない" />
+        <form name="predicate_polite_negative" translation="nie jest brudny" context="none" style="polite negative" kana="きたなくないです" />
+        <form name="predicate_plain_past" translation="był brudny" context="none" style="plain past" kana="きたなかった" />
+        <form name="predicate_polite_past" translation="był brudny" context="none" style="polite past" kana="きたなかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był brudny" context="none" style="plain past negative" kana="きたなくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był brudny" context="none" style="polite past negative" kana="きたなくなかったです" />
+        <form name="attributive_nonpast" translation="brudny" context="none" style="before noun" kana="きたない" />
+        <form name="connective" translation="brudny" context="none" style="connective" kana="きたなくて" />
+        <form name="adverbial" translation="brudny" context="none" style="adverbial" kana="きたなく" />
+        <form name="conditional" translation="brudny" context="none" style="conditional" kana="きたなければ" />
+        <form name="nominalized" translation="brudny" context="none" style="nominalized noun" kana="きたなさ" />
+        <form name="appearance_sou" translation="brudny" context="none" style="looks" kana="きたなそう" />
+        <form name="excessive_sugiru" translation="brudny" context="none" style="too much" kana="きたなすぎる" />
+      </forms>
+    </word>
+    <word id="kodoku" translation="samotny" kana="こどく" kanji="孤独" type="na_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest samotny" context="none" style="plain non-past" kana="こどくだ" />
+        <form name="predicate_polite_nonpast" translation="jest samotny" context="none" style="polite non-past" kana="こどくです" />
+        <form name="predicate_plain_negative" translation="nie jest samotny" context="none" style="plain negative" kana="こどくじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest samotny" context="none" style="polite negative" kana="こどくではありません" />
+        <form name="predicate_plain_past" translation="był samotny" context="none" style="plain past" kana="こどくだった" />
+        <form name="predicate_polite_past" translation="był samotny" context="none" style="polite past" kana="こどくでした" />
+        <form name="predicate_plain_past_negative" translation="nie był samotny" context="none" style="plain past negative" kana="こどくではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był samotny" context="none" style="polite past negative" kana="こどくではありませんでした" />
+        <form name="attributive_nonpast" translation="samotny" context="none" style="before noun" kana="こどくな" />
+        <form name="connective" translation="samotny" context="none" style="connective" kana="こどくで" />
+        <form name="adverbial" translation="samotny" context="none" style="adverbial" kana="こどくに" />
+        <form name="conditional" translation="samotny" context="none" style="conditional" kana="こどくなら" />
+        <form name="nominalized" translation="samotny" context="none" style="nominalized noun" kana="こどくさ" />
+        <form name="appearance_sou" translation="samotny" context="none" style="looks" kana="こどくそう" />
+        <form name="excessive_sugiru" translation="samotny" context="none" style="too much" kana="こどくすぎる" />
+      </forms>
+    </word>
+    <word id="kouka" translation="kosztowny" kana="こうか" kanji="高価" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest kosztowny" context="none" style="plain non-past" kana="こうかだ" />
+        <form name="predicate_polite_nonpast" translation="jest kosztowny" context="none" style="polite non-past" kana="こうかです" />
+        <form name="predicate_plain_negative" translation="nie jest kosztowny" context="none" style="plain negative" kana="こうかじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest kosztowny" context="none" style="polite negative" kana="こうかではありません" />
+        <form name="predicate_plain_past" translation="był kosztowny" context="none" style="plain past" kana="こうかだった" />
+        <form name="predicate_polite_past" translation="był kosztowny" context="none" style="polite past" kana="こうかでした" />
+        <form name="predicate_plain_past_negative" translation="nie był kosztowny" context="none" style="plain past negative" kana="こうかではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był kosztowny" context="none" style="polite past negative" kana="こうかではありませんでした" />
+        <form name="attributive_nonpast" translation="kosztowny" context="none" style="before noun" kana="こうかな" />
+        <form name="connective" translation="kosztowny" context="none" style="connective" kana="こうかで" />
+        <form name="adverbial" translation="kosztowny" context="none" style="adverbial" kana="こうかに" />
+        <form name="conditional" translation="kosztowny" context="none" style="conditional" kana="こうかなら" />
+        <form name="nominalized" translation="kosztowny" context="none" style="nominalized noun" kana="こうかさ" />
+        <form name="appearance_sou" translation="kosztowny" context="none" style="looks" kana="こうかそう" />
+        <form name="excessive_sugiru" translation="kosztowny" context="none" style="too much" kana="こうかすぎる" />
+      </forms>
+    </word>
+    <word id="kurai" translation="ciemny" kana="くらい" kanji="暗い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest ciemny" context="none" style="plain non-past" kana="くらい" />
+        <form name="predicate_polite_nonpast" translation="jest ciemny" context="none" style="polite non-past" kana="くらいです" />
+        <form name="predicate_plain_negative" translation="nie jest ciemny" context="none" style="plain negative" kana="くらくない" />
+        <form name="predicate_polite_negative" translation="nie jest ciemny" context="none" style="polite negative" kana="くらくないです" />
+        <form name="predicate_plain_past" translation="był ciemny" context="none" style="plain past" kana="くらかった" />
+        <form name="predicate_polite_past" translation="był ciemny" context="none" style="polite past" kana="くらかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był ciemny" context="none" style="plain past negative" kana="くらくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był ciemny" context="none" style="polite past negative" kana="くらくなかったです" />
+        <form name="attributive_nonpast" translation="ciemny" context="none" style="before noun" kana="くらい" />
+        <form name="connective" translation="ciemny" context="none" style="connective" kana="くらくて" />
+        <form name="adverbial" translation="ciemny" context="none" style="adverbial" kana="くらく" />
+        <form name="conditional" translation="ciemny" context="none" style="conditional" kana="くらければ" />
+        <form name="nominalized" translation="ciemny" context="none" style="nominalized noun" kana="くらさ" />
+        <form name="appearance_sou" translation="ciemny" context="none" style="looks" kana="くらそう" />
+        <form name="excessive_sugiru" translation="ciemny" context="none" style="too much" kana="くらすぎる" />
+      </forms>
+    </word>
+    <word id="kuroi" translation="czarny" kana="くろい" kanji="黒い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest czarny" context="none" style="plain non-past" kana="くろい" />
+        <form name="predicate_polite_nonpast" translation="jest czarny" context="none" style="polite non-past" kana="くろいです" />
+        <form name="predicate_plain_negative" translation="nie jest czarny" context="none" style="plain negative" kana="くろくない" />
+        <form name="predicate_polite_negative" translation="nie jest czarny" context="none" style="polite negative" kana="くろくないです" />
+        <form name="predicate_plain_past" translation="był czarny" context="none" style="plain past" kana="くろかった" />
+        <form name="predicate_polite_past" translation="był czarny" context="none" style="polite past" kana="くろかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był czarny" context="none" style="plain past negative" kana="くろくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był czarny" context="none" style="polite past negative" kana="くろくなかったです" />
+        <form name="attributive_nonpast" translation="czarny" context="none" style="before noun" kana="くろい" />
+        <form name="connective" translation="czarny" context="none" style="connective" kana="くろくて" />
+        <form name="adverbial" translation="czarny" context="none" style="adverbial" kana="くろく" />
+        <form name="conditional" translation="czarny" context="none" style="conditional" kana="くろければ" />
+        <form name="nominalized" translation="czarny" context="none" style="nominalized noun" kana="くろさ" />
+        <form name="appearance_sou" translation="czarny" context="none" style="looks" kana="くろそう" />
+        <form name="excessive_sugiru" translation="czarny" context="none" style="too much" kana="くろすぎる" />
+      </forms>
+    </word>
+    <word id="majime" translation="poważny" kana="まじめ" kanji="真面目" type="na_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest poważny" context="none" style="plain non-past" kana="まじめだ" />
+        <form name="predicate_polite_nonpast" translation="jest poważny" context="none" style="polite non-past" kana="まじめです" />
+        <form name="predicate_plain_negative" translation="nie jest poważny" context="none" style="plain negative" kana="まじめじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest poważny" context="none" style="polite negative" kana="まじめではありません" />
+        <form name="predicate_plain_past" translation="był poważny" context="none" style="plain past" kana="まじめだった" />
+        <form name="predicate_polite_past" translation="był poważny" context="none" style="polite past" kana="まじめでした" />
+        <form name="predicate_plain_past_negative" translation="nie był poważny" context="none" style="plain past negative" kana="まじめではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był poważny" context="none" style="polite past negative" kana="まじめではありませんでした" />
+        <form name="attributive_nonpast" translation="poważny" context="none" style="before noun" kana="まじめな" />
+        <form name="connective" translation="poważny" context="none" style="connective" kana="まじめで" />
+        <form name="adverbial" translation="poważny" context="none" style="adverbial" kana="まじめに" />
+        <form name="conditional" translation="poważny" context="none" style="conditional" kana="まじめなら" />
+        <form name="nominalized" translation="poważny" context="none" style="nominalized noun" kana="まじめさ" />
+        <form name="appearance_sou" translation="poważny" context="none" style="looks" kana="まじめそう" />
+        <form name="excessive_sugiru" translation="poważny" context="none" style="too much" kana="まじめすぎる" />
+      </forms>
+    </word>
+    <word id="marui" translation="okrągły" kana="まるい" kanji="丸い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest okrągły" context="none" style="plain non-past" kana="まるい" />
+        <form name="predicate_polite_nonpast" translation="jest okrągły" context="none" style="polite non-past" kana="まるいです" />
+        <form name="predicate_plain_negative" translation="nie jest okrągły" context="none" style="plain negative" kana="まるくない" />
+        <form name="predicate_polite_negative" translation="nie jest okrągły" context="none" style="polite negative" kana="まるくないです" />
+        <form name="predicate_plain_past" translation="był okrągły" context="none" style="plain past" kana="まるかった" />
+        <form name="predicate_polite_past" translation="był okrągły" context="none" style="polite past" kana="まるかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był okrągły" context="none" style="plain past negative" kana="まるくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był okrągły" context="none" style="polite past negative" kana="まるくなかったです" />
+        <form name="attributive_nonpast" translation="okrągły" context="none" style="before noun" kana="まるい" />
+        <form name="connective" translation="okrągły" context="none" style="connective" kana="まるくて" />
+        <form name="adverbial" translation="okrągły" context="none" style="adverbial" kana="まるく" />
+        <form name="conditional" translation="okrągły" context="none" style="conditional" kana="まるければ" />
+        <form name="nominalized" translation="okrągły" context="none" style="nominalized noun" kana="まるさ" />
+        <form name="appearance_sou" translation="okrągły" context="none" style="looks" kana="まるそう" />
+        <form name="excessive_sugiru" translation="okrągły" context="none" style="too much" kana="まるすぎる" />
+      </forms>
+    </word>
+    <word id="mazui" translation="niesmaczny" kana="まずい" kanji="不味い" type="i_adjective">
+      <describes categories="food drink" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest niesmaczny" context="none" style="plain non-past" kana="まずい" />
+        <form name="predicate_polite_nonpast" translation="jest niesmaczny" context="none" style="polite non-past" kana="まずいです" />
+        <form name="predicate_plain_negative" translation="nie jest niesmaczny" context="none" style="plain negative" kana="まずくない" />
+        <form name="predicate_polite_negative" translation="nie jest niesmaczny" context="none" style="polite negative" kana="まずくないです" />
+        <form name="predicate_plain_past" translation="był niesmaczny" context="none" style="plain past" kana="まずかった" />
+        <form name="predicate_polite_past" translation="był niesmaczny" context="none" style="polite past" kana="まずかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był niesmaczny" context="none" style="plain past negative" kana="まずくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był niesmaczny" context="none" style="polite past negative" kana="まずくなかったです" />
+        <form name="attributive_nonpast" translation="niesmaczny" context="none" style="before noun" kana="まずい" />
+        <form name="connective" translation="niesmaczny" context="none" style="connective" kana="まずくて" />
+        <form name="adverbial" translation="niesmaczny" context="none" style="adverbial" kana="まずく" />
+        <form name="conditional" translation="niesmaczny" context="none" style="conditional" kana="まずければ" />
+        <form name="nominalized" translation="niesmaczny" context="none" style="nominalized noun" kana="まずさ" />
+        <form name="appearance_sou" translation="niesmaczny" context="none" style="looks" kana="まずそう" />
+        <form name="excessive_sugiru" translation="niesmaczny" context="none" style="too much" kana="まずすぎる" />
+      </forms>
+    </word>
+    <word id="mazushii" translation="biedny" kana="まずしい" kanji="貧しい" type="i_adjective">
+      <describes categories="person" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest biedny" context="none" style="plain non-past" kana="まずしい" />
+        <form name="predicate_polite_nonpast" translation="jest biedny" context="none" style="polite non-past" kana="まずしいです" />
+        <form name="predicate_plain_negative" translation="nie jest biedny" context="none" style="plain negative" kana="まずしくない" />
+        <form name="predicate_polite_negative" translation="nie jest biedny" context="none" style="polite negative" kana="まずしくないです" />
+        <form name="predicate_plain_past" translation="był biedny" context="none" style="plain past" kana="まずしかった" />
+        <form name="predicate_polite_past" translation="był biedny" context="none" style="polite past" kana="まずしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był biedny" context="none" style="plain past negative" kana="まずしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był biedny" context="none" style="polite past negative" kana="まずしくなかったです" />
+        <form name="attributive_nonpast" translation="biedny" context="none" style="before noun" kana="まずしい" />
+        <form name="connective" translation="biedny" context="none" style="connective" kana="まずしくて" />
+        <form name="adverbial" translation="biedny" context="none" style="adverbial" kana="まずしく" />
+        <form name="conditional" translation="biedny" context="none" style="conditional" kana="まずしければ" />
+        <form name="nominalized" translation="biedny" context="none" style="nominalized noun" kana="まずしさ" />
+        <form name="appearance_sou" translation="biedny" context="none" style="looks" kana="まずしそう" />
+        <form name="excessive_sugiru" translation="biedny" context="none" style="too much" kana="まずしすぎる" />
+      </forms>
+    </word>
+    <word id="minikui" translation="brzydki" kana="みにくい" kanji="醜い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest brzydki" context="none" style="plain non-past" kana="みにくい" />
+        <form name="predicate_polite_nonpast" translation="jest brzydki" context="none" style="polite non-past" kana="みにくいです" />
+        <form name="predicate_plain_negative" translation="nie jest brzydki" context="none" style="plain negative" kana="みにくくない" />
+        <form name="predicate_polite_negative" translation="nie jest brzydki" context="none" style="polite negative" kana="みにくくないです" />
+        <form name="predicate_plain_past" translation="był brzydki" context="none" style="plain past" kana="みにくかった" />
+        <form name="predicate_polite_past" translation="był brzydki" context="none" style="polite past" kana="みにくかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był brzydki" context="none" style="plain past negative" kana="みにくくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był brzydki" context="none" style="polite past negative" kana="みにくくなかったです" />
+        <form name="attributive_nonpast" translation="brzydki" context="none" style="before noun" kana="みにくい" />
+        <form name="connective" translation="brzydki" context="none" style="connective" kana="みにくくて" />
+        <form name="adverbial" translation="brzydki" context="none" style="adverbial" kana="みにくく" />
+        <form name="conditional" translation="brzydki" context="none" style="conditional" kana="みにくければ" />
+        <form name="nominalized" translation="brzydki" context="none" style="nominalized noun" kana="みにくさ" />
+        <form name="appearance_sou" translation="brzydki" context="none" style="looks" kana="みにくそう" />
+        <form name="excessive_sugiru" translation="brzydki" context="none" style="too much" kana="みにくすぎる" />
+      </forms>
+    </word>
+    <word id="miryokuteki" translation="atrakcyjny" kana="みりょくてき" kanji="魅力的" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest atrakcyjny" context="none" style="plain non-past" kana="みりょくてきだ" />
+        <form name="predicate_polite_nonpast" translation="jest atrakcyjny" context="none" style="polite non-past" kana="みりょくてきです" />
+        <form name="predicate_plain_negative" translation="nie jest atrakcyjny" context="none" style="plain negative" kana="みりょくてきじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest atrakcyjny" context="none" style="polite negative" kana="みりょくてきではありません" />
+        <form name="predicate_plain_past" translation="był atrakcyjny" context="none" style="plain past" kana="みりょくてきだった" />
+        <form name="predicate_polite_past" translation="był atrakcyjny" context="none" style="polite past" kana="みりょくてきでした" />
+        <form name="predicate_plain_past_negative" translation="nie był atrakcyjny" context="none" style="plain past negative" kana="みりょくてきではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był atrakcyjny" context="none" style="polite past negative" kana="みりょくてきではありませんでした" />
+        <form name="attributive_nonpast" translation="atrakcyjny" context="none" style="before noun" kana="みりょくてきな" />
+        <form name="connective" translation="atrakcyjny" context="none" style="connective" kana="みりょくてきで" />
+        <form name="adverbial" translation="atrakcyjny" context="none" style="adverbial" kana="みりょくてきに" />
+        <form name="conditional" translation="atrakcyjny" context="none" style="conditional" kana="みりょくてきなら" />
+        <form name="nominalized" translation="atrakcyjny" context="none" style="nominalized noun" kana="みりょくてきさ" />
+        <form name="appearance_sou" translation="atrakcyjny" context="none" style="looks" kana="みりょくてきそう" />
+        <form name="excessive_sugiru" translation="atrakcyjny" context="none" style="too much" kana="みりょくてきすぎる" />
+      </forms>
+    </word>
+    <word id="muzukashii" translation="trudny" kana="むずかしい" kanji="難しい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest trudny" context="none" style="plain non-past" kana="むずかしい" />
+        <form name="predicate_polite_nonpast" translation="jest trudny" context="none" style="polite non-past" kana="むずかしいです" />
+        <form name="predicate_plain_negative" translation="nie jest trudny" context="none" style="plain negative" kana="むずかしくない" />
+        <form name="predicate_polite_negative" translation="nie jest trudny" context="none" style="polite negative" kana="むずかしくないです" />
+        <form name="predicate_plain_past" translation="był trudny" context="none" style="plain past" kana="むずかしかった" />
+        <form name="predicate_polite_past" translation="był trudny" context="none" style="polite past" kana="むずかしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był trudny" context="none" style="plain past negative" kana="むずかしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był trudny" context="none" style="polite past negative" kana="むずかしくなかったです" />
+        <form name="attributive_nonpast" translation="trudny" context="none" style="before noun" kana="むずかしい" />
+        <form name="connective" translation="trudny" context="none" style="connective" kana="むずかしくて" />
+        <form name="adverbial" translation="trudny" context="none" style="adverbial" kana="むずかしく" />
+        <form name="conditional" translation="trudny" context="none" style="conditional" kana="むずかしければ" />
+        <form name="nominalized" translation="trudny" context="none" style="nominalized noun" kana="むずかしさ" />
+        <form name="appearance_sou" translation="trudny" context="none" style="looks" kana="むずかしそう" />
+        <form name="excessive_sugiru" translation="trudny" context="none" style="too much" kana="むずかしすぎる" />
+      </forms>
+    </word>
+    <word id="nameraka" translation="gładki" kana="なめらか" kanji="滑らか" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest gładki" context="none" style="plain non-past" kana="なめらかだ" />
+        <form name="predicate_polite_nonpast" translation="jest gładki" context="none" style="polite non-past" kana="なめらかです" />
+        <form name="predicate_plain_negative" translation="nie jest gładki" context="none" style="plain negative" kana="なめらかじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest gładki" context="none" style="polite negative" kana="なめらかではありません" />
+        <form name="predicate_plain_past" translation="był gładki" context="none" style="plain past" kana="なめらかだった" />
+        <form name="predicate_polite_past" translation="był gładki" context="none" style="polite past" kana="なめらかでした" />
+        <form name="predicate_plain_past_negative" translation="nie był gładki" context="none" style="plain past negative" kana="なめらかではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był gładki" context="none" style="polite past negative" kana="なめらかではありませんでした" />
+        <form name="attributive_nonpast" translation="gładki" context="none" style="before noun" kana="なめらかな" />
+        <form name="connective" translation="gładki" context="none" style="connective" kana="なめらかで" />
+        <form name="adverbial" translation="gładki" context="none" style="adverbial" kana="なめらかに" />
+        <form name="conditional" translation="gładki" context="none" style="conditional" kana="なめらかなら" />
+        <form name="nominalized" translation="gładki" context="none" style="nominalized noun" kana="なめらかさ" />
+        <form name="appearance_sou" translation="gładki" context="none" style="looks" kana="なめらかそう" />
+        <form name="excessive_sugiru" translation="gładki" context="none" style="too much" kana="なめらかすぎる" />
+      </forms>
+    </word>
+    <word id="nigai" translation="gorzki" kana="にがい" kanji="苦い" type="i_adjective">
+      <describes categories="food drink" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest gorzki" context="none" style="plain non-past" kana="にがい" />
+        <form name="predicate_polite_nonpast" translation="jest gorzki" context="none" style="polite non-past" kana="にがいです" />
+        <form name="predicate_plain_negative" translation="nie jest gorzki" context="none" style="plain negative" kana="にがくない" />
+        <form name="predicate_polite_negative" translation="nie jest gorzki" context="none" style="polite negative" kana="にがくないです" />
+        <form name="predicate_plain_past" translation="był gorzki" context="none" style="plain past" kana="にがかった" />
+        <form name="predicate_polite_past" translation="był gorzki" context="none" style="polite past" kana="にがかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był gorzki" context="none" style="plain past negative" kana="にがくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był gorzki" context="none" style="polite past negative" kana="にがくなかったです" />
+        <form name="attributive_nonpast" translation="gorzki" context="none" style="before noun" kana="にがい" />
+        <form name="connective" translation="gorzki" context="none" style="connective" kana="にがくて" />
+        <form name="adverbial" translation="gorzki" context="none" style="adverbial" kana="にがく" />
+        <form name="conditional" translation="gorzki" context="none" style="conditional" kana="にがければ" />
+        <form name="nominalized" translation="gorzki" context="none" style="nominalized noun" kana="にがさ" />
+        <form name="appearance_sou" translation="gorzki" context="none" style="looks" kana="にがそう" />
+        <form name="excessive_sugiru" translation="gorzki" context="none" style="too much" kana="にがすぎる" />
+      </forms>
+    </word>
+    <word id="oishii" translation="pyszny" kana="おいしい" kanji="美味しい" type="i_adjective">
+      <describes categories="food drink" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest pyszny" context="none" style="plain non-past" kana="おいしい" />
+        <form name="predicate_polite_nonpast" translation="jest pyszny" context="none" style="polite non-past" kana="おいしいです" />
+        <form name="predicate_plain_negative" translation="nie jest pyszny" context="none" style="plain negative" kana="おいしくない" />
+        <form name="predicate_polite_negative" translation="nie jest pyszny" context="none" style="polite negative" kana="おいしくないです" />
+        <form name="predicate_plain_past" translation="był pyszny" context="none" style="plain past" kana="おいしかった" />
+        <form name="predicate_polite_past" translation="był pyszny" context="none" style="polite past" kana="おいしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był pyszny" context="none" style="plain past negative" kana="おいしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był pyszny" context="none" style="polite past negative" kana="おいしくなかったです" />
+        <form name="attributive_nonpast" translation="pyszny" context="none" style="before noun" kana="おいしい" />
+        <form name="connective" translation="pyszny" context="none" style="connective" kana="おいしくて" />
+        <form name="adverbial" translation="pyszny" context="none" style="adverbial" kana="おいしく" />
+        <form name="conditional" translation="pyszny" context="none" style="conditional" kana="おいしければ" />
+        <form name="nominalized" translation="pyszny" context="none" style="nominalized noun" kana="おいしさ" />
+        <form name="appearance_sou" translation="pyszny" context="none" style="looks" kana="おいしそう" />
+        <form name="excessive_sugiru" translation="pyszny" context="none" style="too much" kana="おいしすぎる" />
+      </forms>
+    </word>
+    <word id="okanemochi" translation="bogaty" kana="おかねもち" kanji="お金持ち" type="na_adjective">
+      <describes categories="person" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest bogaty" context="none" style="plain non-past" kana="おかねもちだ" />
+        <form name="predicate_polite_nonpast" translation="jest bogaty" context="none" style="polite non-past" kana="おかねもちです" />
+        <form name="predicate_plain_negative" translation="nie jest bogaty" context="none" style="plain negative" kana="おかねもちじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest bogaty" context="none" style="polite negative" kana="おかねもちではありません" />
+        <form name="predicate_plain_past" translation="był bogaty" context="none" style="plain past" kana="おかねもちだった" />
+        <form name="predicate_polite_past" translation="był bogaty" context="none" style="polite past" kana="おかねもちでした" />
+        <form name="predicate_plain_past_negative" translation="nie był bogaty" context="none" style="plain past negative" kana="おかねもちではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był bogaty" context="none" style="polite past negative" kana="おかねもちではありませんでした" />
+        <form name="attributive_nonpast" translation="bogaty" context="none" style="before noun" kana="おかねもちな" />
+        <form name="connective" translation="bogaty" context="none" style="connective" kana="おかねもちで" />
+        <form name="adverbial" translation="bogaty" context="none" style="adverbial" kana="おかねもちに" />
+        <form name="conditional" translation="bogaty" context="none" style="conditional" kana="おかねもちなら" />
+        <form name="nominalized" translation="bogaty" context="none" style="nominalized noun" kana="おかねもちさ" />
+        <form name="appearance_sou" translation="bogaty" context="none" style="looks" kana="おかねもちそう" />
+        <form name="excessive_sugiru" translation="bogaty" context="none" style="too much" kana="おかねもちすぎる" />
+      </forms>
+    </word>
+    <word id="omoi" translation="ciężki" kana="おもい" kanji="重い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest ciężki" context="none" style="plain non-past" kana="おもい" />
+        <form name="predicate_polite_nonpast" translation="jest ciężki" context="none" style="polite non-past" kana="おもいです" />
+        <form name="predicate_plain_negative" translation="nie jest ciężki" context="none" style="plain negative" kana="おもくない" />
+        <form name="predicate_polite_negative" translation="nie jest ciężki" context="none" style="polite negative" kana="おもくないです" />
+        <form name="predicate_plain_past" translation="był ciężki" context="none" style="plain past" kana="おもかった" />
+        <form name="predicate_polite_past" translation="był ciężki" context="none" style="polite past" kana="おもかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był ciężki" context="none" style="plain past negative" kana="おもくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był ciężki" context="none" style="polite past negative" kana="おもくなかったです" />
+        <form name="attributive_nonpast" translation="ciężki" context="none" style="before noun" kana="おもい" />
+        <form name="connective" translation="ciężki" context="none" style="connective" kana="おもくて" />
+        <form name="adverbial" translation="ciężki" context="none" style="adverbial" kana="おもく" />
+        <form name="conditional" translation="ciężki" context="none" style="conditional" kana="おもければ" />
+        <form name="nominalized" translation="ciężki" context="none" style="nominalized noun" kana="おもさ" />
+        <form name="appearance_sou" translation="ciężki" context="none" style="looks" kana="おもそう" />
+        <form name="excessive_sugiru" translation="ciężki" context="none" style="too much" kana="おもすぎる" />
+      </forms>
+    </word>
+    <word id="omoshiroi" translation="ciekawy" kana="おもしろい" kanji="面白い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest ciekawy" context="none" style="plain non-past" kana="おもしろい" />
+        <form name="predicate_polite_nonpast" translation="jest ciekawy" context="none" style="polite non-past" kana="おもしろいです" />
+        <form name="predicate_plain_negative" translation="nie jest ciekawy" context="none" style="plain negative" kana="おもしろくない" />
+        <form name="predicate_polite_negative" translation="nie jest ciekawy" context="none" style="polite negative" kana="おもしろくないです" />
+        <form name="predicate_plain_past" translation="był ciekawy" context="none" style="plain past" kana="おもしろかった" />
+        <form name="predicate_polite_past" translation="był ciekawy" context="none" style="polite past" kana="おもしろかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był ciekawy" context="none" style="plain past negative" kana="おもしろくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był ciekawy" context="none" style="polite past negative" kana="おもしろくなかったです" />
+        <form name="attributive_nonpast" translation="ciekawy" context="none" style="before noun" kana="おもしろい" />
+        <form name="connective" translation="ciekawy" context="none" style="connective" kana="おもしろくて" />
+        <form name="adverbial" translation="ciekawy" context="none" style="adverbial" kana="おもしろく" />
+        <form name="conditional" translation="ciekawy" context="none" style="conditional" kana="おもしろければ" />
+        <form name="nominalized" translation="ciekawy" context="none" style="nominalized noun" kana="おもしろさ" />
+        <form name="appearance_sou" translation="ciekawy" context="none" style="looks" kana="おもしろそう" />
+        <form name="excessive_sugiru" translation="ciekawy" context="none" style="too much" kana="おもしろすぎる" />
+      </forms>
+    </word>
+    <word id="ooi" translation="liczny" kana="おおい" kanji="多い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest liczny" context="none" style="plain non-past" kana="おおい" />
+        <form name="predicate_polite_nonpast" translation="jest liczny" context="none" style="polite non-past" kana="おおいです" />
+        <form name="predicate_plain_negative" translation="nie jest liczny" context="none" style="plain negative" kana="おおくない" />
+        <form name="predicate_polite_negative" translation="nie jest liczny" context="none" style="polite negative" kana="おおくないです" />
+        <form name="predicate_plain_past" translation="był liczny" context="none" style="plain past" kana="おおかった" />
+        <form name="predicate_polite_past" translation="był liczny" context="none" style="polite past" kana="おおかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był liczny" context="none" style="plain past negative" kana="おおくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był liczny" context="none" style="polite past negative" kana="おおくなかったです" />
+        <form name="attributive_nonpast" translation="liczny" context="none" style="before noun" kana="おおい" />
+        <form name="connective" translation="liczny" context="none" style="connective" kana="おおくて" />
+        <form name="adverbial" translation="liczny" context="none" style="adverbial" kana="おおく" />
+        <form name="conditional" translation="liczny" context="none" style="conditional" kana="おおければ" />
+        <form name="nominalized" translation="liczny" context="none" style="nominalized noun" kana="おおさ" />
+        <form name="appearance_sou" translation="liczny" context="none" style="looks" kana="おおそう" />
+        <form name="excessive_sugiru" translation="liczny" context="none" style="too much" kana="おおすぎる" />
+      </forms>
+    </word>
+    <word id="ookii" translation="duży" kana="おおきい" kanji="大きい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest duży" context="none" kana="おおきい" />
+        <form name="predicate_polite_nonpast" translation="jest duży" context="none" kana="おおきいです" />
+        <form name="predicate_plain_negative" translation="nie jest duży" context="none" kana="おおきくない" />
+        <form name="predicate_polite_negative" translation="nie jest duży" context="none" kana="おおきくないです" />
+        <form name="predicate_plain_past" translation="był duży" context="none" kana="おおきかった" />
+        <form name="predicate_polite_past" translation="był duży" context="none" kana="おおきかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był duży" context="none" kana="おおきくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był duży" context="none" kana="おおきくなかったです" />
+        <form name="attributive_nonpast" translation="duży" context="none" kana="おおきい" />
+        <form name="connective" translation="duży" context="none" kana="おおきくて" />
+        <form name="adverbial" translation="duży" context="none" style="adverbial" kana="おおきく" />
+        <form name="conditional" translation="duży" context="none" style="conditional" kana="おおきければ" />
+        <form name="nominalized" translation="duży" context="none" style="nominalized noun" kana="おおきさ" />
+        <form name="appearance_sou" translation="duży" context="none" style="looks" kana="おおきそう" />
+        <form name="excessive_sugiru" translation="duży" context="none" style="too much" kana="おおきすぎる" />
+      </forms>
+    </word>
+    <word id="osoi" translation="wolny" kana="おそい" kanji="遅い" type="i_adjective">
+      <describes categories="person animal vehicle" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest wolny" context="none" style="plain non-past" kana="おそい" />
+        <form name="predicate_polite_nonpast" translation="jest wolny" context="none" style="polite non-past" kana="おそいです" />
+        <form name="predicate_plain_negative" translation="nie jest wolny" context="none" style="plain negative" kana="おそくない" />
+        <form name="predicate_polite_negative" translation="nie jest wolny" context="none" style="polite negative" kana="おそくないです" />
+        <form name="predicate_plain_past" translation="był wolny" context="none" style="plain past" kana="おそかった" />
+        <form name="predicate_polite_past" translation="był wolny" context="none" style="polite past" kana="おそかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był wolny" context="none" style="plain past negative" kana="おそくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był wolny" context="none" style="polite past negative" kana="おそくなかったです" />
+        <form name="attributive_nonpast" translation="wolny" context="none" style="before noun" kana="おそい" />
+        <form name="connective" translation="wolny" context="none" style="connective" kana="おそくて" />
+        <form name="adverbial" translation="wolny" context="none" style="adverbial" kana="おそく" />
+        <form name="conditional" translation="wolny" context="none" style="conditional" kana="おそければ" />
+        <form name="nominalized" translation="wolny" context="none" style="nominalized noun" kana="おそさ" />
+        <form name="appearance_sou" translation="wolny" context="none" style="looks" kana="おそそう" />
+        <form name="excessive_sugiru" translation="wolny" context="none" style="too much" kana="おそすぎる" />
+      </forms>
+    </word>
+    <word id="otonashii" translation="spokojny" kana="おとなしい" kanji="大人しい" type="i_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest spokojny" context="none" style="plain non-past" kana="おとなしい" />
+        <form name="predicate_polite_nonpast" translation="jest spokojny" context="none" style="polite non-past" kana="おとなしいです" />
+        <form name="predicate_plain_negative" translation="nie jest spokojny" context="none" style="plain negative" kana="おとなしくない" />
+        <form name="predicate_polite_negative" translation="nie jest spokojny" context="none" style="polite negative" kana="おとなしくないです" />
+        <form name="predicate_plain_past" translation="był spokojny" context="none" style="plain past" kana="おとなしかった" />
+        <form name="predicate_polite_past" translation="był spokojny" context="none" style="polite past" kana="おとなしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był spokojny" context="none" style="plain past negative" kana="おとなしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był spokojny" context="none" style="polite past negative" kana="おとなしくなかったです" />
+        <form name="attributive_nonpast" translation="spokojny" context="none" style="before noun" kana="おとなしい" />
+        <form name="connective" translation="spokojny" context="none" style="connective" kana="おとなしくて" />
+        <form name="adverbial" translation="spokojny" context="none" style="adverbial" kana="おとなしく" />
+        <form name="conditional" translation="spokojny" context="none" style="conditional" kana="おとなしければ" />
+        <form name="nominalized" translation="spokojny" context="none" style="nominalized noun" kana="おとなしさ" />
+        <form name="appearance_sou" translation="spokojny" context="none" style="looks" kana="おとなしそう" />
+        <form name="excessive_sugiru" translation="spokojny" context="none" style="too much" kana="おとなしすぎる" />
+      </forms>
+    </word>
+    <word id="samui" translation="zimny" kana="さむい" kanji="寒い" type="i_adjective">
+      <describes categories="place" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest zimny" context="none" style="plain non-past" kana="さむい" />
+        <form name="predicate_polite_nonpast" translation="jest zimny" context="none" style="polite non-past" kana="さむいです" />
+        <form name="predicate_plain_negative" translation="nie jest zimny" context="none" style="plain negative" kana="さむくない" />
+        <form name="predicate_polite_negative" translation="nie jest zimny" context="none" style="polite negative" kana="さむくないです" />
+        <form name="predicate_plain_past" translation="był zimny" context="none" style="plain past" kana="さむかった" />
+        <form name="predicate_polite_past" translation="był zimny" context="none" style="polite past" kana="さむかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był zimny" context="none" style="plain past negative" kana="さむくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był zimny" context="none" style="polite past negative" kana="さむくなかったです" />
+        <form name="attributive_nonpast" translation="zimny" context="none" style="before noun" kana="さむい" />
+        <form name="connective" translation="zimny" context="none" style="connective" kana="さむくて" />
+        <form name="adverbial" translation="zimny" context="none" style="adverbial" kana="さむく" />
+        <form name="conditional" translation="zimny" context="none" style="conditional" kana="さむければ" />
+        <form name="nominalized" translation="zimny" context="none" style="nominalized noun" kana="さむさ" />
+        <form name="appearance_sou" translation="zimny" context="none" style="looks" kana="さむそう" />
+        <form name="excessive_sugiru" translation="zimny" context="none" style="too much" kana="さむすぎる" />
+      </forms>
+    </word>
+    <word id="seijou" translation="normalny" kana="せいじょう" kanji="正常" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest normalny" context="none" style="plain non-past" kana="せいじょうだ" />
+        <form name="predicate_polite_nonpast" translation="jest normalny" context="none" style="polite non-past" kana="せいじょうです" />
+        <form name="predicate_plain_negative" translation="nie jest normalny" context="none" style="plain negative" kana="せいじょうじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest normalny" context="none" style="polite negative" kana="せいじょうではありません" />
+        <form name="predicate_plain_past" translation="był normalny" context="none" style="plain past" kana="せいじょうだった" />
+        <form name="predicate_polite_past" translation="był normalny" context="none" style="polite past" kana="せいじょうでした" />
+        <form name="predicate_plain_past_negative" translation="nie był normalny" context="none" style="plain past negative" kana="せいじょうではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był normalny" context="none" style="polite past negative" kana="せいじょうではありませんでした" />
+        <form name="attributive_nonpast" translation="normalny" context="none" style="before noun" kana="せいじょうな" />
+        <form name="connective" translation="normalny" context="none" style="connective" kana="せいじょうで" />
+        <form name="adverbial" translation="normalny" context="none" style="adverbial" kana="せいじょうに" />
+        <form name="conditional" translation="normalny" context="none" style="conditional" kana="せいじょうなら" />
+        <form name="nominalized" translation="normalny" context="none" style="nominalized noun" kana="せいじょうさ" />
+        <form name="appearance_sou" translation="normalny" context="none" style="looks" kana="せいじょうそう" />
+        <form name="excessive_sugiru" translation="normalny" context="none" style="too much" kana="せいじょうすぎる" />
+      </forms>
+    </word>
+    <word id="semai" translation="wąski" kana="せまい" kanji="狭い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest wąski" context="none" style="plain non-past" kana="せまい" />
+        <form name="predicate_polite_nonpast" translation="jest wąski" context="none" style="polite non-past" kana="せまいです" />
+        <form name="predicate_plain_negative" translation="nie jest wąski" context="none" style="plain negative" kana="せまくない" />
+        <form name="predicate_polite_negative" translation="nie jest wąski" context="none" style="polite negative" kana="せまくないです" />
+        <form name="predicate_plain_past" translation="był wąski" context="none" style="plain past" kana="せまかった" />
+        <form name="predicate_polite_past" translation="był wąski" context="none" style="polite past" kana="せまかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był wąski" context="none" style="plain past negative" kana="せまくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był wąski" context="none" style="polite past negative" kana="せまくなかったです" />
+        <form name="attributive_nonpast" translation="wąski" context="none" style="before noun" kana="せまい" />
+        <form name="connective" translation="wąski" context="none" style="connective" kana="せまくて" />
+        <form name="adverbial" translation="wąski" context="none" style="adverbial" kana="せまく" />
+        <form name="conditional" translation="wąski" context="none" style="conditional" kana="せまければ" />
+        <form name="nominalized" translation="wąski" context="none" style="nominalized noun" kana="せまさ" />
+        <form name="appearance_sou" translation="wąski" context="none" style="looks" kana="せまそう" />
+        <form name="excessive_sugiru" translation="wąski" context="none" style="too much" kana="せますぎる" />
+      </forms>
+    </word>
+    <word id="shakouteki" translation="towarzyski" kana="しゃこうてき" kanji="社交的" type="na_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest towarzyski" context="none" style="plain non-past" kana="しゃこうてきだ" />
+        <form name="predicate_polite_nonpast" translation="jest towarzyski" context="none" style="polite non-past" kana="しゃこうてきです" />
+        <form name="predicate_plain_negative" translation="nie jest towarzyski" context="none" style="plain negative" kana="しゃこうてきじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest towarzyski" context="none" style="polite negative" kana="しゃこうてきではありません" />
+        <form name="predicate_plain_past" translation="był towarzyski" context="none" style="plain past" kana="しゃこうてきだった" />
+        <form name="predicate_polite_past" translation="był towarzyski" context="none" style="polite past" kana="しゃこうてきでした" />
+        <form name="predicate_plain_past_negative" translation="nie był towarzyski" context="none" style="plain past negative" kana="しゃこうてきではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był towarzyski" context="none" style="polite past negative" kana="しゃこうてきではありませんでした" />
+        <form name="attributive_nonpast" translation="towarzyski" context="none" style="before noun" kana="しゃこうてきな" />
+        <form name="connective" translation="towarzyski" context="none" style="connective" kana="しゃこうてきで" />
+        <form name="adverbial" translation="towarzyski" context="none" style="adverbial" kana="しゃこうてきに" />
+        <form name="conditional" translation="towarzyski" context="none" style="conditional" kana="しゃこうてきなら" />
+        <form name="nominalized" translation="towarzyski" context="none" style="nominalized noun" kana="しゃこうてきさ" />
+        <form name="appearance_sou" translation="towarzyski" context="none" style="looks" kana="しゃこうてきそう" />
+        <form name="excessive_sugiru" translation="towarzyski" context="none" style="too much" kana="しゃこうてきすぎる" />
+      </forms>
+    </word>
+    <word id="shikakui" translation="kwadratowy" kana="しかくい" kanji="四角い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest kwadratowy" context="none" style="plain non-past" kana="しかくい" />
+        <form name="predicate_polite_nonpast" translation="jest kwadratowy" context="none" style="polite non-past" kana="しかくいです" />
+        <form name="predicate_plain_negative" translation="nie jest kwadratowy" context="none" style="plain negative" kana="しかくくない" />
+        <form name="predicate_polite_negative" translation="nie jest kwadratowy" context="none" style="polite negative" kana="しかくくないです" />
+        <form name="predicate_plain_past" translation="był kwadratowy" context="none" style="plain past" kana="しかくかった" />
+        <form name="predicate_polite_past" translation="był kwadratowy" context="none" style="polite past" kana="しかくかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był kwadratowy" context="none" style="plain past negative" kana="しかくくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był kwadratowy" context="none" style="polite past negative" kana="しかくくなかったです" />
+        <form name="attributive_nonpast" translation="kwadratowy" context="none" style="before noun" kana="しかくい" />
+        <form name="connective" translation="kwadratowy" context="none" style="connective" kana="しかくくて" />
+        <form name="adverbial" translation="kwadratowy" context="none" style="adverbial" kana="しかくく" />
+        <form name="conditional" translation="kwadratowy" context="none" style="conditional" kana="しかくければ" />
+        <form name="nominalized" translation="kwadratowy" context="none" style="nominalized noun" kana="しかくさ" />
+        <form name="appearance_sou" translation="kwadratowy" context="none" style="looks" kana="しかくそう" />
+        <form name="excessive_sugiru" translation="kwadratowy" context="none" style="too much" kana="しかくすぎる" />
+      </forms>
+    </word>
+    <word id="shiokarai" translation="słony" kana="しおからい" kanji="塩辛い" type="i_adjective">
+      <describes categories="food drink" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest słony" context="none" style="plain non-past" kana="しおからい" />
+        <form name="predicate_polite_nonpast" translation="jest słony" context="none" style="polite non-past" kana="しおからいです" />
+        <form name="predicate_plain_negative" translation="nie jest słony" context="none" style="plain negative" kana="しおからくない" />
+        <form name="predicate_polite_negative" translation="nie jest słony" context="none" style="polite negative" kana="しおからくないです" />
+        <form name="predicate_plain_past" translation="był słony" context="none" style="plain past" kana="しおからかった" />
+        <form name="predicate_polite_past" translation="był słony" context="none" style="polite past" kana="しおからかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był słony" context="none" style="plain past negative" kana="しおからくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był słony" context="none" style="polite past negative" kana="しおからくなかったです" />
+        <form name="attributive_nonpast" translation="słony" context="none" style="before noun" kana="しおからい" />
+        <form name="connective" translation="słony" context="none" style="connective" kana="しおからくて" />
+        <form name="adverbial" translation="słony" context="none" style="adverbial" kana="しおからく" />
+        <form name="conditional" translation="słony" context="none" style="conditional" kana="しおからければ" />
+        <form name="nominalized" translation="słony" context="none" style="nominalized noun" kana="しおからさ" />
+        <form name="appearance_sou" translation="słony" context="none" style="looks" kana="しおからそう" />
+        <form name="excessive_sugiru" translation="słony" context="none" style="too much" kana="しおからすぎる" />
+      </forms>
+    </word>
+    <word id="shiroi" translation="biały" kana="しろい" kanji="白い" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest biały" context="none" style="plain non-past" kana="しろい" />
+        <form name="predicate_polite_nonpast" translation="jest biały" context="none" style="polite non-past" kana="しろいです" />
+        <form name="predicate_plain_negative" translation="nie jest biały" context="none" style="plain negative" kana="しろくない" />
+        <form name="predicate_polite_negative" translation="nie jest biały" context="none" style="polite negative" kana="しろくないです" />
+        <form name="predicate_plain_past" translation="był biały" context="none" style="plain past" kana="しろかった" />
+        <form name="predicate_polite_past" translation="był biały" context="none" style="polite past" kana="しろかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był biały" context="none" style="plain past negative" kana="しろくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był biały" context="none" style="polite past negative" kana="しろくなかったです" />
+        <form name="attributive_nonpast" translation="biały" context="none" style="before noun" kana="しろい" />
+        <form name="connective" translation="biały" context="none" style="connective" kana="しろくて" />
+        <form name="adverbial" translation="biały" context="none" style="adverbial" kana="しろく" />
+        <form name="conditional" translation="biały" context="none" style="conditional" kana="しろければ" />
+        <form name="nominalized" translation="biały" context="none" style="nominalized noun" kana="しろさ" />
+        <form name="appearance_sou" translation="biały" context="none" style="looks" kana="しろそう" />
+        <form name="excessive_sugiru" translation="biały" context="none" style="too much" kana="しろすぎる" />
+      </forms>
+    </word>
+    <word id="shitashimiyasui" translation="przystępny" kana="したしみやすい" kanji="親しみやすい" type="i_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest przystępny" context="none" style="plain non-past" kana="したしみやすい" />
+        <form name="predicate_polite_nonpast" translation="jest przystępny" context="none" style="polite non-past" kana="したしみやすいです" />
+        <form name="predicate_plain_negative" translation="nie jest przystępny" context="none" style="plain negative" kana="したしみやすくない" />
+        <form name="predicate_polite_negative" translation="nie jest przystępny" context="none" style="polite negative" kana="したしみやすくないです" />
+        <form name="predicate_plain_past" translation="był przystępny" context="none" style="plain past" kana="したしみやすかった" />
+        <form name="predicate_polite_past" translation="był przystępny" context="none" style="polite past" kana="したしみやすかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był przystępny" context="none" style="plain past negative" kana="したしみやすくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był przystępny" context="none" style="polite past negative" kana="したしみやすくなかったです" />
+        <form name="attributive_nonpast" translation="przystępny" context="none" style="before noun" kana="したしみやすい" />
+        <form name="connective" translation="przystępny" context="none" style="connective" kana="したしみやすくて" />
+        <form name="adverbial" translation="przystępny" context="none" style="adverbial" kana="したしみやすく" />
+        <form name="conditional" translation="przystępny" context="none" style="conditional" kana="したしみやすければ" />
+        <form name="nominalized" translation="przystępny" context="none" style="nominalized noun" kana="したしみやすさ" />
+        <form name="appearance_sou" translation="przystępny" context="none" style="looks" kana="したしみやすそう" />
+        <form name="excessive_sugiru" translation="przystępny" context="none" style="too much" kana="したしみやすすぎる" />
+      </forms>
+    </word>
+    <word id="shizuka" translation="cichy" kana="しずか" kanji="静か" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest cichy" context="none" kana="しずかだ" />
+        <form name="predicate_polite_nonpast" translation="jest cichy" context="none" kana="しずかです" />
+        <form name="predicate_plain_negative" translation="nie jest cichy" context="none" kana="しずかじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest cichy" context="none" kana="しずかじゃありません" />
+        <form name="predicate_plain_past" translation="był cichy" context="none" kana="しずかだった" />
+        <form name="predicate_polite_past" translation="był cichy" context="none" kana="しずかでした" />
+        <form name="predicate_plain_past_negative" translation="nie był cichy" context="none" kana="しずかじゃなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był cichy" context="none" kana="しずかじゃありませんでした" />
+        <form name="attributive_nonpast" translation="cichy" context="none" kana="しずかな" />
+        <form name="connective" translation="cichy" context="none" kana="しずかで" />
+        <form name="adverbial" translation="cicho" context="none" style="adverbial" kana="しずかに" />
+        <form name="conditional" translation="jeśli jest cichy" context="none" style="conditional" kana="しずかなら" />
+        <form name="nominalized" translation="cisza" context="none" style="nominalized noun" kana="しずかさ" />
+        <form name="appearance_sou" translation="wygląda na cichy" context="none" style="looks" kana="しずかそう" />
+        <form name="excessive_sugiru" translation="zbyt cichy" context="none" style="too much" kana="しずかすぎる" />
+      </forms>
+    </word>
+    <word id="subarashii" translation="wspaniały" kana="すばらしい" kanji="素晴らしい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest wspaniały" context="none" style="plain non-past" kana="すばらしい" />
+        <form name="predicate_polite_nonpast" translation="jest wspaniały" context="none" style="polite non-past" kana="すばらしいです" />
+        <form name="predicate_plain_negative" translation="nie jest wspaniały" context="none" style="plain negative" kana="すばらしくない" />
+        <form name="predicate_polite_negative" translation="nie jest wspaniały" context="none" style="polite negative" kana="すばらしくないです" />
+        <form name="predicate_plain_past" translation="był wspaniały" context="none" style="plain past" kana="すばらしかった" />
+        <form name="predicate_polite_past" translation="był wspaniały" context="none" style="polite past" kana="すばらしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był wspaniały" context="none" style="plain past negative" kana="すばらしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był wspaniały" context="none" style="polite past negative" kana="すばらしくなかったです" />
+        <form name="attributive_nonpast" translation="wspaniały" context="none" style="before noun" kana="すばらしい" />
+        <form name="connective" translation="wspaniały" context="none" style="connective" kana="すばらしくて" />
+        <form name="adverbial" translation="wspaniały" context="none" style="adverbial" kana="すばらしく" />
+        <form name="conditional" translation="wspaniały" context="none" style="conditional" kana="すばらしければ" />
+        <form name="nominalized" translation="wspaniały" context="none" style="nominalized noun" kana="すばらしさ" />
+        <form name="appearance_sou" translation="wspaniały" context="none" style="looks" kana="すばらしそう" />
+        <form name="excessive_sugiru" translation="wspaniały" context="none" style="too much" kana="すばらしすぎる" />
+      </forms>
+    </word>
+    <word id="sukunai" translation="nieliczny" kana="すくない" kanji="少ない" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest nieliczny" context="none" style="plain non-past" kana="すくない" />
+        <form name="predicate_polite_nonpast" translation="jest nieliczny" context="none" style="polite non-past" kana="すくないです" />
+        <form name="predicate_plain_negative" translation="nie jest nieliczny" context="none" style="plain negative" kana="すくなくない" />
+        <form name="predicate_polite_negative" translation="nie jest nieliczny" context="none" style="polite negative" kana="すくなくないです" />
+        <form name="predicate_plain_past" translation="był nieliczny" context="none" style="plain past" kana="すくなかった" />
+        <form name="predicate_polite_past" translation="był nieliczny" context="none" style="polite past" kana="すくなかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był nieliczny" context="none" style="plain past negative" kana="すくなくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był nieliczny" context="none" style="polite past negative" kana="すくなくなかったです" />
+        <form name="attributive_nonpast" translation="nieliczny" context="none" style="before noun" kana="すくない" />
+        <form name="connective" translation="nieliczny" context="none" style="connective" kana="すくなくて" />
+        <form name="adverbial" translation="nieliczny" context="none" style="adverbial" kana="すくなく" />
+        <form name="conditional" translation="nieliczny" context="none" style="conditional" kana="すくなければ" />
+        <form name="nominalized" translation="nieliczny" context="none" style="nominalized noun" kana="すくなさ" />
+        <form name="appearance_sou" translation="nieliczny" context="none" style="looks" kana="すくなそう" />
+        <form name="excessive_sugiru" translation="nieliczny" context="none" style="too much" kana="すくなすぎる" />
+      </forms>
+    </word>
+    <word id="suppai" translation="kwaśny" kana="すっぱい" kanji="酸っぱい" type="i_adjective">
+      <describes categories="food drink" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest kwaśny" context="none" style="plain non-past" kana="すっぱい" />
+        <form name="predicate_polite_nonpast" translation="jest kwaśny" context="none" style="polite non-past" kana="すっぱいです" />
+        <form name="predicate_plain_negative" translation="nie jest kwaśny" context="none" style="plain negative" kana="すっぱくない" />
+        <form name="predicate_polite_negative" translation="nie jest kwaśny" context="none" style="polite negative" kana="すっぱくないです" />
+        <form name="predicate_plain_past" translation="był kwaśny" context="none" style="plain past" kana="すっぱかった" />
+        <form name="predicate_polite_past" translation="był kwaśny" context="none" style="polite past" kana="すっぱかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był kwaśny" context="none" style="plain past negative" kana="すっぱくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był kwaśny" context="none" style="polite past negative" kana="すっぱくなかったです" />
+        <form name="attributive_nonpast" translation="kwaśny" context="none" style="before noun" kana="すっぱい" />
+        <form name="connective" translation="kwaśny" context="none" style="connective" kana="すっぱくて" />
+        <form name="adverbial" translation="kwaśny" context="none" style="adverbial" kana="すっぱく" />
+        <form name="conditional" translation="kwaśny" context="none" style="conditional" kana="すっぱければ" />
+        <form name="nominalized" translation="kwaśny" context="none" style="nominalized noun" kana="すっぱさ" />
+        <form name="appearance_sou" translation="kwaśny" context="none" style="looks" kana="すっぱそう" />
+        <form name="excessive_sugiru" translation="kwaśny" context="none" style="too much" kana="すっぱすぎる" />
+      </forms>
+    </word>
+    <word id="suteki" translation="świetny" kana="すてき" kanji="素敵" type="na_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest świetny" context="none" style="plain non-past" kana="すてきだ" />
+        <form name="predicate_polite_nonpast" translation="jest świetny" context="none" style="polite non-past" kana="すてきです" />
+        <form name="predicate_plain_negative" translation="nie jest świetny" context="none" style="plain negative" kana="すてきじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest świetny" context="none" style="polite negative" kana="すてきではありません" />
+        <form name="predicate_plain_past" translation="był świetny" context="none" style="plain past" kana="すてきだった" />
+        <form name="predicate_polite_past" translation="był świetny" context="none" style="polite past" kana="すてきでした" />
+        <form name="predicate_plain_past_negative" translation="nie był świetny" context="none" style="plain past negative" kana="すてきではなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był świetny" context="none" style="polite past negative" kana="すてきではありませんでした" />
+        <form name="attributive_nonpast" translation="świetny" context="none" style="before noun" kana="すてきな" />
+        <form name="connective" translation="świetny" context="none" style="connective" kana="すてきで" />
+        <form name="adverbial" translation="świetny" context="none" style="adverbial" kana="すてきに" />
+        <form name="conditional" translation="świetny" context="none" style="conditional" kana="すてきなら" />
+        <form name="nominalized" translation="świetny" context="none" style="nominalized noun" kana="すてきさ" />
+        <form name="appearance_sou" translation="świetny" context="none" style="looks" kana="すてきそう" />
+        <form name="excessive_sugiru" translation="świetny" context="none" style="too much" kana="すてきすぎる" />
+      </forms>
+    </word>
+    <word id="tadashii" translation="poprawny" kana="ただしい" kanji="正しい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest poprawny" context="none" style="plain non-past" kana="ただしい" />
+        <form name="predicate_polite_nonpast" translation="jest poprawny" context="none" style="polite non-past" kana="ただしいです" />
+        <form name="predicate_plain_negative" translation="nie jest poprawny" context="none" style="plain negative" kana="ただしくない" />
+        <form name="predicate_polite_negative" translation="nie jest poprawny" context="none" style="polite negative" kana="ただしくないです" />
+        <form name="predicate_plain_past" translation="był poprawny" context="none" style="plain past" kana="ただしかった" />
+        <form name="predicate_polite_past" translation="był poprawny" context="none" style="polite past" kana="ただしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był poprawny" context="none" style="plain past negative" kana="ただしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był poprawny" context="none" style="polite past negative" kana="ただしくなかったです" />
+        <form name="attributive_nonpast" translation="poprawny" context="none" style="before noun" kana="ただしい" />
+        <form name="connective" translation="poprawny" context="none" style="connective" kana="ただしくて" />
+        <form name="adverbial" translation="poprawny" context="none" style="adverbial" kana="ただしく" />
+        <form name="conditional" translation="poprawny" context="none" style="conditional" kana="ただしければ" />
+        <form name="nominalized" translation="poprawny" context="none" style="nominalized noun" kana="ただしさ" />
+        <form name="appearance_sou" translation="poprawny" context="none" style="looks" kana="ただしそう" />
+        <form name="excessive_sugiru" translation="poprawny" context="none" style="too much" kana="ただしすぎる" />
+      </forms>
+    </word>
+    <word id="takai" translation="wysoki" kana="たかい" kanji="高い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest wysoki" context="none" style="plain non-past" kana="たかい" />
+        <form name="predicate_polite_nonpast" translation="jest wysoki" context="none" style="polite non-past" kana="たかいです" />
+        <form name="predicate_plain_negative" translation="nie jest wysoki" context="none" style="plain negative" kana="たかくない" />
+        <form name="predicate_polite_negative" translation="nie jest wysoki" context="none" style="polite negative" kana="たかくないです" />
+        <form name="predicate_plain_past" translation="był wysoki" context="none" style="plain past" kana="たかかった" />
+        <form name="predicate_polite_past" translation="był wysoki" context="none" style="polite past" kana="たかかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był wysoki" context="none" style="plain past negative" kana="たかくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był wysoki" context="none" style="polite past negative" kana="たかくなかったです" />
+        <form name="attributive_nonpast" translation="wysoki" context="none" style="before noun" kana="たかい" />
+        <form name="connective" translation="wysoki" context="none" style="connective" kana="たかくて" />
+        <form name="adverbial" translation="wysoki" context="none" style="adverbial" kana="たかく" />
+        <form name="conditional" translation="wysoki" context="none" style="conditional" kana="たかければ" />
+        <form name="nominalized" translation="wysoki" context="none" style="nominalized noun" kana="たかさ" />
+        <form name="appearance_sou" translation="wysoki" context="none" style="looks" kana="たかそう" />
+        <form name="excessive_sugiru" translation="wysoki" context="none" style="too much" kana="たかすぎる" />
+      </forms>
+    </word>
+    <word id="tanoshii" translation="przyjemny" kana="たのしい" kanji="楽しい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest przyjemny" context="none" style="plain non-past" kana="たのしい" />
+        <form name="predicate_polite_nonpast" translation="jest przyjemny" context="none" style="polite non-past" kana="たのしいです" />
+        <form name="predicate_plain_negative" translation="nie jest przyjemny" context="none" style="plain negative" kana="たのしくない" />
+        <form name="predicate_polite_negative" translation="nie jest przyjemny" context="none" style="polite negative" kana="たのしくないです" />
+        <form name="predicate_plain_past" translation="był przyjemny" context="none" style="plain past" kana="たのしかった" />
+        <form name="predicate_polite_past" translation="był przyjemny" context="none" style="polite past" kana="たのしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był przyjemny" context="none" style="plain past negative" kana="たのしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był przyjemny" context="none" style="polite past negative" kana="たのしくなかったです" />
+        <form name="attributive_nonpast" translation="przyjemny" context="none" style="before noun" kana="たのしい" />
+        <form name="connective" translation="przyjemny" context="none" style="connective" kana="たのしくて" />
+        <form name="adverbial" translation="przyjemny" context="none" style="adverbial" kana="たのしく" />
+        <form name="conditional" translation="przyjemny" context="none" style="conditional" kana="たのしければ" />
+        <form name="nominalized" translation="przyjemny" context="none" style="nominalized noun" kana="たのしさ" />
+        <form name="appearance_sou" translation="przyjemny" context="none" style="looks" kana="たのしそう" />
+        <form name="excessive_sugiru" translation="przyjemny" context="none" style="too much" kana="たのしすぎる" />
+      </forms>
+    </word>
+    <word id="tooi" translation="daleki" kana="とおい" kanji="遠い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest daleki" context="none" style="plain non-past" kana="とおい" />
+        <form name="predicate_polite_nonpast" translation="jest daleki" context="none" style="polite non-past" kana="とおいです" />
+        <form name="predicate_plain_negative" translation="nie jest daleki" context="none" style="plain negative" kana="とおくない" />
+        <form name="predicate_polite_negative" translation="nie jest daleki" context="none" style="polite negative" kana="とおくないです" />
+        <form name="predicate_plain_past" translation="był daleki" context="none" style="plain past" kana="とおかった" />
+        <form name="predicate_polite_past" translation="był daleki" context="none" style="polite past" kana="とおかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był daleki" context="none" style="plain past negative" kana="とおくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był daleki" context="none" style="polite past negative" kana="とおくなかったです" />
+        <form name="attributive_nonpast" translation="daleki" context="none" style="before noun" kana="とおい" />
+        <form name="connective" translation="daleki" context="none" style="connective" kana="とおくて" />
+        <form name="adverbial" translation="daleki" context="none" style="adverbial" kana="とおく" />
+        <form name="conditional" translation="daleki" context="none" style="conditional" kana="とおければ" />
+        <form name="nominalized" translation="daleki" context="none" style="nominalized noun" kana="とおさ" />
+        <form name="appearance_sou" translation="daleki" context="none" style="looks" kana="とおそう" />
+        <form name="excessive_sugiru" translation="daleki" context="none" style="too much" kana="とおすぎる" />
+      </forms>
+    </word>
+    <word id="toumei" translation="przezroczysty" kana="とうめい" kanji="透明" type="na_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="przezroczysty" context="none" kana="とうめいだ" />
+        <form name="predicate_polite_nonpast" translation="przezroczysty" context="none" kana="とうめいです" />
+        <form name="predicate_plain_negative" translation="przezroczysty" context="none" kana="とうめいじゃない" />
+        <form name="predicate_polite_negative" translation="przezroczysty" context="none" kana="とうめいではありません" />
+        <form name="predicate_plain_past" translation="przezroczysty" context="none" kana="とうめいだった" />
+        <form name="predicate_polite_past" translation="przezroczysty" context="none" kana="とうめいでした" />
+        <form name="predicate_plain_past_negative" translation="przezroczysty" context="none" kana="とうめいではなかった" />
+        <form name="predicate_polite_past_negative" translation="przezroczysty" context="none" kana="とうめいではありませんでした" />
+        <form name="attributive_nonpast" translation="przezroczysty" context="none" kana="とうめいな" />
+        <form name="connective" translation="przezroczysty" context="none" kana="とうめいで" />
+        <form name="adverbial" translation="przezroczysty" context="none" kana="とうめいに" />
+        <form name="conditional" translation="przezroczysty" context="none" kana="とうめいなら" />
+        <form name="nominalized" translation="przezroczysty" context="none" kana="とうめいさ" />
+        <form name="appearance_sou" translation="przezroczysty" context="none" kana="とうめいそう" />
+        <form name="excessive_sugiru" translation="przezroczysty" context="none" kana="とうめいすぎる" />
+      </forms>
+    </word>
+    <word id="tsumaranai" translation="nudny" kana="つまらない" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest nudny" context="none" style="plain non-past" kana="つまらない" />
+        <form name="predicate_polite_nonpast" translation="jest nudny" context="none" style="polite non-past" kana="つまらないです" />
+        <form name="predicate_plain_negative" translation="nie jest nudny" context="none" style="plain negative" kana="つまらなくない" />
+        <form name="predicate_polite_negative" translation="nie jest nudny" context="none" style="polite negative" kana="つまらなくないです" />
+        <form name="predicate_plain_past" translation="był nudny" context="none" style="plain past" kana="つまらなかった" />
+        <form name="predicate_polite_past" translation="był nudny" context="none" style="polite past" kana="つまらなかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był nudny" context="none" style="plain past negative" kana="つまらなくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był nudny" context="none" style="polite past negative" kana="つまらなくなかったです" />
+        <form name="attributive_nonpast" translation="nudny" context="none" style="before noun" kana="つまらない" />
+        <form name="connective" translation="nudny" context="none" style="connective" kana="つまらなくて" />
+        <form name="adverbial" translation="nudny" context="none" style="adverbial" kana="つまらなく" />
+        <form name="conditional" translation="nudny" context="none" style="conditional" kana="つまらなければ" />
+        <form name="nominalized" translation="nudny" context="none" style="nominalized noun" kana="つまらなさ" />
+        <form name="appearance_sou" translation="nudny" context="none" style="looks" kana="つまらなそう" />
+        <form name="excessive_sugiru" translation="nudny" context="none" style="too much" kana="つまらなすぎる" />
+      </forms>
+    </word>
+    <word id="tsuyoi" translation="silny" kana="つよい" kanji="強い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest silny" context="none" style="plain non-past" kana="つよい" />
+        <form name="predicate_polite_nonpast" translation="jest silny" context="none" style="polite non-past" kana="つよいです" />
+        <form name="predicate_plain_negative" translation="nie jest silny" context="none" style="plain negative" kana="つよくない" />
+        <form name="predicate_polite_negative" translation="nie jest silny" context="none" style="polite negative" kana="つよくないです" />
+        <form name="predicate_plain_past" translation="był silny" context="none" style="plain past" kana="つよかった" />
+        <form name="predicate_polite_past" translation="był silny" context="none" style="polite past" kana="つよかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był silny" context="none" style="plain past negative" kana="つよくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był silny" context="none" style="polite past negative" kana="つよくなかったです" />
+        <form name="attributive_nonpast" translation="silny" context="none" style="before noun" kana="つよい" />
+        <form name="connective" translation="silny" context="none" style="connective" kana="つよくて" />
+        <form name="adverbial" translation="silny" context="none" style="adverbial" kana="つよく" />
+        <form name="conditional" translation="silny" context="none" style="conditional" kana="つよければ" />
+        <form name="nominalized" translation="silny" context="none" style="nominalized noun" kana="つよさ" />
+        <form name="appearance_sou" translation="silny" context="none" style="looks" kana="つよそう" />
+        <form name="excessive_sugiru" translation="silny" context="none" style="too much" kana="つよすぎる" />
+      </forms>
+    </word>
+    <word id="ureshii" translation="szczęśliwy" kana="うれしい" kanji="嬉しい" type="i_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest szczęśliwy" context="none" style="plain non-past" kana="うれしい" />
+        <form name="predicate_polite_nonpast" translation="jest szczęśliwy" context="none" style="polite non-past" kana="うれしいです" />
+        <form name="predicate_plain_negative" translation="nie jest szczęśliwy" context="none" style="plain negative" kana="うれしくない" />
+        <form name="predicate_polite_negative" translation="nie jest szczęśliwy" context="none" style="polite negative" kana="うれしくないです" />
+        <form name="predicate_plain_past" translation="był szczęśliwy" context="none" style="plain past" kana="うれしかった" />
+        <form name="predicate_polite_past" translation="był szczęśliwy" context="none" style="polite past" kana="うれしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był szczęśliwy" context="none" style="plain past negative" kana="うれしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był szczęśliwy" context="none" style="polite past negative" kana="うれしくなかったです" />
+        <form name="attributive_nonpast" translation="szczęśliwy" context="none" style="before noun" kana="うれしい" />
+        <form name="connective" translation="szczęśliwy" context="none" style="connective" kana="うれしくて" />
+        <form name="adverbial" translation="szczęśliwy" context="none" style="adverbial" kana="うれしく" />
+        <form name="conditional" translation="szczęśliwy" context="none" style="conditional" kana="うれしければ" />
+        <form name="nominalized" translation="szczęśliwy" context="none" style="nominalized noun" kana="うれしさ" />
+        <form name="appearance_sou" translation="szczęśliwy" context="none" style="looks" kana="うれしそう" />
+        <form name="excessive_sugiru" translation="szczęśliwy" context="none" style="too much" kana="うれしすぎる" />
+      </forms>
+    </word>
+    <word id="utsukushii" translation="piękny" kana="うつくしい" kanji="美しい" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest piękny" context="none" style="plain non-past" kana="うつくしい" />
+        <form name="predicate_polite_nonpast" translation="jest piękny" context="none" style="polite non-past" kana="うつくしいです" />
+        <form name="predicate_plain_negative" translation="nie jest piękny" context="none" style="plain negative" kana="うつくしくない" />
+        <form name="predicate_polite_negative" translation="nie jest piękny" context="none" style="polite negative" kana="うつくしくないです" />
+        <form name="predicate_plain_past" translation="był piękny" context="none" style="plain past" kana="うつくしかった" />
+        <form name="predicate_polite_past" translation="był piękny" context="none" style="polite past" kana="うつくしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był piękny" context="none" style="plain past negative" kana="うつくしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był piękny" context="none" style="polite past negative" kana="うつくしくなかったです" />
+        <form name="attributive_nonpast" translation="piękny" context="none" style="before noun" kana="うつくしい" />
+        <form name="connective" translation="piękny" context="none" style="connective" kana="うつくしくて" />
+        <form name="adverbial" translation="piękny" context="none" style="adverbial" kana="うつくしく" />
+        <form name="conditional" translation="piękny" context="none" style="conditional" kana="うつくしければ" />
+        <form name="nominalized" translation="piękny" context="none" style="nominalized noun" kana="うつくしさ" />
+        <form name="appearance_sou" translation="piękny" context="none" style="looks" kana="うつくしそう" />
+        <form name="excessive_sugiru" translation="piękny" context="none" style="too much" kana="うつくしすぎる" />
+      </forms>
+    </word>
+    <word id="wakai" translation="młody" kana="わかい" kanji="若い" type="i_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest młody" context="none" style="plain non-past" kana="わかい" />
+        <form name="predicate_polite_nonpast" translation="jest młody" context="none" style="polite non-past" kana="わかいです" />
+        <form name="predicate_plain_negative" translation="nie jest młody" context="none" style="plain negative" kana="わかくない" />
+        <form name="predicate_polite_negative" translation="nie jest młody" context="none" style="polite negative" kana="わかくないです" />
+        <form name="predicate_plain_past" translation="był młody" context="none" style="plain past" kana="わかかった" />
+        <form name="predicate_polite_past" translation="był młody" context="none" style="polite past" kana="わかかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był młody" context="none" style="plain past negative" kana="わかくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był młody" context="none" style="polite past negative" kana="わかくなかったです" />
+        <form name="attributive_nonpast" translation="młody" context="none" style="before noun" kana="わかい" />
+        <form name="connective" translation="młody" context="none" style="connective" kana="わかくて" />
+        <form name="adverbial" translation="młody" context="none" style="adverbial" kana="わかく" />
+        <form name="conditional" translation="młody" context="none" style="conditional" kana="わかければ" />
+        <form name="nominalized" translation="młody" context="none" style="nominalized noun" kana="わかさ" />
+        <form name="appearance_sou" translation="młody" context="none" style="looks" kana="わかそう" />
+        <form name="excessive_sugiru" translation="młody" context="none" style="too much" kana="わかすぎる" />
+      </forms>
+    </word>
+    <word id="warui" translation="zły" kana="わるい" kanji="悪い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest zły" context="none" style="plain non-past" kana="わるい" />
+        <form name="predicate_polite_nonpast" translation="jest zły" context="none" style="polite non-past" kana="わるいです" />
+        <form name="predicate_plain_negative" translation="nie jest zły" context="none" style="plain negative" kana="わるくない" />
+        <form name="predicate_polite_negative" translation="nie jest zły" context="none" style="polite negative" kana="わるくないです" />
+        <form name="predicate_plain_past" translation="był zły" context="none" style="plain past" kana="わるかった" />
+        <form name="predicate_polite_past" translation="był zły" context="none" style="polite past" kana="わるかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był zły" context="none" style="plain past negative" kana="わるくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był zły" context="none" style="polite past negative" kana="わるくなかったです" />
+        <form name="attributive_nonpast" translation="zły" context="none" style="before noun" kana="わるい" />
+        <form name="connective" translation="zły" context="none" style="connective" kana="わるくて" />
+        <form name="adverbial" translation="zły" context="none" style="adverbial" kana="わるく" />
+        <form name="conditional" translation="zły" context="none" style="conditional" kana="わるければ" />
+        <form name="nominalized" translation="zły" context="none" style="nominalized noun" kana="わるさ" />
+        <form name="appearance_sou" translation="zły" context="none" style="looks" kana="わるそう" />
+        <form name="excessive_sugiru" translation="zły" context="none" style="too much" kana="わるすぎる" />
+      </forms>
+    </word>
+    <word id="yasashii" translation="miły" kana="やさしい" kanji="優しい" type="i_adjective">
+      <describes categories="person animal" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest miły" context="none" style="plain non-past" kana="やさしい" />
+        <form name="predicate_polite_nonpast" translation="jest miły" context="none" style="polite non-past" kana="やさしいです" />
+        <form name="predicate_plain_negative" translation="nie jest miły" context="none" style="plain negative" kana="やさしくない" />
+        <form name="predicate_polite_negative" translation="nie jest miły" context="none" style="polite negative" kana="やさしくないです" />
+        <form name="predicate_plain_past" translation="był miły" context="none" style="plain past" kana="やさしかった" />
+        <form name="predicate_polite_past" translation="był miły" context="none" style="polite past" kana="やさしかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był miły" context="none" style="plain past negative" kana="やさしくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był miły" context="none" style="polite past negative" kana="やさしくなかったです" />
+        <form name="attributive_nonpast" translation="miły" context="none" style="before noun" kana="やさしい" />
+        <form name="connective" translation="miły" context="none" style="connective" kana="やさしくて" />
+        <form name="adverbial" translation="miły" context="none" style="adverbial" kana="やさしく" />
+        <form name="conditional" translation="miły" context="none" style="conditional" kana="やさしければ" />
+        <form name="nominalized" translation="miły" context="none" style="nominalized noun" kana="やさしさ" />
+        <form name="appearance_sou" translation="miły" context="none" style="looks" kana="やさしそう" />
+        <form name="excessive_sugiru" translation="miły" context="none" style="too much" kana="やさしすぎる" />
+      </forms>
+    </word>
+    <word id="yasui" translation="tani" kana="やすい" kanji="安い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest tani" context="none" style="plain non-past" kana="やすい" />
+        <form name="predicate_polite_nonpast" translation="jest tani" context="none" style="polite non-past" kana="やすいです" />
+        <form name="predicate_plain_negative" translation="nie jest tani" context="none" style="plain negative" kana="やすくない" />
+        <form name="predicate_polite_negative" translation="nie jest tani" context="none" style="polite negative" kana="やすくないです" />
+        <form name="predicate_plain_past" translation="był tani" context="none" style="plain past" kana="やすかった" />
+        <form name="predicate_polite_past" translation="był tani" context="none" style="polite past" kana="やすかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był tani" context="none" style="plain past negative" kana="やすくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był tani" context="none" style="polite past negative" kana="やすくなかったです" />
+        <form name="attributive_nonpast" translation="tani" context="none" style="before noun" kana="やすい" />
+        <form name="connective" translation="tani" context="none" style="connective" kana="やすくて" />
+        <form name="adverbial" translation="tani" context="none" style="adverbial" kana="やすく" />
+        <form name="conditional" translation="tani" context="none" style="conditional" kana="やすければ" />
+        <form name="nominalized" translation="tani" context="none" style="nominalized noun" kana="やすさ" />
+        <form name="appearance_sou" translation="tani" context="none" style="looks" kana="やすそう" />
+        <form name="excessive_sugiru" translation="tani" context="none" style="too much" kana="やすすぎる" />
+      </forms>
+    </word>
+    <word id="yawarakai" translation="miękki" kana="やわらかい" kanji="柔らかい" type="i_adjective">
+      <describes categories="concrete" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest miękki" context="none" style="plain non-past" kana="やわらかい" />
+        <form name="predicate_polite_nonpast" translation="jest miękki" context="none" style="polite non-past" kana="やわらかいです" />
+        <form name="predicate_plain_negative" translation="nie jest miękki" context="none" style="plain negative" kana="やわらかくない" />
+        <form name="predicate_polite_negative" translation="nie jest miękki" context="none" style="polite negative" kana="やわらかくないです" />
+        <form name="predicate_plain_past" translation="był miękki" context="none" style="plain past" kana="やわらかかった" />
+        <form name="predicate_polite_past" translation="był miękki" context="none" style="polite past" kana="やわらかかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był miękki" context="none" style="plain past negative" kana="やわらかくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był miękki" context="none" style="polite past negative" kana="やわらかくなかったです" />
+        <form name="attributive_nonpast" translation="miękki" context="none" style="before noun" kana="やわらかい" />
+        <form name="connective" translation="miękki" context="none" style="connective" kana="やわらかくて" />
+        <form name="adverbial" translation="miękki" context="none" style="adverbial" kana="やわらかく" />
+        <form name="conditional" translation="miękki" context="none" style="conditional" kana="やわらかければ" />
+        <form name="nominalized" translation="miękki" context="none" style="nominalized noun" kana="やわらかさ" />
+        <form name="appearance_sou" translation="miękki" context="none" style="looks" kana="やわらかそう" />
+        <form name="excessive_sugiru" translation="miękki" context="none" style="too much" kana="やわらかすぎる" />
+      </forms>
+    </word>
+    <word id="yoi" translation="dobry" kana="よい" kanji="良い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest dobry" context="none" style="plain non-past" kana="よい" />
+        <form name="predicate_polite_nonpast" translation="jest dobry" context="none" style="polite non-past" kana="よいです" />
+        <form name="predicate_plain_negative" translation="nie jest dobry" context="none" style="plain negative" kana="よくない" />
+        <form name="predicate_polite_negative" translation="nie jest dobry" context="none" style="polite negative" kana="よくないです" />
+        <form name="predicate_plain_past" translation="był dobry" context="none" style="plain past" kana="よかった" />
+        <form name="predicate_polite_past" translation="był dobry" context="none" style="polite past" kana="よかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był dobry" context="none" style="plain past negative" kana="よくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był dobry" context="none" style="polite past negative" kana="よくなかったです" />
+        <form name="attributive_nonpast" translation="dobry" context="none" style="before noun" kana="よい" />
+        <form name="connective" translation="dobry" context="none" style="connective" kana="よくて" />
+        <form name="adverbial" translation="dobry" context="none" style="adverbial" kana="よく" />
+        <form name="conditional" translation="dobry" context="none" style="conditional" kana="よければ" />
+        <form name="nominalized" translation="dobry" context="none" style="nominalized noun" kana="よさ" />
+        <form name="appearance_sou" translation="dobry" context="none" style="looks" kana="よさそう" />
+        <form name="excessive_sugiru" translation="dobry" context="none" style="too much" kana="よすぎる" />
+      </forms>
+    </word>
+    <word id="yowai" translation="słaby" kana="よわい" kanji="弱い" type="i_adjective">
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest słaby" context="none" style="plain non-past" kana="よわい" />
+        <form name="predicate_polite_nonpast" translation="jest słaby" context="none" style="polite non-past" kana="よわいです" />
+        <form name="predicate_plain_negative" translation="nie jest słaby" context="none" style="plain negative" kana="よわくない" />
+        <form name="predicate_polite_negative" translation="nie jest słaby" context="none" style="polite negative" kana="よわくないです" />
+        <form name="predicate_plain_past" translation="był słaby" context="none" style="plain past" kana="よわかった" />
+        <form name="predicate_polite_past" translation="był słaby" context="none" style="polite past" kana="よわかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był słaby" context="none" style="plain past negative" kana="よわくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był słaby" context="none" style="polite past negative" kana="よわくなかったです" />
+        <form name="attributive_nonpast" translation="słaby" context="none" style="before noun" kana="よわい" />
+        <form name="connective" translation="słaby" context="none" style="connective" kana="よわくて" />
+        <form name="adverbial" translation="słaby" context="none" style="adverbial" kana="よわく" />
+        <form name="conditional" translation="słaby" context="none" style="conditional" kana="よわければ" />
+        <form name="nominalized" translation="słaby" context="none" style="nominalized noun" kana="よわさ" />
+        <form name="appearance_sou" translation="słaby" context="none" style="looks" kana="よわそう" />
+        <form name="excessive_sugiru" translation="słaby" context="none" style="too much" kana="よわすぎる" />
+      </forms>
+    </word>
+  </words>
+</dictionary>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<lesson_catalog schema_version="4">
+  <lessons>
+    <lesson id="start_iku" group="Start" main="Lekcja mieszana" name="行く i cztery przymiotniki">
+      <word id="grammar_verbs_iku">
+        <dictionary_ref dictionary="verbs" word="iku" />
+      </word>
+      <word id="grammar_adjectives_atatakai">
+        <dictionary_ref dictionary="adjectives" word="atatakai" />
+      </word>
+      <word id="grammar_adjectives_chiisai">
+        <dictionary_ref dictionary="adjectives" word="chiisai" />
+      </word>
+      <word id="grammar_adjectives_hayai">
+        <dictionary_ref dictionary="adjectives" word="hayai" />
+      </word>
+      <word id="grammar_adjectives_toumei">
+        <dictionary_ref dictionary="adjectives" word="toumei" />
+      </word>
+    </lesson>
+  </lessons>
+</lesson_catalog>

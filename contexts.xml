@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<contexts schema_version="13">
+  <context id="none" label="none">
+    <option id="neutral" translation="" kana="" weight="1" />
+  </context>
+  <context id="present" label="present">
+    <option id="neutral" translation="" kana="" weight="2" />
+    <option id="now" translation="Teraz " kana="いま、" weight="1" />
+    <option id="today" translation="Dzisiaj " kana="きょう、" weight="1" />
+  </context>
+  <context id="past" label="past">
+    <option id="yesterday" translation="Wczoraj " kana="きのう、" weight="2" />
+    <option id="last_week" translation="W zeszłym tygodniu " kana="せんしゅう、" weight="1" />
+    <option id="recently" translation="Ostatnio " kana="さいきん、" weight="1" />
+  </context>
+  <context id="future" label="future">
+    <option id="tomorrow" translation="Jutro " kana="あした、" weight="2" />
+    <option id="next_week" translation="W przyszłym tygodniu " kana="らいしゅう、" weight="1" />
+    <option id="soon" translation="Wkrótce " kana="もうすぐ、" weight="1" />
+  </context>
+</contexts>
