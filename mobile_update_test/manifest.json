@@ -4,8 +4,8 @@
   "files": [
     {
       "path": "quiz_logic.py",
-      "sha256": "fa65655780b8531a45f09fef6c62c3929903e548a8f4fff42587df056944be14",
-      "url": "quiz_logic.py?kotomi_sha256=fa65655780b8531a45f09fef6c62c3929903e548a8f4fff42587df056944be14"
+      "sha256": "14f8c2339040503ca6f3b779a0a23a55279994e95975107c42a4e4ea5bbd7f36",
+      "url": "quiz_logic.py?kotomi_sha256=14f8c2339040503ca6f3b779a0a23a55279994e95975107c42a4e4ea5bbd7f36"
     },
     {
       "path": "translations/en.xml",
