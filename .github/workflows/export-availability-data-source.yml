@@ -1,4 +1,4 @@
-name: Export Availability data publication source
+name: Publish split Availability package
 
 on:
   pull_request:
@@ -8,11 +8,20 @@ on:
       - .github/workflows/export-availability-data-source.yml
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  export:
-    runs-on: ubuntu-latest
+  publish:
+    if: >-
+      github.event.pull_request.head.ref == 'feature/availability-logic-separation' &&
+      github.actor != 'github-actions[bot]'
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
+
     steps:
       - name: Check out exact feature branch
         uses: actions/checkout@v6
@@ -20,17 +29,30 @@ jobs:
           ref: feature/availability-logic-separation
           fetch-depth: 0
 
-      - name: Prepare repository archive
-        shell: bash
-        run: |
-          mkdir -p export/repository export/metadata
-          rsync -a --exclude='.git' --exclude='export' ./ export/repository/
-          git rev-parse HEAD > export/metadata/commit-sha.txt
-
-      - name: Upload repository archive
-        uses: actions/upload-artifact@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
         with:
-          name: availability-data-publication-source
-          path: export
-          include-hidden-files: true
-          retention-days: 1
+          python-version: "3.11"
+
+      - name: Download validated Availability package
+        shell: pwsh
+        run: |
+          $uri = 'https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-ce9c-822f-9e17-0e05559ad595/raw?se=2026-08-21T12%3A31%3A19Z&sp=r&sv=2026-02-06&sr=b&scid=41583572-8d50-5d99-bc9d-81f9d34b6d69&skoid=b971d227-1348-4524-8797-edb0fdf15147&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-08-21T05%3A12%3A42Z&ske=2026-08-22T05%3A12%3A42Z&sks=b&skv=2026-02-06&sig=Rb1ebGFi18fnBxHSVzvXDSeq3NfW2xNQkdNBDsMavfQ%3D'
+          Invoke-WebRequest -Uri $uri -OutFile split-availability-package.zip
+          Expand-Archive split-availability-package.zip split-availability-package -Force
+
+      - name: Publish and validate package
+        shell: pwsh
+        run: |
+          python tools/apply_availability_publication.py split-availability-package
+          git rm tools/apply_availability_publication.py
+          git add -- quiz_update_manifest.json quizzes/availability/Kotomi_availability.py quizzes/availability/logic.py quizzes/availability/mobile.py quizzes/availability/app.json
+          git diff --cached --check
+
+      - name: Commit published package
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish split Availability quiz package"
+          git push origin HEAD:feature/availability-logic-separation
