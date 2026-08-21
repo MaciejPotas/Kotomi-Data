@@ -1,0 +1,13 @@
+{
+  "id": "grammar",
+  "version": "1.1.1",
+  "quiz_api": 1,
+  "min_app_version": "1.1.1",
+  "kind": "python",
+  "title": "Gramatyka",
+  "description": "Quizy zdań utworzone w Quiz Studio",
+  "entrypoint": "Kotomi_grammar.py",
+  "factory": "create_embedded_controller",
+  "order": 40,
+  "enabled": false
+}

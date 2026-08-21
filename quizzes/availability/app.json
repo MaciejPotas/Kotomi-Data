@@ -1,0 +1,13 @@
+{
+  "id": "availability",
+  "version": "1.1.1",
+  "quiz_api": 1,
+  "min_app_version": "1.1.1",
+  "kind": "python",
+  "title": "Dostępność",
+  "description": "Rzeczowniki i czasowniki",
+  "entrypoint": "Kotomi_availability.py",
+  "factory": "create_embedded_controller",
+  "order": 30,
+  "enabled": true
+}
