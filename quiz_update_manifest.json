@@ -1,0 +1,114 @@
+{
+  "format": 1,
+  "channel": "quizzes",
+  "version": "1.1.1",
+  "packages": [
+    {
+      "id": "lessons",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/lessons/Kotomi_lessons.py",
+        "apps/lessons/app.json"
+      ]
+    },
+    {
+      "id": "verbs",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/verbs/Kotomi_verbs.py",
+        "apps/verbs/app.json"
+      ]
+    },
+    {
+      "id": "adjectives",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/adjectives/Kotomi_adjectives.py",
+        "apps/adjectives/app.json"
+      ]
+    },
+    {
+      "id": "availability",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/availability/Kotomi_availability.py",
+        "apps/availability/app.json"
+      ]
+    },
+    {
+      "id": "grammar",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/grammar/Kotomi_grammar.py",
+        "apps/grammar/app.json"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "apps/adjectives/Kotomi_adjectives.py",
+      "sha256": "12f195aff5dfe243c97ed2b61259b95c2a744525d1a50c0965f83358d48228ae",
+      "url": "quizzes/adjectives/Kotomi_adjectives.py?kotomi_sha256=12f195aff5dfe243c97ed2b61259b95c2a744525d1a50c0965f83358d48228ae"
+    },
+    {
+      "path": "apps/adjectives/app.json",
+      "sha256": "658fd43ae1712a5c50398259837a4ac41df7c78740adb8f5ed377da4001bff31",
+      "url": "quizzes/adjectives/app.json?kotomi_sha256=658fd43ae1712a5c50398259837a4ac41df7c78740adb8f5ed377da4001bff31"
+    },
+    {
+      "path": "apps/availability/Kotomi_availability.py",
+      "sha256": "a3c09c38125d1cc54efa257cb00b290aa186ea7b5515e91e909de32008f6830f",
+      "url": "quizzes/availability/Kotomi_availability.py?kotomi_sha256=a3c09c38125d1cc54efa257cb00b290aa186ea7b5515e91e909de32008f6830f"
+    },
+    {
+      "path": "apps/availability/app.json",
+      "sha256": "7949ab151fba52be6e5b394912e67e866ef6b8a7acbbc893bcbb52ffd7198645",
+      "url": "quizzes/availability/app.json?kotomi_sha256=7949ab151fba52be6e5b394912e67e866ef6b8a7acbbc893bcbb52ffd7198645"
+    },
+    {
+      "path": "apps/grammar/Kotomi_grammar.py",
+      "sha256": "a51811231d61346c5271c3c553e063aec5b1b6086345b39edbea1fe41fe3daf8",
+      "url": "quizzes/grammar/Kotomi_grammar.py?kotomi_sha256=a51811231d61346c5271c3c553e063aec5b1b6086345b39edbea1fe41fe3daf8"
+    },
+    {
+      "path": "apps/grammar/app.json",
+      "sha256": "3514860bc7be7e1bb2609bca4c5741b5a974672e1e68c03c432002fa9fac0da2",
+      "url": "quizzes/grammar/app.json?kotomi_sha256=3514860bc7be7e1bb2609bca4c5741b5a974672e1e68c03c432002fa9fac0da2"
+    },
+    {
+      "path": "apps/lessons/Kotomi_lessons.py",
+      "sha256": "5e04b8edab1a1b442e437fa08de1b185b7dd5052ff120e3b410d2013d6548fe3",
+      "url": "quizzes/lessons/Kotomi_lessons.py?kotomi_sha256=5e04b8edab1a1b442e437fa08de1b185b7dd5052ff120e3b410d2013d6548fe3"
+    },
+    {
+      "path": "apps/lessons/app.json",
+      "sha256": "3124aa5c8edf028689c8f3fd176a58caa88613380534fbf95634e2bc1181fbd9",
+      "url": "quizzes/lessons/app.json?kotomi_sha256=3124aa5c8edf028689c8f3fd176a58caa88613380534fbf95634e2bc1181fbd9"
+    },
+    {
+      "path": "apps/verbs/Kotomi_verbs.py",
+      "sha256": "b1cfd8567cf52d5f7b0afce08af5ee8c220e616b668b4907309157a92659768b",
+      "url": "quizzes/verbs/Kotomi_verbs.py?kotomi_sha256=b1cfd8567cf52d5f7b0afce08af5ee8c220e616b668b4907309157a92659768b"
+    },
+    {
+      "path": "apps/verbs/app.json",
+      "sha256": "3a77a8e941aa264b284dd7d1df10462df3570eedaccd37a80f8962742289c855",
+      "url": "quizzes/verbs/app.json?kotomi_sha256=3a77a8e941aa264b284dd7d1df10462df3570eedaccd37a80f8962742289c855"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lessons",
+  "version": "1.1.1",
+  "quiz_api": 1,
+  "min_app_version": "1.1.1",
+  "kind": "python",
+  "title": "Lesson quizzes",
+  "description": "Lekcje i powtórki",
+  "entrypoint": "Kotomi_lessons.py",
+  "factory": "create_embedded_controller",
+  "order": 5,
+  "enabled": true
+}
