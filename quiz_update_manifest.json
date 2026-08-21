@@ -44,6 +44,8 @@
       "kind": "python",
       "files": [
         "apps/availability/Kotomi_availability.py",
+        "apps/availability/logic.py",
+        "apps/availability/mobile.py",
         "apps/availability/app.json"
       ]
     },
@@ -72,13 +74,23 @@
     },
     {
       "path": "apps/availability/Kotomi_availability.py",
-      "sha256": "a3c09c38125d1cc54efa257cb00b290aa186ea7b5515e91e909de32008f6830f",
-      "url": "quizzes/availability/Kotomi_availability.py?kotomi_sha256=a3c09c38125d1cc54efa257cb00b290aa186ea7b5515e91e909de32008f6830f"
+      "sha256": "6d13e29a1242f1693d52d67a01c669af38fb6581685f86abdcf355a8a2ea647e",
+      "url": "quizzes/availability/Kotomi_availability.py?kotomi_sha256=6d13e29a1242f1693d52d67a01c669af38fb6581685f86abdcf355a8a2ea647e"
     },
     {
       "path": "apps/availability/app.json",
       "sha256": "7949ab151fba52be6e5b394912e67e866ef6b8a7acbbc893bcbb52ffd7198645",
       "url": "quizzes/availability/app.json?kotomi_sha256=7949ab151fba52be6e5b394912e67e866ef6b8a7acbbc893bcbb52ffd7198645"
+    },
+    {
+      "path": "apps/availability/logic.py",
+      "sha256": "c05228b627f2d1e7f2b73858d1fb74a5740554a8d964741926a44d7084707a7e",
+      "url": "quizzes/availability/logic.py?kotomi_sha256=c05228b627f2d1e7f2b73858d1fb74a5740554a8d964741926a44d7084707a7e"
+    },
+    {
+      "path": "apps/availability/mobile.py",
+      "sha256": "36348eaf5050adc8d89c0c1cf61afa31c010562869fd6f1d527e16c43a5b7216",
+      "url": "quizzes/availability/mobile.py?kotomi_sha256=36348eaf5050adc8d89c0c1cf61afa31c010562869fd6f1d527e16c43a5b7216"
     },
     {
       "path": "apps/grammar/Kotomi_grammar.py",
