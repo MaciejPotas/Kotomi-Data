@@ -1,0 +1,36 @@
+name: Export Availability data publication source
+
+on:
+  pull_request:
+    branches:
+      - development/update-architecture
+    paths:
+      - .github/workflows/export-availability-data-source.yml
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact feature branch
+        uses: actions/checkout@v6
+        with:
+          ref: feature/availability-logic-separation
+          fetch-depth: 0
+
+      - name: Prepare repository archive
+        shell: bash
+        run: |
+          mkdir -p export/repository export/metadata
+          rsync -a --exclude='.git' --exclude='export' ./ export/repository/
+          git rev-parse HEAD > export/metadata/commit-sha.txt
+
+      - name: Upload repository archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: availability-data-publication-source
+          path: export
+          include-hidden-files: true
+          retention-days: 1
