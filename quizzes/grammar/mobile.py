@@ -1,32 +1,34 @@
-"""Kivy presentation adapter for the Grammar quiz.
+"""Mobile adapter for data-defined Grammar quizzes.
 
-Grammar-specific settings and generation live in :mod:`logic`. This module
-connects that policy to the reusable Availability mobile presentation.
+Grammar owns only its platform-neutral policy. The complete Kivy presentation
+is shared with Availability and receives the live Grammar logic module, so an
+XML profile change immediately affects the rendered settings and questions.
 """
 
 from __future__ import annotations
 
+from pathlib import Path
 import sys
 
-try:
-    from .logic import *
-    from .logic import _safe_float, _safe_int
-    from . import logic as _logic
-except ImportError:  # Direct execution from the quiz package directory.
-    from logic import *
-    from logic import _safe_float, _safe_int
-    import logic as _logic
 
-try:
-    from apps.availability import mobile as availability_mobile
-except ImportError:
-    from availability import mobile as availability_mobile
+SCRIPT_DIR = Path(__file__).resolve().parent
+INSTALL_ROOT = SCRIPT_DIR.parents[1]
+if str(INSTALL_ROOT) not in sys.path:
+    sys.path.insert(0, str(INSTALL_ROOT))
+
+from apps.grammar import logic as _logic
+from apps.availability.mobile import (
+    create_app_class as _create_mobile_sentence_app_class,
+)
+
 
 def create_app_class():
-    return create_mobile_sentence_app_class(sys.modules[__name__])
+    """Return the shared mobile sentence UI configured by Grammar logic."""
+    return _create_mobile_sentence_app_class(_logic)
 
 
 def create_embedded_controller():
+    """Create a Grammar controller for the main Kotomi mobile launcher."""
     app_class = create_app_class()
     controller = app_class()
     controller.embedded_mode = True
@@ -46,6 +48,13 @@ def main() -> int:
         raise
     app_class().run()
     return 0
+
+
+__all__ = [
+    "create_app_class",
+    "create_embedded_controller",
+    "main",
+]
 
 
 if __name__ == "__main__":
