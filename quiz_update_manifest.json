@@ -11,7 +11,9 @@
       "kind": "python",
       "files": [
         "apps/lessons/Kotomi_lessons.py",
-        "apps/lessons/app.json"
+        "apps/lessons/app.json",
+        "apps/lessons/logic.py",
+        "apps/lessons/mobile.py"
       ]
     },
     {
@@ -130,13 +132,23 @@
     },
     {
       "path": "apps/lessons/Kotomi_lessons.py",
-      "sha256": "5e04b8edab1a1b442e437fa08de1b185b7dd5052ff120e3b410d2013d6548fe3",
-      "url": "quizzes/lessons/Kotomi_lessons.py?kotomi_sha256=5e04b8edab1a1b442e437fa08de1b185b7dd5052ff120e3b410d2013d6548fe3"
+      "sha256": "d7fed65debeaefadd2b81d27710aa81510dd9ea421d13ba542fbfffdbc6c7f58",
+      "url": "quizzes/lessons/Kotomi_lessons.py?kotomi_sha256=d7fed65debeaefadd2b81d27710aa81510dd9ea421d13ba542fbfffdbc6c7f58"
     },
     {
       "path": "apps/lessons/app.json",
       "sha256": "3124aa5c8edf028689c8f3fd176a58caa88613380534fbf95634e2bc1181fbd9",
       "url": "quizzes/lessons/app.json?kotomi_sha256=3124aa5c8edf028689c8f3fd176a58caa88613380534fbf95634e2bc1181fbd9"
+    },
+    {
+      "path": "apps/lessons/logic.py",
+      "sha256": "eb091d389d0b7447ad448502b696eec73fe9d464f6c1b6fc547bb79976117728",
+      "url": "quizzes/lessons/logic.py?kotomi_sha256=eb091d389d0b7447ad448502b696eec73fe9d464f6c1b6fc547bb79976117728"
+    },
+    {
+      "path": "apps/lessons/mobile.py",
+      "sha256": "a95981bb982cfc2c2973d5f570ce7f6bf320d7b2b11faf0e73f045eedd662d9b",
+      "url": "quizzes/lessons/mobile.py?kotomi_sha256=a95981bb982cfc2c2973d5f570ce7f6bf320d7b2b11faf0e73f045eedd662d9b"
     },
     {
       "path": "apps/verbs/Kotomi_verbs.py",
