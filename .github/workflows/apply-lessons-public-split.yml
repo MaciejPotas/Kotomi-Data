@@ -1,0 +1,64 @@
+name: Publish split Lessons package
+
+on:
+  pull_request:
+    branches:
+      - development/update-architecture
+    paths:
+      - tools/apply_lessons_public_split.py
+      - .github/workflows/apply-lessons-public-split.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lessons-public-split
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: >-
+      github.event.pull_request.head.ref == 'feature/lessons-logic-separation' &&
+      github.actor != 'github-actions[bot]'
+    runs-on: windows-latest
+    timeout-minutes: 25
+
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
+
+    steps:
+      - name: Check out exact public feature branch
+        uses: actions/checkout@v6
+        with:
+          ref: feature/lessons-logic-separation
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Publish split Lessons package
+        run: python tools/apply_lessons_public_split.py
+
+      - name: Remove temporary publication script
+        shell: pwsh
+        run: |
+          Remove-Item tools/apply_lessons_public_split.py -Force
+          git add -u -- tools/apply_lessons_public_split.py
+
+      - name: Validate package and manifest
+        shell: pwsh
+        run: |
+          python -m py_compile quizzes/lessons/Kotomi_lessons.py quizzes/lessons/logic.py quizzes/lessons/mobile.py
+          python -m json.tool quiz_update_manifest.json > $null
+          git diff --cached --check
+
+      - name: Commit public package
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish split Lessons quiz package"
+          git push origin HEAD:feature/lessons-logic-separation
