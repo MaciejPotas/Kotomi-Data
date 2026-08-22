@@ -1,8 +1,8 @@
-"""Platform-neutral settings and generation policy for Grammar.
+"""Platform-neutral settings and generation logic for Grammar quizzes.
 
 This module intentionally imports no Kivy or Tkinter classes. Desktop and
-Mobile presentations use the same settings, engine, session, and question
-models from here.
+Mobile presentations use the same profile, settings, engine, session, and
+question models from here.
 """
 
 from __future__ import annotations
@@ -17,28 +17,21 @@ from typing import Callable, Dict, Iterable, List, Mapping, Optional, Sequence, 
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-APPS_DIR = SCRIPT_DIR.parent
-AVAILABILITY_DIR = APPS_DIR / "availability"
 REPOSITORY_SHARED_DIR = SCRIPT_DIR.parents[1] / "shared"
 INSTALL_ROOT = REPOSITORY_SHARED_DIR.parent
-for path in (REPOSITORY_SHARED_DIR, AVAILABILITY_DIR):
-    if str(path) not in sys.path:
-        sys.path.insert(0, str(path))
+for import_root in (INSTALL_ROOT, REPOSITORY_SHARED_DIR):
+    if str(import_root) not in sys.path:
+        sys.path.insert(0, str(import_root))
 
 from quiz_core import Entity, ProjectError, Word
 from quiz_engine import SharedQuizEngine, balanced_choice
-from mobile_ui import (
-    DEFAULT_MOBILE_BUTTON_SCALE,
-    mobile_font_path,
-    validate_mobile_button_scale,
-)
+from mobile_ui import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from settings_xml import load_settings, save_settings, settings_path
-from Kotomi_availability import (
+from apps.availability.logic import (
     AvailabilityQuizSession,
     FORM_GROUPS,
     FORM_STYLE_LABELS,
     SubmissionResult,
-    create_app_class as create_mobile_sentence_app_class,
     normalize_japanese,
     selected_context_hint,
 )
@@ -790,3 +783,51 @@ QUIZ_ENGINE_CLASS = GrammarQuizEngine
 QUIZ_SESSION_CLASS = GrammarQuizSession
 SETTINGS_STORE_CLASS = SettingsStore
 QUIZ_ERROR_CLASS = GrammarQuizError
+
+
+__all__ = [
+    "ACTIVE_QUIZ_ID",
+    "ENTITY_FILTER_FIELDS",
+    "FORM_GROUPS",
+    "FORM_STYLE_LABELS",
+    "GenerationCombination",
+    "GenerationRule",
+    "GrammarQuestion",
+    "GrammarQuizEngine",
+    "GrammarQuizError",
+    "GrammarQuizSession",
+    "GrammarQuizSettings",
+    "INSTALL_ROOT",
+    "MOBILE_APP_TITLE",
+    "MOBILE_FILTER_HELP",
+    "MOBILE_FILTER_HINT",
+    "MOBILE_FILTER_TITLE",
+    "MOBILE_HELP_SECTIONS",
+    "MOBILE_SETTINGS_TITLE",
+    "MOBILE_SUBTITLE",
+    "MOBILE_WORD_DETAIL_LABEL",
+    "MODE_LABELS",
+    "MODE_POLISH_TO_JAPANESE",
+    "PATTERN_LABELS",
+    "PROJECT_ENVIRONMENT_VARIABLE",
+    "QUIZ_ENGINE_CLASS",
+    "QUIZ_ERROR_CLASS",
+    "QUIZ_SESSION_CLASS",
+    "QUIZ_SETTINGS_CLASS",
+    "RECENT_MAIN_VERB_WINDOW",
+    "REPOSITORY_SHARED_DIR",
+    "SCRIPT_DIR",
+    "SETTINGS_FILENAME",
+    "SETTINGS_STORE_CLASS",
+    "SUPPORTED_PATTERNS",
+    "SettingsStore",
+    "SlotFilterRule",
+    "SubmissionResult",
+    "WORD_FILTER_FIELDS",
+    "configure_quiz_profile",
+    "normalize_japanese",
+    "parse_slot_filter",
+    "quiz_settings_path",
+    "resolve_project_path",
+    "selected_context_hint",
+]

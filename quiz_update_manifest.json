@@ -33,7 +33,9 @@
       "kind": "python",
       "files": [
         "apps/adjectives/Kotomi_adjectives.py",
-        "apps/adjectives/app.json"
+        "apps/adjectives/app.json",
+        "apps/adjectives/logic.py",
+        "apps/adjectives/mobile.py"
       ]
     },
     {
@@ -44,9 +46,9 @@
       "kind": "python",
       "files": [
         "apps/availability/Kotomi_availability.py",
+        "apps/availability/app.json",
         "apps/availability/logic.py",
-        "apps/availability/mobile.py",
-        "apps/availability/app.json"
+        "apps/availability/mobile.py"
       ]
     },
     {
@@ -66,13 +68,23 @@
   "files": [
     {
       "path": "apps/adjectives/Kotomi_adjectives.py",
-      "sha256": "12f195aff5dfe243c97ed2b61259b95c2a744525d1a50c0965f83358d48228ae",
-      "url": "quizzes/adjectives/Kotomi_adjectives.py?kotomi_sha256=12f195aff5dfe243c97ed2b61259b95c2a744525d1a50c0965f83358d48228ae"
+      "sha256": "a77f678fd35855f9e0d510268ac537ce41d0ed5384fc6f91f07d324d06a7108f",
+      "url": "quizzes/adjectives/Kotomi_adjectives.py?kotomi_sha256=a77f678fd35855f9e0d510268ac537ce41d0ed5384fc6f91f07d324d06a7108f"
     },
     {
       "path": "apps/adjectives/app.json",
       "sha256": "658fd43ae1712a5c50398259837a4ac41df7c78740adb8f5ed377da4001bff31",
       "url": "quizzes/adjectives/app.json?kotomi_sha256=658fd43ae1712a5c50398259837a4ac41df7c78740adb8f5ed377da4001bff31"
+    },
+    {
+      "path": "apps/adjectives/logic.py",
+      "sha256": "1957501da4874bdd37ba3b58cf53ecbd1c810ce91086b9c2314ba045c6eec18f",
+      "url": "quizzes/adjectives/logic.py?kotomi_sha256=1957501da4874bdd37ba3b58cf53ecbd1c810ce91086b9c2314ba045c6eec18f"
+    },
+    {
+      "path": "apps/adjectives/mobile.py",
+      "sha256": "fa0db02eb9f94440ed6b6bee97c969616612ba694f7fa663c67ada3a7a4d56df",
+      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=fa0db02eb9f94440ed6b6bee97c969616612ba694f7fa663c67ada3a7a4d56df"
     },
     {
       "path": "apps/availability/Kotomi_availability.py",
@@ -95,6 +107,26 @@
       "url": "quizzes/availability/mobile.py?kotomi_sha256=36348eaf5050adc8d89c0c1cf61afa31c010562869fd6f1d527e16c43a5b7216"
     },
     {
+      "path": "apps/grammar/Kotomi_grammar.py",
+      "sha256": "3c6c5e7c1e1dc23b5d4d43fafd4a557ebc2d17dc1ae05c72e1daf94df888ac5c",
+      "url": "quizzes/grammar/Kotomi_grammar.py?kotomi_sha256=3c6c5e7c1e1dc23b5d4d43fafd4a557ebc2d17dc1ae05c72e1daf94df888ac5c"
+    },
+    {
+      "path": "apps/grammar/app.json",
+      "sha256": "3514860bc7be7e1bb2609bca4c5741b5a974672e1e68c03c432002fa9fac0da2",
+      "url": "quizzes/grammar/app.json?kotomi_sha256=3514860bc7be7e1bb2609bca4c5741b5a974672e1e68c03c432002fa9fac0da2"
+    },
+    {
+      "path": "apps/grammar/logic.py",
+      "sha256": "165711dd5674e13fec787c4d36358350c97527fac1eac9ddbcf74bd4f6d0136d",
+      "url": "quizzes/grammar/logic.py?kotomi_sha256=165711dd5674e13fec787c4d36358350c97527fac1eac9ddbcf74bd4f6d0136d"
+    },
+    {
+      "path": "apps/grammar/mobile.py",
+      "sha256": "e3c45deb7597015d55762b2c2122e8fa8f76bc40c31802d23ec85ee709724a7c",
+      "url": "quizzes/grammar/mobile.py?kotomi_sha256=e3c45deb7597015d55762b2c2122e8fa8f76bc40c31802d23ec85ee709724a7c"
+    },
+    {
       "path": "apps/lessons/Kotomi_lessons.py",
       "sha256": "5e04b8edab1a1b442e437fa08de1b185b7dd5052ff120e3b410d2013d6548fe3",
       "url": "quizzes/lessons/Kotomi_lessons.py?kotomi_sha256=5e04b8edab1a1b442e437fa08de1b185b7dd5052ff120e3b410d2013d6548fe3"
@@ -113,26 +145,6 @@
       "path": "apps/verbs/app.json",
       "sha256": "3a77a8e941aa264b284dd7d1df10462df3570eedaccd37a80f8962742289c855",
       "url": "quizzes/verbs/app.json?kotomi_sha256=3a77a8e941aa264b284dd7d1df10462df3570eedaccd37a80f8962742289c855"
-    },
-    {
-      "path": "apps/grammar/Kotomi_grammar.py",
-      "sha256": "251adefddffa45d0c6bb3faed2f38d25f312802724f1e1cf821452603437d665",
-      "url": "quizzes/grammar/Kotomi_grammar.py?kotomi_sha256=a51811231d61346c5271c3c553e063aec5b1b6086345b39edbea1fe41fe3daf8"
-    },
-    {
-      "path": "apps/grammar/app.json",
-      "sha256": "3514860bc7be7e1bb2609bca4c5741b5a974672e1e68c03c432002fa9fac0da2",
-      "url": "quizzes/grammar/app.json?kotomi_sha256=3514860bc7be7e1bb2609bca4c5741b5a974672e1e68c03c432002fa9fac0da2"
-    },
-    {
-      "path": "apps/grammar/logic.py",
-      "sha256": "c3d7fe7e5e1f850d678897fb404f86c08088b90c2fc90b9e2d8bbe40410131cc",
-      "url": "quizzes/grammar/logic.py?kotomi_sha256=a51811231d61346c5271c3c553e063aec5b1b6086345b39edbea1fe41fe3daf8"
-    },
-    {
-      "path": "apps/grammar/mobile.py",
-      "sha256": "5503e93b2531ec8257c84133a3aae7128952bda70cd3e21d7f9f79ad2b3b9112",
-      "url": "quizzes/grammar/mobile.py?kotomi_sha256=a51811231d61346c5271c3c553e063aec5b1b6086345b39edbea1fe41fe3daf8"
     }
   ]
 }
