@@ -1,9 +1,9 @@
 name: Publish split Lessons package
 
 on:
-  pull_request:
+  push:
     branches:
-      - development/update-architecture
+      - feature/lessons-logic-separation
     paths:
       - tools/apply_lessons_public_split.py
       - .github/workflows/apply-lessons-public-split.yml
@@ -17,9 +17,7 @@ concurrency:
 
 jobs:
   publish:
-    if: >-
-      github.event.pull_request.head.ref == 'feature/lessons-logic-separation' &&
-      github.actor != 'github-actions[bot]'
+    if: github.actor != 'github-actions[bot]'
     runs-on: windows-latest
     timeout-minutes: 25
 
