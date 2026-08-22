@@ -22,7 +22,9 @@
       "kind": "python",
       "files": [
         "apps/verbs/Kotomi_verbs.py",
-        "apps/verbs/app.json"
+        "apps/verbs/app.json",
+        "apps/verbs/logic.py",
+        "apps/verbs/mobile.py"
       ]
     },
     {
@@ -138,13 +140,23 @@
     },
     {
       "path": "apps/verbs/Kotomi_verbs.py",
-      "sha256": "b1cfd8567cf52d5f7b0afce08af5ee8c220e616b668b4907309157a92659768b",
-      "url": "quizzes/verbs/Kotomi_verbs.py?kotomi_sha256=b1cfd8567cf52d5f7b0afce08af5ee8c220e616b668b4907309157a92659768b"
+      "sha256": "54686b22a4f8471182246c444becb463f7b0241da65a0fd0c3e91d6c92aaa7ae",
+      "url": "quizzes/verbs/Kotomi_verbs.py?kotomi_sha256=54686b22a4f8471182246c444becb463f7b0241da65a0fd0c3e91d6c92aaa7ae"
     },
     {
       "path": "apps/verbs/app.json",
       "sha256": "3a77a8e941aa264b284dd7d1df10462df3570eedaccd37a80f8962742289c855",
       "url": "quizzes/verbs/app.json?kotomi_sha256=3a77a8e941aa264b284dd7d1df10462df3570eedaccd37a80f8962742289c855"
+    },
+    {
+      "path": "apps/verbs/logic.py",
+      "sha256": "98ee726a4382b59a775fc6414636ea137be9ed0ddda3421bf4914d5ca75f48e6",
+      "url": "quizzes/verbs/logic.py?kotomi_sha256=98ee726a4382b59a775fc6414636ea137be9ed0ddda3421bf4914d5ca75f48e6"
+    },
+    {
+      "path": "apps/verbs/mobile.py",
+      "sha256": "e54d1fe07fc0e7d8cc1cf8c846a01da4e36f236c854448f992dd5ed70982b2a1",
+      "url": "quizzes/verbs/mobile.py?kotomi_sha256=e54d1fe07fc0e7d8cc1cf8c846a01da4e36f236c854448f992dd5ed70982b2a1"
     }
   ]
 }
