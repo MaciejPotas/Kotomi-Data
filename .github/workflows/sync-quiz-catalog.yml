@@ -1,0 +1,66 @@
+name: Synchronize public quiz catalog
+
+on:
+  push:
+    branches:
+      - feature/sync-quiz-catalog
+    paths:
+      - .github/sync-quiz-catalog.trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-public-quiz-catalog
+  cancel-in-progress: false
+
+jobs:
+  synchronize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: windows-latest
+    timeout-minutes: 20
+
+    env:
+      PYTHONUTF8: "1"
+      PYTHONIOENCODING: "utf-8"
+
+    steps:
+      - name: Check out exact feature branch
+        uses: actions/checkout@v6
+        with:
+          ref: feature/sync-quiz-catalog
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Synchronize packages and manifest
+        run: python tools/sync_quiz_catalog.py
+
+      - name: Validate package syntax and manifest
+        shell: pwsh
+        run: |
+          Get-ChildItem quizzes -Recurse -Filter *.py | ForEach-Object {
+            python -m py_compile $_.FullName
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+          python -m json.tool quiz_update_manifest.json > $null
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Remove one-time synchronization inputs
+        shell: pwsh
+        run: |
+          git rm tools/sync_quiz_catalog.py
+          git rm .github/sync-quiz-catalog.trigger
+
+      - name: Commit synchronized public catalog
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- quizzes quiz_update_manifest.json
+          git diff --cached --check
+          git commit -m "Synchronize public quiz catalog with Kotomi main"
+          git push origin HEAD:feature/sync-quiz-catalog
