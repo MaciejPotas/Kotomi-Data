@@ -1,0 +1,174 @@
+{
+  "format": 1,
+  "channel": "quizzes",
+  "version": "1.1.1",
+  "packages": [
+    {
+      "id": "lessons",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/lessons/Kotomi_lessons.py",
+        "apps/lessons/app.json",
+        "apps/lessons/logic.py",
+        "apps/lessons/mobile.py"
+      ]
+    },
+    {
+      "id": "verbs",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/verbs/Kotomi_verbs.py",
+        "apps/verbs/app.json",
+        "apps/verbs/logic.py",
+        "apps/verbs/mobile.py"
+      ]
+    },
+    {
+      "id": "adjectives",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/adjectives/Kotomi_adjectives.py",
+        "apps/adjectives/app.json",
+        "apps/adjectives/logic.py",
+        "apps/adjectives/mobile.py"
+      ]
+    },
+    {
+      "id": "availability",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/availability/Kotomi_availability.py",
+        "apps/availability/app.json",
+        "apps/availability/logic.py",
+        "apps/availability/mobile.py"
+      ]
+    },
+    {
+      "id": "grammar",
+      "version": "1.1.1",
+      "quiz_api": 1,
+      "min_app_version": "1.1.1",
+      "kind": "python",
+      "files": [
+        "apps/grammar/Kotomi_grammar.py",
+        "apps/grammar/app.json",
+        "apps/grammar/logic.py",
+        "apps/grammar/mobile.py"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "apps/adjectives/Kotomi_adjectives.py",
+      "sha256": "a77f678fd35855f9e0d510268ac537ce41d0ed5384fc6f91f07d324d06a7108f",
+      "url": "quizzes/adjectives/Kotomi_adjectives.py?kotomi_sha256=a77f678fd35855f9e0d510268ac537ce41d0ed5384fc6f91f07d324d06a7108f"
+    },
+    {
+      "path": "apps/adjectives/app.json",
+      "sha256": "658fd43ae1712a5c50398259837a4ac41df7c78740adb8f5ed377da4001bff31",
+      "url": "quizzes/adjectives/app.json?kotomi_sha256=658fd43ae1712a5c50398259837a4ac41df7c78740adb8f5ed377da4001bff31"
+    },
+    {
+      "path": "apps/adjectives/logic.py",
+      "sha256": "1957501da4874bdd37ba3b58cf53ecbd1c810ce91086b9c2314ba045c6eec18f",
+      "url": "quizzes/adjectives/logic.py?kotomi_sha256=1957501da4874bdd37ba3b58cf53ecbd1c810ce91086b9c2314ba045c6eec18f"
+    },
+    {
+      "path": "apps/adjectives/mobile.py",
+      "sha256": "fa0db02eb9f94440ed6b6bee97c969616612ba694f7fa663c67ada3a7a4d56df",
+      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=fa0db02eb9f94440ed6b6bee97c969616612ba694f7fa663c67ada3a7a4d56df"
+    },
+    {
+      "path": "apps/availability/Kotomi_availability.py",
+      "sha256": "6d13e29a1242f1693d52d67a01c669af38fb6581685f86abdcf355a8a2ea647e",
+      "url": "quizzes/availability/Kotomi_availability.py?kotomi_sha256=6d13e29a1242f1693d52d67a01c669af38fb6581685f86abdcf355a8a2ea647e"
+    },
+    {
+      "path": "apps/availability/app.json",
+      "sha256": "7949ab151fba52be6e5b394912e67e866ef6b8a7acbbc893bcbb52ffd7198645",
+      "url": "quizzes/availability/app.json?kotomi_sha256=7949ab151fba52be6e5b394912e67e866ef6b8a7acbbc893bcbb52ffd7198645"
+    },
+    {
+      "path": "apps/availability/logic.py",
+      "sha256": "c05228b627f2d1e7f2b73858d1fb74a5740554a8d964741926a44d7084707a7e",
+      "url": "quizzes/availability/logic.py?kotomi_sha256=c05228b627f2d1e7f2b73858d1fb74a5740554a8d964741926a44d7084707a7e"
+    },
+    {
+      "path": "apps/availability/mobile.py",
+      "sha256": "36348eaf5050adc8d89c0c1cf61afa31c010562869fd6f1d527e16c43a5b7216",
+      "url": "quizzes/availability/mobile.py?kotomi_sha256=36348eaf5050adc8d89c0c1cf61afa31c010562869fd6f1d527e16c43a5b7216"
+    },
+    {
+      "path": "apps/grammar/Kotomi_grammar.py",
+      "sha256": "3c6c5e7c1e1dc23b5d4d43fafd4a557ebc2d17dc1ae05c72e1daf94df888ac5c",
+      "url": "quizzes/grammar/Kotomi_grammar.py?kotomi_sha256=3c6c5e7c1e1dc23b5d4d43fafd4a557ebc2d17dc1ae05c72e1daf94df888ac5c"
+    },
+    {
+      "path": "apps/grammar/app.json",
+      "sha256": "3514860bc7be7e1bb2609bca4c5741b5a974672e1e68c03c432002fa9fac0da2",
+      "url": "quizzes/grammar/app.json?kotomi_sha256=3514860bc7be7e1bb2609bca4c5741b5a974672e1e68c03c432002fa9fac0da2"
+    },
+    {
+      "path": "apps/grammar/logic.py",
+      "sha256": "165711dd5674e13fec787c4d36358350c97527fac1eac9ddbcf74bd4f6d0136d",
+      "url": "quizzes/grammar/logic.py?kotomi_sha256=165711dd5674e13fec787c4d36358350c97527fac1eac9ddbcf74bd4f6d0136d"
+    },
+    {
+      "path": "apps/grammar/mobile.py",
+      "sha256": "e3c45deb7597015d55762b2c2122e8fa8f76bc40c31802d23ec85ee709724a7c",
+      "url": "quizzes/grammar/mobile.py?kotomi_sha256=e3c45deb7597015d55762b2c2122e8fa8f76bc40c31802d23ec85ee709724a7c"
+    },
+    {
+      "path": "apps/lessons/Kotomi_lessons.py",
+      "sha256": "d7fed65debeaefadd2b81d27710aa81510dd9ea421d13ba542fbfffdbc6c7f58",
+      "url": "quizzes/lessons/Kotomi_lessons.py?kotomi_sha256=d7fed65debeaefadd2b81d27710aa81510dd9ea421d13ba542fbfffdbc6c7f58"
+    },
+    {
+      "path": "apps/lessons/app.json",
+      "sha256": "3124aa5c8edf028689c8f3fd176a58caa88613380534fbf95634e2bc1181fbd9",
+      "url": "quizzes/lessons/app.json?kotomi_sha256=3124aa5c8edf028689c8f3fd176a58caa88613380534fbf95634e2bc1181fbd9"
+    },
+    {
+      "path": "apps/lessons/logic.py",
+      "sha256": "eb091d389d0b7447ad448502b696eec73fe9d464f6c1b6fc547bb79976117728",
+      "url": "quizzes/lessons/logic.py?kotomi_sha256=eb091d389d0b7447ad448502b696eec73fe9d464f6c1b6fc547bb79976117728"
+    },
+    {
+      "path": "apps/lessons/mobile.py",
+      "sha256": "a95981bb982cfc2c2973d5f570ce7f6bf320d7b2b11faf0e73f045eedd662d9b",
+      "url": "quizzes/lessons/mobile.py?kotomi_sha256=a95981bb982cfc2c2973d5f570ce7f6bf320d7b2b11faf0e73f045eedd662d9b"
+    },
+    {
+      "path": "apps/verbs/Kotomi_verbs.py",
+      "sha256": "54686b22a4f8471182246c444becb463f7b0241da65a0fd0c3e91d6c92aaa7ae",
+      "url": "quizzes/verbs/Kotomi_verbs.py?kotomi_sha256=54686b22a4f8471182246c444becb463f7b0241da65a0fd0c3e91d6c92aaa7ae"
+    },
+    {
+      "path": "apps/verbs/app.json",
+      "sha256": "3a77a8e941aa264b284dd7d1df10462df3570eedaccd37a80f8962742289c855",
+      "url": "quizzes/verbs/app.json?kotomi_sha256=3a77a8e941aa264b284dd7d1df10462df3570eedaccd37a80f8962742289c855"
+    },
+    {
+      "path": "apps/verbs/logic.py",
+      "sha256": "98ee726a4382b59a775fc6414636ea137be9ed0ddda3421bf4914d5ca75f48e6",
+      "url": "quizzes/verbs/logic.py?kotomi_sha256=98ee726a4382b59a775fc6414636ea137be9ed0ddda3421bf4914d5ca75f48e6"
+    },
+    {
+      "path": "apps/verbs/mobile.py",
+      "sha256": "e54d1fe07fc0e7d8cc1cf8c846a01da4e36f236c854448f992dd5ed70982b2a1",
+      "url": "quizzes/verbs/mobile.py?kotomi_sha256=e54d1fe07fc0e7d8cc1cf8c846a01da4e36f236c854448f992dd5ed70982b2a1"
+    }
+  ]
+}
