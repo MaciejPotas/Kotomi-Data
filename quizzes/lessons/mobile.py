@@ -21,8 +21,8 @@ if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
 from apps.lessons.logic import *
-from shared.settings_xml import settings_path
-from shared.app_identity import (
+from kotomi_core.settings_xml import settings_path
+from kotomi_core.app_identity import (
     app_icon_png_path,
     apply_kivy_window_icon,
     configure_windows_app_id,
@@ -42,7 +42,7 @@ from shared.mobile_ui import (
     mobile_font_path,
     scaled_button_height,
 )
-from shared.mobile_i18n import mobile_error_text, mobile_text
+from kotomi_core.mobile_i18n import mobile_error_text, mobile_text
 
 
 MOBILE_FONT = mobile_font_path(SHARED_DIR)
