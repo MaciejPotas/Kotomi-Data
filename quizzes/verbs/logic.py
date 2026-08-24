@@ -27,7 +27,7 @@ from quiz_core import (
     Word,
 )
 from quiz_engine import SharedQuizEngine, balanced_choice, normalize_answer
-from settings_xml import load_settings, save_settings
+from kotomi_core.settings_xml import load_settings, save_settings
 from mobile_ui import validate_mobile_button_scale
 PROJECT_ENVIRONMENT_VARIABLE = "JAPANESE_QUIZ_PROJECT"
 SETTINGS_FILENAME = "verb_quiz_settings.xml"

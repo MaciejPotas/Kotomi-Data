@@ -33,7 +33,7 @@ from quiz_core import (
     Word,
 )
 from quiz_engine import SharedQuizEngine, normalize_answer
-from settings_xml import load_settings, save_settings
+from kotomi_core.settings_xml import load_settings, save_settings
 from mobile_ui import (
     DEFAULT_MOBILE_BUTTON_SCALE,
     validate_mobile_button_scale,

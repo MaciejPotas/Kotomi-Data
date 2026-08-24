@@ -24,7 +24,7 @@ for import_root in (INSTALL_ROOT, REPOSITORY_SHARED_DIR):
 from apps.verbs.logic import *
 from apps.verbs.logic import _safe_float, _safe_int
 from quiz_core import ProjectError
-from settings_xml import settings_path
+from kotomi_core.settings_xml import settings_path
 from mobile_ui import (
     FocusRequest,
     MOBILE_BUTTON_BACKGROUND,
@@ -41,16 +41,13 @@ from mobile_ui import (
     scaled_button_height,
     validate_mobile_button_scale,
 )
-from shared.app_identity import (
+from kotomi_core.app_identity import (
     app_icon_png_path,
     apply_kivy_window_icon,
     configure_windows_app_id,
 )
-try:
-    from shared.mobile_i18n import mobile_error_text, mobile_text
-except ImportError:  # Direct execution adds ``shared`` itself to sys.path.
-    from mobile_i18n import mobile_error_text, mobile_text
-from quiz_updater import QuizUpdater, UpdateError, load_update_url
+from kotomi_core.mobile_i18n import mobile_error_text, mobile_text
+from kotomi_core.update_transport import QuizUpdater, UpdateError, load_update_url
 
 
 SHARED_DIR = REPOSITORY_SHARED_DIR

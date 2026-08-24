@@ -26,7 +26,7 @@ for import_root in (INSTALL_ROOT, REPOSITORY_SHARED_DIR):
 from quiz_core import ProjectError, Word
 from quiz_engine import SharedQuizEngine, balanced_choice, normalize_answer
 from mobile_ui import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
-from settings_xml import load_settings, save_settings
+from kotomi_core.settings_xml import load_settings, save_settings
 
 
 PROJECT_ENVIRONMENT_VARIABLE = "JAPANESE_QUIZ_PROJECT"
