@@ -1,0 +1,209 @@
+name: Fresh start cleanup
+
+on:
+  push:
+    branches:
+      - refactor/public-data-ownership
+    paths:
+      - .github/workflows/fresh_start_cleanup.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Apply fresh-start public contract
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          from pathlib import Path, PurePosixPath
+
+          root = Path.cwd()
+          version = "1.1.1"
+          text_suffixes = {".py", ".xml", ".json", ".md", ".txt", ".bat", ".yml", ".yaml"}
+
+          def canonical_bytes(path: Path) -> bytes:
+              data = path.read_bytes()
+              if path.suffix.lower() in text_suffixes or path.name == "LICENSE":
+                  data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+              return data
+
+          def digest(path: Path) -> str:
+              return hashlib.sha256(canonical_bytes(path)).hexdigest()
+
+          def rewrite(path: Path, old: str, new: str, *, count: int = 1) -> None:
+              text = path.read_text(encoding="utf-8")
+              if old not in text:
+                  raise RuntimeError(f"Expected block not found in {path}: {old[:80]!r}")
+              path.write_text(text.replace(old, new, count), encoding="utf-8", newline="\n")
+
+          logic_ids = ("verbs", "adjectives", "availability", "grammar")
+          for quiz_id in logic_ids:
+              path = root / "quizzes" / quiz_id / "logic.py"
+              text = path.read_text(encoding="utf-8")
+              old = (
+                  'SCRIPT_DIR = Path(__file__).resolve().parent\n'
+                  'REPOSITORY_SHARED_DIR = SCRIPT_DIR.parents[1] / "shared"\n'
+                  'INSTALL_ROOT = REPOSITORY_SHARED_DIR.parent\n'
+                  'REPOSITORY_DATA_DIR = INSTALL_ROOT / "data"\n'
+                  'for import_root in (INSTALL_ROOT, REPOSITORY_SHARED_DIR):\n'
+                  '    if str(import_root) not in sys.path:\n'
+                  '        sys.path.insert(0, str(import_root))\n'
+              )
+              new = (
+                  'SCRIPT_DIR = Path(__file__).resolve().parent\n'
+                  'INSTALL_ROOT = SCRIPT_DIR.parents[1]\n'
+                  'REPOSITORY_DATA_DIR = INSTALL_ROOT / "data"\n'
+                  'if str(INSTALL_ROOT) not in sys.path:\n'
+                  '    sys.path.insert(0, str(INSTALL_ROOT))\n'
+              )
+              if old not in text:
+                  raise RuntimeError(f"Install-root compatibility block missing in {path}")
+              text = text.replace(old, new, 1)
+              text = text.replace("from quiz_core import (", "from kotomi_core.project import (")
+              text = text.replace("from quiz_core import ProjectError, Word", "from kotomi_core.project import ProjectError, Word")
+              text = text.replace("from quiz_core import Entity, ProjectError, Word", "from kotomi_core.project import Entity, ProjectError, Word")
+              text = text.replace("from quiz_engine import ", "from kotomi_core.generation import ")
+              text = text.replace("from mobile_ui import (", "from kotomi_ui.mobile import (")
+              text = text.replace('        REPOSITORY_SHARED_DIR / "quiz_data" / "quiz_project.xml",\n', "")
+              text = text.replace('    "REPOSITORY_SHARED_DIR",\n', "")
+              path.write_text(text, encoding="utf-8", newline="\n")
+
+          # Lessons no longer resolves or exports the historical data root.
+          lessons = root / "quizzes" / "lessons" / "logic.py"
+          text = lessons.read_text(encoding="utf-8")
+          text = text.replace("from shared.mobile_ui import (", "from kotomi_ui.mobile import (")
+          start = text.index('SHARED_DIR = INSTALL_ROOT / "shared"\n')
+          end_marker = 'QUIZ_PROJECT = QUIZ_DATA_DIR / "quiz_project.xml"\n'
+          end = text.index(end_marker, start) + len(end_marker)
+          replacement = (
+              'QUIZ_DATA_DIR = INSTALL_ROOT / "data"\n'
+              'QUIZ_PROJECT = QUIZ_DATA_DIR / "quiz_project.xml"\n'
+          )
+          text = text[:start] + replacement + text[end:]
+          text = text.replace('    "SHARED_DIR",\n', "")
+          text = text.replace('    "CANONICAL_QUIZ_DATA_DIR",\n', "")
+          text = text.replace('    "LEGACY_QUIZ_DATA_DIR",\n', "")
+          lessons.write_text(text, encoding="utf-8", newline="\n")
+
+          # Mobile presentations use canonical project/UI/font imports only.
+          for quiz_id in ("verbs", "adjectives", "availability"):
+              path = root / "quizzes" / quiz_id / "mobile.py"
+              text = path.read_text(encoding="utf-8")
+              text = text.replace("from quiz_core import ProjectError", "from kotomi_core.project import ProjectError")
+              text = text.replace("from mobile_ui import (", "from kotomi_ui.mobile import (")
+              if "from kotomi_core.paths import FONTS_DIR\n" not in text:
+                  marker = "from kotomi_core.settings_xml import settings_path\n"
+                  if marker in text:
+                      text = text.replace(marker, marker + "from kotomi_core.paths import FONTS_DIR\n", 1)
+                  else:
+                      marker = "from kotomi_core.mobile_i18n import mobile_error_text, mobile_text\n"
+                      if marker not in text:
+                          raise RuntimeError(f"Cannot place FONTS_DIR import in {path}")
+                      text = text.replace(marker, "from kotomi_core.paths import FONTS_DIR\n" + marker, 1)
+              text = text.replace('REPOSITORY_SHARED_DIR = INSTALL_ROOT / "shared"\n', "")
+              text = text.replace('for import_root in (INSTALL_ROOT, REPOSITORY_SHARED_DIR):\n    if str(import_root) not in sys.path:\n        sys.path.insert(0, str(import_root))\n', 'if str(INSTALL_ROOT) not in sys.path:\n    sys.path.insert(0, str(INSTALL_ROOT))\n')
+              text = text.replace('SHARED_DIR = REPOSITORY_SHARED_DIR\nMOBILE_FONT = mobile_font_path(SHARED_DIR)\n', 'MOBILE_FONT = mobile_font_path(FONTS_DIR)\n')
+              text = text.replace('mixed_font = mobile_font_path(REPOSITORY_SHARED_DIR)', 'mixed_font = mobile_font_path(FONTS_DIR)')
+              path.write_text(text, encoding="utf-8", newline="\n")
+
+          lessons_mobile = root / "quizzes" / "lessons" / "mobile.py"
+          text = lessons_mobile.read_text(encoding="utf-8")
+          text = text.replace("from shared.mobile_ui import (", "from kotomi_ui.mobile import (")
+          marker = "from kotomi_core.settings_xml import settings_path\n"
+          if "from kotomi_core.paths import FONTS_DIR\n" not in text:
+              text = text.replace(marker, marker + "from kotomi_core.paths import FONTS_DIR\n", 1)
+          text = text.replace('MOBILE_FONT = mobile_font_path(SHARED_DIR)', 'MOBILE_FONT = mobile_font_path(FONTS_DIR)')
+          lessons_mobile.write_text(text, encoding="utf-8", newline="\n")
+
+          # Fresh installations have one database destination only.
+          database_files = []
+          for source in sorted(root.glob("*.xml"), key=lambda value: value.name):
+              sha = digest(source)
+              database_files.append({
+                  "path": f"data/{source.name}",
+                  "sha256": sha,
+                  "url": f"{source.name}?kotomi_sha256={sha}",
+              })
+          (root / "database_update_manifest.json").write_text(
+              json.dumps({"format": 1, "version": version, "files": database_files}, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+              newline="\n",
+          )
+
+          # Rebuild quiz hashes after canonical-import changes.
+          quiz_path = root / "quiz_update_manifest.json"
+          quiz = json.loads(quiz_path.read_text(encoding="utf-8"))
+          for item in quiz["files"]:
+              install = PurePosixPath(str(item["path"]))
+              source = root.joinpath("quizzes", *install.parts[1:])
+              sha = digest(source)
+              public = PurePosixPath("quizzes", *install.parts[1:])
+              item["sha256"] = sha
+              item["url"] = f"{public.as_posix()}?kotomi_sha256={sha}"
+          quiz_path.write_text(json.dumps(quiz, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+
+          readme = (root / "README.md").read_text(encoding="utf-8")
+          readme = readme.replace(
+              "The canonical Kotomi installation location is now `data/`. While Kotomi remains on version 1.1.1, `database_update_manifest.json` deliberately publishes each XML to both `data/` and the historical `shared/quiz_data/` path. This compatibility bridge keeps older 1.1.1 installations functional even when Database Update runs before Application Update. It can be removed after the application version is bumped and the legacy layout no longer needs support.",
+              "Kotomi has one supported learning-data installation location: `data/`. The Database manifest publishes each XML only to that canonical path. The pre-refactor `shared/quiz_data/` layout is intentionally unsupported for the fresh-start architecture."
+          )
+          readme = readme.replace(
+              "Because version 1.1.1 installations can update quiz packages independently, the published package code keeps compatibility imports that older 1.1.1 application builds understand. Project lookup prefers the canonical `data/quiz_project.xml` and falls back to `shared/quiz_data/quiz_project.xml`.",
+              "Published quiz packages use the canonical Kotomi APIs and load their project from `data/quiz_project.xml`. They are released together with the fresh-start application contract rather than carrying pre-refactor import or path fallbacks."
+          )
+          (root / "README.md").write_text(readme, encoding="utf-8", newline="\n")
+          PY
+      - name: Validate public contract
+        shell: bash
+        run: |
+          python -m py_compile quizzes/*/*.py
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path, PurePosixPath
+          root=Path.cwd()
+          db=json.loads((root/'database_update_manifest.json').read_text(encoding='utf-8'))
+          assert db['version']=='1.1.1'
+          assert all(item['path'].startswith('data/') for item in db['files'])
+          assert not any('shared/' in item['path'] for item in db['files'])
+          assert len(db['files']) == len(list(root.glob('*.xml')))
+          for item in db['files']:
+              source=root/item['url'].split('?',1)[0]
+              data=source.read_bytes().replace(b'\r\n',b'\n').replace(b'\r',b'\n')
+              assert hashlib.sha256(data).hexdigest()==item['sha256']
+          quiz=json.loads((root/'quiz_update_manifest.json').read_text(encoding='utf-8'))
+          for item in quiz['files']:
+              install=PurePosixPath(item['path'])
+              source=root.joinpath('quizzes',*install.parts[1:])
+              data=source.read_bytes()
+              if source.suffix.lower() in {'.py','.xml','.json','.md','.txt','.bat','.yml','.yaml'} or source.name=='LICENSE':
+                  data=data.replace(b'\r\n',b'\n').replace(b'\r',b'\n')
+              assert hashlib.sha256(data).hexdigest()==item['sha256'], item['path']
+          for path in root.glob('quizzes/*/*.py'):
+              text=path.read_text(encoding='utf-8')
+              assert 'shared/quiz_data' not in text
+              assert 'REPOSITORY_SHARED_DIR' not in text
+              assert 'from quiz_core import' not in text
+              assert 'from quiz_engine import' not in text
+              assert 'from mobile_ui import' not in text
+              assert 'from shared.' not in text
+          PY
+          git diff --check
+      - name: Commit fresh-start public contract
+        shell: bash
+        run: |
+          rm .github/workflows/fresh_start_cleanup.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Drop legacy public compatibility paths"
+          git push origin HEAD:refactor/public-data-ownership
