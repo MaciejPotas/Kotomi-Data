@@ -19,6 +19,7 @@ from typing import Callable, Dict, Iterable, List, Mapping, Optional, Sequence, 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPOSITORY_SHARED_DIR = SCRIPT_DIR.parents[1] / "shared"
 INSTALL_ROOT = REPOSITORY_SHARED_DIR.parent
+REPOSITORY_DATA_DIR = INSTALL_ROOT / "data"
 for import_root in (INSTALL_ROOT, REPOSITORY_SHARED_DIR):
     if str(import_root) not in sys.path:
         sys.path.insert(0, str(import_root))
@@ -370,6 +371,7 @@ def resolve_project_path() -> Path:
     candidates = [
         Path(environment_path).expanduser() if environment_path else None,
         SCRIPT_DIR / "quiz_data" / "quiz_project.xml",
+        REPOSITORY_DATA_DIR / "quiz_project.xml",
         REPOSITORY_SHARED_DIR / "quiz_data" / "quiz_project.xml",
         SCRIPT_DIR / "quiz_project.xml",
     ]

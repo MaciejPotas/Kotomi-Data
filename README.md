@@ -2,7 +2,7 @@
 
 Public learning data and distributable quiz packages for Kotomi.
 
-This repository is intentionally separate from the private Kotomi application source. It contains dictionaries, lessons, grammar definitions, sentence maps and contexts. It also provides the public delivery location for independently updateable quiz packages generated from the private source repository.
+This repository is intentionally separate from the private Kotomi application source. It owns dictionaries, lessons, grammar definitions, sentence maps, contexts, and the public delivery copy of independently updateable quiz packages generated from the private source repository.
 
 ## Learning data
 
@@ -20,7 +20,7 @@ The learning-data files currently include:
 - `lessons.xml`
 - `database_update_manifest.json`
 
-Kotomi installs these XML files under `shared/quiz_data/`. The database manifest keeps installation paths separate from this repository layout.
+The canonical Kotomi installation location is now `data/`. While Kotomi remains on version 1.1.1, `database_update_manifest.json` deliberately publishes each XML to both `data/` and the historical `shared/quiz_data/` path. This compatibility bridge keeps older 1.1.1 installations functional even when Database Update runs before Application Update. It can be removed after the application version is bumped and the legacy layout no longer needs support.
 
 ## Quiz packages
 
@@ -31,7 +31,9 @@ quizzes/
 quiz_update_manifest.json
 ```
 
-Each package is stored under `quizzes/<package-id>/`, while the manifest installs it under `apps/<package-id>/` in Kotomi. Package files are generated from the private Kotomi source repository. They should not be edited independently here because the next publication would replace those edits.
+Each package is stored under `quizzes/<package-id>/`, while the manifest installs it under `apps/<package-id>/` in Kotomi. Package files are generated from the private Kotomi source repository and should not be edited independently because the next publication replaces those edits.
+
+Because version 1.1.1 installations can update quiz packages independently, the published package code keeps compatibility imports that older 1.1.1 application builds understand. Project lookup prefers the canonical `data/quiz_project.xml` and falls back to `shared/quiz_data/quiz_project.xml`.
 
 From a Kotomi checkout with this repository initialized as its submodule, publish the current packages with:
 
@@ -46,7 +48,7 @@ Review and commit the generated `quizzes/` directory and `quiz_update_manifest.j
 The private Kotomi repository mounts this repository as a Git submodule at:
 
 ```text
-shared/quiz_data
+data
 ```
 
 After cloning Kotomi, initialize it with:
@@ -69,4 +71,4 @@ The independent quiz updater uses:
 https://raw.githubusercontent.com/MaciejPotas/Kotomi-Data/main/quiz_update_manifest.json
 ```
 
-Application, quiz and learning-data updates are separate channels. Users may later point the quiz or database updater at their own compatible source without changing where the Kotomi application itself is updated from.
+Application, quiz, and learning-data updates are separate channels. Users may point the quiz or database updater at another compatible source without changing where the Kotomi application itself is updated from.

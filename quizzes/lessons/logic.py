@@ -52,7 +52,20 @@ from shared.mobile_ui import (
 
 
 SHARED_DIR = INSTALL_ROOT / "shared"
-QUIZ_DATA_DIR = SHARED_DIR / "quiz_data"
+CANONICAL_QUIZ_DATA_DIR = INSTALL_ROOT / "data"
+LEGACY_QUIZ_DATA_DIR = SHARED_DIR / "quiz_data"
+
+
+def _resolve_quiz_data_dir() -> Path:
+    """Prefer the canonical data root while accepting 1.1.1 installations."""
+    if (CANONICAL_QUIZ_DATA_DIR / "quiz_project.xml").is_file():
+        return CANONICAL_QUIZ_DATA_DIR
+    if (LEGACY_QUIZ_DATA_DIR / "quiz_project.xml").is_file():
+        return LEGACY_QUIZ_DATA_DIR
+    return CANONICAL_QUIZ_DATA_DIR
+
+
+QUIZ_DATA_DIR = _resolve_quiz_data_dir()
 QUIZ_PROJECT = QUIZ_DATA_DIR / "quiz_project.xml"
 
 def fitted_choice_text_layout(
