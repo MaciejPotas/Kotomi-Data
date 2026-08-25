@@ -16,16 +16,15 @@ from typing import Dict, List, Optional, Set
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 INSTALL_ROOT = SCRIPT_DIR.parents[1]
-REPOSITORY_SHARED_DIR = INSTALL_ROOT / "shared"
-for import_root in (INSTALL_ROOT, REPOSITORY_SHARED_DIR):
-    if str(import_root) not in sys.path:
-        sys.path.insert(0, str(import_root))
+if str(INSTALL_ROOT) not in sys.path:
+    sys.path.insert(0, str(INSTALL_ROOT))
 
 from apps.verbs.logic import *
 from apps.verbs.logic import _safe_float, _safe_int
-from quiz_core import ProjectError
+from kotomi_core.project import ProjectError
 from kotomi_core.settings_xml import settings_path
-from mobile_ui import (
+from kotomi_core.paths import FONTS_DIR
+from kotomi_ui.mobile import (
     FocusRequest,
     MOBILE_BUTTON_BACKGROUND,
     MOBILE_BUTTON_TEXT,
@@ -50,8 +49,7 @@ from kotomi_core.mobile_i18n import mobile_error_text, mobile_text
 from kotomi_core.update_transport import QuizUpdater, UpdateError, load_update_url
 
 
-SHARED_DIR = REPOSITORY_SHARED_DIR
-MOBILE_FONT = mobile_font_path(SHARED_DIR)
+MOBILE_FONT = mobile_font_path(FONTS_DIR)
 
 
 def mobile_sentence_hint_items(

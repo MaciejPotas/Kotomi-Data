@@ -18,8 +18,8 @@ except ImportError:  # Direct execution from the quiz package directory.
     from logic import *
     from logic import _safe_float, _safe_int
 
-from quiz_core import ProjectError
-from mobile_ui import (
+from kotomi_core.project import ProjectError
+from kotomi_ui.mobile import (
     DEFAULT_MOBILE_BUTTON_SCALE,
     FocusRequest,
     MOBILE_BUTTON_BACKGROUND,
@@ -43,6 +43,7 @@ from kotomi_core.app_identity import (
 )
 from kotomi_core.mobile_i18n import mobile_error_text, mobile_text
 from kotomi_core.settings_xml import settings_path
+from kotomi_core.paths import FONTS_DIR
 from kotomi_core.update_transport import QuizUpdater, UpdateError, load_update_url
 
 
@@ -345,7 +346,7 @@ def create_app_class(policy: object = None):
     hint_active_background = (0.76, 0.88, 0.97, 1.0)
     font_scale_state = {"value": 1.0}
     button_scale_state = {"value": DEFAULT_MOBILE_BUTTON_SCALE}
-    mixed_font = mobile_font_path(REPOSITORY_SHARED_DIR)
+    mixed_font = mobile_font_path(FONTS_DIR)
 
     def polish_font() -> str:
         return mixed_font

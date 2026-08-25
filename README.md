@@ -20,7 +20,7 @@ The learning-data files currently include:
 - `lessons.xml`
 - `database_update_manifest.json`
 
-The canonical Kotomi installation location is now `data/`. While Kotomi remains on version 1.1.1, `database_update_manifest.json` deliberately publishes each XML to both `data/` and the historical `shared/quiz_data/` path. This compatibility bridge keeps older 1.1.1 installations functional even when Database Update runs before Application Update. It can be removed after the application version is bumped and the legacy layout no longer needs support.
+Kotomi has one supported learning-data installation location: `data/`. The Database manifest publishes each XML only to that canonical path. The pre-refactor `shared/quiz_data/` layout is intentionally unsupported for the fresh-start architecture.
 
 ## Quiz packages
 
@@ -33,7 +33,7 @@ quiz_update_manifest.json
 
 Each package is stored under `quizzes/<package-id>/`, while the manifest installs it under `apps/<package-id>/` in Kotomi. Package files are generated from the private Kotomi source repository and should not be edited independently because the next publication replaces those edits.
 
-Because version 1.1.1 installations can update quiz packages independently, the published package code keeps compatibility imports that older 1.1.1 application builds understand. Project lookup prefers the canonical `data/quiz_project.xml` and falls back to `shared/quiz_data/quiz_project.xml`.
+Published quiz packages use the canonical Kotomi APIs and load their project from `data/quiz_project.xml`. They are released together with the fresh-start application contract rather than carrying pre-refactor import or path fallbacks.
 
 From a Kotomi checkout with this repository initialized as its submodule, publish the current packages with:
 

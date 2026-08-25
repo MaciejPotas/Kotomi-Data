@@ -43,7 +43,7 @@ from kotomi_core.questions import Question, QuizSession
 from kotomi_core.sentence_quiz import LessonSentenceQuiz
 from kotomi_core.settings import AppSettings
 from kotomi_core.storage import CatalogStore, SettingsStore
-from shared.mobile_ui import (
+from kotomi_ui.mobile import (
     fitted_compact_text_layout,
     fitted_single_line_font_size,
     format_grammatical_hint_entry,
@@ -51,21 +51,7 @@ from shared.mobile_ui import (
 )
 
 
-SHARED_DIR = INSTALL_ROOT / "shared"
-CANONICAL_QUIZ_DATA_DIR = INSTALL_ROOT / "data"
-LEGACY_QUIZ_DATA_DIR = SHARED_DIR / "quiz_data"
-
-
-def _resolve_quiz_data_dir() -> Path:
-    """Prefer the canonical data root while accepting 1.1.1 installations."""
-    if (CANONICAL_QUIZ_DATA_DIR / "quiz_project.xml").is_file():
-        return CANONICAL_QUIZ_DATA_DIR
-    if (LEGACY_QUIZ_DATA_DIR / "quiz_project.xml").is_file():
-        return LEGACY_QUIZ_DATA_DIR
-    return CANONICAL_QUIZ_DATA_DIR
-
-
-QUIZ_DATA_DIR = _resolve_quiz_data_dir()
+QUIZ_DATA_DIR = INSTALL_ROOT / "data"
 QUIZ_PROJECT = QUIZ_DATA_DIR / "quiz_project.xml"
 
 def fitted_choice_text_layout(
@@ -322,7 +308,6 @@ def conjugation_translation_hint(question: Question) -> str:
 __all__ = [
     "APP_ROOT",
     "INSTALL_ROOT",
-    "SHARED_DIR",
     "QUIZ_DATA_DIR",
     "QUIZ_PROJECT",
     "FIELD_LABELS",

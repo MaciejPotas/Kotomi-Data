@@ -17,16 +17,14 @@ from typing import Callable, Dict, Iterable, List, Mapping, Optional, Sequence, 
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-REPOSITORY_SHARED_DIR = SCRIPT_DIR.parents[1] / "shared"
-INSTALL_ROOT = REPOSITORY_SHARED_DIR.parent
+INSTALL_ROOT = SCRIPT_DIR.parents[1]
 REPOSITORY_DATA_DIR = INSTALL_ROOT / "data"
-for import_root in (INSTALL_ROOT, REPOSITORY_SHARED_DIR):
-    if str(import_root) not in sys.path:
-        sys.path.insert(0, str(import_root))
+if str(INSTALL_ROOT) not in sys.path:
+    sys.path.insert(0, str(INSTALL_ROOT))
 
-from quiz_core import Entity, ProjectError, Word
-from quiz_engine import SharedQuizEngine, balanced_choice
-from mobile_ui import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
+from kotomi_core.project import Entity, ProjectError, Word
+from kotomi_core.generation import SharedQuizEngine, balanced_choice
+from kotomi_ui.mobile import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from kotomi_core.settings_xml import load_settings, save_settings, settings_path
 from apps.availability.logic import (
     AvailabilityQuizSession,
@@ -372,7 +370,6 @@ def resolve_project_path() -> Path:
         Path(environment_path).expanduser() if environment_path else None,
         SCRIPT_DIR / "quiz_data" / "quiz_project.xml",
         REPOSITORY_DATA_DIR / "quiz_project.xml",
-        REPOSITORY_SHARED_DIR / "quiz_data" / "quiz_project.xml",
         SCRIPT_DIR / "quiz_project.xml",
     ]
     for candidate in candidates:
@@ -817,7 +814,6 @@ __all__ = [
     "QUIZ_SESSION_CLASS",
     "QUIZ_SETTINGS_CLASS",
     "RECENT_MAIN_VERB_WINDOW",
-    "REPOSITORY_SHARED_DIR",
     "SCRIPT_DIR",
     "SETTINGS_FILENAME",
     "SETTINGS_STORE_CLASS",
