@@ -1,0 +1,292 @@
+name: Public data ownership migration
+
+on:
+  push:
+    branches:
+      - refactor/public-data-ownership
+    paths:
+      - .github/workflows/public_data_ownership_migration.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Kotomi-Data
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Apply public data migration
+        shell: bash
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          from pathlib import Path, PurePosixPath
+          from urllib.parse import urlsplit
+
+          ROOT = Path.cwd()
+          VERSION = "1.1.1"
+          TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt", ".bat", ".yml", ".yaml"}
+          TEXT_FILE_NAMES = {"LICENSE"}
+
+          def canonical_bytes(path: Path) -> bytes:
+              data = path.read_bytes()
+              if path.suffix.lower() in TEXT_SUFFIXES or path.name in TEXT_FILE_NAMES:
+                  data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+              return data
+
+          def digest(path: Path) -> str:
+              return hashlib.sha256(canonical_bytes(path)).hexdigest()
+
+          # Published quiz packages must work on both layouts while Kotomi stays
+          # on 1.1.1. Do not introduce a dependency on a newer core/UI API here.
+          for relative in (
+              "quizzes/verbs/logic.py",
+              "quizzes/adjectives/logic.py",
+              "quizzes/availability/logic.py",
+              "quizzes/grammar/logic.py",
+          ):
+              path = ROOT / relative
+              text = path.read_text(encoding="utf-8")
+              old = (
+                  'REPOSITORY_SHARED_DIR = SCRIPT_DIR.parents[1] / "shared"\n'
+                  'INSTALL_ROOT = REPOSITORY_SHARED_DIR.parent\n'
+              )
+              new = old + 'REPOSITORY_DATA_DIR = INSTALL_ROOT / "data"\n'
+              if old not in text:
+                  raise RuntimeError(f"Install-root block not found in {relative}")
+              text = text.replace(old, new, 1)
+              old_candidate = '        REPOSITORY_SHARED_DIR / "quiz_data" / "quiz_project.xml",\n'
+              new_candidate = (
+                  '        REPOSITORY_DATA_DIR / "quiz_project.xml",\n'
+                  + old_candidate
+              )
+              if old_candidate not in text:
+                  raise RuntimeError(f"Legacy project candidate not found in {relative}")
+              text = text.replace(old_candidate, new_candidate, 1)
+              path.write_text(text, encoding="utf-8", newline="\n")
+
+          lessons = ROOT / "quizzes/lessons/logic.py"
+          text = lessons.read_text(encoding="utf-8")
+          old = (
+              'SHARED_DIR = INSTALL_ROOT / "shared"\n'
+              'QUIZ_DATA_DIR = SHARED_DIR / "quiz_data"\n'
+              'QUIZ_PROJECT = QUIZ_DATA_DIR / "quiz_project.xml"\n'
+          )
+          new = '''SHARED_DIR = INSTALL_ROOT / "shared"
+          CANONICAL_QUIZ_DATA_DIR = INSTALL_ROOT / "data"
+          LEGACY_QUIZ_DATA_DIR = SHARED_DIR / "quiz_data"
+
+
+          def _resolve_quiz_data_dir() -> Path:
+              """Prefer the canonical data root while accepting 1.1.1 installations."""
+              if (CANONICAL_QUIZ_DATA_DIR / "quiz_project.xml").is_file():
+                  return CANONICAL_QUIZ_DATA_DIR
+              if (LEGACY_QUIZ_DATA_DIR / "quiz_project.xml").is_file():
+                  return LEGACY_QUIZ_DATA_DIR
+              return CANONICAL_QUIZ_DATA_DIR
+
+
+          QUIZ_DATA_DIR = _resolve_quiz_data_dir()
+          QUIZ_PROJECT = QUIZ_DATA_DIR / "quiz_project.xml"
+          '''
+          # Strip YAML indentation added around this heredoc literal.
+          new = "\n".join(
+              line[10:] if line.startswith("          ") else line
+              for line in new.splitlines()
+          ) + "\n"
+          if old not in text:
+              raise RuntimeError("Lesson data-root block not found")
+          lessons.write_text(text.replace(old, new, 1), encoding="utf-8", newline="\n")
+
+          # Rebuild the quiz manifest hashes from the public package files.
+          quiz_manifest_path = ROOT / "quiz_update_manifest.json"
+          quiz_manifest = json.loads(quiz_manifest_path.read_text(encoding="utf-8"))
+          if quiz_manifest.get("version") != VERSION or quiz_manifest.get("channel") != "quizzes":
+              raise RuntimeError("Unexpected quiz manifest contract")
+          for item in quiz_manifest["files"]:
+              install = PurePosixPath(str(item["path"]))
+              if not install.parts or install.parts[0] != "apps":
+                  raise RuntimeError(f"Unexpected quiz install path: {install}")
+              public = PurePosixPath("quizzes", *install.parts[1:])
+              source = ROOT.joinpath(*public.parts)
+              sha = digest(source)
+              item["sha256"] = sha
+              item["url"] = f"{public.as_posix()}?kotomi_sha256={sha}"
+          quiz_manifest_path.write_text(
+              json.dumps(quiz_manifest, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+              newline="\n",
+          )
+
+          # 1.1.1 compatibility bridge: publish every learning XML to the new
+          # canonical data/ path and to the historical shared/quiz_data/ path.
+          database_files = []
+          for source in sorted(ROOT.glob("*.xml"), key=lambda value: value.name):
+              sha = digest(source)
+              url = f"{source.name}?kotomi_sha256={sha}"
+              for install_root in ("data", "shared/quiz_data"):
+                  database_files.append(
+                      {
+                          "path": f"{install_root}/{source.name}",
+                          "sha256": sha,
+                          "url": url,
+                      }
+                  )
+          database_manifest = {
+              "format": 1,
+              "version": VERSION,
+              "files": database_files,
+          }
+          (ROOT / "database_update_manifest.json").write_text(
+              json.dumps(database_manifest, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+              newline="\n",
+          )
+
+          readme = '''# Kotomi Data
+
+          Public learning data and distributable quiz packages for Kotomi.
+
+          This repository is intentionally separate from the private Kotomi application source. It owns dictionaries, lessons, grammar definitions, sentence maps, contexts, and the public delivery copy of independently updateable quiz packages generated from the private source repository.
+
+          ## Learning data
+
+          The learning-data files currently include:
+
+          - `nouns.xml`
+          - `verbs.xml`
+          - `adjectives.xml`
+          - `copulas.xml`
+          - `grammar_rules.xml`
+          - `contexts.xml`
+          - `sentence_maps.xml`
+          - `sentence_quizzes.xml`
+          - `quiz_project.xml`
+          - `lessons.xml`
+          - `database_update_manifest.json`
+
+          The canonical Kotomi installation location is now `data/`. While Kotomi remains on version 1.1.1, `database_update_manifest.json` deliberately publishes each XML to both `data/` and the historical `shared/quiz_data/` path. This compatibility bridge keeps older 1.1.1 installations functional even when Database Update runs before Application Update. It can be removed after the application version is bumped and the legacy layout no longer needs support.
+
+          ## Quiz packages
+
+          Public quiz distribution uses:
+
+          ```text
+          quizzes/
+          quiz_update_manifest.json
+          ```
+
+          Each package is stored under `quizzes/<package-id>/`, while the manifest installs it under `apps/<package-id>/` in Kotomi. Package files are generated from the private Kotomi source repository and should not be edited independently because the next publication replaces those edits.
+
+          Because version 1.1.1 installations can update quiz packages independently, the published package code keeps compatibility imports that older 1.1.1 application builds understand. Project lookup prefers the canonical `data/quiz_project.xml` and falls back to `shared/quiz_data/quiz_project.xml`.
+
+          From a Kotomi checkout with this repository initialized as its submodule, publish the current packages with:
+
+          ```powershell
+          python tools\\publish_quiz_packages.py 1.1.1
+          ```
+
+          Review and commit the generated `quizzes/` directory and `quiz_update_manifest.json` in this repository.
+
+          ## Development checkout
+
+          The private Kotomi repository mounts this repository as a Git submodule at:
+
+          ```text
+          data
+          ```
+
+          After cloning Kotomi, initialize it with:
+
+          ```bash
+          git submodule update --init --recursive
+          ```
+
+          ## Update URLs
+
+          Kotomi's learning-data updater uses:
+
+          ```text
+          https://raw.githubusercontent.com/MaciejPotas/Kotomi-Data/main/database_update_manifest.json
+          ```
+
+          The independent quiz updater uses:
+
+          ```text
+          https://raw.githubusercontent.com/MaciejPotas/Kotomi-Data/main/quiz_update_manifest.json
+          ```
+
+          Application, quiz, and learning-data updates are separate channels. Users may point the quiz or database updater at another compatible source without changing where the Kotomi application itself is updated from.
+          '''
+          readme = "\n".join(
+              line[10:] if line.startswith("          ") else line
+              for line in readme.splitlines()
+          ) + "\n"
+          (ROOT / "README.md").write_text(readme, encoding="utf-8", newline="\n")
+          PY
+
+      - name: Validate manifests and compatibility
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path, PurePosixPath
+
+          root = Path.cwd()
+          database = json.loads((root / "database_update_manifest.json").read_text(encoding="utf-8"))
+          xml_names = sorted(path.name for path in root.glob("*.xml"))
+          assert database["format"] == 1
+          assert database["version"] == "1.1.1"
+          assert len(database["files"]) == 2 * len(xml_names)
+          paths = {item["path"] for item in database["files"]}
+          assert {f"data/{name}" for name in xml_names} <= paths
+          assert {f"shared/quiz_data/{name}" for name in xml_names} <= paths
+          for item in database["files"]:
+              filename = item["url"].split("?", 1)[0]
+              data = (root / filename).read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+              assert item["sha256"] == hashlib.sha256(data).hexdigest()
+
+          quiz = json.loads((root / "quiz_update_manifest.json").read_text(encoding="utf-8"))
+          assert quiz["format"] == 1 and quiz["channel"] == "quizzes" and quiz["version"] == "1.1.1"
+          for item in quiz["files"]:
+              install = PurePosixPath(item["path"])
+              public = root.joinpath("quizzes", *install.parts[1:])
+              data = public.read_bytes()
+              if public.suffix.lower() in {".py", ".xml", ".json", ".md", ".txt", ".bat", ".yml", ".yaml"} or public.name == "LICENSE":
+                  data = data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+              assert item["sha256"] == hashlib.sha256(data).hexdigest(), item["path"]
+
+          for relative in (
+              "quizzes/verbs/logic.py",
+              "quizzes/adjectives/logic.py",
+              "quizzes/availability/logic.py",
+              "quizzes/grammar/logic.py",
+          ):
+              text = (root / relative).read_text(encoding="utf-8")
+              assert 'REPOSITORY_DATA_DIR = INSTALL_ROOT / "data"' in text
+              assert text.index('REPOSITORY_DATA_DIR / "quiz_project.xml"') < text.index('REPOSITORY_SHARED_DIR / "quiz_data" / "quiz_project.xml"')
+          lessons = (root / "quizzes/lessons/logic.py").read_text(encoding="utf-8")
+          assert 'CANONICAL_QUIZ_DATA_DIR = INSTALL_ROOT / "data"' in lessons
+          assert 'LEGACY_QUIZ_DATA_DIR = SHARED_DIR / "quiz_data"' in lessons
+          PY
+          git diff --check
+
+      - name: Remove one-time workflow and commit verified data changes
+        shell: bash
+        run: |
+          rm .github/workflows/public_data_ownership_migration.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status --short
+          git diff --cached --check
+          git commit -m "Move public data ownership to data path"
+          git push origin HEAD:refactor/public-data-ownership
