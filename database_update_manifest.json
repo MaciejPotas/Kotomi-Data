@@ -3,52 +3,52 @@
   "version": "1.1.1",
   "files": [
     {
-      "path": "shared/quiz_data/adjectives.xml",
+      "path": "data/adjectives.xml",
       "sha256": "0958e9268710997f25b86f09bf7ef731db40890ef2f4a971b53a171926461b7b",
       "url": "adjectives.xml?kotomi_sha256=0958e9268710997f25b86f09bf7ef731db40890ef2f4a971b53a171926461b7b"
     },
     {
-      "path": "shared/quiz_data/contexts.xml",
+      "path": "data/contexts.xml",
       "sha256": "f65908dbc63712d4548fbfe30574295d76c04f575c38675e3b4ead5cfb792c84",
       "url": "contexts.xml?kotomi_sha256=f65908dbc63712d4548fbfe30574295d76c04f575c38675e3b4ead5cfb792c84"
     },
     {
-      "path": "shared/quiz_data/copulas.xml",
+      "path": "data/copulas.xml",
       "sha256": "cd4a683b4795d411dc70e653f1ee06de362e895c1c95cabd4e25c534685ac0e0",
       "url": "copulas.xml?kotomi_sha256=cd4a683b4795d411dc70e653f1ee06de362e895c1c95cabd4e25c534685ac0e0"
     },
     {
-      "path": "shared/quiz_data/grammar_rules.xml",
+      "path": "data/grammar_rules.xml",
       "sha256": "92876501f77109691fc45a52cb598dd8face53303c7e07c61f49061c83df13f8",
       "url": "grammar_rules.xml?kotomi_sha256=92876501f77109691fc45a52cb598dd8face53303c7e07c61f49061c83df13f8"
     },
     {
-      "path": "shared/quiz_data/lessons.xml",
+      "path": "data/lessons.xml",
       "sha256": "0e31b424e25a037bfa8e3bd3c466a6a76f74487a7421d2f128b03bfcfa79da5e",
       "url": "lessons.xml?kotomi_sha256=0e31b424e25a037bfa8e3bd3c466a6a76f74487a7421d2f128b03bfcfa79da5e"
     },
     {
-      "path": "shared/quiz_data/nouns.xml",
+      "path": "data/nouns.xml",
       "sha256": "9a99984d785567877f5aed3a82930904b65e4cbfd1e80476563f1786ff255303",
       "url": "nouns.xml?kotomi_sha256=9a99984d785567877f5aed3a82930904b65e4cbfd1e80476563f1786ff255303"
     },
     {
-      "path": "shared/quiz_data/quiz_project.xml",
+      "path": "data/quiz_project.xml",
       "sha256": "45d8b89d8710cf677458e1e5a93c4282dd74c10512337a280e575abfe115d42c",
       "url": "quiz_project.xml?kotomi_sha256=45d8b89d8710cf677458e1e5a93c4282dd74c10512337a280e575abfe115d42c"
     },
     {
-      "path": "shared/quiz_data/sentence_maps.xml",
+      "path": "data/sentence_maps.xml",
       "sha256": "078322df5618b27e413db83cea2db9a724df54540b970ff06b6e4431b8f21ab4",
       "url": "sentence_maps.xml?kotomi_sha256=078322df5618b27e413db83cea2db9a724df54540b970ff06b6e4431b8f21ab4"
     },
     {
-      "path": "shared/quiz_data/sentence_quizzes.xml",
+      "path": "data/sentence_quizzes.xml",
       "sha256": "f5f914f95b63d9548edb8f5fce45f7d4a7a4ad574da8e944fab08a0b4227b1a7",
       "url": "sentence_quizzes.xml?kotomi_sha256=f5f914f95b63d9548edb8f5fce45f7d4a7a4ad574da8e944fab08a0b4227b1a7"
     },
     {
-      "path": "shared/quiz_data/verbs.xml",
+      "path": "data/verbs.xml",
       "sha256": "7e3dd216e98a2169f7099b1922ef26144b35437d89f35bc19a8c1924723c428e",
       "url": "verbs.xml?kotomi_sha256=7e3dd216e98a2169f7099b1922ef26144b35437d89f35bc19a8c1924723c428e"
     }

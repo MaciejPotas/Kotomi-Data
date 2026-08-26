@@ -21,9 +21,10 @@ if str(INSTALL_ROOT) not in sys.path:
 
 from apps.adjectives.logic import *
 from apps.adjectives.logic import _safe_float, _safe_int
-from quiz_core import ProjectError
+from kotomi_core.project import ProjectError
 from kotomi_core.settings_xml import settings_path
-from mobile_ui import (
+from kotomi_core.paths import FONTS_DIR
+from kotomi_ui.mobile import (
     DEFAULT_MOBILE_BUTTON_SCALE,
     FocusRequest,
     MOBILE_BUTTON_BACKGROUND,
@@ -49,8 +50,7 @@ from kotomi_core.mobile_i18n import mobile_error_text, mobile_text
 from kotomi_core.update_transport import QuizUpdater, UpdateError, load_update_url
 
 
-SHARED_DIR = REPOSITORY_SHARED_DIR
-MOBILE_FONT = mobile_font_path(SHARED_DIR)
+MOBILE_FONT = mobile_font_path(FONTS_DIR)
 
 
 def mobile_sentence_hint_items(
