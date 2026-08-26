@@ -41,12 +41,12 @@ from kotomi_ui.mobile import (
     scaled_button_height,
     validate_mobile_button_scale,
 )
-from kotomi_core.app_identity import (
+from kotomi_ui.identity import (
     app_icon_png_path,
     apply_kivy_window_icon,
     configure_windows_app_id,
 )
-from kotomi_core.mobile_i18n import mobile_error_text, mobile_text
+from kotomi_ui.mobile_i18n import mobile_error_text, mobile_text
 from kotomi_core.update_transport import QuizUpdater, UpdateError, load_update_url
 
 

@@ -19,17 +19,17 @@ for search_path in (INSTALL_ROOT, APP_ROOT):
     if str(search_path) not in sys.path:
         sys.path.insert(0, str(search_path))
 
-from kotomi_core.basic_quiz import (
+from kotomi_core.quiz import (
     build_choice_questions,
     build_written_questions,
     eligible_count,
 )
-from kotomi_core.conjugation_quiz import (
+from kotomi_core.quiz import (
     available_forms,
     build_conjugation_questions,
     conjugation_base_hint,
 )
-from kotomi_core.grammar_bridge import synchronize_catalog
+from kotomi_core.lessons.grammar import synchronize_catalog
 from kotomi_core.lessons import (
     FIELD_LABELS,
     FORM_LABELS,
@@ -39,8 +39,8 @@ from kotomi_core.lessons import (
     LessonWord,
     is_available,
 )
-from kotomi_core.questions import Question, QuizSession
-from kotomi_core.sentence_quiz import LessonSentenceQuiz
+from kotomi_core.quiz import Question, QuizSession
+from kotomi_core.quiz import LessonSentenceQuiz
 from kotomi_core.settings import AppSettings
 from kotomi_core.storage import CatalogStore, SettingsStore
 from kotomi_ui.mobile import (
