@@ -22,9 +22,9 @@ if str(INSTALL_ROOT) not in sys.path:
 from apps.adjectives.logic import *
 from apps.adjectives.logic import _safe_float, _safe_int
 from kotomi.core.project import ProjectError
-from kotomi.runtime.settings_xml import settings_path
-from kotomi.runtime.paths import FONTS_DIR
-from kotomi.mobile.presentation import (
+from kotomi.application.settings_xml import settings_path
+from kotomi.application.paths import FONTS_DIR
+from platforms.mobile.presentation import (
     DEFAULT_MOBILE_BUTTON_SCALE,
     FocusRequest,
     MOBILE_BUTTON_BACKGROUND,
@@ -41,13 +41,13 @@ from kotomi.mobile.presentation import (
     scaled_button_height,
     validate_mobile_button_scale,
 )
-from kotomi.ui.identity import (
+from platforms.mobile.identity import (
     app_icon_png_path,
     apply_kivy_window_icon,
     configure_windows_app_id,
 )
-from kotomi.mobile.i18n import mobile_error_text, mobile_text
-from kotomi.runtime.update_transport import QuizUpdater, UpdateError, load_update_url
+from platforms.mobile.i18n import mobile_error_text, mobile_text
+from kotomi.application.update_transport import QuizUpdater, UpdateError, load_update_url
 
 
 MOBILE_FONT = mobile_font_path(FONTS_DIR)

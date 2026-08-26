@@ -23,10 +23,10 @@ if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
 from kotomi.core.project import ProjectError, Word
-from kotomi.runtime.generation_engine import SharedQuizEngine
+from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.core.generation import balanced_choice, normalize_answer
-from kotomi.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
-from kotomi.runtime.settings_xml import load_settings, save_settings
+from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
+from kotomi.application.settings_xml import load_settings, save_settings
 
 
 PROJECT_ENVIRONMENT_VARIABLE = "JAPANESE_QUIZ_PROJECT"

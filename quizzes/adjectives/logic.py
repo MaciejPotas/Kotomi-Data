@@ -31,10 +31,10 @@ from kotomi.core.project import (
     SentencePattern,
     Word,
 )
-from kotomi.runtime.generation_engine import SharedQuizEngine
+from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.core.generation import normalize_answer
-from kotomi.runtime.settings_xml import load_settings, save_settings
-from kotomi.mobile.presentation import (
+from kotomi.application.settings_xml import load_settings, save_settings
+from platforms.mobile.presentation import (
     DEFAULT_MOBILE_BUTTON_SCALE,
     validate_mobile_button_scale,
 )
