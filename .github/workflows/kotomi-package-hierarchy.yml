@@ -1,0 +1,118 @@
+name: Kotomi package hierarchy imports
+
+on:
+  push:
+    branches:
+      - kotomi-package-hierarchy
+    paths:
+      - .github/workflows/kotomi-package-hierarchy.yml
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.event.head_commit.message == 'Prepare Kotomi package hierarchy imports'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Rewrite published quiz imports
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          root = Path.cwd()
+          renames = {
+              "kotomi_core.runtime": "kotomi.runtime",
+              "kotomi_core.settings_xml": "kotomi.runtime.settings_xml",
+              "kotomi_core.settings": "kotomi.runtime.settings",
+              "kotomi_core.paths": "kotomi.runtime.paths",
+              "kotomi_core.quiz_packages": "kotomi.runtime.quiz_packages",
+              "kotomi_core.quiz_registry": "kotomi.runtime.quiz_registry",
+              "kotomi_core.quiz_updates": "kotomi.runtime.quiz_updates",
+              "kotomi_core.storage": "kotomi.runtime.storage",
+              "kotomi_core.update_transport": "kotomi.runtime.update_transport",
+              "kotomi_core.version": "kotomi.runtime.version",
+              "kotomi_core.translations": "kotomi.ui.translations",
+              "kotomi_core.authoring": "kotomi.core.authoring",
+              "kotomi_core.dictionary": "kotomi.core.dictionary",
+              "kotomi_core.generation": "kotomi.core.generation",
+              "kotomi_core.lessons": "kotomi.core.lessons",
+              "kotomi_core.project": "kotomi.core.project",
+              "kotomi_core.quiz": "kotomi.core.quiz",
+              "kotomi_ui.mobile_i18n": "kotomi.mobile.i18n",
+              "kotomi_ui.kivy_bootstrap": "kotomi.mobile.kivy_bootstrap",
+              "kotomi_ui.mobile": "kotomi.mobile.presentation",
+              "kotomi_ui.identity": "kotomi.ui.identity",
+              "kotomi_ui.theme": "kotomi.ui.theme",
+          }
+
+          for path in sorted((root / "quizzes").rglob("*.py")):
+              text = path.read_text(encoding="utf-8")
+              updated = text
+              for old, new in sorted(renames.items(), key=lambda item: len(item[0]), reverse=True):
+                  updated = updated.replace(old, new)
+              updated = updated.replace(
+                  "from kotomi.mobile.presentation import validate_mobile_button_scale",
+                  "from kotomi.runtime.settings import validate_mobile_button_scale",
+              )
+              if updated != text:
+                  path.write_text(updated, encoding="utf-8", newline="\n")
+
+          stale = []
+          for path in sorted((root / "quizzes").rglob("*.py")):
+              text = path.read_text(encoding="utf-8")
+              for token in ("kotomi_core", "kotomi_ui"):
+                  if token in text:
+                      stale.append(f"{path}: {token}")
+          if stale:
+              raise SystemExit("Stale Kotomi package imports:\n" + "\n".join(stale))
+          PY
+
+      - name: Refresh quiz manifest hashes
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+
+          root = Path.cwd()
+          manifest_path = root / "quiz_update_manifest.json"
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          for item in manifest["files"]:
+              relative_url = str(item["url"]).split("?", 1)[0]
+              source = root / relative_url
+              data = source.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+              digest = hashlib.sha256(data).hexdigest()
+              item["sha256"] = digest
+              item["url"] = f"{relative_url}?kotomi_sha256={digest}"
+          manifest_path.write_text(
+              json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+              newline="\n",
+          )
+          PY
+
+      - name: Compile published quiz packages
+        run: python -m compileall -q quizzes
+
+      - name: Check whitespace
+        run: git diff --check
+
+      - name: Commit published import migration
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Use unified Kotomi package hierarchy"
+          git push origin HEAD:kotomi-package-hierarchy
