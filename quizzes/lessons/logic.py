@@ -29,7 +29,7 @@ from kotomi.core.quiz import (
     build_conjugation_questions,
     conjugation_base_hint,
 )
-from kotomi.core.lessons.grammar import synchronize_catalog
+from kotomi.runtime.lesson_catalog_sync import synchronize_catalog
 from kotomi.core.lessons import (
     FIELD_LABELS,
     FORM_LABELS,
