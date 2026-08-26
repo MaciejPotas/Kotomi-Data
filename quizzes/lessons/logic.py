@@ -40,7 +40,7 @@ from kotomi.core.lessons import (
     is_available,
 )
 from kotomi.core.quiz import Question, QuizSession
-from kotomi.core.quiz import LessonSentenceQuiz
+from kotomi.runtime.lesson_sentence_quiz import LessonSentenceQuiz
 from kotomi.runtime.settings import AppSettings
 from kotomi.runtime.storage import CatalogStore, SettingsStore
 from kotomi.mobile.presentation import (

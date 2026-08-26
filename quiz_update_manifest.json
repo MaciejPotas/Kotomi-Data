@@ -142,8 +142,8 @@
     },
     {
       "path": "apps/lessons/logic.py",
-      "sha256": "10ed220d81c2cb77bbe16b3b6dc64e866bcf14b42e4091f3c99b78f4b8786438",
-      "url": "quizzes/lessons/logic.py?kotomi_sha256=10ed220d81c2cb77bbe16b3b6dc64e866bcf14b42e4091f3c99b78f4b8786438"
+      "sha256": "928916307b5d3acd5a497abbc827c2c3b8efadea385c728da95032e9c0198a03",
+      "url": "quizzes/lessons/logic.py?kotomi_sha256=928916307b5d3acd5a497abbc827c2c3b8efadea385c728da95032e9c0198a03"
     },
     {
       "path": "apps/lessons/mobile.py",
