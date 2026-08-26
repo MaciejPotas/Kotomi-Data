@@ -64,6 +64,7 @@ jobs:
                   "from kotomi.mobile.presentation import validate_mobile_button_scale",
                   "from kotomi.runtime.settings import validate_mobile_button_scale",
               )
+              updated = updated.replace(":mod:`kotomi_core`", ":mod:`kotomi.core`")
               if updated != text:
                   path.write_text(updated, encoding="utf-8", newline="\n")
 
