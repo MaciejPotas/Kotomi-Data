@@ -21,14 +21,14 @@ if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
 from apps.lessons.logic import *
-from kotomi.runtime.settings_xml import settings_path
-from kotomi.runtime.paths import FONTS_DIR
-from kotomi.ui.identity import (
+from kotomi.application.settings_xml import settings_path
+from kotomi.application.paths import FONTS_DIR
+from platforms.mobile.identity import (
     app_icon_png_path,
     apply_kivy_window_icon,
     configure_windows_app_id,
 )
-from kotomi.mobile.presentation import (
+from platforms.mobile.presentation import (
     FocusRequest,
     MOBILE_BUTTON_BACKGROUND,
     MOBILE_BUTTON_TEXT,
@@ -43,7 +43,7 @@ from kotomi.mobile.presentation import (
     mobile_font_path,
     scaled_button_height,
 )
-from kotomi.mobile.i18n import mobile_error_text, mobile_text
+from platforms.mobile.i18n import mobile_error_text, mobile_text
 
 
 MOBILE_FONT = mobile_font_path(FONTS_DIR)

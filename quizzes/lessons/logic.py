@@ -29,7 +29,7 @@ from kotomi.core.quiz import (
     build_conjugation_questions,
     conjugation_base_hint,
 )
-from kotomi.runtime.lesson_catalog_sync import synchronize_catalog
+from kotomi.application.lesson_catalog_sync import synchronize_catalog
 from kotomi.core.lessons import (
     FIELD_LABELS,
     FORM_LABELS,
@@ -40,10 +40,10 @@ from kotomi.core.lessons import (
     is_available,
 )
 from kotomi.core.quiz import Question, QuizSession
-from kotomi.runtime.lesson_sentence_quiz import LessonSentenceQuiz
-from kotomi.runtime.settings import AppSettings
-from kotomi.runtime.storage import CatalogStore, SettingsStore
-from kotomi.mobile.presentation import (
+from kotomi.application.lesson_sentence_quiz import LessonSentenceQuiz
+from kotomi.application.settings import AppSettings
+from kotomi.application.storage import CatalogStore, SettingsStore
+from platforms.mobile.presentation import (
     fitted_compact_text_layout,
     fitted_single_line_font_size,
     format_grammatical_hint_entry,

@@ -25,10 +25,10 @@ from kotomi.core.project import (
     ProjectError,
     Word,
 )
-from kotomi.runtime.generation_engine import SharedQuizEngine
+from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.core.generation import balanced_choice, normalize_answer
-from kotomi.runtime.settings_xml import load_settings, save_settings
-from kotomi.runtime.settings import validate_mobile_button_scale
+from kotomi.application.settings_xml import load_settings, save_settings
+from kotomi.application.settings import validate_mobile_button_scale
 PROJECT_ENVIRONMENT_VARIABLE = "JAPANESE_QUIZ_PROJECT"
 SETTINGS_FILENAME = "verb_quiz_settings.xml"
 RECENT_VERB_WINDOW = 4
