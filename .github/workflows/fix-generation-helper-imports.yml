@@ -1,0 +1,77 @@
+name: Fix generation helper imports
+
+on:
+  push:
+    branches:
+      - kotomi-package-hierarchy
+    paths:
+      - .github/workflows/fix-generation-helper-imports.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    if: github.event.head_commit.message == 'Prepare generation helper import fix'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Split runtime engine and core helper imports
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+
+          root = Path.cwd()
+          files = {
+              'quizzes/verbs/logic.py': (
+                  'from kotomi.runtime.generation_engine import SharedQuizEngine, balanced_choice, normalize_answer',
+                  'from kotomi.runtime.generation_engine import SharedQuizEngine\nfrom kotomi.core.generation import balanced_choice, normalize_answer',
+              ),
+              'quizzes/adjectives/logic.py': (
+                  'from kotomi.runtime.generation_engine import SharedQuizEngine, normalize_answer',
+                  'from kotomi.runtime.generation_engine import SharedQuizEngine\nfrom kotomi.core.generation import normalize_answer',
+              ),
+              'quizzes/availability/logic.py': (
+                  'from kotomi.runtime.generation_engine import SharedQuizEngine, balanced_choice, normalize_answer',
+                  'from kotomi.runtime.generation_engine import SharedQuizEngine\nfrom kotomi.core.generation import balanced_choice, normalize_answer',
+              ),
+              'quizzes/grammar/logic.py': (
+                  'from kotomi.runtime.generation_engine import SharedQuizEngine, balanced_choice',
+                  'from kotomi.runtime.generation_engine import SharedQuizEngine\nfrom kotomi.core.generation import balanced_choice',
+              ),
+          }
+          for relative, (old, new) in files.items():
+              path = root / relative
+              text = path.read_text(encoding='utf-8')
+              assert old in text, relative
+              path.write_text(text.replace(old, new, 1), encoding='utf-8', newline='\n')
+
+          manifest_path = root / 'quiz_update_manifest.json'
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          for item in manifest['files']:
+              if not item['path'].startswith('apps/'):
+                  continue
+              rel = item['path'][len('apps/'):]
+              source = root / 'quizzes' / rel
+              if source.is_file():
+                  digest = hashlib.sha256(source.read_bytes().replace(b'\r\n', b'\n').replace(b'\r', b'\n')).hexdigest()
+                  item['sha256'] = digest
+                  item['url'] = f'quizzes/{rel}?kotomi_sha256={digest}'
+          manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
+          PY
+          python -m compileall -q quizzes
+          git diff --check
+      - name: Commit fix
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add quizzes quiz_update_manifest.json
+          git commit -m 'Keep generation helpers in core'
+          git push
