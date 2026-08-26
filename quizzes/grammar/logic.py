@@ -22,10 +22,10 @@ REPOSITORY_DATA_DIR = INSTALL_ROOT / "data"
 if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
-from kotomi_core.project import Entity, ProjectError, Word
-from kotomi_core.generation import SharedQuizEngine, balanced_choice
-from kotomi_ui.mobile import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
-from kotomi_core.settings_xml import load_settings, save_settings, settings_path
+from kotomi.core.project import Entity, ProjectError, Word
+from kotomi.core.generation import SharedQuizEngine, balanced_choice
+from kotomi.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
+from kotomi.runtime.settings_xml import load_settings, save_settings, settings_path
 from apps.availability.logic import (
     AvailabilityQuizSession,
     FORM_GROUPS,
