@@ -82,8 +82,8 @@
     },
     {
       "path": "apps/adjectives/logic.py",
-      "sha256": "846533ff96035f9434c8116ba757843429e4ebc5723db23bb2f5ff5d07b33bd0",
-      "url": "quizzes/adjectives/logic.py?kotomi_sha256=846533ff96035f9434c8116ba757843429e4ebc5723db23bb2f5ff5d07b33bd0"
+      "sha256": "b3208f311b15c58e836fda15df44fe1064fe0f7a471447c84892749468880413",
+      "url": "quizzes/adjectives/logic.py?kotomi_sha256=b3208f311b15c58e836fda15df44fe1064fe0f7a471447c84892749468880413"
     },
     {
       "path": "apps/adjectives/mobile.py",
@@ -102,8 +102,8 @@
     },
     {
       "path": "apps/availability/logic.py",
-      "sha256": "75646fbd349f22ac8b8238b2df85ee83b8e1905179337c3d22bad7e56326f837",
-      "url": "quizzes/availability/logic.py?kotomi_sha256=75646fbd349f22ac8b8238b2df85ee83b8e1905179337c3d22bad7e56326f837"
+      "sha256": "d67cbe450883966bcfc4e8a261ed171e9e6beec18a120d09f50dd07dd5344fab",
+      "url": "quizzes/availability/logic.py?kotomi_sha256=d67cbe450883966bcfc4e8a261ed171e9e6beec18a120d09f50dd07dd5344fab"
     },
     {
       "path": "apps/availability/mobile.py",
@@ -122,8 +122,8 @@
     },
     {
       "path": "apps/grammar/logic.py",
-      "sha256": "c1b898e0772aea74784cedaf411cf635262c9e13d9521893678e2eaf03857e02",
-      "url": "quizzes/grammar/logic.py?kotomi_sha256=c1b898e0772aea74784cedaf411cf635262c9e13d9521893678e2eaf03857e02"
+      "sha256": "040f0f636c3b0a396d0c36b9494061e57b22dedf85c58280062d40ee0a405e87",
+      "url": "quizzes/grammar/logic.py?kotomi_sha256=040f0f636c3b0a396d0c36b9494061e57b22dedf85c58280062d40ee0a405e87"
     },
     {
       "path": "apps/grammar/mobile.py",
@@ -162,8 +162,8 @@
     },
     {
       "path": "apps/verbs/logic.py",
-      "sha256": "6577e172353f7655b0f9a876ca81862dc01faffe2cebce675133e70088524d85",
-      "url": "quizzes/verbs/logic.py?kotomi_sha256=6577e172353f7655b0f9a876ca81862dc01faffe2cebce675133e70088524d85"
+      "sha256": "8bb918bae08aabde3af95543c0bc68dccc9ab416ac4e69dfab51c4531e81376d",
+      "url": "quizzes/verbs/logic.py?kotomi_sha256=8bb918bae08aabde3af95543c0bc68dccc9ab416ac4e69dfab51c4531e81376d"
     },
     {
       "path": "apps/verbs/mobile.py",

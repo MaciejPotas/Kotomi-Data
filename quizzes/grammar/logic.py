@@ -23,7 +23,8 @@ if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
 from kotomi.core.project import Entity, ProjectError, Word
-from kotomi.runtime.generation_engine import SharedQuizEngine, balanced_choice
+from kotomi.runtime.generation_engine import SharedQuizEngine
+from kotomi.core.generation import balanced_choice
 from kotomi.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from kotomi.runtime.settings_xml import load_settings, save_settings, settings_path
 from apps.availability.logic import (
