@@ -1,7 +1,7 @@
 """Platform-neutral Lesson quiz facade and hint policies.
 
 The reusable written, choice, conjugation, sentence, catalog, settings, and
-session implementations live in :mod:`kotomi_core`. This module exposes those
+session implementations live in :mod:`kotomi.core`. This module exposes those
 shared capabilities together with the small presentation-neutral adapters used
 by the Lesson package. It intentionally imports neither Kivy nor Tkinter.
 """
@@ -19,18 +19,18 @@ for search_path in (INSTALL_ROOT, APP_ROOT):
     if str(search_path) not in sys.path:
         sys.path.insert(0, str(search_path))
 
-from kotomi_core.quiz import (
+from kotomi.core.quiz import (
     build_choice_questions,
     build_written_questions,
     eligible_count,
 )
-from kotomi_core.quiz import (
+from kotomi.core.quiz import (
     available_forms,
     build_conjugation_questions,
     conjugation_base_hint,
 )
-from kotomi_core.lessons.grammar import synchronize_catalog
-from kotomi_core.lessons import (
+from kotomi.runtime.lesson_catalog_sync import synchronize_catalog
+from kotomi.core.lessons import (
     FIELD_LABELS,
     FORM_LABELS,
     FORM_ORDER,
@@ -39,11 +39,11 @@ from kotomi_core.lessons import (
     LessonWord,
     is_available,
 )
-from kotomi_core.quiz import Question, QuizSession
-from kotomi_core.quiz import LessonSentenceQuiz
-from kotomi_core.settings import AppSettings
-from kotomi_core.storage import CatalogStore, SettingsStore
-from kotomi_ui.mobile import (
+from kotomi.core.quiz import Question, QuizSession
+from kotomi.runtime.lesson_sentence_quiz import LessonSentenceQuiz
+from kotomi.runtime.settings import AppSettings
+from kotomi.runtime.storage import CatalogStore, SettingsStore
+from kotomi.mobile.presentation import (
     fitted_compact_text_layout,
     fitted_single_line_font_size,
     format_grammatical_hint_entry,
