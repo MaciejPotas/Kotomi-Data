@@ -31,7 +31,7 @@ from kotomi.core.project import (
     SentencePattern,
     Word,
 )
-from kotomi.core.generation import SharedQuizEngine, normalize_answer
+from kotomi.runtime.generation_engine import SharedQuizEngine, normalize_answer
 from kotomi.runtime.settings_xml import load_settings, save_settings
 from kotomi.mobile.presentation import (
     DEFAULT_MOBILE_BUTTON_SCALE,

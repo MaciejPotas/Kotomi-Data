@@ -25,7 +25,7 @@ from kotomi.core.project import (
     ProjectError,
     Word,
 )
-from kotomi.core.generation import SharedQuizEngine, balanced_choice, normalize_answer
+from kotomi.runtime.generation_engine import SharedQuizEngine, balanced_choice, normalize_answer
 from kotomi.runtime.settings_xml import load_settings, save_settings
 from kotomi.runtime.settings import validate_mobile_button_scale
 PROJECT_ENVIRONMENT_VARIABLE = "JAPANESE_QUIZ_PROJECT"
