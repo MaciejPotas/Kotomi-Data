@@ -22,6 +22,19 @@ The learning-data files currently include:
 
 Kotomi has one supported learning-data installation location: `data/`. The Database manifest publishes each XML only to that canonical path. The pre-refactor `shared/quiz_data/` layout is intentionally unsupported for the fresh-start architecture.
 
+### Sentence maps
+
+`sentence_maps.xml` uses the same single pattern language as Quiz Studio. Named selections use `@name`, brackets select or constrain, and dot paths read values:
+
+```text
+{verb@main[role:object].form.translation}
+{noun[category:place].case.genitive}
+{context[from:main].translation}
+{context[pool:past].kana}
+```
+
+Kotomi does not keep a second compatibility dialect for retired pattern spellings. When the authoring language changes, the public sentence maps are migrated together with the application parser and tests.
+
 ## Quiz packages
 
 Public quiz distribution uses:
