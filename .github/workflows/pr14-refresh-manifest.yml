@@ -1,0 +1,69 @@
+name: PR14 refresh pattern data manifest
+
+on:
+  push:
+    branches: [pattern-language-v14]
+    paths:
+      - .github/workflows/pr14-refresh-manifest.yml
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: pattern-language-v14
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Refresh database manifest
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+
+          root = Path('.')
+
+          def normalized_hash(path: Path) -> str:
+              data = path.read_bytes().replace(b'\r\n', b'\n').replace(b'\r', b'\n')
+              return hashlib.sha256(data).hexdigest()
+
+          xml_files = sorted(
+              path for path in root.rglob('*.xml')
+              if 'quizzes' not in path.parts
+          )
+          manifest = {
+              'format': 1,
+              'version': '1.1.1',
+              'files': [],
+          }
+          for path in xml_files:
+              digest = normalized_hash(path)
+              relative = path.as_posix()
+              manifest['files'].append({
+                  'path': f'data/{relative}',
+                  'sha256': digest,
+                  'url': f'{relative}?kotomi_sha256={digest}',
+              })
+          Path('database_update_manifest.json').write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8',
+              newline='\n',
+          )
+          PY
+      - name: Commit manifest
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add database_update_manifest.json
+          if git diff --cached --quiet; then
+            echo "Manifest already current"
+            exit 0
+          fi
+          git commit -m "Refresh database manifest for selection syntax"
+          git push origin HEAD:pattern-language-v14
