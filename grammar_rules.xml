@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<grammar_rules schema_version="13">
+<grammar_rules schema_version="1">
   <noun_categories>
     <category id="concrete" label="Concrete" selectable="false" />
     <category id="person" label="Person" parent="concrete" selectable="true" />

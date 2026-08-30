@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<contexts schema_version="13">
+<contexts schema_version="1">
   <context id="none" label="none">
     <option id="neutral" translation="" kana="" weight="1" />
   </context>

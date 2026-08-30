@@ -4,23 +4,23 @@
   "files": [
     {
       "path": "data/adjectives.xml",
-      "sha256": "0958e9268710997f25b86f09bf7ef731db40890ef2f4a971b53a171926461b7b",
-      "url": "adjectives.xml?kotomi_sha256=0958e9268710997f25b86f09bf7ef731db40890ef2f4a971b53a171926461b7b"
+      "sha256": "33eaf5605492b2c1d490e20c02bd4644d8a700b83b1e54a393d03b4754298669",
+      "url": "adjectives.xml?kotomi_sha256=33eaf5605492b2c1d490e20c02bd4644d8a700b83b1e54a393d03b4754298669"
     },
     {
       "path": "data/contexts.xml",
-      "sha256": "f65908dbc63712d4548fbfe30574295d76c04f575c38675e3b4ead5cfb792c84",
-      "url": "contexts.xml?kotomi_sha256=f65908dbc63712d4548fbfe30574295d76c04f575c38675e3b4ead5cfb792c84"
+      "sha256": "64a2019c5f9ed1c8857d98d2f0e29e4c55e153c8cbcbcaf4a243db20b287c3a0",
+      "url": "contexts.xml?kotomi_sha256=64a2019c5f9ed1c8857d98d2f0e29e4c55e153c8cbcbcaf4a243db20b287c3a0"
     },
     {
       "path": "data/copulas.xml",
-      "sha256": "cd4a683b4795d411dc70e653f1ee06de362e895c1c95cabd4e25c534685ac0e0",
-      "url": "copulas.xml?kotomi_sha256=cd4a683b4795d411dc70e653f1ee06de362e895c1c95cabd4e25c534685ac0e0"
+      "sha256": "1ece8da3f6dacf85a2b33317ee136f8bfd468b19083f40c2c1d474f05cb6ba02",
+      "url": "copulas.xml?kotomi_sha256=1ece8da3f6dacf85a2b33317ee136f8bfd468b19083f40c2c1d474f05cb6ba02"
     },
     {
       "path": "data/grammar_rules.xml",
-      "sha256": "92876501f77109691fc45a52cb598dd8face53303c7e07c61f49061c83df13f8",
-      "url": "grammar_rules.xml?kotomi_sha256=92876501f77109691fc45a52cb598dd8face53303c7e07c61f49061c83df13f8"
+      "sha256": "314b16c83e028597a85c49c53e628d8056545a92bb652c58d6b7b823d1223956",
+      "url": "grammar_rules.xml?kotomi_sha256=314b16c83e028597a85c49c53e628d8056545a92bb652c58d6b7b823d1223956"
     },
     {
       "path": "data/lessons.xml",
@@ -29,28 +29,28 @@
     },
     {
       "path": "data/nouns.xml",
-      "sha256": "9a99984d785567877f5aed3a82930904b65e4cbfd1e80476563f1786ff255303",
-      "url": "nouns.xml?kotomi_sha256=9a99984d785567877f5aed3a82930904b65e4cbfd1e80476563f1786ff255303"
+      "sha256": "8ec5d82e91ba0ac61f9042f092ea3bcc0b53f3729760f73a289f117a2936250b",
+      "url": "nouns.xml?kotomi_sha256=8ec5d82e91ba0ac61f9042f092ea3bcc0b53f3729760f73a289f117a2936250b"
     },
     {
       "path": "data/quiz_project.xml",
-      "sha256": "45d8b89d8710cf677458e1e5a93c4282dd74c10512337a280e575abfe115d42c",
-      "url": "quiz_project.xml?kotomi_sha256=45d8b89d8710cf677458e1e5a93c4282dd74c10512337a280e575abfe115d42c"
+      "sha256": "d3f975db9bc301eaec6ececcd45fcc93c756fc96f40fc5dc9c881ae804291895",
+      "url": "quiz_project.xml?kotomi_sha256=d3f975db9bc301eaec6ececcd45fcc93c756fc96f40fc5dc9c881ae804291895"
     },
     {
       "path": "data/sentence_maps.xml",
-      "sha256": "617766fe97d9081620a052979a9b2af4c47575dd3b5bc833315c5235bc010672",
-      "url": "sentence_maps.xml?kotomi_sha256=617766fe97d9081620a052979a9b2af4c47575dd3b5bc833315c5235bc010672"
+      "sha256": "ccdfa4b3a06ff4adf86600745ea4d2f9b0c9702c3700a0e8f71068d92263f1c8",
+      "url": "sentence_maps.xml?kotomi_sha256=ccdfa4b3a06ff4adf86600745ea4d2f9b0c9702c3700a0e8f71068d92263f1c8"
     },
     {
       "path": "data/sentence_quizzes.xml",
-      "sha256": "f5f914f95b63d9548edb8f5fce45f7d4a7a4ad574da8e944fab08a0b4227b1a7",
-      "url": "sentence_quizzes.xml?kotomi_sha256=f5f914f95b63d9548edb8f5fce45f7d4a7a4ad574da8e944fab08a0b4227b1a7"
+      "sha256": "bcee8e44a6a3f470b8d5fd445950477fda3ccfb71ed523e75132f8712770857e",
+      "url": "sentence_quizzes.xml?kotomi_sha256=bcee8e44a6a3f470b8d5fd445950477fda3ccfb71ed523e75132f8712770857e"
     },
     {
       "path": "data/verbs.xml",
-      "sha256": "7e3dd216e98a2169f7099b1922ef26144b35437d89f35bc19a8c1924723c428e",
-      "url": "verbs.xml?kotomi_sha256=7e3dd216e98a2169f7099b1922ef26144b35437d89f35bc19a8c1924723c428e"
+      "sha256": "41d8ad23c4ed3cfb3bf362294850676f992d6295282aae7c25d8e44660214009",
+      "url": "verbs.xml?kotomi_sha256=41d8ad23c4ed3cfb3bf362294850676f992d6295282aae7c25d8e44660214009"
     }
   ]
 }

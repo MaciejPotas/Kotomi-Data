@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="13" id="nouns" label="Nouns" schema="noun">
+<dictionary schema_version="1" id="nouns" label="Nouns" schema="noun">
   <editor required="translation kana" optional="kanji romaji" metadata="category cases" />
   <words>
     <word id="bag" translation="torba" kana="かばん" kanji="鞄" type="noun" category="thing">
