@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "version": "1.1.1",
+  "revision": 1,
   "files": [
     {
       "path": "data/adjectives.xml",
@@ -16,6 +16,11 @@
       "path": "data/copulas.xml",
       "sha256": "cd4a683b4795d411dc70e653f1ee06de362e895c1c95cabd4e25c534685ac0e0",
       "url": "copulas.xml?kotomi_sha256=cd4a683b4795d411dc70e653f1ee06de362e895c1c95cabd4e25c534685ac0e0"
+    },
+    {
+      "path": "data/database_revision.json",
+      "sha256": "59e879cc1d7f3c689ca16268d891dc448f3ccc737de7ed57c946b0cb511605de",
+      "url": "database_revision.json?kotomi_sha256=59e879cc1d7f3c689ca16268d891dc448f3ccc737de7ed57c946b0cb511605de"
     },
     {
       "path": "data/grammar_rules.xml",

@@ -18,9 +18,31 @@ The learning-data files currently include:
 - `sentence_quizzes.xml`
 - `quiz_project.xml`
 - `lessons.xml`
+- `database_revision.json`
 - `database_update_manifest.json`
 
-Kotomi has one supported learning-data installation location: `data/`. The Database manifest publishes each XML only to that canonical path. The pre-refactor `shared/quiz_data/` layout is intentionally unsupported for the fresh-start architecture.
+Kotomi has one supported learning-data installation location: `data/`. The Database manifest publishes the learning XML and `database_revision.json` only to that canonical path. The pre-refactor `shared/quiz_data/` layout is intentionally unsupported for the fresh-start architecture.
+
+### Database revision
+
+The learning database does not use the Kotomi application version. Kotomi itself uses semantic `x.y.z` versioning, while the database has one independent positive integer revision:
+
+```text
+Kotomi 1.1.1 [Database: 1]
+```
+
+`database_revision.json` is the installed human-readable database identity:
+
+```json
+{
+  "format": 1,
+  "revision": 1
+}
+```
+
+`database_update_manifest.json` carries the same integer in its top-level `revision` field. The revision should increase when an official learning-data state is published. It does not participate in application or quiz compatibility checks.
+
+SHA-256 hashes, not the revision number, decide which files an installation downloads. The revision therefore identifies a published database state without forcing unchanged files to be downloaded.
 
 ### Sentence maps
 
@@ -56,6 +78,8 @@ From a Kotomi checkout with this repository initialized as its submodule, publis
 ```powershell
 python tools\publish_quiz_packages.py 1.1.1
 ```
+
+Here `1.1.1` is the quiz catalog release, not the Kotomi application version and not the database revision. Each package also keeps its own `version` in `app.json`.
 
 Review and commit the generated `quizzes/` directory and `quiz_update_manifest.json` in this repository.
 
