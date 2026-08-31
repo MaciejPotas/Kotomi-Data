@@ -44,6 +44,23 @@ Kotomi 1.1.1 [Database: 1]
 
 SHA-256 hashes, not the revision number, decide which files an installation downloads. The revision therefore identifies a published database state without forcing unchanged files to be downloaded.
 
+### XML schema versions
+
+Schema versions are separate from both the Kotomi application version and the database revision. The current project and sentence-pattern data use **Schema 1**. This covers the project manifest, dictionaries used by the sentence engine, grammar rules, contexts, sentence maps, and sentence quiz definitions.
+
+`lessons.xml` has its own lesson-catalog persistence format and currently uses **schema 4**. Resetting the project/pattern schema to 1 does not reset the lesson schema, and changing the database revision does not imply a schema change.
+
+In other words, an installation can legitimately be described as:
+
+```text
+Kotomi 1.1.1
+Database revision 1
+Project/pattern schema 1
+Lesson catalog schema 4
+```
+
+These values have different jobs and should not be kept numerically synchronized.
+
 ### Sentence maps
 
 `sentence_maps.xml` uses the same single pattern language as Quiz Studio. Named selections use `@name`, brackets select or constrain, and dots read a property from the selected value:
@@ -85,7 +102,7 @@ Review and commit the generated `quizzes/` directory and `quiz_update_manifest.j
 
 ## Development checkout
 
-The private Kotomi repository mounts this repository as a Git submodule at:
+The private Kotomi repository mounts this repository as the Git submodule:
 
 ```text
 data
