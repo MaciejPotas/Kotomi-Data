@@ -9,18 +9,29 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
+
 PROJECT_SCHEMA_FILES = {
-    "adjectives.xml",
-    "contexts.xml",
-    "copulas.xml",
-    "grammar_rules.xml",
-    "nouns.xml",
     "quiz_project.xml",
-    "sentence_maps.xml",
-    "sentence_quizzes.xml",
-    "verbs.xml",
+    "dictionaries/adjectives.xml",
+    "dictionaries/copulas.xml",
+    "dictionaries/nouns.xml",
+    "dictionaries/verbs.xml",
+    "grammar/contexts.xml",
+    "grammar/grammar_rules.xml",
+    "patterns/sentence_maps.xml",
+    "patterns/sentence_quizzes.xml",
 }
-LESSON_SCHEMA_FILE = "lessons.xml"
+LESSON_SCHEMA_FILE = "lessons/lessons.xml"
+LEARNING_XML_FILES = PROJECT_SCHEMA_FILES | {LESSON_SCHEMA_FILE}
+CONTENT_DIRECTORIES = {
+    "dictionaries",
+    "grammar",
+    "lessons",
+    "patterns",
+    "quizzes",
+    "tools",
+}
+ROOT_XML_FILES = {"quiz_project.xml"}
 
 
 def load_json(path: Path) -> dict[str, object]:
@@ -39,6 +50,28 @@ def normalized_bytes(path: Path) -> bytes:
 
 def file_hash(path: Path) -> str:
     return hashlib.sha256(normalized_bytes(path)).hexdigest()
+
+
+def validate_repository_layout() -> None:
+    root_xml = {path.name for path in ROOT.glob("*.xml")}
+    if root_xml != ROOT_XML_FILES:
+        raise AssertionError(
+            "Only quiz_project.xml may remain at repository root, "
+            f"found={sorted(root_xml)}"
+        )
+
+    for directory_name in sorted(CONTENT_DIRECTORIES):
+        directory = ROOT / directory_name
+        if not directory.is_dir():
+            raise AssertionError(f"Missing repository directory: {directory_name}")
+        if not (directory / "README.md").is_file():
+            raise AssertionError(
+                f"Repository directory {directory_name} must contain README.md"
+            )
+
+    for relative in sorted(LEARNING_XML_FILES):
+        if not (ROOT / relative).is_file():
+            raise AssertionError(f"Missing canonical learning XML: {relative}")
 
 
 def validate_manifest_file(entry: dict[str, object], expected_prefix: str) -> Path:
@@ -77,32 +110,26 @@ def validate_manifest_file(entry: dict[str, object], expected_prefix: str) -> Pa
 
 
 def validate_xml_and_schemas() -> None:
-    xml_files = sorted(ROOT.glob("*.xml"))
-    if not xml_files:
-        raise AssertionError("No root learning XML files found")
-
-    for path in xml_files:
+    for relative in sorted(LEARNING_XML_FILES):
+        path = ROOT / relative
         try:
             root = ET.parse(path).getroot()
         except ET.ParseError as exc:
-            raise AssertionError(f"Malformed XML in {path.name}: {exc}") from exc
+            raise AssertionError(f"Malformed XML in {relative}: {exc}") from exc
 
-        if path.name in PROJECT_SCHEMA_FILES:
+        if relative in PROJECT_SCHEMA_FILES:
             if root.get("schema_version") != "1":
-                raise AssertionError(
-                    f"{path.name} must use project/pattern Schema 1"
-                )
-        elif path.name == LESSON_SCHEMA_FILE:
+                raise AssertionError(f"{relative} must use project/pattern Schema 1")
+        elif relative == LESSON_SCHEMA_FILE:
             if root.get("schema_version") != "4":
-                raise AssertionError("lessons.xml must use lesson catalog Schema 4")
-        else:
-            raise AssertionError(
-                f"Unexpected root learning XML file without a schema contract: {path.name}"
-            )
+                raise AssertionError(
+                    f"{LESSON_SCHEMA_FILE} must use lesson catalog Schema 4"
+                )
 
 
 def validate_project_references() -> None:
-    root = ET.parse(ROOT / "quiz_project.xml").getroot()
+    manifest_path = ROOT / "quiz_project.xml"
+    root = ET.parse(manifest_path).getroot()
     references = {
         node.get("file", "")
         for node in root.iter()
@@ -110,10 +137,19 @@ def validate_project_references() -> None:
     }
     if not references:
         raise AssertionError("quiz_project.xml does not reference project files")
+
+    expected_references = PROJECT_SCHEMA_FILES - {"quiz_project.xml"}
+    if references != expected_references:
+        raise AssertionError(
+            "quiz_project.xml reference inventory mismatch, "
+            f"missing={sorted(expected_references - references)}, "
+            f"extra={sorted(references - expected_references)}"
+        )
+
     for relative in sorted(references):
         if not relative:
             raise AssertionError("quiz_project.xml contains an empty file reference")
-        path = ROOT / relative
+        path = manifest_path.parent / relative
         if not path.is_file():
             raise AssertionError(f"quiz_project.xml references missing file: {relative}")
 
@@ -130,7 +166,9 @@ def validate_database_manifest() -> None:
     if revision_number <= 0:
         raise AssertionError("Database revision must be positive")
     if manifest.get("revision") != revision_number:
-        raise AssertionError("Database manifest revision must match database_revision.json")
+        raise AssertionError(
+            "Database manifest revision must match database_revision.json"
+        )
 
     entries = manifest.get("files")
     if not isinstance(entries, list):
@@ -148,21 +186,29 @@ def validate_database_manifest() -> None:
         source_paths.add(validate_manifest_file(raw_entry, "data/"))
 
     expected_sources = {
-        path.resolve()
-        for path in ROOT.glob("*.xml")
+        (ROOT / relative).resolve()
+        for relative in LEARNING_XML_FILES
     } | {(ROOT / "database_revision.json").resolve()}
     if source_paths != expected_sources:
-        missing = sorted(path.name for path in expected_sources - source_paths)
-        extra = sorted(path.name for path in source_paths - expected_sources)
+        missing = sorted(
+            path.relative_to(ROOT).as_posix()
+            for path in expected_sources - source_paths
+        )
+        extra = sorted(
+            path.relative_to(ROOT).as_posix()
+            for path in source_paths - expected_sources
+        )
         raise AssertionError(
             f"Database manifest inventory mismatch, missing={missing}, extra={extra}"
         )
 
     expected_install_paths = {
-        f"data/{path.name}" for path in expected_sources
+        f"data/{path.relative_to(ROOT).as_posix()}" for path in expected_sources
     }
     if install_paths != expected_install_paths:
-        raise AssertionError("Database install paths do not match canonical data inventory")
+        raise AssertionError(
+            "Database install paths do not match canonical data inventory"
+        )
 
 
 def package_files(package_dir: Path) -> set[Path]:
@@ -218,7 +264,8 @@ def validate_quiz_manifest() -> None:
         for field in ("version", "quiz_api", "min_app_version", "kind"):
             if descriptor.get(field) != raw_package.get(field):
                 raise AssertionError(
-                    f"Quiz package {package_id} catalog field {field} does not match app.json"
+                    f"Quiz package {package_id} catalog field {field} "
+                    "does not match app.json"
                 )
         if descriptor.get("kind") != "python":
             raise AssertionError(f"Unsupported public quiz package kind: {package_id}")
@@ -267,6 +314,7 @@ def validate_quiz_manifest() -> None:
 
 
 def main() -> None:
+    validate_repository_layout()
     validate_xml_and_schemas()
     validate_project_references()
     validate_database_manifest()
