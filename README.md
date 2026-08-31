@@ -111,6 +111,31 @@ Here `1.1.1` is the quiz catalog release, not the Kotomi application version and
 
 Review and commit the generated `quizzes/` directory and `quiz_update_manifest.json` in this repository.
 
+## Repository validation
+
+Kotomi-Data has its own lightweight CI and does not wait for the private application repository to discover basic publication mistakes.
+
+Run locally with:
+
+```bash
+python tools/validate_repository.py
+```
+
+The validator checks:
+
+- all root learning XML is well formed;
+- current project files use Schema 1 and `lessons.xml` uses lesson catalog Schema 4;
+- every file referenced by `quiz_project.xml` exists;
+- `database_revision.json` and `database_update_manifest.json` agree;
+- the Database manifest exactly covers the canonical root learning data and its SHA-256 values/URLs match the published files;
+- the public quiz package catalog exactly matches `quizzes/*`;
+- each public `app.json` agrees with its package catalog metadata and entrypoint;
+- each package file inventory and the flat Quiz manifest inventory match the files actually published;
+- quiz manifest SHA-256 values/URLs match the public files;
+- published quiz Python source compiles on the Python 3.10 source-compatibility baseline.
+
+This validator intentionally checks only contracts that can be verified from this public repository. Full parser/generation semantics are still tested in the private Kotomi suite against the exact `data/` submodule revision.
+
 ## Development checkout
 
 The private Kotomi repository mounts this repository as the Git submodule at:
