@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<quiz_project schema_version="13">
+<quiz_project schema_version="1">
   <dictionaries>
     <dictionary id="adjectives" file="adjectives.xml" label="Adjectives" schema="adjective" />
     <dictionary id="copulas" file="copulas.xml" label="Copulas" schema="copula" />

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<sentence_quizzes schema_version="13">
+<sentence_quizzes schema_version="1">
   <quiz id="grammar" label="Gramatyka" description="Możliwość ことができる">
     <patterns>
       <pattern ref="koto_ga_dekiru" />
