@@ -1,0 +1,117 @@
+name: Refresh Schema 1 data baseline
+
+on:
+  push:
+    branches:
+      - schema-v1-after-revision-split
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Reset schema and regenerate database manifest
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+          import xml.etree.ElementTree as ET
+
+          root = Path('.')
+          xml_paths = sorted(root.glob('*.xml'))
+          changed = []
+          for path in xml_paths:
+              text = path.read_text(encoding='utf-8')
+              updated = text.replace('schema_version="13"', 'schema_version="1"')
+              updated = updated.replace("schema_version='13'", "schema_version='1'")
+              if updated != text:
+                  path.write_text(updated, encoding='utf-8', newline='\n')
+                  changed.append(path.name)
+
+          for path in xml_paths:
+              parsed = ET.parse(path).getroot()
+              schema = parsed.get('schema_version')
+              if schema is not None and schema != '1':
+                  raise SystemExit(f'{path}: expected schema_version=1, got {schema!r}')
+
+          revision_path = root / 'database_revision.json'
+          revision_data = json.loads(revision_path.read_text(encoding='utf-8'))
+          if revision_data.get('format') != 1:
+              raise SystemExit('database_revision.json format must stay 1')
+          revision = revision_data.get('revision')
+          if isinstance(revision, bool) or not isinstance(revision, int) or revision < 1:
+              raise SystemExit('database revision must remain a positive integer')
+
+          def digest(path: Path) -> str:
+              data = path.read_bytes()
+              if path.suffix.lower() in {'.xml', '.json', '.md', '.txt', '.py', '.bat', '.yml', '.yaml'}:
+                  data = data.replace(b'\r\n', b'\n').replace(b'\r', b'\n')
+              return hashlib.sha256(data).hexdigest()
+
+          managed = [*xml_paths, revision_path]
+          managed = sorted(managed, key=lambda p: p.as_posix())
+          manifest = {
+              'format': 1,
+              'revision': revision,
+              'files': [],
+          }
+          for path in managed:
+              value = digest(path)
+              manifest['files'].append({
+                  'path': f'data/{path.name}',
+                  'sha256': value,
+                  'url': f'{path.name}?kotomi_sha256={value}',
+              })
+          (root / 'database_update_manifest.json').write_text(
+              json.dumps(manifest, indent=2, ensure_ascii=False) + '\n',
+              encoding='utf-8',
+              newline='\n',
+          )
+          print(f'Database revision preserved: {revision}')
+          print('Schema-updated files:', ', '.join(changed))
+          PY
+
+      - name: Verify revision/schema separation
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import xml.etree.ElementTree as ET
+
+          revision = json.loads(Path('database_revision.json').read_text(encoding='utf-8'))['revision']
+          manifest = json.loads(Path('database_update_manifest.json').read_text(encoding='utf-8'))
+          assert manifest['revision'] == revision
+          assert 'version' not in manifest
+          assert any(item['path'] == 'data/database_revision.json' for item in manifest['files'])
+          for path in Path('.').glob('*.xml'):
+              schema = ET.parse(path).getroot().get('schema_version')
+              if schema is not None:
+                  assert schema == '1', (path, schema)
+          PY
+
+      - name: Remove one-shot workflow
+        shell: bash
+        run: rm -f .github/workflows/schema-v1-after-revision-split.yml
+
+      - name: Commit verified data baseline
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "Reset data schema to 1 after revision split"
+          git push origin HEAD:schema-v1-after-revision-split
