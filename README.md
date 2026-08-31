@@ -21,15 +21,15 @@ Kotomi-Data/
 │   │   └── sentence_quizzes.xml
 │   ├── lessons/
 │   │   └── lessons.xml
-│   ├── database_revision.json
 │   └── quiz_project.xml
 ├── quizzes/
 ├── tools/
+├── database_revision.json
 ├── database_update_manifest.json
 └── quiz_update_manifest.json
 ```
 
-The root is reserved for repository metadata and public update manifests. Learning XML belongs under `learning/`, public generated quiz packages belong under `quizzes/`, and repository maintenance scripts belong under `tools/`.
+The root is reserved for repository metadata and public update metadata. Learning XML belongs under `learning/`, public generated quiz packages belong under `quizzes/`, and repository maintenance scripts belong under `tools/`.
 
 Each hand-maintained content directory contains its own README with the local contract and ownership rules.
 
@@ -43,7 +43,7 @@ The private Kotomi repository mounts this repository as the Git submodule `data/
 
 ### Database revision
 
-The learning database has an independent positive integer revision. It is not the Kotomi application version and it is not a schema version.
+The learning database has an independent positive integer revision stored in root `database_revision.json`. It is publication metadata, not a learning XML payload. It is not the Kotomi application version and it is not a schema version.
 
 The current state uses Database revision 2. Revision 2 introduces the organized `data/learning/` installation layout while keeping the learning content itself compatible with the same parser schemas.
 
@@ -65,7 +65,7 @@ Public quiz distribution uses `quizzes/` together with the root `quiz_update_man
 
 Each generated package lives under `quizzes/<package-id>/` and installs under `apps/<package-id>/` in Kotomi. These package directories are generated from the private source repository. Do not make independent manual changes inside them because the next publication replaces those files.
 
-Published quizzes load their project from `data/learning/quiz_project.xml` through Kotomi's canonical path API.
+Published quizzes obtain learning data through Kotomi's application path contract. Current Kotomi resolves the project under `data/learning/`.
 
 From a Kotomi checkout with this repository initialized as its submodule, publish current packages with:
 
@@ -101,7 +101,7 @@ After cloning Kotomi, initialize the submodule with:
 git submodule update --init --recursive
 ```
 
-The application then uses `data/learning/` as its canonical learning-data root.
+The application then uses `data/learning/` as its canonical learning-data root. Root `data/database_revision.json` remains the database publication identity used by release tooling.
 
 ## Update URLs
 

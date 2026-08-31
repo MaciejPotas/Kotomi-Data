@@ -3,9 +3,9 @@
   "revision": 2,
   "files": [
     {
-      "path": "data/learning/database_revision.json",
+      "path": "data/database_revision.json",
       "sha256": "5f398de00b7d812fb1b5e0422784bbe38a206becbfa739c50361bad8532bc882",
-      "url": "learning/database_revision.json?kotomi_sha256=5f398de00b7d812fb1b5e0422784bbe38a206becbfa739c50361bad8532bc882"
+      "url": "database_revision.json?kotomi_sha256=5f398de00b7d812fb1b5e0422784bbe38a206becbfa739c50361bad8532bc882"
     },
     {
       "path": "data/learning/dictionaries/adjectives.xml",

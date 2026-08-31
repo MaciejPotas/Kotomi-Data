@@ -1,8 +1,8 @@
 # Learning Data
 
-This directory is the complete Kotomi learning database payload. When this repository is mounted as the `data` submodule in Kotomi, this directory becomes `data/learning/`.
+This directory is the complete Kotomi learning XML payload. When this repository is mounted as the `data` submodule in Kotomi, this directory becomes `data/learning/`.
 
-`quiz_project.xml` is the sentence-project entry point. It references files below `dictionaries/` and `grammar/` using paths relative to this directory. `database_revision.json` identifies the published database state.
+`quiz_project.xml` is the sentence-project entry point. It references files below `dictionaries/` and `grammar/` using paths relative to this directory. The repository-level `database_revision.json` identifies the published database state.
 
 Directory ownership is intentionally strict:
 

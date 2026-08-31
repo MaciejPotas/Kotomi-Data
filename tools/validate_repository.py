@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 LEARNING_ROOT = ROOT / "learning"
 PROJECT_MANIFEST = LEARNING_ROOT / "quiz_project.xml"
-DATABASE_REVISION_PATH = LEARNING_ROOT / "database_revision.json"
+DATABASE_REVISION_PATH = ROOT / "database_revision.json"
 TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
 SCHEMA_FILES = {
     LEARNING_ROOT / "dictionaries" / "adjectives.xml": "1",
@@ -99,8 +99,8 @@ def validate_layout_and_docs() -> None:
             "Learning XML must not live at repository root: "
             + ", ".join(path.name for path in root_xml)
         )
-    if (ROOT / "database_revision.json").exists():
-        raise AssertionError("database_revision.json belongs under learning/")
+    if not DATABASE_REVISION_PATH.is_file():
+        raise AssertionError("Missing root database_revision.json")
     for path in sorted(REQUIRED_READMES):
         if not path.is_file():
             raise AssertionError(f"Missing directory documentation: {relative(path)}")
@@ -160,7 +160,7 @@ def validate_database_manifest() -> None:
     if revision_number <= 0:
         raise AssertionError("Database revision must be positive")
     if manifest.get("revision") != revision_number:
-        raise AssertionError("Database manifest revision must match learning/database_revision.json")
+        raise AssertionError("Database manifest revision must match database_revision.json")
 
     entries = manifest.get("files")
     if not isinstance(entries, list):
@@ -175,7 +175,7 @@ def validate_database_manifest() -> None:
         if install_path in install_paths:
             raise AssertionError(f"Duplicate Database manifest path: {install_path}")
         install_paths.add(install_path)
-        source_paths.add(validate_manifest_file(raw_entry, "data/learning/"))
+        source_paths.add(validate_manifest_file(raw_entry, "data/"))
 
     expected_sources = {
         path.resolve() for path in SCHEMA_FILES
