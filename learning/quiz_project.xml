@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quiz_project schema_version="1">
+  <dictionaries>
+    <dictionary id="adjectives" file="dictionaries/adjectives.xml" label="Adjectives" schema="adjective" />
+    <dictionary id="copulas" file="dictionaries/copulas.xml" label="Copulas" schema="copula" />
+    <dictionary id="nouns" file="dictionaries/nouns.xml" label="Nouns" schema="noun" />
+    <dictionary id="verbs" file="dictionaries/verbs.xml" label="Verbs" schema="verb" />
+  </dictionaries>
+  <grammar file="grammar/grammar_rules.xml" />
+  <contexts file="grammar/contexts.xml" />
+  <sentence_maps file="grammar/sentence_maps.xml" />
+  <sentence_quizzes file="grammar/sentence_quizzes.xml" />
+</quiz_project>

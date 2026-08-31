@@ -2,118 +2,80 @@
 
 Public learning data and distributable quiz packages for Kotomi.
 
-This repository is intentionally separate from the private Kotomi application source. It owns dictionaries, lessons, grammar definitions, sentence maps, contexts, and the public delivery copy of independently updateable quiz packages generated from the private source repository.
+This repository is intentionally separate from the private Kotomi application source. It owns the learning database and the public delivery copy of independently updateable quiz packages generated from the private repository.
 
-## Learning data
+## Repository layout
 
-The learning-data files currently include:
+```text
+Kotomi-Data/
+├── learning/
+│   ├── dictionaries/
+│   │   ├── adjectives.xml
+│   │   ├── copulas.xml
+│   │   ├── nouns.xml
+│   │   └── verbs.xml
+│   ├── grammar/
+│   │   ├── contexts.xml
+│   │   ├── grammar_rules.xml
+│   │   ├── sentence_maps.xml
+│   │   └── sentence_quizzes.xml
+│   ├── lessons/
+│   │   └── lessons.xml
+│   ├── database_revision.json
+│   └── quiz_project.xml
+├── quizzes/
+├── tools/
+├── database_update_manifest.json
+└── quiz_update_manifest.json
+```
 
-- `nouns.xml`
-- `verbs.xml`
-- `adjectives.xml`
-- `copulas.xml`
-- `grammar_rules.xml`
-- `contexts.xml`
-- `sentence_maps.xml`
-- `sentence_quizzes.xml`
-- `quiz_project.xml`
-- `lessons.xml`
-- `database_revision.json`
-- `database_update_manifest.json`
+The root is reserved for repository metadata and public update manifests. Learning XML belongs under `learning/`, public generated quiz packages belong under `quizzes/`, and repository maintenance scripts belong under `tools/`.
 
-Kotomi has one supported learning-data installation location: `data/`. The Database manifest publishes the learning XML and `database_revision.json` only to that canonical path. The pre-refactor `shared/quiz_data/` layout is intentionally unsupported for the fresh-start architecture.
+Each hand-maintained content directory contains its own README with the local contract and ownership rules.
+
+## Learning database
+
+The private Kotomi repository mounts this repository as the Git submodule `data/`. Therefore `learning/` in this repository is installed as `data/learning/` in Kotomi.
+
+`learning/quiz_project.xml` is the entry point for the sentence engine and Quiz Studio. Its file references are relative to the `learning/` directory, so dictionaries and grammar files can stay grouped without hard-coded application paths.
+
+`learning/lessons/lessons.xml` is the lesson catalog. It is deliberately separate from the sentence-project manifest because it has its own persistence schema.
 
 ### Database revision
 
-The learning database does not use the Kotomi application version. Kotomi itself uses semantic `x.y.z` versioning, while the database has one independent positive integer revision:
+The learning database has an independent positive integer revision. It is not the Kotomi application version and it is not a schema version.
 
-```text
-Kotomi 1.1.1 [Database: 1]
-```
+The current state uses Database revision 2. Revision 2 introduces the organized `data/learning/` installation layout while keeping the learning content itself compatible with the same parser schemas.
 
-`database_revision.json` is the installed human-readable database identity:
+SHA-256 hashes decide which files are downloaded. The revision identifies a published database state.
 
-```json
-{
-  "format": 1,
-  "revision": 1
-}
-```
+### Schema versions
 
-`database_update_manifest.json` carries the same integer in its top-level `revision` field. The revision should increase when an official learning-data state is published. It does not participate in application or quiz compatibility checks.
+Project and pattern XML currently use Schema 1. `lessons.xml` uses lesson catalog Schema 4. Schema numbers are owned by the private Kotomi parser code and must not be changed here in isolation.
 
-SHA-256 hashes, not the revision number, decide which files an installation downloads. The revision therefore identifies a published database state without forcing unchanged files to be downloaded.
+A schema change requires matching parser and writer changes in Kotomi, migrated data, tests, documentation, and regenerated update manifests.
 
-### XML schema versions
+### Pattern data
 
-Schema versions are separate from both the Kotomi application version and the database revision. The current project and sentence-pattern data use **Schema 1**. This covers the project manifest, dictionaries used by the sentence engine, grammar rules, contexts, sentence maps, and sentence quiz definitions.
-
-`lessons.xml` has its own lesson-catalog persistence format and uses **Schema 4**. Kotomi accepts the current lesson catalog Schema 4 only. The retired top-level `<words>` representation from older lesson schemas is not part of the current format.
-
-The schema numbers are owned by the application code, not by this data repository. Their source-of-truth locations in the private Kotomi repository are:
-
-| Schema | Current value | Source of truth | Data marker in this repository |
-| --- | ---: | --- | --- |
-| Project / pattern schema | `1` | `kotomi/core/project/schema.py` → `SCHEMA_VERSION` | project XML files → `schema_version="1"` |
-| Lesson catalog schema | `4` | `kotomi/core/lessons/schema.py` → `LESSON_CATALOG_SCHEMA_VERSION` | `lessons.xml` → `schema_version="4"` |
-
-The private repository also contains `docs/versioning_and_schemas.md`, which is the canonical map for the application version, database revision, project schema, and lesson catalog schema.
-
-In other words, an installation can legitimately be described as:
-
-```text
-Kotomi 1.1.1
-Database revision 1
-Project/pattern schema 1
-Lesson catalog schema 4
-```
-
-These values have different jobs and should not be kept numerically synchronized.
-
-Do not change only a `schema_version` attribute in this repository. A schema change requires matching parser/writer changes in Kotomi, migrated XML here, tests, documentation, and a regenerated Database manifest. A published schema migration should also advance the Database revision, even though the schema and revision numbers remain independent.
-
-### Sentence maps
-
-`sentence_maps.xml` uses the same single pattern language as Quiz Studio. Named selections use `@name`, brackets select or constrain, and dots read a property from the selected value:
-
-```text
-{verb@main[role:object][form].translation}
-{verb@before[form:past_plain]}
-{noun[category:place][case:genitive]}
-{context[from:main].translation}
-{context[pool:past].kana}
-```
-
-A bare word refers to its base dictionary value. `[form]` selects the form chosen by the quiz, while `[form:name]` selects one fixed grammatical form. Noun cases are localized scalar values, so `{noun[case:accusative]}` directly renders the selected case.
-
-Kotomi does not keep a second compatibility dialect for retired pattern spellings. When the authoring language changes, the public sentence maps are migrated together with the application parser and tests.
+`learning/grammar/sentence_maps.xml` uses the same pattern language as Quiz Studio. `learning/grammar/contexts.xml` and `learning/grammar/grammar_rules.xml` provide the supporting grammar data, while `learning/grammar/sentence_quizzes.xml` defines sentence-quiz selections.
 
 ## Quiz packages
 
-Public quiz distribution uses:
+Public quiz distribution uses `quizzes/` together with the root `quiz_update_manifest.json`.
 
-```text
-quizzes/
-quiz_update_manifest.json
-```
+Each generated package lives under `quizzes/<package-id>/` and installs under `apps/<package-id>/` in Kotomi. These package directories are generated from the private source repository. Do not make independent manual changes inside them because the next publication replaces those files.
 
-Each package is stored under `quizzes/<package-id>/`, while the manifest installs it under `apps/<package-id>/` in Kotomi. Package files are generated from the private Kotomi source repository and should not be edited independently because the next publication replaces those edits.
+Published quizzes load their project from `data/learning/quiz_project.xml` through Kotomi's canonical path API.
 
-Published quiz packages use the canonical Kotomi APIs and load their project from `data/quiz_project.xml`. They are released together with the fresh-start application contract rather than carrying pre-refactor import or path fallbacks.
-
-From a Kotomi checkout with this repository initialized as its submodule, publish the current packages with:
+From a Kotomi checkout with this repository initialized as its submodule, publish current packages with:
 
 ```powershell
 python tools\publish_quiz_packages.py 1.1.1
 ```
 
-Here `1.1.1` is the quiz catalog release, not the Kotomi application version and not the database revision. Each package also keeps its own `version` in `app.json`.
-
-Review and commit the generated `quizzes/` directory and `quiz_update_manifest.json` in this repository.
+The argument is the quiz catalog release, not the Kotomi application version and not the database revision.
 
 ## Repository validation
-
-Kotomi-Data has its own lightweight CI and does not wait for the private application repository to discover basic publication mistakes.
 
 Run locally with:
 
@@ -121,47 +83,33 @@ Run locally with:
 python tools/validate_repository.py
 ```
 
-The validator checks:
+The validator checks the repository layout, directory documentation, XML schemas, project references, database revision and manifest inventory, manifest hashes, public quiz catalog, package inventories, and Python 3.10 source compatibility.
 
-- all root learning XML is well formed;
-- current project files use Schema 1 and `lessons.xml` uses lesson catalog Schema 4;
-- every file referenced by `quiz_project.xml` exists;
-- `database_revision.json` and `database_update_manifest.json` agree;
-- the Database manifest exactly covers the canonical root learning data and its SHA-256 values/URLs match the published files;
-- the public quiz package catalog exactly matches `quizzes/*`;
-- each public `app.json` agrees with its package catalog metadata and entrypoint;
-- each package file inventory and the flat Quiz manifest inventory match the files actually published;
-- quiz manifest SHA-256 values/URLs match the public files;
-- published quiz Python source compiles on the Python 3.10 source-compatibility baseline.
-
-This validator intentionally checks only contracts that can be verified from this public repository. Full parser/generation semantics are still tested in the private Kotomi suite against the exact `data/` submodule revision.
+CI runs the same validator for pull requests and changes to `main`.
 
 ## Development checkout
 
-The private Kotomi repository mounts this repository as the Git submodule at:
+The private Kotomi repository mounts this repository at:
 
 ```text
 data
 ```
 
-After cloning Kotomi, initialize it with:
+After cloning Kotomi, initialize the submodule with:
 
 ```bash
 git submodule update --init --recursive
 ```
 
+The application then uses `data/learning/` as its canonical learning-data root.
+
 ## Update URLs
 
-Kotomi's learning-data updater uses:
+The public manifest endpoints intentionally remain at the repository root:
 
 ```text
 https://raw.githubusercontent.com/MaciejPotas/Kotomi-Data/main/database_update_manifest.json
-```
-
-The independent quiz updater uses:
-
-```text
 https://raw.githubusercontent.com/MaciejPotas/Kotomi-Data/main/quiz_update_manifest.json
 ```
 
-Application, quiz, and learning-data updates are separate channels. Users may point the quiz or database updater at another compatible source without changing where the Kotomi application itself is updated from.
+Keeping these endpoints stable lets the repository structure evolve without forcing users to reconfigure update-channel URLs.

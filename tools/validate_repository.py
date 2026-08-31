@@ -8,19 +8,31 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
+LEARNING_ROOT = ROOT / "learning"
+PROJECT_MANIFEST = LEARNING_ROOT / "quiz_project.xml"
+DATABASE_REVISION_PATH = LEARNING_ROOT / "database_revision.json"
 TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
-PROJECT_SCHEMA_FILES = {
-    "adjectives.xml",
-    "contexts.xml",
-    "copulas.xml",
-    "grammar_rules.xml",
-    "nouns.xml",
-    "quiz_project.xml",
-    "sentence_maps.xml",
-    "sentence_quizzes.xml",
-    "verbs.xml",
+SCHEMA_FILES = {
+    LEARNING_ROOT / "dictionaries" / "adjectives.xml": "1",
+    LEARNING_ROOT / "dictionaries" / "copulas.xml": "1",
+    LEARNING_ROOT / "dictionaries" / "nouns.xml": "1",
+    LEARNING_ROOT / "dictionaries" / "verbs.xml": "1",
+    LEARNING_ROOT / "grammar" / "contexts.xml": "1",
+    LEARNING_ROOT / "grammar" / "grammar_rules.xml": "1",
+    LEARNING_ROOT / "grammar" / "sentence_maps.xml": "1",
+    LEARNING_ROOT / "grammar" / "sentence_quizzes.xml": "1",
+    LEARNING_ROOT / "lessons" / "lessons.xml": "4",
+    PROJECT_MANIFEST: "1",
 }
-LESSON_SCHEMA_FILE = "lessons.xml"
+REQUIRED_READMES = {
+    ROOT / "README.md",
+    LEARNING_ROOT / "README.md",
+    LEARNING_ROOT / "dictionaries" / "README.md",
+    LEARNING_ROOT / "grammar" / "README.md",
+    LEARNING_ROOT / "lessons" / "README.md",
+    ROOT / "quizzes" / "README.md",
+    ROOT / "tools" / "README.md",
+}
 
 
 def load_json(path: Path) -> dict[str, object]:
@@ -39,6 +51,10 @@ def normalized_bytes(path: Path) -> bytes:
 
 def file_hash(path: Path) -> str:
     return hashlib.sha256(normalized_bytes(path)).hexdigest()
+
+
+def relative(path: Path) -> str:
+    return path.resolve().relative_to(ROOT.resolve()).as_posix()
 
 
 def validate_manifest_file(entry: dict[str, object], expected_prefix: str) -> Path:
@@ -76,50 +92,64 @@ def validate_manifest_file(entry: dict[str, object], expected_prefix: str) -> Pa
     return source
 
 
-def validate_xml_and_schemas() -> None:
-    xml_files = sorted(ROOT.glob("*.xml"))
-    if not xml_files:
-        raise AssertionError("No root learning XML files found")
+def validate_layout_and_docs() -> None:
+    root_xml = sorted(ROOT.glob("*.xml"))
+    if root_xml:
+        raise AssertionError(
+            "Learning XML must not live at repository root: "
+            + ", ".join(path.name for path in root_xml)
+        )
+    if (ROOT / "database_revision.json").exists():
+        raise AssertionError("database_revision.json belongs under learning/")
+    for path in sorted(REQUIRED_READMES):
+        if not path.is_file():
+            raise AssertionError(f"Missing directory documentation: {relative(path)}")
 
-    for path in xml_files:
+
+def validate_xml_and_schemas() -> None:
+    actual_xml = {path.resolve() for path in LEARNING_ROOT.rglob("*.xml")}
+    expected_xml = {path.resolve() for path in SCHEMA_FILES}
+    if actual_xml != expected_xml:
+        missing = sorted(relative(path) for path in expected_xml - actual_xml)
+        extra = sorted(relative(path) for path in actual_xml - expected_xml)
+        raise AssertionError(
+            f"Learning XML inventory mismatch, missing={missing}, extra={extra}"
+        )
+
+    for path, expected_schema in sorted(
+        SCHEMA_FILES.items(), key=lambda item: item[0].as_posix()
+    ):
         try:
             root = ET.parse(path).getroot()
         except ET.ParseError as exc:
-            raise AssertionError(f"Malformed XML in {path.name}: {exc}") from exc
-
-        if path.name in PROJECT_SCHEMA_FILES:
-            if root.get("schema_version") != "1":
-                raise AssertionError(
-                    f"{path.name} must use project/pattern Schema 1"
-                )
-        elif path.name == LESSON_SCHEMA_FILE:
-            if root.get("schema_version") != "4":
-                raise AssertionError("lessons.xml must use lesson catalog Schema 4")
-        else:
+            raise AssertionError(f"Malformed XML in {relative(path)}: {exc}") from exc
+        if root.get("schema_version") != expected_schema:
             raise AssertionError(
-                f"Unexpected root learning XML file without a schema contract: {path.name}"
+                f"{relative(path)} must use Schema {expected_schema}"
             )
 
 
 def validate_project_references() -> None:
-    root = ET.parse(ROOT / "quiz_project.xml").getroot()
+    root = ET.parse(PROJECT_MANIFEST).getroot()
     references = {
         node.get("file", "")
         for node in root.iter()
         if node.get("file") is not None
     }
     if not references:
-        raise AssertionError("quiz_project.xml does not reference project files")
-    for relative in sorted(references):
-        if not relative:
-            raise AssertionError("quiz_project.xml contains an empty file reference")
-        path = ROOT / relative
+        raise AssertionError("learning/quiz_project.xml has no file references")
+    for value in sorted(references):
+        if not value:
+            raise AssertionError("learning/quiz_project.xml contains an empty file reference")
+        path = (PROJECT_MANIFEST.parent / value).resolve()
+        if LEARNING_ROOT.resolve() not in path.parents:
+            raise AssertionError(f"Project reference escapes learning/: {value}")
         if not path.is_file():
-            raise AssertionError(f"quiz_project.xml references missing file: {relative}")
+            raise AssertionError(f"Project reference points to missing file: {value}")
 
 
 def validate_database_manifest() -> None:
-    revision = load_json(ROOT / "database_revision.json")
+    revision = load_json(DATABASE_REVISION_PATH)
     manifest = load_json(ROOT / "database_update_manifest.json")
 
     if revision.get("format") != 1 or manifest.get("format") != 1:
@@ -130,7 +160,7 @@ def validate_database_manifest() -> None:
     if revision_number <= 0:
         raise AssertionError("Database revision must be positive")
     if manifest.get("revision") != revision_number:
-        raise AssertionError("Database manifest revision must match database_revision.json")
+        raise AssertionError("Database manifest revision must match learning/database_revision.json")
 
     entries = manifest.get("files")
     if not isinstance(entries, list):
@@ -145,24 +175,23 @@ def validate_database_manifest() -> None:
         if install_path in install_paths:
             raise AssertionError(f"Duplicate Database manifest path: {install_path}")
         install_paths.add(install_path)
-        source_paths.add(validate_manifest_file(raw_entry, "data/"))
+        source_paths.add(validate_manifest_file(raw_entry, "data/learning/"))
 
     expected_sources = {
-        path.resolve()
-        for path in ROOT.glob("*.xml")
-    } | {(ROOT / "database_revision.json").resolve()}
+        path.resolve() for path in SCHEMA_FILES
+    } | {DATABASE_REVISION_PATH.resolve()}
     if source_paths != expected_sources:
-        missing = sorted(path.name for path in expected_sources - source_paths)
-        extra = sorted(path.name for path in source_paths - expected_sources)
+        missing = sorted(relative(path) for path in expected_sources - source_paths)
+        extra = sorted(relative(path) for path in source_paths - expected_sources)
         raise AssertionError(
             f"Database manifest inventory mismatch, missing={missing}, extra={extra}"
         )
 
     expected_install_paths = {
-        f"data/{path.name}" for path in expected_sources
+        f"data/{relative(path)}" for path in expected_sources
     }
     if install_paths != expected_install_paths:
-        raise AssertionError("Database install paths do not match canonical data inventory")
+        raise AssertionError("Database install paths do not match canonical learning inventory")
 
 
 def package_files(package_dir: Path) -> set[Path]:
@@ -267,6 +296,7 @@ def validate_quiz_manifest() -> None:
 
 
 def main() -> None:
+    validate_layout_and_docs()
     validate_xml_and_schemas()
     validate_project_references()
     validate_database_manifest()

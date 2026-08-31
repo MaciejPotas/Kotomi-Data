@@ -1,61 +1,61 @@
 {
   "format": 1,
-  "revision": 1,
+  "revision": 2,
   "files": [
     {
-      "path": "data/adjectives.xml",
+      "path": "data/learning/database_revision.json",
+      "sha256": "5f398de00b7d812fb1b5e0422784bbe38a206becbfa739c50361bad8532bc882",
+      "url": "learning/database_revision.json?kotomi_sha256=5f398de00b7d812fb1b5e0422784bbe38a206becbfa739c50361bad8532bc882"
+    },
+    {
+      "path": "data/learning/dictionaries/adjectives.xml",
       "sha256": "33eaf5605492b2c1d490e20c02bd4644d8a700b83b1e54a393d03b4754298669",
-      "url": "adjectives.xml?kotomi_sha256=33eaf5605492b2c1d490e20c02bd4644d8a700b83b1e54a393d03b4754298669"
+      "url": "learning/dictionaries/adjectives.xml?kotomi_sha256=33eaf5605492b2c1d490e20c02bd4644d8a700b83b1e54a393d03b4754298669"
     },
     {
-      "path": "data/contexts.xml",
-      "sha256": "64a2019c5f9ed1c8857d98d2f0e29e4c55e153c8cbcbcaf4a243db20b287c3a0",
-      "url": "contexts.xml?kotomi_sha256=64a2019c5f9ed1c8857d98d2f0e29e4c55e153c8cbcbcaf4a243db20b287c3a0"
-    },
-    {
-      "path": "data/copulas.xml",
+      "path": "data/learning/dictionaries/copulas.xml",
       "sha256": "1ece8da3f6dacf85a2b33317ee136f8bfd468b19083f40c2c1d474f05cb6ba02",
-      "url": "copulas.xml?kotomi_sha256=1ece8da3f6dacf85a2b33317ee136f8bfd468b19083f40c2c1d474f05cb6ba02"
+      "url": "learning/dictionaries/copulas.xml?kotomi_sha256=1ece8da3f6dacf85a2b33317ee136f8bfd468b19083f40c2c1d474f05cb6ba02"
     },
     {
-      "path": "data/database_revision.json",
-      "sha256": "59e879cc1d7f3c689ca16268d891dc448f3ccc737de7ed57c946b0cb511605de",
-      "url": "database_revision.json?kotomi_sha256=59e879cc1d7f3c689ca16268d891dc448f3ccc737de7ed57c946b0cb511605de"
-    },
-    {
-      "path": "data/grammar_rules.xml",
-      "sha256": "314b16c83e028597a85c49c53e628d8056545a92bb652c58d6b7b823d1223956",
-      "url": "grammar_rules.xml?kotomi_sha256=314b16c83e028597a85c49c53e628d8056545a92bb652c58d6b7b823d1223956"
-    },
-    {
-      "path": "data/lessons.xml",
-      "sha256": "0e31b424e25a037bfa8e3bd3c466a6a76f74487a7421d2f128b03bfcfa79da5e",
-      "url": "lessons.xml?kotomi_sha256=0e31b424e25a037bfa8e3bd3c466a6a76f74487a7421d2f128b03bfcfa79da5e"
-    },
-    {
-      "path": "data/nouns.xml",
+      "path": "data/learning/dictionaries/nouns.xml",
       "sha256": "8ec5d82e91ba0ac61f9042f092ea3bcc0b53f3729760f73a289f117a2936250b",
-      "url": "nouns.xml?kotomi_sha256=8ec5d82e91ba0ac61f9042f092ea3bcc0b53f3729760f73a289f117a2936250b"
+      "url": "learning/dictionaries/nouns.xml?kotomi_sha256=8ec5d82e91ba0ac61f9042f092ea3bcc0b53f3729760f73a289f117a2936250b"
     },
     {
-      "path": "data/quiz_project.xml",
-      "sha256": "d3f975db9bc301eaec6ececcd45fcc93c756fc96f40fc5dc9c881ae804291895",
-      "url": "quiz_project.xml?kotomi_sha256=d3f975db9bc301eaec6ececcd45fcc93c756fc96f40fc5dc9c881ae804291895"
-    },
-    {
-      "path": "data/sentence_maps.xml",
-      "sha256": "ccdfa4b3a06ff4adf86600745ea4d2f9b0c9702c3700a0e8f71068d92263f1c8",
-      "url": "sentence_maps.xml?kotomi_sha256=ccdfa4b3a06ff4adf86600745ea4d2f9b0c9702c3700a0e8f71068d92263f1c8"
-    },
-    {
-      "path": "data/sentence_quizzes.xml",
-      "sha256": "bcee8e44a6a3f470b8d5fd445950477fda3ccfb71ed523e75132f8712770857e",
-      "url": "sentence_quizzes.xml?kotomi_sha256=bcee8e44a6a3f470b8d5fd445950477fda3ccfb71ed523e75132f8712770857e"
-    },
-    {
-      "path": "data/verbs.xml",
+      "path": "data/learning/dictionaries/verbs.xml",
       "sha256": "41d8ad23c4ed3cfb3bf362294850676f992d6295282aae7c25d8e44660214009",
-      "url": "verbs.xml?kotomi_sha256=41d8ad23c4ed3cfb3bf362294850676f992d6295282aae7c25d8e44660214009"
+      "url": "learning/dictionaries/verbs.xml?kotomi_sha256=41d8ad23c4ed3cfb3bf362294850676f992d6295282aae7c25d8e44660214009"
+    },
+    {
+      "path": "data/learning/grammar/contexts.xml",
+      "sha256": "64a2019c5f9ed1c8857d98d2f0e29e4c55e153c8cbcbcaf4a243db20b287c3a0",
+      "url": "learning/grammar/contexts.xml?kotomi_sha256=64a2019c5f9ed1c8857d98d2f0e29e4c55e153c8cbcbcaf4a243db20b287c3a0"
+    },
+    {
+      "path": "data/learning/grammar/grammar_rules.xml",
+      "sha256": "314b16c83e028597a85c49c53e628d8056545a92bb652c58d6b7b823d1223956",
+      "url": "learning/grammar/grammar_rules.xml?kotomi_sha256=314b16c83e028597a85c49c53e628d8056545a92bb652c58d6b7b823d1223956"
+    },
+    {
+      "path": "data/learning/grammar/sentence_maps.xml",
+      "sha256": "ccdfa4b3a06ff4adf86600745ea4d2f9b0c9702c3700a0e8f71068d92263f1c8",
+      "url": "learning/grammar/sentence_maps.xml?kotomi_sha256=ccdfa4b3a06ff4adf86600745ea4d2f9b0c9702c3700a0e8f71068d92263f1c8"
+    },
+    {
+      "path": "data/learning/grammar/sentence_quizzes.xml",
+      "sha256": "bcee8e44a6a3f470b8d5fd445950477fda3ccfb71ed523e75132f8712770857e",
+      "url": "learning/grammar/sentence_quizzes.xml?kotomi_sha256=bcee8e44a6a3f470b8d5fd445950477fda3ccfb71ed523e75132f8712770857e"
+    },
+    {
+      "path": "data/learning/lessons/lessons.xml",
+      "sha256": "0e31b424e25a037bfa8e3bd3c466a6a76f74487a7421d2f128b03bfcfa79da5e",
+      "url": "learning/lessons/lessons.xml?kotomi_sha256=0e31b424e25a037bfa8e3bd3c466a6a76f74487a7421d2f128b03bfcfa79da5e"
+    },
+    {
+      "path": "data/learning/quiz_project.xml",
+      "sha256": "26e00fed5f7e66a924026abc1b943ff6617dd8d3129398ed357f5bebd8944dfa",
+      "url": "learning/quiz_project.xml?kotomi_sha256=26e00fed5f7e66a924026abc1b943ff6617dd8d3129398ed357f5bebd8944dfa"
     }
   ]
 }
