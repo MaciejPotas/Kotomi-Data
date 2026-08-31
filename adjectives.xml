@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="13" id="adjectives" label="Adjectives" schema="adjective">
+<dictionary schema_version="1" id="adjectives" label="Adjectives" schema="adjective">
   <editor required="translation kana type" optional="kanji romaji" metadata="describes forms">
     <forms>
       <form name="predicate_plain_nonpast" />

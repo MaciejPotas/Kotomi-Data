@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<sentence_maps schema_version="13">
+<sentence_maps schema_version="1">
   <sentence_patterns>
     <sentence_pattern id="simple" label="Sam czasownik">
       <question>{context.translation}{verb[form].translation}.</question>

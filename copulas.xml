@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="13" id="copulas" label="Copulas" schema="copula">
+<dictionary schema_version="1" id="copulas" label="Copulas" schema="copula">
   <editor required="translation kana" optional="kanji romaji" metadata="forms">
     <forms>
       <form name="dictionary" />
