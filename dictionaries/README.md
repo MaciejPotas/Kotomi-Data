@@ -1,13 +1,13 @@
 # Dictionaries
 
-This directory owns Kotomi's lexical dictionaries:
+This directory owns Kotomi's reusable lexical dictionaries:
 
 - `verbs.xml`
 - `adjectives.xml`
 - `nouns.xml`
 - `copulas.xml`
 
-The dictionary IDs and filenames are declared by `../quiz_project.xml`. Sentence patterns refer to dictionary-backed slots through that project model, not through filesystem lookups of their own.
+The dictionary IDs and filenames are declared by the repository-level `quiz_project.xml`. Sentence patterns refer to dictionary-backed slots through that project model, not through filesystem lookups of their own.
 
 Keep word identifiers stable when editing existing entries because lessons and grammar data may reference them. Dictionary XML currently uses project Schema 1.
 

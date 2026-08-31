@@ -8,31 +8,30 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LEARNING_ROOT = ROOT / "learning"
-PROJECT_MANIFEST = LEARNING_ROOT / "quiz_project.xml"
+PROJECT_MANIFEST = ROOT / "quiz_project.xml"
 DATABASE_REVISION_PATH = ROOT / "database_revision.json"
+LESSON_CATALOG_PATH = ROOT / "lessons.xml"
 TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
 SCHEMA_FILES = {
-    LEARNING_ROOT / "dictionaries" / "adjectives.xml": "1",
-    LEARNING_ROOT / "dictionaries" / "copulas.xml": "1",
-    LEARNING_ROOT / "dictionaries" / "nouns.xml": "1",
-    LEARNING_ROOT / "dictionaries" / "verbs.xml": "1",
-    LEARNING_ROOT / "grammar" / "contexts.xml": "1",
-    LEARNING_ROOT / "grammar" / "grammar_rules.xml": "1",
-    LEARNING_ROOT / "grammar" / "sentence_maps.xml": "1",
-    LEARNING_ROOT / "grammar" / "sentence_quizzes.xml": "1",
-    LEARNING_ROOT / "lessons" / "lessons.xml": "4",
+    ROOT / "dictionaries" / "adjectives.xml": "1",
+    ROOT / "dictionaries" / "copulas.xml": "1",
+    ROOT / "dictionaries" / "nouns.xml": "1",
+    ROOT / "dictionaries" / "verbs.xml": "1",
+    ROOT / "grammar" / "contexts.xml": "1",
+    ROOT / "grammar" / "grammar_rules.xml": "1",
+    ROOT / "grammar" / "sentence_maps.xml": "1",
+    ROOT / "grammar" / "sentence_quizzes.xml": "1",
+    LESSON_CATALOG_PATH: "4",
     PROJECT_MANIFEST: "1",
 }
 REQUIRED_READMES = {
     ROOT / "README.md",
-    LEARNING_ROOT / "README.md",
-    LEARNING_ROOT / "dictionaries" / "README.md",
-    LEARNING_ROOT / "grammar" / "README.md",
-    LEARNING_ROOT / "lessons" / "README.md",
+    ROOT / "dictionaries" / "README.md",
+    ROOT / "grammar" / "README.md",
     ROOT / "quizzes" / "README.md",
     ROOT / "tools" / "README.md",
 }
+ALLOWED_ROOT_XML = {PROJECT_MANIFEST.resolve(), LESSON_CATALOG_PATH.resolve()}
 
 
 def load_json(path: Path) -> dict[str, object]:
@@ -93,11 +92,12 @@ def validate_manifest_file(entry: dict[str, object], expected_prefix: str) -> Pa
 
 
 def validate_layout_and_docs() -> None:
-    root_xml = sorted(ROOT.glob("*.xml"))
-    if root_xml:
+    actual_root_xml = {path.resolve() for path in ROOT.glob("*.xml")}
+    if actual_root_xml != ALLOWED_ROOT_XML:
+        missing = sorted(relative(path) for path in ALLOWED_ROOT_XML - actual_root_xml)
+        extra = sorted(relative(path) for path in actual_root_xml - ALLOWED_ROOT_XML)
         raise AssertionError(
-            "Learning XML must not live at repository root: "
-            + ", ".join(path.name for path in root_xml)
+            f"Root XML contract mismatch, missing={missing}, extra={extra}"
         )
     if not DATABASE_REVISION_PATH.is_file():
         raise AssertionError("Missing root database_revision.json")
@@ -107,7 +107,11 @@ def validate_layout_and_docs() -> None:
 
 
 def validate_xml_and_schemas() -> None:
-    actual_xml = {path.resolve() for path in LEARNING_ROOT.rglob("*.xml")}
+    actual_xml = {
+        path.resolve()
+        for directory in (ROOT / "dictionaries", ROOT / "grammar")
+        for path in directory.rglob("*.xml")
+    } | ALLOWED_ROOT_XML
     expected_xml = {path.resolve() for path in SCHEMA_FILES}
     if actual_xml != expected_xml:
         missing = sorted(relative(path) for path in expected_xml - actual_xml)
@@ -137,13 +141,13 @@ def validate_project_references() -> None:
         if node.get("file") is not None
     }
     if not references:
-        raise AssertionError("learning/quiz_project.xml has no file references")
+        raise AssertionError("quiz_project.xml has no file references")
     for value in sorted(references):
         if not value:
-            raise AssertionError("learning/quiz_project.xml contains an empty file reference")
+            raise AssertionError("quiz_project.xml contains an empty file reference")
         path = (PROJECT_MANIFEST.parent / value).resolve()
-        if LEARNING_ROOT.resolve() not in path.parents:
-            raise AssertionError(f"Project reference escapes learning/: {value}")
+        if ROOT.resolve() not in path.parents:
+            raise AssertionError(f"Project reference escapes repository root: {value}")
         if not path.is_file():
             raise AssertionError(f"Project reference points to missing file: {value}")
 
@@ -191,7 +195,7 @@ def validate_database_manifest() -> None:
         f"data/{relative(path)}" for path in expected_sources
     }
     if install_paths != expected_install_paths:
-        raise AssertionError("Database install paths do not match canonical learning inventory")
+        raise AssertionError("Database install paths do not match canonical data inventory")
 
 
 def package_files(package_dir: Path) -> set[Path]:
