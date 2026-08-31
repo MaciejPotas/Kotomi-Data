@@ -48,7 +48,16 @@ SHA-256 hashes, not the revision number, decide which files an installation down
 
 Schema versions are separate from both the Kotomi application version and the database revision. The current project and sentence-pattern data use **Schema 1**. This covers the project manifest, dictionaries used by the sentence engine, grammar rules, contexts, sentence maps, and sentence quiz definitions.
 
-`lessons.xml` has its own lesson-catalog persistence format and currently uses **schema 4**. Resetting the project/pattern schema to 1 does not reset the lesson schema, and changing the database revision does not imply a schema change.
+`lessons.xml` has its own lesson-catalog persistence format and uses **Schema 4**. Kotomi accepts the current lesson catalog Schema 4 only. The retired top-level `<words>` representation from older lesson schemas is not part of the current format.
+
+The schema numbers are owned by the application code, not by this data repository. Their source-of-truth locations in the private Kotomi repository are:
+
+| Schema | Current value | Source of truth | Data marker in this repository |
+| --- | ---: | --- | --- |
+| Project / pattern schema | `1` | `kotomi/core/project/schema.py` → `SCHEMA_VERSION` | project XML files → `schema_version="1"` |
+| Lesson catalog schema | `4` | `kotomi/core/lessons/schema.py` → `LESSON_CATALOG_SCHEMA_VERSION` | `lessons.xml` → `schema_version="4"` |
+
+The private repository also contains `docs/versioning_and_schemas.md`, which is the canonical map for the application version, database revision, project schema, and lesson catalog schema.
 
 In other words, an installation can legitimately be described as:
 
@@ -60,6 +69,8 @@ Lesson catalog schema 4
 ```
 
 These values have different jobs and should not be kept numerically synchronized.
+
+Do not change only a `schema_version` attribute in this repository. A schema change requires matching parser/writer changes in Kotomi, migrated XML here, tests, documentation, and a regenerated Database manifest. A published schema migration should also advance the Database revision, even though the schema and revision numbers remain independent.
 
 ### Sentence maps
 
@@ -102,7 +113,7 @@ Review and commit the generated `quizzes/` directory and `quiz_update_manifest.j
 
 ## Development checkout
 
-The private Kotomi repository mounts this repository as the Git submodule:
+The private Kotomi repository mounts this repository as the Git submodule at:
 
 ```text
 data
