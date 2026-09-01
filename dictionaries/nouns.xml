@@ -11,8 +11,8 @@
     <word id="box" translation="pudełko" kana="はこ" kanji="箱" type="noun" category="thing">
       <cases language="pl" nominative="pudełko" genitive="pudełka" accusative="pudełko" instrumental="pudełkiem" locative="pudełku" />
     </word>
-    <word id="car" translation="samochód" kana="くるま" kanji="車" type="noun" category="vehicle">
-      <cases language="pl" nominative="samochód" genitive="samochodu" accusative="samochód" instrumental="samochodem" locative="samochodzie" />
+    <word id="car" translation="samochód" kana="くるま" kanji="車" type="noun" category="vehicle" romaji="kuruma">
+      <cases language="pl" nominative="samochód" genitive="samochodu" accusative="samochód" instrumental="samochodem" locative="samochodzie" dative="samochodowi" vocative="samochodzie" />
     </word>
     <word id="clothes" translation="ubrania" kana="ふく" kanji="服" type="noun" category="thing">
       <cases language="pl" nominative="ubrania" genitive="ubrań" accusative="ubrania" instrumental="ubraniami" locative="ubraniach" />
@@ -26,8 +26,8 @@
     <word id="email" translation="mail" kana="めーる" kanji="メール" type="noun" category="text">
       <cases language="pl" nominative="mail" genitive="maila" accusative="mail" instrumental="mailem" locative="mailu" />
     </word>
-    <word id="friend" translation="przyjaciel" kana="ともだち" kanji="友達" type="noun" category="person">
-      <cases language="pl" nominative="przyjaciel" genitive="przyjaciela" accusative="przyjaciela" instrumental="przyjacielem" locative="przyjacielu" />
+    <word id="friend" translation="przyjaciel / kolega" kana="ともだち" kanji="友達" type="noun" category="person" romaji="tomodachi">
+      <cases language="pl" nominative="przyjaciel / kolega" genitive="przyjaciela / kolegi" accusative="przyjaciela / kolegę" instrumental="przyjacielem / kolegą" locative="przyjacielu / koledze" dative="przyjacielowi / koledze" vocative="przyjacielu / kolego" />
     </word>
     <word id="fune" translation="łódź" kana="ふね" kanji="船" type="noun" category="vehicle">
       <cases language="pl" nominative="łódź" genitive="łodzi" dative="łodzi" accusative="łódź" instrumental="łodzią" locative="łodzi" vocative="łodzi" />
@@ -41,8 +41,8 @@
     <word id="inu" translation="pies" kana="いぬ" kanji="犬" type="noun" category="animal">
       <cases language="pl" nominative="pies" genitive="psa" dative="psu" accusative="psa" instrumental="psem" locative="psie" vocative="psie" />
     </word>
-    <word id="jikan" translation="czas" kana="じかん" kanji="時間" type="noun" category="availability_reason">
-      <cases language="pl" nominative="czas" genitive="czasu" accusative="czas" instrumental="czasem" locative="czasie" />
+    <word id="jikan" translation="czas" kana="じかん" kanji="時間" type="noun" category="abstract" romaji="jikan">
+      <cases language="pl" nominative="czas" genitive="czasu" accusative="czas" instrumental="czasem" locative="czasie" dative="czasowi" vocative="czasie" />
     </word>
     <word id="keikaku" translation="plan działania" kana="けいかく" kanji="計画" type="noun" category="availability_reason">
       <cases language="pl" nominative="plan działania" genitive="planu działania" accusative="plan działania" instrumental="planem działania" locative="planie działania" />
@@ -56,8 +56,8 @@
     <word id="manga" translation="manga" kana="まんが" kanji="漫画" type="noun" category="text">
       <cases language="pl" nominative="manga" genitive="mangi" accusative="mangę" instrumental="mangą" locative="mandze" />
     </word>
-    <word id="meal" translation="posiłek" kana="しょくじ" kanji="食事" type="noun" category="food">
-      <cases language="pl" nominative="posiłek" genitive="posiłku" accusative="posiłek" instrumental="posiłkiem" locative="posiłku" />
+    <word id="meal" translation="posiłek" kana="しょくじ" kanji="食事" type="noun" category="food" romaji="shokuji">
+      <cases language="pl" nominative="posiłek" genitive="posiłku" accusative="posiłek" instrumental="posiłkiem" locative="posiłku" dative="posiłkowi" vocative="posiłku" />
     </word>
     <word id="mother" translation="mama" kana="おかあさん" kanji="お母さん" type="noun" category="person">
       <cases language="pl" nominative="mama" genitive="mamy" accusative="mamę" instrumental="mamą" locative="mamie" />
@@ -74,8 +74,8 @@
     <word id="note" translation="notatka" kana="めも" kanji="メモ" type="noun" category="text">
       <cases language="pl" nominative="notatka" genitive="notatki" accusative="notatkę" instrumental="notatką" locative="notatce" />
     </word>
-    <word id="okane" translation="pieniądze" kana="おかね" kanji="お金" type="noun" category="availability_reason">
-      <cases language="pl" nominative="pieniądze" genitive="pieniędzy" accusative="pieniądze" instrumental="pieniędzmi" locative="pieniądzach" />
+    <word id="okane" translation="pieniądze" kana="おかね" kanji="お金" type="noun" category="abstract" romaji="okane">
+      <cases language="pl" nominative="pieniądze" genitive="pieniędzy" accusative="pieniądze" instrumental="pieniędzmi" locative="pieniądzach" dative="pieniądzom" vocative="pieniądze" />
     </word>
     <word id="pan" translation="chleb" kana="パン" type="noun" category="food">
       <cases language="pl" nominative="chleb" genitive="chleba" accusative="chleb" instrumental="chlebem" locative="chlebie" />
@@ -89,11 +89,11 @@
     <word id="room" translation="pokój" kana="へや" kanji="部屋" type="noun" category="place">
       <cases language="pl" nominative="pokój" genitive="pokoju" accusative="pokój" instrumental="pokojem" locative="pokoju" />
     </word>
-    <word id="school" translation="szkoła" kana="がっこう" kanji="学校" type="noun" category="place">
-      <cases language="pl" nominative="szkoła" genitive="szkoły" accusative="szkołę" instrumental="szkołą" locative="szkole" />
+    <word id="school" translation="szkoła" kana="がっこう" kanji="学校" type="noun" category="place" romaji="gakkou">
+      <cases language="pl" nominative="szkoła" genitive="szkoły" accusative="szkołę" instrumental="szkołą" locative="szkole" dative="szkole" vocative="szkoło" />
     </word>
-    <word id="shigoto" translation="praca" kana="しごと" kanji="仕事" type="noun" category="availability_reason">
-      <cases language="pl" nominative="praca" genitive="pracy" accusative="pracę" instrumental="pracą" locative="pracy" />
+    <word id="shigoto" translation="praca" kana="しごと" kanji="仕事" type="noun" category="abstract" romaji="shigoto">
+      <cases language="pl" nominative="praca" genitive="pracy" accusative="pracę" instrumental="pracą" locative="pracy" dative="pracy" vocative="praco" />
     </word>
     <word id="sister" translation="siostra" kana="あね" kanji="姉" type="noun" category="person">
       <cases language="pl" nominative="siostra" genitive="siostry" accusative="siostrę" instrumental="siostrą" locative="siostrze" />
@@ -101,8 +101,8 @@
     <word id="song" translation="piosenka" kana="うた" kanji="歌" type="noun" category="media">
       <cases language="pl" nominative="piosenka" genitive="piosenki" accusative="piosenkę" instrumental="piosenką" locative="piosence" />
     </word>
-    <word id="station" translation="stacja" kana="えき" kanji="駅" type="noun" category="place">
-      <cases language="pl" nominative="stacja" genitive="stacji" accusative="stację" instrumental="stacją" locative="stacji" />
+    <word id="station" translation="stacja / dworzec" kana="えき" kanji="駅" type="noun" category="place" romaji="eki">
+      <cases language="pl" nominative="stacja / dworzec" genitive="stacji / dworca" accusative="stację / dworzec" instrumental="stacją / dworcem" locative="stacji / dworcu" dative="stacji / dworcowi" vocative="stacjo / dworcu" />
     </word>
     <word id="sushi" translation="sushi" kana="すし" kanji="寿司" type="noun" category="food">
       <cases language="pl" nominative="sushi" genitive="sushi" accusative="sushi" instrumental="sushi" locative="sushi" />
@@ -113,17 +113,17 @@
     <word id="tea" translation="herbata" kana="おちゃ" kanji="お茶" type="noun" category="drink">
       <cases language="pl" nominative="herbata" genitive="herbaty" accusative="herbatę" instrumental="herbatą" locative="herbacie" />
     </word>
-    <word id="teacher" translation="nauczyciel" kana="せんせい" kanji="先生" type="noun" category="person">
-      <cases language="pl" nominative="nauczyciel" genitive="nauczyciela" accusative="nauczyciela" instrumental="nauczycielem" locative="nauczycielu" />
+    <word id="teacher" translation="nauczyciel" kana="せんせい" kanji="先生" type="noun" category="person" romaji="sensei">
+      <cases language="pl" nominative="nauczyciel" genitive="nauczyciela" accusative="nauczyciela" instrumental="nauczycielem" locative="nauczycielu" dative="nauczycielowi" vocative="nauczycielu" />
     </word>
     <word id="television" translation="telewizja" kana="テレビ" type="noun" category="thing">
       <cases language="pl" nominative="telewizja" genitive="telewizji" accusative="telewizję" instrumental="telewizją" locative="telewizji" />
     </word>
-    <word id="tori" translation="ptak" kana="とり" kanji="鳥" type="noun" category="animal">
+    <word id="tori" translation="ptak" kana="とり" kanji="鳥" type="noun" category="animal" romaji="tori">
       <cases language="pl" nominative="ptak" genitive="ptaka" dative="ptakowi" accusative="ptaka" instrumental="ptakiem" locative="ptaku" vocative="ptaku" />
     </word>
-    <word id="water" translation="woda" kana="みず" kanji="水" type="noun" category="drink">
-      <cases language="pl" nominative="woda" genitive="wody" accusative="wodę" instrumental="wodą" locative="wodzie" />
+    <word id="water" translation="woda" kana="みず" kanji="水" type="noun" category="drink" romaji="mizu">
+      <cases language="pl" nominative="woda" genitive="wody" accusative="wodę" instrumental="wodą" locative="wodzie" dative="wodzie" vocative="wodo" />
     </word>
     <word id="yakusoku" translation="obietnica" kana="やくそく" kanji="約束" type="noun" category="abstract">
       <cases language="pl" nominative="obietnica" genitive="obietnicy" accusative="obietnicę" instrumental="obietnicą" locative="obietnicy" />
@@ -133,6 +133,855 @@
     </word>
     <word id="youji" translation="sprawa do załatwienia" kana="ようじ" kanji="用事" type="noun" category="abstract">
       <cases language="pl" nominative="sprawa do załatwienia" genitive="sprawy do załatwienia" accusative="sprawę do załatwienia" instrumental="sprawą do załatwienia" locative="sprawie do załatwienia" />
+    </word>
+    <word id="hi_day" translation="dzień / słońce" kana="ひ" kanji="日" romaji="hi" type="noun" category="abstract">
+      <cases language="pl" nominative="dzień / słońce" genitive="dnia / słońca" dative="dniowi / słońcu" accusative="dzień / słońce" instrumental="dniem / słońcem" locative="dniu / słońcu" vocative="dniu / słońce" />
+    </word>
+    <word id="hahanohi" translation="Dzień Matki" kana="ははのひ" kanji="母の日" romaji="hahanohi" type="noun" category="abstract">
+      <cases language="pl" nominative="Dzień Matki" genitive="Dnia Matki" dative="Dniu Matki" accusative="Dzień Matki" instrumental="Dniem Matki" locative="Dniu Matki" vocative="Dniu Matki" />
+    </word>
+    <word id="mikka" translation="trzeci dzień miesiąca" kana="みっか" kanji="三日" romaji="mikka" type="noun" category="abstract">
+      <cases language="pl" nominative="trzeci dzień miesiąca" genitive="trzeciego dnia miesiąca" dative="trzeciemu dniowi miesiąca" accusative="trzeci dzień miesiąca" instrumental="trzecim dniem miesiąca" locative="trzecim dniu miesiąca" vocative="trzeci dniu miesiąca" />
+    </word>
+    <word id="tsuki" translation="księżyc" kana="つき" kanji="月" romaji="tsuki" type="noun" category="abstract">
+      <cases language="pl" nominative="księżyc" genitive="księżyca" dative="księżycowi" accusative="księżyc" instrumental="księżycem" locative="księżycu" vocative="księżycu" />
+    </word>
+    <word id="nigatsu" translation="luty" kana="にがつ" kanji="二月" romaji="nigatsu" type="noun" category="abstract">
+      <cases language="pl" nominative="luty" genitive="lutego" dative="lutemu" accusative="luty" instrumental="lutym" locative="lutym" vocative="luty" />
+    </word>
+    <word id="taiboku" translation="duże drzewo" kana="たいぼく" kanji="大木" romaji="taiboku" type="noun" category="thing">
+      <cases language="pl" nominative="duże drzewo" genitive="dużego drzewa" dative="dużemu drzewu" accusative="duże drzewo" instrumental="dużym drzewem" locative="dużym drzewie" vocative="duże drzewo" />
+    </word>
+    <word id="ki" translation="drzewo" kana="き" kanji="木" romaji="ki" type="noun" category="thing">
+      <cases language="pl" nominative="drzewo" genitive="drzewa" dative="drzewu" accusative="drzewo" instrumental="drzewem" locative="drzewie" vocative="drzewo" />
+    </word>
+    <word id="mon" translation="brama" kana="もん" kanji="門" romaji="mon" type="noun" category="place">
+      <cases language="pl" nominative="brama" genitive="bramy" dative="bramie" accusative="bramę" instrumental="bramą" locative="bramie" vocative="bramo" />
+    </word>
+    <word id="koumon" translation="brama szkoły" kana="こうもん" kanji="校門" romaji="koumon" type="noun" category="place">
+      <cases language="pl" nominative="brama szkoły" genitive="bramy szkoły" dative="bramie szkoły" accusative="bramę szkoły" instrumental="bramą szkoły" locative="bramie szkoły" vocative="bramo szkoły" />
+    </word>
+    <word id="hito" translation="człowiek" kana="ひと" kanji="人" romaji="hito" type="noun" category="person">
+      <cases language="pl" nominative="człowiek" genitive="człowieka" dative="człowiekowi" accusative="człowieka" instrumental="człowiekiem" locative="człowieku" vocative="człowieku" />
+    </word>
+    <word id="nihonjin" translation="Japończyk" kana="にほんじん" kanji="日本人" romaji="nihonjin" type="noun" category="person">
+      <cases language="pl" nominative="Japończyk" genitive="Japończyka" dative="Japończykowi" accusative="Japończyka" instrumental="Japończykiem" locative="Japończyku" vocative="Japończyku" />
+    </word>
+    <word id="sannin" translation="troje ludzi" kana="さんにん" kanji="三人" romaji="sannin" type="noun" category="abstract">
+      <cases language="pl" nominative="troje ludzi" genitive="trojga ludzi" dative="trojgu ludzi" accusative="troje ludzi" instrumental="trojgiem ludzi" locative="trojgu ludzi" vocative="troje ludzi" />
+    </word>
+    <word id="kuchi" translation="usta" kana="くち" kanji="口" romaji="kuchi" type="noun" category="thing">
+      <cases language="pl" nominative="usta" genitive="ust" dative="ustom" accusative="usta" instrumental="ustami" locative="ustach" vocative="usta" />
+    </word>
+    <word id="iriguchi" translation="wejście" kana="いりぐち" kanji="入り口" romaji="iriguchi" type="noun" category="place">
+      <cases language="pl" nominative="wejście" genitive="wejścia" dative="wejściu" accusative="wejście" instrumental="wejściem" locative="wejściu" vocative="wejście" />
+    </word>
+    <word id="jinkou" translation="populacja" kana="じんこう" kanji="人口" romaji="jinkou" type="noun" category="abstract">
+      <cases language="pl" nominative="populacja" genitive="populacji" dative="populacji" accusative="populację" instrumental="populacją" locative="populacji" vocative="populacjo" />
+    </word>
+    <word id="hi_fire" translation="ogień" kana="ひ" kanji="火" romaji="hi" type="noun" category="abstract">
+      <cases language="pl" nominative="ogień" genitive="ognia" dative="ogniowi" accusative="ogień" instrumental="ogniem" locative="ogniu" vocative="ogniu" />
+    </word>
+    <word id="kazan" translation="wulkan" kana="かざん" kanji="火山" romaji="kazan" type="noun" category="place">
+      <cases language="pl" nominative="wulkan" genitive="wulkanu" dative="wulkanowi" accusative="wulkan" instrumental="wulkanem" locative="wulkanie" vocative="wulkanie" />
+    </word>
+    <word id="kayoubi" translation="wtorek" kana="かようび" kanji="火曜日" romaji="kayoubi" type="noun" category="abstract">
+      <cases language="pl" nominative="wtorek" genitive="wtorku" dative="wtorkowi" accusative="wtorek" instrumental="wtorkiem" locative="wtorku" vocative="wtorku" />
+    </word>
+    <word id="mimi" translation="ucho" kana="みみ" kanji="耳" romaji="mimi" type="noun" category="thing">
+      <cases language="pl" nominative="ucho" genitive="ucha" dative="uchu" accusative="ucho" instrumental="uchem" locative="uchu" vocative="ucho" />
+    </word>
+    <word id="me" translation="oko" kana="め" kanji="目" romaji="me" type="noun" category="thing">
+      <cases language="pl" nominative="oko" genitive="oka" dative="oku" accusative="oko" instrumental="okiem" locative="oku" vocative="oko" />
+    </word>
+    <word id="hitorime" translation="pierwsza osoba" kana="ひとりめ" kanji="一人目" romaji="hitorime" type="noun" category="person">
+      <cases language="pl" nominative="pierwsza osoba" genitive="pierwszej osoby" dative="pierwszej osobie" accusative="pierwszą osobę" instrumental="pierwszą osobą" locative="pierwszej osobie" vocative="pierwsza osobo" />
+    </word>
+    <word id="te" translation="dłoń" kana="て" kanji="手" romaji="te" type="noun" category="thing">
+      <cases language="pl" nominative="dłoń" genitive="dłoni" dative="dłoni" accusative="dłoń" instrumental="dłonią" locative="dłoni" vocative="dłoni" />
+    </word>
+    <word id="kashu" translation="piosenkarz" kana="かしゅ" kanji="歌手" romaji="kashu" type="noun" category="person">
+      <cases language="pl" nominative="piosenkarz" genitive="piosenkarza" dative="piosenkarzowi" accusative="piosenkarza" instrumental="piosenkarzem" locative="piosenkarzu" vocative="piosenkarzu" />
+    </word>
+    <word id="senshu" translation="zawodnik" kana="せんしゅ" kanji="選手" romaji="senshu" type="noun" category="person">
+      <cases language="pl" nominative="zawodnik" genitive="zawodnika" dative="zawodnikowi" accusative="zawodnika" instrumental="zawodnikiem" locative="zawodniku" vocative="zawodniku" />
+    </word>
+    <word id="ashi" translation="noga / stopa" kana="あし" kanji="足" romaji="ashi" type="noun" category="thing">
+      <cases language="pl" nominative="noga / stopa" genitive="nogi / stopy" dative="nodze / stopie" accusative="nogę / stopę" instrumental="nogą / stopą" locative="nodze / stopie" vocative="nogo / stopo" />
+    </word>
+    <word id="ushi" translation="krowa" kana="うし" kanji="牛" romaji="ushi" type="noun" category="animal">
+      <cases language="pl" nominative="krowa" genitive="krowy" dative="krowie" accusative="krowę" instrumental="krową" locative="krowie" vocative="krowo" />
+    </word>
+    <word id="gyuuniku" translation="wołowina" kana="ぎゅうにく" kanji="牛肉" romaji="gyuuniku" type="noun" category="food">
+      <cases language="pl" nominative="wołowina" genitive="wołowiny" dative="wołowinie" accusative="wołowinę" instrumental="wołowiną" locative="wołowinie" vocative="wołowino" />
+    </word>
+    <word id="gyuunyuu" translation="mleko krowie" kana="ぎゅうにゅう" kanji="牛乳" romaji="gyuunyuu" type="noun" category="drink">
+      <cases language="pl" nominative="mleko krowie" genitive="mleka krowiego" dative="mleku krowiemu" accusative="mleko krowie" instrumental="mlekiem krowim" locative="mleku krowim" vocative="mleko krowie" />
+    </word>
+    <word id="meue" translation="osoba starsza / przełożony" kana="めうえ" kanji="目上" romaji="meue" type="noun" category="person">
+      <cases language="pl" nominative="osoba starsza / przełożony" genitive="osoby starszej / przełożonego" dative="osobie starszej / przełożonemu" accusative="osobę starszą / przełożonego" instrumental="osobą starszą / przełożonym" locative="osobie starszej / przełożonym" vocative="osobo starsza / przełożony" />
+    </word>
+    <word id="meshita" translation="osoba młodsza / podwładny" kana="めした" kanji="目下" romaji="meshita" type="noun" category="person">
+      <cases language="pl" nominative="osoba młodsza / podwładny" genitive="osoby młodszej / podwładnego" dative="osobie młodszej / podwładnemu" accusative="osobę młodszą / podwładnego" instrumental="osobą młodszą / podwładnym" locative="osobie młodszej / podwładnym" vocative="osobo młodsza / podwładny" />
+    </word>
+    <word id="uma" translation="koń" kana="うま" kanji="馬" romaji="uma" type="noun" category="animal">
+      <cases language="pl" nominative="koń" genitive="konia" dative="koniowi" accusative="konia" instrumental="koniem" locative="koniu" vocative="koniu" />
+    </word>
+    <word id="basha" translation="powóz" kana="ばしゃ" kanji="馬車" romaji="basha" type="noun" category="vehicle">
+      <cases language="pl" nominative="powóz" genitive="powozu" dative="powozowi" accusative="powóz" instrumental="powozem" locative="powozie" vocative="powozie" />
+    </word>
+    <word id="hakuchou" translation="łabędź" kana="はくちょう" kanji="白鳥" romaji="hakuchou" type="noun" category="animal">
+      <cases language="pl" nominative="łabędź" genitive="łabędzia" dative="łabędziowi" accusative="łabędzia" instrumental="łabędziem" locative="łabędziu" vocative="łabędziu" />
+    </word>
+    <word id="kingyo" translation="złota rybka" kana="きんぎょ" kanji="金魚" romaji="kingyo" type="noun" category="animal">
+      <cases language="pl" nominative="złota rybka" genitive="złotej rybki" dative="złotej rybce" accusative="złotą rybkę" instrumental="złotą rybką" locative="złotej rybce" vocative="złota rybko" />
+    </word>
+    <word id="fubo" translation="rodzice / opiekunowie" kana="ふぼ" kanji="父母" romaji="fubo" type="noun" category="person">
+      <cases language="pl" nominative="rodzice / opiekunowie" genitive="rodziców / opiekunów" dative="rodzicom / opiekunom" accusative="rodziców / opiekunów" instrumental="rodzicami / opiekunami" locative="rodzicach / opiekunach" vocative="rodzice / opiekunowie" />
+    </word>
+    <word id="baniku" translation="konina" kana="ばにく" kanji="馬肉" romaji="baniku" type="noun" category="food">
+      <cases language="pl" nominative="konina" genitive="koniny" dative="koninie" accusative="koninę" instrumental="koniną" locative="koninie" vocative="konino" />
+    </word>
+    <word id="toriniku" translation="mięso z kurczaka" kana="とりにく" kanji="鳥肉" romaji="toriniku" type="noun" category="food">
+      <cases language="pl" nominative="mięso z kurczaka" genitive="mięsa z kurczaka" dative="mięsu z kurczaka" accusative="mięso z kurczaka" instrumental="mięsem z kurczaka" locative="mięsie z kurczaka" vocative="mięso z kurczaka" />
+    </word>
+    <word id="kotori" translation="mały ptak" kana="ことり" kanji="小鳥" romaji="kotori" type="noun" category="animal">
+      <cases language="pl" nominative="mały ptak" genitive="małego ptaka" dative="małemu ptakowi" accusative="małego ptaka" instrumental="małym ptakiem" locative="małym ptaku" vocative="mały ptaku" />
+    </word>
+    <word id="ningyo" translation="syrena" kana="にんぎょ" kanji="人魚" romaji="ningyo" type="noun" category="animal">
+      <cases language="pl" nominative="syrena" genitive="syreny" dative="syrenie" accusative="syrenę" instrumental="syreną" locative="syrenie" vocative="syreno" />
+    </word>
+    <word id="sakana" translation="ryba" kana="さかな" kanji="魚" romaji="sakana" type="noun" category="animal">
+      <cases language="pl" nominative="ryba" genitive="ryby" dative="rybie" accusative="rybę" instrumental="rybą" locative="rybie" vocative="rybo" />
+    </word>
+    <word id="suiyoubi" translation="środa" kana="すいようび" kanji="水曜日" romaji="suiyoubi" type="noun" category="abstract">
+      <cases language="pl" nominative="środa" genitive="środy" dative="środzie" accusative="środę" instrumental="środą" locative="środzie" vocative="środo" />
+    </word>
+    <word id="kin" translation="złoto" kana="きん" kanji="金" romaji="kin" type="noun" category="thing">
+      <cases language="pl" nominative="złoto" genitive="złota" dative="złotu" accusative="złoto" instrumental="złotem" locative="złocie" vocative="złoto" />
+    </word>
+    <word id="tsuchi" translation="ziemia / gleba" kana="つち" kanji="土" romaji="tsuchi" type="noun" category="thing">
+      <cases language="pl" nominative="ziemia / gleba" genitive="ziemi / gleby" dative="ziemi / glebie" accusative="ziemię / glebę" instrumental="ziemią / glebą" locative="ziemi / glebie" vocative="ziemio / glebo" />
+    </word>
+    <word id="dosoku" translation="obuwie" kana="どそく" kanji="土足" romaji="dosoku" type="noun" category="thing">
+      <cases language="pl" nominative="obuwie" genitive="obuwia" dative="obuwiu" accusative="obuwie" instrumental="obuwiem" locative="obuwiu" vocative="obuwie" />
+    </word>
+    <word id="doyoubi" translation="sobota" kana="どようび" kanji="土曜日" romaji="doyoubi" type="noun" category="abstract">
+      <cases language="pl" nominative="sobota" genitive="soboty" dative="sobocie" accusative="sobotę" instrumental="sobotą" locative="sobocie" vocative="soboto" />
+    </word>
+    <word id="ko" translation="dziecko" kana="こ" kanji="子" romaji="ko" type="noun" category="person">
+      <cases language="pl" nominative="dziecko" genitive="dziecka" dative="dziecku" accusative="dziecko" instrumental="dzieckiem" locative="dziecku" vocative="dziecko" />
+    </word>
+    <word id="otokonoko" translation="chłopiec" kana="おとこのこ" kanji="男の子" romaji="otokonoko" type="noun" category="person">
+      <cases language="pl" nominative="chłopiec" genitive="chłopca" dative="chłopcu" accusative="chłopca" instrumental="chłopcem" locative="chłopcu" vocative="chłopcze" />
+    </word>
+    <word id="onnanoko" translation="dziewczynka" kana="おんなのこ" kanji="女の子" romaji="onnanoko" type="noun" category="person">
+      <cases language="pl" nominative="dziewczynka" genitive="dziewczynki" dative="dziewczynce" accusative="dziewczynkę" instrumental="dziewczynką" locative="dziewczynce" vocative="dziewczynko" />
+    </word>
+    <word id="danshi" translation="mężczyzna / chłopiec" kana="だんし" kanji="男子" romaji="danshi" type="noun" category="person">
+      <cases language="pl" nominative="mężczyzna / chłopiec" genitive="mężczyzny / chłopca" dative="mężczyźnie / chłopcu" accusative="mężczyznę / chłopca" instrumental="mężczyzną / chłopcem" locative="mężczyźnie / chłopcu" vocative="mężczyzno / chłopcze" />
+    </word>
+    <word id="joshi" translation="kobieta / dziewczyna" kana="じょし" kanji="女子" romaji="joshi" type="noun" category="person">
+      <cases language="pl" nominative="kobieta / dziewczyna" genitive="kobiety / dziewczyny" dative="kobiecie / dziewczynie" accusative="kobietę / dziewczynę" instrumental="kobietą / dziewczyną" locative="kobiecie / dziewczynie" vocative="kobieto / dziewczyno" />
+    </word>
+    <word id="onnanohito" translation="kobieta" kana="おんなのひと" kanji="女の人" romaji="onnanohito" type="noun" category="person">
+      <cases language="pl" nominative="kobieta" genitive="kobiety" dative="kobiecie" accusative="kobietę" instrumental="kobietą" locative="kobiecie" vocative="kobieto" />
+    </word>
+    <word id="otokonohito" translation="mężczyzna" kana="おとこのひと" kanji="男の人" romaji="otokonohito" type="noun" category="person">
+      <cases language="pl" nominative="mężczyzna" genitive="mężczyzny" dative="mężczyźnie" accusative="mężczyznę" instrumental="mężczyzną" locative="mężczyźnie" vocative="mężczyzno" />
+    </word>
+    <word id="daigaku" translation="uniwersytet" kana="だいがく" kanji="大学" romaji="daigaku" type="noun" category="place">
+      <cases language="pl" nominative="uniwersytet" genitive="uniwersytetu" dative="uniwersytetowi" accusative="uniwersytet" instrumental="uniwersytetem" locative="uniwersytecie" vocative="uniwersytecie" />
+    </word>
+    <word id="gakusei" translation="student" kana="がくせい" kanji="学生" romaji="gakusei" type="noun" category="person">
+      <cases language="pl" nominative="student" genitive="studenta" dative="studentowi" accusative="studenta" instrumental="studentem" locative="studencie" vocative="studencie" />
+    </word>
+    <word id="jinsei" translation="życie ludzkie" kana="じんせい" kanji="人生" romaji="jinsei" type="noun" category="abstract">
+      <cases language="pl" nominative="życie ludzkie" genitive="życia ludzkiego" dative="życiu ludzkiemu" accusative="życie ludzkie" instrumental="życiem ludzkim" locative="życiu ludzkim" vocative="życie ludzkie" />
+    </word>
+    <word id="sengetsu" translation="poprzedni miesiąc" kana="せんげつ" kanji="先月" romaji="sengetsu" type="noun" category="abstract">
+      <cases language="pl" nominative="poprzedni miesiąc" genitive="poprzedniego miesiąca" dative="poprzedniemu miesiącowi" accusative="poprzedni miesiąc" instrumental="poprzednim miesiącem" locative="poprzednim miesiącu" vocative="poprzedni miesiącu" />
+    </word>
+    <word id="saki" translation="przód / dalsza część" kana="さき" kanji="先" romaji="saki" type="noun" category="abstract">
+      <cases language="pl" nominative="przód / dalsza część" genitive="przodu / dalszej części" dative="przodowi / dalszej części" accusative="przód / dalszą część" instrumental="przodem / dalszą częścią" locative="przodzie / dalszej części" vocative="przodzie / dalsza część" />
+    </word>
+    <word id="senjitsu" translation="któregoś dnia" kana="せんじつ" kanji="先日" romaji="senjitsu" type="noun" category="abstract">
+      <cases language="pl" nominative="któregoś dnia" genitive="któregoś dnia" dative="któregoś dnia" accusative="któregoś dnia" instrumental="któregoś dnia" locative="któregoś dnia" vocative="któregoś dnia" />
+    </word>
+    <word id="ichinichijuu" translation="przez cały dzień" kana="いちにちじゅう" kanji="一日中" romaji="ichinichijuu" type="noun" category="abstract">
+      <cases language="pl" nominative="przez cały dzień" genitive="przez cały dzień" dative="przez cały dzień" accusative="przez cały dzień" instrumental="przez cały dzień" locative="przez cały dzień" vocative="przez cały dzień" />
+    </word>
+    <word id="nihonjuu" translation="w całej Japonii" kana="にほんじゅう" kanji="日本中" romaji="nihonjuu" type="noun" category="abstract">
+      <cases language="pl" nominative="w całej Japonii" genitive="w całej Japonii" dative="w całej Japonii" accusative="w całej Japonii" instrumental="w całej Japonii" locative="w całej Japonii" vocative="w całej Japonii" />
+    </word>
+    <word id="gesui" translation="ścieki / kanalizacja" kana="げすい" kanji="下水" romaji="gesui" type="noun" category="abstract">
+      <cases language="pl" nominative="ścieki / kanalizacja" genitive="ścieków / kanalizacji" dative="ściekom / kanalizacji" accusative="ścieki / kanalizację" instrumental="ściekami / kanalizacją" locative="ściekach / kanalizacji" vocative="ścieki / kanalizacjo" />
+    </word>
+    <word id="otona" translation="dorosły" kana="おとな" kanji="大人" romaji="otona" type="noun" category="person">
+      <cases language="pl" nominative="dorosły" genitive="dorosłego" dative="dorosłemu" accusative="dorosłego" instrumental="dorosłym" locative="dorosłym" vocative="dorosły" />
+    </word>
+    <word id="shougakusei" translation="uczeń szkoły podstawowej" kana="しょうがくせい" kanji="小学生" romaji="shougakusei" type="noun" category="person">
+      <cases language="pl" nominative="uczeń szkoły podstawowej" genitive="ucznia szkoły podstawowej" dative="uczniowi szkoły podstawowej" accusative="ucznia szkoły podstawowej" instrumental="uczniem szkoły podstawowej" locative="uczniu szkoły podstawowej" vocative="uczniu szkoły podstawowej" />
+    </word>
+    <word id="daishou" translation="rozmiar / wielkość" kana="だいしょう" kanji="大小" romaji="daishou" type="noun" category="abstract">
+      <cases language="pl" nominative="rozmiar / wielkość" genitive="rozmiaru / wielkości" dative="rozmiarowi / wielkości" accusative="rozmiar / wielkość" instrumental="rozmiarem / wielkością" locative="rozmiarze / wielkości" vocative="rozmiarze / wielkości" />
+    </word>
+    <word id="ogawa" translation="strumień" kana="おがわ" kanji="小川" romaji="ogawa" type="noun" category="abstract">
+      <cases language="pl" nominative="strumień" genitive="strumienia" dative="strumieniowi" accusative="strumień" instrumental="strumieniem" locative="strumieniu" vocative="strumieniu" />
+    </word>
+    <word id="migite" translation="prawa ręka" kana="みぎて" kanji="右手" romaji="migite" type="noun" category="thing">
+      <cases language="pl" nominative="prawa ręka" genitive="prawej ręki" dative="prawej ręce" accusative="prawą rękę" instrumental="prawą ręką" locative="prawej ręce" vocative="prawa ręko" />
+    </word>
+    <word id="migime" translation="prawe oko" kana="みぎめ" kanji="右目" romaji="migime" type="noun" category="thing">
+      <cases language="pl" nominative="prawe oko" genitive="prawego oka" dative="prawemu oku" accusative="prawe oko" instrumental="prawym okiem" locative="prawym oku" vocative="prawe oko" />
+    </word>
+    <word id="hidariashi" translation="lewa noga" kana="ひだりあし" kanji="左足" romaji="hidariashi" type="noun" category="thing">
+      <cases language="pl" nominative="lewa noga" genitive="lewej nogi" dative="lewej nodze" accusative="lewą nogę" instrumental="lewą nogą" locative="lewej nodze" vocative="lewa nogo" />
+    </word>
+    <word id="hidarimimi" translation="lewe ucho" kana="ひだりみみ" kanji="左耳" romaji="hidarimimi" type="noun" category="thing">
+      <cases language="pl" nominative="lewe ucho" genitive="lewego ucha" dative="lewemu uchu" accusative="lewe ucho" instrumental="lewym uchem" locative="lewym uchu" vocative="lewe ucho" />
+    </word>
+    <word id="sayuu" translation="lewa i prawa strona" kana="さゆう" kanji="左右" romaji="sayuu" type="noun" category="abstract">
+      <cases language="pl" nominative="lewa i prawa strona" genitive="lewej i prawej strony" dative="lewej i prawej stronie" accusative="lewą i prawą stronę" instrumental="lewą i prawą stroną" locative="lewej i prawej stronie" vocative="lewa i prawa strono" />
+    </word>
+    <word id="honjitsu" translation="dzisiejszy dzień" kana="ほんじつ" kanji="本日" romaji="honjitsu" type="noun" category="abstract">
+      <cases language="pl" nominative="dzisiejszy dzień" genitive="dzisiejszego dnia" dative="dzisiejszemu dniowi" accusative="dzisiejszy dzień" instrumental="dzisiejszym dniem" locative="dzisiejszym dniu" vocative="dzisiejszy dniu" />
+    </word>
+    <word id="sukoshi" translation="niewielka ilość" kana="すこし" kanji="少し" romaji="sukoshi" type="noun" category="abstract">
+      <cases language="pl" nominative="niewielka ilość" genitive="niewielkiej ilości" dative="niewielkiej ilości" accusative="niewielką ilość" instrumental="niewielką ilością" locative="niewielkiej ilości" vocative="niewielka ilości" />
+    </word>
+    <word id="tashou" translation="ilość / stopień" kana="たしょう" kanji="多少" romaji="tashou" type="noun" category="abstract">
+      <cases language="pl" nominative="ilość / stopień" genitive="ilości / stopnia" dative="ilości / stopniowi" accusative="ilość / stopień" instrumental="ilością / stopniem" locative="ilości / stopniu" vocative="ilości / stopniu" />
+    </word>
+    <word id="shounen" translation="chłopiec" kana="しょうねん" kanji="少年" romaji="shounen" type="noun" category="person">
+      <cases language="pl" nominative="chłopiec" genitive="chłopca" dative="chłopcu" accusative="chłopca" instrumental="chłopcem" locative="chłopcu" vocative="chłopcze" />
+    </word>
+    <word id="shoujo" translation="dziewczynka" kana="しょうじょ" kanji="少女" romaji="shoujo" type="noun" category="person">
+      <cases language="pl" nominative="dziewczynka" genitive="dziewczynki" dative="dziewczynce" accusative="dziewczynkę" instrumental="dziewczynką" locative="dziewczynce" vocative="dziewczynko" />
+    </word>
+    <word id="yasumi" translation="odpoczynek" kana="やすみ" kanji="休み" romaji="yasumi" type="noun" category="abstract">
+      <cases language="pl" nominative="odpoczynek" genitive="odpoczynku" dative="odpoczynkowi" accusative="odpoczynek" instrumental="odpoczynkiem" locative="odpoczynku" vocative="odpoczynku" />
+    </word>
+    <word id="kyuujitsu" translation="dzień wolny" kana="きゅうじつ" kanji="休日" romaji="kyuujitsu" type="noun" category="abstract">
+      <cases language="pl" nominative="dzień wolny" genitive="dnia wolnego" dative="dniowi wolnemu" accusative="dzień wolny" instrumental="dniem wolnym" locative="dniu wolnym" vocative="dniu wolny" />
+    </word>
+    <word id="toki" translation="czas / chwila" kana="とき" kanji="時" romaji="toki" type="noun" category="abstract">
+      <cases language="pl" nominative="czas / chwila" genitive="czasu / chwili" dative="czasowi / chwili" accusative="czas / chwilę" instrumental="czasem / chwilą" locative="czasie / chwili" vocative="czasie / chwilo" />
+    </word>
+    <word id="tokidoki" translation="czasami" kana="ときどき" kanji="時々" romaji="tokidoki" type="noun" category="abstract">
+      <cases language="pl" nominative="czasami" genitive="czasami" dative="czasami" accusative="czasami" instrumental="czasami" locative="czasami" vocative="czasami" />
+    </word>
+    <word id="aida" translation="odstęp / okres" kana="あいだ" kanji="間" romaji="aida" type="noun" category="abstract">
+      <cases language="pl" nominative="odstęp / okres" genitive="odstępu / okresu" dative="odstępowi / okresowi" accusative="odstęp / okres" instrumental="odstępem / okresem" locative="odstępie / okresie" vocative="odstępie / okresie" />
+    </word>
+    <word id="ningen" translation="człowiek / istota ludzka" kana="にんげん" kanji="人間" romaji="ningen" type="noun" category="person">
+      <cases language="pl" nominative="człowiek / istota ludzka" genitive="człowieka / istoty ludzkiej" dative="człowiekowi / istocie ludzkiej" accusative="człowieka / istotę ludzką" instrumental="człowiekiem / istotą ludzką" locative="człowieku / istocie ludzkiej" vocative="człowieku / istoto ludzka" />
+    </word>
+    <word id="chuukan" translation="środek" kana="ちゅうかん" kanji="中間" romaji="chuukan" type="noun" category="abstract">
+      <cases language="pl" nominative="środek" genitive="środka" dative="środkowi" accusative="środek" instrumental="środkiem" locative="środku" vocative="środku" />
+    </word>
+    <word id="han" translation="połowa" kana="はん" kanji="半" romaji="han" type="noun" category="abstract">
+      <cases language="pl" nominative="połowa" genitive="połowy" dative="połowie" accusative="połowę" instrumental="połową" locative="połowie" vocative="połowo" />
+    </word>
+    <word id="hannichi" translation="połowa dnia" kana="はんにち" kanji="半日" romaji="hannichi" type="noun" category="abstract">
+      <cases language="pl" nominative="połowa dnia" genitive="połowy dnia" dative="połowie dnia" accusative="połowę dnia" instrumental="połową dnia" locative="połowie dnia" vocative="połowo dnia" />
+    </word>
+    <word id="hantoshi" translation="pół roku" kana="はんとし" kanji="半年" romaji="hantoshi" type="noun" category="abstract">
+      <cases language="pl" nominative="pół roku" genitive="pół roku" dative="pół roku" accusative="pół roku" instrumental="pół roku" locative="pół roku" vocative="pół roku" />
+    </word>
+    <word id="zenhan" translation="pierwsza połowa" kana="ぜんはん" kanji="前半" romaji="zenhan" type="noun" category="abstract">
+      <cases language="pl" nominative="pierwsza połowa" genitive="pierwszej połowy" dative="pierwszej połowie" accusative="pierwszą połowę" instrumental="pierwszą połową" locative="pierwszej połowie" vocative="pierwsza połowo" />
+    </word>
+    <word id="kouhan" translation="druga połowa" kana="こうはん" kanji="後半" romaji="kouhan" type="noun" category="abstract">
+      <cases language="pl" nominative="druga połowa" genitive="drugiej połowy" dative="drugiej połowie" accusative="drugą połowę" instrumental="drugą połową" locative="drugiej połowie" vocative="druga połowo" />
+    </word>
+    <word id="ima" translation="teraz" kana="いま" kanji="今" romaji="ima" type="noun" category="abstract">
+      <cases language="pl" nominative="teraz" genitive="teraz" dative="teraz" accusative="teraz" instrumental="teraz" locative="teraz" vocative="teraz" />
+    </word>
+    <word id="kongetsu" translation="ten miesiąc" kana="こんげつ" kanji="今月" romaji="kongetsu" type="noun" category="abstract">
+      <cases language="pl" nominative="ten miesiąc" genitive="tego miesiąca" dative="temu miesiącowi" accusative="ten miesiąc" instrumental="tym miesiącem" locative="tym miesiącu" vocative="ten miesiącu" />
+    </word>
+    <word id="kyou" translation="dzisiaj" kana="きょう" kanji="今日" romaji="kyou" type="noun" category="abstract">
+      <cases language="pl" nominative="dzisiaj" genitive="dzisiaj" dative="dzisiaj" accusative="dzisiaj" instrumental="dzisiaj" locative="dzisiaj" vocative="dzisiaj" />
+    </word>
+    <word id="kotoshi" translation="ten rok" kana="ことし" kanji="今年" romaji="kotoshi" type="noun" category="abstract">
+      <cases language="pl" nominative="ten rok" genitive="tego roku" dative="temu rokowi" accusative="ten rok" instrumental="tym rokiem" locative="tym roku" vocative="ten roku" />
+    </word>
+    <word id="mainichi" translation="każdy dzień" kana="まいにち" kanji="毎日" romaji="mainichi" type="noun" category="abstract">
+      <cases language="pl" nominative="każdy dzień" genitive="każdego dnia" dative="każdemu dniowi" accusative="każdy dzień" instrumental="każdym dniem" locative="każdym dniu" vocative="każdy dniu" />
+    </word>
+    <word id="maitoshi" translation="każdy rok" kana="まいとし" kanji="毎年" romaji="maitoshi" type="noun" category="abstract">
+      <cases language="pl" nominative="każdy rok" genitive="każdego roku" dative="każdemu rokowi" accusative="każdy rok" instrumental="każdym rokiem" locative="każdym roku" vocative="każdy roku" />
+    </word>
+    <word id="maitsuki" translation="każdy miesiąc" kana="まいつき" kanji="毎月" romaji="maitsuki" type="noun" category="abstract">
+      <cases language="pl" nominative="każdy miesiąc" genitive="każdego miesiąca" dative="każdemu miesiącowi" accusative="każdy miesiąc" instrumental="każdym miesiącem" locative="każdym miesiącu" vocative="każdy miesiącu" />
+    </word>
+    <word id="gozen" translation="przedpołudnie" kana="ごぜん" kanji="午前" romaji="gozen" type="noun" category="abstract">
+      <cases language="pl" nominative="przedpołudnie" genitive="przedpołudnia" dative="przedpołudniu" accusative="przedpołudnie" instrumental="przedpołudniem" locative="przedpołudniu" vocative="przedpołudnie" />
+    </word>
+    <word id="gogo" translation="popołudnie" kana="ごご" kanji="午後" romaji="gogo" type="noun" category="abstract">
+      <cases language="pl" nominative="popołudnie" genitive="popołudnia" dative="popołudniu" accusative="popołudnie" instrumental="popołudniem" locative="popołudniu" vocative="popołudnie" />
+    </word>
+    <word id="mae" translation="przód" kana="まえ" kanji="前" romaji="mae" type="noun" category="abstract">
+      <cases language="pl" nominative="przód" genitive="przodu" dative="przodowi" accusative="przód" instrumental="przodem" locative="przodzie" vocative="przodzie" />
+    </word>
+    <word id="zenjitsu" translation="poprzedni dzień" kana="ぜんじつ" kanji="前日" romaji="zenjitsu" type="noun" category="abstract">
+      <cases language="pl" nominative="poprzedni dzień" genitive="poprzedniego dnia" dative="poprzedniemu dniowi" accusative="poprzedni dzień" instrumental="poprzednim dniem" locative="poprzednim dniu" vocative="poprzedni dniu" />
+    </word>
+    <word id="ninenmae" translation="dwa lata temu" kana="にねんまえ" kanji="二年前" romaji="ninenmae" type="noun" category="abstract">
+      <cases language="pl" nominative="dwa lata temu" genitive="dwa lata temu" dative="dwa lata temu" accusative="dwa lata temu" instrumental="dwa lata temu" locative="dwa lata temu" vocative="dwa lata temu" />
+    </word>
+    <word id="atode" translation="później" kana="あとで" kanji="後で" romaji="atode" type="noun" category="abstract">
+      <cases language="pl" nominative="później" genitive="później" dative="później" accusative="później" instrumental="później" locative="później" vocative="później" />
+    </word>
+    <word id="ushiro" translation="tył" kana="うしろ" kanji="後ろ" romaji="ushiro" type="noun" category="abstract">
+      <cases language="pl" nominative="tył" genitive="tyłu" dative="tyłowi" accusative="tył" instrumental="tyłem" locative="tyle" vocative="tyle" />
+    </word>
+    <word id="zengo" translation="przed i po" kana="ぜんご" kanji="前後" romaji="zengo" type="noun" category="abstract">
+      <cases language="pl" nominative="przed i po" genitive="przed i po" dative="przed i po" accusative="przed i po" instrumental="przed i po" locative="przed i po" vocative="przed i po" />
+    </word>
+    <word id="kongo" translation="od tej pory" kana="こんご" kanji="今後" romaji="kongo" type="noun" category="abstract">
+      <cases language="pl" nominative="od tej pory" genitive="od tej pory" dative="od tej pory" accusative="od tej pory" instrumental="od tej pory" locative="od tej pory" vocative="od tej pory" />
+    </word>
+    <word id="ninengo" translation="za dwa lata" kana="にねんご" kanji="二年後" romaji="ninengo" type="noun" category="abstract">
+      <cases language="pl" nominative="za dwa lata" genitive="za dwa lata" dative="za dwa lata" accusative="za dwa lata" instrumental="za dwa lata" locative="za dwa lata" vocative="za dwa lata" />
+    </word>
+    <word id="ashita" translation="jutro" kana="あした" kanji="明日" romaji="ashita" type="noun" category="abstract">
+      <cases language="pl" nominative="jutro" genitive="jutro" dative="jutro" accusative="jutro" instrumental="jutro" locative="jutro" vocative="jutro" />
+    </word>
+    <word id="konomi" translation="upodobanie / gust" kana="このみ" kanji="好み" romaji="konomi" type="noun" category="abstract">
+      <cases language="pl" nominative="upodobanie / gust" genitive="upodobania / gustu" dative="upodobaniu / gustowi" accusative="upodobanie / gust" instrumental="upodobaniem / gustem" locative="upodobaniu / guście" vocative="upodobanie / guście" />
+    </word>
+    <word id="nani" translation="co" kana="なに" kanji="何" romaji="nani" type="noun" category="abstract">
+      <cases language="pl" nominative="co" genitive="co" dative="co" accusative="co" instrumental="co" locative="co" vocative="co" />
+    </word>
+    <word id="nannin" translation="ilu ludzi" kana="なんにん" kanji="何人" romaji="nannin" type="noun" category="person">
+      <cases language="pl" nominative="ilu ludzi" genitive="ilu ludzi" dative="ilu ludzi" accusative="ilu ludzi" instrumental="ilu ludzi" locative="ilu ludzi" vocative="ilu ludzi" />
+    </word>
+    <word id="nannen" translation="ile lat" kana="なんねん" kanji="何年" romaji="nannen" type="noun" category="abstract">
+      <cases language="pl" nominative="ile lat" genitive="ile lat" dative="ile lat" accusative="ile lat" instrumental="ile lat" locative="ile lat" vocative="ile lat" />
+    </word>
+    <word id="nande" translation="dlaczego / jak" kana="なんで" kanji="何で" romaji="nande" type="noun" category="abstract">
+      <cases language="pl" nominative="dlaczego / jak" genitive="dlaczego / jak" dative="dlaczego / jak" accusative="dlaczego / jak" instrumental="dlaczego / jak" locative="dlaczego / jak" vocative="dlaczego / jak" />
+    </word>
+    <word id="nanpun" translation="ile minut" kana="なんぷん" kanji="何分" romaji="nanpun" type="noun" category="abstract">
+      <cases language="pl" nominative="ile minut" genitive="ile minut" dative="ile minut" accusative="ile minut" instrumental="ile minut" locative="ile minut" vocative="ile minut" />
+    </word>
+    <word id="karada" translation="ciało" kana="からだ" kanji="体" romaji="karada" type="noun" category="thing">
+      <cases language="pl" nominative="ciało" genitive="ciała" dative="ciału" accusative="ciało" instrumental="ciałem" locative="ciele" vocative="ciało" />
+    </word>
+    <word id="tairyoku" translation="siła fizyczna" kana="たいりょく" kanji="体力" romaji="tairyoku" type="noun" category="abstract">
+      <cases language="pl" nominative="siła fizyczna" genitive="siły fizycznej" dative="sile fizycznej" accusative="siłę fizyczną" instrumental="siłą fizyczną" locative="sile fizycznej" vocative="siło fizyczna" />
+    </word>
+    <word id="soto" translation="zewnątrz" kana="そと" kanji="外" romaji="soto" type="noun" category="abstract">
+      <cases language="pl" nominative="zewnątrz" genitive="zewnątrz" dative="zewnątrz" accusative="zewnątrz" instrumental="zewnątrz" locative="zewnątrz" vocative="zewnątrz" />
+    </word>
+    <word id="higashi" translation="wschód" kana="ひがし" kanji="東" romaji="higashi" type="noun" category="place">
+      <cases language="pl" nominative="wschód" genitive="wschodu" dative="wschodowi" accusative="wschód" instrumental="wschodem" locative="wschodzie" vocative="wschodzie" />
+    </word>
+    <word id="higashiguchi" translation="wschodnie wejście" kana="ひがしぐち" kanji="東口" romaji="higashiguchi" type="noun" category="place">
+      <cases language="pl" nominative="wschodnie wejście" genitive="wschodniego wejścia" dative="wschodniemu wejściu" accusative="wschodnie wejście" instrumental="wschodnim wejściem" locative="wschodnim wejściu" vocative="wschodnie wejście" />
+    </word>
+    <word id="nishi" translation="zachód" kana="にし" kanji="西" romaji="nishi" type="noun" category="place">
+      <cases language="pl" nominative="zachód" genitive="zachodu" dative="zachodowi" accusative="zachód" instrumental="zachodem" locative="zachodzie" vocative="zachodzie" />
+    </word>
+    <word id="nishiguchi" translation="zachodnie wejście" kana="にしぐち" kanji="西口" romaji="nishiguchi" type="noun" category="place">
+      <cases language="pl" nominative="zachodnie wejście" genitive="zachodniego wejścia" dative="zachodniemu wejściu" accusative="zachodnie wejście" instrumental="zachodnim wejściem" locative="zachodnim wejściu" vocative="zachodnie wejście" />
+    </word>
+    <word id="minami" translation="południe" kana="みなみ" kanji="南" romaji="minami" type="noun" category="place">
+      <cases language="pl" nominative="południe" genitive="południa" dative="południu" accusative="południe" instrumental="południem" locative="południu" vocative="południe" />
+    </word>
+    <word id="minamiguchi" translation="południowe wejście" kana="みなみぐち" kanji="南口" romaji="minamiguchi" type="noun" category="place">
+      <cases language="pl" nominative="południowe wejście" genitive="południowego wejścia" dative="południowemu wejściu" accusative="południowe wejście" instrumental="południowym wejściem" locative="południowym wejściu" vocative="południowe wejście" />
+    </word>
+    <word id="kitaguchi" translation="północne wejście" kana="きたぐち" kanji="北口" romaji="kitaguchi" type="noun" category="place">
+      <cases language="pl" nominative="północne wejście" genitive="północnego wejścia" dative="północnemu wejściu" accusative="północne wejście" instrumental="północnym wejściem" locative="północnym wejściu" vocative="północne wejście" />
+    </word>
+    <word id="kita" translation="północ" kana="きた" kanji="北" romaji="kita" type="noun" category="place">
+      <cases language="pl" nominative="północ" genitive="północy" dative="północy" accusative="północ" instrumental="północą" locative="północy" vocative="północy" />
+    </word>
+    <word id="sangyoume" translation="trzecia linijka" kana="さんぎょうめ" kanji="三行目" romaji="sangyoume" type="noun" category="abstract">
+      <cases language="pl" nominative="trzecia linijka" genitive="trzeciej linijki" dative="trzeciej linijce" accusative="trzecią linijkę" instrumental="trzecią linijką" locative="trzeciej linijce" vocative="trzecia linijko" />
+    </word>
+    <word id="rainen" translation="przyszły rok" kana="らいねん" kanji="来年" romaji="rainen" type="noun" category="abstract">
+      <cases language="pl" nominative="przyszły rok" genitive="przyszłego roku" dative="przyszłemu rokowi" accusative="przyszły rok" instrumental="przyszłym rokiem" locative="przyszłym roku" vocative="przyszły roku" />
+    </word>
+    <word id="rainichi" translation="przyjazd do Japonii" kana="らいにち" kanji="来日" romaji="rainichi" type="noun" category="abstract">
+      <cases language="pl" nominative="przyjazd do Japonii" genitive="przyjazdu do Japonii" dative="przyjazdowi do Japonii" accusative="przyjazd do Japonii" instrumental="przyjazdem do Japonii" locative="przyjeździe do Japonii" vocative="przyjeździe do Japonii" />
+    </word>
+    <word id="shiritsu" translation="szkoła prywatna" kana="しりつ" kanji="私立" romaji="shiritsu" type="noun" category="abstract">
+      <cases language="pl" nominative="szkoła prywatna" genitive="szkoły prywatnej" dative="szkole prywatnej" accusative="szkołę prywatną" instrumental="szkołą prywatną" locative="szkole prywatnej" vocative="szkoło prywatna" />
+    </word>
+    <word id="hanashi" translation="opowieść / prelekcja" kana="はなし" kanji="話" romaji="hanashi" type="noun" category="abstract">
+      <cases language="pl" nominative="opowieść / prelekcja" genitive="opowieści / prelekcji" dative="opowieści / prelekcji" accusative="opowieść / prelekcję" instrumental="opowieścią / prelekcją" locative="opowieści / prelekcji" vocative="opowieści / prelekcjo" />
+    </word>
+    <word id="kenbun" translation="wiedza / informacja" kana="けんぶん" kanji="見聞" romaji="kenbun" type="noun" category="abstract">
+      <cases language="pl" nominative="wiedza / informacja" genitive="wiedzy / informacji" dative="wiedzy / informacji" accusative="wiedzę / informację" instrumental="wiedzą / informacją" locative="wiedzy / informacji" vocative="wiedzo / informacjo" />
+    </word>
+    <word id="gengo" translation="język" kana="げんご" kanji="言語" romaji="gengo" type="noun" category="text">
+      <cases language="pl" nominative="język" genitive="języka" dative="językowi" accusative="język" instrumental="językiem" locative="języku" vocative="języku" />
+    </word>
+    <word id="kokuritsu" translation="szkoła państwowa" kana="こくりつ" kanji="国立" romaji="kokuritsu" type="noun" category="abstract">
+      <cases language="pl" nominative="szkoła państwowa" genitive="szkoły państwowej" dative="szkole państwowej" accusative="szkołę państwową" instrumental="szkołą państwową" locative="szkole państwowej" vocative="szkoło państwowa" />
+    </word>
+    <word id="shinsha" translation="nowy samochód" kana="しんしゃ" kanji="新車" romaji="shinsha" type="noun" category="abstract">
+      <cases language="pl" nominative="nowy samochód" genitive="nowego samochodu" dative="nowemu samochodowi" accusative="nowy samochód" instrumental="nowym samochodem" locative="nowym samochodzie" vocative="nowy samochodzie" />
+    </word>
+    <word id="shinnen" translation="Nowy Rok" kana="しんねん" kanji="新年" romaji="shinnen" type="noun" category="abstract">
+      <cases language="pl" nominative="Nowy Rok" genitive="Nowego Roku" dative="Nowemu Rokowi" accusative="Nowy Rok" instrumental="Nowym Rokiem" locative="Nowym Roku" vocative="Nowy Roku" />
+    </word>
+    <word id="chuukosha" translation="używany samochód" kana="ちゅうこしゃ" kanji="中古車" romaji="chuukosha" type="noun" category="abstract">
+      <cases language="pl" nominative="używany samochód" genitive="używanego samochodu" dative="używanemu samochodowi" accusative="używany samochód" instrumental="używanym samochodem" locative="używanym samochodzie" vocative="używany samochodzie" />
+    </word>
+    <word id="furuhon" translation="używana książka" kana="ふるほん" kanji="古本" romaji="furuhon" type="noun" category="abstract">
+      <cases language="pl" nominative="używana książka" genitive="używanej książki" dative="używanej książce" accusative="używaną książkę" instrumental="używaną książką" locative="używanej książce" vocative="używana książko" />
+    </word>
+    <word id="endaka" translation="mocny jen" kana="えんだか" kanji="円高" romaji="endaka" type="noun" category="abstract">
+      <cases language="pl" nominative="mocny jen" genitive="mocnego jena" dative="mocnemu jenowi" accusative="mocny jen" instrumental="mocnym jenem" locative="mocnym jenie" vocative="mocny jenie" />
+    </word>
+    <word id="enyasu" translation="słaby jen" kana="えんやす" kanji="円安" romaji="enyasu" type="noun" category="abstract">
+      <cases language="pl" nominative="słaby jen" genitive="słabego jena" dative="słabemu jenowi" accusative="słaby jen" instrumental="słabym jenem" locative="słabym jenie" vocative="słaby jenie" />
+    </word>
+    <word id="nagaiki" translation="długie życie" kana="ながいき" kanji="長生き" romaji="nagaiki" type="noun" category="abstract">
+      <cases language="pl" nominative="długie życie" genitive="długiego życia" dative="długiemu życiu" accusative="długie życie" instrumental="długim życiem" locative="długim życiu" vocative="długie życie" />
+    </word>
+    <word id="gakuchou" translation="rektor" kana="がくちょう" kanji="学長" romaji="gakuchou" type="noun" category="person">
+      <cases language="pl" nominative="rektor" genitive="rektora" dative="rektorowi" accusative="rektora" instrumental="rektorem" locative="rektorze" vocative="rektorze" />
+    </word>
+    <word id="shiro" translation="biel" kana="しろ" kanji="白" romaji="shiro" type="noun" category="abstract">
+      <cases language="pl" nominative="biel" genitive="bieli" dative="bieli" accusative="biel" instrumental="bielą" locative="bieli" vocative="bieli" />
+    </word>
+    <word id="mise" translation="sklep" kana="みせ" kanji="店" romaji="mise" type="noun" category="place">
+      <cases language="pl" nominative="sklep" genitive="sklepu" dative="sklepowi" accusative="sklep" instrumental="sklepem" locative="sklepie" vocative="sklepie" />
+    </word>
+    <word id="michi" translation="droga" kana="みち" kanji="道" romaji="michi" type="noun" category="abstract">
+      <cases language="pl" nominative="droga" genitive="drogi" dative="drodze" accusative="drogę" instrumental="drogą" locative="drodze" vocative="drogo" />
+    </word>
+    <word id="honten" translation="główny oddział" kana="ほんてん" kanji="本店" romaji="honten" type="noun" category="place">
+      <cases language="pl" nominative="główny oddział" genitive="głównego oddziału" dative="głównemu oddziałowi" accusative="główny oddział" instrumental="głównym oddziałem" locative="głównym oddziale" vocative="główny oddziale" />
+    </word>
+    <word id="shadou" translation="jezdnia" kana="しゃどう" kanji="車道" romaji="shadou" type="noun" category="place">
+      <cases language="pl" nominative="jezdnia" genitive="jezdni" dative="jezdni" accusative="jezdnię" instrumental="jezdnią" locative="jezdni" vocative="jezdnio" />
+    </word>
+    <word id="ekichou" translation="naczelnik stacji" kana="えきちょう" kanji="駅長" romaji="ekichou" type="noun" category="person">
+      <cases language="pl" nominative="naczelnik stacji" genitive="naczelnika stacji" dative="naczelnikowi stacji" accusative="naczelnika stacji" instrumental="naczelnikiem stacji" locative="naczelniku stacji" vocative="naczelniku stacji" />
+    </word>
+    <word id="amanogawa" translation="Droga Mleczna" kana="あまのがわ" kanji="天の川" romaji="amanogawa" type="noun" category="abstract">
+      <cases language="pl" nominative="Droga Mleczna" genitive="Drogi Mlecznej" dative="Drodze Mlecznej" accusative="Drogę Mleczną" instrumental="Drogą Mleczną" locative="Drodze Mlecznej" vocative="Drogo Mleczna" />
+    </word>
+    <word id="akijikan" translation="wolny czas" kana="あきじかん" kanji="空き時間" romaji="akijikan" type="noun" category="abstract">
+      <cases language="pl" nominative="wolny czas" genitive="wolnego czasu" dative="wolnemu czasowi" accusative="wolny czas" instrumental="wolnym czasem" locative="wolnym czasie" vocative="wolny czasie" />
+    </word>
+    <word id="hanami" translation="oglądanie kwitnących wiśni" kana="はなみ" kanji="花見" romaji="hanami" type="noun" category="abstract">
+      <cases language="pl" nominative="oglądanie kwitnących wiśni" genitive="oglądania kwitnących wiśni" dative="oglądaniu kwitnących wiśni" accusative="oglądanie kwitnących wiśni" instrumental="oglądaniem kwitnących wiśni" locative="oglądaniu kwitnących wiśni" vocative="oglądanie kwitnących wiśni" />
+    </word>
+    <word id="ame" translation="deszcz" kana="あめ" kanji="雨" romaji="ame" type="noun" category="abstract">
+      <cases language="pl" nominative="deszcz" genitive="deszczu" dative="deszczowi" accusative="deszcz" instrumental="deszczem" locative="deszczu" vocative="deszczu" />
+    </word>
+    <word id="ooame" translation="ulewa" kana="おおあめ" kanji="大雨" romaji="ooame" type="noun" category="abstract">
+      <cases language="pl" nominative="ulewa" genitive="ulewy" dative="ulewie" accusative="ulewę" instrumental="ulewą" locative="ulewie" vocative="ulewo" />
+    </word>
+    <word id="tengoku" translation="niebo / raj" kana="てんごく" kanji="天国" romaji="tengoku" type="noun" category="abstract">
+      <cases language="pl" nominative="niebo / raj" genitive="nieba / raju" dative="niebu / rajowi" accusative="niebo / raj" instrumental="niebem / rajem" locative="niebie / raju" vocative="niebo / raju" />
+    </word>
+    <word id="tenki" translation="pogoda" kana="てんき" kanji="天気" romaji="tenki" type="noun" category="abstract">
+      <cases language="pl" nominative="pogoda" genitive="pogody" dative="pogodzie" accusative="pogodę" instrumental="pogodą" locative="pogodzie" vocative="pogodo" />
+    </word>
+    <word id="hana" translation="kwiat" kana="はな" kanji="花" romaji="hana" type="noun" category="thing">
+      <cases language="pl" nominative="kwiat" genitive="kwiatu" dative="kwiatowi" accusative="kwiat" instrumental="kwiatem" locative="kwiecie" vocative="kwiecie" />
+    </word>
+    <word id="ikebana" translation="ikebana" kana="いけばな" kanji="生け花" romaji="ikebana" type="noun" category="thing">
+      <cases language="pl" nominative="ikebana" genitive="ikebany" dative="ikebanie" accusative="ikebanę" instrumental="ikebaną" locative="ikebanie" vocative="ikebano" />
+    </word>
+    <word id="kibun" translation="samopoczucie" kana="きぶん" kanji="気分" romaji="kibun" type="noun" category="abstract">
+      <cases language="pl" nominative="samopoczucie" genitive="samopoczucia" dative="samopoczuciu" accusative="samopoczucie" instrumental="samopoczuciem" locative="samopoczuciu" vocative="samopoczucie" />
+    </word>
+    <word id="kuuki" translation="powietrze" kana="くうき" kanji="空気" romaji="kuuki" type="noun" category="abstract">
+      <cases language="pl" nominative="powietrze" genitive="powietrza" dative="powietrzu" accusative="powietrze" instrumental="powietrzem" locative="powietrzu" vocative="powietrze" />
+    </word>
+    <word id="kuukan" translation="przestrzeń" kana="くうかん" kanji="空間" romaji="kuukan" type="noun" category="abstract">
+      <cases language="pl" nominative="przestrzeń" genitive="przestrzeni" dative="przestrzeni" accusative="przestrzeń" instrumental="przestrzenią" locative="przestrzeni" vocative="przestrzeni" />
+    </word>
+    <word id="sora" translation="niebo" kana="そら" kanji="空" romaji="sora" type="noun" category="abstract">
+      <cases language="pl" nominative="niebo" genitive="nieba" dative="niebu" accusative="niebo" instrumental="niebem" locative="niebie" vocative="niebo" />
+    </word>
+    <word id="karate" translation="karate" kana="からて" kanji="空手" romaji="karate" type="noun" category="thing">
+      <cases language="pl" nominative="karate" genitive="karate" dative="karate" accusative="karate" instrumental="karate" locative="karate" vocative="karate" />
+    </word>
+    <word id="kara" translation="pustka" kana="から" kanji="空" romaji="kara" type="noun" category="abstract">
+      <cases language="pl" nominative="pustka" genitive="pustki" dative="pustce" accusative="pustkę" instrumental="pustką" locative="pustce" vocative="pustko" />
+    </word>
+    <word id="asa" translation="poranek" kana="あさ" kanji="朝" romaji="asa" type="noun" category="abstract">
+      <cases language="pl" nominative="poranek" genitive="poranka" dative="porankowi" accusative="poranek" instrumental="porankiem" locative="poranku" vocative="poranku" />
+    </word>
+    <word id="asahi" translation="poranne słońce" kana="あさひ" kanji="朝日" romaji="asahi" type="noun" category="abstract">
+      <cases language="pl" nominative="poranne słońce" genitive="porannego słońca" dative="porannemu słońcu" accusative="poranne słońce" instrumental="porannym słońcem" locative="porannym słońcu" vocative="poranne słońce" />
+    </word>
+    <word id="maiasa" translation="każdy poranek" kana="まいあさ" kanji="毎朝" romaji="maiasa" type="noun" category="abstract">
+      <cases language="pl" nominative="każdy poranek" genitive="każdego poranka" dative="każdemu porankowi" accusative="każdy poranek" instrumental="każdym porankiem" locative="każdym poranku" vocative="każdy poranku" />
+    </word>
+    <word id="choushoku" translation="śniadanie" kana="ちょうしょく" kanji="朝食" romaji="choushoku" type="noun" category="food">
+      <cases language="pl" nominative="śniadanie" genitive="śniadania" dative="śniadaniu" accusative="śniadanie" instrumental="śniadaniem" locative="śniadaniu" vocative="śniadanie" />
+    </word>
+    <word id="kesa" translation="dzisiejszy poranek" kana="けさ" kanji="今朝" romaji="kesa" type="noun" category="abstract">
+      <cases language="pl" nominative="dzisiejszy poranek" genitive="dzisiejszego poranka" dative="dzisiejszemu porankowi" accusative="dzisiejszy poranek" instrumental="dzisiejszym porankiem" locative="dzisiejszym poranku" vocative="dzisiejszy poranku" />
+    </word>
+    <word id="hiru" translation="południe" kana="ひる" kanji="昼" romaji="hiru" type="noun" category="abstract">
+      <cases language="pl" nominative="południe" genitive="południa" dative="południu" accusative="południe" instrumental="południem" locative="południu" vocative="południe" />
+    </word>
+    <word id="hiruyasumi" translation="przerwa obiadowa" kana="ひるやすみ" kanji="昼休み" romaji="hiruyasumi" type="noun" category="abstract">
+      <cases language="pl" nominative="przerwa obiadowa" genitive="przerwy obiadowej" dative="przerwie obiadowej" accusative="przerwę obiadową" instrumental="przerwą obiadową" locative="przerwie obiadowej" vocative="przerwo obiadowa" />
+    </word>
+    <word id="chuushoku" translation="obiad" kana="ちゅうしょく" kanji="昼食" romaji="chuushoku" type="noun" category="food">
+      <cases language="pl" nominative="obiad" genitive="obiadu" dative="obiadowi" accusative="obiad" instrumental="obiadem" locative="obiedzie" vocative="obiedzie" />
+    </word>
+    <word id="hiruma" translation="pora dzienna" kana="ひるま" kanji="昼間" romaji="hiruma" type="noun" category="abstract">
+      <cases language="pl" nominative="pora dzienna" genitive="pory dziennej" dative="porze dziennej" accusative="porę dzienną" instrumental="porą dzienną" locative="porze dziennej" vocative="poro dzienna" />
+    </word>
+    <word id="konban" translation="dzisiejszy wieczór" kana="こんばん" kanji="今晩" romaji="konban" type="noun" category="abstract">
+      <cases language="pl" nominative="dzisiejszy wieczór" genitive="dzisiejszego wieczoru" dative="dzisiejszemu wieczorowi" accusative="dzisiejszy wieczór" instrumental="dzisiejszym wieczorem" locative="dzisiejszym wieczorze" vocative="dzisiejszy wieczorze" />
+    </word>
+    <word id="maiban" translation="każdy wieczór" kana="まいばん" kanji="毎晩" romaji="maiban" type="noun" category="abstract">
+      <cases language="pl" nominative="każdy wieczór" genitive="każdego wieczoru" dative="każdemu wieczorowi" accusative="każdy wieczór" instrumental="każdym wieczorem" locative="każdym wieczorze" vocative="każdy wieczorze" />
+    </word>
+    <word id="asaban" translation="rano i wieczorem" kana="あさばん" kanji="朝晩" romaji="asaban" type="noun" category="abstract">
+      <cases language="pl" nominative="rano i wieczorem" genitive="rano i wieczorem" dative="rano i wieczorem" accusative="rano i wieczorem" instrumental="rano i wieczorem" locative="rano i wieczorem" vocative="rano i wieczorem" />
+    </word>
+    <word id="youbi" translation="dzień tygodnia" kana="ようび" kanji="曜日" romaji="youbi" type="noun" category="abstract">
+      <cases language="pl" nominative="dzień tygodnia" genitive="dnia tygodnia" dative="dniowi tygodnia" accusative="dzień tygodnia" instrumental="dniem tygodnia" locative="dniu tygodnia" vocative="dniu tygodnia" />
+    </word>
+    <word id="raishuu" translation="następny tydzień" kana="らいしゅう" kanji="来週" romaji="raishuu" type="noun" category="abstract">
+      <cases language="pl" nominative="następny tydzień" genitive="następnego tygodnia" dative="następnemu tygodniowi" accusative="następny tydzień" instrumental="następnym tygodniem" locative="następnym tygodniu" vocative="następny tygodniu" />
+    </word>
+    <word id="shuu" translation="tydzień" kana="しゅう" kanji="週" romaji="shuu" type="noun" category="abstract">
+      <cases language="pl" nominative="tydzień" genitive="tygodnia" dative="tygodniowi" accusative="tydzień" instrumental="tygodniem" locative="tygodniu" vocative="tygodniu" />
+    </word>
+    <word id="senshuu" translation="zeszły tydzień" kana="せんしゅう" kanji="先週" romaji="senshuu" type="noun" category="abstract">
+      <cases language="pl" nominative="zeszły tydzień" genitive="zeszłego tygodnia" dative="zeszłemu tygodniowi" accusative="zeszły tydzień" instrumental="zeszłym tygodniem" locative="zeszłym tygodniu" vocative="zeszły tygodniu" />
+    </word>
+    <word id="maishuu" translation="każdy tydzień" kana="まいしゅう" kanji="毎週" romaji="maishuu" type="noun" category="abstract">
+      <cases language="pl" nominative="każdy tydzień" genitive="każdego tygodnia" dative="każdemu tygodniowi" accusative="każdy tydzień" instrumental="każdym tygodniem" locative="każdym tygodniu" vocative="każdy tygodniu" />
+    </word>
+    <word id="namae" translation="imię" kana="なまえ" kanji="名前" romaji="namae" type="noun" category="abstract">
+      <cases language="pl" nominative="imię" genitive="imienia" dative="imieniu" accusative="imię" instrumental="imieniem" locative="imieniu" vocative="imię" />
+    </word>
+    <word id="juumei" translation="dziesięć osób" kana="じゅうめい" kanji="十名" romaji="juumei" type="noun" category="person">
+      <cases language="pl" nominative="dziesięć osób" genitive="dziesięciu osób" dative="dziesięciu osobom" accusative="dziesięć osób" instrumental="dziesięcioma osobami" locative="dziesięciu osobach" vocative="dziesięć osób" />
+    </word>
+    <word id="meijin" translation="mistrz" kana="めいじん" kanji="名人" romaji="meijin" type="noun" category="person">
+      <cases language="pl" nominative="mistrz" genitive="mistrza" dative="mistrzowi" accusative="mistrza" instrumental="mistrzem" locative="mistrzu" vocative="mistrzu" />
+    </word>
+    <word id="yuujin" translation="przyjaciel" kana="ゆうじん" kanji="友人" romaji="yuujin" type="noun" category="person">
+      <cases language="pl" nominative="przyjaciel" genitive="przyjaciela" dative="przyjacielowi" accusative="przyjaciela" instrumental="przyjacielem" locative="przyjacielu" vocative="przyjacielu" />
+    </word>
+    <word id="yuukou" translation="przyjaźń / dobre stosunki" kana="ゆうこう" kanji="友好" romaji="yuukou" type="noun" category="abstract">
+      <cases language="pl" nominative="przyjaźń / dobre stosunki" genitive="przyjaźni / dobrych stosunków" dative="przyjaźni / dobrym stosunkom" accusative="przyjaźń / dobre stosunki" instrumental="przyjaźnią / dobrymi stosunkami" locative="przyjaźni / dobrych stosunkach" vocative="przyjaźni / dobre stosunki" />
+    </word>
+    <word id="kuni" translation="kraj" kana="くに" kanji="国" romaji="kuni" type="noun" category="place">
+      <cases language="pl" nominative="kraj" genitive="kraju" dative="krajowi" accusative="kraj" instrumental="krajem" locative="kraju" vocative="kraju" />
+    </word>
+    <word id="chuugoku" translation="Chiny" kana="ちゅうごく" kanji="中国" romaji="chuugoku" type="noun" category="place">
+      <cases language="pl" nominative="Chiny" genitive="Chin" dative="Chinom" accusative="Chiny" instrumental="Chinami" locative="Chinach" vocative="Chiny" />
+    </word>
+    <word id="kokugo" translation="język ojczysty / język japoński" kana="こくご" kanji="国語" romaji="kokugo" type="noun" category="text">
+      <cases language="pl" nominative="język ojczysty / język japoński" genitive="języka ojczystego / języka japońskiego" dative="językowi ojczystemu / językowi japońskiemu" accusative="język ojczysty / język japoński" instrumental="językiem ojczystym / językiem japońskim" locative="języku ojczystym / języku japońskim" vocative="języku ojczysty / języku japoński" />
+    </word>
+    <word id="gaikokugo" translation="język obcy" kana="がいこくご" kanji="外国語" romaji="gaikokugo" type="noun" category="text">
+      <cases language="pl" nominative="język obcy" genitive="języka obcego" dative="językowi obcemu" accusative="język obcy" instrumental="językiem obcym" locative="języku obcym" vocative="języku obcy" />
+    </word>
+    <word id="eigo" translation="język angielski" kana="えいご" kanji="英語" romaji="eigo" type="noun" category="text">
+      <cases language="pl" nominative="język angielski" genitive="języka angielskiego" dative="językowi angielskiemu" accusative="język angielski" instrumental="językiem angielskim" locative="języku angielskim" vocative="języku angielski" />
+    </word>
+    <word id="eikoku" translation="Wielka Brytania" kana="えいこく" kanji="英国" romaji="eikoku" type="noun" category="place">
+      <cases language="pl" nominative="Wielka Brytania" genitive="Wielkiej Brytanii" dative="Wielkiej Brytanii" accusative="Wielką Brytanię" instrumental="Wielką Brytanią" locative="Wielkiej Brytanii" vocative="Wielka Brytanio" />
+    </word>
+    <word id="kaiwa" translation="rozmowa" kana="かいわ" kanji="会話" romaji="kaiwa" type="noun" category="abstract">
+      <cases language="pl" nominative="rozmowa" genitive="rozmowy" dative="rozmowie" accusative="rozmowę" instrumental="rozmową" locative="rozmowie" vocative="rozmowo" />
+    </word>
+    <word id="nomimizu" translation="woda pitna" kana="のみみず" kanji="飲み水" romaji="nomimizu" type="noun" category="drink">
+      <cases language="pl" nominative="woda pitna" genitive="wody pitnej" dative="wodzie pitnej" accusative="wodę pitną" instrumental="wodą pitną" locative="wodzie pitnej" vocative="wodo pitna" />
+    </word>
+    <word id="nomimono" translation="napój / coś do picia" kana="のみもの" kanji="飲み物" romaji="nomimono" type="noun" category="drink">
+      <cases language="pl" nominative="napój / coś do picia" genitive="napoju / czegoś do picia" dative="napojowi / czemuś do picia" accusative="napój / coś do picia" instrumental="napojem / czymś do picia" locative="napoju / czymś do picia" vocative="napoju / coś do picia" />
+    </word>
+    <word id="denki" translation="elektryczność" kana="でんき" kanji="電気" romaji="denki" type="noun" category="abstract">
+      <cases language="pl" nominative="elektryczność" genitive="elektryczności" dative="elektryczności" accusative="elektryczność" instrumental="elektrycznością" locative="elektryczności" vocative="elektryczności" />
+    </word>
+    <word id="denwa" translation="telefon" kana="でんわ" kanji="電話" romaji="denwa" type="noun" category="thing">
+      <cases language="pl" nominative="telefon" genitive="telefonu" dative="telefonowi" accusative="telefon" instrumental="telefonem" locative="telefonie" vocative="telefonie" />
+    </word>
+    <word id="densha" translation="pociąg" kana="でんしゃ" kanji="電車" romaji="densha" type="noun" category="vehicle">
+      <cases language="pl" nominative="pociąg" genitive="pociągu" dative="pociągowi" accusative="pociąg" instrumental="pociągiem" locative="pociągu" vocative="pociągu" />
+    </word>
+    <word id="yomimono" translation="materiał do czytania" kana="よみもの" kanji="読み物" romaji="yomimono" type="noun" category="text">
+      <cases language="pl" nominative="materiał do czytania" genitive="materiału do czytania" dative="materiałowi do czytania" accusative="materiał do czytania" instrumental="materiałem do czytania" locative="materiale do czytania" vocative="materiale do czytania" />
+    </word>
+    <word id="shitagaki" translation="brudnopis / szkic" kana="したがき" kanji="下書き" romaji="shitagaki" type="noun" category="text">
+      <cases language="pl" nominative="brudnopis / szkic" genitive="brudnopisu / szkicu" dative="brudnopisowi / szkicowi" accusative="brudnopis / szkic" instrumental="brudnopisem / szkicem" locative="brudnopisie / szkicu" vocative="brudnopisie / szkicu" />
+    </word>
+    <word id="shodou" translation="kaligrafia" kana="しょどう" kanji="書道" romaji="shodou" type="noun" category="text">
+      <cases language="pl" nominative="kaligrafia" genitive="kaligrafii" dative="kaligrafii" accusative="kaligrafię" instrumental="kaligrafią" locative="kaligrafii" vocative="kaligrafio" />
+    </word>
+    <word id="motono" translation="dawny / pierwotny" kana="もとの" kanji="元の" romaji="motono" type="noun" category="abstract">
+      <cases language="pl" nominative="dawny / pierwotny" genitive="dawnego / pierwotnego" dative="dawnemu / pierwotnemu" accusative="dawny / pierwotny" instrumental="dawnym / pierwotnym" locative="dawnym / pierwotnym" vocative="dawny / pierwotny" />
+    </word>
+    <word id="ganjitsu" translation="Nowy Rok / pierwszy dzień roku" kana="がんじつ" kanji="元日" romaji="ganjitsu" type="noun" category="abstract">
+      <cases language="pl" nominative="Nowy Rok / pierwszy dzień roku" genitive="Nowego Roku / pierwszego dnia roku" dative="Nowemu Rokowi / pierwszemu dniowi roku" accusative="Nowy Rok / pierwszy dzień roku" instrumental="Nowym Rokiem / pierwszym dniem roku" locative="Nowym Roku / pierwszym dniu roku" vocative="Nowy Roku / pierwszy dniu roku" />
+    </word>
+    <word id="moto" translation="pochodzenie / źródło" kana="もと" kanji="元" romaji="moto" type="noun" category="abstract">
+      <cases language="pl" nominative="pochodzenie / źródło" genitive="pochodzenia / źródła" dative="pochodzeniu / źródłu" accusative="pochodzenie / źródło" instrumental="pochodzeniem / źródłem" locative="pochodzeniu / źródle" vocative="pochodzenie / źródło" />
+    </word>
+    <word id="chikara" translation="siła" kana="ちから" kanji="力" romaji="chikara" type="noun" category="abstract">
+      <cases language="pl" nominative="siła" genitive="siły" dative="sile" accusative="siłę" instrumental="siłą" locative="sile" vocative="siło" />
+    </word>
+    <word id="ta" translation="pole ryżowe" kana="た" kanji="田" romaji="ta" type="noun" category="abstract">
+      <cases language="pl" nominative="pole ryżowe" genitive="pola ryżowego" dative="polu ryżowemu" accusative="pole ryżowe" instrumental="polem ryżowym" locative="polu ryżowym" vocative="pole ryżowe" />
+    </word>
+    <word id="tanaka" translation="Tanaka" kana="たなか" kanji="田中" romaji="tanaka" type="noun" category="abstract">
+      <cases language="pl" nominative="Tanaka" genitive="Tanaka" dative="Tanaka" accusative="Tanaka" instrumental="Tanaka" locative="Tanaka" vocative="Tanaka" />
+    </word>
+    <word id="oota" translation="Ōta" kana="おおた" kanji="大田" romaji="oota" type="noun" category="abstract">
+      <cases language="pl" nominative="Ōta" genitive="Ōta" dative="Ōta" accusative="Ōta" instrumental="Ōta" locative="Ōta" vocative="Ōta" />
+    </word>
+    <word id="yamada" translation="Yamada" kana="やまだ" kanji="山田" romaji="yamada" type="noun" category="abstract">
+      <cases language="pl" nominative="Yamada" genitive="Yamada" dative="Yamada" accusative="Yamada" instrumental="Yamada" locative="Yamada" vocative="Yamada" />
+    </word>
+    <word id="ishi" translation="kamień" kana="いし" kanji="石" romaji="ishi" type="noun" category="thing">
+      <cases language="pl" nominative="kamień" genitive="kamienia" dative="kamieniowi" accusative="kamień" instrumental="kamieniem" locative="kamieniu" vocative="kamieniu" />
+    </word>
+    <word id="ito" translation="nitka" kana="いと" kanji="糸" romaji="ito" type="noun" category="thing">
+      <cases language="pl" nominative="nitka" genitive="nitki" dative="nitce" accusative="nitkę" instrumental="nitką" locative="nitce" vocative="nitko" />
+    </word>
+    <word id="kumonoito" translation="nić pajęcza" kana="くものいと" kanji="クモの糸" romaji="kumonoito" type="noun" category="thing">
+      <cases language="pl" nominative="nić pajęcza" genitive="nici pajęczej" dative="nici pajęczej" accusative="nić pajęczą" instrumental="nicią pajęczą" locative="nici pajęczej" vocative="nici pajęcza" />
+    </word>
+    <word id="kiito" translation="surowy jedwab" kana="きいと" kanji="生糸" romaji="kiito" type="noun" category="thing">
+      <cases language="pl" nominative="surowy jedwab" genitive="surowego jedwabiu" dative="surowemu jedwabiowi" accusative="surowy jedwab" instrumental="surowym jedwabiem" locative="surowym jedwabiu" vocative="surowy jedwabiu" />
+    </word>
+    <word id="ie" translation="dom" kana="いえ" kanji="家" romaji="ie" type="noun" category="place">
+      <cases language="pl" nominative="dom" genitive="domu" dative="domowi" accusative="dom" instrumental="domem" locative="domu" vocative="domu" />
+    </word>
+    <word id="uchi" translation="dom / wnętrze" kana="うち" kanji="内" romaji="uchi" type="noun" category="place">
+      <cases language="pl" nominative="dom / wnętrze" genitive="domu / wnętrza" dative="domowi / wnętrzu" accusative="dom / wnętrze" instrumental="domem / wnętrzem" locative="domu / wnętrzu" vocative="domu / wnętrze" />
+    </word>
+    <word id="kanai" translation="żona" kana="かない" kanji="家内" romaji="kanai" type="noun" category="person">
+      <cases language="pl" nominative="żona" genitive="żony" dative="żonie" accusative="żonę" instrumental="żoną" locative="żonie" vocative="żono" />
+    </word>
+    <word id="kokoro" translation="serce / umysł" kana="こころ" kanji="心" romaji="kokoro" type="noun" category="abstract">
+      <cases language="pl" nominative="serce / umysł" genitive="serca / umysłu" dative="sercu / umysłowi" accusative="serce / umysł" instrumental="sercem / umysłem" locative="sercu / umyśle" vocative="serce / umyśle" />
+    </word>
+    <word id="chuushin" translation="centrum / środek" kana="ちゅうしん" kanji="中心" romaji="chuushin" type="noun" category="abstract">
+      <cases language="pl" nominative="centrum / środek" genitive="centrum / środka" dative="centrum / środkowi" accusative="centrum / środek" instrumental="centrum / środkiem" locative="centrum / środku" vocative="centrum / środku" />
+    </word>
+    <word id="shoutai" translation="prawdziwa tożsamość" kana="しょうたい" kanji="正体" romaji="shoutai" type="noun" category="abstract">
+      <cases language="pl" nominative="prawdziwa tożsamość" genitive="prawdziwej tożsamości" dative="prawdziwej tożsamości" accusative="prawdziwą tożsamość" instrumental="prawdziwą tożsamością" locative="prawdziwej tożsamości" vocative="prawdziwa tożsamości" />
+    </word>
+    <word id="yarikata" translation="sposób / metoda" kana="やりかた" kanji="やり方" romaji="yarikata" type="noun" category="abstract">
+      <cases language="pl" nominative="sposób / metoda" genitive="sposobu / metody" dative="sposobowi / metodzie" accusative="sposób / metodę" instrumental="sposobem / metodą" locative="sposobie / metodzie" vocative="sposobie / metodo" />
+    </word>
+    <word id="hou" translation="kierunek / sposób" kana="ほう" kanji="方" romaji="hou" type="noun" category="abstract">
+      <cases language="pl" nominative="kierunek / sposób" genitive="kierunku / sposobu" dative="kierunkowi / sposobowi" accusative="kierunek / sposób" instrumental="kierunkiem / sposobem" locative="kierunku / sposobie" vocative="kierunku / sposobie" />
+    </word>
+    <word id="hougen" translation="dialekt" kana="ほうげん" kanji="方言" romaji="hougen" type="noun" category="abstract">
+      <cases language="pl" nominative="dialekt" genitive="dialektu" dative="dialektowi" accusative="dialekt" instrumental="dialektem" locative="dialekcie" vocative="dialekcie" />
+    </word>
+    <word id="zenpou" translation="przód / przednia strona" kana="ぜんぽう" kanji="前方" romaji="zenpou" type="noun" category="abstract">
+      <cases language="pl" nominative="przód / przednia strona" genitive="przodu / przedniej strony" dative="przodowi / przedniej stronie" accusative="przód / przednią stronę" instrumental="przodem / przednią stroną" locative="przodzie / przedniej stronie" vocative="przodzie / przednia strono" />
+    </word>
+    <word id="shi" translation="urzędnik" kana="し" kanji="仕" romaji="shi" type="noun" category="abstract">
+      <cases language="pl" nominative="urzędnik" genitive="urzędnika" dative="urzędnikowi" accusative="urzędnika" instrumental="urzędnikiem" locative="urzędniku" vocative="urzędniku" />
+    </word>
+    <word id="shikataganai" translation="nie ma innego sposobu" kana="しかたがない" kanji="仕方がない" romaji="shikataganai" type="noun" category="abstract">
+      <cases language="pl" nominative="nie ma innego sposobu" genitive="nie ma innego sposobu" dative="nie ma innego sposobu" accusative="nie ma innego sposobu" instrumental="nie ma innego sposobu" locative="nie ma innego sposobu" vocative="nie ma innego sposobu" />
+    </word>
+    <word id="koto" translation="rzecz / sprawa" kana="こと" kanji="事" romaji="koto" type="noun" category="abstract">
+      <cases language="pl" nominative="rzecz / sprawa" genitive="rzeczy / sprawy" dative="rzeczy / sprawie" accusative="rzecz / sprawę" instrumental="rzeczą / sprawą" locative="rzeczy / sprawie" vocative="rzeczy / sprawo" />
+    </word>
+    <word id="kaji" translation="pożar" kana="かじ" kanji="火事" romaji="kaji" type="noun" category="abstract">
+      <cases language="pl" nominative="pożar" genitive="pożaru" dative="pożarowi" accusative="pożar" instrumental="pożarem" locative="pożarze" vocative="pożarze" />
+    </word>
+    <word id="dekigoto" translation="wydarzenie" kana="できごと" kanji="出来事" romaji="dekigoto" type="noun" category="abstract">
+      <cases language="pl" nominative="wydarzenie" genitive="wydarzenia" dative="wydarzeniu" accusative="wydarzenie" instrumental="wydarzeniem" locative="wydarzeniu" vocative="wydarzenie" />
+    </word>
+    <word id="yashiro" translation="świątynia shintō" kana="やしろ" kanji="社" romaji="yashiro" type="noun" category="place">
+      <cases language="pl" nominative="świątynia shintō" genitive="świątyni shintō" dative="świątyni shintō" accusative="świątynię shintō" instrumental="świątynią shintō" locative="świątyni shintō" vocative="świątynio shintō" />
+    </word>
+    <word id="kaisha" translation="firma" kana="かいしゃ" kanji="会社" romaji="kaisha" type="noun" category="place">
+      <cases language="pl" nominative="firma" genitive="firmy" dative="firmie" accusative="firmę" instrumental="firmą" locative="firmie" vocative="firmo" />
+    </word>
+    <word id="shakai" translation="społeczeństwo" kana="しゃかい" kanji="社会" romaji="shakai" type="noun" category="abstract">
+      <cases language="pl" nominative="społeczeństwo" genitive="społeczeństwa" dative="społeczeństwu" accusative="społeczeństwo" instrumental="społeczeństwem" locative="społeczeństwie" vocative="społeczeństwo" />
+    </word>
+    <word id="shachou" translation="prezes firmy" kana="しゃちょう" kanji="社長" romaji="shachou" type="noun" category="person">
+      <cases language="pl" nominative="prezes firmy" genitive="prezesa firmy" dative="prezesowi firmy" accusative="prezesa firmy" instrumental="prezesem firmy" locative="prezesie firmy" vocative="prezesie firmy" />
+    </word>
+    <word id="tochi" translation="teren / działka" kana="とち" kanji="土地" romaji="tochi" type="noun" category="place">
+      <cases language="pl" nominative="teren / działka" genitive="terenu / działki" dative="terenowi / działce" accusative="teren / działkę" instrumental="terenem / działką" locative="terenie / działce" vocative="terenie / działko" />
+    </word>
+    <word id="chihou" translation="region / obszar" kana="ちほう" kanji="地方" romaji="chihou" type="noun" category="place">
+      <cases language="pl" nominative="region / obszar" genitive="regionu / obszaru" dative="regionowi / obszarowi" accusative="region / obszar" instrumental="regionem / obszarem" locative="regionie / obszarze" vocative="regionie / obszarze" />
+    </word>
+    <word id="tetsu" translation="żelazo" kana="てつ" kanji="鉄" romaji="tetsu" type="noun" category="thing">
+      <cases language="pl" nominative="żelazo" genitive="żelaza" dative="żelazu" accusative="żelazo" instrumental="żelazem" locative="żelazie" vocative="żelazo" />
+    </word>
+    <word id="chikatetsu" translation="metro" kana="ちかてつ" kanji="地下鉄" romaji="chikatetsu" type="noun" category="vehicle">
+      <cases language="pl" nominative="metro" genitive="metra" dative="metru" accusative="metro" instrumental="metrem" locative="metrze" vocative="metro" />
+    </word>
+    <word id="tetsudou" translation="kolej" kana="てつどう" kanji="鉄道" romaji="tetsudou" type="noun" category="thing">
+      <cases language="pl" nominative="kolej" genitive="kolei" dative="kolei" accusative="kolej" instrumental="koleją" locative="kolei" vocative="kolei" />
+    </word>
+    <word id="kouji" translation="budowa / roboty budowlane" kana="こうじ" kanji="工事" romaji="kouji" type="noun" category="abstract">
+      <cases language="pl" nominative="budowa / roboty budowlane" genitive="budowy / robót budowlanych" dative="budowie / robotom budowlanym" accusative="budowę / roboty budowlane" instrumental="budową / robotami budowlanymi" locative="budowie / robotach budowlanych" vocative="budowo / roboty budowlane" />
+    </word>
+    <word id="daiku" translation="cieśla" kana="だいく" kanji="大工" romaji="daiku" type="noun" category="person">
+      <cases language="pl" nominative="cieśla" genitive="cieśli" dative="cieśli" accusative="cieślę" instrumental="cieślą" locative="cieśli" vocative="cieślo" />
+    </word>
+    <word id="koujou" translation="fabryka" kana="こうじょう" kanji="工場" romaji="koujou" type="noun" category="place">
+      <cases language="pl" nominative="fabryka" genitive="fabryki" dative="fabryce" accusative="fabrykę" instrumental="fabryką" locative="fabryce" vocative="fabryko" />
+    </word>
+    <word id="kaijou_venue" translation="miejsce spotkania / sala" kana="かいじょう" kanji="会場" romaji="kaijou" type="noun" category="place">
+      <cases language="pl" nominative="miejsce spotkania / sala" genitive="miejsca spotkania / sali" dative="miejscu spotkania / sali" accusative="miejsce spotkania / salę" instrumental="miejscem spotkania / salą" locative="miejscu spotkania / sali" vocative="miejsce spotkania / salo" />
+    </word>
+    <word id="mono" translation="rzecz / przedmiot" kana="もの" kanji="物" romaji="mono" type="noun" category="thing">
+      <cases language="pl" nominative="rzecz / przedmiot" genitive="rzeczy / przedmiotu" dative="rzeczy / przedmiotowi" accusative="rzecz / przedmiot" instrumental="rzeczą / przedmiotem" locative="rzeczy / przedmiocie" vocative="rzeczy / przedmiocie" />
+    </word>
+    <word id="seibutsu" translation="istota żywa" kana="せいぶつ" kanji="生物" romaji="seibutsu" type="noun" category="abstract">
+      <cases language="pl" nominative="istota żywa" genitive="istoty żywej" dative="istocie żywej" accusative="istotę żywą" instrumental="istotą żywą" locative="istocie żywej" vocative="istoto żywa" />
+    </word>
+    <word id="bun" translation="zdanie / tekst" kana="ぶん" kanji="文" romaji="bun" type="noun" category="text">
+      <cases language="pl" nominative="zdanie / tekst" genitive="zdania / tekstu" dative="zdaniu / tekstowi" accusative="zdanie / tekst" instrumental="zdaniem / tekstem" locative="zdaniu / tekście" vocative="zdanie / tekście" />
+    </word>
+    <word id="bunmei" translation="cywilizacja" kana="ぶんめい" kanji="文明" romaji="bunmei" type="noun" category="abstract">
+      <cases language="pl" nominative="cywilizacja" genitive="cywilizacji" dative="cywilizacji" accusative="cywilizację" instrumental="cywilizacją" locative="cywilizacji" vocative="cywilizacjo" />
+    </word>
+    <word id="ji" translation="znak / litera" kana="じ" kanji="字" romaji="ji" type="noun" category="text">
+      <cases language="pl" nominative="znak / litera" genitive="znaku / litery" dative="znakowi / literze" accusative="znak / literę" instrumental="znakiem / literą" locative="znaku / literze" vocative="znaku / litero" />
+    </word>
+    <word id="moji" translation="znak pisma" kana="もじ" kanji="文字" romaji="moji" type="noun" category="text">
+      <cases language="pl" nominative="znak pisma" genitive="znaku pisma" dative="znakowi pisma" accusative="znak pisma" instrumental="znakiem pisma" locative="znaku pisma" vocative="znaku pisma" />
+    </word>
+    <word id="myouji" translation="nazwisko" kana="みょうじ" kanji="名字" romaji="myouji" type="noun" category="abstract">
+      <cases language="pl" nominative="nazwisko" genitive="nazwiska" dative="nazwisku" accusative="nazwisko" instrumental="nazwiskiem" locative="nazwisku" vocative="nazwisko" />
+    </word>
+    <word id="sakubun" translation="wypracowanie" kana="さくぶん" kanji="作文" romaji="sakubun" type="noun" category="text">
+      <cases language="pl" nominative="wypracowanie" genitive="wypracowania" dative="wypracowaniu" accusative="wypracowanie" instrumental="wypracowaniem" locative="wypracowaniu" vocative="wypracowanie" />
+    </word>
+    <word id="haru" translation="wiosna" kana="はる" kanji="春" romaji="haru" type="noun" category="abstract">
+      <cases language="pl" nominative="wiosna" genitive="wiosny" dative="wiośnie" accusative="wiosnę" instrumental="wiosną" locative="wiośnie" vocative="wiosno" />
+    </word>
+    <word id="harukaze" translation="wiosenny wiatr" kana="はるかぜ" kanji="春風" romaji="harukaze" type="noun" category="abstract">
+      <cases language="pl" nominative="wiosenny wiatr" genitive="wiosennego wiatru" dative="wiosennemu wiatrowi" accusative="wiosenny wiatr" instrumental="wiosennym wiatrem" locative="wiosennym wietrze" vocative="wiosenny wietrze" />
+    </word>
+    <word id="shunbun" translation="równonoc wiosenna" kana="しゅんぶん" kanji="春分" romaji="shunbun" type="noun" category="abstract">
+      <cases language="pl" nominative="równonoc wiosenna" genitive="równonocy wiosennej" dative="równonocy wiosennej" accusative="równonoc wiosenną" instrumental="równonocą wiosenną" locative="równonocy wiosennej" vocative="równonocy wiosenna" />
+    </word>
+    <word id="natsu" translation="lato" kana="なつ" kanji="夏" romaji="natsu" type="noun" category="abstract">
+      <cases language="pl" nominative="lato" genitive="lata" dative="latu" accusative="lato" instrumental="latem" locative="lecie" vocative="lato" />
+    </word>
+    <word id="natsuyasumi" translation="letnie wakacje" kana="なつやすみ" kanji="夏休み" romaji="natsuyasumi" type="noun" category="abstract">
+      <cases language="pl" nominative="letnie wakacje" genitive="letnich wakacji" dative="letnim wakacjom" accusative="letnie wakacje" instrumental="letnimi wakacjami" locative="letnich wakacjach" vocative="letnie wakacje" />
+    </word>
+    <word id="aki" translation="jesień" kana="あき" kanji="秋" romaji="aki" type="noun" category="abstract">
+      <cases language="pl" nominative="jesień" genitive="jesieni" dative="jesieni" accusative="jesień" instrumental="jesienią" locative="jesieni" vocative="jesieni" />
+    </word>
+    <word id="akikaze" translation="jesienny wiatr" kana="あきかぜ" kanji="秋風" romaji="akikaze" type="noun" category="abstract">
+      <cases language="pl" nominative="jesienny wiatr" genitive="jesiennego wiatru" dative="jesiennemu wiatrowi" accusative="jesienny wiatr" instrumental="jesiennym wiatrem" locative="jesiennym wietrze" vocative="jesienny wietrze" />
+    </word>
+    <word id="shuubun" translation="równonoc jesienna" kana="しゅうぶん" kanji="秋分" romaji="shuubun" type="noun" category="abstract">
+      <cases language="pl" nominative="równonoc jesienna" genitive="równonocy jesiennej" dative="równonocy jesiennej" accusative="równonoc jesienną" instrumental="równonocą jesienną" locative="równonocy jesiennej" vocative="równonocy jesienna" />
+    </word>
+    <word id="fuyu" translation="zima" kana="ふゆ" kanji="冬" romaji="fuyu" type="noun" category="abstract">
+      <cases language="pl" nominative="zima" genitive="zimy" dative="zimie" accusative="zimę" instrumental="zimą" locative="zimie" vocative="zimo" />
+    </word>
+    <word id="shunkashuutou" translation="cztery pory roku" kana="しゅんかしゅうとう" kanji="春夏秋冬" romaji="shunkashuutou" type="noun" category="abstract">
+      <cases language="pl" nominative="cztery pory roku" genitive="czterech pór roku" dative="czterem porom roku" accusative="cztery pory roku" instrumental="czterema porami roku" locative="czterech porach roku" vocative="cztery pory roku" />
+    </word>
+    <word id="kaze" translation="wiatr" kana="かぜ" kanji="風" romaji="kaze" type="noun" category="thing">
+      <cases language="pl" nominative="wiatr" genitive="wiatru" dative="wiatrowi" accusative="wiatr" instrumental="wiatrem" locative="wietrze" vocative="wietrze" />
+    </word>
+    <word id="kitakaze" translation="północny wiatr" kana="きたかぜ" kanji="北風" romaji="kitakaze" type="noun" category="thing">
+      <cases language="pl" nominative="północny wiatr" genitive="północnego wiatru" dative="północnemu wiatrowi" accusative="północny wiatr" instrumental="północnym wiatrem" locative="północnym wietrze" vocative="północny wietrze" />
+    </word>
+    <word id="fuuu" translation="wiatr i deszcz / burza" kana="ふうう" kanji="風雨" romaji="fuuu" type="noun" category="abstract">
+      <cases language="pl" nominative="wiatr i deszcz / burza" genitive="wiatru i deszczu / burzy" dative="wiatrowi i deszczowi / burzy" accusative="wiatr i deszcz / burzę" instrumental="wiatrem i deszczem / burzą" locative="wietrze i deszczu / burzy" vocative="wietrze i deszczu / burzo" />
+    </word>
+    <word id="fuuryoku" translation="siła wiatru" kana="ふうりょく" kanji="風力" romaji="fuuryoku" type="noun" category="abstract">
+      <cases language="pl" nominative="siła wiatru" genitive="siły wiatru" dative="sile wiatru" accusative="siłę wiatru" instrumental="siłą wiatru" locative="sile wiatru" vocative="siło wiatru" />
+    </word>
+    <word id="fuusui" translation="feng shui" kana="ふうすい" kanji="風水" romaji="fuusui" type="noun" category="thing">
+      <cases language="pl" nominative="feng shui" genitive="feng shui" dative="feng shui" accusative="feng shui" instrumental="feng shui" locative="feng shui" vocative="feng shui" />
+    </word>
+    <word id="umi" translation="morze" kana="うみ" kanji="海" romaji="umi" type="noun" category="place">
+      <cases language="pl" nominative="morze" genitive="morza" dative="morzu" accusative="morze" instrumental="morzem" locative="morzu" vocative="morze" />
+    </word>
+    <word id="nihonkai" translation="Morze Japońskie" kana="にほんかい" kanji="日本海" romaji="nihonkai" type="noun" category="place">
+      <cases language="pl" nominative="Morze Japońskie" genitive="Morza Japońskiego" dative="Morzu Japońskiemu" accusative="Morze Japońskie" instrumental="Morzem Japońskim" locative="Morzu Japońskim" vocative="Morze Japońskie" />
+    </word>
+    <word id="chichuukai" translation="Morze Śródziemne" kana="ちちゅうかい" kanji="地中海" romaji="chichuukai" type="noun" category="place">
+      <cases language="pl" nominative="Morze Śródziemne" genitive="Morza Śródziemnego" dative="Morzu Śródziemnemu" accusative="Morze Śródziemne" instrumental="Morzem Śródziemnym" locative="Morzu Śródziemnym" vocative="Morze Śródziemne" />
+    </word>
+    <word id="hokkaidou" translation="Hokkaido" kana="ほっかいどう" kanji="北海道" romaji="hokkaidou" type="noun" category="place">
+      <cases language="pl" nominative="Hokkaido" genitive="Hokkaido" dative="Hokkaido" accusative="Hokkaido" instrumental="Hokkaido" locative="Hokkaido" vocative="Hokkaido" />
+    </word>
+    <word id="kaigai" translation="zagranica" kana="かいがい" kanji="海外" romaji="kaigai" type="noun" category="place">
+      <cases language="pl" nominative="zagranica" genitive="zagranicy" dative="zagranicy" accusative="zagranicę" instrumental="zagranicą" locative="zagranicy" vocative="zagranico" />
+    </word>
+    <word id="morita" translation="Morita" kana="もりた" kanji="森田" romaji="morita" type="noun" category="abstract">
+      <cases language="pl" nominative="Morita" genitive="Mority" dative="Moritcie" accusative="Moritę" instrumental="Moritą" locative="Moritcie" vocative="Morito" />
+    </word>
+    <word id="kaijou_sea" translation="morze / obszar morski" kana="かいじょう" kanji="海上" romaji="kaijou" type="noun" category="place">
+      <cases language="pl" nominative="morze / obszar morski" genitive="morza / obszaru morskiego" dative="morzu / obszarowi morskiemu" accusative="morze / obszar morski" instrumental="morzem / obszarem morskim" locative="morzu / obszarze morskim" vocative="morze / obszarze morski" />
+    </word>
+    <word id="kaisui" translation="woda morska" kana="かいすい" kanji="海水" romaji="kaisui" type="noun" category="abstract">
+      <cases language="pl" nominative="woda morska" genitive="wody morskiej" dative="wodzie morskiej" accusative="wodę morską" instrumental="wodą morską" locative="wodzie morskiej" vocative="wodo morska" />
+    </word>
+    <word id="hayashi" translation="zagajnik / mały las" kana="はやし" kanji="林" romaji="hayashi" type="noun" category="place">
+      <cases language="pl" nominative="zagajnik / mały las" genitive="zagajnika / małego lasu" dative="zagajnikowi / małemu lasowi" accusative="zagajnik / mały las" instrumental="zagajnikiem / małym lasem" locative="zagajniku / małym lesie" vocative="zagajniku / mały lesie" />
+    </word>
+    <word id="kobayashi" translation="Kobayashi" kana="こばやし" kanji="小林" romaji="kobayashi" type="noun" category="abstract">
+      <cases language="pl" nominative="Kobayashi" genitive="Kobayashiego" dative="Kobayashiemu" accusative="Kobayashiego" instrumental="Kobayashim" locative="Kobayashim" vocative="Kobayashi" />
+    </word>
+    <word id="sanrin" translation="las górski" kana="さんりん" kanji="山林" romaji="sanrin" type="noun" category="place">
+      <cases language="pl" nominative="las górski" genitive="lasu górskiego" dative="lasowi górskiemu" accusative="las górski" instrumental="lasem górskim" locative="lesie górskim" vocative="lesie górski" />
+    </word>
+    <word id="mori" translation="las / puszcza" kana="もり" kanji="森" romaji="mori" type="noun" category="place">
+      <cases language="pl" nominative="las / puszcza" genitive="lasu / puszczy" dative="lasowi / puszczy" accusative="las / puszczę" instrumental="lasem / puszczą" locative="lesie / puszczy" vocative="lesie / puszczo" />
+    </word>
+    <word id="shinrin" translation="obszar leśny" kana="しんりん" kanji="森林" romaji="shinrin" type="noun" category="place">
+      <cases language="pl" nominative="obszar leśny" genitive="obszaru leśnego" dative="obszarowi leśnemu" accusative="obszar leśny" instrumental="obszarem leśnym" locative="obszarze leśnym" vocative="obszarze leśny" />
+    </word>
+    <word id="kimochi" translation="uczucie / odczucie" kana="きもち" kanji="気持ち" romaji="kimochi" type="noun" category="abstract">
+      <cases language="pl" nominative="uczucie / odczucie" genitive="uczucia / odczucia" dative="uczuciu / odczuciu" accusative="uczucie / odczucie" instrumental="uczuciem / odczuciem" locative="uczuciu / odczuciu" vocative="uczucie / odczucie" />
+    </word>
+    <word id="nagamochi" translation="trwałość" kana="ながもち" kanji="長持ち" romaji="nagamochi" type="noun" category="abstract">
+      <cases language="pl" nominative="trwałość" genitive="trwałości" dative="trwałości" accusative="trwałość" instrumental="trwałością" locative="trwałości" vocative="trwałości" />
+    </word>
+    <word id="mochimono" translation="dobytek / rzeczy osobiste" kana="もちもの" kanji="持ち物" romaji="mochimono" type="noun" category="abstract">
+      <cases language="pl" nominative="dobytek / rzeczy osobiste" genitive="dobytku / rzeczy osobistych" dative="dobytkowi / rzeczom osobistym" accusative="dobytek / rzeczy osobiste" instrumental="dobytkiem / rzeczami osobistymi" locative="dobytku / rzeczach osobistych" vocative="dobytku / rzeczy osobiste" />
+    </word>
+    <word id="omoide" translation="wspomnienie" kana="おもいで" kanji="思い出" romaji="omoide" type="noun" category="abstract">
+      <cases language="pl" nominative="wspomnienie" genitive="wspomnienia" dative="wspomnieniu" accusative="wspomnienie" instrumental="wspomnieniem" locative="wspomnieniu" vocative="wspomnienie" />
+    </word>
+    <word id="kaihei" translation="otwieranie i zamykanie" kana="かいへい" kanji="開閉" romaji="kaihei" type="noun" category="abstract">
+      <cases language="pl" nominative="otwieranie i zamykanie" genitive="otwierania i zamykania" dative="otwieraniu i zamykaniu" accusative="otwieranie i zamykanie" instrumental="otwieraniem i zamykaniem" locative="otwieraniu i zamykaniu" vocative="otwieranie i zamykanie" />
+    </word>
+    <word id="tezukuri" translation="rękodzieło / wyrób ręczny" kana="てづくり" kanji="手作り" romaji="tezukuri" type="noun" category="abstract">
+      <cases language="pl" nominative="rękodzieło / wyrób ręczny" genitive="rękodzieła / wyrobu ręcznego" dative="rękodziełu / wyrobowi ręcznemu" accusative="rękodzieło / wyrób ręczny" instrumental="rękodziełem / wyrobem ręcznym" locative="rękodziele / wyrobie ręcznym" vocative="rękodzieło / wyrobie ręczny" />
+    </word>
+    <word id="sakka" translation="autor / artysta" kana="さっか" kanji="作家" romaji="sakka" type="noun" category="person">
+      <cases language="pl" nominative="autor / artysta" genitive="autora / artysty" dative="autorowi / artyście" accusative="autora / artystę" instrumental="autorem / artystą" locative="autorze / artyście" vocative="autorze / artysto" />
+    </word>
+    <word id="meisaku" translation="arcydzieło" kana="めいさく" kanji="名作" romaji="meisaku" type="noun" category="abstract">
+      <cases language="pl" nominative="arcydzieło" genitive="arcydzieła" dative="arcydziełu" accusative="arcydzieło" instrumental="arcydziełem" locative="arcydziele" vocative="arcydzieło" />
+    </word>
+    <word id="tsuugaku" translation="droga do szkoły / dojazd do szkoły" kana="つうがく" kanji="通学" romaji="tsuugaku" type="noun" category="abstract">
+      <cases language="pl" nominative="droga do szkoły / dojazd do szkoły" genitive="drogi do szkoły / dojazdu do szkoły" dative="drodze do szkoły / dojazdowi do szkoły" accusative="drogę do szkoły / dojazd do szkoły" instrumental="drogą do szkoły / dojazdem do szkoły" locative="drodze do szkoły / dojeździe do szkoły" vocative="drogo do szkoły / dojeździe do szkoły" />
+    </word>
+    <word id="sanpo" translation="spacer" kana="さんぽ" kanji="散歩" romaji="sanpo" type="noun" category="abstract">
+      <cases language="pl" nominative="spacer" genitive="spaceru" dative="spacerowi" accusative="spacer" instrumental="spacerem" locative="spacerze" vocative="spacerze" />
+    </word>
+    <word id="hodou" translation="chodnik" kana="ほどう" kanji="歩道" romaji="hodou" type="noun" category="place">
+      <cases language="pl" nominative="chodnik" genitive="chodnika" dative="chodnikowi" accusative="chodnik" instrumental="chodnikiem" locative="chodniku" vocative="chodniku" />
     </word>
   </words>
 </dictionary>

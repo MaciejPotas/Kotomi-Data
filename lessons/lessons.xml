@@ -18,5 +18,1192 @@
         <dictionary_ref dictionary="adjectives" word="toumei" />
       </word>
     </lesson>
+    <lesson id="ola_kanji_001_005" group="Ola" main="Kanji" name="1-5">
+      <word id="ola_kanji_001_005_001">
+        <dictionary_ref dictionary="nouns" word="hi_day" />
+      </word>
+      <word id="ola_kanji_001_005_002">
+        <dictionary_ref dictionary="nouns" word="hahanohi" />
+      </word>
+      <word id="ola_kanji_001_005_003">
+        <dictionary_ref dictionary="nouns" word="mikka" />
+      </word>
+      <word id="ola_kanji_001_005_004">
+        <dictionary_ref dictionary="nouns" word="tsuki" />
+      </word>
+      <word id="ola_kanji_001_005_005">
+        <dictionary_ref dictionary="nouns" word="nigatsu" />
+      </word>
+      <word id="ola_kanji_001_005_006">
+        <dictionary_ref dictionary="nouns" word="taiboku" />
+      </word>
+      <word id="ola_kanji_001_005_007">
+        <dictionary_ref dictionary="nouns" word="ki" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_006_010" group="Ola" main="Kanji" name="6-10">
+      <word id="ola_kanji_006_010_001">
+        <dictionary_ref dictionary="nouns" word="mon" />
+      </word>
+      <word id="ola_kanji_006_010_002">
+        <dictionary_ref dictionary="nouns" word="koumon" />
+      </word>
+      <word id="ola_kanji_006_010_003">
+        <dictionary_ref dictionary="nouns" word="hito" />
+      </word>
+      <word id="ola_kanji_006_010_004">
+        <dictionary_ref dictionary="nouns" word="nihonjin" />
+      </word>
+      <word id="ola_kanji_006_010_005">
+        <dictionary_ref dictionary="nouns" word="sannin" />
+      </word>
+      <word id="ola_kanji_006_010_006">
+        <dictionary_ref dictionary="nouns" word="kuchi" />
+      </word>
+      <word id="ola_kanji_006_010_007">
+        <dictionary_ref dictionary="nouns" word="iriguchi" />
+      </word>
+      <word id="ola_kanji_006_010_008">
+        <dictionary_ref dictionary="nouns" word="jinkou" />
+      </word>
+      <word id="ola_kanji_006_010_009">
+        <dictionary_ref dictionary="nouns" word="car" />
+      </word>
+      <word id="ola_kanji_006_010_010">
+        <dictionary_ref dictionary="nouns" word="hi_fire" />
+      </word>
+      <word id="ola_kanji_006_010_011">
+        <dictionary_ref dictionary="nouns" word="kazan" />
+      </word>
+      <word id="ola_kanji_006_010_012">
+        <dictionary_ref dictionary="nouns" word="kayoubi" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_011_015" group="Ola" main="Kanji" name="11-15">
+      <word id="ola_kanji_011_015_001">
+        <dictionary_ref dictionary="nouns" word="mimi" />
+      </word>
+      <word id="ola_kanji_011_015_002">
+        <dictionary_ref dictionary="nouns" word="me" />
+      </word>
+      <word id="ola_kanji_011_015_003">
+        <dictionary_ref dictionary="nouns" word="hitorime" />
+      </word>
+      <word id="ola_kanji_011_015_004">
+        <dictionary_ref dictionary="nouns" word="te" />
+      </word>
+      <word id="ola_kanji_011_015_005">
+        <dictionary_ref dictionary="nouns" word="kashu" />
+      </word>
+      <word id="ola_kanji_011_015_006">
+        <dictionary_ref dictionary="nouns" word="senshu" />
+      </word>
+      <word id="ola_kanji_011_015_007">
+        <dictionary_ref dictionary="nouns" word="ashi" />
+      </word>
+      <word id="ola_kanji_011_015_008">
+        <dictionary_ref dictionary="verbs" word="tariru" />
+      </word>
+      <word id="ola_kanji_011_015_009">
+        <dictionary_ref dictionary="verbs" word="tasu" />
+      </word>
+      <word id="ola_kanji_011_015_010">
+        <dictionary_ref dictionary="nouns" word="ushi" />
+      </word>
+      <word id="ola_kanji_011_015_011">
+        <dictionary_ref dictionary="nouns" word="gyuuniku" />
+      </word>
+      <word id="ola_kanji_011_015_012">
+        <dictionary_ref dictionary="nouns" word="gyuunyuu" />
+      </word>
+      <word id="ola_kanji_011_015_013">
+        <dictionary_ref dictionary="nouns" word="meue" />
+      </word>
+      <word id="ola_kanji_011_015_014">
+        <dictionary_ref dictionary="nouns" word="meshita" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_016_020" group="Ola" main="Kanji" name="16-20">
+      <word id="ola_kanji_016_020_001">
+        <dictionary_ref dictionary="nouns" word="uma" />
+      </word>
+      <word id="ola_kanji_016_020_002">
+        <dictionary_ref dictionary="nouns" word="basha" />
+      </word>
+      <word id="ola_kanji_016_020_003">
+        <dictionary_ref dictionary="nouns" word="tori" />
+      </word>
+      <word id="ola_kanji_016_020_004">
+        <dictionary_ref dictionary="nouns" word="hakuchou" />
+      </word>
+      <word id="ola_kanji_016_020_005">
+        <dictionary_ref dictionary="nouns" word="kingyo" />
+      </word>
+      <word id="ola_kanji_016_020_006">
+        <dictionary_ref dictionary="nouns" word="fubo" />
+      </word>
+      <word id="ola_kanji_016_020_007">
+        <dictionary_ref dictionary="nouns" word="baniku" />
+      </word>
+      <word id="ola_kanji_016_020_008">
+        <dictionary_ref dictionary="nouns" word="toriniku" />
+      </word>
+      <word id="ola_kanji_016_020_009">
+        <dictionary_ref dictionary="nouns" word="kotori" />
+      </word>
+      <word id="ola_kanji_016_020_010">
+        <dictionary_ref dictionary="nouns" word="ningyo" />
+      </word>
+      <word id="ola_kanji_016_020_011">
+        <dictionary_ref dictionary="nouns" word="sakana" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_036_040" group="Ola" main="Kanji" name="36-40">
+      <word id="ola_kanji_036_040_001">
+        <dictionary_ref dictionary="nouns" word="water" />
+      </word>
+      <word id="ola_kanji_036_040_002">
+        <dictionary_ref dictionary="nouns" word="suiyoubi" />
+      </word>
+      <word id="ola_kanji_036_040_003">
+        <dictionary_ref dictionary="nouns" word="okane" />
+      </word>
+      <word id="ola_kanji_036_040_004">
+        <dictionary_ref dictionary="nouns" word="kin" />
+      </word>
+      <word id="ola_kanji_036_040_005">
+        <dictionary_ref dictionary="nouns" word="tsuchi" />
+      </word>
+      <word id="ola_kanji_036_040_006">
+        <dictionary_ref dictionary="nouns" word="dosoku" />
+      </word>
+      <word id="ola_kanji_036_040_007">
+        <dictionary_ref dictionary="nouns" word="doyoubi" />
+      </word>
+      <word id="ola_kanji_036_040_008">
+        <dictionary_ref dictionary="nouns" word="ko" />
+      </word>
+      <word id="ola_kanji_036_040_009">
+        <dictionary_ref dictionary="nouns" word="otokonoko" />
+      </word>
+      <word id="ola_kanji_036_040_010">
+        <dictionary_ref dictionary="nouns" word="onnanoko" />
+      </word>
+      <word id="ola_kanji_036_040_011">
+        <dictionary_ref dictionary="nouns" word="danshi" />
+      </word>
+      <word id="ola_kanji_036_040_012">
+        <dictionary_ref dictionary="nouns" word="joshi" />
+      </word>
+      <word id="ola_kanji_036_040_013">
+        <dictionary_ref dictionary="nouns" word="onnanohito" />
+      </word>
+      <word id="ola_kanji_036_040_014">
+        <dictionary_ref dictionary="nouns" word="otokonohito" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_041_045" group="Ola" main="Kanji" name="41-45">
+      <word id="ola_kanji_041_045_001">
+        <dictionary_ref dictionary="verbs" word="manabu" />
+      </word>
+      <word id="ola_kanji_041_045_002">
+        <dictionary_ref dictionary="nouns" word="daigaku" />
+      </word>
+      <word id="ola_kanji_041_045_003">
+        <dictionary_ref dictionary="verbs" word="ikiru" />
+      </word>
+      <word id="ola_kanji_041_045_004">
+        <dictionary_ref dictionary="verbs" word="umareru" />
+      </word>
+      <word id="ola_kanji_041_045_005">
+        <dictionary_ref dictionary="nouns" word="gakusei" />
+      </word>
+      <word id="ola_kanji_041_045_006">
+        <dictionary_ref dictionary="nouns" word="jinsei" />
+      </word>
+      <word id="ola_kanji_041_045_007">
+        <dictionary_ref dictionary="nouns" word="teacher" />
+      </word>
+      <word id="ola_kanji_041_045_008">
+        <dictionary_ref dictionary="nouns" word="sengetsu" />
+      </word>
+      <word id="ola_kanji_041_045_009">
+        <dictionary_ref dictionary="nouns" word="saki" />
+      </word>
+      <word id="ola_kanji_041_045_010">
+        <dictionary_ref dictionary="nouns" word="senjitsu" />
+      </word>
+      <word id="ola_kanji_041_045_011">
+        <dictionary_ref dictionary="nouns" word="school" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_046_050" group="Ola" main="Kanji" name="46-50">
+      <word id="ola_kanji_046_050_001">
+        <dictionary_ref dictionary="verbs" word="agaru" />
+      </word>
+      <word id="ola_kanji_046_050_002">
+        <dictionary_ref dictionary="verbs" word="noboru" />
+      </word>
+      <word id="ola_kanji_046_050_003">
+        <dictionary_ref dictionary="adjectives" word="jouzu" />
+      </word>
+      <word id="ola_kanji_046_050_004">
+        <dictionary_ref dictionary="nouns" word="ichinichijuu" />
+      </word>
+      <word id="ola_kanji_046_050_005">
+        <dictionary_ref dictionary="nouns" word="nihonjuu" />
+      </word>
+      <word id="ola_kanji_046_050_006">
+        <dictionary_ref dictionary="verbs" word="sageru" />
+      </word>
+      <word id="ola_kanji_046_050_007">
+        <dictionary_ref dictionary="verbs" word="kudaru" />
+      </word>
+      <word id="ola_kanji_046_050_008">
+        <dictionary_ref dictionary="adjectives" word="heta" />
+      </word>
+      <word id="ola_kanji_046_050_009">
+        <dictionary_ref dictionary="nouns" word="gesui" />
+      </word>
+      <word id="ola_kanji_046_050_010">
+        <dictionary_ref dictionary="adjectives" word="ookii" />
+      </word>
+      <word id="ola_kanji_046_050_011">
+        <dictionary_ref dictionary="nouns" word="otona" />
+      </word>
+      <word id="ola_kanji_046_050_012">
+        <dictionary_ref dictionary="adjectives" word="chiisai" />
+      </word>
+      <word id="ola_kanji_046_050_013">
+        <dictionary_ref dictionary="nouns" word="shougakusei" />
+      </word>
+      <word id="ola_kanji_046_050_014">
+        <dictionary_ref dictionary="nouns" word="daishou" />
+      </word>
+      <word id="ola_kanji_046_050_015">
+        <dictionary_ref dictionary="nouns" word="ogawa" />
+      </word>
+      <word id="ola_kanji_046_050_016">
+        <dictionary_ref dictionary="verbs" word="ageru" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_051_055" group="Ola" main="Kanji" name="51-55">
+      <word id="ola_kanji_051_055_001">
+        <dictionary_ref dictionary="nouns" word="migite" />
+      </word>
+      <word id="ola_kanji_051_055_002">
+        <dictionary_ref dictionary="nouns" word="migime" />
+      </word>
+      <word id="ola_kanji_051_055_003">
+        <dictionary_ref dictionary="nouns" word="hidariashi" />
+      </word>
+      <word id="ola_kanji_051_055_004">
+        <dictionary_ref dictionary="nouns" word="hidarimimi" />
+      </word>
+      <word id="ola_kanji_051_055_005">
+        <dictionary_ref dictionary="nouns" word="sayuu" />
+      </word>
+      <word id="ola_kanji_051_055_006">
+        <dictionary_ref dictionary="nouns" word="honjitsu" />
+      </word>
+      <word id="ola_kanji_051_055_007">
+        <dictionary_ref dictionary="adjectives" word="ooi" />
+      </word>
+      <word id="ola_kanji_051_055_008">
+        <dictionary_ref dictionary="adjectives" word="sukunai" />
+      </word>
+      <word id="ola_kanji_051_055_009">
+        <dictionary_ref dictionary="nouns" word="sukoshi" />
+      </word>
+      <word id="ola_kanji_051_055_010">
+        <dictionary_ref dictionary="nouns" word="tashou" />
+      </word>
+      <word id="ola_kanji_051_055_011">
+        <dictionary_ref dictionary="nouns" word="shounen" />
+      </word>
+      <word id="ola_kanji_051_055_012">
+        <dictionary_ref dictionary="nouns" word="shoujo" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_056_060" group="Ola" main="Kanji" name="56-60">
+      <word id="ola_kanji_056_060_001">
+        <dictionary_ref dictionary="verbs" word="yasumu" />
+      </word>
+      <word id="ola_kanji_056_060_002">
+        <dictionary_ref dictionary="nouns" word="yasumi" />
+      </word>
+      <word id="ola_kanji_056_060_003">
+        <dictionary_ref dictionary="nouns" word="kyuujitsu" />
+      </word>
+      <word id="ola_kanji_056_060_004">
+        <dictionary_ref dictionary="nouns" word="toki" />
+      </word>
+      <word id="ola_kanji_056_060_005">
+        <dictionary_ref dictionary="nouns" word="tokidoki" />
+      </word>
+      <word id="ola_kanji_056_060_006">
+        <dictionary_ref dictionary="nouns" word="aida" />
+      </word>
+      <word id="ola_kanji_056_060_007">
+        <dictionary_ref dictionary="nouns" word="jikan" />
+      </word>
+      <word id="ola_kanji_056_060_008">
+        <dictionary_ref dictionary="nouns" word="ningen" />
+      </word>
+      <word id="ola_kanji_056_060_009">
+        <dictionary_ref dictionary="nouns" word="chuukan" />
+      </word>
+      <word id="ola_kanji_056_060_010">
+        <dictionary_ref dictionary="verbs" word="wakaru" />
+      </word>
+      <word id="ola_kanji_056_060_011">
+        <dictionary_ref dictionary="verbs" word="wakeru" />
+      </word>
+      <word id="ola_kanji_056_060_012">
+        <dictionary_ref dictionary="adjectives" word="juubun" />
+      </word>
+      <word id="ola_kanji_056_060_013">
+        <dictionary_ref dictionary="nouns" word="han" />
+      </word>
+      <word id="ola_kanji_056_060_014">
+        <dictionary_ref dictionary="nouns" word="hannichi" />
+      </word>
+      <word id="ola_kanji_056_060_015">
+        <dictionary_ref dictionary="nouns" word="hantoshi" />
+      </word>
+      <word id="ola_kanji_056_060_016">
+        <dictionary_ref dictionary="nouns" word="zenhan" />
+      </word>
+      <word id="ola_kanji_056_060_017">
+        <dictionary_ref dictionary="nouns" word="kouhan" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_061_065" group="Ola" main="Kanji" name="61-65">
+      <word id="ola_kanji_061_065_001">
+        <dictionary_ref dictionary="nouns" word="ima" />
+      </word>
+      <word id="ola_kanji_061_065_002">
+        <dictionary_ref dictionary="nouns" word="kongetsu" />
+      </word>
+      <word id="ola_kanji_061_065_003">
+        <dictionary_ref dictionary="nouns" word="kyou" />
+      </word>
+      <word id="ola_kanji_061_065_004">
+        <dictionary_ref dictionary="nouns" word="kotoshi" />
+      </word>
+      <word id="ola_kanji_061_065_005">
+        <dictionary_ref dictionary="nouns" word="mainichi" />
+      </word>
+      <word id="ola_kanji_061_065_006">
+        <dictionary_ref dictionary="nouns" word="maitoshi" />
+      </word>
+      <word id="ola_kanji_061_065_007">
+        <dictionary_ref dictionary="nouns" word="maitsuki" />
+      </word>
+      <word id="ola_kanji_061_065_008">
+        <dictionary_ref dictionary="nouns" word="gozen" />
+      </word>
+      <word id="ola_kanji_061_065_009">
+        <dictionary_ref dictionary="nouns" word="gogo" />
+      </word>
+      <word id="ola_kanji_061_065_010">
+        <dictionary_ref dictionary="nouns" word="mae" />
+      </word>
+      <word id="ola_kanji_061_065_011">
+        <dictionary_ref dictionary="nouns" word="zenjitsu" />
+      </word>
+      <word id="ola_kanji_061_065_012">
+        <dictionary_ref dictionary="nouns" word="ninenmae" />
+      </word>
+      <word id="ola_kanji_061_065_013">
+        <dictionary_ref dictionary="nouns" word="atode" />
+      </word>
+      <word id="ola_kanji_061_065_014">
+        <dictionary_ref dictionary="nouns" word="ushiro" />
+      </word>
+      <word id="ola_kanji_061_065_015">
+        <dictionary_ref dictionary="nouns" word="zengo" />
+      </word>
+      <word id="ola_kanji_061_065_016">
+        <dictionary_ref dictionary="nouns" word="kongo" />
+      </word>
+      <word id="ola_kanji_061_065_017">
+        <dictionary_ref dictionary="nouns" word="ninengo" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_066_070" group="Ola" main="Kanji" name="66-70">
+      <word id="ola_kanji_066_070_001">
+        <dictionary_ref dictionary="adjectives" word="akarui" />
+      </word>
+      <word id="ola_kanji_066_070_002">
+        <dictionary_ref dictionary="verbs" word="akeru_dawn" />
+      </word>
+      <word id="ola_kanji_066_070_003">
+        <dictionary_ref dictionary="nouns" word="ashita" />
+      </word>
+      <word id="ola_kanji_066_070_004">
+        <dictionary_ref dictionary="adjectives" word="suki" />
+      </word>
+      <word id="ola_kanji_066_070_005">
+        <dictionary_ref dictionary="nouns" word="konomi" />
+      </word>
+      <word id="ola_kanji_066_070_006">
+        <dictionary_ref dictionary="nouns" word="nani" />
+      </word>
+      <word id="ola_kanji_066_070_007">
+        <dictionary_ref dictionary="nouns" word="nannin" />
+      </word>
+      <word id="ola_kanji_066_070_008">
+        <dictionary_ref dictionary="nouns" word="nannen" />
+      </word>
+      <word id="ola_kanji_066_070_009">
+        <dictionary_ref dictionary="nouns" word="nande" />
+      </word>
+      <word id="ola_kanji_066_070_010">
+        <dictionary_ref dictionary="nouns" word="nanpun" />
+      </word>
+      <word id="ola_kanji_066_070_011">
+        <dictionary_ref dictionary="verbs" word="kau" />
+      </word>
+      <word id="ola_kanji_066_070_012">
+        <dictionary_ref dictionary="nouns" word="karada" />
+      </word>
+      <word id="ola_kanji_066_070_013">
+        <dictionary_ref dictionary="nouns" word="tairyoku" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_071_075" group="Ola" main="Kanji" name="71-75">
+      <word id="ola_kanji_071_075_001">
+        <dictionary_ref dictionary="nouns" word="soto" />
+      </word>
+      <word id="ola_kanji_071_075_002">
+        <dictionary_ref dictionary="verbs" word="hazusu" />
+      </word>
+      <word id="ola_kanji_071_075_003">
+        <dictionary_ref dictionary="nouns" word="higashi" />
+      </word>
+      <word id="ola_kanji_071_075_004">
+        <dictionary_ref dictionary="nouns" word="higashiguchi" />
+      </word>
+      <word id="ola_kanji_071_075_005">
+        <dictionary_ref dictionary="nouns" word="nishi" />
+      </word>
+      <word id="ola_kanji_071_075_006">
+        <dictionary_ref dictionary="nouns" word="nishiguchi" />
+      </word>
+      <word id="ola_kanji_071_075_007">
+        <dictionary_ref dictionary="nouns" word="minami" />
+      </word>
+      <word id="ola_kanji_071_075_008">
+        <dictionary_ref dictionary="nouns" word="minamiguchi" />
+      </word>
+      <word id="ola_kanji_071_075_009">
+        <dictionary_ref dictionary="nouns" word="kitaguchi" />
+      </word>
+      <word id="ola_kanji_071_075_010">
+        <dictionary_ref dictionary="nouns" word="kita" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_076_080" group="Ola" main="Kanji" name="76-80">
+      <word id="ola_kanji_076_080_001">
+        <dictionary_ref dictionary="verbs" word="deru" />
+      </word>
+      <word id="ola_kanji_076_080_002">
+        <dictionary_ref dictionary="verbs" word="dasu" />
+      </word>
+      <word id="ola_kanji_076_080_003">
+        <dictionary_ref dictionary="verbs" word="dekakeru" />
+      </word>
+      <word id="ola_kanji_076_080_004">
+        <dictionary_ref dictionary="verbs" word="hairu" />
+      </word>
+      <word id="ola_kanji_076_080_005">
+        <dictionary_ref dictionary="verbs" word="ireru" />
+      </word>
+      <word id="ola_kanji_076_080_006">
+        <dictionary_ref dictionary="verbs" word="nyuugakusuru" />
+      </word>
+      <word id="ola_kanji_076_080_007">
+        <dictionary_ref dictionary="verbs" word="iku" />
+      </word>
+      <word id="ola_kanji_076_080_008">
+        <dictionary_ref dictionary="verbs" word="okonau" />
+      </word>
+      <word id="ola_kanji_076_080_009">
+        <dictionary_ref dictionary="nouns" word="sangyoume" />
+      </word>
+      <word id="ola_kanji_076_080_010">
+        <dictionary_ref dictionary="verbs" word="kuru" />
+      </word>
+      <word id="ola_kanji_076_080_011">
+        <dictionary_ref dictionary="nouns" word="rainen" />
+      </word>
+      <word id="ola_kanji_076_080_012">
+        <dictionary_ref dictionary="nouns" word="rainichi" />
+      </word>
+      <word id="ola_kanji_076_080_013">
+        <dictionary_ref dictionary="verbs" word="taberu" />
+      </word>
+      <word id="ola_kanji_076_080_014">
+        <dictionary_ref dictionary="verbs" word="kuu" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_081_085" group="Ola" main="Kanji" name="81-85">
+      <word id="ola_kanji_081_085_001">
+        <dictionary_ref dictionary="verbs" word="iu" />
+      </word>
+      <word id="ola_kanji_081_085_002">
+        <dictionary_ref dictionary="verbs" word="miru" />
+      </word>
+      <word id="ola_kanji_081_085_003">
+        <dictionary_ref dictionary="verbs" word="miseru" />
+      </word>
+      <word id="ola_kanji_081_085_004">
+        <dictionary_ref dictionary="verbs" word="kengakusuru" />
+      </word>
+      <word id="ola_kanji_081_085_005">
+        <dictionary_ref dictionary="verbs" word="tatsu" />
+      </word>
+      <word id="ola_kanji_081_085_006">
+        <dictionary_ref dictionary="nouns" word="shiritsu" />
+      </word>
+      <word id="ola_kanji_081_085_007">
+        <dictionary_ref dictionary="verbs" word="hanasu" />
+      </word>
+      <word id="ola_kanji_081_085_008">
+        <dictionary_ref dictionary="nouns" word="hanashi" />
+      </word>
+      <word id="ola_kanji_081_085_009">
+        <dictionary_ref dictionary="verbs" word="kiku" />
+      </word>
+      <word id="ola_kanji_081_085_010">
+        <dictionary_ref dictionary="verbs" word="kikoeru" />
+      </word>
+      <word id="ola_kanji_081_085_011">
+        <dictionary_ref dictionary="nouns" word="kenbun" />
+      </word>
+      <word id="ola_kanji_081_085_012">
+        <dictionary_ref dictionary="nouns" word="gengo" />
+      </word>
+      <word id="ola_kanji_081_085_013">
+        <dictionary_ref dictionary="nouns" word="kokuritsu" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_086_090" group="Ola" main="Kanji" name="86-90">
+      <word id="ola_kanji_086_090_001">
+        <dictionary_ref dictionary="adjectives" word="atarashii" />
+      </word>
+      <word id="ola_kanji_086_090_002">
+        <dictionary_ref dictionary="adjectives" word="furui" />
+      </word>
+      <word id="ola_kanji_086_090_003">
+        <dictionary_ref dictionary="adjectives" word="takai" />
+      </word>
+      <word id="ola_kanji_086_090_004">
+        <dictionary_ref dictionary="adjectives" word="yasui" />
+      </word>
+      <word id="ola_kanji_086_090_005">
+        <dictionary_ref dictionary="adjectives" word="nagai" />
+      </word>
+      <word id="ola_kanji_086_090_006">
+        <dictionary_ref dictionary="nouns" word="shinsha" />
+      </word>
+      <word id="ola_kanji_086_090_007">
+        <dictionary_ref dictionary="nouns" word="shinnen" />
+      </word>
+      <word id="ola_kanji_086_090_008">
+        <dictionary_ref dictionary="nouns" word="chuukosha" />
+      </word>
+      <word id="ola_kanji_086_090_009">
+        <dictionary_ref dictionary="nouns" word="furuhon" />
+      </word>
+      <word id="ola_kanji_086_090_010">
+        <dictionary_ref dictionary="nouns" word="endaka" />
+      </word>
+      <word id="ola_kanji_086_090_011">
+        <dictionary_ref dictionary="nouns" word="enyasu" />
+      </word>
+      <word id="ola_kanji_086_090_012">
+        <dictionary_ref dictionary="nouns" word="nagaiki" />
+      </word>
+      <word id="ola_kanji_086_090_013">
+        <dictionary_ref dictionary="nouns" word="gakuchou" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_091_095" group="Ola" main="Kanji" name="91-95">
+      <word id="ola_kanji_091_095_001">
+        <dictionary_ref dictionary="adjectives" word="shiroi" />
+      </word>
+      <word id="ola_kanji_091_095_002">
+        <dictionary_ref dictionary="nouns" word="shiro" />
+      </word>
+      <word id="ola_kanji_091_095_003">
+        <dictionary_ref dictionary="adjectives" word="yuumei" />
+      </word>
+      <word id="ola_kanji_091_095_004">
+        <dictionary_ref dictionary="nouns" word="mise" />
+      </word>
+      <word id="ola_kanji_091_095_005">
+        <dictionary_ref dictionary="nouns" word="michi" />
+      </word>
+      <word id="ola_kanji_091_095_006">
+        <dictionary_ref dictionary="nouns" word="station" />
+      </word>
+      <word id="ola_kanji_091_095_007">
+        <dictionary_ref dictionary="adjectives" word="meihaku" />
+      </word>
+      <word id="ola_kanji_091_095_008">
+        <dictionary_ref dictionary="nouns" word="honten" />
+      </word>
+      <word id="ola_kanji_091_095_009">
+        <dictionary_ref dictionary="nouns" word="shadou" />
+      </word>
+      <word id="ola_kanji_091_095_010">
+        <dictionary_ref dictionary="nouns" word="ekichou" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_096_100" group="Ola" main="Kanji" name="96-100">
+      <word id="ola_kanji_096_100_001">
+        <dictionary_ref dictionary="nouns" word="amanogawa" />
+      </word>
+      <word id="ola_kanji_096_100_002">
+        <dictionary_ref dictionary="nouns" word="akijikan" />
+      </word>
+      <word id="ola_kanji_096_100_003">
+        <dictionary_ref dictionary="nouns" word="hanami" />
+      </word>
+      <word id="ola_kanji_096_100_004">
+        <dictionary_ref dictionary="nouns" word="ame" />
+      </word>
+      <word id="ola_kanji_096_100_005">
+        <dictionary_ref dictionary="nouns" word="ooame" />
+      </word>
+      <word id="ola_kanji_096_100_006">
+        <dictionary_ref dictionary="nouns" word="tengoku" />
+      </word>
+      <word id="ola_kanji_096_100_007">
+        <dictionary_ref dictionary="nouns" word="tenki" />
+      </word>
+      <word id="ola_kanji_096_100_008">
+        <dictionary_ref dictionary="adjectives" word="genki" />
+      </word>
+      <word id="ola_kanji_096_100_009">
+        <dictionary_ref dictionary="nouns" word="hana" />
+      </word>
+      <word id="ola_kanji_096_100_010">
+        <dictionary_ref dictionary="nouns" word="ikebana" />
+      </word>
+      <word id="ola_kanji_096_100_011">
+        <dictionary_ref dictionary="nouns" word="kibun" />
+      </word>
+      <word id="ola_kanji_096_100_012">
+        <dictionary_ref dictionary="nouns" word="kuuki" />
+      </word>
+      <word id="ola_kanji_096_100_013">
+        <dictionary_ref dictionary="nouns" word="kuukan" />
+      </word>
+      <word id="ola_kanji_096_100_014">
+        <dictionary_ref dictionary="nouns" word="sora" />
+      </word>
+      <word id="ola_kanji_096_100_015">
+        <dictionary_ref dictionary="nouns" word="karate" />
+      </word>
+      <word id="ola_kanji_096_100_016">
+        <dictionary_ref dictionary="nouns" word="kara" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_101_105" group="Ola" main="Kanji" name="101-105">
+      <word id="ola_kanji_101_105_001">
+        <dictionary_ref dictionary="nouns" word="asa" />
+      </word>
+      <word id="ola_kanji_101_105_002">
+        <dictionary_ref dictionary="nouns" word="asahi" />
+      </word>
+      <word id="ola_kanji_101_105_003">
+        <dictionary_ref dictionary="nouns" word="maiasa" />
+      </word>
+      <word id="ola_kanji_101_105_004">
+        <dictionary_ref dictionary="nouns" word="choushoku" />
+      </word>
+      <word id="ola_kanji_101_105_005">
+        <dictionary_ref dictionary="nouns" word="kesa" />
+      </word>
+      <word id="ola_kanji_101_105_006">
+        <dictionary_ref dictionary="nouns" word="hiru" />
+      </word>
+      <word id="ola_kanji_101_105_007">
+        <dictionary_ref dictionary="nouns" word="hiruyasumi" />
+      </word>
+      <word id="ola_kanji_101_105_008">
+        <dictionary_ref dictionary="nouns" word="chuushoku" />
+      </word>
+      <word id="ola_kanji_101_105_009">
+        <dictionary_ref dictionary="nouns" word="hiruma" />
+      </word>
+      <word id="ola_kanji_101_105_010">
+        <dictionary_ref dictionary="nouns" word="konban" />
+      </word>
+      <word id="ola_kanji_101_105_011">
+        <dictionary_ref dictionary="nouns" word="maiban" />
+      </word>
+      <word id="ola_kanji_101_105_012">
+        <dictionary_ref dictionary="nouns" word="asaban" />
+      </word>
+      <word id="ola_kanji_101_105_013">
+        <dictionary_ref dictionary="nouns" word="youbi" />
+      </word>
+      <word id="ola_kanji_101_105_014">
+        <dictionary_ref dictionary="nouns" word="raishuu" />
+      </word>
+      <word id="ola_kanji_101_105_015">
+        <dictionary_ref dictionary="nouns" word="shuu" />
+      </word>
+      <word id="ola_kanji_101_105_016">
+        <dictionary_ref dictionary="nouns" word="senshuu" />
+      </word>
+      <word id="ola_kanji_101_105_017">
+        <dictionary_ref dictionary="nouns" word="maishuu" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_106_110" group="Ola" main="Kanji" name="106-110">
+      <word id="ola_kanji_106_110_001">
+        <dictionary_ref dictionary="nouns" word="namae" />
+      </word>
+      <word id="ola_kanji_106_110_002">
+        <dictionary_ref dictionary="nouns" word="juumei" />
+      </word>
+      <word id="ola_kanji_106_110_003">
+        <dictionary_ref dictionary="nouns" word="meijin" />
+      </word>
+      <word id="ola_kanji_106_110_004">
+        <dictionary_ref dictionary="nouns" word="friend" />
+      </word>
+      <word id="ola_kanji_106_110_005">
+        <dictionary_ref dictionary="nouns" word="yuujin" />
+      </word>
+      <word id="ola_kanji_106_110_006">
+        <dictionary_ref dictionary="nouns" word="yuukou" />
+      </word>
+      <word id="ola_kanji_106_110_007">
+        <dictionary_ref dictionary="nouns" word="kuni" />
+      </word>
+      <word id="ola_kanji_106_110_008">
+        <dictionary_ref dictionary="nouns" word="chuugoku" />
+      </word>
+      <word id="ola_kanji_106_110_009">
+        <dictionary_ref dictionary="nouns" word="kokugo" />
+      </word>
+      <word id="ola_kanji_106_110_010">
+        <dictionary_ref dictionary="nouns" word="gaikokugo" />
+      </word>
+      <word id="ola_kanji_106_110_011">
+        <dictionary_ref dictionary="verbs" word="kataru" />
+      </word>
+      <word id="ola_kanji_106_110_012">
+        <dictionary_ref dictionary="nouns" word="eigo" />
+      </word>
+      <word id="ola_kanji_106_110_013">
+        <dictionary_ref dictionary="nouns" word="eikoku" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_111_115" group="Ola" main="Kanji" name="111-115">
+      <word id="ola_kanji_111_115_001">
+        <dictionary_ref dictionary="verbs" word="au" />
+      </word>
+      <word id="ola_kanji_111_115_002">
+        <dictionary_ref dictionary="verbs" word="nomu" />
+      </word>
+      <word id="ola_kanji_111_115_003">
+        <dictionary_ref dictionary="nouns" word="kaiwa" />
+      </word>
+      <word id="ola_kanji_111_115_004">
+        <dictionary_ref dictionary="nouns" word="nomimizu" />
+      </word>
+      <word id="ola_kanji_111_115_005">
+        <dictionary_ref dictionary="nouns" word="nomimono" />
+      </word>
+      <word id="ola_kanji_111_115_006">
+        <dictionary_ref dictionary="nouns" word="denki" />
+      </word>
+      <word id="ola_kanji_111_115_007">
+        <dictionary_ref dictionary="nouns" word="denwa" />
+      </word>
+      <word id="ola_kanji_111_115_008">
+        <dictionary_ref dictionary="nouns" word="densha" />
+      </word>
+      <word id="ola_kanji_111_115_009">
+        <dictionary_ref dictionary="verbs" word="yomu" />
+      </word>
+      <word id="ola_kanji_111_115_010">
+        <dictionary_ref dictionary="nouns" word="yomimono" />
+      </word>
+      <word id="ola_kanji_111_115_011">
+        <dictionary_ref dictionary="verbs" word="kaku" />
+      </word>
+      <word id="ola_kanji_111_115_012">
+        <dictionary_ref dictionary="nouns" word="shitagaki" />
+      </word>
+      <word id="ola_kanji_111_115_013">
+        <dictionary_ref dictionary="nouns" word="shodou" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_116_120" group="Ola" main="Kanji" name="116-120">
+      <word id="ola_kanji_116_120_001">
+        <dictionary_ref dictionary="nouns" word="motono" />
+      </word>
+      <word id="ola_kanji_116_120_002">
+        <dictionary_ref dictionary="adjectives" word="genki" />
+      </word>
+      <word id="ola_kanji_116_120_003">
+        <dictionary_ref dictionary="nouns" word="ganjitsu" />
+      </word>
+      <word id="ola_kanji_116_120_004">
+        <dictionary_ref dictionary="nouns" word="moto" />
+      </word>
+      <word id="ola_kanji_116_120_005">
+        <dictionary_ref dictionary="nouns" word="chikara" />
+      </word>
+      <word id="ola_kanji_116_120_006">
+        <dictionary_ref dictionary="nouns" word="ta" />
+      </word>
+      <word id="ola_kanji_116_120_007">
+        <dictionary_ref dictionary="nouns" word="tanaka" />
+      </word>
+      <word id="ola_kanji_116_120_008">
+        <dictionary_ref dictionary="nouns" word="oota" />
+      </word>
+      <word id="ola_kanji_116_120_009">
+        <dictionary_ref dictionary="nouns" word="yamada" />
+      </word>
+      <word id="ola_kanji_116_120_010">
+        <dictionary_ref dictionary="nouns" word="ishi" />
+      </word>
+      <word id="ola_kanji_116_120_011">
+        <dictionary_ref dictionary="nouns" word="ito" />
+      </word>
+      <word id="ola_kanji_116_120_012">
+        <dictionary_ref dictionary="nouns" word="kumonoito" />
+      </word>
+      <word id="ola_kanji_116_120_013">
+        <dictionary_ref dictionary="nouns" word="kiito" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_121_125" group="Ola" main="Kanji" name="121-125">
+      <word id="ola_kanji_121_125_001">
+        <dictionary_ref dictionary="nouns" word="ie" />
+      </word>
+      <word id="ola_kanji_121_125_002">
+        <dictionary_ref dictionary="nouns" word="uchi" />
+      </word>
+      <word id="ola_kanji_121_125_003">
+        <dictionary_ref dictionary="nouns" word="kanai" />
+      </word>
+      <word id="ola_kanji_121_125_004">
+        <dictionary_ref dictionary="nouns" word="kokoro" />
+      </word>
+      <word id="ola_kanji_121_125_005">
+        <dictionary_ref dictionary="nouns" word="chuushin" />
+      </word>
+      <word id="ola_kanji_121_125_006">
+        <dictionary_ref dictionary="adjectives" word="tadashii" />
+      </word>
+      <word id="ola_kanji_121_125_007">
+        <dictionary_ref dictionary="nouns" word="shoutai" />
+      </word>
+      <word id="ola_kanji_121_125_008">
+        <dictionary_ref dictionary="nouns" word="yarikata" />
+      </word>
+      <word id="ola_kanji_121_125_009">
+        <dictionary_ref dictionary="nouns" word="hou" />
+      </word>
+      <word id="ola_kanji_121_125_010">
+        <dictionary_ref dictionary="nouns" word="hougen" />
+      </word>
+      <word id="ola_kanji_121_125_011">
+        <dictionary_ref dictionary="nouns" word="zenpou" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_126_130" group="Ola" main="Kanji" name="126-130">
+      <word id="ola_kanji_126_130_001">
+        <dictionary_ref dictionary="nouns" word="shigoto" />
+      </word>
+      <word id="ola_kanji_126_130_002">
+        <dictionary_ref dictionary="nouns" word="shi" />
+      </word>
+      <word id="ola_kanji_126_130_003">
+        <dictionary_ref dictionary="nouns" word="shikataganai" />
+      </word>
+      <word id="ola_kanji_126_130_004">
+        <dictionary_ref dictionary="verbs" word="shiageru" />
+      </word>
+      <word id="ola_kanji_126_130_005">
+        <dictionary_ref dictionary="nouns" word="koto" />
+      </word>
+      <word id="ola_kanji_126_130_006">
+        <dictionary_ref dictionary="nouns" word="kaji" />
+      </word>
+      <word id="ola_kanji_126_130_007">
+        <dictionary_ref dictionary="nouns" word="meal" />
+      </word>
+      <word id="ola_kanji_126_130_008">
+        <dictionary_ref dictionary="adjectives" word="daiji" />
+      </word>
+      <word id="ola_kanji_126_130_009">
+        <dictionary_ref dictionary="nouns" word="dekigoto" />
+      </word>
+      <word id="ola_kanji_126_130_010">
+        <dictionary_ref dictionary="nouns" word="yashiro" />
+      </word>
+      <word id="ola_kanji_126_130_011">
+        <dictionary_ref dictionary="nouns" word="kaisha" />
+      </word>
+      <word id="ola_kanji_126_130_012">
+        <dictionary_ref dictionary="nouns" word="shakai" />
+      </word>
+      <word id="ola_kanji_126_130_013">
+        <dictionary_ref dictionary="nouns" word="shachou" />
+      </word>
+      <word id="ola_kanji_126_130_014">
+        <dictionary_ref dictionary="nouns" word="tochi" />
+      </word>
+      <word id="ola_kanji_126_130_015">
+        <dictionary_ref dictionary="nouns" word="chihou" />
+      </word>
+      <word id="ola_kanji_126_130_016">
+        <dictionary_ref dictionary="nouns" word="tetsu" />
+      </word>
+      <word id="ola_kanji_126_130_017">
+        <dictionary_ref dictionary="nouns" word="chikatetsu" />
+      </word>
+      <word id="ola_kanji_126_130_018">
+        <dictionary_ref dictionary="nouns" word="tetsudou" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_131_135" group="Ola" main="Kanji" name="131-135">
+      <word id="ola_kanji_131_135_001">
+        <dictionary_ref dictionary="nouns" word="kouji" />
+      </word>
+      <word id="ola_kanji_131_135_002">
+        <dictionary_ref dictionary="nouns" word="daiku" />
+      </word>
+      <word id="ola_kanji_131_135_003">
+        <dictionary_ref dictionary="nouns" word="koujou" />
+      </word>
+      <word id="ola_kanji_131_135_004">
+        <dictionary_ref dictionary="nouns" word="kaijou_venue" />
+      </word>
+      <word id="ola_kanji_131_135_005">
+        <dictionary_ref dictionary="nouns" word="mono" />
+      </word>
+      <word id="ola_kanji_131_135_006">
+        <dictionary_ref dictionary="nouns" word="seibutsu" />
+      </word>
+      <word id="ola_kanji_131_135_007">
+        <dictionary_ref dictionary="nouns" word="bun" />
+      </word>
+      <word id="ola_kanji_131_135_008">
+        <dictionary_ref dictionary="nouns" word="bunmei" />
+      </word>
+      <word id="ola_kanji_131_135_009">
+        <dictionary_ref dictionary="nouns" word="ji" />
+      </word>
+      <word id="ola_kanji_131_135_010">
+        <dictionary_ref dictionary="nouns" word="moji" />
+      </word>
+      <word id="ola_kanji_131_135_011">
+        <dictionary_ref dictionary="nouns" word="myouji" />
+      </word>
+      <word id="ola_kanji_131_135_012">
+        <dictionary_ref dictionary="nouns" word="sakubun" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_136_140" group="Ola" main="Kanji" name="136-140">
+      <word id="ola_kanji_136_140_001">
+        <dictionary_ref dictionary="nouns" word="haru" />
+      </word>
+      <word id="ola_kanji_136_140_002">
+        <dictionary_ref dictionary="nouns" word="harukaze" />
+      </word>
+      <word id="ola_kanji_136_140_003">
+        <dictionary_ref dictionary="nouns" word="shunbun" />
+      </word>
+      <word id="ola_kanji_136_140_004">
+        <dictionary_ref dictionary="nouns" word="natsu" />
+      </word>
+      <word id="ola_kanji_136_140_005">
+        <dictionary_ref dictionary="nouns" word="natsuyasumi" />
+      </word>
+      <word id="ola_kanji_136_140_006">
+        <dictionary_ref dictionary="nouns" word="aki" />
+      </word>
+      <word id="ola_kanji_136_140_007">
+        <dictionary_ref dictionary="nouns" word="akikaze" />
+      </word>
+      <word id="ola_kanji_136_140_008">
+        <dictionary_ref dictionary="nouns" word="shuubun" />
+      </word>
+      <word id="ola_kanji_136_140_009">
+        <dictionary_ref dictionary="nouns" word="fuyu" />
+      </word>
+      <word id="ola_kanji_136_140_010">
+        <dictionary_ref dictionary="nouns" word="shunkashuutou" />
+      </word>
+      <word id="ola_kanji_136_140_011">
+        <dictionary_ref dictionary="nouns" word="kaze" />
+      </word>
+      <word id="ola_kanji_136_140_012">
+        <dictionary_ref dictionary="nouns" word="kitakaze" />
+      </word>
+      <word id="ola_kanji_136_140_013">
+        <dictionary_ref dictionary="nouns" word="fuuu" />
+      </word>
+      <word id="ola_kanji_136_140_014">
+        <dictionary_ref dictionary="nouns" word="fuuryoku" />
+      </word>
+      <word id="ola_kanji_136_140_015">
+        <dictionary_ref dictionary="nouns" word="fuusui" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_141_145" group="Ola" main="Kanji" name="141-145">
+      <word id="ola_kanji_141_145_001">
+        <dictionary_ref dictionary="nouns" word="umi" />
+      </word>
+      <word id="ola_kanji_141_145_002">
+        <dictionary_ref dictionary="nouns" word="nihonkai" />
+      </word>
+      <word id="ola_kanji_141_145_003">
+        <dictionary_ref dictionary="nouns" word="chichuukai" />
+      </word>
+      <word id="ola_kanji_141_145_004">
+        <dictionary_ref dictionary="nouns" word="hokkaidou" />
+      </word>
+      <word id="ola_kanji_141_145_005">
+        <dictionary_ref dictionary="nouns" word="kaigai" />
+      </word>
+      <word id="ola_kanji_141_145_006">
+        <dictionary_ref dictionary="nouns" word="morita" />
+      </word>
+      <word id="ola_kanji_141_145_007">
+        <dictionary_ref dictionary="nouns" word="kaijou_sea" />
+      </word>
+      <word id="ola_kanji_141_145_008">
+        <dictionary_ref dictionary="nouns" word="kaisui" />
+      </word>
+      <word id="ola_kanji_141_145_009">
+        <dictionary_ref dictionary="adjectives" word="atsui" />
+      </word>
+      <word id="ola_kanji_141_145_010">
+        <dictionary_ref dictionary="adjectives" word="samui" />
+      </word>
+      <word id="ola_kanji_141_145_011">
+        <dictionary_ref dictionary="nouns" word="hayashi" />
+      </word>
+      <word id="ola_kanji_141_145_012">
+        <dictionary_ref dictionary="nouns" word="kobayashi" />
+      </word>
+      <word id="ola_kanji_141_145_013">
+        <dictionary_ref dictionary="nouns" word="sanrin" />
+      </word>
+      <word id="ola_kanji_141_145_014">
+        <dictionary_ref dictionary="nouns" word="mori" />
+      </word>
+      <word id="ola_kanji_141_145_015">
+        <dictionary_ref dictionary="nouns" word="shinrin" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_146_150" group="Ola" main="Kanji" name="146-150">
+      <word id="ola_kanji_146_150_001">
+        <dictionary_ref dictionary="verbs" word="motsu" />
+      </word>
+      <word id="ola_kanji_146_150_002">
+        <dictionary_ref dictionary="verbs" word="mochiageru" />
+      </word>
+      <word id="ola_kanji_146_150_003">
+        <dictionary_ref dictionary="nouns" word="kimochi" />
+      </word>
+      <word id="ola_kanji_146_150_004">
+        <dictionary_ref dictionary="nouns" word="nagamochi" />
+      </word>
+      <word id="ola_kanji_146_150_005">
+        <dictionary_ref dictionary="nouns" word="mochimono" />
+      </word>
+      <word id="ola_kanji_146_150_006">
+        <dictionary_ref dictionary="verbs" word="omou" />
+      </word>
+      <word id="ola_kanji_146_150_007">
+        <dictionary_ref dictionary="verbs" word="omoidasu" />
+      </word>
+      <word id="ola_kanji_146_150_008">
+        <dictionary_ref dictionary="nouns" word="omoide" />
+      </word>
+      <word id="ola_kanji_146_150_009">
+        <dictionary_ref dictionary="verbs" word="kaeru" />
+      </word>
+      <word id="ola_kanji_146_150_010">
+        <dictionary_ref dictionary="verbs" word="kikokusuru" />
+      </word>
+      <word id="ola_kanji_146_150_011">
+        <dictionary_ref dictionary="verbs" word="hiraku" />
+      </word>
+      <word id="ola_kanji_146_150_012">
+        <dictionary_ref dictionary="verbs" word="akeru" />
+      </word>
+      <word id="ola_kanji_146_150_013">
+        <dictionary_ref dictionary="verbs" word="aku" />
+      </word>
+      <word id="ola_kanji_146_150_014">
+        <dictionary_ref dictionary="verbs" word="tojiru" />
+      </word>
+      <word id="ola_kanji_146_150_015">
+        <dictionary_ref dictionary="verbs" word="shimeru" />
+      </word>
+      <word id="ola_kanji_146_150_016">
+        <dictionary_ref dictionary="verbs" word="shimaru" />
+      </word>
+      <word id="ola_kanji_146_150_017">
+        <dictionary_ref dictionary="nouns" word="kaihei" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_151_155" group="Ola" main="Kanji" name="151-155">
+      <word id="ola_kanji_151_155_001">
+        <dictionary_ref dictionary="verbs" word="oshieru" />
+      </word>
+      <word id="ola_kanji_151_155_002">
+        <dictionary_ref dictionary="verbs" word="tsukuru" />
+      </word>
+      <word id="ola_kanji_151_155_003">
+        <dictionary_ref dictionary="nouns" word="tezukuri" />
+      </word>
+      <word id="ola_kanji_151_155_004">
+        <dictionary_ref dictionary="nouns" word="sakka" />
+      </word>
+      <word id="ola_kanji_151_155_005">
+        <dictionary_ref dictionary="nouns" word="meisaku" />
+      </word>
+      <word id="ola_kanji_151_155_006">
+        <dictionary_ref dictionary="verbs" word="tooru" />
+      </word>
+      <word id="ola_kanji_151_155_007">
+        <dictionary_ref dictionary="verbs" word="kayou" />
+      </word>
+      <word id="ola_kanji_151_155_008">
+        <dictionary_ref dictionary="nouns" word="tsuugaku" />
+      </word>
+      <word id="ola_kanji_151_155_009">
+        <dictionary_ref dictionary="verbs" word="aruku" />
+      </word>
+      <word id="ola_kanji_151_155_010">
+        <dictionary_ref dictionary="nouns" word="sanpo" />
+      </word>
+      <word id="ola_kanji_151_155_011">
+        <dictionary_ref dictionary="nouns" word="hodou" />
+      </word>
+      <word id="ola_kanji_151_155_012">
+        <dictionary_ref dictionary="verbs" word="toru" />
+      </word>
+      <word id="ola_kanji_151_155_013">
+        <dictionary_ref dictionary="verbs" word="torihazusu" />
+      </word>
+    </lesson>
   </lessons>
 </lesson_catalog>
