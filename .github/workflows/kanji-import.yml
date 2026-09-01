@@ -1,0 +1,46 @@
+name: One-time Kanji lesson import
+
+on:
+  push:
+    branches:
+      - feature/import-ola-kanji-lessons
+
+permissions:
+  contents: write
+
+jobs:
+  import-kanji:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconstruct importer
+        shell: bash
+        run: |
+          cat tools/_kanji_import_payload.part* | base64 --decode | gzip --decompress > tools/_generate_kanji_import.py
+          python -m py_compile tools/_generate_kanji_import.py
+
+      - name: Import Kanji lessons and vocabulary
+        run: python tools/_generate_kanji_import.py
+
+      - name: Validate generated repository
+        run: python tools/validate_repository.py
+
+      - name: Remove one-time import helpers
+        shell: bash
+        run: |
+          rm -f tools/_generate_kanji_import.py tools/_kanji_import_payload.part*
+          rm -f .github/workflows/kanji-import.yml
+          python tools/validate_repository.py
+
+      - name: Commit generated learning data
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Import Ola Kanji lesson packet"
+          git push origin HEAD:feature/import-ola-kanji-lessons
