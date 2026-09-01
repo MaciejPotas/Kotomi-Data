@@ -17,9 +17,74 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Reconstruct importer
+      - name: Repair and reconstruct importer
         shell: bash
         run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+
+          ALPHABET = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+          EXPECTED = {
+              1: "c4448487ce3780b4910e42a196b20aa27bc57679",
+              2: "124b94c5b87abad9049a5e21f1c9d7e2e33397ee",
+              3: "0299e6d185040599d6ebc914bc35075c19865294",
+              4: "fde25f48a3be818f0cb84b18ccadec2e39a10d26",
+              5: "7b53e7cf13f2a2f1d1f127cad04a06288cec26db",
+              6: "32ab0811303d641d311c0400958b2b65b4524841",
+          }
+
+          def git_blob_sha(data: bytes) -> str:
+              header = f"blob {len(data)}\0".encode("ascii")
+              return hashlib.sha1(header + data).hexdigest()
+
+          def repair_part_one(data: bytes, target: str) -> bytes:
+              if git_blob_sha(data) == target:
+                  return data
+              if len(data) != 5999:
+                  raise RuntimeError(f"part01 unexpected length: {len(data)}")
+              for pos in range(len(data) + 1):
+                  prefix = data[:pos]
+                  suffix = data[pos:]
+                  for value in ALPHABET:
+                      candidate = prefix + bytes((value,)) + suffix
+                      if git_blob_sha(candidate) == target:
+                          print(f"Repaired part01 by inserting one byte at {pos}")
+                          return candidate
+              raise RuntimeError("Could not repair part01")
+
+          def repair_part_two(data: bytes, target: str) -> bytes:
+              if git_blob_sha(data) == target:
+                  return data
+              if len(data) != 6000:
+                  raise RuntimeError(f"part02 unexpected length: {len(data)}")
+              mutable = bytearray(data)
+              for pos, original in enumerate(data):
+                  for value in ALPHABET:
+                      if value == original:
+                          continue
+                      mutable[pos] = value
+                      candidate = bytes(mutable)
+                      if git_blob_sha(candidate) == target:
+                          print(f"Repaired part02 by replacing one byte at {pos}")
+                          return candidate
+                  mutable[pos] = original
+              raise RuntimeError("Could not repair part02 with one substitution")
+
+          paths = [Path(f"tools/_kanji_import_payload.part{i:02d}") for i in range(1, 7)]
+          first = repair_part_one(paths[0].read_bytes(), EXPECTED[1])
+          second = repair_part_two(paths[1].read_bytes(), EXPECTED[2])
+          paths[0].write_bytes(first)
+          paths[1].write_bytes(second)
+
+          for index, path in enumerate(paths, start=1):
+              actual = git_blob_sha(path.read_bytes())
+              if actual != EXPECTED[index]:
+                  raise RuntimeError(
+                      f"payload part {index:02d} hash mismatch: {actual} != {EXPECTED[index]}"
+                  )
+              print(f"payload part {index:02d}: verified")
+          PY
           cat tools/_kanji_import_payload.part* | base64 --decode | gzip --decompress > tools/_generate_kanji_import.py
           python -m py_compile tools/_generate_kanji_import.py
 
