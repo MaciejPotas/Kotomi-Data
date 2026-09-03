@@ -1,25 +1,66 @@
 # Kotomi Data
 
-This repository contains the public learning database and distributable quiz packages used by Kotomi.
+This repository contains the public learning database and distributable quiz content used by Kotomi.
 
-The root is intentionally kept small. Files at the root are repository contracts or update entrypoints. Learning content is grouped by responsibility below them.
+The root is intentionally kept small. Files at the root are repository contracts or update entrypoints. Content is grouped by responsibility below them.
 
 ## Layout
 
-| Path | Purpose |
-| --- | --- |
-| `quiz_project.xml` | Canonical Schema 1 project entrypoint. |
-| `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, and copulas. |
-| `grammar/` | Grammar definitions and reusable context pools. |
-| `patterns/` | Sentence maps and sentence-quiz definitions. |
-| `lessons/` | Schema 4 lesson catalog. |
-| `quizzes/` | Published quiz packages consumed by Kotomi's quiz update channel. |
-| `tools/` | Repository validation and maintenance helpers. |
-| `database_revision.json` | Identity of the published learning database. |
-| `database_update_manifest.json` | Database update inventory. |
-| `quiz_update_manifest.json` | Quiz package update inventory. |
+| Path | Purpose | Update channel |
+| --- | --- | --- |
+| `quiz_project.xml` | Canonical Schema 1 project entrypoint. | Quiz |
+| `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, and copulas. | Database |
+| `grammar/` | Grammar definitions and reusable context pools. | Quiz |
+| `patterns/` | Sentence maps and sentence-quiz definitions. | Quiz |
+| `lessons/` | Schema 4 lesson catalog. | Database |
+| `quizzes/` | Published first-party quiz package files. | Quiz |
+| `tools/` | Repository validation and maintenance helpers. | Repository only |
+| `database_revision.json` | Identity of the published Database state. | Database |
+| `database_update_manifest.json` | Database update inventory. | Database |
+| `quiz_update_manifest.json` | Quiz package and Studio-content inventory. | Quiz |
 
-A Kotomi installation mirrors the learning-data tree below its `data/` directory. For example, `dictionaries/verbs.xml` is installed as `data/dictionaries/verbs.xml`.
+A Kotomi installation mirrors public content below its `data/` and `apps/` directories. For example, `dictionaries/verbs.xml` is installed as `data/dictionaries/verbs.xml`, while `quizzes/verbs/logic.py` is installed as `apps/verbs/logic.py`.
+
+## Update ownership
+
+The update channels intentionally have non-overlapping ownership.
+
+### Database Update
+
+Database Update owns only:
+
+```text
+dictionaries/**
+lessons/**
+database_revision.json
+```
+
+The published manifest is `database_update_manifest.json`. A Database publication must not include `quiz_project.xml`, `grammar/**`, or `patterns/**`.
+
+Advance `database_revision.json` when publishing a new official Database state. SHA-256 hashes decide which individual files are downloaded, while the integer revision identifies the published state.
+
+### Quiz Update
+
+Quiz Update owns:
+
+```text
+quizzes/**              -> installed as apps/**
+quiz_project.xml        -> installed as data/quiz_project.xml
+grammar/**              -> installed as data/grammar/**
+patterns/**             -> installed as data/patterns/**
+```
+
+The published manifest is `quiz_update_manifest.json`.
+
+The package files below `quizzes/` are generated from the private Kotomi repository's `apps/` directory and should not be edited independently. The same publication step also adds the current Studio/project XML to the Quiz manifest.
+
+From a Kotomi checkout with this repository mounted as its `data` submodule, publish the current Quiz catalog with:
+
+```text
+python tools/updates/publish_quiz_packages.py 1.1.1
+```
+
+The catalog version is independent from the Database revision.
 
 ## Project entrypoint
 
@@ -27,21 +68,24 @@ Kotomi opens `data/quiz_project.xml`. References inside the project file are rel
 
 The project/pattern files use Schema 1. The lesson catalog uses Schema 4.
 
-## Updating data
+## Publishing changes
 
-When the public learning data changes:
+When changing dictionaries or lessons:
 
-1. Edit the appropriate content directory.
-2. Update `database_revision.json` when publishing a new database state.
-3. Regenerate or update `database_update_manifest.json`.
+1. Edit the Database-owned content.
+2. Advance `database_revision.json` when publishing a new official Database state.
+3. Regenerate `database_update_manifest.json` from the Kotomi tooling.
 4. Run `python tools/validate_repository.py`.
-5. Commit the content and manifest changes together.
+5. Commit the content and manifest together.
 
-The database and quiz channels are independent. Changing learning data does not require republishing quiz packages unless the quiz package code itself changed.
+When changing `quiz_project.xml`, `grammar/**`, `patterns/**`, or first-party quiz package code:
 
-## Quiz packages
+1. Make the source change in the appropriate repository.
+2. Run `python tools/updates/publish_quiz_packages.py <catalog-version>` from the Kotomi checkout.
+3. Run `python tools/validate_repository.py` in this repository.
+4. Commit the generated Quiz publication together.
 
-`quizzes/` contains generated public copies of first-party quiz packages. Their source is maintained in the private Kotomi repository under `apps/`. Do not hand-edit generated package contents here.
+Do not regenerate one channel from the inventory of the other channel.
 
 ## Validation
 
@@ -51,7 +95,7 @@ Run:
 python tools/validate_repository.py
 ```
 
-CI runs the same validation for pull requests and `main`.
+CI runs the same validation for pull requests and `main`. The validator checks canonical layout, XML schemas, hashes, package inventories, Database ownership, Quiz ownership, and manifest ordering.
 
 ## Kotomi integration
 
