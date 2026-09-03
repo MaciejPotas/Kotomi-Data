@@ -29,8 +29,8 @@
     },
     {
       "path": "data/lessons/lessons.xml",
-      "sha256": "0e31b424e25a037bfa8e3bd3c466a6a76f74487a7421d2f128b03bfcfa79da5e",
-      "url": "lessons/lessons.xml?kotomi_sha256=0e31b424e25a037bfa8e3bd3c466a6a76f74487a7421d2f128b03bfcfa79da5e"
+      "sha256": "8728fd459b4ab72b6233824edf016e8b197791d868b7bc83ee7c9b1345957b08",
+      "url": "lessons/lessons.xml?kotomi_sha256=8728fd459b4ab72b6233824edf016e8b197791d868b7bc83ee7c9b1345957b08"
     },
     {
       "path": "data/dictionaries/nouns.xml",
