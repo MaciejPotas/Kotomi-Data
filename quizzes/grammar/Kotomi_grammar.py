@@ -11,6 +11,8 @@ from pathlib import Path
 import sys
 
 
+PACKAGE_REVISION = "before-after-smoke-1"
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 INSTALL_ROOT = SCRIPT_DIR.parents[1]
 AVAILABILITY_DIR = INSTALL_ROOT / "apps" / "availability"
@@ -71,6 +73,7 @@ _sync_profile_exports()
 
 __all__ = [
     *getattr(_logic, "__all__", ()),
+    "PACKAGE_REVISION",
     "create_app_class",
     "create_embedded_controller",
     "main",

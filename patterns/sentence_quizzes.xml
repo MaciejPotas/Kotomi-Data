@@ -5,6 +5,12 @@
       <pattern ref="koto_ga_dekiru" />
     </patterns>
   </quiz>
+  <quiz id="before_after" label="Przed i po" description="Proste zdania z まえに i あとで">
+    <patterns>
+      <pattern ref="before_action" />
+      <pattern ref="after_action" />
+    </patterns>
+  </quiz>
   <quiz id="progressive" label="Czynność w toku" description="Konstrukcja 〜ている z kilkoma wzorcami bazowymi">
     <patterns>
       <pattern ref="te_iru" />
