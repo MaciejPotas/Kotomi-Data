@@ -10,18 +10,22 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
 
-PROJECT_SCHEMA_FILES = {
-    "quiz_project.xml",
+DICTIONARY_SCHEMA_FILES = {
     "dictionaries/adjectives.xml",
     "dictionaries/copulas.xml",
     "dictionaries/nouns.xml",
     "dictionaries/verbs.xml",
+}
+QUIZ_CONTENT_SCHEMA_FILES = {
+    "quiz_project.xml",
     "grammar/contexts.xml",
     "grammar/grammar_rules.xml",
     "patterns/sentence_maps.xml",
     "patterns/sentence_quizzes.xml",
 }
+PROJECT_SCHEMA_FILES = DICTIONARY_SCHEMA_FILES | QUIZ_CONTENT_SCHEMA_FILES
 LESSON_SCHEMA_FILE = "lessons/lessons.xml"
+DATABASE_XML_FILES = DICTIONARY_SCHEMA_FILES | {LESSON_SCHEMA_FILE}
 LEARNING_XML_FILES = PROJECT_SCHEMA_FILES | {LESSON_SCHEMA_FILE}
 CONTENT_DIRECTORIES = {
     "dictionaries",
@@ -187,7 +191,7 @@ def validate_database_manifest() -> None:
 
     expected_sources = {
         (ROOT / relative).resolve()
-        for relative in LEARNING_XML_FILES
+        for relative in DATABASE_XML_FILES
     } | {(ROOT / "database_revision.json").resolve()}
     if source_paths != expected_sources:
         missing = sorted(
@@ -207,7 +211,7 @@ def validate_database_manifest() -> None:
     }
     if install_paths != expected_install_paths:
         raise AssertionError(
-            "Database install paths do not match canonical data inventory"
+            "Database install paths do not match dictionary/lesson inventory"
         )
 
 
@@ -246,7 +250,7 @@ def validate_quiz_manifest() -> None:
             "Quiz package catalog must exactly match public quizzes/* directories"
         )
 
-    catalog_paths: set[str] = set()
+    package_catalog_paths: set[str] = set()
     for raw_package in packages:
         if not isinstance(raw_package, dict):
             raise AssertionError("Quiz package entries must be objects")
@@ -287,13 +291,17 @@ def validate_quiz_manifest() -> None:
                 f"Quiz package {package_id} inventory mismatch, "
                 f"missing={sorted(actual - declared)}, extra={sorted(declared - actual)}"
             )
-        catalog_paths.update(declared)
+        package_catalog_paths.update(declared)
 
         for python_file in sorted(package_dir.rglob("*.py")):
             source = python_file.read_text(encoding="utf-8")
             compile(source, str(python_file), "exec")
 
+    quiz_content_paths = {
+        f"data/{relative}" for relative in QUIZ_CONTENT_SCHEMA_FILES
+    }
     manifest_paths: set[str] = set()
+    content_sources: set[Path] = set()
     for raw_entry in entries:
         if not isinstance(raw_entry, dict):
             raise AssertionError("Quiz manifest file entries must be objects")
@@ -301,16 +309,39 @@ def validate_quiz_manifest() -> None:
         if install_path in manifest_paths:
             raise AssertionError(f"Duplicate Quiz manifest path: {install_path}")
         manifest_paths.add(install_path)
-        source = validate_manifest_file(raw_entry, "apps/")
-        if not source.relative_to(ROOT).as_posix().startswith("quizzes/"):
+
+        if install_path.startswith("apps/"):
+            source = validate_manifest_file(raw_entry, "apps/")
+            if not source.relative_to(ROOT).as_posix().startswith("quizzes/"):
+                raise AssertionError(
+                    f"Quiz package URL must resolve below quizzes/: {install_path}"
+                )
+        elif install_path in quiz_content_paths:
+            source = validate_manifest_file(raw_entry, "data/")
+            expected_relative = install_path.removeprefix("data/")
+            if source.relative_to(ROOT).as_posix() != expected_relative:
+                raise AssertionError(
+                    f"Quiz content URL does not match install path: {install_path}"
+                )
+            content_sources.add(source)
+        else:
             raise AssertionError(
-                f"Quiz manifest URL must resolve below quizzes/: {install_path}"
+                f"Quiz manifest contains non-package/non-Studio path: {install_path}"
             )
 
-    if manifest_paths != catalog_paths:
+    expected_manifest_paths = package_catalog_paths | quiz_content_paths
+    if manifest_paths != expected_manifest_paths:
         raise AssertionError(
-            "Quiz manifest flat inventory must equal the package catalog inventory"
+            "Quiz manifest inventory must equal packages plus Studio/project XML, "
+            f"missing={sorted(expected_manifest_paths - manifest_paths)}, "
+            f"extra={sorted(manifest_paths - expected_manifest_paths)}"
         )
+
+    expected_content_sources = {
+        (ROOT / relative).resolve() for relative in QUIZ_CONTENT_SCHEMA_FILES
+    }
+    if content_sources != expected_content_sources:
+        raise AssertionError("Quiz content source inventory mismatch")
 
 
 def main() -> None:

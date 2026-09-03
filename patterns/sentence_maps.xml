@@ -57,6 +57,10 @@
       <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[case:accusative]} przed {verb@before[form].translation}.</question>
       <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun}を{verb@main[role:object][form]}</answer>
     </sentence_pattern>
+    <sentence_pattern id="after_action" label="Po innej czynności">
+      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[case:accusative]} po {verb@before[form:past_plain].translation}.</question>
+      <answer>{context[from:main].kana}{verb@before[form:past_plain]}あとで{noun}を{verb@main[role:object][form]}</answer>
+    </sentence_pattern>
     <sentence_pattern id="three_nouns_suki" label="Trzy lubiane rzeczy">
       <question>{context.translation}Lubię {noun@first[case:accusative]}, {noun@second[case:accusative]} i {noun@third[case:accusative]}.</question>
       <answer>{context.kana}{noun@first}と{noun@second}と{noun@third}がすきです</answer>
