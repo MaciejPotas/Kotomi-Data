@@ -19,178 +19,178 @@
       </word>
     </lesson>
     <lesson id="ola_kanji_11_15" group="Ola" main="Kanji" name="11-15">
-      <local_word id="ola_kanji_11_15_001" translation="ucho" kana="みみ" kanji="耳" romaji="mimi" example="彼等には音楽を聴く耳がない。 - They have no ears to listen to music." />
-      <local_word id="ola_kanji_11_15_002" translation="oko" kana="め" kanji="目" romaji="me" example="彼女はきれいな目をしている。 - She has beautiful eyes." />
-      <local_word id="ola_kanji_11_15_003" translation="pierwszy ( o sobie )" kana="ひとりめ" kanji="一人目" romaji="hitorime" example="N/A" />
-      <local_word id="ola_kanji_11_15_004" translation="dłoń" kana="て" kanji="手" romaji="te" example="いい手が配られた。 - Good hands were distributed." />
-      <local_word id="ola_kanji_11_15_005" translation="piosenkarz" kana="かしゅ" kanji="歌手" romaji="kashu" example="その歌手は若者たちのアイドルだ。 - The singer is an idol of young people." />
-      <local_word id="ola_kanji_11_15_006" translation="zawodnik" kana="せんしゅ" kanji="選手" romaji="senshu" example="アキラは上手なテニス選手です。 - Akira is a good tennis player." />
-      <local_word id="ola_kanji_11_15_007" translation="noga ( stopa )" kana="あし" kanji="足" romaji="ashi" example="また足がしびれた。 - My legs were numb again." />
-      <local_word id="ola_kanji_11_15_008" translation="wystarczać" kana="たりる" kanji="足りる" romaji="tariru" example="これだけの量の食料で一週間のキャンプに足りるでしょうか。 - Is this enough food enough for a week's camp?" />
-      <local_word id="ola_kanji_11_15_009" translation="dodawać" kana="たす" kanji="足す" romaji="tasu" example="６０にするためには１７に何を足せばよいの。 - What should I add to 17 to make it 60?" />
-      <local_word id="ola_kanji_11_15_010" translation="krowa" kana="うし" kanji="牛" romaji="ushi" example="父は牧場を持っていて牛や馬を飼育している。 - My father has a ranch and raises cows and horses." />
-      <local_word id="ola_kanji_11_15_011" translation="wołowina" kana="ぎゅうにく" kanji="牛肉" romaji="gyuuniku" example="私の好みはどちらかというと牛肉ですね。 - My taste is rather beef." />
-      <local_word id="ola_kanji_11_15_012" translation="mleko krowie" kana="ぎゅうにゅう" kanji="牛乳" romaji="gyuunyuu" example="牛は我々に牛乳を与えてくれる。 - The cows give us milk." />
-      <local_word id="ola_kanji_11_15_013" translation="ktoś starszy, przełożony" kana="めうえ" kanji="目上" romaji="meue" example="目上の人には礼儀正しくしなければならない。 - You must be polite to your superiors." />
-      <local_word id="ola_kanji_11_15_014" translation="młodszy, podwładny" kana="めした" kanji="目下" romaji="meshita" example="目下の者をないがしろにするな。 - Don't neglect anyone under you." />
+      <local_word id="ola_kanji_11_15_001" translation="ucho" kana="みみ" kanji="耳" romaji="mimi" example="彼等には音楽を聴く耳がない。 - They have no ears to listen to music." case_language="pl" />
+      <local_word id="ola_kanji_11_15_002" translation="oko" kana="め" kanji="目" romaji="me" example="彼女はきれいな目をしている。 - She has beautiful eyes." case_language="pl" />
+      <local_word id="ola_kanji_11_15_003" translation="pierwszy ( o sobie )" kana="ひとりめ" kanji="一人目" romaji="hitorime" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_11_15_004" translation="dłoń" kana="て" kanji="手" romaji="te" example="いい手が配られた。 - Good hands were distributed." case_language="pl" />
+      <local_word id="ola_kanji_11_15_005" translation="piosenkarz" kana="かしゅ" kanji="歌手" romaji="kashu" example="その歌手は若者たちのアイドルだ。 - The singer is an idol of young people." case_language="pl" />
+      <local_word id="ola_kanji_11_15_006" translation="zawodnik" kana="せんしゅ" kanji="選手" romaji="senshu" example="アキラは上手なテニス選手です。 - Akira is a good tennis player." case_language="pl" />
+      <local_word id="ola_kanji_11_15_007" translation="noga ( stopa )" kana="あし" kanji="足" romaji="ashi" example="また足がしびれた。 - My legs were numb again." case_language="pl" />
+      <local_word id="ola_kanji_11_15_008" translation="wystarczać" kana="たりる" kanji="足りる" romaji="tariru" example="これだけの量の食料で一週間のキャンプに足りるでしょうか。 - Is this enough food enough for a week's camp?" case_language="pl" />
+      <local_word id="ola_kanji_11_15_009" translation="dodawać" kana="たす" kanji="足す" romaji="tasu" example="６０にするためには１７に何を足せばよいの。 - What should I add to 17 to make it 60?" case_language="pl" />
+      <local_word id="ola_kanji_11_15_010" translation="krowa" kana="うし" kanji="牛" romaji="ushi" example="父は牧場を持っていて牛や馬を飼育している。 - My father has a ranch and raises cows and horses." case_language="pl" />
+      <local_word id="ola_kanji_11_15_011" translation="wołowina" kana="ぎゅうにく" kanji="牛肉" romaji="gyuuniku" example="私の好みはどちらかというと牛肉ですね。 - My taste is rather beef." case_language="pl" />
+      <local_word id="ola_kanji_11_15_012" translation="mleko krowie" kana="ぎゅうにゅう" kanji="牛乳" romaji="gyuunyuu" example="牛は我々に牛乳を与えてくれる。 - The cows give us milk." case_language="pl" />
+      <local_word id="ola_kanji_11_15_013" translation="ktoś starszy, przełożony" kana="めうえ" kanji="目上" romaji="meue" example="目上の人には礼儀正しくしなければならない。 - You must be polite to your superiors." case_language="pl" />
+      <local_word id="ola_kanji_11_15_014" translation="młodszy, podwładny" kana="めした" kanji="目下" romaji="meshita" example="目下の者をないがしろにするな。 - Don't neglect anyone under you." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_1_5" group="Ola" main="Kanji" name="1-5">
-      <local_word id="ola_kanji_1_5_001" translation="słońce, dzień" kana="ひ" kanji="日" romaji="hi" example="会議の日を決めなさい。 - Decide on a meeting date." />
-      <local_word id="ola_kanji_1_5_002" translation="dzień matki" kana="ははのひ" kanji="母の日" romaji="hahanohi" example="" />
-      <local_word id="ola_kanji_1_5_003" translation="trzeci dzień miesiąca" kana="みっか" kanji="三日" romaji="mikka" example="N/A" />
-      <local_word id="ola_kanji_1_5_004" translation="księżyc" kana="つき" kanji="月" romaji="tsuki" example="彼は月に３０万円稼ぐ。 - He earns 300,000 yen a month." />
-      <local_word id="ola_kanji_1_5_005" translation="luty" kana="にがつ" kanji="二月" romaji="nigatsu" example="N/A" />
-      <local_word id="ola_kanji_1_5_006" translation="duże drzewo" kana="たいぼく" kanji="大木" romaji="taiboku" example="" />
-      <local_word id="ola_kanji_1_5_007" translation="drzewo" kana="き" kanji="木" romaji="ki" example="その木には実がたわわになっていた。 - The tree was full of fruit." />
+      <local_word id="ola_kanji_1_5_001" translation="słońce, dzień" kana="ひ" kanji="日" romaji="hi" example="会議の日を決めなさい。 - Decide on a meeting date." case_language="pl" />
+      <local_word id="ola_kanji_1_5_002" translation="dzień matki" kana="ははのひ" kanji="母の日" romaji="hahanohi" example="" case_language="pl" />
+      <local_word id="ola_kanji_1_5_003" translation="trzeci dzień miesiąca" kana="みっか" kanji="三日" romaji="mikka" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_1_5_004" translation="księżyc" kana="つき" kanji="月" romaji="tsuki" example="彼は月に３０万円稼ぐ。 - He earns 300,000 yen a month." case_language="pl" />
+      <local_word id="ola_kanji_1_5_005" translation="luty" kana="にがつ" kanji="二月" romaji="nigatsu" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_1_5_006" translation="duże drzewo" kana="たいぼく" kanji="大木" romaji="taiboku" example="" case_language="pl" />
+      <local_word id="ola_kanji_1_5_007" translation="drzewo" kana="き" kanji="木" romaji="ki" example="その木には実がたわわになっていた。 - The tree was full of fruit." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_16_20" group="Ola" main="Kanji" name="16-20">
-      <local_word id="ola_kanji_16_20_001" translation="koń" kana="うま" kanji="馬" romaji="uma" example="あなたは馬に乗ることができますか。 - Can you ride a horse?" />
-      <local_word id="ola_kanji_16_20_002" translation="powóz" kana="ばしゃ" kanji="馬車" romaji="basha" example="自動車が馬車に取って変わった。 - The car changed as a carriage." />
-      <local_word id="ola_kanji_16_20_003" translation="ptak" kana="とり" kanji="鳥" romaji="tori" example="鳥は料理人がほどよく焼いた。 - The birds baked moderately by the chef." />
-      <local_word id="ola_kanji_16_20_004" translation="łabędź" kana="はくちょう" kanji="白鳥" romaji="hakuchou" example="白鳥は当地からフロリダに移動する。 - The swan moves from here to Florida." />
-      <local_word id="ola_kanji_16_20_005" translation="złota rybka" kana="きんぎょ" kanji="金魚" romaji="kingyo" example="金魚に餌をやってるの。 - I'm feeding the goldfish." />
-      <local_word id="ola_kanji_16_20_006" translation="rodzice, opiekunowie" kana="ふぼ" kanji="父母" romaji="fubo" example="ケンは父母がけんかしたときはいつも母の味方をする。 - Ken always has his mother's ally when his parents fight." />
-      <local_word id="ola_kanji_16_20_007" translation="konina" kana="ばにく" kanji="馬肉" romaji="baniku" example="N/A" />
-      <local_word id="ola_kanji_16_20_008" translation="mięso z kurczaka" kana="とりにく" kanji="鳥肉" romaji="toriniku" example="鶏肉を３ポンド分ください。 - Give me 3 pounds of chicken." />
-      <local_word id="ola_kanji_16_20_009" translation="mały ptak" kana="ことり" kanji="小鳥" romaji="kotori" example="小鳥たちはたのしそうにさえずっています。 - The birds chirp with fun." />
-      <local_word id="ola_kanji_16_20_010" translation="syrena" kana="にんぎょ" kanji="人魚" romaji="ningyo" example="伝説では、彼女は人魚だったと言われる。 - Legend says she was a mermaid." />
-      <local_word id="ola_kanji_16_20_011" translation="ryba" kana="さかな" kanji="魚" romaji="sakana" example="こうして私はいつも魚を料理する。 - This is how I always cook fish." />
+      <local_word id="ola_kanji_16_20_001" translation="koń" kana="うま" kanji="馬" romaji="uma" example="あなたは馬に乗ることができますか。 - Can you ride a horse?" case_language="pl" />
+      <local_word id="ola_kanji_16_20_002" translation="powóz" kana="ばしゃ" kanji="馬車" romaji="basha" example="自動車が馬車に取って変わった。 - The car changed as a carriage." case_language="pl" />
+      <local_word id="ola_kanji_16_20_003" translation="ptak" kana="とり" kanji="鳥" romaji="tori" example="鳥は料理人がほどよく焼いた。 - The birds baked moderately by the chef." case_language="pl" />
+      <local_word id="ola_kanji_16_20_004" translation="łabędź" kana="はくちょう" kanji="白鳥" romaji="hakuchou" example="白鳥は当地からフロリダに移動する。 - The swan moves from here to Florida." case_language="pl" />
+      <local_word id="ola_kanji_16_20_005" translation="złota rybka" kana="きんぎょ" kanji="金魚" romaji="kingyo" example="金魚に餌をやってるの。 - I'm feeding the goldfish." case_language="pl" />
+      <local_word id="ola_kanji_16_20_006" translation="rodzice, opiekunowie" kana="ふぼ" kanji="父母" romaji="fubo" example="ケンは父母がけんかしたときはいつも母の味方をする。 - Ken always has his mother's ally when his parents fight." case_language="pl" />
+      <local_word id="ola_kanji_16_20_007" translation="konina" kana="ばにく" kanji="馬肉" romaji="baniku" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_16_20_008" translation="mięso z kurczaka" kana="とりにく" kanji="鳥肉" romaji="toriniku" example="鶏肉を３ポンド分ください。 - Give me 3 pounds of chicken." case_language="pl" />
+      <local_word id="ola_kanji_16_20_009" translation="mały ptak" kana="ことり" kanji="小鳥" romaji="kotori" example="小鳥たちはたのしそうにさえずっています。 - The birds chirp with fun." case_language="pl" />
+      <local_word id="ola_kanji_16_20_010" translation="syrena" kana="にんぎょ" kanji="人魚" romaji="ningyo" example="伝説では、彼女は人魚だったと言われる。 - Legend says she was a mermaid." case_language="pl" />
+      <local_word id="ola_kanji_16_20_011" translation="ryba" kana="さかな" kanji="魚" romaji="sakana" example="こうして私はいつも魚を料理する。 - This is how I always cook fish." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_36_40" group="Ola" main="Kanji" name="36-40">
-      <local_word id="ola_kanji_36_40_001" translation="woda" kana="みず" kanji="水" romaji="mizu" example="私は、月・水・金と一日おきに仕事をします。 - I work every other day, Mondays, Wednesdays and Fridays." />
-      <local_word id="ola_kanji_36_40_002" translation="środa" kana="すいようび" kanji="水曜日" romaji="suiyoubi" example="ダービー競馬の日は２週間後の水曜日だ。 - Derby horse racing day is Wednesday two weeks later." />
-      <local_word id="ola_kanji_36_40_003" translation="pieniądze" kana="おかね" kanji="お金" romaji="okane" example="どうやってそのお金を手に入れたんですか。 - How did you get that money?" />
-      <local_word id="ola_kanji_36_40_004" translation="złoto" kana="きん" kanji="金" romaji="kin" example="絵の中の少女は黄金ではなくて花のかんむりをかぶっています。 - The girl in the picture is not golden, but wears a flower crown." />
-      <local_word id="ola_kanji_36_40_005" translation="ziemia, gleba" kana="つち" kanji="土" romaji="tsuchi" example="農家の人達は鋤で土を耕す。 - Farmers cultivate the soil with plows." />
-      <local_word id="ola_kanji_36_40_006" translation="w butach ( np. gdzieś wchodzić w butach )." kana="どそく" kanji="土足" romaji="dosoku" example="Dosoku de agaranaide kudasai." />
-      <local_word id="ola_kanji_36_40_007" translation="sobota" kana="どようび" kanji="土曜日" romaji="doyoubi" example="私は土曜日からここにいます。" />
-      <local_word id="ola_kanji_36_40_008" translation="dziecko" kana="こ" kanji="子" romaji="ko" example="彼はきっすいのロンドン子です。 - He is a lovely Londoner." />
-      <local_word id="ola_kanji_36_40_009" translation="chłopiec" kana="おとこのこ" kanji="男の子" romaji="otokonoko" example="あのハンサムな男の子を見て。 - Look at that handsome boy." />
-      <local_word id="ola_kanji_36_40_010" translation="dziewczynka" kana="おんなのこ" kanji="女の子" romaji="onnanoko" example="その女の子達は、とても忙しい。 - The girls are very busy." />
-      <local_word id="ola_kanji_36_40_011" translation="męski" kana="だんし" kanji="男子" romaji="danshi" example="このクラスは女子が男子より多い。 - There are more girls in this class than boys." />
-      <local_word id="ola_kanji_36_40_012" translation="żeńska" kana="じょし" kanji="女子" romaji="joshi" example="このクラスには１５人の男子と２８人の女子がいる。 - There are 15 boys and 28 girls in this class." />
-      <local_word id="ola_kanji_36_40_013" translation="kobieta" kana="おんなのひと" kanji="女の人" romaji="onnanohito" example="今、女の人が１人入っていきましたよ。 - Now, one woman has come in." />
-      <local_word id="ola_kanji_36_40_014" translation="mężczyzna" kana="おとこのひと" kanji="男の人" romaji="otokonohito" example="若い男の人がドアの前で歌っています。 - A young man sings in front of the door." />
+      <local_word id="ola_kanji_36_40_001" translation="woda" kana="みず" kanji="水" romaji="mizu" example="私は、月・水・金と一日おきに仕事をします。 - I work every other day, Mondays, Wednesdays and Fridays." case_language="pl" />
+      <local_word id="ola_kanji_36_40_002" translation="środa" kana="すいようび" kanji="水曜日" romaji="suiyoubi" example="ダービー競馬の日は２週間後の水曜日だ。 - Derby horse racing day is Wednesday two weeks later." case_language="pl" />
+      <local_word id="ola_kanji_36_40_003" translation="pieniądze" kana="おかね" kanji="お金" romaji="okane" example="どうやってそのお金を手に入れたんですか。 - How did you get that money?" case_language="pl" />
+      <local_word id="ola_kanji_36_40_004" translation="złoto" kana="きん" kanji="金" romaji="kin" example="絵の中の少女は黄金ではなくて花のかんむりをかぶっています。 - The girl in the picture is not golden, but wears a flower crown." case_language="pl" />
+      <local_word id="ola_kanji_36_40_005" translation="ziemia, gleba" kana="つち" kanji="土" romaji="tsuchi" example="農家の人達は鋤で土を耕す。 - Farmers cultivate the soil with plows." case_language="pl" />
+      <local_word id="ola_kanji_36_40_006" translation="w butach ( np. gdzieś wchodzić w butach )." kana="どそく" kanji="土足" romaji="dosoku" example="Dosoku de agaranaide kudasai." case_language="pl" />
+      <local_word id="ola_kanji_36_40_007" translation="sobota" kana="どようび" kanji="土曜日" romaji="doyoubi" example="私は土曜日からここにいます。" case_language="pl" />
+      <local_word id="ola_kanji_36_40_008" translation="dziecko" kana="こ" kanji="子" romaji="ko" example="彼はきっすいのロンドン子です。 - He is a lovely Londoner." case_language="pl" />
+      <local_word id="ola_kanji_36_40_009" translation="chłopiec" kana="おとこのこ" kanji="男の子" romaji="otokonoko" example="あのハンサムな男の子を見て。 - Look at that handsome boy." case_language="pl" />
+      <local_word id="ola_kanji_36_40_010" translation="dziewczynka" kana="おんなのこ" kanji="女の子" romaji="onnanoko" example="その女の子達は、とても忙しい。 - The girls are very busy." case_language="pl" />
+      <local_word id="ola_kanji_36_40_011" translation="męski" kana="だんし" kanji="男子" romaji="danshi" example="このクラスは女子が男子より多い。 - There are more girls in this class than boys." case_language="pl" />
+      <local_word id="ola_kanji_36_40_012" translation="żeńska" kana="じょし" kanji="女子" romaji="joshi" example="このクラスには１５人の男子と２８人の女子がいる。 - There are 15 boys and 28 girls in this class." case_language="pl" />
+      <local_word id="ola_kanji_36_40_013" translation="kobieta" kana="おんなのひと" kanji="女の人" romaji="onnanohito" example="今、女の人が１人入っていきましたよ。 - Now, one woman has come in." case_language="pl" />
+      <local_word id="ola_kanji_36_40_014" translation="mężczyzna" kana="おとこのひと" kanji="男の人" romaji="otokonohito" example="若い男の人がドアの前で歌っています。 - A young man sings in front of the door." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_126_130" group="Ola" main="Kanji" name="126-130">
-      <local_word id="ola_kanji_126_130_001" translation="praca" kana="しごと" kanji="仕事" romaji="shigoto" example="N/A" />
-      <local_word id="ola_kanji_126_130_002" translation="urzędnik" kana="し" kanji="仕" romaji="shi" example="" />
-      <local_word id="ola_kanji_126_130_003" translation="nie ma (innego) sposobu" kana="しかたがない" kanji="仕方がない" romaji="shikataganai" example="コーヒーが飲みたくて仕方がない。" />
-      <local_word id="ola_kanji_126_130_004" translation="ukończyć, wykonać" kana="しあげる" kanji="仕上げる" romaji="shiageru" example="ユミは１日でそれを仕上げられません。" />
-      <local_word id="ola_kanji_126_130_005" translation="rzecz, sprawa" kana="こと" kanji="事" romaji="koto" example="N/A" />
-      <local_word id="ola_kanji_126_130_006" translation="pożar" kana="かじ" kanji="火事" romaji="kaji" example="火事の際は１１９番に電話してください。" />
-      <local_word id="ola_kanji_126_130_007" translation="posiłek" kana="しょくじ" kanji="食事" romaji="shokuji" example="彼女はやせるために食事を制限した。" />
-      <local_word id="ola_kanji_126_130_008" translation="ważny, poważny, istotny" kana="だいじな" kanji="大事" romaji="daijina" example="N/A" />
-      <local_word id="ola_kanji_126_130_009" translation="wydarzenie" kana="できごと" kanji="出来事" romaji="dekigoto" example="このようのしてその出来事は起こった。" />
-      <local_word id="ola_kanji_126_130_010" translation="(Shinto) świątynia" kana="やしろ" kanji="社" romaji="yashiro" example="この社はジュピターにささげられたものだ。" />
-      <local_word id="ola_kanji_126_130_011" translation="firma" kana="かいしゃ" kanji="会社" romaji="kaisha" example="彼の努力は会社の成長に貢献した。" />
-      <local_word id="ola_kanji_126_130_012" translation="społeczeństwo" kana="しゃかい" kanji="社会" romaji="shakai" example="彼の一生は社会の下積みで終わった。" />
-      <local_word id="ola_kanji_126_130_013" translation="prezes firmy" kana="しゃちょう" kanji="社長" romaji="shachou" example="この会社の社長は誰ですか。" />
-      <local_word id="ola_kanji_126_130_014" translation="kawałek ziemi, teren" kana="とち" kanji="土地" romaji="tochi" example="この土地は池田氏の所有だ。" />
-      <local_word id="ola_kanji_126_130_015" translation="region, obszar, miejscowość" kana="ちほう" kanji="地方" romaji="chihou" example="彼は今年の夏、東北地方を旅行した。" />
-      <local_word id="ola_kanji_126_130_016" translation="żelazo" kana="てつ" kanji="鉄" romaji="tetsu" example="鉄は最も有用な金属です。" />
-      <local_word id="ola_kanji_126_130_017" translation="metro" kana="ちかてつ" kanji="地下鉄" romaji="chikatetsu" example="地下鉄で行きたいのです。" />
-      <local_word id="ola_kanji_126_130_018" translation="kolej" kana="てつどう" kanji="鉄道" romaji="tetsudou" example="我々は鉄道施設の契約をした。" />
+      <local_word id="ola_kanji_126_130_001" translation="praca" kana="しごと" kanji="仕事" romaji="shigoto" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_126_130_002" translation="urzędnik" kana="し" kanji="仕" romaji="shi" example="" case_language="pl" />
+      <local_word id="ola_kanji_126_130_003" translation="nie ma (innego) sposobu" kana="しかたがない" kanji="仕方がない" romaji="shikataganai" example="コーヒーが飲みたくて仕方がない。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_004" translation="ukończyć, wykonać" kana="しあげる" kanji="仕上げる" romaji="shiageru" example="ユミは１日でそれを仕上げられません。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_005" translation="rzecz, sprawa" kana="こと" kanji="事" romaji="koto" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_126_130_006" translation="pożar" kana="かじ" kanji="火事" romaji="kaji" example="火事の際は１１９番に電話してください。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_007" translation="posiłek" kana="しょくじ" kanji="食事" romaji="shokuji" example="彼女はやせるために食事を制限した。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_008" translation="ważny, poważny, istotny" kana="だいじな" kanji="大事" romaji="daijina" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_126_130_009" translation="wydarzenie" kana="できごと" kanji="出来事" romaji="dekigoto" example="このようのしてその出来事は起こった。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_010" translation="(Shinto) świątynia" kana="やしろ" kanji="社" romaji="yashiro" example="この社はジュピターにささげられたものだ。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_011" translation="firma" kana="かいしゃ" kanji="会社" romaji="kaisha" example="彼の努力は会社の成長に貢献した。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_012" translation="społeczeństwo" kana="しゃかい" kanji="社会" romaji="shakai" example="彼の一生は社会の下積みで終わった。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_013" translation="prezes firmy" kana="しゃちょう" kanji="社長" romaji="shachou" example="この会社の社長は誰ですか。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_014" translation="kawałek ziemi, teren" kana="とち" kanji="土地" romaji="tochi" example="この土地は池田氏の所有だ。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_015" translation="region, obszar, miejscowość" kana="ちほう" kanji="地方" romaji="chihou" example="彼は今年の夏、東北地方を旅行した。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_016" translation="żelazo" kana="てつ" kanji="鉄" romaji="tetsu" example="鉄は最も有用な金属です。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_017" translation="metro" kana="ちかてつ" kanji="地下鉄" romaji="chikatetsu" example="地下鉄で行きたいのです。" case_language="pl" />
+      <local_word id="ola_kanji_126_130_018" translation="kolej" kana="てつどう" kanji="鉄道" romaji="tetsudou" example="我々は鉄道施設の契約をした。" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_41_45" group="Ola" main="Kanji" name="41-45">
-      <local_word id="ola_kanji_41_45_001" translation="uczyć się" kana="まなぶ" kanji="学ぶ" romaji="manabu" example="いくつになっても学ぶことはある。 - There are things you can learn no matter how old you are." />
-      <local_word id="ola_kanji_41_45_002" translation="uniwersytet" kana="だいがく" kanji="大学" romaji="daigaku" example="合格者の過半数は大学出身者であった。 - The majority of successful applicants were from university graduates." />
-      <local_word id="ola_kanji_41_45_003" translation="żyć" kana="いきる" kanji="生きる" romaji="ikiru" example="この本はまだ版権が生きている。 - This book is still in its copyright." />
-      <local_word id="ola_kanji_41_45_004" translation="rodzić się" kana="うまれる" kanji="生まれる" romaji="umareru" example="あなたは何座生まれですか。 - What titre were you born?" />
-      <local_word id="ola_kanji_41_45_005" translation="student" kana="がくせい" kanji="学生" romaji="gakusei" example="学生の半数が休んでいた。 - Half of the students were on break." />
-      <local_word id="ola_kanji_41_45_006" translation="życie ludzkie" kana="じんせい" kanji="人生" romaji="jinsei" example="できるあいだに人生を楽しみなさい。 - Enjoy life while you can." />
-      <local_word id="ola_kanji_41_45_007" translation="nauczyciel" kana="せんせい" kanji="先生" romaji="sensei" example="ぼくはジョーンズ先生に作文を直してもらった。 - I had Professor Jones correct my essay." />
-      <local_word id="ola_kanji_41_45_008" translation="poprzedni miesiąc" kana="せんげつ" kanji="先月" romaji="sengetsu" example="先月はほとんど雨が降らなかった。 - There was hardly any rain last month." />
-      <local_word id="ola_kanji_41_45_009" translation="przyszły, wcześniejszy, czubek czegoś" kana="さき" kanji="先" romaji="saki" example="ここから先には行けません。 - You can't go beyond this point." />
-      <local_word id="ola_kanji_41_45_010" translation="któregoś dnia" kana="せんじつ" kanji="先日" romaji="senjitsu" example="先日小学校のクラス会に出席した。 - The other day I attended an elementary school class meeting." />
-      <local_word id="ola_kanji_41_45_011" translation="szkoła" kana="がっこう" kanji="学校" romaji="gakkou" example="この学校はたくさんの生徒がいます。 - This school has many students." />
+      <local_word id="ola_kanji_41_45_001" translation="uczyć się" kana="まなぶ" kanji="学ぶ" romaji="manabu" example="いくつになっても学ぶことはある。 - There are things you can learn no matter how old you are." case_language="pl" />
+      <local_word id="ola_kanji_41_45_002" translation="uniwersytet" kana="だいがく" kanji="大学" romaji="daigaku" example="合格者の過半数は大学出身者であった。 - The majority of successful applicants were from university graduates." case_language="pl" />
+      <local_word id="ola_kanji_41_45_003" translation="żyć" kana="いきる" kanji="生きる" romaji="ikiru" example="この本はまだ版権が生きている。 - This book is still in its copyright." case_language="pl" />
+      <local_word id="ola_kanji_41_45_004" translation="rodzić się" kana="うまれる" kanji="生まれる" romaji="umareru" example="あなたは何座生まれですか。 - What titre were you born?" case_language="pl" />
+      <local_word id="ola_kanji_41_45_005" translation="student" kana="がくせい" kanji="学生" romaji="gakusei" example="学生の半数が休んでいた。 - Half of the students were on break." case_language="pl" />
+      <local_word id="ola_kanji_41_45_006" translation="życie ludzkie" kana="じんせい" kanji="人生" romaji="jinsei" example="できるあいだに人生を楽しみなさい。 - Enjoy life while you can." case_language="pl" />
+      <local_word id="ola_kanji_41_45_007" translation="nauczyciel" kana="せんせい" kanji="先生" romaji="sensei" example="ぼくはジョーンズ先生に作文を直してもらった。 - I had Professor Jones correct my essay." case_language="pl" />
+      <local_word id="ola_kanji_41_45_008" translation="poprzedni miesiąc" kana="せんげつ" kanji="先月" romaji="sengetsu" example="先月はほとんど雨が降らなかった。 - There was hardly any rain last month." case_language="pl" />
+      <local_word id="ola_kanji_41_45_009" translation="przyszły, wcześniejszy, czubek czegoś" kana="さき" kanji="先" romaji="saki" example="ここから先には行けません。 - You can't go beyond this point." case_language="pl" />
+      <local_word id="ola_kanji_41_45_010" translation="któregoś dnia" kana="せんじつ" kanji="先日" romaji="senjitsu" example="先日小学校のクラス会に出席した。 - The other day I attended an elementary school class meeting." case_language="pl" />
+      <local_word id="ola_kanji_41_45_011" translation="szkoła" kana="がっこう" kanji="学校" romaji="gakkou" example="この学校はたくさんの生徒がいます。 - This school has many students." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_6_10" group="Ola" main="Kanji" name="6-10">
-      <local_word id="ola_kanji_6_10_001" translation="brama" kana="もん" kanji="門" romaji="mon" example="２人の兵士が、門のところで見張りをしていた。 - Two soldiers were keeping a watch at the gate." />
-      <local_word id="ola_kanji_6_10_002" translation="brama szkoły" kana="こうもん" kanji="校門" romaji="koumon" example="校門は８時に開く。 - The school gates open at 8am." />
-      <local_word id="ola_kanji_6_10_003" translation="człowiek" kana="ひと" kanji="人" romaji="hito" example="N/A" />
-      <local_word id="ola_kanji_6_10_004" translation="japończyk" kana="にほんじん" kanji="日本人" romaji="nihonjin" example="あなたが日本人だと私は思っていた。 - I thought you were Japanese." />
-      <local_word id="ola_kanji_6_10_005" translation="troje ludzi" kana="さんにん" kanji="三人" romaji="sannin" example="ケンは三人のなかでもっとも速く走ります。 - Ken runs the fastest of the three." />
-      <local_word id="ola_kanji_6_10_006" translation="usta" kana="くち" kanji="口" romaji="kuchi" example="あの仕事の口はまだあるよ。 - I still have that job." />
-      <local_word id="ola_kanji_6_10_007" translation="wejście" kana="いりぐち" kanji="入り口" romaji="iriguchi" example="１台の車が入り口に止まった。 - A car stopped at the entrance." />
-      <local_word id="ola_kanji_6_10_008" translation="ilość ludzi" kana="じんこう" kanji="人口" romaji="jinkou" example="紀元２０２０年までには、この市の人口は倍増しているだろう。 - By AD 2020, the city's population will likely double." />
-      <local_word id="ola_kanji_6_10_009" translation="samochód" kana="くるま" kanji="車" romaji="kuruma" example="車を運転する時はいくら注意してもしすぎることはない。 - When driving a car, you should never be too careful." />
-      <local_word id="ola_kanji_6_10_010" translation="ogień" kana="ひ" kanji="火" romaji="hi" example="いすをもっと火の近くに寄せなさい。 - Put your chair closer to the fire." />
-      <local_word id="ola_kanji_6_10_011" translation="wulkan" kana="かざん" kanji="火山" romaji="kazan" example="その火山は溶岩を流し出した。 - The volcano poured out lava." />
-      <local_word id="ola_kanji_6_10_012" translation="wtorek" kana="かようび" kanji="火曜日" romaji="kayoubi" example="火曜日に国会が開かれる。 - The Diet will be held on Tuesday." />
+      <local_word id="ola_kanji_6_10_001" translation="brama" kana="もん" kanji="門" romaji="mon" example="２人の兵士が、門のところで見張りをしていた。 - Two soldiers were keeping a watch at the gate." case_language="pl" />
+      <local_word id="ola_kanji_6_10_002" translation="brama szkoły" kana="こうもん" kanji="校門" romaji="koumon" example="校門は８時に開く。 - The school gates open at 8am." case_language="pl" />
+      <local_word id="ola_kanji_6_10_003" translation="człowiek" kana="ひと" kanji="人" romaji="hito" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_6_10_004" translation="japończyk" kana="にほんじん" kanji="日本人" romaji="nihonjin" example="あなたが日本人だと私は思っていた。 - I thought you were Japanese." case_language="pl" />
+      <local_word id="ola_kanji_6_10_005" translation="troje ludzi" kana="さんにん" kanji="三人" romaji="sannin" example="ケンは三人のなかでもっとも速く走ります。 - Ken runs the fastest of the three." case_language="pl" />
+      <local_word id="ola_kanji_6_10_006" translation="usta" kana="くち" kanji="口" romaji="kuchi" example="あの仕事の口はまだあるよ。 - I still have that job." case_language="pl" />
+      <local_word id="ola_kanji_6_10_007" translation="wejście" kana="いりぐち" kanji="入り口" romaji="iriguchi" example="１台の車が入り口に止まった。 - A car stopped at the entrance." case_language="pl" />
+      <local_word id="ola_kanji_6_10_008" translation="ilość ludzi" kana="じんこう" kanji="人口" romaji="jinkou" example="紀元２０２０年までには、この市の人口は倍増しているだろう。 - By AD 2020, the city's population will likely double." case_language="pl" />
+      <local_word id="ola_kanji_6_10_009" translation="samochód" kana="くるま" kanji="車" romaji="kuruma" example="車を運転する時はいくら注意してもしすぎることはない。 - When driving a car, you should never be too careful." case_language="pl" />
+      <local_word id="ola_kanji_6_10_010" translation="ogień" kana="ひ" kanji="火" romaji="hi" example="いすをもっと火の近くに寄せなさい。 - Put your chair closer to the fire." case_language="pl" />
+      <local_word id="ola_kanji_6_10_011" translation="wulkan" kana="かざん" kanji="火山" romaji="kazan" example="その火山は溶岩を流し出した。 - The volcano poured out lava." case_language="pl" />
+      <local_word id="ola_kanji_6_10_012" translation="wtorek" kana="かようび" kanji="火曜日" romaji="kayoubi" example="火曜日に国会が開かれる。 - The Diet will be held on Tuesday." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_46_50" group="Ola" main="Kanji" name="46-50">
-      <local_word id="ola_kanji_46_50_001" translation="wzrosnąć, podnieść się ( np. cena )" kana="あがる" kanji="上がる" romaji="agaru" example="来月タクシー料金があがります。 - Taxi fares will go up next month." />
-      <local_word id="ola_kanji_46_50_002" translation="wspinać się, iść do góry ( fizycznie )" kana="のぼる" kanji="上る" romaji="noboru" example="上へ昇れば昇るほど、それだけ墜落の程度は大きくなる。 - The higher you go, the greater the degree of the crash." />
-      <local_word id="ola_kanji_46_50_003" translation="dobry, sprawny" kana="じょうず" kanji="上手" romaji="jouzu" example="あなたは上手にバスケットボールができますか。 - Can you play basketball well?" />
-      <local_word id="ola_kanji_46_50_004" translation="Przez cały dzień" kana="いちにちじゅう" kanji="一日中" romaji="ichinichijuu" example="１日中テニスをしていたのだから。 - I played tennis all day." />
-      <local_word id="ola_kanji_46_50_005" translation="W całej Japonii" kana="にほんじゅう" kanji="日本中" romaji="nihonjuu" example="そのニュースは日本中に広まった。 - The news spread throughout Japan." />
-      <local_word id="ola_kanji_46_50_006" translation="obniżać, opuszczać, zmniejszać" kana="さげる" kanji="下げる" romaji="sageru" example="ラジオの音を下げてくれませんか。 - Could you please lower the radio sound?" />
-      <local_word id="ola_kanji_46_50_007" translation="schodzić, np. z gór" kana="くだる" kanji="下る" romaji="kudaru" example="山を下ったところに学校がある。 - A school is located down the mountain." />
-      <local_word id="ola_kanji_46_50_008" translation="być kiepskim w .." kana="へた" kanji="下手" romaji="heta" example="N/A" />
-      <local_word id="ola_kanji_46_50_009" translation="kanalizacja, ścieki" kana="げすい" kanji="下水" romaji="gesui" example="下水が完全に詰まっている。 - The sewage is completely clogged." />
-      <local_word id="ola_kanji_46_50_010" translation="duży" kana="おおきい" kanji="大きい" romaji="ookii" example="もっと大きい声で言ってください。 - Please say it louder." />
-      <local_word id="ola_kanji_46_50_011" translation="dorosły" kana="おとな" kanji="大人" romaji="otona" example="大人だけこの映画が見える。 - Only adults can see this movie." />
-      <local_word id="ola_kanji_46_50_012" translation="mały" kana="ちいさい" kanji="小さい" romaji="chiisai" example="その机はメグには小さすぎる。 - The desk is too small for Meg." />
-      <local_word id="ola_kanji_46_50_013" translation="uczeń szkoły podstawowej" kana="しょうがくせい" kanji="小学生" romaji="shougakusei" example="彼らはそのころ小学生でした。 - They were in elementary school at the time." />
-      <local_word id="ola_kanji_46_50_014" translation="różnego rodzaju" kana="だいしょう" kanji="大小" romaji="daishou" example="道路上の大小の石に気をつけなさい。 - Be careful of the large and small stones on the road." />
-      <local_word id="ola_kanji_46_50_015" translation="strumień" kana="おがわ" kanji="小川" romaji="ogawa" example="小川がさらさらと流れる音が聞こえる。 - I could hear the smooth flow of the stream." />
-      <local_word id="ola_kanji_46_50_016" translation="podnieść coś" kana="あげる" kanji="上げる" romaji="ageru" example="全力をあげてたたかえ。 - Give all your might and fight." />
+      <local_word id="ola_kanji_46_50_001" translation="wzrosnąć, podnieść się ( np. cena )" kana="あがる" kanji="上がる" romaji="agaru" example="来月タクシー料金があがります。 - Taxi fares will go up next month." case_language="pl" />
+      <local_word id="ola_kanji_46_50_002" translation="wspinać się, iść do góry ( fizycznie )" kana="のぼる" kanji="上る" romaji="noboru" example="上へ昇れば昇るほど、それだけ墜落の程度は大きくなる。 - The higher you go, the greater the degree of the crash." case_language="pl" />
+      <local_word id="ola_kanji_46_50_003" translation="dobry, sprawny" kana="じょうず" kanji="上手" romaji="jouzu" example="あなたは上手にバスケットボールができますか。 - Can you play basketball well?" case_language="pl" />
+      <local_word id="ola_kanji_46_50_004" translation="Przez cały dzień" kana="いちにちじゅう" kanji="一日中" romaji="ichinichijuu" example="１日中テニスをしていたのだから。 - I played tennis all day." case_language="pl" />
+      <local_word id="ola_kanji_46_50_005" translation="W całej Japonii" kana="にほんじゅう" kanji="日本中" romaji="nihonjuu" example="そのニュースは日本中に広まった。 - The news spread throughout Japan." case_language="pl" />
+      <local_word id="ola_kanji_46_50_006" translation="obniżać, opuszczać, zmniejszać" kana="さげる" kanji="下げる" romaji="sageru" example="ラジオの音を下げてくれませんか。 - Could you please lower the radio sound?" case_language="pl" />
+      <local_word id="ola_kanji_46_50_007" translation="schodzić, np. z gór" kana="くだる" kanji="下る" romaji="kudaru" example="山を下ったところに学校がある。 - A school is located down the mountain." case_language="pl" />
+      <local_word id="ola_kanji_46_50_008" translation="być kiepskim w .." kana="へた" kanji="下手" romaji="heta" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_46_50_009" translation="kanalizacja, ścieki" kana="げすい" kanji="下水" romaji="gesui" example="下水が完全に詰まっている。 - The sewage is completely clogged." case_language="pl" />
+      <local_word id="ola_kanji_46_50_010" translation="duży" kana="おおきい" kanji="大きい" romaji="ookii" example="もっと大きい声で言ってください。 - Please say it louder." case_language="pl" />
+      <local_word id="ola_kanji_46_50_011" translation="dorosły" kana="おとな" kanji="大人" romaji="otona" example="大人だけこの映画が見える。 - Only adults can see this movie." case_language="pl" />
+      <local_word id="ola_kanji_46_50_012" translation="mały" kana="ちいさい" kanji="小さい" romaji="chiisai" example="その机はメグには小さすぎる。 - The desk is too small for Meg." case_language="pl" />
+      <local_word id="ola_kanji_46_50_013" translation="uczeń szkoły podstawowej" kana="しょうがくせい" kanji="小学生" romaji="shougakusei" example="彼らはそのころ小学生でした。 - They were in elementary school at the time." case_language="pl" />
+      <local_word id="ola_kanji_46_50_014" translation="różnego rodzaju" kana="だいしょう" kanji="大小" romaji="daishou" example="道路上の大小の石に気をつけなさい。 - Be careful of the large and small stones on the road." case_language="pl" />
+      <local_word id="ola_kanji_46_50_015" translation="strumień" kana="おがわ" kanji="小川" romaji="ogawa" example="小川がさらさらと流れる音が聞こえる。 - I could hear the smooth flow of the stream." case_language="pl" />
+      <local_word id="ola_kanji_46_50_016" translation="podnieść coś" kana="あげる" kanji="上げる" romaji="ageru" example="全力をあげてたたかえ。 - Give all your might and fight." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_51_55" group="Ola" main="Kanji" name="51-55">
-      <local_word id="ola_kanji_51_55_001" translation="prawa ręka" kana="みぎて" kanji="右手" romaji="migite" example="右手がしびれます。 - My right hand is numb." />
-      <local_word id="ola_kanji_51_55_002" translation="prawe oko" kana="みぎめ" kanji="右目" romaji="migime" example="２年前に右目を失明しました。 - Two years ago I lost my right eye." />
-      <local_word id="ola_kanji_51_55_003" translation="lewa noga" kana="ひだりあし" kanji="左足" romaji="hidariashi" example="その事故で彼は左足にけがをした。 - He suffered an injury to his left leg in the accident." />
-      <local_word id="ola_kanji_51_55_004" translation="lewe ucho" kana="ひだりみみ" kanji="左耳" romaji="hidarimimi" example="左耳から耳だれが出ます。 - Ear drain comes out of your left ear." />
-      <local_word id="ola_kanji_51_55_005" translation="lewy i prawy" kana="さゆう" kanji="左右" romaji="sayuu" example="彼は怒って首を左右に振った。 - He shook his head from side to side in anger." />
-      <local_word id="ola_kanji_51_55_006" translation="w dniu dzisiejszym" kana="ほんじつ" kanji="本日" romaji="honjitsu" example="あいにくですが本日は予約でいっぱいです。 - Unfortunately, today we have a full reservation." />
-      <local_word id="ola_kanji_51_55_007" translation="liczny" kana="おおい" kanji="多い" romaji="ooi" example="２０代の若い女性の中には、夏休みに海外旅行にでたいと思う人も多い。 - Many young women in their 20s want to travel abroad during summer vacation." />
-      <local_word id="ola_kanji_51_55_008" translation="mało, niewiele" kana="すくない" kanji="少ない" romaji="sukunai" example="この病気に勝てる人は少ない。 - Few people can beat this disease." />
-      <local_word id="ola_kanji_51_55_009" translation="trochę" kana="すこし" kanji="少し" romaji="sukoshi" example="少しテレビを見てもいいですか。 - Can I watch a little TV?" />
-      <local_word id="ola_kanji_51_55_010" translation="liczba, w niewielkim stopniu" kana="たしょう" kanji="多少" romaji="tashou" example="今朝は空気が多少冷たい。 - The air was a little cold this morning." />
-      <local_word id="ola_kanji_51_55_011" translation="chłopiec" kana="しょうねん" kanji="少年" romaji="shounen" example="その内気な少年はぼそぼそと自分の名前をつぶやいた。 - The shy boy muttered his name." />
-      <local_word id="ola_kanji_51_55_012" translation="dziewczynka" kana="しょうじょ" kanji="少女" romaji="shoujo" example="あのかわいい少女は私の妹です。 - That cute girl is my sister." />
+      <local_word id="ola_kanji_51_55_001" translation="prawa ręka" kana="みぎて" kanji="右手" romaji="migite" example="右手がしびれます。 - My right hand is numb." case_language="pl" />
+      <local_word id="ola_kanji_51_55_002" translation="prawe oko" kana="みぎめ" kanji="右目" romaji="migime" example="２年前に右目を失明しました。 - Two years ago I lost my right eye." case_language="pl" />
+      <local_word id="ola_kanji_51_55_003" translation="lewa noga" kana="ひだりあし" kanji="左足" romaji="hidariashi" example="その事故で彼は左足にけがをした。 - He suffered an injury to his left leg in the accident." case_language="pl" />
+      <local_word id="ola_kanji_51_55_004" translation="lewe ucho" kana="ひだりみみ" kanji="左耳" romaji="hidarimimi" example="左耳から耳だれが出ます。 - Ear drain comes out of your left ear." case_language="pl" />
+      <local_word id="ola_kanji_51_55_005" translation="lewy i prawy" kana="さゆう" kanji="左右" romaji="sayuu" example="彼は怒って首を左右に振った。 - He shook his head from side to side in anger." case_language="pl" />
+      <local_word id="ola_kanji_51_55_006" translation="w dniu dzisiejszym" kana="ほんじつ" kanji="本日" romaji="honjitsu" example="あいにくですが本日は予約でいっぱいです。 - Unfortunately, today we have a full reservation." case_language="pl" />
+      <local_word id="ola_kanji_51_55_007" translation="liczny" kana="おおい" kanji="多い" romaji="ooi" example="２０代の若い女性の中には、夏休みに海外旅行にでたいと思う人も多い。 - Many young women in their 20s want to travel abroad during summer vacation." case_language="pl" />
+      <local_word id="ola_kanji_51_55_008" translation="mało, niewiele" kana="すくない" kanji="少ない" romaji="sukunai" example="この病気に勝てる人は少ない。 - Few people can beat this disease." case_language="pl" />
+      <local_word id="ola_kanji_51_55_009" translation="trochę" kana="すこし" kanji="少し" romaji="sukoshi" example="少しテレビを見てもいいですか。 - Can I watch a little TV?" case_language="pl" />
+      <local_word id="ola_kanji_51_55_010" translation="liczba, w niewielkim stopniu" kana="たしょう" kanji="多少" romaji="tashou" example="今朝は空気が多少冷たい。 - The air was a little cold this morning." case_language="pl" />
+      <local_word id="ola_kanji_51_55_011" translation="chłopiec" kana="しょうねん" kanji="少年" romaji="shounen" example="その内気な少年はぼそぼそと自分の名前をつぶやいた。 - The shy boy muttered his name." case_language="pl" />
+      <local_word id="ola_kanji_51_55_012" translation="dziewczynka" kana="しょうじょ" kanji="少女" romaji="shoujo" example="あのかわいい少女は私の妹です。 - That cute girl is my sister." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_56_60" group="Ola" main="Kanji" name="56-60">
-      <local_word id="ola_kanji_56_60_001" translation="odpoczywać" kana="やすむ" kanji="休む" romaji="yasumu" example="父はまだ休んでいる。 - My father is still on rest." />
-      <local_word id="ola_kanji_56_60_002" translation="odpoczynek" kana="やすみ" kanji="休み" romaji="yasumi" example="N/A" />
-      <local_word id="ola_kanji_56_60_003" translation="dzień wolny" kana="きゅうじつ" kanji="休日" romaji="kyuujitsu" example="クリスマスは特別な休日だ。 - Christmas is a special holiday." />
-      <local_word id="ola_kanji_56_60_004" translation="czas ( moment, chwila, kiedy )" kana="とき" kanji="時" romaji="toki" example="私は１０時ごろ寝ついた。 - I went to sleep around 10am." />
-      <local_word id="ola_kanji_56_60_005" translation="czasami" kana="ときどき" kanji="時々" romaji="tokidoki" example="ジェーンはときどき学校まで走っていく。 - Jane sometimes runs to school." />
-      <local_word id="ola_kanji_56_60_006" translation="pomiędzy" kana="あいだ" kanji="間" romaji="aida" example="鬼の居ぬ間に洗濯。 - Wash while the demon is away." />
-      <local_word id="ola_kanji_56_60_007" translation="czas ( czas jako ilość, przedział )" kana="じかん" kanji="時間" romaji="jikan" example="いつだって読書の時間は見つけられる。 - You can always find time to read." />
-      <local_word id="ola_kanji_56_60_008" translation="istota ludzka" kana="にんげん" kanji="人間" romaji="ningen" example="どんなに財産があっても、貪欲な人間は満足できない。世界中の財宝を集めても幸福にはなれない。 - No matter how much wealth you have, greedy people cannot satisfy them.Collecting treasures from around the world will not make you happy." />
-      <local_word id="ola_kanji_56_60_009" translation="środek" kana="ちゅうかん" kanji="中間" romaji="chuukan" example="厳しさと甘さの中間を見つける。 - Find a middle ground between severity and sweetness." />
-      <local_word id="ola_kanji_56_60_010" translation="rozumieć" kana="わかる" kanji="分かる" romaji="wakaru" example="彼が有名な人物だというのがわかります。 - You can see that he is a famous person." />
-      <local_word id="ola_kanji_56_60_011" translation="dzielić" kana="わける" kanji="分ける" romaji="wakeru" example="彼は自分の本を５分野に分けた。 - He divided his book into five areas." />
-      <local_word id="ola_kanji_56_60_012" translation="wystarczyć" kana="じゅうぶん" kanji="十分" romaji="juubun" example="いいえ、一日に十分も進むんです。 - No, it goes well enough in the day." />
-      <local_word id="ola_kanji_56_60_013" translation="połowa" kana="はん" kanji="半" romaji="han" example="半時間したら彼はここに来るでしょう。 - He'll be here in half an hour." />
-      <local_word id="ola_kanji_56_60_014" translation="połowa dnia" kana="はんにち" kanji="半日" romaji="hannichi" example="N/A" />
-      <local_word id="ola_kanji_56_60_015" translation="połowa roku" kana="はんとし" kanji="半年" romaji="hantoshi" example="あと半年したら、彼女は外国へ行ってしまう。 - In the next six months, she'll be going abroad." />
-      <local_word id="ola_kanji_56_60_016" translation="pierwsza połowa" kana="ぜんはん" kanji="前半" romaji="zenhan" example="プログラムは今頃もう始まっているはずです。だから、前半はたぶん観られないでしょう。 - The program should have already begun by now.So you probably won't be able to watch the first half." />
-      <local_word id="ola_kanji_56_60_017" translation="druga połowa" kana="こうはん" kanji="後半" romaji="kouhan" example="社長の挨拶が長くて式の後半が押せ押せになってしまった。 - The president's greeting was long, and the second half of the ceremony was pushing me back." />
+      <local_word id="ola_kanji_56_60_001" translation="odpoczywać" kana="やすむ" kanji="休む" romaji="yasumu" example="父はまだ休んでいる。 - My father is still on rest." case_language="pl" />
+      <local_word id="ola_kanji_56_60_002" translation="odpoczynek" kana="やすみ" kanji="休み" romaji="yasumi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_56_60_003" translation="dzień wolny" kana="きゅうじつ" kanji="休日" romaji="kyuujitsu" example="クリスマスは特別な休日だ。 - Christmas is a special holiday." case_language="pl" />
+      <local_word id="ola_kanji_56_60_004" translation="czas ( moment, chwila, kiedy )" kana="とき" kanji="時" romaji="toki" example="私は１０時ごろ寝ついた。 - I went to sleep around 10am." case_language="pl" />
+      <local_word id="ola_kanji_56_60_005" translation="czasami" kana="ときどき" kanji="時々" romaji="tokidoki" example="ジェーンはときどき学校まで走っていく。 - Jane sometimes runs to school." case_language="pl" />
+      <local_word id="ola_kanji_56_60_006" translation="pomiędzy" kana="あいだ" kanji="間" romaji="aida" example="鬼の居ぬ間に洗濯。 - Wash while the demon is away." case_language="pl" />
+      <local_word id="ola_kanji_56_60_007" translation="czas ( czas jako ilość, przedział )" kana="じかん" kanji="時間" romaji="jikan" example="いつだって読書の時間は見つけられる。 - You can always find time to read." case_language="pl" />
+      <local_word id="ola_kanji_56_60_008" translation="istota ludzka" kana="にんげん" kanji="人間" romaji="ningen" example="どんなに財産があっても、貪欲な人間は満足できない。世界中の財宝を集めても幸福にはなれない。 - No matter how much wealth you have, greedy people cannot satisfy them.Collecting treasures from around the world will not make you happy." case_language="pl" />
+      <local_word id="ola_kanji_56_60_009" translation="środek" kana="ちゅうかん" kanji="中間" romaji="chuukan" example="厳しさと甘さの中間を見つける。 - Find a middle ground between severity and sweetness." case_language="pl" />
+      <local_word id="ola_kanji_56_60_010" translation="rozumieć" kana="わかる" kanji="分かる" romaji="wakaru" example="彼が有名な人物だというのがわかります。 - You can see that he is a famous person." case_language="pl" />
+      <local_word id="ola_kanji_56_60_011" translation="dzielić" kana="わける" kanji="分ける" romaji="wakeru" example="彼は自分の本を５分野に分けた。 - He divided his book into five areas." case_language="pl" />
+      <local_word id="ola_kanji_56_60_012" translation="wystarczyć" kana="じゅうぶん" kanji="十分" romaji="juubun" example="いいえ、一日に十分も進むんです。 - No, it goes well enough in the day." case_language="pl" />
+      <local_word id="ola_kanji_56_60_013" translation="połowa" kana="はん" kanji="半" romaji="han" example="半時間したら彼はここに来るでしょう。 - He'll be here in half an hour." case_language="pl" />
+      <local_word id="ola_kanji_56_60_014" translation="połowa dnia" kana="はんにち" kanji="半日" romaji="hannichi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_56_60_015" translation="połowa roku" kana="はんとし" kanji="半年" romaji="hantoshi" example="あと半年したら、彼女は外国へ行ってしまう。 - In the next six months, she'll be going abroad." case_language="pl" />
+      <local_word id="ola_kanji_56_60_016" translation="pierwsza połowa" kana="ぜんはん" kanji="前半" romaji="zenhan" example="プログラムは今頃もう始まっているはずです。だから、前半はたぶん観られないでしょう。 - The program should have already begun by now.So you probably won't be able to watch the first half." case_language="pl" />
+      <local_word id="ola_kanji_56_60_017" translation="druga połowa" kana="こうはん" kanji="後半" romaji="kouhan" example="社長の挨拶が長くて式の後半が押せ押せになってしまった。 - The president's greeting was long, and the second half of the ceremony was pushing me back." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_61_65" group="Ola" main="Kanji" name="61-65">
-      <local_word id="ola_kanji_61_65_001" translation="teraz" kana="いま" kanji="今" romaji="ima" example="今のアナウンスは何だったのですか。 - What was the announcement just now?" />
-      <local_word id="ola_kanji_61_65_002" translation="ten miesiąc" kana="こんげつ" kanji="今月" romaji="kongetsu" example="今月の売り上げはよくない。 - Sales this month are not good." />
-      <local_word id="ola_kanji_61_65_003" translation="dzisiaj" kana="きょう" kanji="今日" romaji="kyou" example="今日は何をしたいですか。 - What do you want to do today?" />
-      <local_word id="ola_kanji_61_65_004" translation="ten rok" kana="ことし" kanji="今年" romaji="kotoshi" example="今年の暑い夏には耐えられません。 - I can't stand this hot summer." />
-      <local_word id="ola_kanji_61_65_005" translation="codziennie" kana="まいにち" kanji="毎日" romaji="mainichi" example="その犬に毎日食べ物をやって下さい。 - Please feed the dog every day." />
-      <local_word id="ola_kanji_61_65_006" translation="co rok" kana="まいとし" kanji="毎年" romaji="maitoshi" example="彼は毎年軽井沢へ行く。 - He goes to Karuizawa every year." />
-      <local_word id="ola_kanji_61_65_007" translation="co miesiąć" kana="まいつき" kanji="毎月" romaji="maitsuki" example="私は両親には必ず毎月手紙を書きます。 - I always write to my parents every month." />
-      <local_word id="ola_kanji_61_65_008" translation="przed południem" kana="ごぜん" kanji="午前" romaji="gozen" example="その電車は午前９時にここを出発します。 - The train leaves here at 9am." />
-      <local_word id="ola_kanji_61_65_009" translation="popołudniu" kana="ごご" kanji="午後" romaji="gogo" example="その急行は午後六時三十分着だ。 - The express arrived at 6:30pm." />
-      <local_word id="ola_kanji_61_65_010" translation="przed" kana="まえ" kanji="前" romaji="mae" example="前学期は成績がよかった。 - The grades were good the last semester." />
-      <local_word id="ola_kanji_61_65_011" translation="poprzedni dzień" kana="ぜんじつ" kanji="前日" romaji="zenjitsu" example="私はその前日彼にあった。 - I was with him the day before." />
-      <local_word id="ola_kanji_61_65_012" translation="dwa lata temu" kana="にねんまえ" kanji="二年前" romaji="ninenmae" example="N/A" />
-      <local_word id="ola_kanji_61_65_013" translation="później" kana="あとで" kanji="後で" romaji="atode" example="あとで起こったことはなお悪かった。 - What happened later was even worse." />
-      <local_word id="ola_kanji_61_65_014" translation="z tyłu" kana="うしろ" kanji="後ろ" romaji="ushiro" example="後ろを刈り上げてください。 - Please mow the back." />
-      <local_word id="ola_kanji_61_65_015" translation="przed i po" kana="ぜんご" kanji="前後" romaji="zengo" example="彼は首を前後に振りました。 - He shook his head back and forth." />
-      <local_word id="ola_kanji_61_65_016" translation="Od tej pory" kana="こんご" kanji="今後" romaji="kongo" example="今後気をつけなくてはなりません。 - We have to be careful in the future." />
-      <local_word id="ola_kanji_61_65_017" translation="po dróch latach" kana="にねんご" kanji="二年後" romaji="ninengo" example="" />
+      <local_word id="ola_kanji_61_65_001" translation="teraz" kana="いま" kanji="今" romaji="ima" example="今のアナウンスは何だったのですか。 - What was the announcement just now?" case_language="pl" />
+      <local_word id="ola_kanji_61_65_002" translation="ten miesiąc" kana="こんげつ" kanji="今月" romaji="kongetsu" example="今月の売り上げはよくない。 - Sales this month are not good." case_language="pl" />
+      <local_word id="ola_kanji_61_65_003" translation="dzisiaj" kana="きょう" kanji="今日" romaji="kyou" example="今日は何をしたいですか。 - What do you want to do today?" case_language="pl" />
+      <local_word id="ola_kanji_61_65_004" translation="ten rok" kana="ことし" kanji="今年" romaji="kotoshi" example="今年の暑い夏には耐えられません。 - I can't stand this hot summer." case_language="pl" />
+      <local_word id="ola_kanji_61_65_005" translation="codziennie" kana="まいにち" kanji="毎日" romaji="mainichi" example="その犬に毎日食べ物をやって下さい。 - Please feed the dog every day." case_language="pl" />
+      <local_word id="ola_kanji_61_65_006" translation="co rok" kana="まいとし" kanji="毎年" romaji="maitoshi" example="彼は毎年軽井沢へ行く。 - He goes to Karuizawa every year." case_language="pl" />
+      <local_word id="ola_kanji_61_65_007" translation="co miesiąć" kana="まいつき" kanji="毎月" romaji="maitsuki" example="私は両親には必ず毎月手紙を書きます。 - I always write to my parents every month." case_language="pl" />
+      <local_word id="ola_kanji_61_65_008" translation="przed południem" kana="ごぜん" kanji="午前" romaji="gozen" example="その電車は午前９時にここを出発します。 - The train leaves here at 9am." case_language="pl" />
+      <local_word id="ola_kanji_61_65_009" translation="popołudniu" kana="ごご" kanji="午後" romaji="gogo" example="その急行は午後六時三十分着だ。 - The express arrived at 6:30pm." case_language="pl" />
+      <local_word id="ola_kanji_61_65_010" translation="przed" kana="まえ" kanji="前" romaji="mae" example="前学期は成績がよかった。 - The grades were good the last semester." case_language="pl" />
+      <local_word id="ola_kanji_61_65_011" translation="poprzedni dzień" kana="ぜんじつ" kanji="前日" romaji="zenjitsu" example="私はその前日彼にあった。 - I was with him the day before." case_language="pl" />
+      <local_word id="ola_kanji_61_65_012" translation="dwa lata temu" kana="にねんまえ" kanji="二年前" romaji="ninenmae" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_61_65_013" translation="później" kana="あとで" kanji="後で" romaji="atode" example="あとで起こったことはなお悪かった。 - What happened later was even worse." case_language="pl" />
+      <local_word id="ola_kanji_61_65_014" translation="z tyłu" kana="うしろ" kanji="後ろ" romaji="ushiro" example="後ろを刈り上げてください。 - Please mow the back." case_language="pl" />
+      <local_word id="ola_kanji_61_65_015" translation="przed i po" kana="ぜんご" kanji="前後" romaji="zengo" example="彼は首を前後に振りました。 - He shook his head back and forth." case_language="pl" />
+      <local_word id="ola_kanji_61_65_016" translation="Od tej pory" kana="こんご" kanji="今後" romaji="kongo" example="今後気をつけなくてはなりません。 - We have to be careful in the future." case_language="pl" />
+      <local_word id="ola_kanji_61_65_017" translation="po dróch latach" kana="にねんご" kanji="二年後" romaji="ninengo" example="" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_66_70" group="Ola" main="Kanji" name="66-70">
-      <local_word id="ola_kanji_66_70_001" translation="jasny" kana="あかるい" kanji="明るい" romaji="akarui" example="ダイヤは明るく光った。 - The diamonds glowed brightly.">
+      <local_word id="ola_kanji_66_70_001" translation="jasny" kana="あかるい" kanji="明るい" romaji="akarui" example="ダイヤは明るく光った。 - The diamonds glowed brightly." case_language="pl">
         <forms>
           <form name="dictionary">あかるい</form>
           <form name="polite_nonpast">あかるいです</form>
@@ -203,33 +203,33 @@
           <form name="te_form">あかるくて</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_66_70_002" translation="rozpocząć się ( np. rok szkolny )" kana="あける" kanji="明ける" romaji="akeru" example="夜が明ける。 - The night is over." />
-      <local_word id="ola_kanji_66_70_003" translation="jutro" kana="あした" kanji="明日" romaji="ashita" example="あしたは一日中ひまです。 - Tomorrow I'll be free all day." />
-      <local_word id="ola_kanji_66_70_004" translation="lubić" kana="すき" kanji="好き" romaji="suki" example="実を言うと、私は彼が好きでないのです。 - The truth is, I don't like him." />
-      <local_word id="ola_kanji_66_70_005" translation="upodobanie, gust" kana="このみ" kanji="好み" romaji="konomi" example="彼女は高級車好みだ。 - She likes luxury cars." />
-      <local_word id="ola_kanji_66_70_006" translation="co" kana="なに" kanji="何" romaji="nani" example="N/A" />
-      <local_word id="ola_kanji_66_70_007" translation="ilu ludzi?" kana="なんにん" kanji="何人" romaji="nannin" example="あなたには何人子供がいますか。 - How many children do you have?" />
-      <local_word id="ola_kanji_66_70_008" translation="ile lat?" kana="なんねん" kanji="何年" romaji="nannen" example="それを建てるのに何年もかかった。 - It took years to build it." />
-      <local_word id="ola_kanji_66_70_009" translation="dlaczego, jak?" kana="なんで" kanji="何で" romaji="nande" example="N/A" />
-      <local_word id="ola_kanji_66_70_010" translation="ile minut?" kana="なんぷん" kanji="何分" romaji="nanpun" example="この冷凍アスパラガスは何分ゆでましょうか。 - How many minutes should I boil this frozen asparagus?" />
-      <local_word id="ola_kanji_66_70_011" translation="kupić" kana="かう" kanji="買う" romaji="kau" example="車を買うために貯金をしている。 - I'm saving up to buy a car." />
-      <local_word id="ola_kanji_66_70_012" translation="ciało" kana="からだ" kanji="体" romaji="karada" example="奥さんのがみがみ小言にフレッドさんは大弱りの体であった。 - Fred was extremely weak when his wife squealed." />
-      <local_word id="ola_kanji_66_70_013" translation="siła fizyczna" kana="たいりょく" kanji="体力" romaji="tairyoku" example="体力を維持するにはちゃんと食べなければいけません。 - You have to eat properly to maintain your strength." />
+      <local_word id="ola_kanji_66_70_002" translation="rozpocząć się ( np. rok szkolny )" kana="あける" kanji="明ける" romaji="akeru" example="夜が明ける。 - The night is over." case_language="pl" />
+      <local_word id="ola_kanji_66_70_003" translation="jutro" kana="あした" kanji="明日" romaji="ashita" example="あしたは一日中ひまです。 - Tomorrow I'll be free all day." case_language="pl" />
+      <local_word id="ola_kanji_66_70_004" translation="lubić" kana="すき" kanji="好き" romaji="suki" example="実を言うと、私は彼が好きでないのです。 - The truth is, I don't like him." case_language="pl" />
+      <local_word id="ola_kanji_66_70_005" translation="upodobanie, gust" kana="このみ" kanji="好み" romaji="konomi" example="彼女は高級車好みだ。 - She likes luxury cars." case_language="pl" />
+      <local_word id="ola_kanji_66_70_006" translation="co" kana="なに" kanji="何" romaji="nani" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_66_70_007" translation="ilu ludzi?" kana="なんにん" kanji="何人" romaji="nannin" example="あなたには何人子供がいますか。 - How many children do you have?" case_language="pl" />
+      <local_word id="ola_kanji_66_70_008" translation="ile lat?" kana="なんねん" kanji="何年" romaji="nannen" example="それを建てるのに何年もかかった。 - It took years to build it." case_language="pl" />
+      <local_word id="ola_kanji_66_70_009" translation="dlaczego, jak?" kana="なんで" kanji="何で" romaji="nande" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_66_70_010" translation="ile minut?" kana="なんぷん" kanji="何分" romaji="nanpun" example="この冷凍アスパラガスは何分ゆでましょうか。 - How many minutes should I boil this frozen asparagus?" case_language="pl" />
+      <local_word id="ola_kanji_66_70_011" translation="kupić" kana="かう" kanji="買う" romaji="kau" example="車を買うために貯金をしている。 - I'm saving up to buy a car." case_language="pl" />
+      <local_word id="ola_kanji_66_70_012" translation="ciało" kana="からだ" kanji="体" romaji="karada" example="奥さんのがみがみ小言にフレッドさんは大弱りの体であった。 - Fred was extremely weak when his wife squealed." case_language="pl" />
+      <local_word id="ola_kanji_66_70_013" translation="siła fizyczna" kana="たいりょく" kanji="体力" romaji="tairyoku" example="体力を維持するにはちゃんと食べなければいけません。 - You have to eat properly to maintain your strength." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_71_75" group="Ola" main="Kanji" name="71-75">
-      <local_word id="ola_kanji_71_75_001" translation="na zewnątrz" kana="そと" kanji="外" romaji="soto" example="うちはうち、そとはそと。 - We are ours, so we are." />
-      <local_word id="ola_kanji_71_75_002" translation="usuwać, zdejmować" kana="はずす" kanji="外す" romaji="hazusu" example="彼は眼鏡を外した。 - He took off his glasses." />
-      <local_word id="ola_kanji_71_75_003" translation="wschód" kana="ひがし" kanji="東" romaji="higashi" example="名古屋は京都の東の方にある。 - Nagoya is located east of Kyoto." />
-      <local_word id="ola_kanji_71_75_004" translation="wschodnie wejście" kana="ひがしぐち" kanji="東口" romaji="higashiguchi" example="N/A" />
-      <local_word id="ola_kanji_71_75_005" translation="zachód" kana="にし" kanji="西" romaji="nishi" example="列車は西へ走っていた。 - The train was running west." />
-      <local_word id="ola_kanji_71_75_006" translation="zachodznie wejście" kana="にしぐち" kanji="西口" romaji="nishiguchi" example="N/A" />
-      <local_word id="ola_kanji_71_75_007" translation="południe" kana="みなみ" kanji="南" romaji="minami" example="フランスは英国の南にある。 - France is located in the south of England." />
-      <local_word id="ola_kanji_71_75_008" translation="południowe wejście" kana="みなみぐち" kanji="南口" romaji="minamiguchi" example="N/A" />
-      <local_word id="ola_kanji_71_75_009" translation="północne wejście" kana="きたぐち" kanji="北口" romaji="kitaguchi" example="N/A" />
-      <local_word id="ola_kanji_71_75_010" translation="północ" kana="きた" kanji="北" romaji="kita" example="１０時までに来ます。 - I'll be there by 10am." />
+      <local_word id="ola_kanji_71_75_001" translation="na zewnątrz" kana="そと" kanji="外" romaji="soto" example="うちはうち、そとはそと。 - We are ours, so we are." case_language="pl" />
+      <local_word id="ola_kanji_71_75_002" translation="usuwać, zdejmować" kana="はずす" kanji="外す" romaji="hazusu" example="彼は眼鏡を外した。 - He took off his glasses." case_language="pl" />
+      <local_word id="ola_kanji_71_75_003" translation="wschód" kana="ひがし" kanji="東" romaji="higashi" example="名古屋は京都の東の方にある。 - Nagoya is located east of Kyoto." case_language="pl" />
+      <local_word id="ola_kanji_71_75_004" translation="wschodnie wejście" kana="ひがしぐち" kanji="東口" romaji="higashiguchi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_71_75_005" translation="zachód" kana="にし" kanji="西" romaji="nishi" example="列車は西へ走っていた。 - The train was running west." case_language="pl" />
+      <local_word id="ola_kanji_71_75_006" translation="zachodznie wejście" kana="にしぐち" kanji="西口" romaji="nishiguchi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_71_75_007" translation="południe" kana="みなみ" kanji="南" romaji="minami" example="フランスは英国の南にある。 - France is located in the south of England." case_language="pl" />
+      <local_word id="ola_kanji_71_75_008" translation="południowe wejście" kana="みなみぐち" kanji="南口" romaji="minamiguchi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_71_75_009" translation="północne wejście" kana="きたぐち" kanji="北口" romaji="kitaguchi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_71_75_010" translation="północ" kana="きた" kanji="北" romaji="kita" example="１０時までに来ます。 - I'll be there by 10am." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_76_80" group="Ola" main="Kanji" name="76-80">
-      <local_word id="ola_kanji_76_80_001" translation="wyjść ( skądś )" kana="でる" kanji="出る" romaji="deru" example="私の家におばけが出たのは本当だ。 - It's true that a ghost appeared in my house.">
+      <local_word id="ola_kanji_76_80_001" translation="wyjść ( skądś )" kana="でる" kanji="出る" romaji="deru" example="私の家におばけが出たのは本当だ。 - It's true that a ghost appeared in my house." case_language="pl">
         <forms>
           <form name="dictionary">でる</form>
           <form name="polite_nonpast">でます</form>
@@ -248,7 +248,7 @@
           <form name="imperative">でよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_002" translation="wyjmować, wystawić" kana="だす" kanji="出す" romaji="dasu" example="いつから痛みだしましたか。 - Since when did you start to feel pain?">
+      <local_word id="ola_kanji_76_80_002" translation="wyjmować, wystawić" kana="だす" kanji="出す" romaji="dasu" example="いつから痛みだしましたか。 - Since when did you start to feel pain?" case_language="pl">
         <forms>
           <form name="dictionary">だす</form>
           <form name="polite_nonpast">だします</form>
@@ -267,7 +267,7 @@
           <form name="imperative">だせ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_003" translation="wyjść ( gdzieś )" kana="でかける" kanji="出かける" romaji="dekakeru" example="１０分前に出かけました。 - I went out 10 minutes ago.">
+      <local_word id="ola_kanji_76_80_003" translation="wyjść ( gdzieś )" kana="でかける" kanji="出かける" romaji="dekakeru" example="１０分前に出かけました。 - I went out 10 minutes ago." case_language="pl">
         <forms>
           <form name="dictionary">でかける</form>
           <form name="polite_nonpast">でかけます</form>
@@ -286,7 +286,7 @@
           <form name="imperative">でかけよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_004" translation="wejść" kana="はいる" kanji="入る" romaji="hairu" example="梅雨に入った。 - The rainy season has begun.">
+      <local_word id="ola_kanji_76_80_004" translation="wejść" kana="はいる" kanji="入る" romaji="hairu" example="梅雨に入った。 - The rainy season has begun." case_language="pl">
         <forms>
           <form name="dictionary">はいる</form>
           <form name="polite_nonpast">はいります</form>
@@ -305,7 +305,7 @@
           <form name="imperative">はいれ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_005" translation="wkładać" kana="いれる" kanji="入れる" romaji="ireru" example="留学生も入れるのかしら。 - I wonder if international students will also be admitted.">
+      <local_word id="ola_kanji_76_80_005" translation="wkładać" kana="いれる" kanji="入れる" romaji="ireru" example="留学生も入れるのかしら。 - I wonder if international students will also be admitted." case_language="pl">
         <forms>
           <form name="dictionary">いれる</form>
           <form name="polite_nonpast">いれます</form>
@@ -324,7 +324,7 @@
           <form name="imperative">いれよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_006" translation="być przyjętym do szkoły" kana="にゅうがくする" kanji="入学する" romaji="nyuugakusuru" example="私の息子は、高校に入学した。 - My son has entered high school.">
+      <local_word id="ola_kanji_76_80_006" translation="być przyjętym do szkoły" kana="にゅうがくする" kanji="入学する" romaji="nyuugakusuru" example="私の息子は、高校に入学した。 - My son has entered high school." case_language="pl">
         <forms>
           <form name="dictionary">にゅうがくする</form>
           <form name="polite_nonpast">にゅうがくします</form>
@@ -343,7 +343,7 @@
           <form name="imperative">にゅうがくせよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_007" translation="iść" kana="いく" kanji="行く" romaji="iku" example="探検家が山中の道なき道を行った。 - The explorer took a pathless path through the mountains.">
+      <local_word id="ola_kanji_76_80_007" translation="iść" kana="いく" kanji="行く" romaji="iku" example="探検家が山中の道なき道を行った。 - The explorer took a pathless path through the mountains." case_language="pl">
         <forms>
           <form name="dictionary">いく</form>
           <form name="polite_nonpast">いきます</form>
@@ -362,7 +362,7 @@
           <form name="imperative">いけ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_008" translation="zrobić, przeprowadzić" kana="おこなう" kanji="行う" romaji="okonau" example="自分の責任において何でも行いなさい。 - Do anything at your own risk.">
+      <local_word id="ola_kanji_76_80_008" translation="zrobić, przeprowadzić" kana="おこなう" kanji="行う" romaji="okonau" example="自分の責任において何でも行いなさい。 - Do anything at your own risk." case_language="pl">
         <forms>
           <form name="dictionary">おこなう</form>
           <form name="polite_nonpast">おこないます</form>
@@ -381,8 +381,8 @@
           <form name="imperative">おこなえ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_009" translation="trzecia linijka" kana="さんぎょうめ" kanji="三行目" romaji="trzecia linijka ( np tekstu )" example="日本は産業国である。 - Japan is an industrial country." />
-      <local_word id="ola_kanji_76_80_010" translation="przyjść" kana="くる" kanji="来る" romaji="kuru" example="１０時までに来ます。 - I'll be there by 10am.">
+      <local_word id="ola_kanji_76_80_009" translation="trzecia linijka" kana="さんぎょうめ" kanji="三行目" romaji="trzecia linijka ( np tekstu )" example="日本は産業国である。 - Japan is an industrial country." case_language="pl" />
+      <local_word id="ola_kanji_76_80_010" translation="przyjść" kana="くる" kanji="来る" romaji="kuru" example="１０時までに来ます。 - I'll be there by 10am." case_language="pl">
         <forms>
           <form name="dictionary">くる</form>
           <form name="polite_nonpast">きます</form>
@@ -401,7 +401,7 @@
           <form name="imperative">こい</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_011" translation="nie przyjść" kana="こない" kanji="来ない" romaji="konai" example="１０時までに来ます。 - I'll be there by 10am.">
+      <local_word id="ola_kanji_76_80_011" translation="nie przyjść" kana="こない" kanji="来ない" romaji="konai" example="１０時までに来ます。 - I'll be there by 10am." case_language="pl">
         <forms>
           <form name="dictionary">こない</form>
           <form name="polite_nonpast">こないです</form>
@@ -414,9 +414,9 @@
           <form name="te_form">こなくて</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_012" translation="przyszły rok" kana="らいねん" kanji="来年" romaji="rainen" example="健は来年で１５歳になります。 - Ken will turn 15 next year." />
-      <local_word id="ola_kanji_76_80_013" translation="wyjazd do japonii" kana="らいにち" kanji="来日" romaji="rainichi" example="ボブがいつ来日したか分からない。 - I don't know when Bob came to Japan." />
-      <local_word id="ola_kanji_76_80_014" translation="jeść" kana="たべる" kanji="食べる" romaji="taberu" example="もっと果物を食べるべきです。 - You should eat more fruit.">
+      <local_word id="ola_kanji_76_80_012" translation="przyszły rok" kana="らいねん" kanji="来年" romaji="rainen" example="健は来年で１５歳になります。 - Ken will turn 15 next year." case_language="pl" />
+      <local_word id="ola_kanji_76_80_013" translation="wyjazd do japonii" kana="らいにち" kanji="来日" romaji="rainichi" example="ボブがいつ来日したか分からない。 - I don't know when Bob came to Japan." case_language="pl" />
+      <local_word id="ola_kanji_76_80_014" translation="jeść" kana="たべる" kanji="食べる" romaji="taberu" example="もっと果物を食べるべきです。 - You should eat more fruit." case_language="pl">
         <forms>
           <form name="dictionary">たべる</form>
           <form name="polite_nonpast">たべます</form>
@@ -435,7 +435,7 @@
           <form name="imperative">たべよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_76_80_015" translation="pożerać" kana="くう" kanji="食う" romaji="kuu" example="この事業は金を食う。 - This business is money-eating.">
+      <local_word id="ola_kanji_76_80_015" translation="pożerać" kana="くう" kanji="食う" romaji="kuu" example="この事業は金を食う。 - This business is money-eating." case_language="pl">
         <forms>
           <form name="dictionary">くう</form>
           <form name="polite_nonpast">くいます</form>
@@ -456,7 +456,7 @@
       </local_word>
     </lesson>
     <lesson id="ola_kanji_81_85" group="Ola" main="Kanji" name="81-85">
-      <local_word id="ola_kanji_81_85_001" translation="powiedzieć" kana="いう" kanji="言う" romaji="iu" example="この動物は日本語で何と言いますか。 - How do you say this animal in Japanese?">
+      <local_word id="ola_kanji_81_85_001" translation="powiedzieć" kana="いう" kanji="言う" romaji="iu" example="この動物は日本語で何と言いますか。 - How do you say this animal in Japanese?" case_language="pl">
         <forms>
           <form name="dictionary">いう</form>
           <form name="polite_nonpast">いいます</form>
@@ -475,7 +475,7 @@
           <form name="imperative">いえ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_81_85_002" translation="widzieć" kana="みる" kanji="見る" romaji="miru" example="N/A">
+      <local_word id="ola_kanji_81_85_002" translation="widzieć" kana="みる" kanji="見る" romaji="miru" example="N/A" case_language="pl">
         <forms>
           <form name="dictionary">みる</form>
           <form name="polite_nonpast">みます</form>
@@ -494,7 +494,7 @@
           <form name="imperative">みよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_81_85_003" translation="pokazać" kana="みせる" kanji="見せる" romaji="miseru" example="彼女は背を高く見せるためにハイヒールをはいている。 - She wears high heels to make her look taller.">
+      <local_word id="ola_kanji_81_85_003" translation="pokazać" kana="みせる" kanji="見せる" romaji="miseru" example="彼女は背を高く見せるためにハイヒールをはいている。 - She wears high heels to make her look taller." case_language="pl">
         <forms>
           <form name="dictionary">みせる</form>
           <form name="polite_nonpast">みせます</form>
@@ -513,7 +513,7 @@
           <form name="imperative">みせよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_81_85_004" translation="inspekcja" kana="けんがく" kanji="見学" romaji="kengaku" example="その実施見学は非常にためになった。 - The tour of the event was extremely helpful.">
+      <local_word id="ola_kanji_81_85_004" translation="inspekcja" kana="けんがく" kanji="見学" romaji="kengaku" example="その実施見学は非常にためになった。 - The tour of the event was extremely helpful." case_language="pl">
         <forms>
           <form name="dictionary">けんがくする</form>
           <form name="polite_nonpast">けんがくします</form>
@@ -532,7 +532,7 @@
           <form name="imperative">けんがくせよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_81_85_005" translation="stać" kana="たつ" kanji="立つ" romaji="tatsu" example="市は月曜ごとに立つ。 - The city stands every Monday.">
+      <local_word id="ola_kanji_81_85_005" translation="stać" kana="たつ" kanji="立つ" romaji="tatsu" example="市は月曜ごとに立つ。 - The city stands every Monday." case_language="pl">
         <forms>
           <form name="dictionary">たつ</form>
           <form name="polite_nonpast">たちます</form>
@@ -551,8 +551,8 @@
           <form name="imperative">たて</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_81_85_006" translation="prywatny" kana="しりつ" kanji="私立" romaji="shiritsu" example="私立の学校はどういう感じですか。 - What is it like at a private school?" />
-      <local_word id="ola_kanji_81_85_007" translation="rozmawiać" kana="はなす" kanji="話す" romaji="hanasu" example="英語はカナダで話されている。 - English is spoken in Canada.">
+      <local_word id="ola_kanji_81_85_006" translation="prywatny" kana="しりつ" kanji="私立" romaji="shiritsu" example="私立の学校はどういう感じですか。 - What is it like at a private school?" case_language="pl" />
+      <local_word id="ola_kanji_81_85_007" translation="rozmawiać" kana="はなす" kanji="話す" romaji="hanasu" example="英語はカナダで話されている。 - English is spoken in Canada." case_language="pl">
         <forms>
           <form name="dictionary">はなす</form>
           <form name="polite_nonpast">はなします</form>
@@ -571,8 +571,8 @@
           <form name="imperative">はなせ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_81_85_008" translation="prelekcja, opowieść" kana="はなし" kanji="話" romaji="hanashi" example="話を聞かせてくれ。 - Let me know what you're talking about." />
-      <local_word id="ola_kanji_81_85_009" translation="słuchać, pytać" kana="きく" kanji="聞く" romaji="kiku" example="音楽が好きで、毎日聴いています。 - I love music and listen to it every day.">
+      <local_word id="ola_kanji_81_85_008" translation="prelekcja, opowieść" kana="はなし" kanji="話" romaji="hanashi" example="話を聞かせてくれ。 - Let me know what you're talking about." case_language="pl" />
+      <local_word id="ola_kanji_81_85_009" translation="słuchać, pytać" kana="きく" kanji="聞く" romaji="kiku" example="音楽が好きで、毎日聴いています。 - I love music and listen to it every day." case_language="pl">
         <forms>
           <form name="dictionary">きく</form>
           <form name="polite_nonpast">ききます</form>
@@ -591,7 +591,7 @@
           <form name="imperative">きけ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_81_85_010" translation="słyszalne, słychać" kana="きこえる" kanji="聞こえる" romaji="kikoeru" example="妙な音が聞こえた。 - I heard a strange sound.">
+      <local_word id="ola_kanji_81_85_010" translation="słyszalne, słychać" kana="きこえる" kanji="聞こえる" romaji="kikoeru" example="妙な音が聞こえた。 - I heard a strange sound." case_language="pl">
         <forms>
           <form name="dictionary">きこえる</form>
           <form name="polite_nonpast">きこえます</form>
@@ -610,213 +610,218 @@
           <form name="imperative">きこえよ</form>
         </forms>
       </local_word>
-      <local_word id="ola_kanji_81_85_011" translation="wiedza, informacja" kana="けんぶん" kanji="見聞" romaji="kenbun" example="彼の話からその見聞の広さがうかがわれた。 - His story suggested the widespread view of the situation." />
-      <local_word id="ola_kanji_81_85_012" translation="język ( np. Polski )" kana="げんご" kanji="言語" romaji="gengo" example="ドイツ語はやさしい言語ではありません。" />
-      <local_word id="ola_kanji_81_85_013" translation="państwowy" kana="こくりつ" kanji="国立" romaji="kokuritsu" example="老人のための国立の病院がもっとあってしかるべきだ。" />
+      <local_word id="ola_kanji_81_85_011" translation="wiedza, informacja" kana="けんぶん" kanji="見聞" romaji="kenbun" example="彼の話からその見聞の広さがうかがわれた。 - His story suggested the widespread view of the situation." case_language="pl" />
+      <local_word id="ola_kanji_81_85_012" translation="język ( np. Polski )" kana="げんご" kanji="言語" romaji="gengo" example="ドイツ語はやさしい言語ではありません。" case_language="pl" />
+      <local_word id="ola_kanji_81_85_013" translation="państwowy" kana="こくりつ" kanji="国立" romaji="kokuritsu" example="老人のための国立の病院がもっとあってしかるべきだ。" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_86_90" group="Ola" main="Kanji" name="86-90">
-      <local_word id="ola_kanji_86_90_001" translation="nowy" kana="あたらしい" kanji="新しい" romaji="atarashii" example="あなたの新しい車は調子よく動いていますか。 - Is your new car running well?" />
-      <local_word id="ola_kanji_86_90_002" translation="stary" kana="ふるい" kanji="古い" romaji="furui" example="ケンが使っている机はもう古い。 - The desk that Ken uses is already old." />
-      <local_word id="ola_kanji_86_90_003" translation="wysoki" kana="たかい" kanji="高い" romaji="takai" example="富士山は日本で一番高い山です。 - Mount Fuji is the tallest mountain in Japan." />
-      <local_word id="ola_kanji_86_90_004" translation="tani" kana="やすい" kanji="安い" romaji="yasui" example="これはバーゲン商品なので定価よりやすくなっているんじゃないですか。 - Since this is a bargain item, it's probably easier than the regular price." />
-      <local_word id="ola_kanji_86_90_005" translation="długi" kana="ながい" kanji="長い" romaji="nagai" example="彼に長い手紙を書いた。 - I wrote a long letter to him." />
-      <local_word id="ola_kanji_86_90_006" translation="nowy samochód" kana="しんしゃ" kanji="新車" romaji="shinsha" example="この車は新車同様だ。 - This car is just like a new one." />
-      <local_word id="ola_kanji_86_90_007" translation="nowy rok" kana="しんねん" kanji="信念" romaji="shinnen" example="新年" />
-      <local_word id="ola_kanji_86_90_008" translation="używany samochód" kana="ちゅうこしゃ" kanji="中古車" romaji="chuukosha" example="この中古車は新車同様である。 - This used car is the same as the new one." />
-      <local_word id="ola_kanji_86_90_009" translation="używana książka" kana="ふるほん" kanji="古本" romaji="furuhon" example="私はその古本に倍額を払った。 - I paid double the amount for that secondhand book." />
-      <local_word id="ola_kanji_86_90_010" translation="mocny yen" kana="えんだか" kanji="円高" romaji="endaka" example="この円高のうちに、海外旅行をしたいものです。 - I would like to travel abroad while still appreciating this yen." />
-      <local_word id="ola_kanji_86_90_011" translation="słaby yen" kana="えんやす" kanji="円安" romaji="enyasu" example="円安が進んでいるね。 - The yen is weakening." />
-      <local_word id="ola_kanji_86_90_012" translation="długie życie" kana="ながいき" kanji="長生き" romaji="nagaiki" example="妻は夫より長生きするものだ。 - A wife lives longer than her husband." />
-      <local_word id="ola_kanji_86_90_013" translation="rektor" kana="がくちょう" kanji="学長" romaji="gakuchou" example="その大学の学長は辞職しそうである。 - The university's president is likely to resign." />
+      <local_word id="ola_kanji_86_90_001" translation="nowy" kana="あたらしい" kanji="新しい" romaji="atarashii" example="あなたの新しい車は調子よく動いていますか。 - Is your new car running well?" case_language="pl" />
+      <local_word id="ola_kanji_86_90_002" translation="stary" kana="ふるい" kanji="古い" romaji="furui" example="ケンが使っている机はもう古い。 - The desk that Ken uses is already old." case_language="pl" />
+      <local_word id="ola_kanji_86_90_003" translation="wysoki" kana="たかい" kanji="高い" romaji="takai" example="富士山は日本で一番高い山です。 - Mount Fuji is the tallest mountain in Japan." case_language="pl" />
+      <local_word id="ola_kanji_86_90_004" translation="tani" kana="やすい" kanji="安い" romaji="yasui" example="これはバーゲン商品なので定価よりやすくなっているんじゃないですか。 - Since this is a bargain item, it's probably easier than the regular price." case_language="pl" />
+      <local_word id="ola_kanji_86_90_005" translation="długi" kana="ながい" kanji="長い" romaji="nagai" example="彼に長い手紙を書いた。 - I wrote a long letter to him." case_language="pl" />
+      <local_word id="ola_kanji_86_90_006" translation="nowy samochód" kana="しんしゃ" kanji="新車" romaji="shinsha" example="この車は新車同様だ。 - This car is just like a new one." case_language="pl" />
+      <local_word id="ola_kanji_86_90_007" translation="nowy rok" kana="しんねん" kanji="信念" romaji="shinnen" example="新年" case_language="pl" />
+      <local_word id="ola_kanji_86_90_008" translation="używany samochód" kana="ちゅうこしゃ" kanji="中古車" romaji="chuukosha" example="この中古車は新車同様である。 - This used car is the same as the new one." case_language="pl" />
+      <local_word id="ola_kanji_86_90_009" translation="używana książka" kana="ふるほん" kanji="古本" romaji="furuhon" example="私はその古本に倍額を払った。 - I paid double the amount for that secondhand book." case_language="pl" />
+      <local_word id="ola_kanji_86_90_010" translation="mocny yen" kana="えんだか" kanji="円高" romaji="endaka" example="この円高のうちに、海外旅行をしたいものです。 - I would like to travel abroad while still appreciating this yen." case_language="pl" />
+      <local_word id="ola_kanji_86_90_011" translation="słaby yen" kana="えんやす" kanji="円安" romaji="enyasu" example="円安が進んでいるね。 - The yen is weakening." case_language="pl" />
+      <local_word id="ola_kanji_86_90_012" translation="długie życie" kana="ながいき" kanji="長生き" romaji="nagaiki" example="妻は夫より長生きするものだ。 - A wife lives longer than her husband." case_language="pl" />
+      <local_word id="ola_kanji_86_90_013" translation="rektor" kana="がくちょう" kanji="学長" romaji="gakuchou" example="その大学の学長は辞職しそうである。 - The university's president is likely to resign." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_91_95" group="Ola" main="Kanji" name="91-95">
-      <local_word id="ola_kanji_91_95_001" translation="biały" kana="しろい" kanji="白い" romaji="shiroi" example="ケンは自転車を白く塗りました。 - Ken painted the bike white." />
-      <local_word id="ola_kanji_91_95_002" translation="biel" kana="しろ" kanji="白" romaji="shiro" example="" />
-      <local_word id="ola_kanji_91_95_003" translation="sławny" kana="ゆうめい" kanji="有名" romaji="yuumei" example="これは芭蕉の非常に有名な俳句です。 - This is Basho's very famous haiku." />
-      <local_word id="ola_kanji_91_95_004" translation="sklep" kana="みせ" kanji="店" romaji="mise" example="あの店はサービスが良い。 - The service at that shop is good." />
-      <local_word id="ola_kanji_91_95_005" translation="droga" kana="みち" kanji="道" romaji="michi" example="道は急斜面をジグザグにのぼっていた。 - The road zigzags up the steep slope." />
-      <local_word id="ola_kanji_91_95_006" translation="stacja, dworzec" kana="えき" kanji="駅" romaji="eki" example="グランド・セントラル駅までやってください。 - Please reach Grand Central Station." />
-      <local_word id="ola_kanji_91_95_007" translation="wyraźny" kana="めいはく" kanji="明白" romaji="meihaku" example="" />
-      <local_word id="ola_kanji_91_95_008" translation="główny oddział" kana="ほんてん" kanji="本店" romaji="honten" example="本店は警察の手入れを受けた。 - The main store was taken care of by the police." />
-      <local_word id="ola_kanji_91_95_009" translation="jezdnia" kana="しゃどう" kanji="車道" romaji="shadou" example="車道の向こう側にあるバリケードは、「入れない」ということである。 - The barricade across the road means &quot;cannot enter.&quot;" />
-      <local_word id="ola_kanji_91_95_010" translation="naczelnik stacji" kana="えきちょう" kanji="駅長" romaji="ekichou" example="N/A" />
+      <local_word id="ola_kanji_91_95_001" translation="biały" kana="しろい" kanji="白い" romaji="shiroi" example="ケンは自転車を白く塗りました。 - Ken painted the bike white." case_language="pl" />
+      <local_word id="ola_kanji_91_95_002" translation="biel" kana="しろ" kanji="白" romaji="shiro" example="" case_language="pl" />
+      <local_word id="ola_kanji_91_95_003" translation="sławny" kana="ゆうめい" kanji="有名" romaji="yuumei" example="これは芭蕉の非常に有名な俳句です。 - This is Basho's very famous haiku." case_language="pl" />
+      <local_word id="ola_kanji_91_95_004" translation="sklep" kana="みせ" kanji="店" romaji="mise" example="あの店はサービスが良い。 - The service at that shop is good." case_language="pl" />
+      <local_word id="ola_kanji_91_95_005" translation="droga" kana="みち" kanji="道" romaji="michi" example="道は急斜面をジグザグにのぼっていた。 - The road zigzags up the steep slope." case_language="pl" />
+      <local_word id="ola_kanji_91_95_006" translation="stacja, dworzec" kana="えき" kanji="駅" romaji="eki" example="グランド・セントラル駅までやってください。 - Please reach Grand Central Station." case_language="pl" />
+      <local_word id="ola_kanji_91_95_007" translation="wyraźny" kana="めいはく" kanji="明白" romaji="meihaku" example="" case_language="pl" />
+      <local_word id="ola_kanji_91_95_008" translation="główny oddział" kana="ほんてん" kanji="本店" romaji="honten" example="本店は警察の手入れを受けた。 - The main store was taken care of by the police." case_language="pl" />
+      <local_word id="ola_kanji_91_95_009" translation="jezdnia" kana="しゃどう" kanji="車道" romaji="shadou" example="車道の向こう側にあるバリケードは、「入れない」ということである。 - The barricade across the road means &quot;cannot enter.&quot;" case_language="pl" />
+      <local_word id="ola_kanji_91_95_010" translation="naczelnik stacji" kana="えきちょう" kanji="駅長" romaji="ekichou" example="N/A" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_96_100" group="Ola" main="Kanji" name="96-100">
-      <local_word id="ola_kanji_96_100_001" translation="droga mleczna" kana="あまのがわ" kanji="天の川" romaji="amanogawa" example="初めて天の川を見た夜のことを私は覚えている。 - I remember the night I saw the Milky Way for the first time." />
-      <local_word id="ola_kanji_96_100_002" translation="wolny czas" kana="あきじかん" kanji="空き時間" romaji="akijikan" example="N/A" />
-      <local_word id="ola_kanji_96_100_003" translation="oglądanie kwitnących wiśni" kana="はなみ" kanji="花見" romaji="hanami" example="花見ができる春が待ち遠しい。 - I can't wait for spring when we can see the cherry blossoms." />
-      <local_word id="ola_kanji_96_100_004" translation="deszcz" kana="あめ" kanji="雨" romaji="ame" example="雨のために彼らは気力をそがれた。 - The rain discouraged them." />
-      <local_word id="ola_kanji_96_100_005" translation="ulewa" kana="おおあめ" kanji="大雨" romaji="ooame" example="昨日は大雨だった。 - It rained heavily yesterday." />
-      <local_word id="ola_kanji_96_100_006" translation="niebiosa" kana="てんごく" kanji="天国" romaji="tengoku" example="結婚生活は夫婦仲が良ければ天国であり、夫婦仲が悪ければこの世の地獄である。 - Married life is heaven if the relationship is good, and hell on earth if the relationship is bad." />
-      <local_word id="ola_kanji_96_100_007" translation="pogoda" kana="てんき" kanji="天気" romaji="tenki" example="今日が天気ならいいのに。 - I wish the weather was nice today." />
-      <local_word id="ola_kanji_96_100_008" translation="zdrowie, energia" kana="げんき" kanji="元気" romaji="genki" example="こんにちは、ロジャー。とっても元気よ。 - Hello Roger.I'm very well." />
-      <local_word id="ola_kanji_96_100_009" translation="kwiat" kana="はな" kanji="花" romaji="hana" example="私たちは梅の花で有名な水戸公園を見に行った。 - We went to see Mito Park, which is famous for its plum blossoms." />
-      <local_word id="ola_kanji_96_100_010" translation="ikebana" kana="いけばな" kanji="生け花" romaji="hana" example="私たちは梅の花で有名な水戸公園を見に行った。 - We went to see Mito Park, which is famous for its plum blossoms." />
-      <local_word id="ola_kanji_96_100_011" translation="samopoczucie" kana="きぶん" kanji="気分" romaji="kibun" example="とても気分がリフレッシュされる。 - I feel very refreshed." />
-      <local_word id="ola_kanji_96_100_012" translation="powietrze" kana="くうき" kanji="空気" romaji="kuuki" example="空気は音の媒体だ。 - Air is the medium of sound." />
-      <local_word id="ola_kanji_96_100_013" translation="przestrzeń" kana="くうかん" kanji="空間" romaji="kuukan" example="この無限の空間に漂う永遠の沈黙が私を恐怖に陥れる。 - The eternal silence floating in this infinite space terrifies me." />
-      <local_word id="ola_kanji_96_100_014" translation="niebo" kana="そら" kanji="空" romaji="sora" example="ワシが空を飛んでいる。 - An eagle is flying in the sky." />
-      <local_word id="ola_kanji_96_100_015" translation="karate" kana="からて" kanji="空手" romaji="karate" example="空手は武器を用いない護身術である。 - Karate is a self-defense technique that does not use weapons." />
-      <local_word id="ola_kanji_96_100_016" translation="pusty" kana="から" kanji="空" romaji="kara" example="飲み物はヤシの実の殻に入れてあった。" />
+      <local_word id="ola_kanji_96_100_001" translation="droga mleczna" kana="あまのがわ" kanji="天の川" romaji="amanogawa" example="初めて天の川を見た夜のことを私は覚えている。 - I remember the night I saw the Milky Way for the first time." case_language="pl" />
+      <local_word id="ola_kanji_96_100_002" translation="wolny czas" kana="あきじかん" kanji="空き時間" romaji="akijikan" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_96_100_003" translation="oglądanie kwitnących wiśni" kana="はなみ" kanji="花見" romaji="hanami" example="花見ができる春が待ち遠しい。 - I can't wait for spring when we can see the cherry blossoms." case_language="pl" />
+      <local_word id="ola_kanji_96_100_004" translation="deszcz" kana="あめ" kanji="雨" romaji="ame" example="雨のために彼らは気力をそがれた。 - The rain discouraged them." case_language="pl" />
+      <local_word id="ola_kanji_96_100_005" translation="ulewa" kana="おおあめ" kanji="大雨" romaji="ooame" example="昨日は大雨だった。 - It rained heavily yesterday." case_language="pl" />
+      <local_word id="ola_kanji_96_100_006" translation="niebiosa" kana="てんごく" kanji="天国" romaji="tengoku" example="結婚生活は夫婦仲が良ければ天国であり、夫婦仲が悪ければこの世の地獄である。 - Married life is heaven if the relationship is good, and hell on earth if the relationship is bad." case_language="pl" />
+      <local_word id="ola_kanji_96_100_007" translation="pogoda" kana="てんき" kanji="天気" romaji="tenki" example="今日が天気ならいいのに。 - I wish the weather was nice today." case_language="pl" />
+      <local_word id="ola_kanji_96_100_008" translation="zdrowie, energia" kana="げんき" kanji="元気" romaji="genki" example="こんにちは、ロジャー。とっても元気よ。 - Hello Roger.I'm very well." case_language="pl" />
+      <local_word id="ola_kanji_96_100_009" translation="kwiat" kana="はな" kanji="花" romaji="hana" example="私たちは梅の花で有名な水戸公園を見に行った。 - We went to see Mito Park, which is famous for its plum blossoms." case_language="pl" />
+      <local_word id="ola_kanji_96_100_010" translation="ikebana" kana="いけばな" kanji="生け花" romaji="hana" example="私たちは梅の花で有名な水戸公園を見に行った。 - We went to see Mito Park, which is famous for its plum blossoms." case_language="pl" />
+      <local_word id="ola_kanji_96_100_011" translation="samopoczucie" kana="きぶん" kanji="気分" romaji="kibun" example="とても気分がリフレッシュされる。 - I feel very refreshed." case_language="pl" />
+      <local_word id="ola_kanji_96_100_012" translation="powietrze" kana="くうき" kanji="空気" romaji="kuuki" example="空気は音の媒体だ。 - Air is the medium of sound." case_language="pl" />
+      <local_word id="ola_kanji_96_100_013" translation="przestrzeń" kana="くうかん" kanji="空間" romaji="kuukan" example="この無限の空間に漂う永遠の沈黙が私を恐怖に陥れる。 - The eternal silence floating in this infinite space terrifies me." case_language="pl" />
+      <local_word id="ola_kanji_96_100_014" translation="niebo" kana="そら" kanji="空" romaji="sora" example="ワシが空を飛んでいる。 - An eagle is flying in the sky." case_language="pl" />
+      <local_word id="ola_kanji_96_100_015" translation="karate" kana="からて" kanji="空手" romaji="karate" example="空手は武器を用いない護身術である。 - Karate is a self-defense technique that does not use weapons." case_language="pl" />
+      <local_word id="ola_kanji_96_100_016" translation="pusty" kana="から" kanji="空" romaji="kara" example="飲み物はヤシの実の殻に入れてあった。" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_101_105" group="Ola" main="Kanji" name="101-105">
-      <local_word id="ola_kanji_101_105_001" translation="poranek" kana="あさ" kanji="朝" romaji="asa" example="６月にしては寒い朝だ。 - It's a cold morning for June." />
-      <local_word id="ola_kanji_101_105_002" translation="poranne słońce" kana="あさひ" kanji="朝日" romaji="asahi" example="昇る朝日は何と美しいのだろう。 - How beautiful the rising sun is!" />
-      <local_word id="ola_kanji_101_105_003" translation="codziennie rano" kana="まいあさ" kanji="毎朝" romaji="maiasa" example="私は毎朝六時に起きます。 - I wake up at six o'clock every morning." />
-      <local_word id="ola_kanji_101_105_004" translation="śniadanie" kana="ちょうしょく" kanji="朝食" romaji="choushoku" example="私はまだ朝食を食べていません。 - I haven't eaten breakfast yet." />
-      <local_word id="ola_kanji_101_105_005" translation="dziś rano" kana="けさ" kanji="今朝" romaji="kesa" example="今朝はとても寒かった。 - It was very cold this morning." />
-      <local_word id="ola_kanji_101_105_006" translation="południe" kana="ひる" kanji="昼" romaji="hiru" example="昼はホットドッグを食べたんだ。 - I ate a hot dog for lunch." />
-      <local_word id="ola_kanji_101_105_007" translation="przerwa obiadowa/przerwa popołudniowa" kana="ひるやすみ" kanji="昼休み" romaji="hiruyasumi" example="N/A" />
-      <local_word id="ola_kanji_101_105_008" translation="obiad" kana="ちゅうしょく" kanji="昼食" romaji="chuushoku" example="今日は昼食をとる時間がない。 - I don't have time to have lunch today." />
-      <local_word id="ola_kanji_101_105_009" translation="w ciągu dnia, za dnia" kana="ひるま" kanji="昼間" romaji="hiruma" example="太陽は昼間輝く。 - The sun shines during the day." />
-      <local_word id="ola_kanji_101_105_010" translation="dziś wieczorem" kana="こんばん" kanji="今晩" romaji="konban" example="今晩は少し熱っぽいのです。 - It's a little feverish tonight." />
-      <local_word id="ola_kanji_101_105_011" translation="co wieczór" kana="まいばん" kanji="毎晩" romaji="maiban" example="私は毎晩家にいます。 - I'm home every night." />
-      <local_word id="ola_kanji_101_105_012" translation="rano i wieczorem" kana="あさばん" kanji="朝晩" romaji="asaban" example="朝晩はだんだん冷えてきました。 - It's getting colder in the mornings and evenings." />
-      <local_word id="ola_kanji_101_105_013" translation="dzień tygodnia" kana="ようび" kanji="曜日" romaji="youbi" example="N/A" />
-      <local_word id="ola_kanji_101_105_014" translation="następny tydzień" kana="らいしゅう" kanji="来週" romaji="raishuu" example="来週ヨーロッパへ行くつもりなんです。 - I'm planning to go to Europe next week." />
-      <local_word id="ola_kanji_101_105_015" translation="tydzień" kana="しゅう" kanji="週" romaji="shuu" example="" />
-      <local_word id="ola_kanji_101_105_016" translation="zeszły tydzień" kana="せんしゅう" kanji="先週" romaji="senshuu" example="この本は先週一番売れた。 - This book was the best seller last week." />
-      <local_word id="ola_kanji_101_105_017" translation="co tydzień" kana="まいしゅう" kanji="毎週" romaji="maishuu" example="彼らは毎週日曜日に教会へ行く。 - They go to church every Sunday." />
+      <local_word id="ola_kanji_101_105_001" translation="poranek" kana="あさ" kanji="朝" romaji="asa" example="６月にしては寒い朝だ。 - It's a cold morning for June." case_language="pl" />
+      <local_word id="ola_kanji_101_105_002" translation="poranne słońce" kana="あさひ" kanji="朝日" romaji="asahi" example="昇る朝日は何と美しいのだろう。 - How beautiful the rising sun is!" case_language="pl" />
+      <local_word id="ola_kanji_101_105_003" translation="codziennie rano" kana="まいあさ" kanji="毎朝" romaji="maiasa" example="私は毎朝六時に起きます。 - I wake up at six o'clock every morning." case_language="pl" />
+      <local_word id="ola_kanji_101_105_004" translation="śniadanie" kana="ちょうしょく" kanji="朝食" romaji="choushoku" example="私はまだ朝食を食べていません。 - I haven't eaten breakfast yet." case_language="pl" />
+      <local_word id="ola_kanji_101_105_005" translation="dziś rano" kana="けさ" kanji="今朝" romaji="kesa" example="今朝はとても寒かった。 - It was very cold this morning." case_language="pl" />
+      <local_word id="ola_kanji_101_105_006" translation="południe" kana="ひる" kanji="昼" romaji="hiru" example="昼はホットドッグを食べたんだ。 - I ate a hot dog for lunch." case_language="pl" />
+      <local_word id="ola_kanji_101_105_007" translation="przerwa obiadowa/przerwa popołudniowa" kana="ひるやすみ" kanji="昼休み" romaji="hiruyasumi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_101_105_008" translation="obiad" kana="ちゅうしょく" kanji="昼食" romaji="chuushoku" example="今日は昼食をとる時間がない。 - I don't have time to have lunch today." case_language="pl" />
+      <local_word id="ola_kanji_101_105_009" translation="w ciągu dnia, za dnia" kana="ひるま" kanji="昼間" romaji="hiruma" example="太陽は昼間輝く。 - The sun shines during the day." case_language="pl" />
+      <local_word id="ola_kanji_101_105_010" translation="dziś wieczorem" kana="こんばん" kanji="今晩" romaji="konban" example="今晩は少し熱っぽいのです。 - It's a little feverish tonight." case_language="pl" />
+      <local_word id="ola_kanji_101_105_011" translation="co wieczór" kana="まいばん" kanji="毎晩" romaji="maiban" example="私は毎晩家にいます。 - I'm home every night." case_language="pl" />
+      <local_word id="ola_kanji_101_105_012" translation="rano i wieczorem" kana="あさばん" kanji="朝晩" romaji="asaban" example="朝晩はだんだん冷えてきました。 - It's getting colder in the mornings and evenings." case_language="pl" />
+      <local_word id="ola_kanji_101_105_013" translation="dzień tygodnia" kana="ようび" kanji="曜日" romaji="youbi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_101_105_014" translation="następny tydzień" kana="らいしゅう" kanji="来週" romaji="raishuu" example="来週ヨーロッパへ行くつもりなんです。 - I'm planning to go to Europe next week." case_language="pl" />
+      <local_word id="ola_kanji_101_105_015" translation="tydzień" kana="しゅう" kanji="週" romaji="shuu" example="" case_language="pl" />
+      <local_word id="ola_kanji_101_105_016" translation="zeszły tydzień" kana="せんしゅう" kanji="先週" romaji="senshuu" example="この本は先週一番売れた。 - This book was the best seller last week." case_language="pl" />
+      <local_word id="ola_kanji_101_105_017" translation="co tydzień" kana="まいしゅう" kanji="毎週" romaji="maishuu" example="彼らは毎週日曜日に教会へ行く。 - They go to church every Sunday." case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_106_110" group="Ola" main="Kanji" name="106-110">
-      <local_word id="ola_kanji_106_110_001" translation="imię" kana="なまえ" kanji="名前" romaji="namae" example="あなたの名前はリストからはずされた。 - Your name has been removed from the list." />
-      <local_word id="ola_kanji_106_110_002" translation="10 osób" kana="じゅうめい" kanji="十名" romaji="juumei" example="N/A" />
-      <local_word id="ola_kanji_106_110_003" translation="mistrz" kana="めいじん" kanji="名人" romaji="meijin" example="彼女の夫は料理の名人なのだ。 - Her husband is an expert cook." />
-      <local_word id="ola_kanji_106_110_004" translation="kolega, przyjaznie" kana="ともだち" kanji="友だち" romaji="tomodachi" example="犬は人間の最も親しい友達である。 - Dogs are man's closest friends." />
-      <local_word id="ola_kanji_106_110_005" translation="kolega, bardziej pisalnie" kana="ゆうじん" kanji="友人" romaji="juujin" example="N/A" />
-      <local_word id="ola_kanji_106_110_006" translation="przyjaźń, dobre stosunki" kana="ゆうこう" kanji="友好" romaji="juukou" example="N/A" />
-      <local_word id="ola_kanji_106_110_007" translation="kraj" kana="くに" kanji="国" romaji="kuni" example="その王がその国を治めていた。 - The king ruled the country." />
-      <local_word id="ola_kanji_106_110_008" translation="chiny" kana="ちゅうごく" kanji="中国" romaji="chuugoku" example="中国やチベットの山に住んでいる白黒の熊はパンダと呼ばれている。 - The black and white bears that live in the mountains of China and Tibet are called pandas." />
-      <local_word id="ola_kanji_106_110_009" translation="język ojczysty" kana="こくご" kanji="国語" romaji="kokugo" example="彼は国語が好きだし得意だ。 - He likes Japanese and is good at it." />
-      <local_word id="ola_kanji_106_110_010" translation="język obcy" kana="がいこくご" kanji="外国語" romaji="gaikokugo" example="あなたはなぜ外国語を勉強するのですか。 - Why do you study foreign languages?" />
-      <local_word id="ola_kanji_106_110_011" translation="opowiadać o" kana="かたる" kanji="語る" romaji="kataru" example="行動は言葉よりも声高く語る。 - Actions speak louder than words." />
-      <local_word id="ola_kanji_106_110_012" translation="język angielski" kana="えいご" kanji="英語" romaji="eigo" example="アメリカでは英語を話します。 - In America we speak English." />
-      <local_word id="ola_kanji_106_110_013" translation="wielka brytania" kana="えいこく" kanji="英国" romaji="eikoku" example="英国へ行ったことがありますか。 - Have you ever been to England?" />
+      <local_word id="ola_kanji_106_110_001" translation="imię" kana="なまえ" kanji="名前" romaji="namae" example="あなたの名前はリストからはずされた。 - Your name has been removed from the list." case_language="pl" />
+      <local_word id="ola_kanji_106_110_002" translation="10 osób" kana="じゅうめい" kanji="十名" romaji="juumei" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_106_110_003" translation="mistrz" kana="めいじん" kanji="名人" romaji="meijin" example="彼女の夫は料理の名人なのだ。 - Her husband is an expert cook." case_language="pl" />
+      <local_word id="ola_kanji_106_110_004" translation="kolega, przyjaznie" kana="ともだち" kanji="友だち" romaji="tomodachi" example="犬は人間の最も親しい友達である。 - Dogs are man's closest friends." case_language="pl" />
+      <local_word id="ola_kanji_106_110_005" translation="kolega, bardziej pisalnie" kana="ゆうじん" kanji="友人" romaji="juujin" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_106_110_006" translation="przyjaźń, dobre stosunki" kana="ゆうこう" kanji="友好" romaji="juukou" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_106_110_007" translation="kraj" kana="くに" kanji="国" romaji="kuni" example="その王がその国を治めていた。 - The king ruled the country." case_language="pl" />
+      <local_word id="ola_kanji_106_110_008" translation="chiny" kana="ちゅうごく" kanji="中国" romaji="chuugoku" example="中国やチベットの山に住んでいる白黒の熊はパンダと呼ばれている。 - The black and white bears that live in the mountains of China and Tibet are called pandas." case_language="pl" />
+      <local_word id="ola_kanji_106_110_009" translation="język ojczysty" kana="こくご" kanji="国語" romaji="kokugo" example="彼は国語が好きだし得意だ。 - He likes Japanese and is good at it." case_language="pl" />
+      <local_word id="ola_kanji_106_110_010" translation="język obcy" kana="がいこくご" kanji="外国語" romaji="gaikokugo" example="あなたはなぜ外国語を勉強するのですか。 - Why do you study foreign languages?" case_language="pl" />
+      <local_word id="ola_kanji_106_110_011" translation="opowiadać o" kana="かたる" kanji="語る" romaji="kataru" example="行動は言葉よりも声高く語る。 - Actions speak louder than words." case_language="pl" />
+      <local_word id="ola_kanji_106_110_012" translation="język angielski" kana="えいご" kanji="英語" romaji="eigo" example="アメリカでは英語を話します。 - In America we speak English." case_language="pl" />
+      <local_word id="ola_kanji_106_110_013" translation="wielka brytania" kana="えいこく" kanji="英国" romaji="eikoku" example="英国へ行ったことがありますか。 - Have you ever been to England?" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_111_115" group="Ola" main="Kanji" name="111-115">
-      <local_word id="ola_kanji_111_115_001" translation="spotkać" kana="あう" kanji="会う" romaji="au" example="前に彼にあったのを覚えている。 - I remember seeing him before." />
-      <local_word id="ola_kanji_111_115_002" translation="pić" kana="のむ" kanji="飲む" romaji="nomu" example="この薬を飲まなければ行けませんか。 - Can I go without taking this medicine?" />
-      <local_word id="ola_kanji_111_115_003" translation="rozmowa" kana="かいわ" kanji="会話" romaji="kaiwa" example="機知は会話に趣を添える。 - Wit adds flavor to a conversation." />
-      <local_word id="ola_kanji_111_115_004" translation="woda pitna" kana="のみみず" kanji="飲み水" romaji="nomimizu" example="N/A" />
-      <local_word id="ola_kanji_111_115_005" translation="Coś do picia" kana="のみもの" kanji="飲み物" romaji="nomimono" example="何か飲み物をいただけますか。" />
-      <local_word id="ola_kanji_111_115_006" translation="elektryczność" kana="でんき" kanji="電気" romaji="denki" example="電気を消すのを忘れないで。 - Don't forget to turn off the lights." />
-      <local_word id="ola_kanji_111_115_007" translation="telefon" kana="でんわ" kanji="電話" romaji="denwa" example="電話は繰り返し鳴っていた。 - The phone was ringing repeatedly." />
-      <local_word id="ola_kanji_111_115_008" translation="pociąg" kana="でんしゃ" kanji="電車" romaji="densha" example="あなたは始発電車に間にあいましたか。 - Were you on time for the first train?" />
-      <local_word id="ola_kanji_111_115_009" translation="czytać" kana="よむ" kanji="読む" romaji="yomu" example="彼女の心の動きを読むことさえできなかった。 - I couldn't even read her mind." />
-      <local_word id="ola_kanji_111_115_010" translation="coś do czytania" kana="よみもの" kanji="読み物" romaji="yomimono" example="" />
-      <local_word id="ola_kanji_111_115_011" translation="pisać" kana="かく" kanji="書く" romaji="kaku" example="ここにあなたの名前をかいてくれませんか。" />
-      <local_word id="ola_kanji_111_115_012" translation="brudnopis" kana="したがき" kanji="下書き" romaji="shitagaki" example="私はスピーチの下書きを書いています。" />
-      <local_word id="ola_kanji_111_115_013" translation="kaligrafia" kana="しょどう" kanji="書道" romaji="shodou" example="書道を習うのは楽しい。" />
+      <local_word id="ola_kanji_111_115_001" translation="spotkać" kana="あう" kanji="会う" romaji="au" example="前に彼にあったのを覚えている。 - I remember seeing him before." case_language="pl" />
+      <local_word id="ola_kanji_111_115_002" translation="pić" kana="のむ" kanji="飲む" romaji="nomu" example="この薬を飲まなければ行けませんか。 - Can I go without taking this medicine?" case_language="pl" />
+      <local_word id="ola_kanji_111_115_003" translation="rozmowa" kana="かいわ" kanji="会話" romaji="kaiwa" example="機知は会話に趣を添える。 - Wit adds flavor to a conversation." case_language="pl" />
+      <local_word id="ola_kanji_111_115_004" translation="woda pitna" kana="のみみず" kanji="飲み水" romaji="nomimizu" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_111_115_005" translation="Coś do picia" kana="のみもの" kanji="飲み物" romaji="nomimono" example="何か飲み物をいただけますか。" case_language="pl" />
+      <local_word id="ola_kanji_111_115_006" translation="elektryczność" kana="でんき" kanji="電気" romaji="denki" example="電気を消すのを忘れないで。 - Don't forget to turn off the lights." case_language="pl" />
+      <local_word id="ola_kanji_111_115_007" translation="telefon" kana="でんわ" kanji="電話" romaji="denwa" example="電話は繰り返し鳴っていた。 - The phone was ringing repeatedly." case_language="pl" />
+      <local_word id="ola_kanji_111_115_008" translation="pociąg" kana="でんしゃ" kanji="電車" romaji="densha" example="あなたは始発電車に間にあいましたか。 - Were you on time for the first train?" case_language="pl" />
+      <local_word id="ola_kanji_111_115_009" translation="czytać" kana="よむ" kanji="読む" romaji="yomu" example="彼女の心の動きを読むことさえできなかった。 - I couldn't even read her mind." case_language="pl" />
+      <local_word id="ola_kanji_111_115_010" translation="coś do czytania" kana="よみもの" kanji="読み物" romaji="yomimono" example="" case_language="pl" />
+      <local_word id="ola_kanji_111_115_011" translation="pisać" kana="かく" kanji="書く" romaji="kaku" example="ここにあなたの名前をかいてくれませんか。" case_language="pl" />
+      <local_word id="ola_kanji_111_115_012" translation="brudnopis" kana="したがき" kanji="下書き" romaji="shitagaki" example="私はスピーチの下書きを書いています。" case_language="pl" />
+      <local_word id="ola_kanji_111_115_013" translation="kaligrafia" kana="しょどう" kanji="書道" romaji="shodou" example="書道を習うのは楽しい。" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_116_120" group="Ola" main="Kanji" name="116-120">
-      <local_word id="ola_kanji_116_120_001" translation="pierwotny, dawny, były" kana="もとの" kanji="元の" romaji="motono" example="N/A" />
-      <local_word id="ola_kanji_116_120_002" translation="wigor" kana="げんき" kanji="元気" romaji="genki" example="こんにちは、ロジャー。とっても元気よ。" />
-      <local_word id="ola_kanji_116_120_003" translation="Nowy Rok (1 stycznia)" kana="がんじつ" kanji="元日" romaji="ganjitsu" example="元日に神社へ参拝する日本人は多い。" />
-      <local_word id="ola_kanji_116_120_004" translation="pochodzenie" kana="もと" kanji="元" romaji="moto" example="N/A" />
-      <local_word id="ola_kanji_116_120_005" translation="siła" kana="ちから" kanji="力" romaji="chikara" example="あなたは私の２倍の力がある。" />
-      <local_word id="ola_kanji_116_120_006" translation="pole ryżowe" kana="た" kanji="田" romaji="ta" example="N/A" />
-      <local_word id="ola_kanji_116_120_007" translation="tanaka ( nazwisko )" kana="たなか" kanji="田中" romaji="tanaka" example="" />
-      <local_word id="ola_kanji_116_120_008" translation="Oota ( nazwisko )" kana="おおた" kanji="大田" romaji="Oota" example="" />
-      <local_word id="ola_kanji_116_120_009" translation="Yamada ( nazwisko )" kana="やまだ" kanji="山田" romaji="yamada" example="N/A" />
-      <local_word id="ola_kanji_116_120_010" translation="kamień" kana="いし" kanji="石" romaji="ishi" example="" />
-      <local_word id="ola_kanji_116_120_011" translation="nitka" kana="いと" kanji="糸" romaji="ito" example="" />
-      <local_word id="ola_kanji_116_120_012" translation="nić pajęcza" kana="くものいと" kanji="クモの糸" romaji="kumonoito" example="N/A" />
-      <local_word id="ola_kanji_116_120_013" translation="jedwab surowy" kana="きいと" kanji="生糸" romaji="kiito" example="N/A" />
+      <local_word id="ola_kanji_116_120_001" translation="pierwotny, dawny, były" kana="もとの" kanji="元の" romaji="motono" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_116_120_002" translation="wigor" kana="げんき" kanji="元気" romaji="genki" example="こんにちは、ロジャー。とっても元気よ。" case_language="pl" />
+      <local_word id="ola_kanji_116_120_003" translation="Nowy Rok (1 stycznia)" kana="がんじつ" kanji="元日" romaji="ganjitsu" example="元日に神社へ参拝する日本人は多い。" case_language="pl" />
+      <local_word id="ola_kanji_116_120_004" translation="pochodzenie" kana="もと" kanji="元" romaji="moto" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_116_120_005" translation="siła" kana="ちから" kanji="力" romaji="chikara" example="あなたは私の２倍の力がある。" case_language="pl" />
+      <local_word id="ola_kanji_116_120_006" translation="pole ryżowe" kana="た" kanji="田" romaji="ta" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_116_120_007" translation="tanaka ( nazwisko )" kana="たなか" kanji="田中" romaji="tanaka" example="" case_language="pl" />
+      <local_word id="ola_kanji_116_120_008" translation="Oota ( nazwisko )" kana="おおた" kanji="大田" romaji="Oota" example="" case_language="pl" />
+      <local_word id="ola_kanji_116_120_009" translation="Yamada ( nazwisko )" kana="やまだ" kanji="山田" romaji="yamada" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_116_120_010" translation="kamień" kana="いし" kanji="石" romaji="ishi" example="" case_language="pl" />
+      <local_word id="ola_kanji_116_120_011" translation="nitka" kana="いと" kanji="糸" romaji="ito" example="" case_language="pl" />
+      <local_word id="ola_kanji_116_120_012" translation="nić pajęcza" kana="くものいと" kanji="クモの糸" romaji="kumonoito" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_116_120_013" translation="jedwab surowy" kana="きいと" kanji="生糸" romaji="kiito" example="N/A" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_121_125" group="Ola" main="Kanji" name="121-125">
-      <local_word id="ola_kanji_121_125_001" translation="dom ( jako budynek )" kana="いえ" kanji="家" romaji="ie" example="木立の間に家が見える。" />
-      <local_word id="ola_kanji_121_125_002" translation="dom ( przestrzeń, u mnie )" kana="うち" kanji="内" romaji="uchi" example="" />
-      <local_word id="ola_kanji_121_125_003" translation="żona ( moja )" kana="かない" kanji="家内" romaji="kanai" example="家内は海外旅行中で、よく電話をかけてくる。" />
-      <local_word id="ola_kanji_121_125_004" translation="umysł, serce" kana="こころ" kanji="心" romaji="kokoro" example="あなたの親切な言葉は大事に心に刻みつけておきます。" />
-      <local_word id="ola_kanji_121_125_005" translation="centrum, środek" kana="ちゅうしん" kanji="中心" romaji="chuushin" example="その町の中心にすてきな公園がある。" />
-      <local_word id="ola_kanji_121_125_006" translation="prawidłowy" kana="ただしい" kanji="正しい" romaji="tadashii" example="これが正しいかどうか自信がないんだ。" />
-      <local_word id="ola_kanji_121_125_007" translation="prawdziwe oblicze" kana="しょうたい" kanji="正体" romaji="shoutai" example="" />
-      <local_word id="ola_kanji_121_125_008" translation="sposób, droga do czegoś" kana="やりかた" kanji="やり方" romaji="yarikata" example="これが僕のやり方だ。" />
-      <local_word id="ola_kanji_121_125_009" translation="kierunek" kana="ほう" kanji="方" romaji="hou" example="～のほう に" />
-      <local_word id="ola_kanji_121_125_010" translation="dialekt" kana="ほうげん" kanji="方言" romaji="hougen" example="いわゆる「標準英語」とは世界中で話されている数多い方言のうちの１つにすぎない。" />
-      <local_word id="ola_kanji_121_125_011" translation="przód, z przodu" kana="ぜんぽう" kanji="前方" romaji="zenpou" example="我々ははるか前方に他の船を見た。" />
+      <local_word id="ola_kanji_121_125_001" translation="dom ( jako budynek )" kana="いえ" kanji="家" romaji="ie" example="木立の間に家が見える。" case_language="pl" />
+      <local_word id="ola_kanji_121_125_002" translation="dom ( przestrzeń, u mnie )" kana="うち" kanji="内" romaji="uchi" example="" case_language="pl" />
+      <local_word id="ola_kanji_121_125_003" translation="żona ( moja )" kana="かない" kanji="家内" romaji="kanai" example="家内は海外旅行中で、よく電話をかけてくる。" case_language="pl" />
+      <local_word id="ola_kanji_121_125_004" translation="umysł, serce" kana="こころ" kanji="心" romaji="kokoro" example="あなたの親切な言葉は大事に心に刻みつけておきます。" case_language="pl" />
+      <local_word id="ola_kanji_121_125_005" translation="centrum, środek" kana="ちゅうしん" kanji="中心" romaji="chuushin" example="その町の中心にすてきな公園がある。" case_language="pl" />
+      <local_word id="ola_kanji_121_125_006" translation="prawidłowy" kana="ただしい" kanji="正しい" romaji="tadashii" example="これが正しいかどうか自信がないんだ。" case_language="pl" />
+      <local_word id="ola_kanji_121_125_007" translation="prawdziwe oblicze" kana="しょうたい" kanji="正体" romaji="shoutai" example="" case_language="pl" />
+      <local_word id="ola_kanji_121_125_008" translation="sposób, droga do czegoś" kana="やりかた" kanji="やり方" romaji="yarikata" example="これが僕のやり方だ。" case_language="pl" />
+      <local_word id="ola_kanji_121_125_009" translation="kierunek" kana="ほう" kanji="方" romaji="hou" example="～のほう に" case_language="pl" />
+      <local_word id="ola_kanji_121_125_010" translation="dialekt" kana="ほうげん" kanji="方言" romaji="hougen" example="いわゆる「標準英語」とは世界中で話されている数多い方言のうちの１つにすぎない。" case_language="pl" />
+      <local_word id="ola_kanji_121_125_011" translation="przód, z przodu" kana="ぜんぽう" kanji="前方" romaji="zenpou" example="我々ははるか前方に他の船を見た。" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_131_135" group="Ola" main="Kanji" name="131-135">
-      <local_word id="ola_kanji_131_135_001" translation="budowa" kana="こうじ" kanji="工事" romaji="kouji" example="その工事は住民からの強い反対にもかかわらず、続けられた。" />
-      <local_word id="ola_kanji_131_135_002" translation="cieśla" kana="だいく" kanji="大工" romaji="daiku" example="私のおじいちゃんは大工です。" />
-      <local_word id="ola_kanji_131_135_003" translation="fabryka" kana="こうじょう" kanji="工場" romaji="koujou" example="その工場は玩具を製造している。" />
-      <local_word id="ola_kanji_131_135_004" translation="miejsce spotkania, sala" kana="かいじょう" kanji="会場" romaji="kaijou" example="私たちは会場の後ろに座った。" />
-      <local_word id="ola_kanji_131_135_005" translation="rzecz, przedmiot, obiekt" kana="もの" kanji="物" romaji="mono" example="" />
-      <local_word id="ola_kanji_131_135_006" translation="istota żywa" kana="せいぶつ" kanji="生物" romaji="seibutsu" example="地球以外の天体に生物はいますか。" />
-      <local_word id="ola_kanji_131_135_007" translation="zdanie, pismo, wypracowanie" kana="ぶん" kanji="文" romaji="bun" example="文は武に勝る。" />
-      <local_word id="ola_kanji_131_135_008" translation="cywilizacja" kana="ぶんめい" kanji="文明" romaji="bunmei" example="１９世紀は白人文明の時代だった。" />
-      <local_word id="ola_kanji_131_135_009" translation="konkretny znak, litera, charakter pisma" kana="じ" kanji="字" romaji="ji" example="君は字がうまいね。" />
-      <local_word id="ola_kanji_131_135_010" translation="znak,ogólnie,abstakcyjny ( np  pojda 8 znaków )" kana="もじ" kanji="文字" romaji="moji" example="へー、キーボード見ないで文字打てるんだ。スゴイわねー。" />
-      <local_word id="ola_kanji_131_135_011" translation="nazwisko" kana="みょうじ" kanji="名字" romaji="myouji" example="トムはメアリーに苗字を訊いた。" />
-      <local_word id="ola_kanji_131_135_012" translation="wypracowanie" kana="さくぶん" kanji="作文" romaji="sakubun" example="「友情」という題で作文を書きなさい。" />
+      <local_word id="ola_kanji_131_135_001" translation="budowa" kana="こうじ" kanji="工事" romaji="kouji" example="その工事は住民からの強い反対にもかかわらず、続けられた。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_002" translation="cieśla" kana="だいく" kanji="大工" romaji="daiku" example="私のおじいちゃんは大工です。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_003" translation="fabryka" kana="こうじょう" kanji="工場" romaji="koujou" example="その工場は玩具を製造している。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_004" translation="miejsce spotkania, sala" kana="かいじょう" kanji="会場" romaji="kaijou" example="私たちは会場の後ろに座った。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_005" translation="rzecz, przedmiot, obiekt" kana="もの" kanji="物" romaji="mono" example="" case_language="pl" />
+      <local_word id="ola_kanji_131_135_006" translation="istota żywa" kana="せいぶつ" kanji="生物" romaji="seibutsu" example="地球以外の天体に生物はいますか。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_007" translation="zdanie, pismo, wypracowanie" kana="ぶん" kanji="文" romaji="bun" example="文は武に勝る。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_008" translation="cywilizacja" kana="ぶんめい" kanji="文明" romaji="bunmei" example="１９世紀は白人文明の時代だった。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_009" translation="konkretny znak, litera, charakter pisma" kana="じ" kanji="字" romaji="ji" example="君は字がうまいね。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_010" translation="znak,ogólnie,abstakcyjny ( np  pojda 8 znaków )" kana="もじ" kanji="文字" romaji="moji" example="へー、キーボード見ないで文字打てるんだ。スゴイわねー。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_011" translation="nazwisko" kana="みょうじ" kanji="名字" romaji="myouji" example="トムはメアリーに苗字を訊いた。" case_language="pl" />
+      <local_word id="ola_kanji_131_135_012" translation="wypracowanie" kana="さくぶん" kanji="作文" romaji="sakubun" example="「友情」という題で作文を書きなさい。" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_136_140" group="Ola" main="Kanji" name="136-140">
-      <local_word id="ola_kanji_136_140_001" translation="wiosna" kana="はる" kanji="春" romaji="haru" example="多くの植物は春に花をつける。" />
-      <local_word id="ola_kanji_136_140_002" translation="wiosenny wiatr" kana="はるかぜ" kanji="春風" romaji="hare" example="彼の憂うつは彼女がキスをすると晴れた。" />
-      <local_word id="ola_kanji_136_140_003" translation="rownonoc wiosenna" kana="しゅんぶん" kanji="春分" romaji="shunbun" example="N/A" />
-      <local_word id="ola_kanji_136_140_004" translation="lato" kana="なつ" kanji="夏" romaji="natsu" example="この夏最高の暑さだ。" />
-      <local_word id="ola_kanji_136_140_005" translation="letnie wakacje" kana="なつやすみ" kanji="夏休み" romaji="natsuyasumi" example="この夏休みはどこかへ行くのですか。" />
-      <local_word id="ola_kanji_136_140_006" translation="jesień" kana="あき" kanji="秋" romaji="aki" example="秋には木の葉が落ちる。" />
-      <local_word id="ola_kanji_136_140_007" translation="jesienny wiatr" kana="あきかぜ" kanji="秋風" romaji="akikaze" example="秋風が立ち初める。" />
-      <local_word id="ola_kanji_136_140_008" translation="równonoc jesienna" kana="しゅうぶん" kanji="秋分" romaji="shuubun" example="そのコラムニストは古い醜聞を蒸し返した。" />
-      <local_word id="ola_kanji_136_140_009" translation="zima" kana="ふゆ" kanji="冬" romaji="fuyu" example="まもなく冬だ。" />
-      <local_word id="ola_kanji_136_140_010" translation="cztery pory roku" kana="しゅんかしゅうとう" kanji="春夏秋冬" romaji="shunkashuutou" example="N/A" />
-      <local_word id="ola_kanji_136_140_011" translation="wiatr" kana="かぜ" kanji="風" romaji="kaze" example="カーテンが風になびいた。" />
-      <local_word id="ola_kanji_136_140_012" translation="wiatr północny" kana="きたかぜ" kanji="北風" romaji="kitakaze" example="北風は一日中吹き続けた。" />
-      <local_word id="ola_kanji_136_140_013" translation="wiatr i deszcz, burza" kana="ふうう" kanji="風雨" romaji="fuu" example="その穴は直径二メートルです。" />
-      <local_word id="ola_kanji_136_140_014" translation="siła wiatru" kana="ふうりょく" kanji="風力" romaji="fuuryoku" example="N/A" />
-      <local_word id="ola_kanji_136_140_015" translation="feng shui" kana="ふうすい" kanji="風水" romaji="fuusui" example="N/A" />
+      <local_word id="ola_kanji_136_140_001" translation="wiosna" kana="はる" kanji="春" romaji="haru" example="多くの植物は春に花をつける。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_002" translation="wiosenny wiatr" kana="はるかぜ" kanji="春風" romaji="hare" example="彼の憂うつは彼女がキスをすると晴れた。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_003" translation="rownonoc wiosenna" kana="しゅんぶん" kanji="春分" romaji="shunbun" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_136_140_004" translation="lato" kana="なつ" kanji="夏" romaji="natsu" example="この夏最高の暑さだ。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_005" translation="letnie wakacje" kana="なつやすみ" kanji="夏休み" romaji="natsuyasumi" example="この夏休みはどこかへ行くのですか。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_006" translation="jesień" kana="あき" kanji="秋" romaji="aki" example="秋には木の葉が落ちる。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_007" translation="jesienny wiatr" kana="あきかぜ" kanji="秋風" romaji="akikaze" example="秋風が立ち初める。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_008" translation="równonoc jesienna" kana="しゅうぶん" kanji="秋分" romaji="shuubun" example="そのコラムニストは古い醜聞を蒸し返した。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_009" translation="zima" kana="ふゆ" kanji="冬" romaji="fuyu" example="まもなく冬だ。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_010" translation="cztery pory roku" kana="しゅんかしゅうとう" kanji="春夏秋冬" romaji="shunkashuutou" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_136_140_011" translation="wiatr" kana="かぜ" kanji="風" romaji="kaze" example="カーテンが風になびいた。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_012" translation="wiatr północny" kana="きたかぜ" kanji="北風" romaji="kitakaze" example="北風は一日中吹き続けた。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_013" translation="wiatr i deszcz, burza" kana="ふうう" kanji="風雨" romaji="fuu" example="その穴は直径二メートルです。" case_language="pl" />
+      <local_word id="ola_kanji_136_140_014" translation="siła wiatru" kana="ふうりょく" kanji="風力" romaji="fuuryoku" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_136_140_015" translation="feng shui" kana="ふうすい" kanji="風水" romaji="fuusui" example="N/A" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_141_145" group="Ola" main="Kanji" name="141-145">
-      <local_word id="ola_kanji_141_145_001" translation="morze" kana="うみ" kanji="海" romaji="umi" example="何としても海をひと目みたいものだ。" />
-      <local_word id="ola_kanji_141_145_002" translation="morze japońskie" kana="にほんかい" kanji="日本海" romaji="nihonkai" example="その川は日本海に流れている。" />
-      <local_word id="ola_kanji_141_145_003" translation="morze śródziemne" kana="ちちゅうかい" kanji="地中海" romaji="chichuukai" example="私は地中海が一番好きです。" />
-      <local_word id="ola_kanji_141_145_004" translation="Hokkaido" kana="ほっかいどう" kanji="北海道" romaji="hokkaidou" example="私は明日北海道に行くつもりです。" />
-      <local_word id="ola_kanji_141_145_005" translation="zagraniczny, zamorski" kana="かいがい" kanji="海外" romaji="kaigai" example="君はどれくらいよく海外に行きますか。" />
-      <local_word id="ola_kanji_141_145_006" translation="Morita (nazwisko)" kana="もりた" kanji="森田" romaji="morita" example="N/A" />
-      <local_word id="ola_kanji_141_145_007" translation="na morzu" kana="かいじょう" kanji="海上" romaji="kaijou" example="" />
-      <local_word id="ola_kanji_141_145_008" translation="woda morska" kana="かいすい" kanji="海水" romaji="kaisui" example="海水が傷にしみて痛いよ。" />
-      <local_word id="ola_kanji_141_145_009" translation="gorący" kana="あつい" kanji="暑い" romaji="atsui" example="この夏最高の暑さだ。" />
-      <local_word id="ola_kanji_141_145_010" translation="zimny" kana="さむい" kanji="寒い" romaji="samui" example="この寒さにはもう耐えられない。" />
-      <local_word id="ola_kanji_141_145_011" translation="mały lasek, zagajnik" kana="はやし" kanji="林" romaji="hayashi" example="林に竹が目立つ。" />
-      <local_word id="ola_kanji_141_145_012" translation="kobayashi (nazwisko)" kana="こばやし" kanji="小林" romaji="kobayashi" example="N/A" />
-      <local_word id="ola_kanji_141_145_013" translation="górski las" kana="さんりん" kanji="山林" romaji="sanrin" example="N/A" />
-      <local_word id="ola_kanji_141_145_014" translation="las, puszcz" kana="もり" kanji="森" romaji="mori" example="野獣は森に住んでいる。" />
-      <local_word id="ola_kanji_141_145_015" translation="Obszar leśny ( las - bardziej naukowo )" kana="しんりん" kanji="森林" romaji="shinrin" example="その国は森林でおおわれている。" />
+      <local_word id="ola_kanji_141_145_001" translation="morze" kana="うみ" kanji="海" romaji="umi" example="何としても海をひと目みたいものだ。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_002" translation="morze japońskie" kana="にほんかい" kanji="日本海" romaji="nihonkai" example="その川は日本海に流れている。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_003" translation="morze śródziemne" kana="ちちゅうかい" kanji="地中海" romaji="chichuukai" example="私は地中海が一番好きです。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_004" translation="Hokkaido" kana="ほっかいどう" kanji="北海道" romaji="hokkaidou" example="私は明日北海道に行くつもりです。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_005" translation="zagraniczny, zamorski" kana="かいがい" kanji="海外" romaji="kaigai" example="君はどれくらいよく海外に行きますか。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_006" translation="Morita (nazwisko)" kana="もりた" kanji="森田" romaji="morita" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_141_145_007" translation="na morzu" kana="かいじょう" kanji="海上" romaji="kaijou" example="" case_language="pl" />
+      <local_word id="ola_kanji_141_145_008" translation="woda morska" kana="かいすい" kanji="海水" romaji="kaisui" example="海水が傷にしみて痛いよ。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_009" translation="gorący" kana="あつい" kanji="暑い" romaji="atsui" example="この夏最高の暑さだ。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_010" translation="zimny" kana="さむい" kanji="寒い" romaji="samui" example="この寒さにはもう耐えられない。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_011" translation="mały lasek, zagajnik" kana="はやし" kanji="林" romaji="hayashi" example="林に竹が目立つ。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_012" translation="kobayashi (nazwisko)" kana="こばやし" kanji="小林" romaji="kobayashi" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_141_145_013" translation="górski las" kana="さんりん" kanji="山林" romaji="sanrin" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_141_145_014" translation="las, puszcz" kana="もり" kanji="森" romaji="mori" example="野獣は森に住んでいる。" case_language="pl" />
+      <local_word id="ola_kanji_141_145_015" translation="Obszar leśny ( las - bardziej naukowo )" kana="しんりん" kanji="森林" romaji="shinrin" example="その国は森林でおおわれている。" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_146_150" group="Ola" main="Kanji" name="146-150">
-      <local_word id="ola_kanji_146_150_001" translation="trzymać, mieć" kana="もつ" kanji="持つ" romaji="motsu" example="コートを持ちましょうか。" />
-      <local_word id="ola_kanji_146_150_002" translation="podnieść" kana="もちあげる" kanji="持ち上げる" romaji="mochiageru" example="この石は重すぎて持ち上げられない。" />
-      <local_word id="ola_kanji_146_150_003" translation="uczucie, odczucie" kana="きもち" kanji="気持ち" romaji="kimochi" example="彼は気持ちが若い。" />
-      <local_word id="ola_kanji_146_150_004" translation="długotrwały, wytrzymały" kana="ながもち" kanji="長持ち" romaji="nagamochi" example="エンジンを空回りさせちゃいかん。長持ちさせたいからね。" />
-      <local_word id="ola_kanji_146_150_005" translation="posiadane rzeczy, dobytek" kana="もちもの" kanji="持ち物" romaji="mochimono" example="自分の持ち物を忘れないように。" />
-      <local_word id="ola_kanji_146_150_006" translation="myśleć" kana="おもう" kanji="思う" romaji="omou" example="晴れだと思うよ。" />
-      <local_word id="ola_kanji_146_150_007" translation="przypomnieć sobie" kana="おもいだす" kanji="思い出す" romaji="omoidasu" example="あなたを見るとお兄さんを思い出します。" />
-      <local_word id="ola_kanji_146_150_008" translation="wspomnienie" kana="おもいで" kanji="思い出" romaji="omoide" example="貴重な思い出料としては安いものですよ。" />
-      <local_word id="ola_kanji_146_150_009" translation="wracać do domu, do ojczyzny" kana="かえる" kanji="帰る" romaji="kaeru" example="恋人よ、我に帰れ。" />
-      <local_word id="ola_kanji_146_150_010" translation="wracać do kraju" kana="きこくする" kanji="帰国する" romaji="kikokusuru" example="N/A" />
-      <local_word id="ola_kanji_146_150_011" translation="otworzyć ( np. ksiazke ), zorganizować" kana="ひらく" kanji="開く" romaji="hiraku" example="ぐいと押すとドアは開いた。" />
-      <local_word id="ola_kanji_146_150_012" translation="otworzyć ( np. okno, drzwi )" kana="あける" kanji="開ける" romaji="akeru" example="夜が明ける。" />
-      <local_word id="ola_kanji_146_150_013" translation="otworzyć się ( sama, bez ingerencji )" kana="あく" kanji="開く" romaji="aku" example="ぐいと押すとドアは開いた。" />
-      <local_word id="ola_kanji_146_150_014" translation="zamknąć ( książke, oczy, plik etc )" kana="とじる" kanji="閉じる" romaji="tojiru" example="本を閉じなさい。" />
-      <local_word id="ola_kanji_146_150_015" translation="zamknąć ( np. okno, drzwi )" kana="しめる" kanji="閉める" romaji="shimeru" example="ギャンブルで味を占めるとなかなか止められない。" />
-      <local_word id="ola_kanji_146_150_016" translation="zamyka się ( samo )" kana="しまる" kanji="閉まる" romaji="shimaru" example="あいにく店は閉まっていた。" />
-      <local_word id="ola_kanji_146_150_017" translation="otwierać i zamykać" kana="かいへい" kanji="開閉" romaji="kaihei" example="N/A" />
+      <local_word id="ola_kanji_146_150_001" translation="trzymać, mieć" kana="もつ" kanji="持つ" romaji="motsu" example="コートを持ちましょうか。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_002" translation="podnieść" kana="もちあげる" kanji="持ち上げる" romaji="mochiageru" example="この石は重すぎて持ち上げられない。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_003" translation="uczucie, odczucie" kana="きもち" kanji="気持ち" romaji="kimochi" example="彼は気持ちが若い。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_004" translation="długotrwały, wytrzymały" kana="ながもち" kanji="長持ち" romaji="nagamochi" example="エンジンを空回りさせちゃいかん。長持ちさせたいからね。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_005" translation="posiadane rzeczy, dobytek" kana="もちもの" kanji="持ち物" romaji="mochimono" example="自分の持ち物を忘れないように。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_006" translation="myśleć" kana="おもう" kanji="思う" romaji="omou" example="晴れだと思うよ。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_007" translation="przypomnieć sobie" kana="おもいだす" kanji="思い出す" romaji="omoidasu" example="あなたを見るとお兄さんを思い出します。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_008" translation="wspomnienie" kana="おもいで" kanji="思い出" romaji="omoide" example="貴重な思い出料としては安いものですよ。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_009" translation="wracać do domu, do ojczyzny" kana="かえる" kanji="帰る" romaji="kaeru" example="恋人よ、我に帰れ。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_010" translation="wracać do kraju" kana="きこくする" kanji="帰国する" romaji="kikokusuru" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_146_150_011" translation="otworzyć ( np. ksiazke ), zorganizować" kana="ひらく" kanji="開く" romaji="hiraku" example="ぐいと押すとドアは開いた。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_012" translation="otworzyć ( np. okno, drzwi )" kana="あける" kanji="開ける" romaji="akeru" example="夜が明ける。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_013" translation="otworzyć się ( sama, bez ingerencji )" kana="あく" kanji="開く" romaji="aku" example="ぐいと押すとドアは開いた。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_014" translation="zamknąć ( książke, oczy, plik etc )" kana="とじる" kanji="閉じる" romaji="tojiru" example="本を閉じなさい。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_015" translation="zamknąć ( np. okno, drzwi )" kana="しめる" kanji="閉める" romaji="shimeru" example="ギャンブルで味を占めるとなかなか止められない。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_016" translation="zamyka się ( samo )" kana="しまる" kanji="閉まる" romaji="shimaru" example="あいにく店は閉まっていた。" case_language="pl" />
+      <local_word id="ola_kanji_146_150_017" translation="otwierać i zamykać" kana="かいへい" kanji="開閉" romaji="kaihei" example="N/A" case_language="pl" />
     </lesson>
     <lesson id="ola_kanji_151_155" group="Ola" main="Kanji" name="151-155">
-      <local_word id="ola_kanji_151_155_001" translation="uczyć czegoś ( kogoś )" kana="おしえる" kanji="教える" romaji="oshieru" example="地下鉄へ行く道を教えていただけませんか。" />
-      <local_word id="ola_kanji_151_155_002" translation="robić, wytwarzać" kana="つくる" kanji="作る" romaji="tsukuru" example="例外は作るべきではないと思います。" />
-      <local_word id="ola_kanji_151_155_003" translation="wykonany ręcznie, rękodzieło" kana="てづくり" kanji="手作り" romaji="tezukuri" example="N/A" />
-      <local_word id="ola_kanji_151_155_004" translation="autor, pisarza, artysta" kana="さっか" kanji="作家" romaji="sakka" example="その作家は私たちによく知られています。" />
-      <local_word id="ola_kanji_151_155_005" translation="arcydzieło, znany utwór ( o ksiazce, filmie.. )" kana="めいさく" kanji="名作" romaji="meisaku" example="この映画はまさしく不朽の名作である。" />
-      <local_word id="ola_kanji_151_155_006" translation="przechodzić ( przez miejsce, mijać miejsce )" kana="とおる" kanji="通る" romaji="tooru" example="この道を通ります。" />
-      <local_word id="ola_kanji_151_155_007" translation="uczęszczać, chodzić regularnie ( na lekcje )" kana="かよう" kanji="通う" romaji="kayou" example="６歳以上の子供は学校に通わなければならない。" />
-      <local_word id="ola_kanji_151_155_008" translation="Droga do szkoły, dojazd do szkoły" kana="つうがく" kanji="通学" romaji="tsuugaku" example="いつもバス通学です。" />
-      <local_word id="ola_kanji_151_155_009" translation="iść, chodzić ( pieszo )" kana="あるく" kanji="歩く" romaji="aruku" example="N/A" />
-      <local_word id="ola_kanji_151_155_010" translation="spacer" kana="さんぽ" kanji="散歩" romaji="sanpo" example="公園を散歩しましょう。" />
-      <local_word id="ola_kanji_151_155_011" translation="chodnik" kana="ほどう" kanji="歩道" romaji="hodou" example="歩道にお金が落ちていた。" />
-      <local_word id="ola_kanji_151_155_012" translation="brać, wziąć, zdjąć" kana="とる" kanji="取る" romaji="toru" example="彼は数学で満点を取った。" />
-      <local_word id="ola_kanji_151_155_013" translation="zdjąć, odłączyć, zdemontować" kana="とりはずす" kanji="取り外す" romaji="torihazusu" example="カーテンを取りはずして洗濯に出しなさい。" />
+      <local_word id="ola_kanji_151_155_001" translation="uczyć czegoś ( kogoś )" kana="おしえる" kanji="教える" romaji="oshieru" example="地下鉄へ行く道を教えていただけませんか。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_002" translation="robić, wytwarzać" kana="つくる" kanji="作る" romaji="tsukuru" example="例外は作るべきではないと思います。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_003" translation="wykonany ręcznie, rękodzieło" kana="てづくり" kanji="手作り" romaji="tezukuri" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_151_155_004" translation="autor, pisarza, artysta" kana="さっか" kanji="作家" romaji="sakka" example="その作家は私たちによく知られています。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_005" translation="arcydzieło, znany utwór ( o ksiazce, filmie.. )" kana="めいさく" kanji="名作" romaji="meisaku" example="この映画はまさしく不朽の名作である。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_006" translation="przechodzić ( przez miejsce, mijać miejsce )" kana="とおる" kanji="通る" romaji="tooru" example="この道を通ります。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_007" translation="uczęszczać, chodzić regularnie ( na lekcje )" kana="かよう" kanji="通う" romaji="kayou" example="６歳以上の子供は学校に通わなければならない。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_008" translation="Droga do szkoły, dojazd do szkoły" kana="つうがく" kanji="通学" romaji="tsuugaku" example="いつもバス通学です。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_009" translation="iść, chodzić ( pieszo )" kana="あるく" kanji="歩く" romaji="aruku" example="N/A" case_language="pl" />
+      <local_word id="ola_kanji_151_155_010" translation="spacer" kana="さんぽ" kanji="散歩" romaji="sanpo" example="公園を散歩しましょう。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_011" translation="chodnik" kana="ほどう" kanji="歩道" romaji="hodou" example="歩道にお金が落ちていた。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_012" translation="brać, wziąć, zdjąć" kana="とる" kanji="取る" romaji="toru" example="彼は数学で満点を取った。" case_language="pl" />
+      <local_word id="ola_kanji_151_155_013" translation="zdjąć, odłączyć, zdemontować" kana="とりはずす" kanji="取り外す" romaji="torihazusu" example="カーテンを取りはずして洗濯に出しなさい。" case_language="pl" />
+    </lesson>
+    <lesson id="lesson_9e336701f3" group="qweq" main="wqe" name="eqeqwewqewe">
+      <word id="grammar_adjectives_chikai">
+        <dictionary_ref dictionary="adjectives" word="chikai" />
+      </word>
     </lesson>
   </lessons>
 </lesson_catalog>

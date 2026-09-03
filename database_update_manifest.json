@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "revision": 2,
+  "revision": 3,
   "files": [
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -14,13 +14,13 @@
     },
     {
       "path": "data/database_revision.json",
-      "sha256": "5f398de00b7d812fb1b5e0422784bbe38a206becbfa739c50361bad8532bc882",
-      "url": "database_revision.json?kotomi_sha256=5f398de00b7d812fb1b5e0422784bbe38a206becbfa739c50361bad8532bc882"
+      "sha256": "86294d5013952cb8daac85825bc39283e5f702c169b4c37cdbb59ad9734d9a96",
+      "url": "database_revision.json?kotomi_sha256=86294d5013952cb8daac85825bc39283e5f702c169b4c37cdbb59ad9734d9a96"
     },
     {
       "path": "data/lessons/lessons.xml",
-      "sha256": "8728fd459b4ab72b6233824edf016e8b197791d868b7bc83ee7c9b1345957b08",
-      "url": "lessons/lessons.xml?kotomi_sha256=8728fd459b4ab72b6233824edf016e8b197791d868b7bc83ee7c9b1345957b08"
+      "sha256": "c032db107b6fa9fa0bddd77e918480666fc4bb690d82b88c428c2e4077632734",
+      "url": "lessons/lessons.xml?kotomi_sha256=c032db107b6fa9fa0bddd77e918480666fc4bb690d82b88c428c2e4077632734"
     },
     {
       "path": "data/dictionaries/nouns.xml",
