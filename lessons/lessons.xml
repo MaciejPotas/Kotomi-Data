@@ -103,7 +103,7 @@
       <local_word id="ola_kanji_41_45_008" translation="poprzedni miesiąc" kana="せんげつ" kanji="先月" romaji="sengetsu" example="先月はほとんど雨が降らなかった。 - There was hardly any rain last month." />
       <local_word id="ola_kanji_41_45_009" translation="przyszły, wcześniejszy, czubek czegoś" kana="さき" kanji="先" romaji="saki" example="ここから先には行けません。 - You can't go beyond this point." />
       <local_word id="ola_kanji_41_45_010" translation="któregoś dnia" kana="せんじつ" kanji="先日" romaji="senjitsu" example="先日小学校のクラス会に出席した。 - The other day I attended an elementary school class meeting." />
-      <local_word id="ola_kanji_41_45_011" translation="szkoła" kana="がっこう" kanji="学校" romaji="gakkou" example="この学校はたくさんの生徒がいます。 - This school has many students." />
+      <local_word id="ola_kanji_41_45_011" translation="szkoła" kana="がっこう" kanji="学校" romaji="gakkou" example="この学校はたくさんの生徒がいます。 - There are many students at this school." />
     </lesson>
     <lesson id="ola_kanji_6_10" group="Ola" main="Kanji" name="6-10">
       <local_word id="ola_kanji_6_10_001" translation="brama" kana="もん" kanji="門" romaji="mon" example="２人の兵士が、門のところで見張りをしていた。 - Two soldiers were keeping a watch at the gate." />
@@ -817,6 +817,161 @@
       <local_word id="ola_kanji_151_155_011" translation="chodnik" kana="ほどう" kanji="歩道" romaji="hodou" example="歩道にお金が落ちていた。" />
       <local_word id="ola_kanji_151_155_012" translation="brać, wziąć, zdjąć" kana="とる" kanji="取る" romaji="toru" example="彼は数学で満点を取った。" />
       <local_word id="ola_kanji_151_155_013" translation="zdjąć, odłączyć, zdemontować" kana="とりはずす" kanji="取り外す" romaji="torihazusu" example="カーテンを取りはずして洗濯に出しなさい。" />
+    </lesson>
+    <lesson id="thematic_give_receive" group="Tematyczne" main="Pary czasowników" name="Dawać i otrzymywać">
+      <local_word id="thematic_ageru_give" translation="dawać" kana="あげる" romaji="ageru" example="ともだちにほんをあげます。" dictionary="verbs" type="ichidan" ending="ru">
+        <usage>
+          <role ref="object">
+            <accept category="person" />
+            <accept category="animal" />
+            <accept category="food" />
+            <accept category="drink" />
+            <accept category="text" />
+            <accept category="media" />
+            <accept category="vehicle" />
+            <accept category="thing" />
+          </role>
+          <role ref="target">
+            <accept category="person" />
+            <accept category="animal" />
+          </role>
+          <role ref="location" />
+        </usage>
+        <forms>
+          <form name="dictionary" translation="dawać">あげる</form>
+          <form name="polite_nonpast" translation="daję">あげます</form>
+          <form name="plain_negative" translation="nie daję">あげない</form>
+          <form name="polite_negative" translation="nie daję">あげません</form>
+          <form name="past_plain" translation="dałem">あげた</form>
+          <form name="past_polite" translation="dałem">あげました</form>
+          <form name="past_negative_plain" translation="nie dałem">あげなかった</form>
+          <form name="past_negative_polite" translation="nie dałem">あげませんでした</form>
+          <form name="te_form" translation="dając">あげて</form>
+          <form name="potential" translation="móc dać">あげられる</form>
+          <form name="passive" translation="być danym">あげられる</form>
+          <form name="causative" translation="kazać dać">あげさせる</form>
+          <form name="conditional" translation="jeśli dam">あげれば</form>
+          <form name="volitional" translation="dajmy">あげよう</form>
+          <form name="imperative" translation="daj">あげろ</form>
+        </forms>
+      </local_word>
+      <local_word id="thematic_morau" translation="otrzymywać" kana="もらう" romaji="morau" example="ともだちにほんをもらいます。" dictionary="verbs" type="godan" ending="u">
+        <usage>
+          <role ref="object">
+            <accept category="person" />
+            <accept category="animal" />
+            <accept category="food" />
+            <accept category="drink" />
+            <accept category="text" />
+            <accept category="media" />
+            <accept category="vehicle" />
+            <accept category="thing" />
+          </role>
+          <role ref="target">
+            <accept category="person" />
+            <accept category="animal" />
+          </role>
+          <role ref="location" />
+        </usage>
+        <forms>
+          <form name="dictionary" translation="otrzymywać">もらう</form>
+          <form name="polite_nonpast" translation="otrzymuję">もらいます</form>
+          <form name="plain_negative" translation="nie otrzymuję">もらわない</form>
+          <form name="polite_negative" translation="nie otrzymuję">もらいません</form>
+          <form name="past_plain" translation="otrzymałem">もらった</form>
+          <form name="past_polite" translation="otrzymałem">もらいました</form>
+          <form name="past_negative_plain" translation="nie otrzymałem">もらわなかった</form>
+          <form name="past_negative_polite" translation="nie otrzymałem">もらいませんでした</form>
+          <form name="te_form" translation="otrzymując">もらって</form>
+          <form name="potential" translation="móc otrzymać">もらえる</form>
+          <form name="passive" translation="być otrzymanym">もらわれる</form>
+          <form name="causative" translation="kazać otrzymać">もらわせる</form>
+          <form name="conditional" translation="jeśli otrzymam">もらえば</form>
+          <form name="volitional" translation="otrzymajmy">もらおう</form>
+          <form name="imperative" translation="otrzymaj">もらえ</form>
+        </forms>
+      </local_word>
+    </lesson>
+    <lesson id="thematic_lend_borrow" group="Tematyczne" main="Pary czasowników" name="Pożyczać i pożyczać od kogoś">
+      <local_word id="thematic_kasu" translation="pożyczać komuś" kana="かす" kanji="貸す" romaji="kasu" example="ともだちにほんをかします。" dictionary="verbs" type="godan" ending="su">
+        <usage>
+          <role ref="object">
+            <accept category="text" />
+            <accept category="vehicle" />
+            <accept category="thing" />
+            <noun ref="okane" />
+          </role>
+          <role ref="target">
+            <accept category="person" />
+            <accept category="animal" />
+          </role>
+          <role ref="location" />
+        </usage>
+        <forms>
+          <form name="dictionary" translation="pożyczać komuś">かす</form>
+          <form name="polite_nonpast" translation="pożyczam komuś">かします</form>
+          <form name="plain_negative" translation="nie pożyczam komuś">かさない</form>
+          <form name="polite_negative" translation="nie pożyczam komuś">かしません</form>
+          <form name="past_plain" translation="pożyczyłem komuś">かした</form>
+          <form name="past_polite" translation="pożyczyłem komuś">かしました</form>
+          <form name="past_negative_plain" translation="nie pożyczyłem komuś">かさなかった</form>
+          <form name="past_negative_polite" translation="nie pożyczyłem komuś">かしませんでした</form>
+          <form name="te_form" translation="pożyczając komuś">かして</form>
+          <form name="potential" translation="móc pożyczyć komuś">かせる</form>
+          <form name="passive" translation="być pożyczonym">かされる</form>
+          <form name="causative" translation="kazać pożyczyć">かさせる</form>
+          <form name="conditional" translation="jeśli pożyczę">かせば</form>
+          <form name="volitional" translation="pożyczmy">かそう</form>
+          <form name="imperative" translation="pożycz">かせ</form>
+        </forms>
+      </local_word>
+      <word id="thematic_verbs_kariru">
+        <dictionary_ref dictionary="verbs" word="kariru" />
+      </word>
+    </lesson>
+    <lesson id="thematic_open_close" group="Tematyczne" main="Pary czasowników" name="Otwierać i zamykać">
+      <word id="thematic_verbs_akeru"><dictionary_ref dictionary="verbs" word="akeru" /></word>
+      <word id="thematic_verbs_aku"><dictionary_ref dictionary="verbs" word="aku" /></word>
+      <word id="thematic_verbs_shimeru"><dictionary_ref dictionary="verbs" word="shimeru" /></word>
+      <word id="thematic_verbs_shimaru"><dictionary_ref dictionary="verbs" word="shimaru" /></word>
+    </lesson>
+    <lesson id="thematic_in_out" group="Tematyczne" main="Pary czasowników" name="Wchodzić, wychodzić, wkładać, wyjmować">
+      <word id="thematic_verbs_hairu"><dictionary_ref dictionary="verbs" word="hairu" /></word>
+      <word id="thematic_verbs_deru"><dictionary_ref dictionary="verbs" word="deru" /></word>
+      <word id="thematic_verbs_ireru"><dictionary_ref dictionary="verbs" word="ireru" /></word>
+      <word id="thematic_verbs_dasu"><dictionary_ref dictionary="verbs" word="dasu" /></word>
+    </lesson>
+    <lesson id="thematic_size" group="Tematyczne" main="Przeciwieństwa" name="Duży i mały">
+      <word id="thematic_adjectives_ookii"><dictionary_ref dictionary="adjectives" word="ookii" /></word>
+      <word id="thematic_adjectives_chiisai"><dictionary_ref dictionary="adjectives" word="chiisai" /></word>
+    </lesson>
+    <lesson id="thematic_new_old" group="Tematyczne" main="Przeciwieństwa" name="Nowy i stary">
+      <word id="thematic_adjectives_atarashii"><dictionary_ref dictionary="adjectives" word="atarashii" /></word>
+      <word id="thematic_adjectives_furui"><dictionary_ref dictionary="adjectives" word="furui" /></word>
+    </lesson>
+    <lesson id="thematic_hot_cold" group="Tematyczne" main="Przeciwieństwa" name="Gorący i zimny">
+      <word id="thematic_adjectives_atsui"><dictionary_ref dictionary="adjectives" word="atsui" /></word>
+      <word id="thematic_adjectives_samui"><dictionary_ref dictionary="adjectives" word="samui" /></word>
+    </lesson>
+    <lesson id="thematic_food" group="Tematyczne" main="Słownictwo tematyczne" name="Jedzenie">
+      <word id="thematic_nouns_meal"><dictionary_ref dictionary="nouns" word="meal" /></word>
+      <word id="thematic_nouns_gohan"><dictionary_ref dictionary="nouns" word="gohan" /></word>
+      <word id="thematic_nouns_pan"><dictionary_ref dictionary="nouns" word="pan" /></word>
+      <word id="thematic_nouns_sushi"><dictionary_ref dictionary="nouns" word="sushi" /></word>
+      <word id="thematic_nouns_ringo"><dictionary_ref dictionary="nouns" word="ringo" /></word>
+    </lesson>
+    <lesson id="thematic_drinks" group="Tematyczne" main="Słownictwo tematyczne" name="Napoje">
+      <word id="thematic_nouns_coffee"><dictionary_ref dictionary="nouns" word="coffee" /></word>
+      <word id="thematic_nouns_tea"><dictionary_ref dictionary="nouns" word="tea" /></word>
+      <word id="thematic_nouns_water"><dictionary_ref dictionary="nouns" word="water" /></word>
+    </lesson>
+    <lesson id="thematic_reading_messages" group="Tematyczne" main="Słownictwo tematyczne" name="Czytanie i wiadomości">
+      <word id="thematic_nouns_book"><dictionary_ref dictionary="nouns" word="book" /></word>
+      <word id="thematic_nouns_newspaper"><dictionary_ref dictionary="nouns" word="newspaper" /></word>
+      <word id="thematic_nouns_manga"><dictionary_ref dictionary="nouns" word="manga" /></word>
+      <word id="thematic_nouns_letter"><dictionary_ref dictionary="nouns" word="letter" /></word>
+      <word id="thematic_nouns_email"><dictionary_ref dictionary="nouns" word="email" /></word>
+      <word id="thematic_nouns_note"><dictionary_ref dictionary="nouns" word="note" /></word>
     </lesson>
   </lessons>
 </lesson_catalog>
