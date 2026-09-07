@@ -23,6 +23,28 @@ PROJECT_SCHEMA_FILES = {
 }
 LESSON_SCHEMA_FILE = "lessons/lessons.xml"
 LEARNING_XML_FILES = PROJECT_SCHEMA_FILES | {LESSON_SCHEMA_FILE}
+
+DATABASE_MANIFEST_ORDER = [
+    "data/dictionaries/adjectives.xml",
+    "data/dictionaries/copulas.xml",
+    "data/database_revision.json",
+    "data/lessons/lessons.xml",
+    "data/dictionaries/nouns.xml",
+    "data/dictionaries/verbs.xml",
+]
+DATABASE_CONTENT_FILES = {
+    path.removeprefix("data/")
+    for path in DATABASE_MANIFEST_ORDER
+    if path != "data/database_revision.json"
+}
+QUIZ_CONTENT_FILES = {
+    "quiz_project.xml",
+    "grammar/contexts.xml",
+    "grammar/grammar_rules.xml",
+    "patterns/sentence_maps.xml",
+    "patterns/sentence_quizzes.xml",
+}
+
 CONTENT_DIRECTORIES = {
     "dictionaries",
     "grammar",
@@ -154,6 +176,52 @@ def validate_project_references() -> None:
             raise AssertionError(f"quiz_project.xml references missing file: {relative}")
 
 
+def validate_lesson_references() -> None:
+    project_root = ET.parse(ROOT / "quiz_project.xml").getroot()
+    dictionary_files = {
+        str(node.get("id", "")): str(node.get("file", ""))
+        for node in project_root.findall("./dictionaries/dictionary")
+    }
+    dictionary_words: dict[str, set[str]] = {}
+    for dictionary_id, relative in dictionary_files.items():
+        if not dictionary_id or not relative:
+            raise AssertionError("quiz_project.xml contains an incomplete dictionary entry")
+        dictionary_root = ET.parse(ROOT / relative).getroot()
+        dictionary_words[dictionary_id] = {
+            str(word.get("id", ""))
+            for word in dictionary_root.findall("./words/word")
+            if word.get("id")
+        }
+
+    lessons_root = ET.parse(ROOT / LESSON_SCHEMA_FILE).getroot()
+    for lesson in lessons_root.findall("./lessons/lesson"):
+        lesson_id = str(lesson.get("id", "")) or "<missing>"
+        references = lesson.findall("./word/dictionary_ref")
+
+        if lesson.get("group") == "Tematyczne":
+            if lesson.findall("./local_word"):
+                raise AssertionError(
+                    f"Thematic lesson {lesson_id} must contain dictionary references only"
+                )
+            if len(references) < 6:
+                raise AssertionError(
+                    f"Thematic lesson {lesson_id} must contain at least six words"
+                )
+
+        for reference in references:
+            dictionary_id = str(reference.get("dictionary", ""))
+            word_id = str(reference.get("word", ""))
+            if dictionary_id not in dictionary_words:
+                raise AssertionError(
+                    f"Lesson {lesson_id} references unknown dictionary: {dictionary_id}"
+                )
+            if word_id not in dictionary_words[dictionary_id]:
+                raise AssertionError(
+                    f"Lesson {lesson_id} references missing word "
+                    f"{dictionary_id}:{word_id}"
+                )
+
+
 def validate_database_manifest() -> None:
     revision = load_json(ROOT / "database_revision.json")
     manifest = load_json(ROOT / "database_update_manifest.json")
@@ -174,20 +242,25 @@ def validate_database_manifest() -> None:
     if not isinstance(entries, list):
         raise AssertionError("Database manifest files must be a list")
 
-    install_paths: set[str] = set()
+    install_paths = [
+        str(entry.get("path", ""))
+        for entry in entries
+        if isinstance(entry, dict)
+    ]
+    if len(install_paths) != len(entries):
+        raise AssertionError("Database manifest file entries must be objects")
+    if install_paths != DATABASE_MANIFEST_ORDER:
+        raise AssertionError(
+            "Database manifest must contain only dictionaries, lessons and the "
+            f"database revision in canonical order: {DATABASE_MANIFEST_ORDER}"
+        )
+
     source_paths: set[Path] = set()
     for raw_entry in entries:
-        if not isinstance(raw_entry, dict):
-            raise AssertionError("Database manifest file entries must be objects")
-        install_path = str(raw_entry.get("path", ""))
-        if install_path in install_paths:
-            raise AssertionError(f"Duplicate Database manifest path: {install_path}")
-        install_paths.add(install_path)
         source_paths.add(validate_manifest_file(raw_entry, "data/"))
 
     expected_sources = {
-        (ROOT / relative).resolve()
-        for relative in LEARNING_XML_FILES
+        (ROOT / relative).resolve() for relative in DATABASE_CONTENT_FILES
     } | {(ROOT / "database_revision.json").resolve()}
     if source_paths != expected_sources:
         missing = sorted(
@@ -200,14 +273,6 @@ def validate_database_manifest() -> None:
         )
         raise AssertionError(
             f"Database manifest inventory mismatch, missing={missing}, extra={extra}"
-        )
-
-    expected_install_paths = {
-        f"data/{path.relative_to(ROOT).as_posix()}" for path in expected_sources
-    }
-    if install_paths != expected_install_paths:
-        raise AssertionError(
-            "Database install paths do not match canonical data inventory"
         )
 
 
@@ -294,6 +359,7 @@ def validate_quiz_manifest() -> None:
             compile(source, str(python_file), "exec")
 
     manifest_paths: set[str] = set()
+    quiz_content_sources: set[Path] = set()
     for raw_entry in entries:
         if not isinstance(raw_entry, dict):
             raise AssertionError("Quiz manifest file entries must be objects")
@@ -301,22 +367,64 @@ def validate_quiz_manifest() -> None:
         if install_path in manifest_paths:
             raise AssertionError(f"Duplicate Quiz manifest path: {install_path}")
         manifest_paths.add(install_path)
-        source = validate_manifest_file(raw_entry, "apps/")
-        if not source.relative_to(ROOT).as_posix().startswith("quizzes/"):
-            raise AssertionError(
-                f"Quiz manifest URL must resolve below quizzes/: {install_path}"
-            )
 
-    if manifest_paths != catalog_paths:
+        if install_path.startswith("apps/"):
+            source = validate_manifest_file(raw_entry, "apps/")
+            if not source.relative_to(ROOT).as_posix().startswith("quizzes/"):
+                raise AssertionError(
+                    f"Quiz package URL must resolve below quizzes/: {install_path}"
+                )
+            continue
+
+        if install_path.startswith("data/"):
+            source = validate_manifest_file(raw_entry, "data/")
+            relative = source.relative_to(ROOT).as_posix()
+            expected_install_path = f"data/{relative}"
+            if relative not in QUIZ_CONTENT_FILES or install_path != expected_install_path:
+                raise AssertionError(
+                    f"Quiz data entry is not canonical Studio content: {install_path}"
+                )
+            quiz_content_sources.add(source)
+            continue
+
         raise AssertionError(
-            "Quiz manifest flat inventory must equal the package catalog inventory"
+            f"Quiz manifest path must belong to apps/ or data/: {install_path}"
         )
+
+    expected_content_sources = {
+        (ROOT / relative).resolve() for relative in QUIZ_CONTENT_FILES
+    }
+    if quiz_content_sources != expected_content_sources:
+        missing = sorted(
+            path.relative_to(ROOT).as_posix()
+            for path in expected_content_sources - quiz_content_sources
+        )
+        extra = sorted(
+            path.relative_to(ROOT).as_posix()
+            for path in quiz_content_sources - expected_content_sources
+        )
+        raise AssertionError(
+            f"Quiz Studio content inventory mismatch, missing={missing}, extra={extra}"
+        )
+
+    expected_manifest_paths = catalog_paths | {
+        f"data/{relative}" for relative in QUIZ_CONTENT_FILES
+    }
+    if manifest_paths != expected_manifest_paths:
+        raise AssertionError(
+            "Quiz manifest must contain package files plus canonical Studio content"
+        )
+
+    ordered_paths = [str(entry["path"]) for entry in entries]
+    if ordered_paths != sorted(ordered_paths):
+        raise AssertionError("Quiz manifest file entries must be sorted by install path")
 
 
 def main() -> None:
     validate_repository_layout()
     validate_xml_and_schemas()
     validate_project_references()
+    validate_lesson_references()
     validate_database_manifest()
     validate_quiz_manifest()
     print("Kotomi-Data validation passed")
