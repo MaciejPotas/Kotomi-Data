@@ -176,6 +176,52 @@ def validate_project_references() -> None:
             raise AssertionError(f"quiz_project.xml references missing file: {relative}")
 
 
+def validate_lesson_references() -> None:
+    project_root = ET.parse(ROOT / "quiz_project.xml").getroot()
+    dictionary_files = {
+        str(node.get("id", "")): str(node.get("file", ""))
+        for node in project_root.findall("./dictionaries/dictionary")
+    }
+    dictionary_words: dict[str, set[str]] = {}
+    for dictionary_id, relative in dictionary_files.items():
+        if not dictionary_id or not relative:
+            raise AssertionError("quiz_project.xml contains an incomplete dictionary entry")
+        dictionary_root = ET.parse(ROOT / relative).getroot()
+        dictionary_words[dictionary_id] = {
+            str(word.get("id", ""))
+            for word in dictionary_root.findall("./words/word")
+            if word.get("id")
+        }
+
+    lessons_root = ET.parse(ROOT / LESSON_SCHEMA_FILE).getroot()
+    for lesson in lessons_root.findall("./lessons/lesson"):
+        lesson_id = str(lesson.get("id", "")) or "<missing>"
+        references = lesson.findall("./word/dictionary_ref")
+
+        if lesson.get("group") == "Tematyczne":
+            if lesson.findall("./local_word"):
+                raise AssertionError(
+                    f"Thematic lesson {lesson_id} must contain dictionary references only"
+                )
+            if len(references) < 6:
+                raise AssertionError(
+                    f"Thematic lesson {lesson_id} must contain at least six words"
+                )
+
+        for reference in references:
+            dictionary_id = str(reference.get("dictionary", ""))
+            word_id = str(reference.get("word", ""))
+            if dictionary_id not in dictionary_words:
+                raise AssertionError(
+                    f"Lesson {lesson_id} references unknown dictionary: {dictionary_id}"
+                )
+            if word_id not in dictionary_words[dictionary_id]:
+                raise AssertionError(
+                    f"Lesson {lesson_id} references missing word "
+                    f"{dictionary_id}:{word_id}"
+                )
+
+
 def validate_database_manifest() -> None:
     revision = load_json(ROOT / "database_revision.json")
     manifest = load_json(ROOT / "database_update_manifest.json")
@@ -378,6 +424,7 @@ def main() -> None:
     validate_repository_layout()
     validate_xml_and_schemas()
     validate_project_references()
+    validate_lesson_references()
     validate_database_manifest()
     validate_quiz_manifest()
     print("Kotomi-Data validation passed")
