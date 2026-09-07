@@ -2517,5 +2517,125 @@
         <form name="imperative" context="none" style="rozkazująca" kana="よめ" />
       </forms>
     </word>
+    <word id="ageru_give" translation="dawać komuś" kana="あげる" type="ichidan" ending="ru">
+      <usage>
+        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
+        <role ref="target" accepts="person animal" />
+        <role ref="location" />
+      </usage>
+      <forms>
+        <form name="dictionary" translation="daję komuś" context="present" kana="あげる" />
+        <form name="polite_nonpast" translation="daję komuś" context="present" kana="あげます" />
+        <form name="plain_negative" translation="nie daję komuś" context="present" kana="あげない" />
+        <form name="polite_negative" translation="nie daję komuś" context="present" kana="あげません" />
+        <form name="past_plain" translation="dałem komuś" context="past" kana="あげた" />
+        <form name="past_polite" translation="dałem komuś" context="past" kana="あげました" />
+        <form name="past_negative_plain" translation="nie dałem komuś" context="past" kana="あげなかった" />
+        <form name="past_negative_polite" translation="nie dałem komuś" context="past" kana="あげませんでした" />
+        <form name="te_form" context="none" kana="あげて" />
+        <form name="potential" context="none" kana="あげられる" />
+        <form name="passive" context="none" kana="あげられる" />
+        <form name="causative" context="none" kana="あげさせる" />
+        <form name="tara" context="none" kana="あげたら" />
+        <form name="volitional" context="none" kana="あげよう" />
+        <form name="imperative" context="none" kana="あげろ" />
+      </forms>
+    </word>
+    <word id="kaesu" translation="oddawać, zwracać" kana="かえす" kanji="返す" type="godan" ending="su">
+      <usage>
+        <role ref="object" accepts="text vehicle thing" nouns="okane" />
+        <role ref="target" accepts="person animal" />
+        <role ref="location" />
+      </usage>
+      <forms>
+        <form name="dictionary" translation="oddaję" context="present" kana="かえす" />
+        <form name="polite_nonpast" translation="oddaję" context="present" kana="かえします" />
+        <form name="plain_negative" translation="nie oddaję" context="present" kana="かえさない" />
+        <form name="polite_negative" translation="nie oddaję" context="present" kana="かえしません" />
+        <form name="past_plain" translation="oddałem" context="past" kana="かえした" />
+        <form name="past_polite" translation="oddałem" context="past" kana="かえしました" />
+        <form name="past_negative_plain" translation="nie oddałem" context="past" kana="かえさなかった" />
+        <form name="past_negative_polite" translation="nie oddałem" context="past" kana="かえしませんでした" />
+        <form name="te_form" context="none" kana="かえして" />
+        <form name="potential" context="none" kana="かえせる" />
+        <form name="passive" context="none" kana="かえされる" />
+        <form name="causative" context="none" kana="かえさせる" />
+        <form name="tara" context="none" kana="かえしたら" />
+        <form name="volitional" context="none" kana="かえそう" />
+        <form name="imperative" context="none" kana="かえせ" />
+      </forms>
+    </word>
+    <word id="kasu" translation="pożyczać komuś" kana="かす" kanji="貸す" type="godan" ending="su">
+      <usage>
+        <role ref="object" accepts="text vehicle thing" nouns="okane" />
+        <role ref="target" accepts="person animal" />
+        <role ref="location" />
+      </usage>
+      <forms>
+        <form name="dictionary" translation="pożyczam komuś" context="present" kana="かす" />
+        <form name="polite_nonpast" translation="pożyczam komuś" context="present" kana="かします" />
+        <form name="plain_negative" translation="nie pożyczam komuś" context="present" kana="かさない" />
+        <form name="polite_negative" translation="nie pożyczam komuś" context="present" kana="かしません" />
+        <form name="past_plain" translation="pożyczyłem komuś" context="past" kana="かした" />
+        <form name="past_polite" translation="pożyczyłem komuś" context="past" kana="かしました" />
+        <form name="past_negative_plain" translation="nie pożyczyłem komuś" context="past" kana="かさなかった" />
+        <form name="past_negative_polite" translation="nie pożyczyłem komuś" context="past" kana="かしませんでした" />
+        <form name="te_form" context="none" kana="かして" />
+        <form name="potential" context="none" kana="かせる" />
+        <form name="passive" context="none" kana="かされる" />
+        <form name="causative" context="none" kana="かさせる" />
+        <form name="tara" context="none" kana="かしたら" />
+        <form name="volitional" context="none" kana="かそう" />
+        <form name="imperative" context="none" kana="かせ" />
+      </forms>
+    </word>
+    <word id="kureru" translation="dawać mi, nam" kana="くれる" type="ichidan" ending="ru">
+      <usage>
+        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
+        <role ref="target" accepts="person" />
+        <role ref="location" />
+      </usage>
+      <forms>
+        <form name="dictionary" translation="daje mi, nam" context="present" kana="くれる" />
+        <form name="polite_nonpast" translation="daje mi, nam" context="present" kana="くれます" />
+        <form name="plain_negative" translation="nie daje mi, nam" context="present" kana="くれない" />
+        <form name="polite_negative" translation="nie daje mi, nam" context="present" kana="くれません" />
+        <form name="past_plain" translation="dał mi, nam" context="past" kana="くれた" />
+        <form name="past_polite" translation="dał mi, nam" context="past" kana="くれました" />
+        <form name="past_negative_plain" translation="nie dał mi, nam" context="past" kana="くれなかった" />
+        <form name="past_negative_polite" translation="nie dał mi, nam" context="past" kana="くれませんでした" />
+        <form name="te_form" context="none" kana="くれて" />
+        <form name="potential" context="none" kana="くれられる" />
+        <form name="passive" context="none" kana="くれられる" />
+        <form name="causative" context="none" kana="くれさせる" />
+        <form name="tara" context="none" kana="くれたら" />
+        <form name="volitional" context="none" kana="くれよう" />
+        <form name="imperative" context="none" kana="くれ" />
+      </forms>
+    </word>
+    <word id="morau" translation="otrzymywać" kana="もらう" type="godan" ending="u">
+      <usage>
+        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
+        <role ref="target" accepts="person animal" />
+        <role ref="location" />
+      </usage>
+      <forms>
+        <form name="dictionary" translation="otrzymuję" context="present" kana="もらう" />
+        <form name="polite_nonpast" translation="otrzymuję" context="present" kana="もらいます" />
+        <form name="plain_negative" translation="nie otrzymuję" context="present" kana="もらわない" />
+        <form name="polite_negative" translation="nie otrzymuję" context="present" kana="もらいません" />
+        <form name="past_plain" translation="otrzymałem" context="past" kana="もらった" />
+        <form name="past_polite" translation="otrzymałem" context="past" kana="もらいました" />
+        <form name="past_negative_plain" translation="nie otrzymałem" context="past" kana="もらわなかった" />
+        <form name="past_negative_polite" translation="nie otrzymałem" context="past" kana="もらいませんでした" />
+        <form name="te_form" context="none" kana="もらって" />
+        <form name="potential" context="none" kana="もらえる" />
+        <form name="passive" context="none" kana="もらわれる" />
+        <form name="causative" context="none" kana="もらわせる" />
+        <form name="tara" context="none" kana="もらったら" />
+        <form name="volitional" context="none" kana="もらおう" />
+        <form name="imperative" context="none" kana="もらえ" />
+      </forms>
+    </word>
   </words>
 </dictionary>
