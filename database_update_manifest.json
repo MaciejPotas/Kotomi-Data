@@ -29,8 +29,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "e2c37ff693536bbdcd602188efe3f677814837d5cb14ff0104af81c8f08df38c",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=e2c37ff693536bbdcd602188efe3f677814837d5cb14ff0104af81c8f08df38c"
+      "sha256": "c6626295b564338242d22ad45d2b03c7e23820525901716413b6b1fac43309bd",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=c6626295b564338242d22ad45d2b03c7e23820525901716413b6b1fac43309bd"
     }
   ]
 }

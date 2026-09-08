@@ -2654,7 +2654,7 @@
         <form name="te_form" translation="będąc zaskoczonym" context="none" kana="おどろいて" kanji="驚いて" romaji="odoroite" />
         <form name="potential" translation="mogę być zaskoczonym" context="none" kana="おどろける" kanji="驚ける" romaji="odorokeru" />
         <form name="passive" context="none" kana="おどろかれる" kanji="驚かれる" romaji="odorokareru" />
-        <form name="causative" translation="każę / pozwalam komuś być zaskoczonym" context="none" kana="おどろかせる" kanji="驚かせる" romaji="odorokaseru" />
+        <form name="causative" translation="każę" context="none" kana="おどろかせる" kanji="驚かせる" romaji="odorokaseru" />
         <form name="tara" translation="jeśli będę być zaskoczonym" context="none" kana="おどろいたら" kanji="驚いたら" romaji="odoroitara" />
         <form name="volitional" translation="bądźmy zaskoczonym" context="none" kana="おどろこう" kanji="驚こう" romaji="odorokou" />
         <form name="imperative" translation="bądź zaskoczonym!" context="none" kana="おどろけ" kanji="驚け" romaji="odoroke" />
