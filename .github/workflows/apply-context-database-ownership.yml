@@ -14,42 +14,36 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Move contexts into Database ownership
+      - name: Finalize grammar metadata ownership
         run: |
           python - <<'PY'
           from pathlib import Path
-          import hashlib
           import json
 
-          root = Path('.')
-          contexts = root / 'grammar' / 'contexts.xml'
-          data = contexts.read_bytes().replace(b'\r\n', b'\n').replace(b'\r', b'\n')
-          digest = hashlib.sha256(data).hexdigest()
-          entry = {
-              'path': 'data/grammar/contexts.xml',
-              'sha256': digest,
-              'url': f'grammar/contexts.xml?kotomi_sha256={digest}',
+          database_owned = {
+              'data/grammar/grammar_rules.xml',
+              'data/grammar/contexts.xml',
           }
 
-          db_path = root / 'database_update_manifest.json'
+          db_path = Path('database_update_manifest.json')
           db = json.loads(db_path.read_text(encoding='utf-8'))
           assert db['revision'] == 5
-          db['files'] = [item for item in db['files'] if item['path'] != entry['path']]
-          db['files'].append(entry)
-          db['files'] = sorted(db['files'], key=lambda item: item['path'])
-          db_path.write_text(json.dumps(db, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
-
-          quiz_path = root / 'quiz_update_manifest.json'
-          quiz = json.loads(quiz_path.read_text(encoding='utf-8'))
-          quiz['files'] = [item for item in quiz['files'] if item['path'] != entry['path']]
-          quiz_path.write_text(json.dumps(quiz, indent=2, ensure_ascii=False) + '\n', encoding='utf-8', newline='\n')
-
           db_paths = {item['path'] for item in db['files']}
+          assert database_owned <= db_paths
+
+          quiz_path = Path('quiz_update_manifest.json')
+          quiz = json.loads(quiz_path.read_text(encoding='utf-8'))
+          quiz['files'] = [
+              item for item in quiz['files'] if item['path'] not in database_owned
+          ]
+          quiz_path.write_text(
+              json.dumps(quiz, indent=2, ensure_ascii=False) + '\n',
+              encoding='utf-8',
+              newline='\n',
+          )
+
           quiz_paths = {item['path'] for item in quiz['files']}
-          assert 'data/grammar/grammar_rules.xml' in db_paths
-          assert 'data/grammar/contexts.xml' in db_paths
-          assert 'data/grammar/grammar_rules.xml' not in quiz_paths
-          assert 'data/grammar/contexts.xml' not in quiz_paths
+          assert database_owned.isdisjoint(quiz_paths)
           PY
 
       - name: Commit public manifest fix
@@ -58,5 +52,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "Include contexts in database update manifest"
+          git commit -m "Keep grammar metadata in database channel"
           git push origin HEAD:fix/database-owns-grammar-metadata
