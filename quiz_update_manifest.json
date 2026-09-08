@@ -172,28 +172,28 @@
     },
     {
       "path": "data/grammar/contexts.xml",
-      "sha256": "64a2019c5f9ed1c8857d98d2f0e29e4c55e153c8cbcbcaf4a243db20b287c3a0",
-      "url": "grammar/contexts.xml?kotomi_sha256=64a2019c5f9ed1c8857d98d2f0e29e4c55e153c8cbcbcaf4a243db20b287c3a0"
+      "sha256": "0c24d751b388fdf8e0415600a34ace616dadf6d028a597b188b0387fd458661a",
+      "url": "grammar/contexts.xml?kotomi_sha256=0c24d751b388fdf8e0415600a34ace616dadf6d028a597b188b0387fd458661a"
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "314b16c83e028597a85c49c53e628d8056545a92bb652c58d6b7b823d1223956",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=314b16c83e028597a85c49c53e628d8056545a92bb652c58d6b7b823d1223956"
+      "sha256": "2587c34ac71c48678bc878da669be4f863a2e1ad5404fdd614a68d993caab5e7",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=2587c34ac71c48678bc878da669be4f863a2e1ad5404fdd614a68d993caab5e7"
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "ccdfa4b3a06ff4adf86600745ea4d2f9b0c9702c3700a0e8f71068d92263f1c8",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=ccdfa4b3a06ff4adf86600745ea4d2f9b0c9702c3700a0e8f71068d92263f1c8"
+      "sha256": "56949fab713e971013bf51e0b1967ae01ddf3a6b6cac53c79cabfa2222ee7444",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=56949fab713e971013bf51e0b1967ae01ddf3a6b6cac53c79cabfa2222ee7444"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
-      "sha256": "bcee8e44a6a3f470b8d5fd445950477fda3ccfb71ed523e75132f8712770857e",
-      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=bcee8e44a6a3f470b8d5fd445950477fda3ccfb71ed523e75132f8712770857e"
+      "sha256": "42f5f4a000c3e285bbee9c30c049e0f1df61670f5358582630c9569174965628",
+      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=42f5f4a000c3e285bbee9c30c049e0f1df61670f5358582630c9569174965628"
     },
     {
       "path": "data/quiz_project.xml",
-      "sha256": "538f44066aa5f14712a8f8a5989b944f683901b0d93a54f2a055e5b9502fc83e",
-      "url": "quiz_project.xml?kotomi_sha256=538f44066aa5f14712a8f8a5989b944f683901b0d93a54f2a055e5b9502fc83e"
+      "sha256": "01d767b0018a6834ad7802a4062789516931d465b96aa285fc135e6adcbd3470",
+      "url": "quiz_project.xml?kotomi_sha256=01d767b0018a6834ad7802a4062789516931d465b96aa285fc135e6adcbd3470"
     }
   ]
 }
