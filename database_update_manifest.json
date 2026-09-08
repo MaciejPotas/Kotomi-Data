@@ -8,6 +8,11 @@
       "url": "dictionaries/adjectives.xml?kotomi_sha256=33eaf5605492b2c1d490e20c02bd4644d8a700b83b1e54a393d03b4754298669"
     },
     {
+      "path": "data/grammar/contexts.xml",
+      "sha256": "0c24d751b388fdf8e0415600a34ace616dadf6d028a597b188b0387fd458661a",
+      "url": "grammar/contexts.xml?kotomi_sha256=0c24d751b388fdf8e0415600a34ace616dadf6d028a597b188b0387fd458661a"
+    },
+    {
       "path": "data/dictionaries/copulas.xml",
       "sha256": "dc630c362fdc36419a9723f7c51cf148430a58f2b97e74fd66991f83e2915fb6",
       "url": "dictionaries/copulas.xml?kotomi_sha256=dc630c362fdc36419a9723f7c51cf148430a58f2b97e74fd66991f83e2915fb6"
