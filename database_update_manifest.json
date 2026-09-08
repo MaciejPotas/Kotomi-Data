@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "revision": 4,
+  "revision": 5,
   "files": [
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -14,8 +14,13 @@
     },
     {
       "path": "data/database_revision.json",
-      "sha256": "04489979c7d59999aba1dfbae5480cc190e6564b024f46a6aa558c7380987516",
-      "url": "database_revision.json?kotomi_sha256=04489979c7d59999aba1dfbae5480cc190e6564b024f46a6aa558c7380987516"
+      "sha256": "60c9b7e4ff09d1e9a195295f7af27039ba99d11ee4e5e24bdf6487741727d1e5",
+      "url": "database_revision.json?kotomi_sha256=60c9b7e4ff09d1e9a195295f7af27039ba99d11ee4e5e24bdf6487741727d1e5"
+    },
+    {
+      "path": "data/grammar/grammar_rules.xml",
+      "sha256": "2587c34ac71c48678bc878da669be4f863a2e1ad5404fdd614a68d993caab5e7",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=2587c34ac71c48678bc878da669be4f863a2e1ad5404fdd614a68d993caab5e7"
     },
     {
       "path": "data/lessons/lessons.xml",
