@@ -171,16 +171,6 @@
       "url": "quizzes/verbs/mobile.py?kotomi_sha256=7b643dc258c355beffff2cec9a3f3f417eb6393b51670eeb0f2bad54bdf2dd68"
     },
     {
-      "path": "data/grammar/contexts.xml",
-      "sha256": "0c24d751b388fdf8e0415600a34ace616dadf6d028a597b188b0387fd458661a",
-      "url": "grammar/contexts.xml?kotomi_sha256=0c24d751b388fdf8e0415600a34ace616dadf6d028a597b188b0387fd458661a"
-    },
-    {
-      "path": "data/grammar/grammar_rules.xml",
-      "sha256": "2587c34ac71c48678bc878da669be4f863a2e1ad5404fdd614a68d993caab5e7",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=2587c34ac71c48678bc878da669be4f863a2e1ad5404fdd614a68d993caab5e7"
-    },
-    {
       "path": "data/patterns/sentence_maps.xml",
       "sha256": "56949fab713e971013bf51e0b1967ae01ddf3a6b6cac53c79cabfa2222ee7444",
       "url": "patterns/sentence_maps.xml?kotomi_sha256=56949fab713e971013bf51e0b1967ae01ddf3a6b6cac53c79cabfa2222ee7444"
