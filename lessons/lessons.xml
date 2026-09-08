@@ -18,6 +18,15 @@
         <dictionary_ref dictionary="adjectives" word="toumei" />
       </word>
     </lesson>
+    <lesson id="ola_kanji_1_5" group="Ola" main="Kanji" name="1-5">
+      <local_word id="ola_kanji_1_5_001" translation="słońce, dzień" kana="ひ" kanji="日" romaji="hi" example="会議の日を決めなさい。 - Decide on a meeting date." />
+      <local_word id="ola_kanji_1_5_002" translation="dzień matki" kana="ははのひ" kanji="母の日" romaji="hahanohi" example="" />
+      <local_word id="ola_kanji_1_5_003" translation="trzeci dzień miesiąca" kana="みっか" kanji="三日" romaji="mikka" example="N/A" />
+      <local_word id="ola_kanji_1_5_004" translation="księżyc" kana="つき" kanji="月" romaji="tsuki" example="彼は月に３０万円稼ぐ。 - He earns 300,000 yen a month." />
+      <local_word id="ola_kanji_1_5_005" translation="luty" kana="にがつ" kanji="二月" romaji="nigatsu" example="N/A" />
+      <local_word id="ola_kanji_1_5_006" translation="duże drzewo" kana="たいぼく" kanji="大木" romaji="taiboku" example="" />
+      <local_word id="ola_kanji_1_5_007" translation="drzewo" kana="き" kanji="木" romaji="ki" example="その木には実がたわわになっていた。 - The tree was full of fruit." />
+    </lesson>
     <lesson id="ola_kanji_11_15" group="Ola" main="Kanji" name="11-15">
       <local_word id="ola_kanji_11_15_001" translation="ucho" kana="みみ" kanji="耳" romaji="mimi" example="彼等には音楽を聴く耳がない。 - They have no ears to listen to music." />
       <local_word id="ola_kanji_11_15_002" translation="oko" kana="め" kanji="目" romaji="me" example="彼女はきれいな目をしている。 - She has beautiful eyes." />
@@ -33,15 +42,6 @@
       <local_word id="ola_kanji_11_15_012" translation="mleko krowie" kana="ぎゅうにゅう" kanji="牛乳" romaji="gyuunyuu" example="牛は我々に牛乳を与えてくれる。 - The cows give us milk." />
       <local_word id="ola_kanji_11_15_013" translation="ktoś starszy, przełożony" kana="めうえ" kanji="目上" romaji="meue" example="目上の人には礼儀正しくしなければならない。 - You must be polite to your superiors." />
       <local_word id="ola_kanji_11_15_014" translation="młodszy, podwładny" kana="めした" kanji="目下" romaji="meshita" example="目下の者をないがしろにするな。 - Don't neglect anyone under you." />
-    </lesson>
-    <lesson id="ola_kanji_1_5" group="Ola" main="Kanji" name="1-5">
-      <local_word id="ola_kanji_1_5_001" translation="słońce, dzień" kana="ひ" kanji="日" romaji="hi" example="会議の日を決めなさい。 - Decide on a meeting date." />
-      <local_word id="ola_kanji_1_5_002" translation="dzień matki" kana="ははのひ" kanji="母の日" romaji="hahanohi" example="" />
-      <local_word id="ola_kanji_1_5_003" translation="trzeci dzień miesiąca" kana="みっか" kanji="三日" romaji="mikka" example="N/A" />
-      <local_word id="ola_kanji_1_5_004" translation="księżyc" kana="つき" kanji="月" romaji="tsuki" example="彼は月に３０万円稼ぐ。 - He earns 300,000 yen a month." />
-      <local_word id="ola_kanji_1_5_005" translation="luty" kana="にがつ" kanji="二月" romaji="nigatsu" example="N/A" />
-      <local_word id="ola_kanji_1_5_006" translation="duże drzewo" kana="たいぼく" kanji="大木" romaji="taiboku" example="" />
-      <local_word id="ola_kanji_1_5_007" translation="drzewo" kana="き" kanji="木" romaji="ki" example="その木には実がたわわになっていた。 - The tree was full of fruit." />
     </lesson>
     <lesson id="ola_kanji_16_20" group="Ola" main="Kanji" name="16-20">
       <local_word id="ola_kanji_16_20_001" translation="koń" kana="うま" kanji="馬" romaji="uma" example="あなたは馬に乗ることができますか。 - Can you ride a horse?" />
@@ -71,26 +71,6 @@
       <local_word id="ola_kanji_36_40_012" translation="żeńska" kana="じょし" kanji="女子" romaji="joshi" example="このクラスには１５人の男子と２８人の女子がいる。 - There are 15 boys and 28 girls in this class." />
       <local_word id="ola_kanji_36_40_013" translation="kobieta" kana="おんなのひと" kanji="女の人" romaji="onnanohito" example="今、女の人が１人入っていきましたよ。 - Now, one woman has come in." />
       <local_word id="ola_kanji_36_40_014" translation="mężczyzna" kana="おとこのひと" kanji="男の人" romaji="otokonohito" example="若い男の人がドアの前で歌っています。 - A young man sings in front of the door." />
-    </lesson>
-    <lesson id="ola_kanji_126_130" group="Ola" main="Kanji" name="126-130">
-      <local_word id="ola_kanji_126_130_001" translation="praca" kana="しごと" kanji="仕事" romaji="shigoto" example="N/A" />
-      <local_word id="ola_kanji_126_130_002" translation="urzędnik" kana="し" kanji="仕" romaji="shi" example="" />
-      <local_word id="ola_kanji_126_130_003" translation="nie ma (innego) sposobu" kana="しかたがない" kanji="仕方がない" romaji="shikataganai" example="コーヒーが飲みたくて仕方がない。" />
-      <local_word id="ola_kanji_126_130_004" translation="ukończyć, wykonać" kana="しあげる" kanji="仕上げる" romaji="shiageru" example="ユミは１日でそれを仕上げられません。" />
-      <local_word id="ola_kanji_126_130_005" translation="rzecz, sprawa" kana="こと" kanji="事" romaji="koto" example="N/A" />
-      <local_word id="ola_kanji_126_130_006" translation="pożar" kana="かじ" kanji="火事" romaji="kaji" example="火事の際は１１９番に電話してください。" />
-      <local_word id="ola_kanji_126_130_007" translation="posiłek" kana="しょくじ" kanji="食事" romaji="shokuji" example="彼女はやせるために食事を制限した。" />
-      <local_word id="ola_kanji_126_130_008" translation="ważny, poważny, istotny" kana="だいじな" kanji="大事" romaji="daijina" example="N/A" />
-      <local_word id="ola_kanji_126_130_009" translation="wydarzenie" kana="できごと" kanji="出来事" romaji="dekigoto" example="このようのしてその出来事は起こった。" />
-      <local_word id="ola_kanji_126_130_010" translation="(Shinto) świątynia" kana="やしろ" kanji="社" romaji="yashiro" example="この社はジュピターにささげられたものだ。" />
-      <local_word id="ola_kanji_126_130_011" translation="firma" kana="かいしゃ" kanji="会社" romaji="kaisha" example="彼の努力は会社の成長に貢献した。" />
-      <local_word id="ola_kanji_126_130_012" translation="społeczeństwo" kana="しゃかい" kanji="社会" romaji="shakai" example="彼の一生は社会の下積みで終わった。" />
-      <local_word id="ola_kanji_126_130_013" translation="prezes firmy" kana="しゃちょう" kanji="社長" romaji="shachou" example="この会社の社長は誰ですか。" />
-      <local_word id="ola_kanji_126_130_014" translation="kawałek ziemi, teren" kana="とち" kanji="土地" romaji="tochi" example="この土地は池田氏の所有だ。" />
-      <local_word id="ola_kanji_126_130_015" translation="region, obszar, miejscowość" kana="ちほう" kanji="地方" romaji="chihou" example="彼は今年の夏、東北地方を旅行した。" />
-      <local_word id="ola_kanji_126_130_016" translation="żelazo" kana="てつ" kanji="鉄" romaji="tetsu" example="鉄は最も有用な金属です。" />
-      <local_word id="ola_kanji_126_130_017" translation="metro" kana="ちかてつ" kanji="地下鉄" romaji="chikatetsu" example="地下鉄で行きたいのです。" />
-      <local_word id="ola_kanji_126_130_018" translation="kolej" kana="てつどう" kanji="鉄道" romaji="tetsudou" example="我々は鉄道施設の契約をした。" />
     </lesson>
     <lesson id="ola_kanji_41_45" group="Ola" main="Kanji" name="41-45">
       <local_word id="ola_kanji_41_45_001" translation="uczyć się" kana="まなぶ" kanji="学ぶ" romaji="manabu" example="いくつになっても学ぶことはある。 - There are things you can learn no matter how old you are." />
@@ -736,6 +716,26 @@
       <local_word id="ola_kanji_121_125_010" translation="dialekt" kana="ほうげん" kanji="方言" romaji="hougen" example="いわゆる「標準英語」とは世界中で話されている数多い方言のうちの１つにすぎない。" />
       <local_word id="ola_kanji_121_125_011" translation="przód, z przodu" kana="ぜんぽう" kanji="前方" romaji="zenpou" example="我々ははるか前方に他の船を見た。" />
     </lesson>
+    <lesson id="ola_kanji_126_130" group="Ola" main="Kanji" name="126-130">
+      <local_word id="ola_kanji_126_130_001" translation="praca" kana="しごと" kanji="仕事" romaji="shigoto" example="N/A" />
+      <local_word id="ola_kanji_126_130_002" translation="urzędnik" kana="し" kanji="仕" romaji="shi" example="" />
+      <local_word id="ola_kanji_126_130_003" translation="nie ma (innego) sposobu" kana="しかたがない" kanji="仕方がない" romaji="shikataganai" example="コーヒーが飲みたくて仕方がない。" />
+      <local_word id="ola_kanji_126_130_004" translation="ukończyć, wykonać" kana="しあげる" kanji="仕上げる" romaji="shiageru" example="ユミは１日でそれを仕上げられません。" />
+      <local_word id="ola_kanji_126_130_005" translation="rzecz, sprawa" kana="こと" kanji="事" romaji="koto" example="N/A" />
+      <local_word id="ola_kanji_126_130_006" translation="pożar" kana="かじ" kanji="火事" romaji="kaji" example="火事の際は１１９番に電話してください。" />
+      <local_word id="ola_kanji_126_130_007" translation="posiłek" kana="しょくじ" kanji="食事" romaji="shokuji" example="彼女はやせるために食事を制限した。" />
+      <local_word id="ola_kanji_126_130_008" translation="ważny, poważny, istotny" kana="だいじな" kanji="大事" romaji="daijina" example="N/A" />
+      <local_word id="ola_kanji_126_130_009" translation="wydarzenie" kana="できごと" kanji="出来事" romaji="dekigoto" example="このようのしてその出来事は起こった。" />
+      <local_word id="ola_kanji_126_130_010" translation="(Shinto) świątynia" kana="やしろ" kanji="社" romaji="yashiro" example="この社はジュピターにささげられたものだ。" />
+      <local_word id="ola_kanji_126_130_011" translation="firma" kana="かいしゃ" kanji="会社" romaji="kaisha" example="彼の努力は会社の成長に貢献した。" />
+      <local_word id="ola_kanji_126_130_012" translation="społeczeństwo" kana="しゃかい" kanji="社会" romaji="shakai" example="彼の一生は社会の下積みで終わった。" />
+      <local_word id="ola_kanji_126_130_013" translation="prezes firmy" kana="しゃちょう" kanji="社長" romaji="shachou" example="この会社の社長は誰ですか。" />
+      <local_word id="ola_kanji_126_130_014" translation="kawałek ziemi, teren" kana="とち" kanji="土地" romaji="tochi" example="この土地は池田氏の所有だ。" />
+      <local_word id="ola_kanji_126_130_015" translation="region, obszar, miejscowość" kana="ちほう" kanji="地方" romaji="chihou" example="彼は今年の夏、東北地方を旅行した。" />
+      <local_word id="ola_kanji_126_130_016" translation="żelazo" kana="てつ" kanji="鉄" romaji="tetsu" example="鉄は最も有用な金属です。" />
+      <local_word id="ola_kanji_126_130_017" translation="metro" kana="ちかてつ" kanji="地下鉄" romaji="chikatetsu" example="地下鉄で行きたいのです。" />
+      <local_word id="ola_kanji_126_130_018" translation="kolej" kana="てつどう" kanji="鉄道" romaji="tetsudou" example="我々は鉄道施設の契約をした。" />
+    </lesson>
     <lesson id="ola_kanji_131_135" group="Ola" main="Kanji" name="131-135">
       <local_word id="ola_kanji_131_135_001" translation="budowa" kana="こうじ" kanji="工事" romaji="kouji" example="その工事は住民からの強い反対にもかかわらず、続けられた。" />
       <local_word id="ola_kanji_131_135_002" translation="cieśla" kana="だいく" kanji="大工" romaji="daiku" example="私のおじいちゃんは大工です。" />
@@ -819,72 +819,188 @@
       <local_word id="ola_kanji_151_155_013" translation="zdjąć, odłączyć, zdemontować" kana="とりはずす" kanji="取り外す" romaji="torihazusu" example="カーテンを取りはずして洗濯に出しなさい。" />
     </lesson>
     <lesson id="thematic_exchange" group="Tematyczne" main="Relacje i wymiana" name="Dawać, otrzymywać i pożyczać">
-      <word id="thematic_verbs_ageru_give"><dictionary_ref dictionary="verbs" word="ageru_give" /></word>
-      <word id="thematic_verbs_kureru"><dictionary_ref dictionary="verbs" word="kureru" /></word>
-      <word id="thematic_verbs_morau"><dictionary_ref dictionary="verbs" word="morau" /></word>
-      <word id="thematic_verbs_kasu"><dictionary_ref dictionary="verbs" word="kasu" /></word>
-      <word id="thematic_verbs_kariru"><dictionary_ref dictionary="verbs" word="kariru" /></word>
-      <word id="thematic_verbs_kaesu"><dictionary_ref dictionary="verbs" word="kaesu" /></word>
+      <word id="thematic_verbs_ageru_give">
+        <dictionary_ref dictionary="verbs" word="ageru_give" />
+      </word>
+      <word id="thematic_verbs_kureru">
+        <dictionary_ref dictionary="verbs" word="kureru" />
+      </word>
+      <word id="thematic_verbs_morau">
+        <dictionary_ref dictionary="verbs" word="morau" />
+      </word>
+      <word id="thematic_verbs_kasu">
+        <dictionary_ref dictionary="verbs" word="kasu" />
+      </word>
+      <word id="thematic_verbs_kariru">
+        <dictionary_ref dictionary="verbs" word="kariru" />
+      </word>
+      <word id="thematic_verbs_kaesu">
+        <dictionary_ref dictionary="verbs" word="kaesu" />
+      </word>
     </lesson>
     <lesson id="thematic_movement_change" group="Tematyczne" main="Ruch i zmiana" name="Wchodzić, wychodzić, wkładać i otwierać">
-      <word id="thematic_verbs_hairu"><dictionary_ref dictionary="verbs" word="hairu" /></word>
-      <word id="thematic_verbs_deru"><dictionary_ref dictionary="verbs" word="deru" /></word>
-      <word id="thematic_verbs_ireru"><dictionary_ref dictionary="verbs" word="ireru" /></word>
-      <word id="thematic_verbs_dasu"><dictionary_ref dictionary="verbs" word="dasu" /></word>
-      <word id="thematic_verbs_akeru"><dictionary_ref dictionary="verbs" word="akeru" /></word>
-      <word id="thematic_verbs_aku"><dictionary_ref dictionary="verbs" word="aku" /></word>
-      <word id="thematic_verbs_shimeru"><dictionary_ref dictionary="verbs" word="shimeru" /></word>
-      <word id="thematic_verbs_shimaru"><dictionary_ref dictionary="verbs" word="shimaru" /></word>
+      <word id="thematic_verbs_hairu">
+        <dictionary_ref dictionary="verbs" word="hairu" />
+      </word>
+      <word id="thematic_verbs_deru">
+        <dictionary_ref dictionary="verbs" word="deru" />
+      </word>
+      <word id="thematic_verbs_ireru">
+        <dictionary_ref dictionary="verbs" word="ireru" />
+      </word>
+      <word id="thematic_verbs_dasu">
+        <dictionary_ref dictionary="verbs" word="dasu" />
+      </word>
+      <word id="thematic_verbs_akeru">
+        <dictionary_ref dictionary="verbs" word="akeru" />
+      </word>
+      <word id="thematic_verbs_aku">
+        <dictionary_ref dictionary="verbs" word="aku" />
+      </word>
+      <word id="thematic_verbs_shimeru">
+        <dictionary_ref dictionary="verbs" word="shimeru" />
+      </word>
+      <word id="thematic_verbs_shimaru">
+        <dictionary_ref dictionary="verbs" word="shimaru" />
+      </word>
     </lesson>
     <lesson id="thematic_communication_learning" group="Tematyczne" main="Komunikacja i nauka" name="Mówić, słuchać, czytać i rozumieć">
-      <word id="thematic_verbs_iu"><dictionary_ref dictionary="verbs" word="iu" /></word>
-      <word id="thematic_verbs_hanasu"><dictionary_ref dictionary="verbs" word="hanasu" /></word>
-      <word id="thematic_verbs_kiku"><dictionary_ref dictionary="verbs" word="kiku" /></word>
-      <word id="thematic_verbs_yomu"><dictionary_ref dictionary="verbs" word="yomu" /></word>
-      <word id="thematic_verbs_kaku"><dictionary_ref dictionary="verbs" word="kaku" /></word>
-      <word id="thematic_verbs_miru"><dictionary_ref dictionary="verbs" word="miru" /></word>
-      <word id="thematic_verbs_omou"><dictionary_ref dictionary="verbs" word="omou" /></word>
-      <word id="thematic_verbs_oshieru"><dictionary_ref dictionary="verbs" word="oshieru" /></word>
-      <word id="thematic_verbs_wakaru"><dictionary_ref dictionary="verbs" word="wakaru" /></word>
-      <word id="thematic_verbs_kangaeru"><dictionary_ref dictionary="verbs" word="kangaeru" /></word>
+      <word id="thematic_verbs_iu">
+        <dictionary_ref dictionary="verbs" word="iu" />
+      </word>
+      <word id="thematic_verbs_hanasu">
+        <dictionary_ref dictionary="verbs" word="hanasu" />
+      </word>
+      <word id="thematic_verbs_kiku">
+        <dictionary_ref dictionary="verbs" word="kiku" />
+      </word>
+      <word id="thematic_verbs_yomu">
+        <dictionary_ref dictionary="verbs" word="yomu" />
+      </word>
+      <word id="thematic_verbs_kaku">
+        <dictionary_ref dictionary="verbs" word="kaku" />
+      </word>
+      <word id="thematic_verbs_miru">
+        <dictionary_ref dictionary="verbs" word="miru" />
+      </word>
+      <word id="thematic_verbs_omou">
+        <dictionary_ref dictionary="verbs" word="omou" />
+      </word>
+      <word id="thematic_verbs_oshieru">
+        <dictionary_ref dictionary="verbs" word="oshieru" />
+      </word>
+      <word id="thematic_verbs_wakaru">
+        <dictionary_ref dictionary="verbs" word="wakaru" />
+      </word>
+      <word id="thematic_verbs_kangaeru">
+        <dictionary_ref dictionary="verbs" word="kangaeru" />
+      </word>
     </lesson>
     <lesson id="thematic_daily_actions" group="Tematyczne" main="Codzienne czynności" name="Ruch, jedzenie i zakupy">
-      <word id="thematic_verbs_iku"><dictionary_ref dictionary="verbs" word="iku" /></word>
-      <word id="thematic_verbs_kuru"><dictionary_ref dictionary="verbs" word="kuru" /></word>
-      <word id="thematic_verbs_kaeru"><dictionary_ref dictionary="verbs" word="kaeru" /></word>
-      <word id="thematic_verbs_aruku"><dictionary_ref dictionary="verbs" word="aruku" /></word>
-      <word id="thematic_verbs_taberu"><dictionary_ref dictionary="verbs" word="taberu" /></word>
-      <word id="thematic_verbs_nomu"><dictionary_ref dictionary="verbs" word="nomu" /></word>
-      <word id="thematic_verbs_kau"><dictionary_ref dictionary="verbs" word="kau" /></word>
-      <word id="thematic_verbs_tsukuru"><dictionary_ref dictionary="verbs" word="tsukuru" /></word>
+      <word id="thematic_verbs_iku">
+        <dictionary_ref dictionary="verbs" word="iku" />
+      </word>
+      <word id="thematic_verbs_kuru">
+        <dictionary_ref dictionary="verbs" word="kuru" />
+      </word>
+      <word id="thematic_verbs_kaeru">
+        <dictionary_ref dictionary="verbs" word="kaeru" />
+      </word>
+      <word id="thematic_verbs_aruku">
+        <dictionary_ref dictionary="verbs" word="aruku" />
+      </word>
+      <word id="thematic_verbs_taberu">
+        <dictionary_ref dictionary="verbs" word="taberu" />
+      </word>
+      <word id="thematic_verbs_nomu">
+        <dictionary_ref dictionary="verbs" word="nomu" />
+      </word>
+      <word id="thematic_verbs_kau">
+        <dictionary_ref dictionary="verbs" word="kau" />
+      </word>
+      <word id="thematic_verbs_tsukuru">
+        <dictionary_ref dictionary="verbs" word="tsukuru" />
+      </word>
     </lesson>
     <lesson id="thematic_adjective_contrasts" group="Tematyczne" main="Przeciwieństwa" name="Rozmiar, wiek, cena i temperatura">
-      <word id="thematic_adjectives_ookii"><dictionary_ref dictionary="adjectives" word="ookii" /></word>
-      <word id="thematic_adjectives_chiisai"><dictionary_ref dictionary="adjectives" word="chiisai" /></word>
-      <word id="thematic_adjectives_atarashii"><dictionary_ref dictionary="adjectives" word="atarashii" /></word>
-      <word id="thematic_adjectives_furui"><dictionary_ref dictionary="adjectives" word="furui" /></word>
-      <word id="thematic_adjectives_takai"><dictionary_ref dictionary="adjectives" word="takai" /></word>
-      <word id="thematic_adjectives_yasui"><dictionary_ref dictionary="adjectives" word="yasui" /></word>
-      <word id="thematic_adjectives_atsui"><dictionary_ref dictionary="adjectives" word="atsui" /></word>
-      <word id="thematic_adjectives_samui"><dictionary_ref dictionary="adjectives" word="samui" /></word>
+      <word id="thematic_adjectives_ookii">
+        <dictionary_ref dictionary="adjectives" word="ookii" />
+      </word>
+      <word id="thematic_adjectives_chiisai">
+        <dictionary_ref dictionary="adjectives" word="chiisai" />
+      </word>
+      <word id="thematic_adjectives_atarashii">
+        <dictionary_ref dictionary="adjectives" word="atarashii" />
+      </word>
+      <word id="thematic_adjectives_furui">
+        <dictionary_ref dictionary="adjectives" word="furui" />
+      </word>
+      <word id="thematic_adjectives_takai">
+        <dictionary_ref dictionary="adjectives" word="takai" />
+      </word>
+      <word id="thematic_adjectives_yasui">
+        <dictionary_ref dictionary="adjectives" word="yasui" />
+      </word>
+      <word id="thematic_adjectives_atsui">
+        <dictionary_ref dictionary="adjectives" word="atsui" />
+      </word>
+      <word id="thematic_adjectives_samui">
+        <dictionary_ref dictionary="adjectives" word="samui" />
+      </word>
     </lesson>
     <lesson id="thematic_food_drink" group="Tematyczne" main="Rzeczy wokół nas" name="Jedzenie i napoje">
-      <word id="thematic_nouns_meal"><dictionary_ref dictionary="nouns" word="meal" /></word>
-      <word id="thematic_nouns_gohan"><dictionary_ref dictionary="nouns" word="gohan" /></word>
-      <word id="thematic_nouns_pan"><dictionary_ref dictionary="nouns" word="pan" /></word>
-      <word id="thematic_nouns_sushi"><dictionary_ref dictionary="nouns" word="sushi" /></word>
-      <word id="thematic_nouns_ringo"><dictionary_ref dictionary="nouns" word="ringo" /></word>
-      <word id="thematic_nouns_coffee"><dictionary_ref dictionary="nouns" word="coffee" /></word>
-      <word id="thematic_nouns_tea"><dictionary_ref dictionary="nouns" word="tea" /></word>
-      <word id="thematic_nouns_water"><dictionary_ref dictionary="nouns" word="water" /></word>
+      <word id="thematic_nouns_meal">
+        <dictionary_ref dictionary="nouns" word="meal" />
+      </word>
+      <word id="thematic_nouns_gohan">
+        <dictionary_ref dictionary="nouns" word="gohan" />
+      </word>
+      <word id="thematic_nouns_pan">
+        <dictionary_ref dictionary="nouns" word="pan" />
+      </word>
+      <word id="thematic_nouns_sushi">
+        <dictionary_ref dictionary="nouns" word="sushi" />
+      </word>
+      <word id="thematic_nouns_ringo">
+        <dictionary_ref dictionary="nouns" word="ringo" />
+      </word>
+      <word id="thematic_nouns_coffee">
+        <dictionary_ref dictionary="nouns" word="coffee" />
+      </word>
+      <word id="thematic_nouns_tea">
+        <dictionary_ref dictionary="nouns" word="tea" />
+      </word>
+      <word id="thematic_nouns_water">
+        <dictionary_ref dictionary="nouns" word="water" />
+      </word>
     </lesson>
     <lesson id="thematic_reading_messages" group="Tematyczne" main="Rzeczy wokół nas" name="Książki i wiadomości">
-      <word id="thematic_nouns_book"><dictionary_ref dictionary="nouns" word="book" /></word>
-      <word id="thematic_nouns_newspaper"><dictionary_ref dictionary="nouns" word="newspaper" /></word>
-      <word id="thematic_nouns_manga"><dictionary_ref dictionary="nouns" word="manga" /></word>
-      <word id="thematic_nouns_letter"><dictionary_ref dictionary="nouns" word="letter" /></word>
-      <word id="thematic_nouns_email"><dictionary_ref dictionary="nouns" word="email" /></word>
-      <word id="thematic_nouns_note"><dictionary_ref dictionary="nouns" word="note" /></word>
+      <word id="thematic_nouns_book">
+        <dictionary_ref dictionary="nouns" word="book" />
+      </word>
+      <word id="thematic_nouns_newspaper">
+        <dictionary_ref dictionary="nouns" word="newspaper" />
+      </word>
+      <word id="thematic_nouns_manga">
+        <dictionary_ref dictionary="nouns" word="manga" />
+      </word>
+      <word id="thematic_nouns_letter">
+        <dictionary_ref dictionary="nouns" word="letter" />
+      </word>
+      <word id="thematic_nouns_email">
+        <dictionary_ref dictionary="nouns" word="email" />
+      </word>
+      <word id="thematic_nouns_note">
+        <dictionary_ref dictionary="nouns" word="note" />
+      </word>
+    </lesson>
+    <lesson id="lesson_769ea2d270" group="Start" main="Lekcja mieszana" name="test">
+      <word id="grammar_verbs_odoroku">
+        <dictionary_ref dictionary="verbs" word="odoroku" />
+      </word>
+      <word id="thematic_verbs_taberu">
+        <dictionary_ref dictionary="verbs" word="taberu" />
+      </word>
     </lesson>
   </lessons>
 </lesson_catalog>

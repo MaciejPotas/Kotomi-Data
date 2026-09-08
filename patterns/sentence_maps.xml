@@ -61,6 +61,10 @@
       <question>{context.translation}Lubię {noun@first[case:accusative]}, {noun@second[case:accusative]} i {noun@third[case:accusative]}.</question>
       <answer>{context.kana}{noun@first}と{noun@second}と{noun@third}がすきです</answer>
     </sentence_pattern>
+    <sentence_pattern id="pattern_001" label="Reakcja na przyczynę">
+      <question>{context.translation}{verb[role:reaction_target][form].translation} {noun[case:instrumental]}</question>
+      <answer>{noun}に{verb[role:reaction_target][form]}</answer>
+    </sentence_pattern>
     <sentence_pattern id="verb_noun_ga_aru" label="Dostępność 〜がある">
       <patterns form="dictionary" translation="base">
         <pattern ref="simple" />
@@ -82,7 +86,7 @@
       <answer>{context[from:main].kana}{pattern}ことが{verb@main[id:dekiru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="te_iru" label="Czynność w toku 〜ている">
-      <patterns form="te_form" translation="current">
+      <patterns form="te_form">
         <pattern ref="simple" />
         <pattern ref="transitive_object" />
         <pattern ref="destination" />

@@ -20,7 +20,7 @@
     </forms>
   </editor>
   <words>
-    <word id="abiru" translation="brać prysznic" kana="あびる" type="ichidan" ending="ru" kanji="浴びる">
+    <word id="abiru" translation="brać prysznic" kana="あびる" kanji="浴びる" type="ichidan" ending="ru">
       <usage>
         <role ref="location" />
       </usage>
@@ -42,7 +42,7 @@
         <form name="imperative" context="none" kana="あびろ" />
       </forms>
     </word>
-    <word id="ageru" translation="podnosić" kana="あげる" type="ichidan" ending="ru" kanji="上げる">
+    <word id="ageru" translation="podnosić" kana="あげる" kanji="上げる" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="person animal food drink text media vehicle thing" />
         <role ref="location" />
@@ -88,7 +88,7 @@
         <form name="imperative" context="none" kana="あじわえ" />
       </forms>
     </word>
-    <word id="akeru" translation="otwierać" kana="あける" type="ichidan" ending="ru" kanji="開ける">
+    <word id="akeru" translation="otwierać" kana="あける" kanji="開ける" type="ichidan" ending="ru">
       <usage>
         <role ref="object" nouns="bag box" />
         <role ref="location" />
@@ -111,7 +111,7 @@
         <form name="imperative" context="none" kana="あけろ" />
       </forms>
     </word>
-    <word id="aku" translation="otwierać się" kana="あく" type="godan" ending="ku" kanji="開く">
+    <word id="aku" translation="otwierać się" kana="あく" kanji="開く" type="godan" ending="ku">
       <usage>
         <role ref="subject" nouns="bag box" />
         <role ref="location" />
@@ -172,7 +172,7 @@
         <form name="past_negative_polite" translation="nie miałem" context="past" style="uprzejma przeszła przecząca" kana="ありませんでした" />
       </forms>
     </word>
-    <word id="aruku" translation="iść pieszo" kana="あるく" type="godan" ending="ku" kanji="歩く">
+    <word id="aruku" translation="iść pieszo" kana="あるく" kanji="歩く" type="godan" ending="ku">
       <usage>
         <role ref="destination" />
         <role ref="location" />
@@ -241,7 +241,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="あえ" />
       </forms>
     </word>
-    <word id="ayamaru" translation="przepraszać" kana="あやまる" type="godan" ending="ru" kanji="謝る">
+    <word id="ayamaru" translation="przepraszać" kana="あやまる" kanji="謝る" type="godan" ending="ru">
       <usage>
         <role ref="target" accepts="person animal" />
         <role ref="location" />
@@ -264,7 +264,7 @@
         <form name="imperative" context="none" kana="あやまれ" />
       </forms>
     </word>
-    <word id="chigau" translation="różnić się" kana="ちがう" type="godan" ending="u" kanji="違う">
+    <word id="chigau" translation="różnić się" kana="ちがう" kanji="違う" type="godan" ending="u">
       <forms>
         <form name="dictionary" translation="różnię się" context="present" kana="ちがう" />
         <form name="polite_nonpast" translation="różnię się" context="present" kana="ちがいます" />
@@ -283,7 +283,7 @@
         <form name="imperative" context="none" kana="ちがえ" />
       </forms>
     </word>
-    <word id="dasu" translation="wyjmować" kana="だす" type="godan" ending="su" kanji="出す">
+    <word id="dasu" translation="wyjmować" kana="だす" kanji="出す" type="godan" ending="su">
       <usage>
         <role ref="object" accepts="person animal food drink text media vehicle thing abstract" />
         <role ref="location" />
@@ -325,7 +325,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="できろ" kanji="出来ろ" />
       </forms>
     </word>
-    <word id="deru" translation="wychodzić" kana="でる" type="ichidan" ending="ru" kanji="出る">
+    <word id="deru" translation="wychodzić" kana="でる" kanji="出る" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="place" />
       </usage>
@@ -347,7 +347,7 @@
         <form name="imperative" context="none" kana="でろ" />
       </forms>
     </word>
-    <word id="fuku" translation="wiać" kana="ふく" type="godan" ending="ku" kanji="吹く">
+    <word id="fuku" translation="wiać" kana="ふく" kanji="吹く" type="godan" ending="ku">
       <usage>
         <role ref="location" />
       </usage>
@@ -369,7 +369,7 @@
         <form name="imperative" context="none" kana="ふけ" />
       </forms>
     </word>
-    <word id="furu" translation="padać" kana="ふる" type="godan" ending="ru" kanji="降る">
+    <word id="furu" translation="padać" kana="ふる" kanji="降る" type="godan" ending="ru">
       <usage>
         <role ref="location" />
       </usage>
@@ -391,7 +391,7 @@
         <form name="imperative" context="none" kana="ふれ" />
       </forms>
     </word>
-    <word id="hairu" translation="wchodzić" kana="はいる" type="godan" ending="ru" kanji="入る">
+    <word id="hairu" translation="wchodzić" kana="はいる" kanji="入る" type="godan" ending="ru">
       <usage>
         <role ref="target" accepts="place" />
       </usage>
@@ -413,7 +413,7 @@
         <form name="imperative" context="none" kana="はいれ" />
       </forms>
     </word>
-    <word id="hajimeru" translation="zaczynać" kana="はじめる" type="ichidan" ending="ru" kanji="始める">
+    <word id="hajimeru" translation="zaczynać" kana="はじめる" kanji="始める" type="ichidan" ending="ru">
       <usage>
         <role ref="object" nouns="shigoto keikaku yotei meal" />
         <role ref="location" />
@@ -482,7 +482,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="はなせ" />
       </forms>
     </word>
-    <word id="harau" translation="płacić" kana="はらう" type="godan" ending="u" kanji="払う">
+    <word id="harau" translation="płacić" kana="はらう" kanji="払う" type="godan" ending="u">
       <usage>
         <role ref="object" nouns="okane" />
         <role ref="location" />
@@ -505,7 +505,7 @@
         <form name="imperative" context="none" kana="はらえ" />
       </forms>
     </word>
-    <word id="hareru" translation="przejaśniać się" kana="はれる" type="ichidan" ending="ru" kanji="晴れる">
+    <word id="hareru" translation="przejaśniać się" kana="はれる" kanji="晴れる" type="ichidan" ending="ru">
       <usage>
         <role ref="location" />
       </usage>
@@ -572,7 +572,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="はたらけ" />
       </forms>
     </word>
-    <word id="hiraku" translation="otwierać" kana="ひらく" type="godan" ending="ku" kanji="開く">
+    <word id="hiraku" translation="otwierać" kana="ひらく" kanji="開く" type="godan" ending="ku">
       <usage>
         <role ref="object" nouns="book manga newspaper email note box school" />
         <role ref="location" />
@@ -617,7 +617,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="いけ" />
       </forms>
     </word>
-    <word id="ireru" translation="wkładać" kana="いれる" type="ichidan" ending="ru" kanji="入れる">
+    <word id="ireru" translation="wkładać" kana="いれる" kanji="入れる" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="person animal food drink text media vehicle thing abstract" />
         <role ref="target" nouns="bag box room" />
@@ -641,12 +641,12 @@
       </forms>
     </word>
     <word id="iru" translation="być" kana="いる" kanji="居る" type="ichidan" ending="ru">
-      <usage>
-        <role ref="subject" accepts="person animal" />
-      </usage>
       <features>
         <feature ref="progressive_auxiliary" />
       </features>
+      <usage>
+        <role ref="subject" accepts="person animal" />
+      </usage>
       <forms>
         <form name="dictionary" translation="jestem" context="present" style="potoczna" kana="いる" />
         <form name="polite_nonpast" translation="jestem" context="present" style="uprzejma" kana="います" />
@@ -781,7 +781,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="かんがえろ" />
       </forms>
     </word>
-    <word id="kariru" translation="pożyczać od kogoś" kana="かりる" type="ichidan" ending="ru" kanji="借りる">
+    <word id="kariru" translation="pożyczać od kogoś" kana="かりる" kanji="借りる" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="text vehicle thing" nouns="okane" />
         <role ref="target" accepts="person animal" />
@@ -828,7 +828,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="かえ" />
       </forms>
     </word>
-    <word id="kayou" translation="uczęszczać" kana="かよう" type="godan" ending="u" kanji="通う">
+    <word id="kayou" translation="uczęszczać" kana="かよう" kanji="通う" type="godan" ending="u">
       <usage>
         <role ref="target" nouns="school taiikukan" />
       </usage>
@@ -850,7 +850,7 @@
         <form name="imperative" context="none" kana="かよえ" />
       </forms>
     </word>
-    <word id="keikosuru" translation="trenować" kana="けいこする" type="irregular" ending="suru" kanji="稽古する">
+    <word id="keikosuru" translation="trenować" kana="けいこする" kanji="稽古する" type="irregular" ending="suru">
       <usage>
         <role ref="object" nouns="music song" />
         <role ref="location" />
@@ -873,7 +873,7 @@
         <form name="imperative" context="none" kana="けいこしろ" />
       </forms>
     </word>
-    <word id="kesu" translation="wyłączać" kana="けす" type="godan" ending="su" kanji="消す">
+    <word id="kesu" translation="wyłączać" kana="けす" kanji="消す" type="godan" ending="su">
       <usage>
         <role ref="object" nouns="television email note" />
         <role ref="location" />
@@ -896,7 +896,7 @@
         <form name="imperative" context="none" kana="けせ" />
       </forms>
     </word>
-    <word id="kikokusuru" translation="wracać do kraju" kana="きこくする" type="irregular" ending="suru" kanji="帰国する">
+    <word id="kikokusuru" translation="wracać do kraju" kana="きこくする" kanji="帰国する" type="irregular" ending="suru">
       <forms>
         <form name="dictionary" translation="wracam do kraju" context="present" kana="きこくする" />
         <form name="polite_nonpast" translation="wracam do kraju" context="present" kana="きこくします" />
@@ -961,7 +961,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="きろ" />
       </forms>
     </word>
-    <word id="kotaeru" translation="odpowiadać" kana="こたえる" type="ichidan" ending="ru" kanji="答える">
+    <word id="kotaeru" translation="odpowiadać" kana="こたえる" kanji="答える" type="ichidan" ending="ru">
       <usage>
         <role ref="target" accepts="abstract" />
         <role ref="location" />
@@ -984,7 +984,7 @@
         <form name="imperative" context="none" kana="こたえろ" />
       </forms>
     </word>
-    <word id="kumoru" translation="chmurzyć się" kana="くもる" type="godan" ending="ru" kanji="曇る">
+    <word id="kumoru" translation="chmurzyć się" kana="くもる" kanji="曇る" type="godan" ending="ru">
       <usage>
         <role ref="location" />
       </usage>
@@ -1028,7 +1028,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="こい" />
       </forms>
     </word>
-    <word id="matsu" translation="czekać" kana="まつ" type="godan" ending="tsu" kanji="待つ">
+    <word id="matsu" translation="czekać" kana="まつ" kanji="待つ" type="godan" ending="tsu">
       <usage>
         <role ref="object" accepts="person animal vehicle" />
         <role ref="location" />
@@ -1051,7 +1051,7 @@
         <form name="imperative" context="none" kana="まて" />
       </forms>
     </word>
-    <word id="mieru" translation="być widocznym" kana="みえる" type="ichidan" ending="ru" kanji="見える">
+    <word id="mieru" translation="być widocznym" kana="みえる" kanji="見える" type="ichidan" ending="ru">
       <usage>
         <role ref="subject" accepts="concrete" />
       </usage>
@@ -1073,7 +1073,7 @@
         <form name="imperative" context="none" kana="みえろ" />
       </forms>
     </word>
-    <word id="migaku" translation="szorować" kana="みがく" type="godan" ending="ku" kanji="磨く">
+    <word id="migaku" translation="szorować" kana="みがく" kanji="磨く" type="godan" ending="ku">
       <usage>
         <role ref="object" accepts="vehicle thing" />
         <role ref="location" />
@@ -1119,7 +1119,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="みろ" />
       </forms>
     </word>
-    <word id="mochiageru" translation="podnosić" kana="もちあげる" type="ichidan" ending="ru" kanji="持ち上げる">
+    <word id="mochiageru" translation="podnosić" kana="もちあげる" kanji="持ち上げる" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="person animal food drink text media vehicle thing" />
         <role ref="location" />
@@ -1165,7 +1165,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="もて" />
       </forms>
     </word>
-    <word id="motteiku" translation="zabierać" kana="もっていく" type="godan" ending="ku" kanji="持っていく">
+    <word id="motteiku" translation="zabierać" kana="もっていく" kanji="持っていく" type="godan" ending="ku">
       <usage>
         <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
         <role ref="destination" />
@@ -1189,7 +1189,7 @@
         <form name="imperative" context="none" kana="もっていけ" />
       </forms>
     </word>
-    <word id="mottekuru" translation="przynosić" kana="もってくる" type="irregular" ending="kuru" kanji="持ってくる">
+    <word id="mottekuru" translation="przynosić" kana="もってくる" kanji="持ってくる" type="irregular" ending="kuru">
       <usage>
         <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
         <role ref="destination" />
@@ -1213,7 +1213,7 @@
         <form name="imperative" context="none" kana="もってこい" />
       </forms>
     </word>
-    <word id="naku" translation="płakać" kana="なく" type="godan" ending="ku" kanji="泣く">
+    <word id="naku" translation="płakać" kana="なく" kanji="泣く" type="godan" ending="ku">
       <usage>
         <role ref="subject" accepts="person animal" />
         <role ref="location" />
@@ -1236,7 +1236,7 @@
         <form name="imperative" context="none" kana="なけ" />
       </forms>
     </word>
-    <word id="nakusu" translation="gubić" kana="なくす" type="godan" ending="su" kanji="無くす">
+    <word id="nakusu" translation="gubić" kana="なくす" kanji="無くす" type="godan" ending="su">
       <usage>
         <role ref="object" accepts="text vehicle thing" nouns="okane" />
         <role ref="location" />
@@ -1259,7 +1259,7 @@
         <form name="imperative" context="none" kana="なくせ" />
       </forms>
     </word>
-    <word id="nareru" translation="przyzwyczajać się" kana="なれる" type="ichidan" ending="ru" kanji="慣れる">
+    <word id="nareru" translation="przyzwyczajać się" kana="なれる" kanji="慣れる" type="ichidan" ending="ru">
       <usage>
         <role ref="target" accepts="*" />
         <role ref="location" />
@@ -1282,7 +1282,7 @@
         <form name="imperative" context="none" kana="なれろ" />
       </forms>
     </word>
-    <word id="naru" translation="stawać się" kana="なる" type="godan" ending="ru" kanji="成る">
+    <word id="naru" translation="stawać się" kana="なる" kanji="成る" type="godan" ending="ru">
       <usage>
         <role ref="target" accepts="*" />
       </usage>
@@ -1394,7 +1394,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="のれ" />
       </forms>
     </word>
-    <word id="nugu" translation="zdejmować" kana="ぬぐ" type="godan" ending="gu" kanji="脱ぐ">
+    <word id="nugu" translation="zdejmować" kana="ぬぐ" kanji="脱ぐ" type="godan" ending="gu">
       <usage>
         <role ref="object" nouns="clothes bag" />
         <role ref="location" />
@@ -1417,7 +1417,7 @@
         <form name="imperative" context="none" kana="ぬげ" />
       </forms>
     </word>
-    <word id="oboeru" translation="zapamiętywać" kana="おぼえる" type="ichidan" ending="ru" kanji="覚える">
+    <word id="oboeru" translation="zapamiętywać" kana="おぼえる" kanji="覚える" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="*" />
       </usage>
@@ -1508,7 +1508,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="おこれ" />
       </forms>
     </word>
-    <word id="omoidasu" translation="przypominać sobie" kana="おもいだす" type="godan" ending="su" kanji="思い出す">
+    <word id="omoidasu" translation="przypominać sobie" kana="おもいだす" kanji="思い出す" type="godan" ending="su">
       <usage>
         <role ref="object" accepts="*" />
       </usage>
@@ -1555,7 +1555,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="おもえ" />
       </forms>
     </word>
-    <word id="oshieru" translation="uczyć" kana="おしえる" type="ichidan" ending="ru" kanji="教える">
+    <word id="oshieru" translation="uczyć" kana="おしえる" kanji="教える" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="*" />
         <role ref="target" accepts="person animal" />
@@ -1579,7 +1579,7 @@
         <form name="imperative" context="none" kana="おしえろ" />
       </forms>
     </word>
-    <word id="osu" translation="naciskać" kana="おす" type="godan" ending="su" kanji="押す">
+    <word id="osu" translation="naciskać" kana="おす" kanji="押す" type="godan" ending="su">
       <usage>
         <role ref="location" />
       </usage>
@@ -1601,7 +1601,7 @@
         <form name="imperative" context="none" kana="おせ" />
       </forms>
     </word>
-    <word id="owaru" translation="kończyć się" kana="おわる" type="godan" ending="ru" kanji="終わる">
+    <word id="owaru" translation="kończyć się" kana="おわる" kanji="終わる" type="godan" ending="ru">
       <usage>
         <role ref="subject" nouns="shigoto meal yotei" />
         <role ref="location" />
@@ -1646,7 +1646,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="およげ" />
       </forms>
     </word>
-    <word id="renshuusuru" translation="ćwiczyć" kana="れんしゅうする" type="irregular" ending="suru" kanji="練習する">
+    <word id="renshuusuru" translation="ćwiczyć" kana="れんしゅうする" kanji="練習する" type="irregular" ending="suru">
       <usage>
         <role ref="object" nouns="music song" />
         <role ref="location" />
@@ -1669,7 +1669,7 @@
         <form name="imperative" context="none" kana="れんしゅうしろ" />
       </forms>
     </word>
-    <word id="sageru" translation="opuszczać" kana="さげる" type="ichidan" ending="ru" kanji="下げる">
+    <word id="sageru" translation="opuszczać" kana="さげる" kanji="下げる" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="food drink text media vehicle thing" />
         <role ref="location" />
@@ -1692,7 +1692,7 @@
         <form name="imperative" context="none" kana="さげろ" />
       </forms>
     </word>
-    <word id="sawaru" translation="dotykać" kana="さわる" type="godan" ending="ru" kanji="触る">
+    <word id="sawaru" translation="dotykać" kana="さわる" kanji="触る" type="godan" ending="ru">
       <usage>
         <role ref="target" accepts="concrete" />
         <role ref="location" />
@@ -1715,7 +1715,7 @@
         <form name="imperative" context="none" kana="さわれ" />
       </forms>
     </word>
-    <word id="sentakusuru" translation="robić pranie" kana="せんたくする" type="irregular" ending="suru" kanji="洗濯する">
+    <word id="sentakusuru" translation="robić pranie" kana="せんたくする" kanji="洗濯する" type="irregular" ending="suru">
       <usage>
         <role ref="object" nouns="clothes" />
         <role ref="location" />
@@ -1738,7 +1738,7 @@
         <form name="imperative" context="none" kana="せんたくしろ" />
       </forms>
     </word>
-    <word id="shimaru" translation="zamykać się" kana="しまる" type="godan" ending="ru" kanji="閉まる">
+    <word id="shimaru" translation="zamykać się" kana="しまる" kanji="閉まる" type="godan" ending="ru">
       <usage>
         <role ref="subject" nouns="bag box" />
         <role ref="location" />
@@ -1761,7 +1761,7 @@
         <form name="imperative" context="none" kana="しまれ" />
       </forms>
     </word>
-    <word id="shimeru" translation="zamykać" kana="しめる" type="ichidan" ending="ru" kanji="閉める">
+    <word id="shimeru" translation="zamykać" kana="しめる" kanji="閉める" type="ichidan" ending="ru">
       <usage>
         <role ref="object" nouns="bag box" />
         <role ref="location" />
@@ -1830,7 +1830,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="しれ" />
       </forms>
     </word>
-    <word id="soujisuru" translation="sprzątać" kana="そうじする" type="irregular" ending="suru" kanji="掃除する">
+    <word id="soujisuru" translation="sprzątać" kana="そうじする" kanji="掃除する" type="irregular" ending="suru">
       <usage>
         <role ref="object" accepts="place thing" />
         <role ref="location" />
@@ -1853,7 +1853,7 @@
         <form name="imperative" context="none" kana="そうじしろ" />
       </forms>
     </word>
-    <word id="sugosu" translation="spędzać czas" kana="すごす" type="godan" ending="su" kanji="過ごす">
+    <word id="sugosu" translation="spędzać czas" kana="すごす" kanji="過ごす" type="godan" ending="su">
       <usage>
         <role ref="object" nouns="jikan" />
         <role ref="companion" />
@@ -1900,7 +1900,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="しろ" />
       </forms>
     </word>
-    <word id="susumu" translation="posuwać się naprzód" kana="すすむ" type="godan" ending="mu" kanji="進む">
+    <word id="susumu" translation="posuwać się naprzód" kana="すすむ" kanji="進む" type="godan" ending="mu">
       <usage>
         <role ref="destination" />
         <role ref="location" />
@@ -1990,7 +1990,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="たべろ" />
       </forms>
     </word>
-    <word id="tanoshimu" translation="cieszyć się" kana="たのしむ" type="godan" ending="mu" kanji="楽しむ">
+    <word id="tanoshimu" translation="cieszyć się" kana="たのしむ" kanji="楽しむ" type="godan" ending="mu">
       <usage>
         <role ref="object" accepts="*" />
         <role ref="location" />
@@ -2059,7 +2059,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="たて" />
       </forms>
     </word>
-    <word id="teishutsusuru" translation="składać" kana="ていしゅつする" type="irregular" ending="suru" kanji="提出する">
+    <word id="teishutsusuru" translation="składać" kana="ていしゅつする" kanji="提出する" type="irregular" ending="suru">
       <usage>
         <role ref="object" nouns="book note keikaku" />
         <role ref="target" nouns="teacher school" />
@@ -2082,7 +2082,7 @@
         <form name="imperative" context="none" kana="ていしゅつしろ" />
       </forms>
     </word>
-    <word id="tojiru" translation="zamykać" kana="とじる" type="ichidan" ending="ru" kanji="閉じる">
+    <word id="tojiru" translation="zamykać" kana="とじる" kanji="閉じる" type="ichidan" ending="ru">
       <usage>
         <role ref="object" nouns="book manga newspaper box" />
         <role ref="location" />
@@ -2105,7 +2105,7 @@
         <form name="imperative" context="none" kana="とじろ" />
       </forms>
     </word>
-    <word id="tomaru" translation="zatrzymywać się" kana="とまる" type="godan" ending="ru" kanji="止まる">
+    <word id="tomaru" translation="zatrzymywać się" kana="とまる" kanji="止まる" type="godan" ending="ru">
       <usage>
         <role ref="target" accepts="place" />
         <role ref="location" />
@@ -2128,7 +2128,7 @@
         <form name="imperative" context="none" kana="とまれ" />
       </forms>
     </word>
-    <word id="tooru" translation="przechodzić przez" kana="とおる" type="godan" ending="ru" kanji="通る">
+    <word id="tooru" translation="przechodzić przez" kana="とおる" kanji="通る" type="godan" ending="ru">
       <usage>
         <role ref="object" accepts="place" />
       </usage>
@@ -2150,7 +2150,7 @@
         <form name="imperative" context="none" kana="とおれ" />
       </forms>
     </word>
-    <word id="torihazusu" translation="demontować" kana="とりはずす" type="godan" ending="su" kanji="取り外す">
+    <word id="torihazusu" translation="demontować" kana="とりはずす" kanji="取り外す" type="godan" ending="su">
       <usage>
         <role ref="object" accepts="vehicle thing" />
         <role ref="location" />
@@ -2242,7 +2242,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="つかえ" />
       </forms>
     </word>
-    <word id="tsukeru" translation="włączać" kana="つける" type="ichidan" ending="ru" kanji="付ける">
+    <word id="tsukeru" translation="włączać" kana="つける" kanji="付ける" type="ichidan" ending="ru">
       <usage>
         <role ref="object" nouns="television" />
         <role ref="location" />
@@ -2288,7 +2288,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="つくれ" />
       </forms>
     </word>
-    <word id="tsuzukeru" translation="kontynuować" kana="つづける" type="ichidan" ending="ru" kanji="続ける">
+    <word id="tsuzukeru" translation="kontynuować" kana="つづける" kanji="続ける" type="ichidan" ending="ru">
       <usage>
         <role ref="object" nouns="shigoto keikaku yotei music song" />
         <role ref="location" />
@@ -2357,7 +2357,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="うけろ" />
       </forms>
     </word>
-    <word id="undousuru" translation="ćwiczyć fizycznie" kana="うんどうする" type="irregular" ending="suru" kanji="運動する">
+    <word id="undousuru" translation="ćwiczyć fizycznie" kana="うんどうする" kanji="運動する" type="irregular" ending="suru">
       <usage>
         <role ref="location" />
       </usage>
@@ -2379,7 +2379,7 @@
         <form name="imperative" context="none" kana="うんどうしろ" />
       </forms>
     </word>
-    <word id="usowotsuku" translation="kłamać" kana="うそをつく" type="godan" ending="ku" kanji="嘘をつく">
+    <word id="usowotsuku" translation="kłamać" kana="うそをつく" kanji="嘘をつく" type="godan" ending="ku">
       <usage>
         <role ref="target" accepts="person animal" />
         <role ref="location" />
@@ -2448,7 +2448,7 @@
         <form name="imperative" context="none" style="rozkazująca" kana="わかれ" />
       </forms>
     </word>
-    <word id="warau" translation="śmiać się" kana="わらう" type="godan" ending="u" kanji="笑う">
+    <word id="warau" translation="śmiać się" kana="わらう" kanji="笑う" type="godan" ending="u">
       <usage>
         <role ref="object" accepts="person animal" />
         <role ref="location" />
@@ -2471,7 +2471,7 @@
         <form name="imperative" context="none" kana="わらえ" />
       </forms>
     </word>
-    <word id="wasureru" translation="zapominać" kana="わすれる" type="ichidan" ending="ru" kanji="忘れる">
+    <word id="wasureru" translation="zapominać" kana="わすれる" kanji="忘れる" type="ichidan" ending="ru">
       <usage>
         <role ref="object" accepts="*" />
         <role ref="location" />
@@ -2635,6 +2635,29 @@
         <form name="tara" context="none" kana="もらったら" />
         <form name="volitional" context="none" kana="もらおう" />
         <form name="imperative" context="none" kana="もらえ" />
+      </forms>
+    </word>
+    <word id="odoroku" translation="być zaskoczonym" kana="おどろく" kanji="驚く" romaji="odoroku" type="godan" ending="ku">
+      <usage>
+        <role ref="reaction_target" />
+        <role ref="location" />
+      </usage>
+      <forms>
+        <form name="dictionary" translation="jestem zaskoczonym" context="present" kana="おどろく" kanji="驚く" romaji="odoroku" tense="nonpast" polarity="affirmative" register="plain" />
+        <form name="polite_nonpast" translation="jestem zaskoczonym" context="present" kana="おどろきます" kanji="驚きます" romaji="odorokimasu" tense="nonpast" polarity="affirmative" register="polite" />
+        <form name="plain_negative" translation="nie jestem zaskoczonym" context="present" kana="おどろかない" kanji="驚かない" romaji="odorokanai" tense="nonpast" polarity="negative" register="plain" />
+        <form name="polite_negative" translation="nie jestem zaskoczonym" context="present" kana="おどろきません" kanji="驚きません" romaji="odorokimasen" tense="nonpast" polarity="negative" register="polite" />
+        <form name="past_plain" translation="byłem zaskoczonym" context="past" kana="おどろいた" kanji="驚いた" romaji="odoroita" tense="past" polarity="affirmative" register="plain" />
+        <form name="past_polite" translation="byłem zaskoczonym" context="past" kana="おどろきました" kanji="驚きました" romaji="odorokimashita" tense="past" polarity="affirmative" register="polite" />
+        <form name="past_negative_plain" translation="nie byłem zaskoczonym" context="past" kana="おどろかなかった" kanji="驚かなかった" romaji="odorokanakatta" tense="past" polarity="negative" register="plain" />
+        <form name="past_negative_polite" translation="nie byłem zaskoczonym" context="past" kana="おどろきませんでした" kanji="驚きませんでした" romaji="odorokimasendeshita" tense="past" polarity="negative" register="polite" />
+        <form name="te_form" translation="będąc zaskoczonym" context="none" kana="おどろいて" kanji="驚いて" romaji="odoroite" />
+        <form name="potential" translation="mogę być zaskoczonym" context="none" kana="おどろける" kanji="驚ける" romaji="odorokeru" />
+        <form name="passive" context="none" kana="おどろかれる" kanji="驚かれる" romaji="odorokareru" />
+        <form name="causative" translation="każę / pozwalam komuś być zaskoczonym" context="none" kana="おどろかせる" kanji="驚かせる" romaji="odorokaseru" />
+        <form name="tara" translation="jeśli będę być zaskoczonym" context="none" kana="おどろいたら" kanji="驚いたら" romaji="odoroitara" />
+        <form name="volitional" translation="bądźmy zaskoczonym" context="none" kana="おどろこう" kanji="驚こう" romaji="odorokou" />
+        <form name="imperative" translation="bądź zaskoczonym!" context="none" kana="おどろけ" kanji="驚け" romaji="odoroke" />
       </forms>
     </word>
   </words>
