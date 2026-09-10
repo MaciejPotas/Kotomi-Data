@@ -169,21 +169,6 @@
       "path": "apps/verbs/mobile.py",
       "sha256": "7b643dc258c355beffff2cec9a3f3f417eb6393b51670eeb0f2bad54bdf2dd68",
       "url": "quizzes/verbs/mobile.py?kotomi_sha256=7b643dc258c355beffff2cec9a3f3f417eb6393b51670eeb0f2bad54bdf2dd68"
-    },
-    {
-      "path": "data/patterns/sentence_maps.xml",
-      "sha256": "56949fab713e971013bf51e0b1967ae01ddf3a6b6cac53c79cabfa2222ee7444",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=56949fab713e971013bf51e0b1967ae01ddf3a6b6cac53c79cabfa2222ee7444"
-    },
-    {
-      "path": "data/patterns/sentence_quizzes.xml",
-      "sha256": "42f5f4a000c3e285bbee9c30c049e0f1df61670f5358582630c9569174965628",
-      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=42f5f4a000c3e285bbee9c30c049e0f1df61670f5358582630c9569174965628"
-    },
-    {
-      "path": "data/quiz_project.xml",
-      "sha256": "01d767b0018a6834ad7802a4062789516931d465b96aa285fc135e6adcbd3470",
-      "url": "quiz_project.xml?kotomi_sha256=01d767b0018a6834ad7802a4062789516931d465b96aa285fc135e6adcbd3470"
     }
   ]
 }
