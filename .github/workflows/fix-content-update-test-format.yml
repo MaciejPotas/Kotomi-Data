@@ -1,0 +1,78 @@
+name: Fix Content update test XML formatting
+
+on:
+  push:
+    branches:
+      - test/content-update-role-source
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Fix pattern formatting and manifest hash
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          path = Path('patterns/sentence_maps.xml')
+          text = path.read_text(encoding='utf-8')
+          old = '''    <sentence_pattern id="source" label="Punkt wyjścia">
+            <question>{context.translation}{verb[role:source][form].translation} z {noun[category:place][case:genitive]}.</question>
+            <answer>{context.kana}{noun[category:place]}から{verb[role:source][form]}</answer>
+          </sentence_pattern>
+          '''
+          # The first preparation intentionally used a triple-quoted string whose
+          # source indentation was stripped differently by YAML. Normalize it.
+          malformed = '''    <sentence_pattern id="source" label="Punkt wyjścia">
+          <question>{context.translation}{verb[role:source][form].translation} z {noun[category:place][case:genitive]}.</question>
+          <answer>{context.kana}{noun[category:place]}から{verb[role:source][form]}</answer>
+        </sentence_pattern>
+          '''
+          normalized = '''    <sentence_pattern id="source" label="Punkt wyjścia">
+              <question>{context.translation}{verb[role:source][form].translation} z {noun[category:place][case:genitive]}.</question>
+              <answer>{context.kana}{noun[category:place]}から{verb[role:source][form]}</answer>
+            </sentence_pattern>
+          '''
+          # Account for the actual file's six/two-space mismatch without relying
+          # on YAML indentation of the literals above.
+          text = text.replace(
+              '    <sentence_pattern id="source" label="Punkt wyjścia">\n'
+              '    <question>{context.translation}{verb[role:source][form].translation} z {noun[category:place][case:genitive]}.</question>\n'
+              '    <answer>{context.kana}{noun[category:place]}から{verb[role:source][form]}</answer>\n'
+              '  </sentence_pattern>\n',
+              '    <sentence_pattern id="source" label="Punkt wyjścia">\n'
+              '      <question>{context.translation}{verb[role:source][form].translation} z {noun[category:place][case:genitive]}.</question>\n'
+              '      <answer>{context.kana}{noun[category:place]}から{verb[role:source][form]}</answer>\n'
+              '    </sentence_pattern>\n',
+              1,
+          )
+          path.write_text(text, encoding='utf-8')
+
+          manifest_path = Path('content_update_manifest.json')
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          digest = hashlib.sha256(path.read_bytes()).hexdigest()
+          for entry in manifest['files']:
+              if entry['path'] == 'data/patterns/sentence_maps.xml':
+                  entry['sha256'] = digest
+                  entry['url'] = f'patterns/sentence_maps.xml?kotomi_sha256={digest}'
+                  break
+          else:
+              raise SystemExit('sentence_maps manifest entry not found')
+          manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+          python3 tools/validate_repository.py
+          rm .github/workflows/fix-content-update-test-format.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --check
+          git commit -m "Normalize source pattern formatting"
+          git push origin HEAD:test/content-update-role-source
