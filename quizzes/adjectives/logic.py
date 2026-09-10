@@ -53,9 +53,9 @@ MODE_LABELS = {
 LABEL_TO_MODE = {label: mode for mode, label in MODE_LABELS.items()}
 
 PATTERN_LABELS = {
-    "adjective_predicate": "Po rzeczowniku z partykułą wa",
-    "adjective_simple": "Proste zdanie wskazujące",
-    "adjective_attributive": "Przymiotnik przed rzeczownikiem",
+    "Przymiotnik po temacie": "Po rzeczowniku z partykułą wa",
+    "Sam przymiotnik": "Proste zdanie wskazujące",
+    "Przymiotnik przed rzeczownikiem": "Przymiotnik przed rzeczownikiem",
 }
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 
@@ -475,8 +475,8 @@ class AdjectiveQuizEngine:
         spaces: List[QuestionSpace] = []
         prefix_count = settings.adjective_count - 1
 
-        if "adjective_predicate" in settings.enabled_patterns:
-            pattern = self.project.patterns["adjective_predicate"]
+        if "Przymiotnik po temacie" in settings.enabled_patterns:
+            pattern = self.project.patterns["Przymiotnik po temacie"]
             for rule in rules:
                 source_form, target_form = self._finite_forms(rule)
                 for subject in self.project.entities.values():
@@ -508,8 +508,8 @@ class AdjectiveQuizEngine:
                             prefix_count,
                         )
 
-        if "adjective_simple" in settings.enabled_patterns:
-            pattern = self.project.patterns["adjective_simple"]
+        if "Sam przymiotnik" in settings.enabled_patterns:
+            pattern = self.project.patterns["Sam przymiotnik"]
             prefix_base = self._prefix_candidates(settings, filters, None)
             for rule in rules:
                 source_form, target_form = self._finite_forms(rule)
@@ -537,8 +537,8 @@ class AdjectiveQuizEngine:
                         prefix_count,
                     )
 
-        if "adjective_attributive" in settings.enabled_patterns:
-            pattern = self.project.patterns["adjective_attributive"]
+        if "Przymiotnik przed rzeczownikiem" in settings.enabled_patterns:
+            pattern = self.project.patterns["Przymiotnik przed rzeczownikiem"]
             for rule in rules:
                 source_copula, target_copula = self._copula_forms(rule)
                 for copula in self.project.words["copulas"].values():
