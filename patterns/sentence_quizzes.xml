@@ -2,12 +2,12 @@
 <sentence_quizzes schema_version="1">
   <quiz id="grammar" label="Gramatyka" description="Możliwość ことができる">
     <patterns>
-      <pattern ref="koto_ga_dekiru" />
+      <pattern ref="Możliwość ことができる" />
     </patterns>
   </quiz>
   <quiz id="progressive" label="Czynność w toku" description="Konstrukcja 〜ている z kilkoma wzorcami bazowymi">
     <patterns>
-      <pattern ref="te_iru" />
+      <pattern ref="Czynność w toku 〜ている" />
     </patterns>
   </quiz>
 </sentence_quizzes>
