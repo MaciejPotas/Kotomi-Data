@@ -1,0 +1,26 @@
+name: Temporary interrogative data export
+
+on:
+  push:
+    branches:
+      - feature/interrogative-questions
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v6
+
+      - name: Pack data
+        run: tar --exclude=.git -czf /tmp/kotomi-data-source.tar.gz .
+
+      - name: Upload data
+        uses: actions/upload-artifact@v4
+        with:
+          name: kotomi-data-source
+          path: /tmp/kotomi-data-source.tar.gz
+          if-no-files-found: error
