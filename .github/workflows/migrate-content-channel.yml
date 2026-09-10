@@ -1,0 +1,102 @@
+name: Migrate public data to Content channel
+
+on:
+  push:
+    branches:
+      - fix/database-owns-grammar-metadata
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build atomic Content manifest
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import json
+
+          revision = 5
+          revision_path = Path('content_revision.json')
+          revision_path.write_text(
+              json.dumps({'format': 1, 'revision': revision}, indent=2) + '\n',
+              encoding='utf-8',
+              newline='\n',
+          )
+
+          managed = [revision_path, Path('quiz_project.xml')]
+          for directory in ('dictionaries', 'lessons', 'grammar', 'patterns'):
+              managed.extend(
+                  path for path in Path(directory).rglob('*.xml') if path.is_file()
+              )
+          managed = sorted(
+              dict.fromkeys(managed),
+              key=lambda path: path.as_posix().casefold(),
+          )
+
+          def digest(path: Path) -> str:
+              data = path.read_bytes().replace(b'\r\n', b'\n').replace(b'\r', b'\n')
+              return hashlib.sha256(data).hexdigest()
+
+          files = []
+          for path in managed:
+              relative = path.as_posix()
+              sha256 = digest(path)
+              files.append(
+                  {
+                      'path': f'data/{relative}',
+                      'sha256': sha256,
+                      'url': f'{relative}?kotomi_sha256={sha256}',
+                  }
+              )
+
+          manifest = {'format': 1, 'revision': revision, 'files': files}
+          Path('content_update_manifest.json').write_text(
+              json.dumps(manifest, indent=2, ensure_ascii=False) + '\n',
+              encoding='utf-8',
+              newline='\n',
+          )
+
+          quiz_path = Path('quiz_update_manifest.json')
+          quiz = json.loads(quiz_path.read_text(encoding='utf-8'))
+          quiz['files'] = [
+              item for item in quiz['files']
+              if str(item.get('path', '')).startswith('apps/')
+          ]
+          quiz_path.write_text(
+              json.dumps(quiz, indent=2, ensure_ascii=False) + '\n',
+              encoding='utf-8',
+              newline='\n',
+          )
+
+          Path('database_revision.json').unlink(missing_ok=True)
+          Path('database_update_manifest.json').unlink(missing_ok=True)
+
+          content_paths = {item['path'] for item in manifest['files']}
+          required = {
+              'data/quiz_project.xml',
+              'data/grammar/contexts.xml',
+              'data/grammar/grammar_rules.xml',
+              'data/patterns/sentence_maps.xml',
+              'data/patterns/sentence_quizzes.xml',
+              'data/dictionaries/verbs.xml',
+              'data/lessons/lessons.xml',
+              'data/content_revision.json',
+          }
+          assert required <= content_paths
+          assert all(item['path'].startswith('apps/') for item in quiz['files'])
+          PY
+
+      - name: Commit Content channel migration
+        run: |
+          rm .github/workflows/migrate-content-channel.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Replace Database channel with atomic Content snapshot"
+          git push origin HEAD:fix/database-owns-grammar-metadata
