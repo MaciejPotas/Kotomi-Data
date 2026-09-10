@@ -176,6 +176,7 @@
       <usage>
         <role ref="destination" />
         <role ref="location" />
+        <role ref="source" />
       </usage>
       <forms>
         <form name="dictionary" translation="idę pieszo" context="present" kana="あるく" />

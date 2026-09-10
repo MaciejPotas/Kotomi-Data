@@ -17,6 +17,10 @@
       <question>{context.translation}{verb[role:destination][form].translation} do {noun[category:place][case:genitive]}.</question>
       <answer>{context.kana}{noun[category:place]}へ{verb[role:destination][form]}</answer>
     </sentence_pattern>
+    <sentence_pattern id="source" label="Punkt wyjścia">
+      <question>{context.translation}{verb[role:source][form].translation} z {noun[category:place][case:genitive]}.</question>
+      <answer>{context.kana}{noun[category:place]}から{verb[role:source][form]}</answer>
+    </sentence_pattern>
     <sentence_pattern id="companion" label="Towarzysz">
       <question>{context.translation}{verb[role:companion][form].translation} z {noun[case:instrumental]}.</question>
       <answer>{context.kana}{noun}と{verb[role:companion][form]}</answer>
