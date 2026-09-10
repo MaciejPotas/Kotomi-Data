@@ -23,6 +23,7 @@
     <role id="vehicle" label="Vehicle" particle="に" accepts="vehicle" />
     <role id="subject" label="Subject" particle="が" />
     <role id="reaction_target" label="Reaction target" particle="に" />
+    <role id="source" label="Source" particle="から" accepts="place" />
   </roles>
   <features>
     <feature id="reporting" label="Reporting verb" />
