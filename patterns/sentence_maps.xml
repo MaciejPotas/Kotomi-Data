@@ -1,97 +1,97 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sentence_maps schema_version="1">
   <sentence_patterns>
-    <sentence_pattern id="simple" label="Sam czasownik">
+    <sentence_pattern id="Sam czasownik">
       <question>{context.translation}{verb[form].translation}.</question>
       <answer>{context.kana}{verb[form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="transitive_object" label="Czasownik z dopełnieniem">
+    <sentence_pattern id="Czasownik z dopełnieniem">
       <question>{context.translation}{verb[role:object][form].translation} {noun[case:accusative]}.</question>
       <answer>{context.kana}{noun}を{verb[role:object][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="described_object_action" label="Opisane dopełnienie">
+    <sentence_pattern id="Opisane dopełnienie">
       <question>{context.translation}{verb[role:object][form].translation} {adjective[form:attributive_nonpast].translation} {noun[case:accusative]}.</question>
       <answer>{context.kana}{adjective[form:attributive_nonpast]}{noun}を{verb[role:object][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="destination" label="Cel ruchu">
+    <sentence_pattern id="Cel ruchu">
       <question>{context.translation}{verb[role:destination][form].translation} do {noun[category:place][case:genitive]}.</question>
       <answer>{context.kana}{noun[category:place]}へ{verb[role:destination][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="companion" label="Towarzysz">
+    <sentence_pattern id="Towarzysz">
       <question>{context.translation}{verb[role:companion][form].translation} z {noun[case:instrumental]}.</question>
       <answer>{context.kana}{noun}と{verb[role:companion][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="place" label="Miejsce czynności">
+    <sentence_pattern id="Miejsce czynności">
       <question>{context.translation}{verb[role:location][form].translation} w {noun[category:place][case:locative]}.</question>
       <answer>{context.kana}{noun[category:place]}で{verb[role:location][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="vehicle" label="Środek transportu">
+    <sentence_pattern id="Środek transportu">
       <question>{context.translation}{verb[role:vehicle][form].translation} {noun[category:vehicle][case:instrumental]}.</question>
       <answer>{context.kana}{noun[category:vehicle]}に{verb[role:vehicle][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="subject" label="Podmiot z が">
+    <sentence_pattern id="Podmiot z が">
       <question>{context.translation}{noun[case:nominative]} {verb[role:subject][form].translation}.</question>
       <answer>{context.kana}{noun}が{verb[role:subject][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="adjective_predicate" label="Przymiotnik po temacie">
+    <sentence_pattern id="Przymiotnik po temacie">
       <question>{noun[case:nominative]} {adjective[form].translation}.</question>
       <answer>この{noun}は{adjective[form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="adjective_simple" label="Sam przymiotnik">
+    <sentence_pattern id="Sam przymiotnik">
       <question>To {adjective[form].translation}.</question>
       <answer>これは{adjective[form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="adjective_attributive" label="Przymiotnik przed rzeczownikiem">
+    <sentence_pattern id="Przymiotnik przed rzeczownikiem">
       <question>To {copula[form].translation} {adjective[form:attributive_nonpast].translation} {noun[case:nominative]}.</question>
       <answer>これは{adjective[form:attributive_nonpast]}{noun}{copula[form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="quoted_predicate" label="Cytowana opinia">
+    <sentence_pattern id="Cytowana opinia">
       <question>{verb[feature:reporting][form].translation}, że {noun[case:nominative]} {adjective[form:predicate_plain_nonpast].translation}.</question>
       <answer>あの{noun}が{adjective[form:predicate_plain_nonpast]}と{verb[feature:reporting][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="te_iru_object" label="Czynność w toku">
+    <sentence_pattern id="Czynność w toku">
       <question>{context[from:main].translation}{verb[role:object][form].translation} {noun[case:accusative]}.</question>
       <answer>{context[from:main].kana}{noun}を{verb[role:object][form:te_form]}{verb@main[id:iru][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="before_action" label="Przed inną czynnością">
+    <sentence_pattern id="Przed inną czynnością">
       <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[case:accusative]} przed {verb@before[form].translation}.</question>
       <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun}を{verb@main[role:object][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="three_nouns_suki" label="Trzy lubiane rzeczy">
+    <sentence_pattern id="Trzy lubiane rzeczy">
       <question>{context.translation}Lubię {noun@first[case:accusative]}, {noun@second[case:accusative]} i {noun@third[case:accusative]}.</question>
       <answer>{context.kana}{noun@first}と{noun@second}と{noun@third}がすきです</answer>
     </sentence_pattern>
-    <sentence_pattern id="pattern_001" label="Reakcja na przyczynę">
+    <sentence_pattern id="Reakcja na przyczynę">
       <question>{context.translation}{verb[role:reaction_target][form].translation} {noun[case:instrumental]}</question>
       <answer>{noun}に{verb[role:reaction_target][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="verb_noun_ga_aru" label="Dostępność 〜がある">
+    <sentence_pattern id="Dostępność 〜がある">
       <patterns form="dictionary" translation="base">
-        <pattern ref="simple" />
-        <pattern ref="transitive_object" />
-        <pattern ref="destination" />
-        <pattern ref="companion" />
-        <pattern ref="place" />
+        <pattern ref="Sam czasownik" />
+        <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Cel ruchu" />
+        <pattern ref="Towarzysz" />
+        <pattern ref="Miejsce czynności" />
       </patterns>
       <question>{context[from:main].translation}{verb@main[id:aru][form].translation} {noun[category:availability_reason][case:accusative]}, żeby {pattern}.</question>
       <answer>{context[from:main].kana}{pattern}{noun[category:availability_reason]}が{verb@main[id:aru][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="koto_ga_dekiru" label="Możliwość ことができる">
+    <sentence_pattern id="Możliwość ことができる">
       <patterns form="dictionary" translation="base">
-        <pattern ref="simple" />
-        <pattern ref="transitive_object" />
-        <pattern ref="place" />
+        <pattern ref="Sam czasownik" />
+        <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Miejsce czynności" />
       </patterns>
       <question>{context[from:main].translation}{verb@main[id:dekiru][form].translation} {pattern}.</question>
       <answer>{context[from:main].kana}{pattern}ことが{verb@main[id:dekiru][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="te_iru" label="Czynność w toku 〜ている">
+    <sentence_pattern id="Czynność w toku 〜ている">
       <patterns form="te_form">
-        <pattern ref="simple" />
-        <pattern ref="transitive_object" />
-        <pattern ref="destination" />
-        <pattern ref="companion" />
-        <pattern ref="place" />
+        <pattern ref="Sam czasownik" />
+        <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Cel ruchu" />
+        <pattern ref="Towarzysz" />
+        <pattern ref="Miejsce czynności" />
       </patterns>
       <question>{context[from:main].translation}{pattern}.</question>
       <answer>{context[from:main].kana}{pattern}{verb@main[id:iru][form]}</answer>
