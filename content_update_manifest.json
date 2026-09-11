@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 6,
+  "revision": 7,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "209fc8f1544d0cafda5bd95030c5a37b605e54627c2eb0ffc539cfe0fc8ac8e2",
-      "url": "content_revision.json?kotomi_sha256=209fc8f1544d0cafda5bd95030c5a37b605e54627c2eb0ffc539cfe0fc8ac8e2"
+      "sha256": "455e3dd1af2bf9a436eee0efb8d06c98cf9a2c27fc360a287665e071cb548995",
+      "url": "content_revision.json?kotomi_sha256=455e3dd1af2bf9a436eee0efb8d06c98cf9a2c27fc360a287665e071cb548995"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -16,6 +16,11 @@
       "path": "data/dictionaries/copulas.xml",
       "sha256": "dc630c362fdc36419a9723f7c51cf148430a58f2b97e74fd66991f83e2915fb6",
       "url": "dictionaries/copulas.xml?kotomi_sha256=dc630c362fdc36419a9723f7c51cf148430a58f2b97e74fd66991f83e2915fb6"
+    },
+    {
+      "path": "data/dictionaries/interrogatives.xml",
+      "sha256": "ec68ac43c1bd90b3fbee74fc88c7510faedd24ae427aee3dc2afc6437ce647cc",
+      "url": "dictionaries/interrogatives.xml?kotomi_sha256=ec68ac43c1bd90b3fbee74fc88c7510faedd24ae427aee3dc2afc6437ce647cc"
     },
     {
       "path": "data/dictionaries/nouns.xml",
@@ -44,8 +49,8 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "dbb9432ac16edbbcba91e5bc658ec3b736f9bd654fb60e64ae6e5977b9cc5e53",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=dbb9432ac16edbbcba91e5bc658ec3b736f9bd654fb60e64ae6e5977b9cc5e53"
+      "sha256": "4c5806fe00a839eb26ec5252b7cc01db53e834bcaf6860d97b90d48e0c840aff",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=4c5806fe00a839eb26ec5252b7cc01db53e834bcaf6860d97b90d48e0c840aff"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
@@ -54,8 +59,8 @@
     },
     {
       "path": "data/quiz_project.xml",
-      "sha256": "01d767b0018a6834ad7802a4062789516931d465b96aa285fc135e6adcbd3470",
-      "url": "quiz_project.xml?kotomi_sha256=01d767b0018a6834ad7802a4062789516931d465b96aa285fc135e6adcbd3470"
+      "sha256": "1305742f1122912dd0716509529e5e100a415af82b5c254846234e3b213b2205",
+      "url": "quiz_project.xml?kotomi_sha256=1305742f1122912dd0716509529e5e100a415af82b5c254846234e3b213b2205"
     }
   ]
 }

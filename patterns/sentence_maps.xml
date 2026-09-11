@@ -96,5 +96,57 @@
       <question>{context[from:main].translation}{pattern}.</question>
       <answer>{context[from:main].kana}{pattern}{verb@main[id:iru][form]}</answer>
     </sentence_pattern>
+    <sentence_pattern id="Pytanie o miejsce">
+      <question>Gdzie {context.translation}{verb[role:location][form].translation}?</question>
+      <answer>{interrogative[asks_for:place]}で{verb[role:location][form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie o cel">
+      <question>Dokąd {context.translation}{verb[role:destination][form].translation}?</question>
+      <answer>{interrogative[asks_for:place]}へ{verb[role:destination][form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie o towarzysza">
+      <question>Z kim {context.translation}{verb[role:companion][form].translation}?</question>
+      <answer>{interrogative[asks_for:person]}と{verb[role:companion][form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie kiedy">
+      <question>Kiedy {context.translation}{verb[form].translation}?</question>
+      <answer>{interrogative[asks_for:time]}{verb[form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie dlaczego">
+      <question>Dlaczego {context.translation}{verb[form].translation}?</question>
+      <answer>{interrogative[asks_for:reason]}{verb[form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie jak">
+      <question>Jak {context.translation}{verb[form].translation}?</question>
+      <answer>{interrogative[asks_for:method]}{verb[form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie o rzecz">
+      <question>Co {context.translation}{verb[role:object][form].translation}?</question>
+      <answer>{interrogative[id:nani]}を{verb[role:object][form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie kto">
+      <question>Kto to jest?</question>
+      <answer>これは{interrogative[asks_for:person]}{copula[form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie co">
+      <question>Co to jest?</question>
+      <answer>これは{interrogative[id:nan]}{copula[form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie który">
+      <question>Który to jest?</question>
+      <answer>{interrogative[asks_for:choice]}{copula[form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie czyj">
+      <question>Czyje to jest?</question>
+      <answer>これは{interrogative[asks_for:possessor]}{copula[form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie ile">
+      <question>Ile ich jest?</question>
+      <answer>{interrogative[asks_for:quantity]}{verb[id:aru][form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Pytanie ile kosztuje">
+      <question>Ile to kosztuje?</question>
+      <answer>これは{interrogative[asks_for:price]}{copula[form]}{question}</answer>
+    </sentence_pattern>
   </sentence_patterns>
 </sentence_maps>
