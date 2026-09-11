@@ -43,13 +43,13 @@ MODE_LABELS = {
 LABEL_TO_MODE = {label: mode for mode, label in MODE_LABELS.items()}
 
 PATTERN_LABELS = {
-    "simple": "Proste zdanie",
-    "transitive_object": "Zdanie z dopełnieniem",
-    "destination": "Zdanie z celem ruchu",
-    "companion": "Zdanie z towarzyszem",
-    "place": "Zdanie z miejscem czynności",
-    "vehicle": "Zdanie ze środkiem transportu",
-    "subject": "Zdanie z podmiotem i が",
+    "Sam czasownik": "Proste zdanie",
+    "Czasownik z dopełnieniem": "Zdanie z dopełnieniem",
+    "Cel ruchu": "Zdanie z celem ruchu",
+    "Towarzysz": "Zdanie z towarzyszem",
+    "Miejsce czynności": "Zdanie z miejscem czynności",
+    "Środek transportu": "Zdanie ze środkiem transportu",
+    "Podmiot z が": "Zdanie z podmiotem i が",
 }
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 

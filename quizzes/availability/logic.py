@@ -40,11 +40,11 @@ MODE_LABELS = {
 }
 
 PATTERN_LABELS = {
-    "verb_noun_ga_aru__simple": "Sam czasownik",
-    "verb_noun_ga_aru__transitive_object": "Dopełnienie",
-    "verb_noun_ga_aru__destination": "Cel ruchu",
-    "verb_noun_ga_aru__companion": "Towarzysz",
-    "verb_noun_ga_aru__place": "Miejsce",
+    "Dostępność 〜がある / Sam czasownik": "Sam czasownik",
+    "Dostępność 〜がある / Czasownik z dopełnieniem": "Dopełnienie",
+    "Dostępność 〜がある / Cel ruchu": "Cel ruchu",
+    "Dostępność 〜がある / Towarzysz": "Towarzysz",
+    "Dostępność 〜がある / Miejsce czynności": "Miejsce",
 }
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 
@@ -471,7 +471,7 @@ class AvailabilityQuizEngine:
                 continue
             try:
                 analysis = self.shared_engine.analyze_pattern(pattern)
-                if pattern.composite_id != "verb_noun_ga_aru":
+                if pattern.composite_id != "Dostępność 〜がある":
                     continue
                 if (
                     "aru" not in analysis.fixed_words.values()

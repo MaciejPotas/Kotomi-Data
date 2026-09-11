@@ -52,9 +52,9 @@ MODE_LABELS = {
 }
 
 PATTERN_LABELS = {
-    "koto_ga_dekiru__simple": "ことができる, sam czasownik",
-    "koto_ga_dekiru__transitive_object": "ことができる, dopełnienie",
-    "koto_ga_dekiru__place": "ことができる, miejsce",
+    "Możliwość ことができる / Sam czasownik": "ことができる, sam czasownik",
+    "Możliwość ことができる / Czasownik z dopełnieniem": "ことができる, dopełnienie",
+    "Możliwość ことができる / Miejsce czynności": "ことができる, miejsce",
 }
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 
