@@ -1,0 +1,73 @@
+name: Apply interrogative data implementation
+on:
+  push:
+    paths:
+      - .github/workflows/apply-interrogative-data.yml
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Apply data
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET, json, hashlib
+          words=[
+          ('dare','kto','だれ','誰','person'),('donata','kto (grzecznie)','どなた','','person'),('nani','co','なに','何','thing'),('nan','co','なん','何','thing'),('itsu','kiedy','いつ','','time'),('nanji','o której godzinie','なんじ','何時','time'),('doko','gdzie','どこ','何処','place'),('dore','który / które','どれ','','choice'),('dono','który / która / które','どの','','choice_modifier'),('dochira','która strona / które','どちら','','choice'),('docchi','która strona / które (potocznie)','どっち','','choice'),('donna','jaki / jaka / jakie','どんな','','kind'),('naze','dlaczego','なぜ','何故','reason'),('doushite','dlaczego','どうして','','reason'),('douyatte','jak / w jaki sposób','どうやって','','method'),('dou','jak','どう','','manner'),('ikura','ile kosztuje','いくら','','price'),('ikutsu','ile','いくつ','幾つ','quantity'),('nannin','ile osób','なんにん','何人','people_count'),('nansai','ile lat','なんさい','何歳','age'),('dare_no','czyj / czyja / czyje','だれの','誰の','possessor')]
+          root=ET.Element('dictionary',{'schema_version':'1','id':'interrogatives','label':'Interrogatives','schema':'interrogative'})
+          ET.SubElement(root,'editor',{'required':'translation kana asks_for','optional':'kanji romaji','metadata':''})
+          wn=ET.SubElement(root,'words')
+          for i,tr,ka,kj,a in words:
+              attrs={'id':i,'translation':tr,'kana':ka,'asks_for':a}
+              if kj: attrs['kanji']=kj
+              ET.SubElement(wn,'word',attrs)
+          ET.indent(root,space='  '); ET.ElementTree(root).write('dictionaries/interrogatives.xml',encoding='utf-8',xml_declaration=True)
+          p=Path('quiz_project.xml'); root=ET.parse(p).getroot(); ds=root.find('dictionaries')
+          if not any(x.get('id')=='interrogatives' for x in ds): ET.SubElement(ds,'dictionary',{'id':'interrogatives','file':'dictionaries/interrogatives.xml','label':'Interrogatives','schema':'interrogative'})
+          ds[:]=sorted(list(ds),key=lambda x:x.get('id')); ET.indent(root,space='  '); ET.ElementTree(root).write(p,encoding='utf-8',xml_declaration=True)
+          p=Path('patterns/sentence_maps.xml'); root=ET.parse(p).getroot(); sp=root.find('sentence_patterns'); ids={x.get('id') for x in sp}
+          patterns=[
+          ('Pytanie o miejsce','Gdzie {context.translation}{verb[role:location][form].translation}?','{interrogative[asks_for:place]}で{verb[role:location][form]}{question}'),
+          ('Pytanie o cel','Dokąd {context.translation}{verb[role:destination][form].translation}?','{interrogative[asks_for:place]}へ{verb[role:destination][form]}{question}'),
+          ('Pytanie o towarzysza','Z kim {context.translation}{verb[role:companion][form].translation}?','{interrogative[asks_for:person]}と{verb[role:companion][form]}{question}'),
+          ('Pytanie kiedy','Kiedy {context.translation}{verb[form].translation}?','{interrogative[asks_for:time]}{verb[form]}{question}'),
+          ('Pytanie dlaczego','Dlaczego {context.translation}{verb[form].translation}?','{interrogative[asks_for:reason]}{verb[form]}{question}'),
+          ('Pytanie jak','Jak {context.translation}{verb[form].translation}?','{interrogative[asks_for:method]}{verb[form]}{question}'),
+          ('Pytanie o rzecz','Co {context.translation}{verb[role:object][form].translation}?','{interrogative[id:nani]}を{verb[role:object][form]}{question}'),
+          ('Pytanie kto','Kto to jest?','これは{interrogative[asks_for:person]}{copula[form]}{question}'),
+          ('Pytanie co','Co to jest?','これは{interrogative[id:nan]}{copula[form]}{question}'),
+          ('Pytanie który','Który to jest?','{interrogative[asks_for:choice]}{copula[form]}{question}'),
+          ('Pytanie czyj','Czyje to jest?','これは{interrogative[asks_for:possessor]}{copula[form]}{question}'),
+          ('Pytanie ile','Ile ich jest?','{interrogative[asks_for:quantity]}{verb[id:aru][form]}{question}'),
+          ('Pytanie ile kosztuje','Ile to kosztuje?','これは{interrogative[asks_for:price]}{copula[form]}{question}')]
+          for pid,q,a in patterns:
+              if pid not in ids:
+                  n=ET.SubElement(sp,'sentence_pattern',{'id':pid}); ET.SubElement(n,'question').text=q; ET.SubElement(n,'answer').text=a
+          ET.indent(root,space='  '); ET.ElementTree(root).write(p,encoding='utf-8',xml_declaration=True)
+          p=Path('content_revision.json'); v=json.loads(p.read_text()); v['revision']=7; p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+          # Repository validator owns the canonical declarative file inventory.
+          p=Path('tools/validate_repository.py'); s=p.read_text().replace('    "dictionaries/copulas.xml",\n','    "dictionaries/copulas.xml",\n    "dictionaries/interrogatives.xml",\n').replace('    "data/dictionaries/copulas.xml",\n','    "data/dictionaries/copulas.xml",\n    "data/dictionaries/interrogatives.xml",\n'); p.write_text(s)
+          # Rebuild the content manifest using the same canonical ordering and URLs.
+          manifest=json.loads(Path('content_update_manifest.json').read_text()); by={x['path']:x for x in manifest['files']}
+          ordered=['data/content_revision.json','data/dictionaries/adjectives.xml','data/dictionaries/copulas.xml','data/dictionaries/interrogatives.xml','data/dictionaries/nouns.xml','data/dictionaries/verbs.xml','data/grammar/contexts.xml','data/grammar/grammar_rules.xml','data/lessons/lessons.xml','data/patterns/sentence_maps.xml','data/patterns/sentence_quizzes.xml','data/quiz_project.xml']
+          files=[]
+          for install in ordered:
+              rel=install.removeprefix('data/'); digest=hashlib.sha256(Path(rel).read_bytes()).hexdigest(); old=by.get(install); url=(old or {}).get('url',rel); url=url.split('?kotomi_sha256=')[0]+'?kotomi_sha256='+digest; files.append({'path':install,'sha256':digest,'url':url})
+          Path('content_update_manifest.json').write_text(json.dumps({'format':1,'revision':7,'files':files},ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Validate repository
+        run: python tools/validate_repository.py
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dictionaries/interrogatives.xml quiz_project.xml patterns/sentence_maps.xml content_revision.json content_update_manifest.json tools/validate_repository.py
+          git diff --cached --check
+          git commit -m "Add interrogative vocabulary and question patterns"
+          git push
