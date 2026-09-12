@@ -16,7 +16,6 @@
       <pattern ref="Pytanie o cel" />
       <pattern ref="Pytanie o towarzysza" />
       <pattern ref="Pytanie o rzecz" />
-      <pattern ref="Pytanie kto" />
       <pattern ref="Pytanie który + rzeczownik" />
       <pattern ref="Pytanie o rodzaj" />
       <pattern ref="Pytanie czyj" />
