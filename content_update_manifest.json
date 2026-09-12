@@ -49,13 +49,13 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "0dd3d6ab504647b89befe55d1fef620330c08ade3b74d32d32843708dfe566f2",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=0dd3d6ab504647b89befe55d1fef620330c08ade3b74d32d32843708dfe566f2"
+      "sha256": "c334f9a14bd18e858cca5a47365988026a2feb42a7a8c93d373dca406cf7a084",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=c334f9a14bd18e858cca5a47365988026a2feb42a7a8c93d373dca406cf7a084"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
-      "sha256": "8840323962d1a4450229708895ec836eae9d84bc3e87e80c16b110961d71bbd4",
-      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=8840323962d1a4450229708895ec836eae9d84bc3e87e80c16b110961d71bbd4"
+      "sha256": "2512ac6d163434cfc34a4e7ce43f05e5bc73630cdd3a7e04507ba2eb59c203cd",
+      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=2512ac6d163434cfc34a4e7ce43f05e5bc73630cdd3a7e04507ba2eb59c203cd"
     },
     {
       "path": "data/quiz_project.xml",
