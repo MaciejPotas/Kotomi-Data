@@ -57,6 +57,7 @@ PATTERN_LABELS = {
     "Możliwość ことができる / Miejsce czynności": "ことができる, miejsce",
 }
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
+PATTERN_EXPANSIONS = {pattern_id: (pattern_id,) for pattern_id in SUPPORTED_PATTERNS}
 
 MOBILE_APP_TITLE = "Kotomi, gramatyka"
 MOBILE_SUBTITLE = "ことができる"
@@ -387,13 +388,16 @@ def configure_quiz_profile(quiz_id: str) -> None:
     if quiz is None:
         raise GrammarQuizError(f"Nie znaleziono quizu zdań '{quiz_id}'.")
     effective_ids = project.sentence_quiz_pattern_ids(quiz)
-    if not effective_ids:
+    selection_ids = project.sentence_quiz_selection_ids(quiz)
+    expansions = project.sentence_quiz_pattern_expansions(quiz)
+    if not effective_ids or not selection_ids:
         raise GrammarQuizError(f"Quiz '{quiz.label}' nie zawiera wzorców.")
 
     global ACTIVE_QUIZ_ID
     global SETTINGS_FILENAME
     global PATTERN_LABELS
     global SUPPORTED_PATTERNS
+    global PATTERN_EXPANSIONS
     global MOBILE_APP_TITLE
     global MOBILE_SUBTITLE
     global MOBILE_SETTINGS_TITLE
@@ -401,11 +405,17 @@ def configure_quiz_profile(quiz_id: str) -> None:
 
     ACTIVE_QUIZ_ID = quiz.id
     SETTINGS_FILENAME = f"sentence_quiz_{quiz.id}_settings.xml"
-    PATTERN_LABELS = {
-        pattern_id: project.patterns[pattern_id].label
-        for pattern_id in effective_ids
-    }
-    SUPPORTED_PATTERNS = tuple(effective_ids)
+    PATTERN_LABELS = {}
+    for pattern_id in selection_ids:
+        composite = project.composite_patterns.get(pattern_id)
+        pattern = project.patterns.get(pattern_id)
+        PATTERN_LABELS[pattern_id] = (
+            composite.label if composite is not None
+            else pattern.label if pattern is not None
+            else pattern_id
+        )
+    SUPPORTED_PATTERNS = tuple(selection_ids)
+    PATTERN_EXPANSIONS = expansions
     MOBILE_APP_TITLE = f"Kotomi, {quiz.label}"
     MOBILE_SUBTITLE = quiz.description
     MOBILE_SETTINGS_TITLE = f"Ustawienia: {quiz.label}"
@@ -504,24 +514,28 @@ class GrammarQuizEngine:
         self, settings: GrammarQuizSettings
     ) -> List[GenerationCombination]:
         combinations: List[GenerationCombination] = []
-        for pattern_id in settings.enabled_patterns:
-            pattern = self.project.patterns.get(pattern_id)
-            if pattern is None:
-                continue
-            try:
-                analysis = self.shared_engine.analyze_pattern(pattern)
-            except ProjectError:
-                continue
-            if not analysis.focus_slot or not analysis.dynamic_slots:
-                continue
-            eligible_forms = set(
-                self.shared_engine.eligible_form_names(pattern_id)
-            )
-            combinations.extend(
-                GenerationCombination(pattern_id, rule)
-                for rule in self.build_generation_rules(settings)
-                if rule.target_form in eligible_forms
-            )
+        for selected_id in settings.enabled_patterns:
+            for pattern_id in PATTERN_EXPANSIONS.get(
+                selected_id,
+                (selected_id,),
+            ):
+                pattern = self.project.patterns.get(pattern_id)
+                if pattern is None:
+                    continue
+                try:
+                    analysis = self.shared_engine.analyze_pattern(pattern)
+                except ProjectError:
+                    continue
+                if not analysis.focus_slot or not analysis.dynamic_slots:
+                    continue
+                eligible_forms = set(
+                    self.shared_engine.eligible_form_names(pattern_id)
+                )
+                combinations.extend(
+                    GenerationCombination(pattern_id, rule)
+                    for rule in self.build_generation_rules(settings)
+                    if rule.target_form in eligible_forms
+                )
         if not combinations:
             raise GrammarQuizError(
                 "Bieżące ustawienia nie tworzą żadnej reguły quizu."
@@ -819,6 +833,7 @@ __all__ = [
     "SETTINGS_FILENAME",
     "SETTINGS_STORE_CLASS",
     "SUPPORTED_PATTERNS",
+    "PATTERN_EXPANSIONS",
     "SettingsStore",
     "SlotFilterRule",
     "SubmissionResult",

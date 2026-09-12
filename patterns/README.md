@@ -29,3 +29,7 @@ References use the same value:
 Pattern IDs must be non-empty and unique. Renaming a pattern therefore means renaming its references as one atomic content change. Quiz Studio performs this propagation when the pattern is renamed there.
 
 Pattern syntax is interpreted by Kotomi's shared engine. When changing the pattern language or selectors, update Kotomi engine tests together with the data that depends on the new behavior.
+
+Pattern categories are persisted directly on `<sentence_pattern category="...">`. Question patterns use category `questions`. Adverbial question families such as when, reason and method are composites over existing clause shapes; argument-replacement questions remain direct patterns.
+
+The `questions` sentence quiz uses `selection="references"`, so users select question families while the engine expands composites internally and keeps form selection independent.

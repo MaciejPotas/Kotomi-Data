@@ -10,4 +10,27 @@
       <pattern ref="Czynność w toku 〜ている" />
     </patterns>
   </quiz>
+  <quiz id="questions" label="Pytania" description="Słowa pytające i konstrukcje pytań" selection="references">
+    <patterns>
+      <pattern ref="Pytanie o miejsce" />
+      <pattern ref="Pytanie o cel" />
+      <pattern ref="Pytanie o towarzysza" />
+      <pattern ref="Pytanie o rzecz" />
+      <pattern ref="Pytanie kto" />
+      <pattern ref="Pytanie co" />
+      <pattern ref="Pytanie który" />
+      <pattern ref="Pytanie który + rzeczownik" />
+      <pattern ref="Pytanie o rodzaj" />
+      <pattern ref="Pytanie czyj" />
+      <pattern ref="Pytanie jak" />
+      <pattern ref="Pytanie ile kosztuje" />
+      <pattern ref="Pytanie ile" />
+      <pattern ref="Pytanie ile osób" />
+      <pattern ref="Pytanie ile lat" />
+      <pattern ref="Pytanie kiedy" />
+      <pattern ref="Pytanie o godzinę" />
+      <pattern ref="Pytanie dlaczego" />
+      <pattern ref="Pytanie jakim sposobem" />
+    </patterns>
+  </quiz>
 </sentence_quizzes>
