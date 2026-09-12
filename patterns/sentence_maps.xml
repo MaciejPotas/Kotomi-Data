@@ -112,18 +112,6 @@
       <question>Co {context.translation}{verb[role:object][form].translation}?</question>
       <answer>{interrogative[id:nani]}を{verb[role:object][form]}{question}</answer>
     </sentence_pattern>
-    <sentence_pattern id="Pytanie kto" category="questions">
-      <question>Kto to jest?</question>
-      <answer>これは{interrogative[id:dare]}{copula[form]}{question}</answer>
-    </sentence_pattern>
-    <sentence_pattern id="Pytanie co" category="questions">
-      <question>Co to jest?</question>
-      <answer>これは{interrogative[id:nan]}{copula[form]}{question}</answer>
-    </sentence_pattern>
-    <sentence_pattern id="Pytanie który" category="questions">
-      <question>Które to jest?</question>
-      <answer>{interrogative[id:dore]}{copula[form]}{question}</answer>
-    </sentence_pattern>
     <sentence_pattern id="Pytanie który + rzeczownik" category="questions">
       <question>Który {noun[case:nominative]} to jest?</question>
       <answer>{interrogative[id:dono]}{noun}{copula[form]}{question}</answer>
@@ -133,28 +121,24 @@
       <answer>{interrogative[id:donna]}{noun}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie czyj" category="questions">
-      <question>Czyje to jest?</question>
-      <answer>これは{interrogative[id:dare_no]}{copula[form]}{question}</answer>
+      <question>Czyj to jest {noun[category:thing][case:nominative]}?</question>
+      <answer>これは{interrogative[id:dare_no]}{noun[category:thing]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie jak" category="questions">
-      <question>Jak to jest?</question>
-      <answer>これは{interrogative[id:dou]}{copula[form]}{question}</answer>
+      <question>Co sądzisz o {noun[case:locative]}?</question>
+      <answer>{noun}は{interrogative[id:dou]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile kosztuje" category="questions">
-      <question>Ile to kosztuje?</question>
-      <answer>これは{interrogative[id:ikura]}{copula[form]}{question}</answer>
-    </sentence_pattern>
-    <sentence_pattern id="Pytanie ile" category="questions">
-      <question>Ile jest?</question>
-      <answer>{interrogative[id:ikutsu]}{verb@main[id:aru][form]}{question}</answer>
+      <question>Ile kosztuje {noun[category:thing][case:nominative]}?</question>
+      <answer>{noun[category:thing]}は{interrogative[id:ikura]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile osób" category="questions">
-      <question>Ile jest osób?</question>
-      <answer>{interrogative[id:nannin]}{verb@main[id:iru][form]}{question}</answer>
+      <question>Ile osób jest w {noun[category:place][case:locative]}?</question>
+      <answer>{noun[category:place]}に{interrogative[id:nannin]}{verb@main[id:iru][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile lat" category="questions">
-      <question>Ile ma lat?</question>
-      <answer>{interrogative[id:nansai]}{copula[form]}{question}</answer>
+      <question>Ile lat ma {noun[category:person][case:nominative]}?</question>
+      <answer>{noun[category:person]}は{interrogative[id:nansai]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie kiedy" category="questions">
       <patterns>
