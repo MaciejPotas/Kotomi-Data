@@ -19,8 +19,8 @@
     },
     {
       "path": "data/dictionaries/interrogatives.xml",
-      "sha256": "ec68ac43c1bd90b3fbee74fc88c7510faedd24ae427aee3dc2afc6437ce647cc",
-      "url": "dictionaries/interrogatives.xml?kotomi_sha256=ec68ac43c1bd90b3fbee74fc88c7510faedd24ae427aee3dc2afc6437ce647cc"
+      "sha256": "836aa39ed6b15d500f574bf7e326d23a04c87e5b7819909e5f5c174b35afa253",
+      "url": "dictionaries/interrogatives.xml?kotomi_sha256=836aa39ed6b15d500f574bf7e326d23a04c87e5b7819909e5f5c174b35afa253"
     },
     {
       "path": "data/dictionaries/nouns.xml",
