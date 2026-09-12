@@ -112,10 +112,6 @@
       <question>Co {context.translation}{verb[role:object][form].translation}?</question>
       <answer>{interrogative[id:nani]}を{verb[role:object][form]}{question}</answer>
     </sentence_pattern>
-    <sentence_pattern id="Pytanie kto" category="questions">
-      <question>Kto {verb[role:subject][form].translation}?</question>
-      <answer>{interrogative[id:dare]}が{verb[role:subject][form]}{question}</answer>
-    </sentence_pattern>
     <sentence_pattern id="Pytanie który + rzeczownik" category="questions">
       <question>Który {noun[case:nominative]} to jest?</question>
       <answer>{interrogative[id:dono]}{noun}{copula[form]}{question}</answer>
@@ -125,8 +121,8 @@
       <answer>{interrogative[id:donna]}{noun}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie czyj" category="questions">
-      <question>Czyj to jest {noun[case:nominative]}?</question>
-      <answer>これは{interrogative[id:dare_no]}{noun}{copula[form]}{question}</answer>
+      <question>Czyj to jest {noun[category:thing][case:nominative]}?</question>
+      <answer>これは{interrogative[id:dare_no]}{noun[category:thing]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie jak" category="questions">
       <question>Co sądzisz o {noun[case:locative]}?</question>
