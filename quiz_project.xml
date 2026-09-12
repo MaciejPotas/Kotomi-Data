@@ -3,6 +3,7 @@
   <dictionaries>
     <dictionary id="adjectives" file="dictionaries/adjectives.xml" label="Adjectives" schema="adjective" />
     <dictionary id="copulas" file="dictionaries/copulas.xml" label="Copulas" schema="copula" />
+    <dictionary id="interrogatives" file="dictionaries/interrogatives.xml" label="Interrogatives" schema="interrogative" />
     <dictionary id="nouns" file="dictionaries/nouns.xml" label="Nouns" schema="noun" />
     <dictionary id="verbs" file="dictionaries/verbs.xml" label="Verbs" schema="verb" />
   </dictionaries>
