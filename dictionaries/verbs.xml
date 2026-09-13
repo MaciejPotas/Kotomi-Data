@@ -327,7 +327,7 @@
     </word>
     <word id="deru" translation="wychodzić" kana="でる" kanji="出る" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="place" />
+        <role ref="route" />
       </usage>
       <forms>
         <form name="dictionary" translation="wychodzę" context="present" kana="でる" />
@@ -2130,7 +2130,7 @@
     </word>
     <word id="tooru" translation="przechodzić przez" kana="とおる" kanji="通る" type="godan" ending="ru">
       <usage>
-        <role ref="object" accepts="place" />
+        <role ref="route" />
       </usage>
       <forms>
         <form name="dictionary" translation="przechodzę" context="present" kana="とおる" />
