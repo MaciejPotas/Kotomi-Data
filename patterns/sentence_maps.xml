@@ -63,7 +63,7 @@
     </sentence_pattern>
     <sentence_pattern id="Reakcja na przyczynę" category="basic">
       <question>{context.translation}{verb[role:reaction_target][form].translation} {noun[case:instrumental]}</question>
-      <answer>{noun}に{verb[role:reaction_target][form]}</answer>
+      <answer>{context.kana}{noun}に{verb[role:reaction_target][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Dostępność 〜がある" category="constructions">
       <patterns form="dictionary" translation="base">
