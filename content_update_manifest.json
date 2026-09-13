@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 9,
+  "revision": 10,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "363ebb301e1c65071aa5122544cb0ec84654a0f2fa2f5d67cf96d4ec9ff7912d",
-      "url": "content_revision.json?kotomi_sha256=363ebb301e1c65071aa5122544cb0ec84654a0f2fa2f5d67cf96d4ec9ff7912d"
+      "sha256": "28de6aa6feda8c68cbd21a31a9af4c50c2c4c7a6b3040d9d250e504a80abc73d",
+      "url": "content_revision.json?kotomi_sha256=28de6aa6feda8c68cbd21a31a9af4c50c2c4c7a6b3040d9d250e504a80abc73d"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
