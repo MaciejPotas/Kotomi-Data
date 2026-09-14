@@ -16,6 +16,7 @@
   </noun_categories>
   <roles>
     <role id="object" label="Object" particle="を" />
+    <role id="route" label="Route or point of departure" particle="を" accepts="place" />
     <role id="location" label="Location" particle="で" accepts="place" />
     <role id="destination" label="Destination" particle="へ" accepts="place" />
     <role id="companion" label="Companion" particle="と" accepts="person animal" />
