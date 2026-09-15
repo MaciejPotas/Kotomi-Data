@@ -8,7 +8,7 @@ It checks:
 - XML syntax and expected schema versions;
 - references from `quiz_project.xml`;
 - lesson dictionary references, including the reference-only and minimum-size rules for `Tematyczne` lessons;
-- database revision and manifest coverage, hashes, and URLs;
+- Content revision and manifest coverage, hashes, and URLs;
 - published quiz package descriptors and file inventories;
 - Python syntax in published quiz packages.
 
