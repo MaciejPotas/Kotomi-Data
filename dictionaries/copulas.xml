@@ -19,10 +19,10 @@
         <form name="polite_nonpast" translation="jest" context="none" style="polite non-past" kana="です" />
         <form name="plain_negative" translation="nie jest" context="none" style="plain negative" kana="じゃない" />
         <form name="polite_negative" translation="nie jest" context="none" style="polite negative" kana="ではありません" />
-        <form name="past_plain" translation="był" context="none" style="plain past" kana="だった" />
-        <form name="past_polite" translation="był" context="none" style="polite past" kana="でした" />
-        <form name="past_negative_plain" translation="nie był" context="none" style="plain past negative" kana="じゃなかった" />
-        <form name="past_negative_polite" translation="nie był" context="none" style="polite past negative" kana="ではありませんでした" />
+        <form name="past_plain" translation="był(a/o/y)" context="none" style="plain past" kana="だった" />
+        <form name="past_polite" translation="był(a/o/y)" context="none" style="polite past" kana="でした" />
+        <form name="past_negative_plain" translation="nie był(a/o/y)" context="none" style="plain past negative" kana="じゃなかった" />
+        <form name="past_negative_polite" translation="nie był(a/o/y)" context="none" style="polite past negative" kana="ではありませんでした" />
       </forms>
     </word>
   </words>
