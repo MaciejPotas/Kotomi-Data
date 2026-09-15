@@ -33,3 +33,6 @@ jobs:
 
       - name: Validate learning data and public quiz packages
         run: python tools/validate_repository.py
+
+      - name: Validate form-aware question prompts
+        run: python tools/validate_question_patterns.py
