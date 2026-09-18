@@ -50,11 +50,11 @@
       <answer>あの{noun}が{adjective[form:predicate_plain_nonpast]}と{verb[feature:reporting][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Czynność w toku" category="constructions">
-      <question>{context[from:main].translation}{verb[role:object][form].translation} {noun[case:accusative]}.</question>
+      <question>{context[from:main].translation}{verb[role:object][form].translation} {noun[case:form]}.</question>
       <answer>{context[from:main].kana}{noun}を{verb[role:object][form:te_form]}{verb@main[id:iru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Przed inną czynnością" category="constructions">
-      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[case:accusative]} przed {verb@before[form].translation}.</question>
+      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[case:form]} przed {verb@before[form].translation}.</question>
       <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun}を{verb@main[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Trzy lubiane rzeczy" category="basic">
