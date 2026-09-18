@@ -28,19 +28,12 @@
       <form ref="past_negative_polite" />
     </form_set>
   </form_sets>
-  <case_rules>
-    <case_rule id="pl_direct_object" language="pl">
-      <map form_ref="affirmative" case_ref="accusative" />
-      <map form_ref="negative" case_ref="genitive" />
-    </case_rule>
-  </case_rules>
+  <noun_case_by_form>
+    <map form_ref="affirmative" case_ref="accusative" />
+    <map form_ref="negative" case_ref="genitive" />
+  </noun_case_by_form>
   <roles>
-    <role id="object" label="Object" particle="を">
-      <case_rule ref="pl_direct_object" />
-    </role>
-    <role id="possession" label="Possession / availability" particle="が" accepts="availability_reason">
-      <case_rule ref="pl_direct_object" />
-    </role>
+    <role id="object" label="Object" particle="を" />
     <role id="route" label="Route or point of departure" particle="を" accepts="place" />
     <role id="location" label="Location" particle="で" accepts="place" />
     <role id="destination" label="Destination" particle="へ" accepts="place" />
