@@ -275,7 +275,6 @@
       </forms>
     </word>
     <word id="furui" translation="stary" kana="ふるい" kanji="古い" type="i_adjective">
-      <describes categories="concrete" />
       <forms>
         <form name="predicate_plain_nonpast" translation="jest stary" context="none" style="plain non-past" kana="ふるい" />
         <form name="predicate_polite_nonpast" translation="jest stary" context="none" style="polite non-past" kana="ふるいです" />
@@ -1676,7 +1675,6 @@
       </forms>
     </word>
     <word id="kowai" translation="straszny, przerażający" kana="こわい" kanji="怖い" type="i_adjective">
-      <describes categories="person animal place media thing abstract" />
       <forms>
         <form name="predicate_plain_nonpast" translation="jest straszny" context="none" style="plain non-past" kana="こわい" kanji="怖い" />
         <form name="predicate_polite_nonpast" translation="jest straszny" context="none" style="polite non-past" kana="こわいです" kanji="怖いです" />
@@ -1696,7 +1694,6 @@
       </forms>
     </word>
     <word id="fushigi" translation="dziwny, tajemniczy" kana="ふしぎ" kanji="不思議" type="na_adjective">
-      <describes categories="person animal place text media thing abstract" />
       <forms>
         <form name="predicate_plain_nonpast" translation="jest tajemniczy" context="none" style="plain non-past" kana="ふしぎだ" kanji="不思議だ" />
         <form name="predicate_polite_nonpast" translation="jest tajemniczy" context="none" style="polite non-past" kana="ふしぎです" kanji="不思議です" />
