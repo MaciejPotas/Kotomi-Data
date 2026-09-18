@@ -917,7 +917,7 @@
     </word>
     <word id="kiku" translation="słuchać, pytać" kana="きく" kanji="聞く" type="godan" ending="ku">
       <usage>
-        <role ref="object" accepts="media" />
+        <role ref="object" accepts="media abstract" />
         <role ref="location" />
       </usage>
       <forms>
