@@ -2666,21 +2666,21 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form name="dictionary" translation="milczę" context="present" kana="だまる" />
-        <form name="polite_nonpast" translation="milczę" context="present" kana="だまります" />
-        <form name="plain_negative" translation="nie milczę" context="present" kana="だまらない" />
-        <form name="polite_negative" translation="nie milczę" context="present" kana="だまりません" />
-        <form name="past_plain" translation="milczałem" context="past" kana="だまった" />
-        <form name="past_polite" translation="milczałem" context="past" kana="だまりました" />
-        <form name="past_negative_plain" translation="nie milczałem" context="past" kana="だまらなかった" />
-        <form name="past_negative_polite" translation="nie milczałem" context="past" kana="だまりませんでした" />
-        <form name="te_form" context="none" kana="だまって" />
-        <form name="potential" context="none" kana="だまれる" />
-        <form name="passive" context="none" kana="だまられる" />
-        <form name="causative" context="none" kana="だまらせる" />
-        <form name="tara" context="none" kana="だまったら" />
-        <form name="volitional" context="none" kana="だまろう" />
-        <form name="imperative" context="none" kana="だまれ" />
+        <form name="dictionary" translation="milczę" context="present" kana="だまる" kanji="黙る" />
+        <form name="polite_nonpast" translation="milczę" context="present" kana="だまります" kanji="黙ります" />
+        <form name="plain_negative" translation="nie milczę" context="present" kana="だまらない" kanji="黙らない" />
+        <form name="polite_negative" translation="nie milczę" context="present" kana="だまりません" kanji="黙りません" />
+        <form name="past_plain" translation="milczałem" context="past" kana="だまった" kanji="黙った" />
+        <form name="past_polite" translation="milczałem" context="past" kana="だまりました" kanji="黙りました" />
+        <form name="past_negative_plain" translation="nie milczałem" context="past" kana="だまらなかった" kanji="黙らなかった" />
+        <form name="past_negative_polite" translation="nie milczałem" context="past" kana="だまりませんでした" kanji="黙りませんでした" />
+        <form name="te_form" context="none" kana="だまって" kanji="黙って" />
+        <form name="potential" context="none" kana="だまれる" kanji="黙れる" />
+        <form name="passive" context="none" kana="だまられる" kanji="黙られる" />
+        <form name="causative" context="none" kana="だまらせる" kanji="黙らせる" />
+        <form name="tara" context="none" kana="だまったら" kanji="黙ったら" />
+        <form name="volitional" context="none" kana="だまろう" kanji="黙ろう" />
+        <form name="imperative" context="none" kana="だまれ" kanji="黙れ" />
       </forms>
     </word>
     <word id="watasu" translation="podawać, przekazywać" kana="わたす" kanji="渡す" type="godan" ending="su">
@@ -2690,21 +2690,21 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form name="dictionary" translation="podaję" context="present" kana="わたす" />
-        <form name="polite_nonpast" translation="podaję" context="present" kana="わたします" />
-        <form name="plain_negative" translation="nie podaję" context="present" kana="わたさない" />
-        <form name="polite_negative" translation="nie podaję" context="present" kana="わたしません" />
-        <form name="past_plain" translation="podałem" context="past" kana="わたした" />
-        <form name="past_polite" translation="podałem" context="past" kana="わたしました" />
-        <form name="past_negative_plain" translation="nie podałem" context="past" kana="わたさなかった" />
-        <form name="past_negative_polite" translation="nie podałem" context="past" kana="わたしませんでした" />
-        <form name="te_form" context="none" kana="わたして" />
-        <form name="potential" context="none" kana="わたせる" />
-        <form name="passive" context="none" kana="わたされる" />
-        <form name="causative" context="none" kana="わたさせる" />
-        <form name="tara" context="none" kana="わたしたら" />
-        <form name="volitional" context="none" kana="わたそう" />
-        <form name="imperative" context="none" kana="わたせ" />
+        <form name="dictionary" translation="podaję" context="present" kana="わたす" kanji="渡す" />
+        <form name="polite_nonpast" translation="podaję" context="present" kana="わたします" kanji="渡します" />
+        <form name="plain_negative" translation="nie podaję" context="present" kana="わたさない" kanji="渡さない" />
+        <form name="polite_negative" translation="nie podaję" context="present" kana="わたしません" kanji="渡しません" />
+        <form name="past_plain" translation="podałem" context="past" kana="わたした" kanji="渡した" />
+        <form name="past_polite" translation="podałem" context="past" kana="わたしました" kanji="渡しました" />
+        <form name="past_negative_plain" translation="nie podałem" context="past" kana="わたさなかった" kanji="渡さなかった" />
+        <form name="past_negative_polite" translation="nie podałem" context="past" kana="わたしませんでした" kanji="渡しませんでした" />
+        <form name="te_form" context="none" kana="わたして" kanji="渡して" />
+        <form name="potential" context="none" kana="わたせる" kanji="渡せる" />
+        <form name="passive" context="none" kana="わたされる" kanji="渡される" />
+        <form name="causative" context="none" kana="わたさせる" kanji="渡させる" />
+        <form name="tara" context="none" kana="わたしたら" kanji="渡したら" />
+        <form name="volitional" context="none" kana="わたそう" kanji="渡そう" />
+        <form name="imperative" context="none" kana="わたせ" kanji="渡せ" />
       </forms>
     </word>
     <word id="sukuu" translation="ratować" kana="すくう" kanji="救う" type="godan" ending="u">
@@ -2713,21 +2713,21 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form name="dictionary" translation="ratuję" context="present" kana="すくう" />
-        <form name="polite_nonpast" translation="ratuję" context="present" kana="すくいます" />
-        <form name="plain_negative" translation="nie ratuję" context="present" kana="すくわない" />
-        <form name="polite_negative" translation="nie ratuję" context="present" kana="すくいません" />
-        <form name="past_plain" translation="uratowałem" context="past" kana="すくった" />
-        <form name="past_polite" translation="uratowałem" context="past" kana="すくいました" />
-        <form name="past_negative_plain" translation="nie uratowałem" context="past" kana="すくわなかった" />
-        <form name="past_negative_polite" translation="nie uratowałem" context="past" kana="すくいませんでした" />
-        <form name="te_form" context="none" kana="すくって" />
-        <form name="potential" context="none" kana="すくえる" />
-        <form name="passive" context="none" kana="すくわれる" />
-        <form name="causative" context="none" kana="すくわせる" />
-        <form name="tara" context="none" kana="すくったら" />
-        <form name="volitional" context="none" kana="すくおう" />
-        <form name="imperative" context="none" kana="すくえ" />
+        <form name="dictionary" translation="ratuję" context="present" kana="すくう" kanji="救う" />
+        <form name="polite_nonpast" translation="ratuję" context="present" kana="すくいます" kanji="救います" />
+        <form name="plain_negative" translation="nie ratuję" context="present" kana="すくわない" kanji="救わない" />
+        <form name="polite_negative" translation="nie ratuję" context="present" kana="すくいません" kanji="救いません" />
+        <form name="past_plain" translation="uratowałem" context="past" kana="すくった" kanji="救った" />
+        <form name="past_polite" translation="uratowałem" context="past" kana="すくいました" kanji="救いました" />
+        <form name="past_negative_plain" translation="nie uratowałem" context="past" kana="すくわなかった" kanji="救わなかった" />
+        <form name="past_negative_polite" translation="nie uratowałem" context="past" kana="すくいませんでした" kanji="救いませんでした" />
+        <form name="te_form" context="none" kana="すくって" kanji="救って" />
+        <form name="potential" context="none" kana="すくえる" kanji="救える" />
+        <form name="passive" context="none" kana="すくわれる" kanji="救われる" />
+        <form name="causative" context="none" kana="すくわせる" kanji="救わせる" />
+        <form name="tara" context="none" kana="すくったら" kanji="救ったら" />
+        <form name="volitional" context="none" kana="すくおう" kanji="救おう" />
+        <form name="imperative" context="none" kana="すくえ" kanji="救え" />
       </forms>
     </word>
     <word id="shinjiru" translation="wierzyć" kana="しんじる" kanji="信じる" type="ichidan" ending="ru">
@@ -2736,21 +2736,21 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form name="dictionary" translation="wierzę" context="present" kana="しんじる" />
-        <form name="polite_nonpast" translation="wierzę" context="present" kana="しんじます" />
-        <form name="plain_negative" translation="nie wierzę" context="present" kana="しんじない" />
-        <form name="polite_negative" translation="nie wierzę" context="present" kana="しんじません" />
-        <form name="past_plain" translation="wierzyłem" context="past" kana="しんじた" />
-        <form name="past_polite" translation="wierzyłem" context="past" kana="しんじました" />
-        <form name="past_negative_plain" translation="nie wierzyłem" context="past" kana="しんじなかった" />
-        <form name="past_negative_polite" translation="nie wierzyłem" context="past" kana="しんじませんでした" />
-        <form name="te_form" context="none" kana="しんじて" />
-        <form name="potential" context="none" kana="しんじられる" />
-        <form name="passive" context="none" kana="しんじられる" />
-        <form name="causative" context="none" kana="しんじさせる" />
-        <form name="tara" context="none" kana="しんじたら" />
-        <form name="volitional" context="none" kana="しんじよう" />
-        <form name="imperative" context="none" kana="しんじろ" />
+        <form name="dictionary" translation="wierzę" context="present" kana="しんじる" kanji="信じる" />
+        <form name="polite_nonpast" translation="wierzę" context="present" kana="しんじます" kanji="信じます" />
+        <form name="plain_negative" translation="nie wierzę" context="present" kana="しんじない" kanji="信じない" />
+        <form name="polite_negative" translation="nie wierzę" context="present" kana="しんじません" kanji="信じません" />
+        <form name="past_plain" translation="wierzyłem" context="past" kana="しんじた" kanji="信じた" />
+        <form name="past_polite" translation="wierzyłem" context="past" kana="しんじました" kanji="信じました" />
+        <form name="past_negative_plain" translation="nie wierzyłem" context="past" kana="しんじなかった" kanji="信じなかった" />
+        <form name="past_negative_polite" translation="nie wierzyłem" context="past" kana="しんじませんでした" kanji="信じませんでした" />
+        <form name="te_form" context="none" kana="しんじて" kanji="信じて" />
+        <form name="potential" context="none" kana="しんじられる" kanji="信じられる" />
+        <form name="passive" context="none" kana="しんじられる" kanji="信じられる" />
+        <form name="causative" context="none" kana="しんじさせる" kanji="信じさせる" />
+        <form name="tara" context="none" kana="しんじたら" kanji="信じたら" />
+        <form name="volitional" context="none" kana="しんじよう" kanji="信じよう" />
+        <form name="imperative" context="none" kana="しんじろ" kanji="信じろ" />
       </forms>
     </word>
   </words>
