@@ -14,6 +14,24 @@
     <category id="abstract" label="Abstract" selectable="true" />
     <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
   </noun_categories>
+  <form_sets>
+    <form_set id="affirmative">
+      <form ref="dictionary" />
+      <form ref="polite_nonpast" />
+      <form ref="past_plain" />
+      <form ref="past_polite" />
+    </form_set>
+    <form_set id="negative">
+      <form ref="plain_negative" />
+      <form ref="polite_negative" />
+      <form ref="past_negative_plain" />
+      <form ref="past_negative_polite" />
+    </form_set>
+  </form_sets>
+  <noun_case_by_form>
+    <map form_ref="affirmative" case_ref="accusative" />
+    <map form_ref="negative" case_ref="genitive" />
+  </noun_case_by_form>
   <roles>
     <role id="object" label="Object" particle="を" />
     <role id="route" label="Route or point of departure" particle="を" accepts="place" />

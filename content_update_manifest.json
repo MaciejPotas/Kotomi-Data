@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 13,
+  "revision": 14,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "9312d4990ec93875116c704e98b2f1a5a023f0698bd4de91dbfcb55adea98a6b",
-      "url": "content_revision.json?kotomi_sha256=9312d4990ec93875116c704e98b2f1a5a023f0698bd4de91dbfcb55adea98a6b"
+      "sha256": "8e0bd29a6b8f0fd9e647303153b817c102904af43704ebcad155e481e4fa8101",
+      "url": "content_revision.json?kotomi_sha256=8e0bd29a6b8f0fd9e647303153b817c102904af43704ebcad155e481e4fa8101"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -39,8 +39,8 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "a13a5ff80fee2c045b5014ed89e0dd445cfb8f3672737e7fdcc6b0baf9e81751",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=a13a5ff80fee2c045b5014ed89e0dd445cfb8f3672737e7fdcc6b0baf9e81751"
+      "sha256": "cdf2374084c39a433b5718b3a3403a8489db7527e975b6c9e6d5b640f004cf89",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=cdf2374084c39a433b5718b3a3403a8489db7527e975b6c9e6d5b640f004cf89"
     },
     {
       "path": "data/lessons/lessons.xml",
@@ -49,8 +49,8 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "0cbd9066a79043d1e4ecd23577f84a8d46f39a90fb2ea5fb27ac7d7c553d0b37",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=0cbd9066a79043d1e4ecd23577f84a8d46f39a90fb2ea5fb27ac7d7c553d0b37"
+      "sha256": "52266470437d6a32935a9c9cb1687321dc522d1ce4d3040b3b0322f51c95afd9",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=52266470437d6a32935a9c9cb1687321dc522d1ce4d3040b3b0322f51c95afd9"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",

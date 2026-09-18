@@ -189,9 +189,70 @@ def validate_shared_grammar_dependencies() -> None:
         value for node in contexts.findall("./context")
         for value in [node.get("id")] if value
     }
+    dictionary_roots = [
+        (path, ET.parse(path).getroot())
+        for path in sorted((ROOT / "dictionaries").glob("*.xml"))
+    ]
+    defined_forms = {
+        value
+        for _path, dictionary in dictionary_roots
+        for node in dictionary.findall(".//forms/form")
+        for value in [node.get("name")]
+        if value
+    }
+    defined_cases = {
+        attribute
+        for _path, dictionary in dictionary_roots
+        for cases in dictionary.findall(".//cases")
+        for attribute in cases.attrib
+        if attribute != "language"
+    }
+    form_sets = {
+        str(node.get("id", "")): {
+            str(form.get("ref", ""))
+            for form in node.findall("./form")
+            if form.get("ref")
+        }
+        for node in grammar.findall("./form_sets/form_set")
+        if node.get("id")
+    }
+    for form_set_id, form_refs in form_sets.items():
+        if not form_refs:
+            raise AssertionError(f"Form set {form_set_id} must not be empty")
+        unknown = form_refs - defined_forms
+        if unknown:
+            raise AssertionError(
+                f"Form set {form_set_id} references unknown forms: "
+                f"{sorted(unknown)}"
+            )
 
-    for path in sorted((ROOT / "dictionaries").glob("*.xml")):
-        dictionary = ET.parse(path).getroot()
+    noun_case_by_form = grammar.find("./noun_case_by_form")
+    if noun_case_by_form is None:
+        raise AssertionError("grammar_rules.xml must define noun_case_by_form")
+    mappings = noun_case_by_form.findall("./map")
+    if not mappings:
+        raise AssertionError("noun_case_by_form must contain mappings")
+    resolved_forms: set[str] = set()
+    for mapping in mappings:
+        form_ref = str(mapping.get("form_ref", ""))
+        case_ref = str(mapping.get("case_ref", ""))
+        if form_ref not in form_sets:
+            raise AssertionError(
+                f"noun_case_by_form references unknown form set: {form_ref}"
+            )
+        if case_ref not in defined_cases:
+            raise AssertionError(
+                f"noun_case_by_form references unknown noun case: {case_ref}"
+            )
+        overlap = resolved_forms & form_sets[form_ref]
+        if overlap:
+            raise AssertionError(
+                "noun_case_by_form maps forms more than once: "
+                f"{sorted(overlap)}"
+            )
+        resolved_forms.update(form_sets[form_ref])
+
+    for path, dictionary in dictionary_roots:
         for role in dictionary.findall(".//usage/role"):
             ref = role.get("ref")
             if ref and ref not in defined_roles:
@@ -211,6 +272,20 @@ def validate_shared_grammar_dependencies() -> None:
                 raise AssertionError(
                     f"{path.name} form references unknown context: {context}"
                 )
+
+
+def validate_composite_case_scopes() -> None:
+    root = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+    for pattern in root.findall("./sentence_patterns/sentence_pattern"):
+        patterns = pattern.find("patterns")
+        if patterns is None:
+            continue
+        case_scope = str(patterns.get("case_scope", "outer"))
+        if case_scope not in {"outer", "embedded"}:
+            pattern_id = str(pattern.get("id", "<missing>"))
+            raise AssertionError(
+                f"Sentence pattern {pattern_id} uses invalid case_scope: {case_scope}"
+            )
 
 
 def validate_lesson_references() -> None:
@@ -408,6 +483,7 @@ def main() -> None:
     validate_xml_and_schemas()
     validate_project_references()
     validate_shared_grammar_dependencies()
+    validate_composite_case_scopes()
     validate_lesson_references()
     validate_content_manifest()
     validate_quiz_manifest()
