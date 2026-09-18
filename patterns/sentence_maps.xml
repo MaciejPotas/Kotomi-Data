@@ -6,7 +6,7 @@
       <answer>{context.kana}{verb[form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Czasownik z dopełnieniem" category="basic">
-      <question>{context.translation}{verb[role:object][form].translation} {noun[case:accusative]}.</question>
+      <question>{context.translation}{verb[role:object][form].translation} {noun[case:form]}.</question>
       <answer>{context.kana}{noun}を{verb[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Opisane dopełnienie" category="basic">
