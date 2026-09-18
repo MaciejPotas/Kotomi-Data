@@ -274,6 +274,20 @@ def validate_shared_grammar_dependencies() -> None:
                 )
 
 
+def validate_composite_case_scopes() -> None:
+    root = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+    for pattern in root.findall("./sentence_patterns/sentence_pattern"):
+        patterns = pattern.find("patterns")
+        if patterns is None:
+            continue
+        case_scope = str(patterns.get("case_scope", "outer"))
+        if case_scope not in {"outer", "embedded"}:
+            pattern_id = str(pattern.get("id", "<missing>"))
+            raise AssertionError(
+                f"Sentence pattern {pattern_id} uses invalid case_scope: {case_scope}"
+            )
+
+
 def validate_lesson_references() -> None:
     project_root = ET.parse(ROOT / "quiz_project.xml").getroot()
     dictionary_files = {
@@ -469,6 +483,7 @@ def main() -> None:
     validate_xml_and_schemas()
     validate_project_references()
     validate_shared_grammar_dependencies()
+    validate_composite_case_scopes()
     validate_lesson_references()
     validate_content_manifest()
     validate_quiz_manifest()
