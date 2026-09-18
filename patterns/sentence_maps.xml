@@ -66,7 +66,7 @@
       <answer>{context.kana}{noun}に{verb[role:reaction_target][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Dostępność 〜がある" category="constructions">
-      <patterns form="dictionary" translation="base">
+      <patterns form="dictionary" translation="base" case_scope="embedded">
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
         <pattern ref="Cel ruchu" />
