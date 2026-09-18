@@ -160,6 +160,7 @@
     <word id="aru" translation="mieć" kana="ある" kanji="有る" type="godan" ending="ru">
       <usage>
         <role ref="subject" accepts="place food drink text media vehicle thing abstract" />
+        <role ref="possession" accepts="availability_reason" />
       </usage>
       <forms>
         <form name="dictionary" translation="mam" context="present" style="potoczna" kana="ある" />
