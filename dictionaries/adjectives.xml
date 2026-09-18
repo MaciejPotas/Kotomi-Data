@@ -275,6 +275,7 @@
       </forms>
     </word>
     <word id="furui" translation="stary" kana="ふるい" kanji="古い" type="i_adjective">
+      <describes categories="concrete" />
       <forms>
         <form name="predicate_plain_nonpast" translation="jest stary" context="none" style="plain non-past" kana="ふるい" />
         <form name="predicate_polite_nonpast" translation="jest stary" context="none" style="polite non-past" kana="ふるいです" />
@@ -1672,6 +1673,46 @@
         <form name="nominalized" translation="słaby" context="none" style="nominalized noun" kana="よわさ" />
         <form name="appearance_sou" translation="słaby" context="none" style="looks" kana="よわそう" />
         <form name="excessive_sugiru" translation="słaby" context="none" style="too much" kana="よわすぎる" />
+      </forms>
+    </word>
+    <word id="kowai" translation="straszny, przerażający" kana="こわい" kanji="怖い" type="i_adjective">
+      <describes categories="person animal place media thing abstract" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest straszny" context="none" style="plain non-past" kana="こわい" kanji="怖い" />
+        <form name="predicate_polite_nonpast" translation="jest straszny" context="none" style="polite non-past" kana="こわいです" kanji="怖いです" />
+        <form name="predicate_plain_negative" translation="nie jest straszny" context="none" style="plain negative" kana="こわくない" kanji="怖くない" />
+        <form name="predicate_polite_negative" translation="nie jest straszny" context="none" style="polite negative" kana="こわくないです" kanji="怖くないです" />
+        <form name="predicate_plain_past" translation="był straszny" context="none" style="plain past" kana="こわかった" kanji="怖かった" />
+        <form name="predicate_polite_past" translation="był straszny" context="none" style="polite past" kana="こわかったです" kanji="怖かったです" />
+        <form name="predicate_plain_past_negative" translation="nie był straszny" context="none" style="plain past negative" kana="こわくなかった" kanji="怖くなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był straszny" context="none" style="polite past negative" kana="こわくなかったです" kanji="怖くなかったです" />
+        <form name="attributive_nonpast" translation="straszny" context="none" style="before noun" kana="こわい" kanji="怖い" />
+        <form name="connective" translation="straszny" context="none" style="connective" kana="こわくて" kanji="怖くて" />
+        <form name="adverbial" translation="strasznie" context="none" style="adverbial" kana="こわく" kanji="怖く" />
+        <form name="conditional" translation="straszny" context="none" style="conditional" kana="こわければ" kanji="怖ければ" />
+        <form name="nominalized" translation="strach" context="none" style="nominalized noun" kana="こわさ" kanji="怖さ" />
+        <form name="appearance_sou" translation="wygląda strasznie" context="none" style="looks" kana="こわそう" kanji="怖そう" />
+        <form name="excessive_sugiru" translation="zbyt straszny" context="none" style="too much" kana="こわすぎる" kanji="怖すぎる" />
+      </forms>
+    </word>
+    <word id="fushigi" translation="dziwny, tajemniczy" kana="ふしぎ" kanji="不思議" type="na_adjective">
+      <describes categories="person animal place text media thing abstract" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest tajemniczy" context="none" style="plain non-past" kana="ふしぎだ" kanji="不思議だ" />
+        <form name="predicate_polite_nonpast" translation="jest tajemniczy" context="none" style="polite non-past" kana="ふしぎです" kanji="不思議です" />
+        <form name="predicate_plain_negative" translation="nie jest tajemniczy" context="none" style="plain negative" kana="ふしぎじゃない" kanji="不思議じゃない" />
+        <form name="predicate_polite_negative" translation="nie jest tajemniczy" context="none" style="polite negative" kana="ふしぎじゃないです" kanji="不思議じゃないです" />
+        <form name="predicate_plain_past" translation="był tajemniczy" context="none" style="plain past" kana="ふしぎだった" kanji="不思議だった" />
+        <form name="predicate_polite_past" translation="był tajemniczy" context="none" style="polite past" kana="ふしぎでした" kanji="不思議でした" />
+        <form name="predicate_plain_past_negative" translation="nie był tajemniczy" context="none" style="plain past negative" kana="ふしぎじゃなかった" kanji="不思議じゃなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był tajemniczy" context="none" style="polite past negative" kana="ふしぎじゃなかったです" kanji="不思議じゃなかったです" />
+        <form name="attributive_nonpast" translation="tajemniczy" context="none" style="before noun" kana="ふしぎな" kanji="不思議な" />
+        <form name="connective" translation="tajemniczy" context="none" style="connective" kana="ふしぎで" kanji="不思議で" />
+        <form name="adverbial" translation="tajemniczo" context="none" style="adverbial" kana="ふしぎに" kanji="不思議に" />
+        <form name="conditional" translation="tajemniczy" context="none" style="conditional" kana="ふしぎなら" kanji="不思議なら" />
+        <form name="nominalized" translation="tajemniczość" context="none" style="nominalized noun" kana="ふしぎさ" kanji="不思議さ" />
+        <form name="appearance_sou" translation="wygląda tajemniczo" context="none" style="looks" kana="ふしぎそう" kanji="不思議そう" />
+        <form name="excessive_sugiru" translation="zbyt tajemniczy" context="none" style="too much" kana="ふしぎすぎる" kanji="不思議すぎる" />
       </forms>
     </word>
   </words>

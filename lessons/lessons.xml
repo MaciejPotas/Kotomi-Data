@@ -1002,5 +1002,116 @@
         <dictionary_ref dictionary="verbs" word="taberu" />
       </word>
     </lesson>
+    <lesson id="ola_l24_dokkai_nouns" group="Ola" main="Czytanka 24 - クスコのバザールで" name="Rzeczowniki">
+      <word id="ola_l24_dokkai_nouns_002">
+        <dictionary_ref dictionary="nouns" word="roujin" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_003">
+        <dictionary_ref dictionary="nouns" word="mise" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_004">
+        <dictionary_ref dictionary="nouns" word="naka" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_005">
+        <dictionary_ref dictionary="nouns" word="hitori" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_006">
+        <dictionary_ref dictionary="nouns" word="koe" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_007">
+        <dictionary_ref dictionary="nouns" word="hito" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_008">
+        <dictionary_ref dictionary="nouns" word="oku" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_010">
+        <dictionary_ref dictionary="nouns" word="yotei" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_012">
+        <dictionary_ref dictionary="nouns" word="kagi" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_013">
+        <dictionary_ref dictionary="nouns" word="inochi" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_014">
+        <dictionary_ref dictionary="nouns" word="riyuu" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_015">
+        <dictionary_ref dictionary="nouns" word="jikan" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_016">
+        <dictionary_ref dictionary="nouns" word="hanashi" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_021">
+        <dictionary_ref dictionary="nouns" word="saisho" />
+      </word>
+      <word id="ola_l24_dokkai_nouns_022">
+        <dictionary_ref dictionary="nouns" word="detarame" />
+      </word>
+    </lesson>
+    <lesson id="ola_l24_dokkai_verbs" group="Ola" main="Czytanka 24 - クスコのバザールで" name="Czasowniki">
+      <word id="ola_l24_dokkai_verbs_003">
+        <dictionary_ref dictionary="verbs" word="suwaru" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_010">
+        <dictionary_ref dictionary="verbs" word="aru" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_011">
+        <dictionary_ref dictionary="verbs" word="shinu" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_012">
+        <dictionary_ref dictionary="verbs" word="damaru" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_013">
+        <dictionary_ref dictionary="verbs" word="dasu" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_014">
+        <dictionary_ref dictionary="verbs" word="watasu" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_015">
+        <dictionary_ref dictionary="verbs" word="sukuu" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_016">
+        <dictionary_ref dictionary="verbs" word="kiku" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_017">
+        <dictionary_ref dictionary="verbs" word="deru" />
+      </word>
+      <word id="ola_l24_dokkai_verbs_018">
+        <dictionary_ref dictionary="verbs" word="shinjiru" />
+      </word>
+    </lesson>
+    <lesson id="ola_l24_dokkai_adjectives" group="Ola" main="Czytanka 24 - クスコのバザールで" name="Przymiotniki">
+      <word id="ola_l24_dokkai_adjectives_001">
+        <dictionary_ref dictionary="adjectives" word="kitanai" />
+      </word>
+      <word id="ola_l24_dokkai_adjectives_002">
+        <dictionary_ref dictionary="adjectives" word="chiisai" />
+      </word>
+      <word id="ola_l24_dokkai_adjectives_003">
+        <dictionary_ref dictionary="adjectives" word="kowai" />
+      </word>
+      <word id="ola_l24_dokkai_adjectives_004">
+        <dictionary_ref dictionary="adjectives" word="furui" />
+      </word>
+      <word id="ola_l24_dokkai_adjectives_005">
+        <dictionary_ref dictionary="adjectives" word="fushigi" />
+      </word>
+    </lesson>
+    <lesson id="ola_l24_dokkai_adverbs" group="Ola" main="Czytanka 24 - クスコのバザールで" name="Przysłówki">
+      <local_word id="ola_l24_dokkai_adverbs_jitto" translation="uważnie, bacznie" kana="じっと" kanji="" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_adverbs_totemo" translation="bardzo" kana="とても" kanji="" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_adverbs_sukoshi" translation="trochę" kana="すこし" kanji="少し" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_adverbs_yukkuri" translation="powoli" kana="ゆっくり" kanji="" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_adverbs_mou" translation="już" kana="もう" kanji="" romaji="" example="" />
+    </lesson>
+    <lesson id="ola_l24_dokkai_expressions" group="Ola" main="Czytanka 24 - クスコのバザールで" name="Wyrażenia i zaimki">
+      <local_word id="ola_l24_dokkai_expressions_nanika" translation="coś" kana="なにか" kanji="何か" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_expressions_dareka" translation="ktoś" kana="だれか" kanji="誰か" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_expressions_daremo" translation="nikt (z przeczeniem)" kana="だれも" kanji="誰も" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_expressions_hoka_no" translation="inny" kana="ほかの" kanji="他の" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_expressions_igai_ni" translation="poza..." kana="いがいに" kanji="以外に" romaji="" example="" />
+      <local_word id="ola_l24_dokkai_expressions_sono_toori" translation="tak, zgadza się" kana="そのとおり" kanji="その通り" romaji="" example="" />
+    </lesson>
   </lessons>
 </lesson_catalog>

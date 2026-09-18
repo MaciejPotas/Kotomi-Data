@@ -42,7 +42,7 @@
       <cases language="pl" nominative="pies" genitive="psa" dative="psu" accusative="psa" instrumental="psem" locative="psie" vocative="psie" />
     </word>
     <word id="jikan" translation="czas" kana="じかん" kanji="時間" type="noun" category="availability_reason">
-      <cases language="pl" nominative="czas" genitive="czasu" accusative="czas" instrumental="czasem" locative="czasie" />
+      <cases language="pl" nominative="czas" genitive="czasu" dative="czasowi" accusative="czas" instrumental="czasem" locative="czasie" vocative="czasie" />
     </word>
     <word id="keikaku" translation="plan działania" kana="けいかく" kanji="計画" type="noun" category="availability_reason">
       <cases language="pl" nominative="plan działania" genitive="planu działania" accusative="plan działania" instrumental="planem działania" locative="planie działania" />
@@ -129,10 +129,55 @@
       <cases language="pl" nominative="obietnica" genitive="obietnicy" accusative="obietnicę" instrumental="obietnicą" locative="obietnicy" />
     </word>
     <word id="yotei" translation="plan" kana="よてい" kanji="予定" type="noun" category="availability_reason">
-      <cases language="pl" nominative="plan" genitive="planu" accusative="plan" instrumental="planem" locative="planie" />
+      <cases language="pl" nominative="plan" genitive="planu" dative="planowi" accusative="plan" instrumental="planem" locative="planie" vocative="planie" />
     </word>
     <word id="youji" translation="sprawa do załatwienia" kana="ようじ" kanji="用事" type="noun" category="abstract">
       <cases language="pl" nominative="sprawa do załatwienia" genitive="sprawy do załatwienia" accusative="sprawę do załatwienia" instrumental="sprawą do załatwienia" locative="sprawie do załatwienia" />
+    </word>
+    <word id="bazaaru" translation="bazar" kana="バザール" type="noun" category="place">
+      <cases language="pl" nominative="bazar" genitive="bazaru" dative="bazarowi" accusative="bazar" instrumental="bazarem" locative="bazarze" vocative="bazarze" />
+    </word>
+    <word id="roujin" translation="starzec" kana="ろうじん" kanji="老人" type="noun" category="person">
+      <cases language="pl" nominative="starzec" genitive="starca" dative="starcowi" accusative="starca" instrumental="starcem" locative="starcu" vocative="starcze" />
+    </word>
+    <word id="mise" translation="sklep" kana="みせ" kanji="店" type="noun" category="place">
+      <cases language="pl" nominative="sklep" genitive="sklepu" dative="sklepowi" accusative="sklep" instrumental="sklepem" locative="sklepie" vocative="sklepie" />
+    </word>
+    <word id="naka" translation="wnętrze" kana="なか" kanji="中" type="noun" category="place">
+      <cases language="pl" nominative="wnętrze" genitive="wnętrza" dative="wnętrzu" accusative="wnętrze" instrumental="wnętrzem" locative="wnętrzu" vocative="wnętrze" />
+    </word>
+    <word id="hitori" translation="jedna osoba" kana="ひとり" kanji="一人" type="noun" category="person">
+      <cases language="pl" nominative="jedna osoba" genitive="jednej osoby" dative="jednej osobie" accusative="jedną osobę" instrumental="jedną osobą" locative="jednej osobie" vocative="jedna osobo" />
+    </word>
+    <word id="koe" translation="głos" kana="こえ" kanji="声" type="noun" category="media">
+      <cases language="pl" nominative="głos" genitive="głosu" dative="głosowi" accusative="głos" instrumental="głosem" locative="głosie" vocative="głosie" />
+    </word>
+    <word id="hito" translation="osoba" kana="ひと" kanji="人" type="noun" category="person">
+      <cases language="pl" nominative="osoba" genitive="osoby" dative="osobie" accusative="osobę" instrumental="osobą" locative="osobie" vocative="osobo" />
+    </word>
+    <word id="oku" translation="głębia" kana="おく" kanji="奥" type="noun" category="place">
+      <cases language="pl" nominative="głębia" genitive="głębi" dative="głębi" accusative="głębię" instrumental="głębią" locative="głębi" vocative="głębio" />
+    </word>
+    <word id="ashita" translation="jutro" kana="あした" kanji="明日" type="noun" category="abstract">
+      <cases language="pl" nominative="jutro" genitive="jutra" dative="jutru" accusative="jutro" instrumental="jutrem" locative="jutrze" vocative="jutro" />
+    </word>
+    <word id="kagi" translation="klucz" kana="かぎ" kanji="鍵" type="noun" category="thing">
+      <cases language="pl" nominative="klucz" genitive="klucza" dative="kluczowi" accusative="klucz" instrumental="kluczem" locative="kluczu" vocative="kluczu" />
+    </word>
+    <word id="inochi" translation="życie" kana="いのち" kanji="命" type="noun" category="abstract">
+      <cases language="pl" nominative="życie" genitive="życia" dative="życiu" accusative="życie" instrumental="życiem" locative="życiu" vocative="życie" />
+    </word>
+    <word id="riyuu" translation="powód" kana="りゆう" kanji="理由" type="noun" category="abstract">
+      <cases language="pl" nominative="powód" genitive="powodu" dative="powodowi" accusative="powód" instrumental="powodem" locative="powodzie" vocative="powodzie" />
+    </word>
+    <word id="hanashi" translation="opowieść" kana="はなし" kanji="話" type="noun" category="abstract">
+      <cases language="pl" nominative="opowieść" genitive="opowieści" dative="opowieści" accusative="opowieść" instrumental="opowieścią" locative="opowieści" vocative="opowieści" />
+    </word>
+    <word id="saisho" translation="początek" kana="さいしょ" kanji="最初" type="noun" category="abstract">
+      <cases language="pl" nominative="początek" genitive="początku" dative="początkowi" accusative="początek" instrumental="początkiem" locative="początku" vocative="początku" />
+    </word>
+    <word id="detarame" translation="nonsens" kana="でたらめ" type="noun" category="abstract">
+      <cases language="pl" nominative="nonsens" genitive="nonsensu" dative="nonsensowi" accusative="nonsens" instrumental="nonsensem" locative="nonsensie" vocative="nonsensie" />
     </word>
   </words>
 </dictionary>
