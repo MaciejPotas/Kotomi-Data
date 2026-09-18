@@ -1674,5 +1674,45 @@
         <form name="excessive_sugiru" translation="słaby" context="none" style="too much" kana="よわすぎる" />
       </forms>
     </word>
+    <word id="kowai" translation="straszny, przerażający" kana="こわい" kanji="怖い" type="i_adjective">
+      <describes categories="person animal place media thing abstract" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest straszny" context="none" style="plain non-past" kana="こわい" />
+        <form name="predicate_polite_nonpast" translation="jest straszny" context="none" style="polite non-past" kana="こわいです" />
+        <form name="predicate_plain_negative" translation="nie jest straszny" context="none" style="plain negative" kana="こわくない" />
+        <form name="predicate_polite_negative" translation="nie jest straszny" context="none" style="polite negative" kana="こわくないです" />
+        <form name="predicate_plain_past" translation="był straszny" context="none" style="plain past" kana="こわかった" />
+        <form name="predicate_polite_past" translation="był straszny" context="none" style="polite past" kana="こわかったです" />
+        <form name="predicate_plain_past_negative" translation="nie był straszny" context="none" style="plain past negative" kana="こわくなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był straszny" context="none" style="polite past negative" kana="こわくなかったです" />
+        <form name="attributive_nonpast" translation="straszny" context="none" style="before noun" kana="こわい" />
+        <form name="connective" translation="straszny" context="none" style="connective" kana="こわくて" />
+        <form name="adverbial" translation="strasznie" context="none" style="adverbial" kana="こわく" />
+        <form name="conditional" translation="straszny" context="none" style="conditional" kana="こわければ" />
+        <form name="nominalized" translation="strach" context="none" style="nominalized noun" kana="こわさ" />
+        <form name="appearance_sou" translation="wygląda strasznie" context="none" style="looks" kana="こわそう" />
+        <form name="excessive_sugiru" translation="zbyt straszny" context="none" style="too much" kana="こわすぎる" />
+      </forms>
+    </word>
+    <word id="fushigi" translation="dziwny, tajemniczy" kana="ふしぎ" kanji="不思議" type="na_adjective">
+      <describes categories="person animal place text media thing abstract" />
+      <forms>
+        <form name="predicate_plain_nonpast" translation="jest tajemniczy" context="none" style="plain non-past" kana="ふしぎだ" />
+        <form name="predicate_polite_nonpast" translation="jest tajemniczy" context="none" style="polite non-past" kana="ふしぎです" />
+        <form name="predicate_plain_negative" translation="nie jest tajemniczy" context="none" style="plain negative" kana="ふしぎじゃない" />
+        <form name="predicate_polite_negative" translation="nie jest tajemniczy" context="none" style="polite negative" kana="ふしぎじゃないです" />
+        <form name="predicate_plain_past" translation="był tajemniczy" context="none" style="plain past" kana="ふしぎだった" />
+        <form name="predicate_polite_past" translation="był tajemniczy" context="none" style="polite past" kana="ふしぎでした" />
+        <form name="predicate_plain_past_negative" translation="nie był tajemniczy" context="none" style="plain past negative" kana="ふしぎじゃなかった" />
+        <form name="predicate_polite_past_negative" translation="nie był tajemniczy" context="none" style="polite past negative" kana="ふしぎじゃなかったです" />
+        <form name="attributive_nonpast" translation="tajemniczy" context="none" style="before noun" kana="ふしぎな" />
+        <form name="connective" translation="tajemniczy" context="none" style="connective" kana="ふしぎで" />
+        <form name="adverbial" translation="tajemniczo" context="none" style="adverbial" kana="ふしぎに" />
+        <form name="conditional" translation="tajemniczy" context="none" style="conditional" kana="ふしぎなら" />
+        <form name="nominalized" translation="tajemniczość" context="none" style="nominalized noun" kana="ふしぎさ" />
+        <form name="appearance_sou" translation="wygląda tajemniczo" context="none" style="looks" kana="ふしぎそう" />
+        <form name="excessive_sugiru" translation="zbyt tajemniczy" context="none" style="too much" kana="ふしぎすぎる" />
+      </forms>
+    </word>
   </words>
 </dictionary>
