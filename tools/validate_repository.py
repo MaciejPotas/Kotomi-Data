@@ -226,47 +226,31 @@ def validate_shared_grammar_dependencies() -> None:
                 f"{sorted(unknown)}"
             )
 
-    case_rules = {
-        str(node.get("id", "")): node
-        for node in grammar.findall("./case_rules/case_rule")
-        if node.get("id")
-    }
-    for case_rule_id, node in case_rules.items():
-        mappings = node.findall("./map")
-        if not mappings:
-            raise AssertionError(f"Case rule {case_rule_id} must contain mappings")
-        resolved_forms: set[str] = set()
-        for mapping in mappings:
-            form_ref = str(mapping.get("form_ref", ""))
-            case_ref = str(mapping.get("case_ref", ""))
-            if form_ref not in form_sets:
-                raise AssertionError(
-                    f"Case rule {case_rule_id} references unknown form set: "
-                    f"{form_ref}"
-                )
-            if case_ref not in defined_cases:
-                raise AssertionError(
-                    f"Case rule {case_rule_id} references unknown noun case: "
-                    f"{case_ref}"
-                )
-            overlap = resolved_forms & form_sets[form_ref]
-            if overlap:
-                raise AssertionError(
-                    f"Case rule {case_rule_id} maps forms more than once: "
-                    f"{sorted(overlap)}"
-                )
-            resolved_forms.update(form_sets[form_ref])
-
-    for role in grammar.findall("./roles/role"):
-        role_id = str(role.get("id", ""))
-        case_rule = role.find("case_rule")
-        if case_rule is not None:
-            case_rule_ref = str(case_rule.get("ref", ""))
-            if case_rule_ref not in case_rules:
-                raise AssertionError(
-                    f"Role {role_id} references unknown case rule: "
-                    f"{case_rule_ref}"
-                )
+    noun_case_by_form = grammar.find("./noun_case_by_form")
+    if noun_case_by_form is None:
+        raise AssertionError("grammar_rules.xml must define noun_case_by_form")
+    mappings = noun_case_by_form.findall("./map")
+    if not mappings:
+        raise AssertionError("noun_case_by_form must contain mappings")
+    resolved_forms: set[str] = set()
+    for mapping in mappings:
+        form_ref = str(mapping.get("form_ref", ""))
+        case_ref = str(mapping.get("case_ref", ""))
+        if form_ref not in form_sets:
+            raise AssertionError(
+                f"noun_case_by_form references unknown form set: {form_ref}"
+            )
+        if case_ref not in defined_cases:
+            raise AssertionError(
+                f"noun_case_by_form references unknown noun case: {case_ref}"
+            )
+        overlap = resolved_forms & form_sets[form_ref]
+        if overlap:
+            raise AssertionError(
+                "noun_case_by_form maps forms more than once: "
+                f"{sorted(overlap)}"
+            )
+        resolved_forms.update(form_sets[form_ref])
 
     for path, dictionary in dictionary_roots:
         for role in dictionary.findall(".//usage/role"):
