@@ -44,8 +44,8 @@
     },
     {
       "path": "data/lessons/lessons.xml",
-      "sha256": "8f7970aa02316b37b44f3a81248ad1b7bd51e62cb55876b22d5b8162945514d0",
-      "url": "lessons/lessons.xml?kotomi_sha256=8f7970aa02316b37b44f3a81248ad1b7bd51e62cb55876b22d5b8162945514d0"
+      "sha256": "75755faa307d149f9e7fda0b97ec831e3c5e0477340542bd172ae9bce513cd9e",
+      "url": "lessons/lessons.xml?kotomi_sha256=75755faa307d149f9e7fda0b97ec831e3c5e0477340542bd172ae9bce513cd9e"
     },
     {
       "path": "data/patterns/sentence_maps.xml",
