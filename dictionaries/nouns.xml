@@ -161,9 +161,6 @@
     <word id="ashita" translation="jutro" kana="あした" kanji="明日" type="noun" category="abstract">
       <cases language="pl" nominative="jutro" genitive="jutra" dative="jutru" accusative="jutro" instrumental="jutrem" locative="jutrze" vocative="jutro" />
     </word>
-    <word id="poketto" translation="kieszeń" kana="ポケット" type="noun" category="thing">
-      <cases language="pl" nominative="kieszeń" genitive="kieszeni" dative="kieszeni" accusative="kieszeń" instrumental="kieszenią" locative="kieszeni" vocative="kieszeni" />
-    </word>
     <word id="kagi" translation="klucz" kana="かぎ" kanji="鍵" type="noun" category="thing">
       <cases language="pl" nominative="klucz" genitive="klucza" dative="kluczowi" accusative="klucz" instrumental="kluczem" locative="kluczu" vocative="kluczu" />
     </word>
@@ -175,18 +172,6 @@
     </word>
     <word id="hanashi" translation="opowieść" kana="はなし" kanji="話" type="noun" category="abstract">
       <cases language="pl" nominative="opowieść" genitive="opowieści" dative="opowieści" accusative="opowieść" instrumental="opowieścią" locative="opowieści" vocative="opowieści" />
-    </word>
-    <word id="peru" translation="Peru" kana="ペルー" type="noun" category="place">
-      <cases language="pl" nominative="Peru" genitive="Peru" dative="Peru" accusative="Peru" instrumental="Peru" locative="Peru" vocative="Peru" />
-    </word>
-    <word id="kusuko" translation="Cuzco" kana="クスコ" type="noun" category="place">
-      <cases language="pl" nominative="Cuzco" genitive="Cuzco" dative="Cuzco" accusative="Cuzco" instrumental="Cuzco" locative="Cuzco" vocative="Cuzco" />
-    </word>
-    <word id="poorando" translation="Polska" kana="ポーランド" type="noun" category="place">
-      <cases language="pl" nominative="Polska" genitive="Polski" dative="Polsce" accusative="Polskę" instrumental="Polską" locative="Polsce" vocative="Polsko" />
-    </word>
-    <word id="machupichu" translation="Machu Picchu" kana="マチュピチュ" type="noun" category="place">
-      <cases language="pl" nominative="Machu Picchu" genitive="Machu Picchu" dative="Machu Picchu" accusative="Machu Picchu" instrumental="Machu Picchu" locative="Machu Picchu" vocative="Machu Picchu" />
     </word>
     <word id="saisho" translation="początek" kana="さいしょ" kanji="最初" type="noun" category="abstract">
       <cases language="pl" nominative="początek" genitive="początku" dative="początkowi" accusative="początek" instrumental="początkiem" locative="początku" vocative="początku" />

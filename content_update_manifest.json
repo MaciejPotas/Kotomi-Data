@@ -24,8 +24,8 @@
     },
     {
       "path": "data/dictionaries/nouns.xml",
-      "sha256": "fb90ab8edd1bf40cd2dd9ad9e3d89ef6ce294bb1ea2a4cbb2b0af5d6d4b19fce",
-      "url": "dictionaries/nouns.xml?kotomi_sha256=fb90ab8edd1bf40cd2dd9ad9e3d89ef6ce294bb1ea2a4cbb2b0af5d6d4b19fce"
+      "sha256": "cf0cd4cf80aba949f73da0fa4ffb77222e00d8aff1384bff573d9c6827cf0841",
+      "url": "dictionaries/nouns.xml?kotomi_sha256=cf0cd4cf80aba949f73da0fa4ffb77222e00d8aff1384bff573d9c6827cf0841"
     },
     {
       "path": "data/dictionaries/verbs.xml",
@@ -44,8 +44,8 @@
     },
     {
       "path": "data/lessons/lessons.xml",
-      "sha256": "75755faa307d149f9e7fda0b97ec831e3c5e0477340542bd172ae9bce513cd9e",
-      "url": "lessons/lessons.xml?kotomi_sha256=75755faa307d149f9e7fda0b97ec831e3c5e0477340542bd172ae9bce513cd9e"
+      "sha256": "1112d245f02fae88147462dbcf58411734750046dae765d94385d8fff5d14324",
+      "url": "lessons/lessons.xml?kotomi_sha256=1112d245f02fae88147462dbcf58411734750046dae765d94385d8fff5d14324"
     },
     {
       "path": "data/patterns/sentence_maps.xml",
