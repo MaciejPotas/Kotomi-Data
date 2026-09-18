@@ -73,8 +73,8 @@
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
       </patterns>
-      <question>{context[from:main].translation}{verb@main[role:possession][id:aru][form].translation} {noun[category:availability_reason][case:form]}, żeby {pattern}.</question>
-      <answer>{context[from:main].kana}{pattern}{noun[category:availability_reason]}が{verb@main[role:possession][id:aru][form]}</answer>
+      <question>{context[from:main].translation}{verb@main[id:aru][form].translation} {noun[category:availability_reason][case:form]}, żeby {pattern}.</question>
+      <answer>{context[from:main].kana}{pattern}{noun[category:availability_reason]}が{verb@main[id:aru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Możliwość ことができる" category="constructions">
       <patterns form="dictionary" translation="base">
