@@ -275,6 +275,7 @@
       </forms>
     </word>
     <word id="furui" translation="stary" kana="ふるい" kanji="古い" type="i_adjective">
+      <describes categories="concrete" />
       <forms>
         <form name="predicate_plain_nonpast" translation="jest stary" context="none" style="plain non-past" kana="ふるい" />
         <form name="predicate_polite_nonpast" translation="jest stary" context="none" style="polite non-past" kana="ふるいです" />
