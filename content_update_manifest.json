@@ -9,8 +9,8 @@
     },
     {
       "path": "data/dictionaries/adjectives.xml",
-      "sha256": "93b5bd226a70f43fad38388fb9b0721ea7d357885b7dd4e07fbb2548c1c92651",
-      "url": "dictionaries/adjectives.xml?kotomi_sha256=93b5bd226a70f43fad38388fb9b0721ea7d357885b7dd4e07fbb2548c1c92651"
+      "sha256": "5ab9d33a0e744fdb33a64c5a5327be3624c7ccc6f02177a1eb7a72add43c1814",
+      "url": "dictionaries/adjectives.xml?kotomi_sha256=5ab9d33a0e744fdb33a64c5a5327be3624c7ccc6f02177a1eb7a72add43c1814"
     },
     {
       "path": "data/dictionaries/copulas.xml",
@@ -29,8 +29,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "0bfa21c07f91f4a84ba0854059464db160b8cf1adef1d25f10982cb7d7a9de9e",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=0bfa21c07f91f4a84ba0854059464db160b8cf1adef1d25f10982cb7d7a9de9e"
+      "sha256": "ef129c14bad1c58cfd3f4dc8d85cdf1358e0acc317b229e278bcc94e3696319b",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=ef129c14bad1c58cfd3f4dc8d85cdf1358e0acc317b229e278bcc94e3696319b"
     },
     {
       "path": "data/grammar/contexts.xml",
