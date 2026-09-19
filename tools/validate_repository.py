@@ -207,6 +207,34 @@ def validate_shared_grammar_dependencies() -> None:
         for attribute in cases.attrib
         if attribute != "language"
     }
+    form_property_nodes = grammar.findall("./form_properties/form")
+    seen_form_properties: set[str] = set()
+    for node in form_property_nodes:
+        ref = str(node.get("ref", ""))
+        if not ref:
+            raise AssertionError("form_properties entry must define ref")
+        if ref in seen_form_properties:
+            raise AssertionError(
+                f"Duplicate form_properties entry: {ref}"
+            )
+        seen_form_properties.add(ref)
+        if ref not in defined_forms:
+            raise AssertionError(
+                f"form_properties references unknown form: {ref}"
+            )
+        if not any(
+            (node.get(attribute) or "").strip()
+            for attribute in ("tense", "polarity", "register")
+        ):
+            raise AssertionError(
+                f"form_properties entry {ref} has no metadata"
+            )
+        polarity = (node.get("polarity") or "").strip()
+        if polarity and polarity not in {"affirmative", "negative"}:
+            raise AssertionError(
+                f"form_properties entry {ref} has invalid polarity: {polarity}"
+            )
+
     form_sets = {
         str(node.get("id", "")): {
             str(form.get("ref", ""))
