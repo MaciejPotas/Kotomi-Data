@@ -14,6 +14,24 @@
     <category id="abstract" label="Abstract" selectable="true" />
     <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
   </noun_categories>
+  <form_properties>
+    <form ref="dictionary" tense="nonpast" polarity="affirmative" register="plain" />
+    <form ref="polite_nonpast" tense="nonpast" polarity="affirmative" register="polite" />
+    <form ref="plain_negative" tense="nonpast" polarity="negative" register="plain" />
+    <form ref="polite_negative" tense="nonpast" polarity="negative" register="polite" />
+    <form ref="past_plain" tense="past" polarity="affirmative" register="plain" />
+    <form ref="past_polite" tense="past" polarity="affirmative" register="polite" />
+    <form ref="past_negative_plain" tense="past" polarity="negative" register="plain" />
+    <form ref="past_negative_polite" tense="past" polarity="negative" register="polite" />
+    <form ref="predicate_plain_nonpast" tense="nonpast" polarity="affirmative" register="plain" />
+    <form ref="predicate_polite_nonpast" tense="nonpast" polarity="affirmative" register="polite" />
+    <form ref="predicate_plain_negative" tense="nonpast" polarity="negative" register="plain" />
+    <form ref="predicate_polite_negative" tense="nonpast" polarity="negative" register="polite" />
+    <form ref="predicate_plain_past" tense="past" polarity="affirmative" register="plain" />
+    <form ref="predicate_polite_past" tense="past" polarity="affirmative" register="polite" />
+    <form ref="predicate_plain_past_negative" tense="past" polarity="negative" register="plain" />
+    <form ref="predicate_polite_past_negative" tense="past" polarity="negative" register="polite" />
+  </form_properties>
   <form_sets>
     <form_set id="affirmative">
       <form ref="dictionary" />
