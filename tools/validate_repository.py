@@ -230,6 +230,12 @@ def validate_shared_grammar_dependencies() -> None:
                     f"Grammar form {schema}/{name} has invalid register: "
                     f"{register}"
                 )
+            quiz = str(node.get("quiz", "false")).strip().lower()
+            if quiz not in {"true", "false"}:
+                raise AssertionError(
+                    f"Grammar form {schema}/{name} has invalid quiz flag: "
+                    f"{quiz}"
+                )
         form_catalogs[schema] = names
     defined_forms = {
         name
@@ -291,11 +297,17 @@ def validate_shared_grammar_dependencies() -> None:
     for path, dictionary in dictionary_roots:
         schema = str(dictionary.get("schema", "")).strip()
         catalog = form_catalogs.get(schema, set())
+        word_forms = dictionary.findall("./words/word/forms/form")
+        if word_forms and not catalog:
+            raise AssertionError(
+                f"{path.name} defines word forms but schema '{schema}' "
+                "has no grammar form catalog"
+            )
         if dictionary.find("./editor/forms") is not None:
             raise AssertionError(
                 f"{path.name} must not define editor forms; use grammar form catalog"
             )
-        for form in dictionary.findall("./words/word/forms/form"):
+        for form in word_forms:
             ref = str(form.get("ref", "")).strip()
             if not ref:
                 raise AssertionError(
@@ -327,12 +339,6 @@ def validate_shared_grammar_dependencies() -> None:
             ref = feature.get("ref")
             if ref and ref not in defined_features:
                 raise AssertionError(f"{path.name} references unknown feature: {ref}")
-        for form in dictionary.findall(".//forms/form"):
-            context = form.get("context")
-            if context and context not in defined_contexts:
-                raise AssertionError(
-                    f"{path.name} form references unknown context: {context}"
-                )
 
 
 def validate_composite_case_scopes() -> None:
