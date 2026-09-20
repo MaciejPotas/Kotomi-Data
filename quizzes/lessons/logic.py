@@ -33,7 +33,6 @@ from kotomi.application.lesson_catalog_sync import synchronize_catalog
 from kotomi.core.lessons import (
     FIELD_LABELS,
     FORM_LABELS,
-    FORM_ORDER,
     Lesson,
     LessonCatalog,
     LessonWord,
@@ -312,7 +311,6 @@ __all__ = [
     "QUIZ_PROJECT",
     "FIELD_LABELS",
     "FORM_LABELS",
-    "FORM_ORDER",
     "Lesson",
     "LessonCatalog",
     "LessonWord",
