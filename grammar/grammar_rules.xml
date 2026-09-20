@@ -16,14 +16,14 @@
   </noun_categories>
   <form_catalogs>
     <form_catalog schema="verb">
-      <form name="dictionary" context="present" style="potoczna" polarity="affirmative" register="plain" quiz="true" />
-      <form name="polite_nonpast" context="present" style="uprzejma" polarity="affirmative" register="polite" quiz="true" />
-      <form name="plain_negative" context="present" style="potoczna przecząca" polarity="negative" register="plain" quiz="true" />
-      <form name="polite_negative" context="present" style="uprzejma przecząca" polarity="negative" register="polite" quiz="true" />
-      <form name="past_plain" context="past" style="potoczna przeszła" polarity="affirmative" register="plain" quiz="true" />
-      <form name="past_polite" context="past" style="uprzejma przeszła" polarity="affirmative" register="polite" quiz="true" />
-      <form name="past_negative_plain" context="past" style="potoczna przeszła przecząca" polarity="negative" register="plain" quiz="true" />
-      <form name="past_negative_polite" context="past" style="uprzejma przeszła przecząca" polarity="negative" register="polite" quiz="true" />
+      <form name="dictionary" context="present" style="potoczna" polarity="affirmative" register="plain" polarity_group="plain_nonpast" quiz="true" />
+      <form name="polite_nonpast" context="present" style="uprzejma" polarity="affirmative" register="polite" polarity_group="polite_nonpast" quiz="true" />
+      <form name="plain_negative" context="present" style="potoczna przecząca" polarity="negative" register="plain" polarity_group="plain_nonpast" quiz="true" />
+      <form name="polite_negative" context="present" style="uprzejma przecząca" polarity="negative" register="polite" polarity_group="polite_nonpast" quiz="true" />
+      <form name="past_plain" context="past" style="potoczna przeszła" polarity="affirmative" register="plain" polarity_group="plain_past" quiz="true" />
+      <form name="past_polite" context="past" style="uprzejma przeszła" polarity="affirmative" register="polite" polarity_group="polite_past" quiz="true" />
+      <form name="past_negative_plain" context="past" style="potoczna przeszła przecząca" polarity="negative" register="plain" polarity_group="plain_past" quiz="true" />
+      <form name="past_negative_polite" context="past" style="uprzejma przeszła przecząca" polarity="negative" register="polite" polarity_group="polite_past" quiz="true" />
       <form name="te_form" context="none" style="forma て" />
       <form name="potential" context="none" style="potencjalna" />
       <form name="passive" context="none" style="bierna" />
@@ -33,14 +33,14 @@
       <form name="imperative" context="none" style="rozkazująca" />
     </form_catalog>
     <form_catalog schema="adjective">
-      <form name="predicate_plain_nonpast" context="present" style="plain non-past" polarity="affirmative" register="plain" quiz="true" />
-      <form name="predicate_polite_nonpast" context="present" style="polite non-past" polarity="affirmative" register="polite" quiz="true" />
-      <form name="predicate_plain_negative" context="present" style="plain negative" polarity="negative" register="plain" quiz="true" />
-      <form name="predicate_polite_negative" context="present" style="polite negative" polarity="negative" register="polite" quiz="true" />
-      <form name="predicate_plain_past" context="past" style="plain past" polarity="affirmative" register="plain" quiz="true" />
-      <form name="predicate_polite_past" context="past" style="polite past" polarity="affirmative" register="polite" quiz="true" />
-      <form name="predicate_plain_past_negative" context="past" style="plain past negative" polarity="negative" register="plain" quiz="true" />
-      <form name="predicate_polite_past_negative" context="past" style="polite past negative" polarity="negative" register="polite" quiz="true" />
+      <form name="predicate_plain_nonpast" context="none" style="plain non-past" polarity="affirmative" register="plain" polarity_group="predicate_plain_nonpast" quiz="true" />
+      <form name="predicate_polite_nonpast" context="none" style="polite non-past" polarity="affirmative" register="polite" polarity_group="predicate_polite_nonpast" quiz="true" />
+      <form name="predicate_plain_negative" context="none" style="plain negative" polarity="negative" register="plain" polarity_group="predicate_plain_nonpast" quiz="true" />
+      <form name="predicate_polite_negative" context="none" style="polite negative" polarity="negative" register="polite" polarity_group="predicate_polite_nonpast" quiz="true" />
+      <form name="predicate_plain_past" context="none" style="plain past" polarity="affirmative" register="plain" polarity_group="predicate_plain_past" quiz="true" />
+      <form name="predicate_polite_past" context="none" style="polite past" polarity="affirmative" register="polite" polarity_group="predicate_polite_past" quiz="true" />
+      <form name="predicate_plain_past_negative" context="none" style="plain past negative" polarity="negative" register="plain" polarity_group="predicate_plain_past" quiz="true" />
+      <form name="predicate_polite_past_negative" context="none" style="polite past negative" polarity="negative" register="polite" polarity_group="predicate_polite_past" quiz="true" />
       <form name="attributive_nonpast" context="none" style="before noun" />
       <form name="connective" context="none" style="connective" />
       <form name="adverbial" context="none" style="adverbial" />
@@ -50,14 +50,14 @@
       <form name="excessive_sugiru" context="none" style="too much" />
     </form_catalog>
     <form_catalog schema="copula">
-      <form name="dictionary" context="present" style="plain non-past" polarity="affirmative" register="plain" quiz="true" />
-      <form name="polite_nonpast" context="present" style="polite non-past" polarity="affirmative" register="polite" quiz="true" />
-      <form name="plain_negative" context="present" style="plain negative" polarity="negative" register="plain" quiz="true" />
-      <form name="polite_negative" context="present" style="polite negative" polarity="negative" register="polite" quiz="true" />
-      <form name="past_plain" context="past" style="plain past" polarity="affirmative" register="plain" quiz="true" />
-      <form name="past_polite" context="past" style="polite past" polarity="affirmative" register="polite" quiz="true" />
-      <form name="past_negative_plain" context="past" style="plain past negative" polarity="negative" register="plain" quiz="true" />
-      <form name="past_negative_polite" context="past" style="polite past negative" polarity="negative" register="polite" quiz="true" />
+      <form name="dictionary" context="none" style="plain non-past" polarity="affirmative" register="plain" polarity_group="plain_nonpast" quiz="true" />
+      <form name="polite_nonpast" context="none" style="polite non-past" polarity="affirmative" register="polite" polarity_group="polite_nonpast" quiz="true" />
+      <form name="plain_negative" context="none" style="plain negative" polarity="negative" register="plain" polarity_group="plain_nonpast" quiz="true" />
+      <form name="polite_negative" context="none" style="polite negative" polarity="negative" register="polite" polarity_group="polite_nonpast" quiz="true" />
+      <form name="past_plain" context="none" style="plain past" polarity="affirmative" register="plain" polarity_group="plain_past" quiz="true" />
+      <form name="past_polite" context="none" style="polite past" polarity="affirmative" register="polite" polarity_group="polite_past" quiz="true" />
+      <form name="past_negative_plain" context="none" style="plain past negative" polarity="negative" register="plain" polarity_group="plain_past" quiz="true" />
+      <form name="past_negative_polite" context="none" style="polite past negative" polarity="negative" register="polite" polarity_group="polite_past" quiz="true" />
     </form_catalog>
   </form_catalogs>
   <form_sets>
