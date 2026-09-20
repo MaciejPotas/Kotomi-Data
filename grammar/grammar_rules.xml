@@ -60,31 +60,9 @@
       <form name="past_negative_polite" context="past" style="polite past negative" polarity="negative" register="polite" polarity_group="polite_past" quiz="true" />
     </form_catalog>
   </form_catalogs>
-  <form_sets>
-    <form_set id="affirmative">
-      <form ref="dictionary" />
-      <form ref="polite_nonpast" />
-      <form ref="past_plain" />
-      <form ref="past_polite" />
-      <form ref="predicate_plain_nonpast" />
-      <form ref="predicate_polite_nonpast" />
-      <form ref="predicate_plain_past" />
-      <form ref="predicate_polite_past" />
-    </form_set>
-    <form_set id="negative">
-      <form ref="plain_negative" />
-      <form ref="polite_negative" />
-      <form ref="past_negative_plain" />
-      <form ref="past_negative_polite" />
-      <form ref="predicate_plain_negative" />
-      <form ref="predicate_polite_negative" />
-      <form ref="predicate_plain_past_negative" />
-      <form ref="predicate_polite_past_negative" />
-    </form_set>
-  </form_sets>
   <noun_case_by_form>
-    <map form_ref="affirmative" case_ref="accusative" />
-    <map form_ref="negative" case_ref="genitive" />
+    <map polarity="affirmative" case_ref="accusative" />
+    <map polarity="negative" case_ref="genitive" />
   </noun_case_by_form>
   <roles>
     <role id="object" label="Object" particle="を" />
