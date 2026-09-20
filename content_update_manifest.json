@@ -9,13 +9,13 @@
     },
     {
       "path": "data/dictionaries/adjectives.xml",
-      "sha256": "f04c05a5cdb3eab5f881002f06c8734e6225777dc61dcdb28f45a9cda06853ca",
-      "url": "dictionaries/adjectives.xml?kotomi_sha256=f04c05a5cdb3eab5f881002f06c8734e6225777dc61dcdb28f45a9cda06853ca"
+      "sha256": "f400e955633fb0e6f72d8895ca23aefd873e9fa3fda379b536f6450355ba75cd",
+      "url": "dictionaries/adjectives.xml?kotomi_sha256=f400e955633fb0e6f72d8895ca23aefd873e9fa3fda379b536f6450355ba75cd"
     },
     {
       "path": "data/dictionaries/copulas.xml",
-      "sha256": "c3f0b034375ccea5ba0185032dff50cd6ba2c5407475b3e7bbe0fab1fc7087da",
-      "url": "dictionaries/copulas.xml?kotomi_sha256=c3f0b034375ccea5ba0185032dff50cd6ba2c5407475b3e7bbe0fab1fc7087da"
+      "sha256": "fd1194135d44f08e904216ff3d5fb16fb304050faf5df7bfc8816b4208fd26bd",
+      "url": "dictionaries/copulas.xml?kotomi_sha256=fd1194135d44f08e904216ff3d5fb16fb304050faf5df7bfc8816b4208fd26bd"
     },
     {
       "path": "data/dictionaries/interrogatives.xml",
@@ -29,8 +29,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "22fde5ea58f2b3fd536d2e5c258582c1ba73c6f115fa2f336426f5489d17efb9",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=22fde5ea58f2b3fd536d2e5c258582c1ba73c6f115fa2f336426f5489d17efb9"
+      "sha256": "ae7ef13b9bc003a870a8438aca056ca6c49359f707ceb76474deeccee8093d3f",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=ae7ef13b9bc003a870a8438aca056ca6c49359f707ceb76474deeccee8093d3f"
     },
     {
       "path": "data/grammar/contexts.xml",
@@ -39,8 +39,8 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "2afd6a01a5331572a00dce68660c74658fed669dfa8e4041f9a83213552f3fa5",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=2afd6a01a5331572a00dce68660c74658fed669dfa8e4041f9a83213552f3fa5"
+      "sha256": "8795126a5bfee99e68daa3c38bc30672ba6d3f31616b9fb39ce37e8cfe2995d9",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=8795126a5bfee99e68daa3c38bc30672ba6d3f31616b9fb39ce37e8cfe2995d9"
     },
     {
       "path": "data/lessons/lessons.xml",
