@@ -24,6 +24,7 @@ if str(INSTALL_ROOT) not in sys.path:
 
 from kotomi.core.project import ProjectError, Word
 from kotomi.application.generation_engine import SharedQuizEngine
+from kotomi.application.quiz_project import QuizProject
 from kotomi.core.generation import balanced_choice, normalize_answer
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from kotomi.application.settings_xml import load_settings, save_settings
@@ -419,15 +420,15 @@ class AvailabilityQuizEngine:
     ) -> None:
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.shared_engine = SharedQuizEngine(self.project_path, self.rng)
-        self.project = self.shared_engine.project
+        self.project = QuizProject.load(self.project_path)
+        self.shared_engine = SharedQuizEngine(self.project, self.rng)
         issues = self.project.validate()
         if issues:
             raise MobileQuizError("\n".join(issues))
 
     def reload(self) -> None:
-        self.shared_engine.reload()
-        self.project = self.shared_engine.project
+        self.project = QuizProject.load(self.project_path)
+        self.shared_engine = SharedQuizEngine(self.project, self.rng)
         issues = self.project.validate()
         if issues:
             raise MobileQuizError("\n".join(issues))
