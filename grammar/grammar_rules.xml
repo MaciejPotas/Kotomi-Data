@@ -14,24 +14,52 @@
     <category id="abstract" label="Abstract" selectable="true" />
     <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
   </noun_categories>
-  <form_properties>
-    <form ref="dictionary" tense="nonpast" polarity="affirmative" register="plain" />
-    <form ref="polite_nonpast" tense="nonpast" polarity="affirmative" register="polite" />
-    <form ref="plain_negative" tense="nonpast" polarity="negative" register="plain" />
-    <form ref="polite_negative" tense="nonpast" polarity="negative" register="polite" />
-    <form ref="past_plain" tense="past" polarity="affirmative" register="plain" />
-    <form ref="past_polite" tense="past" polarity="affirmative" register="polite" />
-    <form ref="past_negative_plain" tense="past" polarity="negative" register="plain" />
-    <form ref="past_negative_polite" tense="past" polarity="negative" register="polite" />
-    <form ref="predicate_plain_nonpast" tense="nonpast" polarity="affirmative" register="plain" />
-    <form ref="predicate_polite_nonpast" tense="nonpast" polarity="affirmative" register="polite" />
-    <form ref="predicate_plain_negative" tense="nonpast" polarity="negative" register="plain" />
-    <form ref="predicate_polite_negative" tense="nonpast" polarity="negative" register="polite" />
-    <form ref="predicate_plain_past" tense="past" polarity="affirmative" register="plain" />
-    <form ref="predicate_polite_past" tense="past" polarity="affirmative" register="polite" />
-    <form ref="predicate_plain_past_negative" tense="past" polarity="negative" register="plain" />
-    <form ref="predicate_polite_past_negative" tense="past" polarity="negative" register="polite" />
-  </form_properties>
+  <form_catalogs>
+    <form_catalog schema="verb">
+      <form name="dictionary" context="present" style="potoczna" polarity="affirmative" register="plain" quiz="true" />
+      <form name="polite_nonpast" context="present" style="uprzejma" polarity="affirmative" register="polite" quiz="true" />
+      <form name="plain_negative" context="present" style="potoczna przecząca" polarity="negative" register="plain" quiz="true" />
+      <form name="polite_negative" context="present" style="uprzejma przecząca" polarity="negative" register="polite" quiz="true" />
+      <form name="past_plain" context="past" style="potoczna przeszła" polarity="affirmative" register="plain" quiz="true" />
+      <form name="past_polite" context="past" style="uprzejma przeszła" polarity="affirmative" register="polite" quiz="true" />
+      <form name="past_negative_plain" context="past" style="potoczna przeszła przecząca" polarity="negative" register="plain" quiz="true" />
+      <form name="past_negative_polite" context="past" style="uprzejma przeszła przecząca" polarity="negative" register="polite" quiz="true" />
+      <form name="te_form" context="none" style="forma て" />
+      <form name="potential" context="none" style="potencjalna" />
+      <form name="passive" context="none" style="bierna" />
+      <form name="causative" context="none" style="kauzatywna" />
+      <form name="tara" context="none" style="warunkowa たら" />
+      <form name="volitional" context="none" style="wolicjonalna" />
+      <form name="imperative" context="none" style="rozkazująca" />
+    </form_catalog>
+    <form_catalog schema="adjective">
+      <form name="predicate_plain_nonpast" context="present" style="plain non-past" polarity="affirmative" register="plain" quiz="true" />
+      <form name="predicate_polite_nonpast" context="present" style="polite non-past" polarity="affirmative" register="polite" quiz="true" />
+      <form name="predicate_plain_negative" context="present" style="plain negative" polarity="negative" register="plain" quiz="true" />
+      <form name="predicate_polite_negative" context="present" style="polite negative" polarity="negative" register="polite" quiz="true" />
+      <form name="predicate_plain_past" context="past" style="plain past" polarity="affirmative" register="plain" quiz="true" />
+      <form name="predicate_polite_past" context="past" style="polite past" polarity="affirmative" register="polite" quiz="true" />
+      <form name="predicate_plain_past_negative" context="past" style="plain past negative" polarity="negative" register="plain" quiz="true" />
+      <form name="predicate_polite_past_negative" context="past" style="polite past negative" polarity="negative" register="polite" quiz="true" />
+      <form name="attributive_nonpast" context="none" style="before noun" />
+      <form name="connective" context="none" style="connective" />
+      <form name="adverbial" context="none" style="adverbial" />
+      <form name="conditional" context="none" style="conditional" />
+      <form name="nominalized" context="none" style="nominalized noun" />
+      <form name="appearance_sou" context="none" style="looks" />
+      <form name="excessive_sugiru" context="none" style="too much" />
+    </form_catalog>
+    <form_catalog schema="copula">
+      <form name="dictionary" context="present" style="plain non-past" polarity="affirmative" register="plain" quiz="true" />
+      <form name="polite_nonpast" context="present" style="polite non-past" polarity="affirmative" register="polite" quiz="true" />
+      <form name="plain_negative" context="present" style="plain negative" polarity="negative" register="plain" quiz="true" />
+      <form name="polite_negative" context="present" style="polite negative" polarity="negative" register="polite" quiz="true" />
+      <form name="past_plain" context="past" style="plain past" polarity="affirmative" register="plain" quiz="true" />
+      <form name="past_polite" context="past" style="polite past" polarity="affirmative" register="polite" quiz="true" />
+      <form name="past_negative_plain" context="past" style="plain past negative" polarity="negative" register="plain" quiz="true" />
+      <form name="past_negative_polite" context="past" style="polite past negative" polarity="negative" register="polite" quiz="true" />
+    </form_catalog>
+  </form_catalogs>
   <form_sets>
     <form_set id="affirmative">
       <form ref="dictionary" />
