@@ -66,12 +66,20 @@
       <form ref="polite_nonpast" />
       <form ref="past_plain" />
       <form ref="past_polite" />
+      <form ref="predicate_plain_nonpast" />
+      <form ref="predicate_polite_nonpast" />
+      <form ref="predicate_plain_past" />
+      <form ref="predicate_polite_past" />
     </form_set>
     <form_set id="negative">
       <form ref="plain_negative" />
       <form ref="polite_negative" />
       <form ref="past_negative_plain" />
       <form ref="past_negative_polite" />
+      <form ref="predicate_plain_negative" />
+      <form ref="predicate_polite_negative" />
+      <form ref="predicate_plain_past_negative" />
+      <form ref="predicate_polite_past_negative" />
     </form_set>
   </form_sets>
   <noun_case_by_form>
