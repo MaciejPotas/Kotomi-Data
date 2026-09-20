@@ -32,6 +32,7 @@ from kotomi.core.project import (
     Word,
 )
 from kotomi.application.generation_engine import SharedQuizEngine
+from kotomi.application.quiz_project import QuizProject
 from kotomi.core.generation import normalize_answer
 from kotomi.application.settings_xml import load_settings, save_settings
 from platforms.mobile.presentation import (
@@ -396,13 +397,13 @@ class AdjectiveQuizEngine:
     ) -> None:
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.shared_engine = SharedQuizEngine(self.project_path, self.rng)
-        self.project = self.shared_engine.project
+        self.project = QuizProject.load(self.project_path)
+        self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
     def reload(self) -> None:
-        self.shared_engine.reload()
-        self.project = self.shared_engine.project
+        self.project = QuizProject.load(self.project_path)
+        self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
     def _validate_project(self) -> None:
