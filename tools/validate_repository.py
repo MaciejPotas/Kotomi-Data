@@ -201,6 +201,7 @@ def validate_shared_grammar_dependencies() -> None:
         if schema in form_catalogs:
             raise AssertionError(f"Duplicate form catalog for schema: {schema}")
         names: set[str] = set()
+        polarity_targets: set[tuple[str, str]] = set()
         for node in catalog.findall("./form"):
             name = str(node.get("name", "")).strip()
             if not name:
@@ -230,6 +231,22 @@ def validate_shared_grammar_dependencies() -> None:
                     f"Grammar form {schema}/{name} has invalid register: "
                     f"{register}"
                 )
+            polarity_group = str(
+                node.get("polarity_group", "")
+            ).strip()
+            if polarity_group:
+                if not polarity:
+                    raise AssertionError(
+                        f"Grammar form {schema}/{name} defines "
+                        "polarity_group without polarity"
+                    )
+                target = (polarity_group, polarity)
+                if target in polarity_targets:
+                    raise AssertionError(
+                        f"Form catalog {schema} defines more than one "
+                        f"{polarity} form in polarity group {polarity_group}"
+                    )
+                polarity_targets.add(target)
             quiz = str(node.get("quiz", "false")).strip().lower()
             if quiz not in {"true", "false"}:
                 raise AssertionError(
