@@ -193,12 +193,48 @@ def validate_shared_grammar_dependencies() -> None:
         (path, ET.parse(path).getroot())
         for path in sorted((ROOT / "dictionaries").glob("*.xml"))
     ]
+    form_catalogs: dict[str, set[str]] = {}
+    for catalog in grammar.findall("./form_catalogs/form_catalog"):
+        schema = str(catalog.get("schema", "")).strip()
+        if not schema:
+            raise AssertionError("form_catalog must define schema")
+        if schema in form_catalogs:
+            raise AssertionError(f"Duplicate form catalog for schema: {schema}")
+        names: set[str] = set()
+        for node in catalog.findall("./form"):
+            name = str(node.get("name", "")).strip()
+            if not name:
+                raise AssertionError(
+                    f"form_catalog {schema} contains form without name"
+                )
+            if name in names:
+                raise AssertionError(
+                    f"Duplicate grammar form in {schema}: {name}"
+                )
+            names.add(name)
+            context = str(node.get("context", "none")).strip() or "none"
+            if context not in defined_contexts:
+                raise AssertionError(
+                    f"Grammar form {schema}/{name} references unknown "
+                    f"context: {context}"
+                )
+            polarity = str(node.get("polarity", "")).strip()
+            if polarity and polarity not in {"affirmative", "negative"}:
+                raise AssertionError(
+                    f"Grammar form {schema}/{name} has invalid polarity: "
+                    f"{polarity}"
+                )
+            register = str(node.get("register", "")).strip()
+            if register and register not in {"plain", "polite"}:
+                raise AssertionError(
+                    f"Grammar form {schema}/{name} has invalid register: "
+                    f"{register}"
+                )
+        form_catalogs[schema] = names
     defined_forms = {
-        value
-        for _path, dictionary in dictionary_roots
-        for node in dictionary.findall(".//forms/form")
-        for value in [node.get("name")]
-        if value
+        name
+        for names in form_catalogs.values()
+        for name in names
     }
     defined_cases = {
         attribute
@@ -207,34 +243,6 @@ def validate_shared_grammar_dependencies() -> None:
         for attribute in cases.attrib
         if attribute != "language"
     }
-    form_property_nodes = grammar.findall("./form_properties/form")
-    seen_form_properties: set[str] = set()
-    for node in form_property_nodes:
-        ref = str(node.get("ref", ""))
-        if not ref:
-            raise AssertionError("form_properties entry must define ref")
-        if ref in seen_form_properties:
-            raise AssertionError(
-                f"Duplicate form_properties entry: {ref}"
-            )
-        seen_form_properties.add(ref)
-        if ref not in defined_forms:
-            raise AssertionError(
-                f"form_properties references unknown form: {ref}"
-            )
-        if not any(
-            (node.get(attribute) or "").strip()
-            for attribute in ("tense", "polarity", "register")
-        ):
-            raise AssertionError(
-                f"form_properties entry {ref} has no metadata"
-            )
-        polarity = (node.get("polarity") or "").strip()
-        if polarity and polarity not in {"affirmative", "negative"}:
-            raise AssertionError(
-                f"form_properties entry {ref} has invalid polarity: {polarity}"
-            )
-
     form_sets = {
         str(node.get("id", "")): {
             str(form.get("ref", ""))
@@ -281,6 +289,31 @@ def validate_shared_grammar_dependencies() -> None:
         resolved_forms.update(form_sets[form_ref])
 
     for path, dictionary in dictionary_roots:
+        schema = str(dictionary.get("schema", "")).strip()
+        catalog = form_catalogs.get(schema, set())
+        if dictionary.find("./editor/forms") is not None:
+            raise AssertionError(
+                f"{path.name} must not define editor forms; use grammar form catalog"
+            )
+        for form in dictionary.findall("./words/word/forms/form"):
+            ref = str(form.get("ref", "")).strip()
+            if not ref:
+                raise AssertionError(
+                    f"{path.name} word form must use ref"
+                )
+            if ref not in catalog:
+                raise AssertionError(
+                    f"{path.name} references unknown {schema} form: {ref}"
+                )
+            local_grammar = {
+                key for key in ("name", "context", "style", "tense", "polarity", "register")
+                if key in form.attrib
+            }
+            if local_grammar:
+                raise AssertionError(
+                    f"{path.name} stores grammar metadata locally for {ref}: "
+                    f"{sorted(local_grammar)}"
+                )
         for role in dictionary.findall(".//usage/role"):
             ref = role.get("ref")
             if ref and ref not in defined_roles:
