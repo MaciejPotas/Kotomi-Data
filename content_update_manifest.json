@@ -39,8 +39,8 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "8078960e1f77133f37b8ba9cc990e1dc4e1ddc54a492818d3c261cb199778e8f",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=8078960e1f77133f37b8ba9cc990e1dc4e1ddc54a492818d3c261cb199778e8f"
+      "sha256": "ac8379ebd97b43c32847aaa996708a846b701820560d8691ba8343d7d82031a4",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=ac8379ebd97b43c32847aaa996708a846b701820560d8691ba8343d7d82031a4"
     },
     {
       "path": "data/lessons/lessons.xml",
