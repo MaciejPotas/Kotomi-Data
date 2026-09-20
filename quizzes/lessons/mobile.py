@@ -963,10 +963,6 @@ def create_app_class():
             root.add_widget(button_row([select_all, clear]))
             scroll, self.form_stack = scroll_stack(6, interactive_bar=True)
             self.checks: Dict[str, MobileOptionToggle] = {}
-            for form_name in FORM_ORDER:
-                check = MobileOptionToggle(text=form_label(form_name))
-                self.checks[form_name] = check
-                self.form_stack.add_widget(check)
             root.add_widget(scroll)
             start = AppButton(text=ui_text("action.start", ""))
             start.bind(on_release=lambda *_: self.start())
@@ -984,13 +980,16 @@ def create_app_class():
             lesson = self.kotomi.current_lesson()
             self.title.text = ui_text("quiz.conjugation", "") + "\n" + lesson.path
             self.asked.text = field_label(self.kotomi.settings.asked_field)
-            available = set(available_forms(self.kotomi.catalog, lesson))
-            for form_name, check in self.checks.items():
-                check.disabled = form_name not in available
+            available = available_forms(self.kotomi.catalog, lesson)
+            self.form_stack.clear_widgets()
+            self.checks = {}
+            for form_name in available:
+                check = MobileOptionToggle(text=form_label(form_name))
                 check.active = (
-                    form_name in available
-                    and form_name in self.kotomi.settings.conjugation_forms
+                    form_name in self.kotomi.settings.conjugation_forms
                 )
+                self.checks[form_name] = check
+                self.form_stack.add_widget(check)
 
         def start(self) -> None:
             selected = [name for name, check in self.checks.items() if check.active]
