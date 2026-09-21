@@ -52,6 +52,39 @@ CONTENT_DIRECTORIES = {
     "tools",
 }
 ROOT_XML_FILES = {"quiz_project.xml"}
+VALID_POLARITIES = {"affirmative", "negative"}
+WORD_FORM_ATTRIBUTES = {
+    "ref",
+    "translation",
+    "kana",
+    "kanji",
+    "romaji",
+}
+
+
+def validate_polarity_group(
+    schema: str,
+    group_name: str,
+    members: dict[str, tuple[str, str]],
+) -> None:
+    """Validate one polarity pair owned by a grammar form catalog."""
+
+    if set(members) != VALID_POLARITIES:
+        raise AssertionError(
+            f"Form catalog {schema} polarity group {group_name} must "
+            "define exactly one affirmative and one negative form"
+        )
+    if members["affirmative"] != members["negative"]:
+        raise AssertionError(
+            f"Form catalog {schema} polarity group {group_name} must "
+            "preserve context and register across polarity"
+        )
+
+
+def unexpected_word_form_attributes(attributes: object) -> set[str]:
+    """Return attributes that do not belong in a word-local form value."""
+
+    return set(attributes) - WORD_FORM_ATTRIBUTES
 
 
 def load_json(path: Path) -> dict[str, object]:
@@ -222,7 +255,7 @@ def validate_shared_grammar_dependencies() -> None:
                     f"context: {context}"
                 )
             polarity = str(node.get("polarity", "")).strip()
-            if polarity and polarity not in {"affirmative", "negative"}:
+            if polarity and polarity not in VALID_POLARITIES:
                 raise AssertionError(
                     f"Grammar form {schema}/{name} has invalid polarity: "
                     f"{polarity}"
@@ -260,18 +293,7 @@ def validate_shared_grammar_dependencies() -> None:
                     f"{quiz}"
                 )
         for group_name, members in polarity_groups.items():
-            if set(members) != {"affirmative", "negative"}:
-                raise AssertionError(
-                    f"Form catalog {schema} polarity group {group_name} must "
-                    "define exactly one affirmative and one negative form"
-                )
-            affirmative = members["affirmative"]
-            negative = members["negative"]
-            if affirmative != negative:
-                raise AssertionError(
-                    f"Form catalog {schema} polarity group {group_name} must "
-                    "preserve context and register across polarity"
-                )
+            validate_polarity_group(schema, group_name, members)
         form_catalogs[schema] = names
     defined_cases = {
         attribute
@@ -296,7 +318,7 @@ def validate_shared_grammar_dependencies() -> None:
             )
         polarity = str(mapping.get("polarity", "")).strip()
         case_ref = str(mapping.get("case_ref", "")).strip()
-        if polarity not in {"affirmative", "negative"}:
+        if polarity not in VALID_POLARITIES:
             raise AssertionError(
                 f"noun_case_by_form uses invalid polarity: {polarity}"
             )
@@ -337,13 +359,7 @@ def validate_shared_grammar_dependencies() -> None:
                 raise AssertionError(
                     f"{path.name} references unknown {schema} form: {ref}"
                 )
-            unexpected = set(form.attrib) - {
-                "ref",
-                "translation",
-                "kana",
-                "kanji",
-                "romaji",
-            }
+            unexpected = unexpected_word_form_attributes(form.attrib)
             if unexpected:
                 raise AssertionError(
                     f"{path.name} form {ref} contains unsupported attributes: "
