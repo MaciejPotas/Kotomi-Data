@@ -176,8 +176,8 @@
     <frame id="genitive_object" language="pl">
       <realization polarity="any" case_ref="genitive" />
     </frame>
-    <frame id="dative_object" language="pl">
-      <realization polarity="any" case_ref="dative" />
+    <frame id="w_accusative" language="pl">
+      <realization polarity="any" case_ref="accusative" preposition="w" />
     </frame>
     <frame id="instrumental_object" language="pl">
       <realization polarity="any" case_ref="instrumental" />

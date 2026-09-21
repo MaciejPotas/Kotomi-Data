@@ -2714,7 +2714,7 @@
     </word>
     <word id="shinjiru" translation="wierzyć" kana="しんじる" kanji="信じる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="person text abstract" government="dative_object" />
+        <role ref="object" accepts="person text abstract" government="w_accusative" />
         <role ref="location" />
       </usage>
       <forms>
