@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 16,
+  "revision": 17,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "bdbf3f1c31b66fe42e44aacfceb1bea98666d4f5efb696c2aa180a813b007098",
-      "url": "content_revision.json?kotomi_sha256=bdbf3f1c31b66fe42e44aacfceb1bea98666d4f5efb696c2aa180a813b007098"
+      "sha256": "259762ebb51cc26ade02395949709232ceaff88023eab7410e461df276ae9f32",
+      "url": "content_revision.json?kotomi_sha256=259762ebb51cc26ade02395949709232ceaff88023eab7410e461df276ae9f32"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -29,8 +29,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "0207c169f5ceb2b8a35aa36b7c2534ed9b3c6df52c56b1085e00b393d4812903",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=0207c169f5ceb2b8a35aa36b7c2534ed9b3c6df52c56b1085e00b393d4812903"
+      "sha256": "b475af49b7366328b5fbb884965d76d0181f7c9abbdc6fcb04c4ad0de68a855c",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=b475af49b7366328b5fbb884965d76d0181f7c9abbdc6fcb04c4ad0de68a855c"
     },
     {
       "path": "data/grammar/contexts.xml",
@@ -39,8 +39,8 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "412de1955f5e1c13df8c0cd06f5f2aa67d33e19f25f01aca55efcfa810598ea8",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=412de1955f5e1c13df8c0cd06f5f2aa67d33e19f25f01aca55efcfa810598ea8"
+      "sha256": "f89809dc16a1631f83752bcdf44be5c9737255cfb0918a40882ef2657c0969f7",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=f89809dc16a1631f83752bcdf44be5c9737255cfb0918a40882ef2657c0969f7"
     },
     {
       "path": "data/lessons/lessons.xml",

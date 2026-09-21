@@ -899,7 +899,7 @@
     </word>
     <word id="kiku" translation="słuchać, pytać" kana="きく" kanji="聞く" type="godan" ending="ku">
       <usage>
-        <role ref="object" accepts="media abstract" government="genitive_object" />
+        <role ref="object" accepts="media abstract" government="genitive" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1539,7 +1539,7 @@
     </word>
     <word id="oshieru" translation="uczyć" kana="おしえる" kanji="教える" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="*" government="genitive_object" />
+        <role ref="object" accepts="*" government="genitive" />
         <role ref="target" accepts="person animal" />
         <role ref="location" />
       </usage>
@@ -2203,7 +2203,7 @@
     </word>
     <word id="tsukau" translation="używać" kana="つかう" kanji="使う" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="*" government="direct_object" />
+        <role ref="object" accepts="*" government="genitive" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2455,7 +2455,7 @@
     </word>
     <word id="wasureru" translation="zapominać" kana="わすれる" kanji="忘れる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="*" government="genitive_object" />
+        <role ref="object" accepts="*" government="genitive" />
         <role ref="location" />
       </usage>
       <forms>

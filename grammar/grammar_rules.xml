@@ -169,29 +169,29 @@
       Optional Polish preposition emitted before the declined noun.
   -->
   <polish_government>
-    <frame id="direct_object" language="pl">
+    <frame id="direct_object">
       <realization polarity="affirmative" case_ref="accusative" />
       <realization polarity="negative" case_ref="genitive" />
     </frame>
-    <frame id="genitive_object" language="pl">
+    <frame id="genitive">
       <realization polarity="any" case_ref="genitive" />
     </frame>
-    <frame id="w_accusative" language="pl">
+    <frame id="w_accusative">
       <realization polarity="any" case_ref="accusative" preposition="w" />
     </frame>
-    <frame id="instrumental_object" language="pl">
+    <frame id="instrumental_object">
       <realization polarity="any" case_ref="instrumental" />
     </frame>
-    <frame id="na_accusative" language="pl">
+    <frame id="na_accusative">
       <realization polarity="any" case_ref="accusative" preposition="na" />
     </frame>
-    <frame id="nad_instrumental" language="pl">
+    <frame id="nad_instrumental">
       <realization polarity="any" case_ref="instrumental" preposition="nad" />
     </frame>
-    <frame id="o_locative" language="pl">
+    <frame id="o_locative">
       <realization polarity="any" case_ref="locative" preposition="o" />
     </frame>
-    <frame id="z_genitive" language="pl">
+    <frame id="z_genitive">
       <realization polarity="any" case_ref="genitive" preposition="z" />
     </frame>
   </polish_government>
