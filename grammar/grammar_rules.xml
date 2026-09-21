@@ -61,7 +61,7 @@
 
     form/polarity:
       "affirmative" or "negative". It is defined only for finite forms.
-      [polarity:affirmative] / [polarity:negative] changes this dimension while
+      [polarity:affirmative] and [polarity:negative] change this dimension while
       preserving context and register.
 
     form/register:
@@ -81,7 +81,7 @@
       exactly one affirmative and one negative form. Therefore an explicit
       polarity_group is unnecessary.
 
-    DERIVED / NON-FINITE FORMS:
+    DERIVED AND NON-FINITE FORMS:
       Forms such as te_form, potential, passive, causative, tara, volitional,
       imperative, attributive, connective and similar forms currently use
       context="none". They intentionally omit polarity and register because
