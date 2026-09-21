@@ -65,30 +65,24 @@ FORM_DEFINITION_ATTRIBUTES = {
     "label",
     "lesson_name",
     "context",
-    "style",
     "polarity",
     "register",
-    "polarity_group",
-    "quiz",
 }
 
 
-def validate_polarity_group(
+def validate_polarity_pair(
     schema: str,
-    group_name: str,
-    members: dict[str, tuple[str, str]],
+    context: str,
+    register: str,
+    polarities: set[str],
 ) -> None:
-    """Validate one polarity pair owned by a grammar form catalog."""
+    """Validate one polarity pair derived from context and register."""
 
-    if set(members) != VALID_POLARITIES:
+    if polarities != VALID_POLARITIES:
         raise AssertionError(
-            f"Form catalog {schema} polarity group {group_name} must "
-            "define exactly one affirmative and one negative form"
-        )
-    if members["affirmative"] != members["negative"]:
-        raise AssertionError(
-            f"Form catalog {schema} polarity group {group_name} must "
-            "preserve context and register across polarity"
+            f"Form catalog {schema} must define exactly one affirmative "
+            f"and one negative form for context {context} and register "
+            f"{register}"
         )
 
 
@@ -247,8 +241,8 @@ def validate_shared_grammar_dependencies() -> None:
             raise AssertionError(f"Duplicate form catalog for schema: {schema}")
         names: set[str] = set()
         lesson_names: set[str] = set()
-        polarity_targets: set[tuple[str, str]] = set()
-        polarity_groups: dict[str, dict[str, tuple[str, str]]] = {}
+        polarity_targets: set[tuple[str, str, str]] = set()
+        polarity_pairs: dict[tuple[str, str], set[str]] = {}
         for node in catalog.findall("./form"):
             unexpected = set(node.attrib) - FORM_DEFINITION_ATTRIBUTES
             if unexpected:
@@ -298,32 +292,41 @@ def validate_shared_grammar_dependencies() -> None:
                     f"Grammar form {schema}/{name} has invalid register: "
                     f"{register}"
                 )
-            polarity_group = str(
-                node.get("polarity_group", "")
-            ).strip()
-            if polarity_group:
-                if not polarity:
-                    raise AssertionError(
-                        f"Grammar form {schema}/{name} defines "
-                        "polarity_group without polarity"
-                    )
-                target = (polarity_group, polarity)
+            finite_metadata = (
+                context != "none"
+                or bool(polarity)
+                or bool(register)
+            )
+            if finite_metadata and not (
+                context != "none"
+                and polarity
+                and register
+            ):
+                raise AssertionError(
+                    f"Grammar form {schema}/{name} must define context, "
+                    "polarity, and register together"
+                )
+            if context != "none" and polarity and register:
+                target = (context, register, polarity)
                 if target in polarity_targets:
                     raise AssertionError(
                         f"Form catalog {schema} defines more than one "
-                        f"{polarity} form in polarity group {polarity_group}"
+                        f"{polarity} form for context {context} and "
+                        f"register {register}"
                     )
                 polarity_targets.add(target)
-                group = polarity_groups.setdefault(polarity_group, {})
-                group[polarity] = (context, register)
-            quiz = str(node.get("quiz", "false")).strip().lower()
-            if quiz not in {"true", "false"}:
-                raise AssertionError(
-                    f"Grammar form {schema}/{name} has invalid quiz flag: "
-                    f"{quiz}"
+                pair = polarity_pairs.setdefault(
+                    (context, register),
+                    set(),
                 )
-        for group_name, members in polarity_groups.items():
-            validate_polarity_group(schema, group_name, members)
+                pair.add(polarity)
+        for (context, register), polarities in polarity_pairs.items():
+            validate_polarity_pair(
+                schema,
+                context,
+                register,
+                polarities,
+            )
         form_catalogs[schema] = names
     defined_cases = {
         attribute
