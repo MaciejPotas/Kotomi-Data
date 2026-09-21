@@ -194,6 +194,7 @@ def validate_shared_grammar_dependencies() -> None:
         for path in sorted((ROOT / "dictionaries").glob("*.xml"))
     ]
     form_catalogs: dict[str, set[str]] = {}
+    form_polarities: set[str] = set()
     for catalog in grammar.findall("./form_catalogs/form_catalog"):
         schema = str(catalog.get("schema", "")).strip()
         if not schema:
@@ -202,6 +203,7 @@ def validate_shared_grammar_dependencies() -> None:
             raise AssertionError(f"Duplicate form catalog for schema: {schema}")
         names: set[str] = set()
         polarity_targets: set[tuple[str, str]] = set()
+        polarity_groups: dict[str, dict[str, tuple[str, str]]] = {}
         for node in catalog.findall("./form"):
             name = str(node.get("name", "")).strip()
             if not name:
@@ -225,6 +227,8 @@ def validate_shared_grammar_dependencies() -> None:
                     f"Grammar form {schema}/{name} has invalid polarity: "
                     f"{polarity}"
                 )
+            if polarity:
+                form_polarities.add(polarity)
             register = str(node.get("register", "")).strip()
             if register and register not in {"plain", "polite"}:
                 raise AssertionError(
@@ -247,18 +251,28 @@ def validate_shared_grammar_dependencies() -> None:
                         f"{polarity} form in polarity group {polarity_group}"
                     )
                 polarity_targets.add(target)
+                group = polarity_groups.setdefault(polarity_group, {})
+                group[polarity] = (context, register)
             quiz = str(node.get("quiz", "false")).strip().lower()
             if quiz not in {"true", "false"}:
                 raise AssertionError(
                     f"Grammar form {schema}/{name} has invalid quiz flag: "
                     f"{quiz}"
                 )
+        for group_name, members in polarity_groups.items():
+            if set(members) != {"affirmative", "negative"}:
+                raise AssertionError(
+                    f"Form catalog {schema} polarity group {group_name} must "
+                    "define exactly one affirmative and one negative form"
+                )
+            affirmative = members["affirmative"]
+            negative = members["negative"]
+            if affirmative != negative:
+                raise AssertionError(
+                    f"Form catalog {schema} polarity group {group_name} must "
+                    "preserve context and register across polarity"
+                )
         form_catalogs[schema] = names
-    defined_forms = {
-        name
-        for names in form_catalogs.values()
-        for name in names
-    }
     defined_cases = {
         attribute
         for _path, dictionary in dictionary_roots
@@ -266,50 +280,39 @@ def validate_shared_grammar_dependencies() -> None:
         for attribute in cases.attrib
         if attribute != "language"
     }
-    form_sets = {
-        str(node.get("id", "")): {
-            str(form.get("ref", ""))
-            for form in node.findall("./form")
-            if form.get("ref")
-        }
-        for node in grammar.findall("./form_sets/form_set")
-        if node.get("id")
-    }
-    for form_set_id, form_refs in form_sets.items():
-        if not form_refs:
-            raise AssertionError(f"Form set {form_set_id} must not be empty")
-        unknown = form_refs - defined_forms
-        if unknown:
-            raise AssertionError(
-                f"Form set {form_set_id} references unknown forms: "
-                f"{sorted(unknown)}"
-            )
-
     noun_case_by_form = grammar.find("./noun_case_by_form")
     if noun_case_by_form is None:
         raise AssertionError("grammar_rules.xml must define noun_case_by_form")
     mappings = noun_case_by_form.findall("./map")
     if not mappings:
         raise AssertionError("noun_case_by_form must contain mappings")
-    resolved_forms: set[str] = set()
+    mapped_polarities: set[str] = set()
     for mapping in mappings:
-        form_ref = str(mapping.get("form_ref", ""))
-        case_ref = str(mapping.get("case_ref", ""))
-        if form_ref not in form_sets:
+        unexpected = set(mapping.attrib) - {"polarity", "case_ref"}
+        if unexpected:
             raise AssertionError(
-                f"noun_case_by_form references unknown form set: {form_ref}"
+                "noun_case_by_form mapping contains unsupported attributes: "
+                f"{sorted(unexpected)}"
+            )
+        polarity = str(mapping.get("polarity", "")).strip()
+        case_ref = str(mapping.get("case_ref", "")).strip()
+        if polarity not in {"affirmative", "negative"}:
+            raise AssertionError(
+                f"noun_case_by_form uses invalid polarity: {polarity}"
+            )
+        if polarity not in form_polarities:
+            raise AssertionError(
+                f"noun_case_by_form references unused polarity: {polarity}"
+            )
+        if polarity in mapped_polarities:
+            raise AssertionError(
+                f"noun_case_by_form maps polarity more than once: {polarity}"
             )
         if case_ref not in defined_cases:
             raise AssertionError(
                 f"noun_case_by_form references unknown noun case: {case_ref}"
             )
-        overlap = resolved_forms & form_sets[form_ref]
-        if overlap:
-            raise AssertionError(
-                "noun_case_by_form maps forms more than once: "
-                f"{sorted(overlap)}"
-            )
-        resolved_forms.update(form_sets[form_ref])
+        mapped_polarities.add(polarity)
 
     for path, dictionary in dictionary_roots:
         schema = str(dictionary.get("schema", "")).strip()
@@ -334,14 +337,22 @@ def validate_shared_grammar_dependencies() -> None:
                 raise AssertionError(
                     f"{path.name} references unknown {schema} form: {ref}"
                 )
-            local_grammar = {
-                key for key in ("name", "context", "style", "tense", "polarity", "register")
-                if key in form.attrib
+            unexpected = set(form.attrib) - {
+                "ref",
+                "translation",
+                "kana",
+                "kanji",
+                "romaji",
             }
-            if local_grammar:
+            if unexpected:
                 raise AssertionError(
-                    f"{path.name} stores grammar metadata locally for {ref}: "
-                    f"{sorted(local_grammar)}"
+                    f"{path.name} form {ref} contains unsupported attributes: "
+                    f"{sorted(unexpected)}"
+                )
+            if (form.text or "").strip():
+                raise AssertionError(
+                    f"{path.name} form {ref} must store Japanese values in "
+                    "attributes, not element text"
                 )
         for role in dictionary.findall(".//usage/role"):
             ref = role.get("ref")
