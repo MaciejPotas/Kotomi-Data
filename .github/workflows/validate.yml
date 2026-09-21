@@ -34,5 +34,8 @@ jobs:
       - name: Validate learning data and public quiz packages
         run: python tools/validate_repository.py
 
+      - name: Run grammar validation contract tests
+        run: python -m unittest discover -s tests -v
+
       - name: Validate form-aware question prompts
         run: python tools/validate_question_patterns.py
