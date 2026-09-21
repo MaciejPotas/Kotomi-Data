@@ -1,5 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <grammar_rules schema_version="1">
+  <!--
+    NOUN CATEGORIES
+
+    id:
+      Stable machine identifier used by dictionaries, roles and pattern rules.
+
+    label:
+      Human-readable name used by authoring/UI tools.
+
+    parent:
+      Optional parent category. Categories inherit compatibility from their
+      ancestors, so a "person" can also satisfy rules accepting "concrete".
+
+    selectable:
+      Controls whether the category is offered directly in authoring/selectors.
+      Non-selectable categories may still be useful as grouping parents.
+  -->
   <noun_categories>
     <category id="concrete" label="Concrete" selectable="false" />
     <category id="person" label="Person" parent="concrete" selectable="true" />
@@ -14,6 +31,63 @@
     <category id="abstract" label="Abstract" selectable="true" />
     <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
   </noun_categories>
+  <!--
+    FORM CATALOGS
+
+    A form catalog describes grammar semantics once per schema. Word XML files
+    store only the realized values and reference these definitions by name.
+
+    form_catalog schema:
+      Selects the word schema that owns the forms, for example verb,
+      adjective or copula.
+
+    form/name:
+      Stable machine identifier. It is used by <form ref="..."> in dictionary
+      data and by pattern selectors such as [form:dictionary].
+
+    form/label:
+      Human-readable label used by Studio, lesson UI and quiz form selectors.
+      It is presentation metadata, not grammar logic.
+
+    form/lesson_name:
+      Optional persisted lesson alias used only when the lesson data format
+      needs a different external name. Example: verb "tara" is stored in
+      lessons as "conditional". If omitted, lesson_name is the same as name.
+
+    form/context:
+      Grammar context used by sentence generation. Finite forms use a real
+      context such as "present" or "past". Derived or non-finite forms that do
+      not independently express tense/polarity/register use context="none".
+
+    form/polarity:
+      "affirmative" or "negative". It is defined only for finite forms.
+      [polarity:affirmative] / [polarity:negative] changes this dimension while
+      preserving context and register.
+
+    form/register:
+      "plain" or "polite". It is defined only for finite forms and is preserved
+      when polarity is changed.
+
+    FINITE FORM RULE:
+      A standard finite/selectable form is derived automatically from metadata.
+      It must define all three values:
+        context != "none" + polarity + register
+
+      No separate quiz/selectable flag is stored because selectability can be
+      derived from those three grammar properties.
+
+    POLARITY PAIR RULE:
+      Within one schema, every finite (context, register) pair must contain
+      exactly one affirmative and one negative form. Therefore an explicit
+      polarity_group is unnecessary.
+
+    DERIVED / NON-FINITE FORMS:
+      Forms such as te_form, potential, passive, causative, tara, volitional,
+      imperative, attributive, connective and similar forms currently use
+      context="none". They intentionally omit polarity and register because
+      this form entry represents the derived form itself, not a complete
+      finite affirmative/negative or plain/polite paradigm.
+  -->
   <form_catalogs>
     <form_catalog schema="verb">
       <form name="dictionary" label="forma słownikowa" context="present" polarity="affirmative" register="plain" />
@@ -60,10 +134,42 @@
       <form name="past_negative_polite" label="uprzejma przeszła przecząca" context="past" polarity="negative" register="polite" />
     </form_catalog>
   </form_catalogs>
+  <!--
+    DYNAMIC NOUN CASE BY FORM
+
+    Used by noun placeholders with [case:form].
+
+    The engine first resolves the grammar schema of the slot governing the
+    noun, reads the selected finite form's polarity, and maps that polarity to
+    a concrete noun case below.
+
+    Example:
+      affirmative -> accusative
+      negative    -> genitive
+
+    This mapping is global because the semantic dimension is polarity, while
+    the actual polarity value comes from the governing form's schema.
+  -->
   <noun_case_by_form>
     <map polarity="affirmative" case_ref="accusative" />
     <map polarity="negative" case_ref="genitive" />
   </noun_case_by_form>
+  <!--
+    ROLES
+
+    id:
+      Stable semantic role identifier used by word usage rules and patterns.
+
+    label:
+      Human-readable authoring label.
+
+    particle:
+      Japanese particle emitted for the role when applicable.
+
+    accepts:
+      Optional whitespace-separated noun categories allowed for the role.
+      If omitted, the role is not restricted to selected noun categories.
+  -->
   <roles>
     <role id="object" label="Object" particle="を" />
     <role id="route" label="Route or point of departure" particle="を" accepts="place" />
@@ -75,6 +181,18 @@
     <role id="subject" label="Subject" particle="が" />
     <role id="reaction_target" label="Reaction target" particle="に" />
   </roles>
+  <!--
+    FEATURES
+
+    Semantic capabilities attached to words. Patterns and generation logic may
+    require a feature without encoding that knowledge in a concrete word list.
+
+    id:
+      Stable machine identifier.
+
+    label:
+      Human-readable description used by authoring tools.
+  -->
   <features>
     <feature id="reporting" label="Reporting verb" />
     <feature id="progressive_auxiliary" label="Progressive auxiliary" />
