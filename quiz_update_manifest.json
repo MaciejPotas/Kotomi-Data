@@ -82,13 +82,13 @@
     },
     {
       "path": "apps/adjectives/logic.py",
-      "sha256": "e4245d027e73bbe2b90193769de140ba0b5565e88adb0651baad3b59760164d5",
-      "url": "quizzes/adjectives/logic.py?kotomi_sha256=e4245d027e73bbe2b90193769de140ba0b5565e88adb0651baad3b59760164d5"
+      "sha256": "dab447917dca2476f88d58f8a9c94f026205fb009eb08b586b072094307b7955",
+      "url": "quizzes/adjectives/logic.py?kotomi_sha256=dab447917dca2476f88d58f8a9c94f026205fb009eb08b586b072094307b7955"
     },
     {
       "path": "apps/adjectives/mobile.py",
-      "sha256": "11db22a0d08d3766ed38af925cf90aad7e429f9af9b3d9fd41288142bb39278f",
-      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=11db22a0d08d3766ed38af925cf90aad7e429f9af9b3d9fd41288142bb39278f"
+      "sha256": "25a8f598886d35d43023fee101a50cab9f94f1f2cb9c5b079c0f959a40641e8d",
+      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=25a8f598886d35d43023fee101a50cab9f94f1f2cb9c5b079c0f959a40641e8d"
     },
     {
       "path": "apps/availability/Kotomi_availability.py",
@@ -142,13 +142,13 @@
     },
     {
       "path": "apps/lessons/logic.py",
-      "sha256": "6a166c94aa0c1f98bace3c9c66a830641a3018090da5e2f140a8baf2a6240645",
-      "url": "quizzes/lessons/logic.py?kotomi_sha256=6a166c94aa0c1f98bace3c9c66a830641a3018090da5e2f140a8baf2a6240645"
+      "sha256": "34219a7ae481fb896983417962f7749c2f27eac02bb65cd1ac1a7ccc49cfea43",
+      "url": "quizzes/lessons/logic.py?kotomi_sha256=34219a7ae481fb896983417962f7749c2f27eac02bb65cd1ac1a7ccc49cfea43"
     },
     {
       "path": "apps/lessons/mobile.py",
-      "sha256": "2a9330534a735067117350935cf934abb7924bea27bf63cd3cd78867ed90c0a8",
-      "url": "quizzes/lessons/mobile.py?kotomi_sha256=2a9330534a735067117350935cf934abb7924bea27bf63cd3cd78867ed90c0a8"
+      "sha256": "aadd8fac6b08ae290bfe6f7059f357c1a8890f98a65b6559b3d9a8c9eb7e16ab",
+      "url": "quizzes/lessons/mobile.py?kotomi_sha256=aadd8fac6b08ae290bfe6f7059f357c1a8890f98a65b6559b3d9a8c9eb7e16ab"
     },
     {
       "path": "apps/verbs/Kotomi_verbs.py",
