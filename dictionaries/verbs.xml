@@ -26,7 +26,7 @@
     </word>
     <word id="ageru" translation="podnosić" kana="あげる" kanji="上げる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="person animal food drink text media vehicle thing" />
+        <role ref="object" accepts="person animal food drink text media vehicle thing" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -49,7 +49,7 @@
     </word>
     <word id="ajiwau" translation="delektować się" kana="あじわう" kanji="味わう" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="food drink" />
+        <role ref="object" accepts="food drink" government="instrumental_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -72,7 +72,7 @@
     </word>
     <word id="akeru" translation="otwierać" kana="あける" kanji="開ける" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="bag box" />
+        <role ref="object" nouns="bag box" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -118,7 +118,7 @@
     </word>
     <word id="arau" translation="myć" kana="あらう" kanji="洗う" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="person animal food vehicle thing" />
+        <role ref="object" accepts="person animal food vehicle thing" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -267,7 +267,7 @@
     </word>
     <word id="dasu" translation="wyjmować" kana="だす" kanji="出す" type="godan" ending="su">
       <usage>
-        <role ref="object" accepts="person animal food drink text media vehicle thing abstract" />
+        <role ref="object" accepts="person animal food drink text media vehicle thing abstract" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -397,7 +397,7 @@
     </word>
     <word id="hajimeru" translation="zaczynać" kana="はじめる" kanji="始める" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="shigoto keikaku yotei meal" />
+        <role ref="object" nouns="shigoto keikaku yotei meal" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -466,7 +466,7 @@
     </word>
     <word id="harau" translation="płacić" kana="はらう" kanji="払う" type="godan" ending="u">
       <usage>
-        <role ref="object" nouns="okane" />
+        <role ref="object" nouns="okane" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -556,7 +556,7 @@
     </word>
     <word id="hiraku" translation="otwierać" kana="ひらく" kanji="開く" type="godan" ending="ku">
       <usage>
-        <role ref="object" nouns="book manga newspaper email note box school" />
+        <role ref="object" nouns="book manga newspaper email note box school" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -601,7 +601,7 @@
     </word>
     <word id="ireru" translation="wkładać" kana="いれる" kanji="入れる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="person animal food drink text media vehicle thing abstract" />
+        <role ref="object" accepts="person animal food drink text media vehicle thing abstract" government="direct_object" />
         <role ref="target" nouns="bag box room" />
       </usage>
       <forms>
@@ -719,7 +719,7 @@
     </word>
     <word id="kaku" translation="pisać" kana="かく" kanji="書く" type="godan" ending="ku">
       <usage>
-        <role ref="object" accepts="text" />
+        <role ref="object" accepts="text" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -742,7 +742,7 @@
     </word>
     <word id="kangaeru" translation="zastanawiać się" kana="かんがえる" kanji="考える" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="abstract text" />
+        <role ref="object" accepts="abstract text" government="nad_instrumental" />
         <role ref="location" />
       </usage>
       <forms>
@@ -765,7 +765,7 @@
     </word>
     <word id="kariru" translation="pożyczać od kogoś" kana="かりる" kanji="借りる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="text vehicle thing" nouns="okane" />
+        <role ref="object" accepts="text vehicle thing" nouns="okane" government="direct_object" />
         <role ref="target" accepts="person animal" />
         <role ref="location" />
       </usage>
@@ -789,7 +789,7 @@
     </word>
     <word id="kau" translation="kupować" kana="かう" kanji="買う" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="animal food drink text media vehicle thing" />
+        <role ref="object" accepts="animal food drink text media vehicle thing" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -834,7 +834,7 @@
     </word>
     <word id="keikosuru" translation="trenować" kana="けいこする" kanji="稽古する" type="irregular" ending="suru">
       <usage>
-        <role ref="object" nouns="music song" />
+        <role ref="object" nouns="music song" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -857,7 +857,7 @@
     </word>
     <word id="kesu" translation="wyłączać" kana="けす" kanji="消す" type="godan" ending="su">
       <usage>
-        <role ref="object" nouns="television email note" />
+        <role ref="object" nouns="television email note" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -899,7 +899,7 @@
     </word>
     <word id="kiku" translation="słuchać, pytać" kana="きく" kanji="聞く" type="godan" ending="ku">
       <usage>
-        <role ref="object" accepts="media abstract" />
+        <role ref="object" accepts="media abstract" government="genitive_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -922,7 +922,7 @@
     </word>
     <word id="kiru" translation="nosić" kana="きる" kanji="着る" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="clothes" />
+        <role ref="object" nouns="clothes" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1012,7 +1012,7 @@
     </word>
     <word id="matsu" translation="czekać" kana="まつ" kanji="待つ" type="godan" ending="tsu">
       <usage>
-        <role ref="object" accepts="person animal vehicle" />
+        <role ref="object" accepts="person animal vehicle" government="na_accusative" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1057,7 +1057,7 @@
     </word>
     <word id="migaku" translation="szorować" kana="みがく" kanji="磨く" type="godan" ending="ku">
       <usage>
-        <role ref="object" accepts="vehicle thing" />
+        <role ref="object" accepts="vehicle thing" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1080,7 +1080,7 @@
     </word>
     <word id="miru" translation="oglądać, patrzeć, widzieć" kana="みる" kanji="見る" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="*" />
+        <role ref="object" accepts="*" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1103,7 +1103,7 @@
     </word>
     <word id="mochiageru" translation="podnosić" kana="もちあげる" kanji="持ち上げる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="person animal food drink text media vehicle thing" />
+        <role ref="object" accepts="person animal food drink text media vehicle thing" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1126,7 +1126,7 @@
     </word>
     <word id="motsu" translation="trzymać" kana="もつ" kanji="持つ" type="godan" ending="tsu">
       <usage>
-        <role ref="object" accepts="animal food drink text media vehicle thing abstract" />
+        <role ref="object" accepts="animal food drink text media vehicle thing abstract" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1149,7 +1149,7 @@
     </word>
     <word id="motteiku" translation="zabierać" kana="もっていく" kanji="持っていく" type="godan" ending="ku">
       <usage>
-        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
+        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" government="direct_object" />
         <role ref="destination" />
         <role ref="location" />
       </usage>
@@ -1173,7 +1173,7 @@
     </word>
     <word id="mottekuru" translation="przynosić" kana="もってくる" kanji="持ってくる" type="irregular" ending="kuru">
       <usage>
-        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
+        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" government="direct_object" />
         <role ref="destination" />
         <role ref="location" />
       </usage>
@@ -1220,7 +1220,7 @@
     </word>
     <word id="nakusu" translation="gubić" kana="なくす" kanji="無くす" type="godan" ending="su">
       <usage>
-        <role ref="object" accepts="text vehicle thing" nouns="okane" />
+        <role ref="object" accepts="text vehicle thing" nouns="okane" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1310,7 +1310,7 @@
     </word>
     <word id="nomu" translation="pić" kana="のむ" kanji="飲む" type="godan" ending="mu">
       <usage>
-        <role ref="object" accepts="drink" />
+        <role ref="object" accepts="drink" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1378,7 +1378,7 @@
     </word>
     <word id="nugu" translation="zdejmować" kana="ぬぐ" kanji="脱ぐ" type="godan" ending="gu">
       <usage>
-        <role ref="object" nouns="clothes bag" />
+        <role ref="object" nouns="clothes bag" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1401,7 +1401,7 @@
     </word>
     <word id="oboeru" translation="zapamiętywać" kana="おぼえる" kanji="覚える" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="*" />
+        <role ref="object" accepts="*" government="direct_object" />
       </usage>
       <forms>
         <form ref="dictionary" translation="zapamiętuję" kana="おぼえる"  />
@@ -1492,7 +1492,7 @@
     </word>
     <word id="omoidasu" translation="przypominać sobie" kana="おもいだす" kanji="思い出す" type="godan" ending="su">
       <usage>
-        <role ref="object" accepts="*" />
+        <role ref="object" accepts="*" government="direct_object" />
       </usage>
       <forms>
         <form ref="dictionary" translation="przypominam sobie" kana="おもいだす"  />
@@ -1539,7 +1539,7 @@
     </word>
     <word id="oshieru" translation="uczyć" kana="おしえる" kanji="教える" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="*" />
+        <role ref="object" accepts="*" government="genitive_object" />
         <role ref="target" accepts="person animal" />
         <role ref="location" />
       </usage>
@@ -1630,7 +1630,7 @@
     </word>
     <word id="renshuusuru" translation="ćwiczyć" kana="れんしゅうする" kanji="練習する" type="irregular" ending="suru">
       <usage>
-        <role ref="object" nouns="music song" />
+        <role ref="object" nouns="music song" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1653,7 +1653,7 @@
     </word>
     <word id="sageru" translation="opuszczać" kana="さげる" kanji="下げる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="food drink text media vehicle thing" />
+        <role ref="object" accepts="food drink text media vehicle thing" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1699,7 +1699,7 @@
     </word>
     <word id="sentakusuru" translation="robić pranie" kana="せんたくする" kanji="洗濯する" type="irregular" ending="suru">
       <usage>
-        <role ref="object" nouns="clothes" />
+        <role ref="object" nouns="clothes" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1745,7 +1745,7 @@
     </word>
     <word id="shimeru" translation="zamykać" kana="しめる" kanji="閉める" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="bag box" />
+        <role ref="object" nouns="bag box" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1791,7 +1791,7 @@
     </word>
     <word id="shiru" translation="dowiedzieć się" kana="しる" kanji="知る" type="godan" ending="ru">
       <usage>
-        <role ref="object" accepts="person abstract text" />
+        <role ref="object" accepts="person abstract text" government="o_locative" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1814,7 +1814,7 @@
     </word>
     <word id="soujisuru" translation="sprzątać" kana="そうじする" kanji="掃除する" type="irregular" ending="suru">
       <usage>
-        <role ref="object" accepts="place thing" />
+        <role ref="object" accepts="place thing" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1837,7 +1837,7 @@
     </word>
     <word id="sugosu" translation="spędzać czas" kana="すごす" kanji="過ごす" type="godan" ending="su">
       <usage>
-        <role ref="object" nouns="jikan" />
+        <role ref="object" nouns="jikan" government="direct_object" />
         <role ref="companion" />
         <role ref="location" />
       </usage>
@@ -1861,7 +1861,7 @@
     </word>
     <word id="suru" translation="robić" kana="する" kanji="する" type="irregular" ending="suru">
       <usage>
-        <role ref="object" nouns="shigoto yakusoku keikaku yotei youji" />
+        <role ref="object" nouns="shigoto yakusoku keikaku yotei youji" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1951,7 +1951,7 @@
     </word>
     <word id="taberu" translation="jeść" kana="たべる" kanji="食べる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="food" />
+        <role ref="object" accepts="food" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1974,7 +1974,7 @@
     </word>
     <word id="tanoshimu" translation="cieszyć się" kana="たのしむ" kanji="楽しむ" type="godan" ending="mu">
       <usage>
-        <role ref="object" accepts="*" />
+        <role ref="object" accepts="*" government="instrumental_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1997,7 +1997,7 @@
     </word>
     <word id="tateru" translation="budować" kana="たてる" kanji="建てる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="home school taiikukan" />
+        <role ref="object" nouns="home school taiikukan" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2043,7 +2043,7 @@
     </word>
     <word id="teishutsusuru" translation="składać" kana="ていしゅつする" kanji="提出する" type="irregular" ending="suru">
       <usage>
-        <role ref="object" nouns="book note keikaku" />
+        <role ref="object" nouns="book note keikaku" government="direct_object" />
         <role ref="target" nouns="teacher school" />
       </usage>
       <forms>
@@ -2066,7 +2066,7 @@
     </word>
     <word id="tojiru" translation="zamykać" kana="とじる" kanji="閉じる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="book manga newspaper box" />
+        <role ref="object" nouns="book manga newspaper box" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2134,7 +2134,7 @@
     </word>
     <word id="torihazusu" translation="demontować" kana="とりはずす" kanji="取り外す" type="godan" ending="su">
       <usage>
-        <role ref="object" accepts="vehicle thing" />
+        <role ref="object" accepts="vehicle thing" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2157,7 +2157,7 @@
     </word>
     <word id="toru" translation="brać" kana="とる" kanji="取る" type="godan" ending="ru">
       <usage>
-        <role ref="object" accepts="animal food drink text media vehicle thing abstract" />
+        <role ref="object" accepts="animal food drink text media vehicle thing abstract" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2203,7 +2203,7 @@
     </word>
     <word id="tsukau" translation="używać" kana="つかう" kanji="使う" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="*" />
+        <role ref="object" accepts="*" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2226,7 +2226,7 @@
     </word>
     <word id="tsukeru" translation="włączać" kana="つける" kanji="付ける" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="television" />
+        <role ref="object" nouns="television" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2249,7 +2249,7 @@
     </word>
     <word id="tsukuru" translation="robić" kana="つくる" kanji="作る" type="godan" ending="ru">
       <usage>
-        <role ref="object" accepts="*" />
+        <role ref="object" accepts="*" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2272,7 +2272,7 @@
     </word>
     <word id="tsuzukeru" translation="kontynuować" kana="つづける" kanji="続ける" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="shigoto keikaku yotei music song" />
+        <role ref="object" nouns="shigoto keikaku yotei music song" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2318,7 +2318,7 @@
     </word>
     <word id="ukeru" translation="odbierać" kana="うける" kanji="受ける" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" nouns="shigoto" />
+        <role ref="object" nouns="shigoto" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2386,7 +2386,7 @@
     </word>
     <word id="utau" translation="śpiewać" kana="うたう" kanji="歌う" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="media" />
+        <role ref="object" accepts="media" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2432,7 +2432,7 @@
     </word>
     <word id="warau" translation="śmiać się" kana="わらう" kanji="笑う" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="person animal" />
+        <role ref="object" accepts="person animal" government="z_genitive" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2455,7 +2455,7 @@
     </word>
     <word id="wasureru" translation="zapominać" kana="わすれる" kanji="忘れる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="*" />
+        <role ref="object" accepts="*" government="genitive_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2478,7 +2478,7 @@
     </word>
     <word id="yomu" translation="czytać" kana="よむ" kanji="読む" type="godan" ending="mu">
       <usage>
-        <role ref="object" accepts="text" />
+        <role ref="object" accepts="text" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2501,7 +2501,7 @@
     </word>
     <word id="ageru_give" translation="dawać komuś" kana="あげる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
+        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" government="direct_object" />
         <role ref="target" accepts="person animal" />
         <role ref="location" />
       </usage>
@@ -2525,7 +2525,7 @@
     </word>
     <word id="kaesu" translation="oddawać, zwracać" kana="かえす" kanji="返す" type="godan" ending="su">
       <usage>
-        <role ref="object" accepts="text vehicle thing" nouns="okane" />
+        <role ref="object" accepts="text vehicle thing" nouns="okane" government="direct_object" />
         <role ref="target" accepts="person animal" />
         <role ref="location" />
       </usage>
@@ -2549,7 +2549,7 @@
     </word>
     <word id="kasu" translation="pożyczać komuś" kana="かす" kanji="貸す" type="godan" ending="su">
       <usage>
-        <role ref="object" accepts="text vehicle thing" nouns="okane" />
+        <role ref="object" accepts="text vehicle thing" nouns="okane" government="direct_object" />
         <role ref="target" accepts="person animal" />
         <role ref="location" />
       </usage>
@@ -2573,7 +2573,7 @@
     </word>
     <word id="kureru" translation="dawać mi, nam" kana="くれる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
+        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" government="direct_object" />
         <role ref="target" accepts="person" />
         <role ref="location" />
       </usage>
@@ -2597,7 +2597,7 @@
     </word>
     <word id="morau" translation="otrzymywać" kana="もらう" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" />
+        <role ref="object" accepts="food drink text media vehicle thing" nouns="okane" government="direct_object" />
         <role ref="target" accepts="person animal" />
         <role ref="location" />
       </usage>
@@ -2667,7 +2667,7 @@
     </word>
     <word id="watasu" translation="podawać, przekazywać" kana="わたす" kanji="渡す" type="godan" ending="su">
       <usage>
-        <role ref="object" accepts="food drink text media vehicle thing abstract" />
+        <role ref="object" accepts="food drink text media vehicle thing abstract" government="direct_object" />
         <role ref="target" accepts="person" />
         <role ref="location" />
       </usage>
@@ -2691,7 +2691,7 @@
     </word>
     <word id="sukuu" translation="ratować" kana="すくう" kanji="救う" type="godan" ending="u">
       <usage>
-        <role ref="object" accepts="person animal abstract" />
+        <role ref="object" accepts="person animal abstract" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -2714,7 +2714,7 @@
     </word>
     <word id="shinjiru" translation="wierzyć" kana="しんじる" kanji="信じる" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="person text abstract" />
+        <role ref="object" accepts="person text abstract" government="dative_object" />
         <role ref="location" />
       </usage>
       <forms>

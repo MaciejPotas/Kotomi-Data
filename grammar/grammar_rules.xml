@@ -155,6 +155,47 @@
     <map polarity="negative" case_ref="genitive" />
   </noun_case_by_form>
   <!--
+    POLISH VERB GOVERNMENT
+
+    These frames describe only the Polish realization of a verb argument.
+    Japanese roles continue to select particles and compatible vocabulary.
+    A verb usage entry references one frame with government="...".
+
+    polarity:
+      "affirmative" or "negative" selects a form-specific realization.
+      "any" applies to both polarities.
+
+    preposition:
+      Optional Polish preposition emitted before the declined noun.
+  -->
+  <polish_government>
+    <frame id="direct_object" language="pl">
+      <realization polarity="affirmative" case_ref="accusative" />
+      <realization polarity="negative" case_ref="genitive" />
+    </frame>
+    <frame id="genitive_object" language="pl">
+      <realization polarity="any" case_ref="genitive" />
+    </frame>
+    <frame id="dative_object" language="pl">
+      <realization polarity="any" case_ref="dative" />
+    </frame>
+    <frame id="instrumental_object" language="pl">
+      <realization polarity="any" case_ref="instrumental" />
+    </frame>
+    <frame id="na_accusative" language="pl">
+      <realization polarity="any" case_ref="accusative" preposition="na" />
+    </frame>
+    <frame id="nad_instrumental" language="pl">
+      <realization polarity="any" case_ref="instrumental" preposition="nad" />
+    </frame>
+    <frame id="o_locative" language="pl">
+      <realization polarity="any" case_ref="locative" preposition="o" />
+    </frame>
+    <frame id="z_genitive" language="pl">
+      <realization polarity="any" case_ref="genitive" preposition="z" />
+    </frame>
+  </polish_government>
+  <!--
     ROLES
 
     id:

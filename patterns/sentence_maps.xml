@@ -6,12 +6,12 @@
       <answer>{context.kana}{verb[form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Czasownik z dopełnieniem" category="basic">
-      <question>{context.translation}{verb[role:object][form].translation} {noun[case:form]}.</question>
-      <answer>{context.kana}{noun}を{verb[role:object][form]}</answer>
+      <question>{context.translation}{verb@main[role:object][form].translation} {noun@main[government:phrase]}.</question>
+      <answer>{context.kana}{noun@main}を{verb@main[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Opisane dopełnienie" category="basic">
-      <question>{context.translation}{verb[role:object][form].translation} {adjective[form:attributive_nonpast].translation} {noun[case:accusative]}.</question>
-      <answer>{context.kana}{adjective[form:attributive_nonpast]}{noun}を{verb[role:object][form]}</answer>
+      <question>{context.translation}{verb@main[role:object][form].translation} {noun@main[government:preposition]}{adjective@main[form:attributive_nonpast].translation} {noun@main[government:case]}.</question>
+      <answer>{context.kana}{adjective@main[form:attributive_nonpast]}{noun@main}を{verb@main[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Cel ruchu" category="movement">
       <question>{context.translation}{verb[role:destination][form].translation} do {noun[category:place][case:genitive]}.</question>
@@ -50,12 +50,12 @@
       <answer>あの{noun}が{adjective[form:predicate_plain_nonpast]}と{verb[feature:reporting][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Czynność w toku" category="constructions">
-      <question>{context[from:main].translation}{verb[role:object][form].translation} {noun[case:form]}.</question>
-      <answer>{context[from:main].kana}{noun}を{verb[role:object][form:te_form]}{verb@main[id:iru][form]}</answer>
+      <question>{context[from:main].translation}{verb@action[role:object][form].translation} {noun@action[government:phrase]}.</question>
+      <answer>{context[from:main].kana}{noun@action}を{verb@action[role:object][form:te_form]}{verb@main[id:iru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Przed inną czynnością" category="constructions">
-      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[case:form]}, zanim {verb@before[form][polarity:affirmative].translation}.</question>
-      <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun}を{verb@main[role:object][form]}</answer>
+      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun@main[government:phrase]}, zanim {verb@before[form][polarity:affirmative].translation}.</question>
+      <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun@main}を{verb@main[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Trzy lubiane rzeczy" category="basic">
       <question>{context.translation}Lubię {noun@first[case:accusative]}, {noun@second[case:accusative]} i {noun@third[case:accusative]}.</question>

@@ -30,3 +30,16 @@ They must not duplicate grammar metadata such as context, polarity, register, la
 `noun_case_by_form` maps grammar polarity directly to a noun case. It does not maintain a second list of form names or form sets.
 
 Both grammar files are loaded through `../quiz_project.xml`. Keep grammar-wide definitions here rather than placing them beside dictionaries or sentence patterns.
+
+
+## Polish verb government
+
+Japanese roles and Polish argument realization are independent:
+
+- role:object selects the Japanese object relation and particle を;
+- accepts and nouns constrain compatible vocabulary;
+- government on a verb usage entry references a Polish frame from polish_government.
+
+A frame defines the noun case, an optional preposition, and whether realization
+changes with the selected form's polarity. The pattern engine never derives a
+Polish case directly from a Japanese particle.

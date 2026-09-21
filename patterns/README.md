@@ -33,3 +33,9 @@ Pattern syntax is interpreted by Kotomi's shared engine. When changing the patte
 Pattern categories are persisted directly on `<sentence_pattern category="...">`. Question patterns use category `questions`. Adverbial question families such as when, reason and method are composites over existing clause shapes; argument-replacement questions remain direct patterns.
 
 The `questions` sentence quiz uses `selection="references"`, so users select question families while the engine expands composites internally and keeps form selection independent.
+
+
+Governed Polish noun phrases use [government:phrase]. Bind the governing verb
+and noun with the same @name when a pattern contains more than one possible
+pair. [government:preposition] and [government:case] expose the two parts
+separately for constructions that place an adjective between them.
