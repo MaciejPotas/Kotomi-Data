@@ -60,6 +60,17 @@ WORD_FORM_ATTRIBUTES = {
     "kanji",
     "romaji",
 }
+FORM_DEFINITION_ATTRIBUTES = {
+    "name",
+    "label",
+    "lesson_name",
+    "context",
+    "style",
+    "polarity",
+    "register",
+    "polarity_group",
+    "quiz",
+}
 
 
 def validate_polarity_group(
@@ -235,9 +246,16 @@ def validate_shared_grammar_dependencies() -> None:
         if schema in form_catalogs:
             raise AssertionError(f"Duplicate form catalog for schema: {schema}")
         names: set[str] = set()
+        lesson_names: set[str] = set()
         polarity_targets: set[tuple[str, str]] = set()
         polarity_groups: dict[str, dict[str, tuple[str, str]]] = {}
         for node in catalog.findall("./form"):
+            unexpected = set(node.attrib) - FORM_DEFINITION_ATTRIBUTES
+            if unexpected:
+                raise AssertionError(
+                    f"Grammar form {schema} contains unsupported attributes: "
+                    f"{sorted(unexpected)}"
+                )
             name = str(node.get("name", "")).strip()
             if not name:
                 raise AssertionError(
@@ -248,6 +266,18 @@ def validate_shared_grammar_dependencies() -> None:
                     f"Duplicate grammar form in {schema}: {name}"
                 )
             names.add(name)
+            label = str(node.get("label", "")).strip()
+            if not label:
+                raise AssertionError(
+                    f"Grammar form {schema}/{name} must define label"
+                )
+            lesson_name = str(node.get("lesson_name", "")).strip() or name
+            if lesson_name in lesson_names:
+                raise AssertionError(
+                    f"Form catalog {schema} defines duplicate lesson name: "
+                    f"{lesson_name}"
+                )
+            lesson_names.add(lesson_name)
             context = str(node.get("context", "none")).strip() or "none"
             if context not in defined_contexts:
                 raise AssertionError(
