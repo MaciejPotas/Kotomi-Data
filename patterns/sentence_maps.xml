@@ -6,11 +6,11 @@
       <answer>{context.kana}{verb[form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Czasownik z dopełnieniem" category="basic">
-      <question>{context.translation}{verb[role:object][form].translation} {noun[case:form]}.</question>
+      <question>{context.translation}{verb[role:object][form].translation} {noun[government:phrase]}.</question>
       <answer>{context.kana}{noun}を{verb[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Opisane dopełnienie" category="basic">
-      <question>{context.translation}{verb[role:object][form].translation} {adjective[form:attributive_nonpast].translation} {noun[case:accusative]}.</question>
+      <question>{context.translation}{verb[role:object][form].translation} {noun[government:preposition]}{adjective[form:attributive_nonpast].translation} {noun[government:case]}.</question>
       <answer>{context.kana}{adjective[form:attributive_nonpast]}{noun}を{verb[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Cel ruchu" category="movement">
@@ -50,11 +50,11 @@
       <answer>あの{noun}が{adjective[form:predicate_plain_nonpast]}と{verb[feature:reporting][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Czynność w toku" category="constructions">
-      <question>{context[from:main].translation}{verb[role:object][form].translation} {noun[case:form]}.</question>
+      <question>{context[from:main].translation}{verb[role:object][form].translation} {noun[government:phrase]}.</question>
       <answer>{context[from:main].kana}{noun}を{verb[role:object][form:te_form]}{verb@main[id:iru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Przed inną czynnością" category="constructions">
-      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[case:form]}, zanim {verb@before[form][polarity:affirmative].translation}.</question>
+      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[government:phrase]}, zanim {verb@before[form][polarity:affirmative].translation}.</question>
       <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun}を{verb@main[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Trzy lubiane rzeczy" category="basic">
@@ -66,35 +66,35 @@
       <answer>{context.kana}{noun}に{verb[role:reaction_target][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Dostępność 〜がある" category="constructions">
-      <patterns form="dictionary" translation="base">
+      <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
         <pattern ref="Cel ruchu" />
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
       </patterns>
-      <question>{context[from:main].translation}{verb@main[id:aru][form].translation} {noun[category:availability_reason][case:form]}, żeby {pattern[case_scope:embedded]}.</question>
-      <answer>{context[from:main].kana}{pattern[case_scope:embedded]}{noun[category:availability_reason]}が{verb@main[id:aru][form]}</answer>
+      <question>{context[from:main].translation}{verb@main[id:aru][form].translation} {noun[category:availability_reason][case:form]}, żeby {pattern[form:dictionary][translation:base][case_scope:embedded]}.</question>
+      <answer>{context[from:main].kana}{pattern[form:dictionary][case_scope:embedded]}{noun[category:availability_reason]}が{verb@main[id:aru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Możliwość ことができる" category="constructions">
-      <patterns form="dictionary" translation="base">
+      <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
         <pattern ref="Miejsce czynności" />
       </patterns>
-      <question>{context[from:main].translation}{verb@main[id:dekiru][form].translation} {pattern}.</question>
-      <answer>{context[from:main].kana}{pattern}ことが{verb@main[id:dekiru][form]}</answer>
+      <question>{context[from:main].translation}{verb@main[id:dekiru][form].translation} {pattern[form:dictionary][translation:base]}.</question>
+      <answer>{context[from:main].kana}{pattern[form:dictionary]}ことが{verb@main[id:dekiru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Czynność w toku 〜ている" category="constructions">
-      <patterns form="te_form">
+      <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
         <pattern ref="Cel ruchu" />
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
       </patterns>
-      <question>{context[from:main].translation}{pattern}.</question>
-      <answer>{context[from:main].kana}{pattern}{verb@main[id:iru][form]}</answer>
+      <question>{context[from:main].translation}{pattern[form:te_form]}.</question>
+      <answer>{context[from:main].kana}{pattern[form:te_form]}{verb@main[id:iru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o miejsce" category="questions">
       <question>Gdzie {context.translation}{verb[role:location][form].translation}?</question>

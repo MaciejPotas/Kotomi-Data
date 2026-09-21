@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 14,
+  "revision": 17,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "8e0bd29a6b8f0fd9e647303153b817c102904af43704ebcad155e481e4fa8101",
-      "url": "content_revision.json?kotomi_sha256=8e0bd29a6b8f0fd9e647303153b817c102904af43704ebcad155e481e4fa8101"
+      "sha256": "259762ebb51cc26ade02395949709232ceaff88023eab7410e461df276ae9f32",
+      "url": "content_revision.json?kotomi_sha256=259762ebb51cc26ade02395949709232ceaff88023eab7410e461df276ae9f32"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -29,8 +29,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "ae7ef13b9bc003a870a8438aca056ca6c49359f707ceb76474deeccee8093d3f",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=ae7ef13b9bc003a870a8438aca056ca6c49359f707ceb76474deeccee8093d3f"
+      "sha256": "b475af49b7366328b5fbb884965d76d0181f7c9abbdc6fcb04c4ad0de68a855c",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=b475af49b7366328b5fbb884965d76d0181f7c9abbdc6fcb04c4ad0de68a855c"
     },
     {
       "path": "data/grammar/contexts.xml",
@@ -39,8 +39,8 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "596e9cee2dfc37db061a14f9f4e444c62062482f2ce536d6fca1897cd76d1d2a",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=596e9cee2dfc37db061a14f9f4e444c62062482f2ce536d6fca1897cd76d1d2a"
+      "sha256": "f89809dc16a1631f83752bcdf44be5c9737255cfb0918a40882ef2657c0969f7",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=f89809dc16a1631f83752bcdf44be5c9737255cfb0918a40882ef2657c0969f7"
     },
     {
       "path": "data/lessons/lessons.xml",
@@ -49,8 +49,8 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "bd30ca15efb4553ff165e1e2f8fe50f511bfd0d956c088451962d6668a77e782",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=bd30ca15efb4553ff165e1e2f8fe50f511bfd0d956c088451962d6668a77e782"
+      "sha256": "2d1193711d91e1c79768dfabb93592c8ed5fad0665b5452c35cba38f16618831",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=2d1193711d91e1c79768dfabb93592c8ed5fad0665b5452c35cba38f16618831"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
