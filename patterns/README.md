@@ -37,3 +37,9 @@ The `questions` sentence quiz uses `selection="references"`, so users select que
 
 Governed Polish noun phrases use [government:phrase]. The engine links the noun to the role-bearing verb. Use the same @name only when a pattern needs to disambiguate more than one possible pair. [government:preposition] and [government:case] expose the two parts
 separately for constructions that place an adjective between them.
+
+Use `[agree].translation` on an adjective form when its Polish translation
+must agree with a described noun. A shared alias declares the relationship,
+for example `adjective@object` and `noun@object`. The adjective uses the exact
+case already resolved for that noun by `[government:...]`, `[case:form]`, or an
+explicit case. Agreement does not change Japanese adjective forms or roles.

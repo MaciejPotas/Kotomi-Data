@@ -742,7 +742,7 @@
     </word>
     <word id="kangaeru" translation="zastanawiać się" kana="かんがえる" kanji="考える" type="ichidan" ending="ru">
       <usage>
-        <role ref="object" accepts="abstract text" government="nad_instrumental" />
+        <role ref="object" accepts="abstract text vehicle" government="nad_instrumental" />
         <role ref="location" />
       </usage>
       <forms>
