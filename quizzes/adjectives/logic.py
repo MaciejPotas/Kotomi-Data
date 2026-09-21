@@ -32,7 +32,7 @@ from kotomi.core.project import (
     Word,
 )
 from kotomi.application.generation_engine import SharedQuizEngine
-from kotomi.application.quiz_project import QuizProject
+from kotomi.application.quiz_project import load_quiz_project
 from kotomi.core.generation import normalize_answer
 from kotomi.application.settings_xml import load_settings, save_settings
 from platforms.mobile.presentation import (
@@ -86,7 +86,7 @@ FORM_GROUPS = {
 STYLE_LABELS = {"plain": "potoczny", "polite": "uprzejmy"}
 
 def target_form_group(
-    project: QuizProject,
+    project: object,
     target_form: str,
 ) -> tuple[str, str] | None:
     """Resolve adjective UI group/style from grammar-owned form metadata."""
@@ -416,12 +416,12 @@ class AdjectiveQuizEngine:
     ) -> None:
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = QuizProject.load(self.project_path)
+        self.project = load_quiz_project(self.project_path)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
     def reload(self) -> None:
-        self.project = QuizProject.load(self.project_path)
+        self.project = load_quiz_project(self.project_path)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 

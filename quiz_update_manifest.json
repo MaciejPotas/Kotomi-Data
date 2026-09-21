@@ -82,8 +82,8 @@
     },
     {
       "path": "apps/adjectives/logic.py",
-      "sha256": "dab447917dca2476f88d58f8a9c94f026205fb009eb08b586b072094307b7955",
-      "url": "quizzes/adjectives/logic.py?kotomi_sha256=dab447917dca2476f88d58f8a9c94f026205fb009eb08b586b072094307b7955"
+      "sha256": "d405a6670834707b9fcf115698baba5f7e0460d48b56b9068ea2d99e72926fa0",
+      "url": "quizzes/adjectives/logic.py?kotomi_sha256=d405a6670834707b9fcf115698baba5f7e0460d48b56b9068ea2d99e72926fa0"
     },
     {
       "path": "apps/adjectives/mobile.py",
