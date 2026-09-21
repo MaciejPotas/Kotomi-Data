@@ -16,48 +16,48 @@
   </noun_categories>
   <form_catalogs>
     <form_catalog schema="verb">
-      <form name="dictionary" label="forma słownikowa" context="present" style="potoczna" polarity="affirmative" register="plain" polarity_group="plain_nonpast" quiz="true" />
-      <form name="polite_nonpast" label="uprzejma nieprzeszła" context="present" style="uprzejma" polarity="affirmative" register="polite" polarity_group="polite_nonpast" quiz="true" />
-      <form name="plain_negative" label="potoczna przecząca" context="present" style="potoczna przecząca" polarity="negative" register="plain" polarity_group="plain_nonpast" quiz="true" />
-      <form name="polite_negative" label="uprzejma przecząca" context="present" style="uprzejma przecząca" polarity="negative" register="polite" polarity_group="polite_nonpast" quiz="true" />
-      <form name="past_plain" label="potoczna przeszła" context="past" style="potoczna przeszła" polarity="affirmative" register="plain" polarity_group="plain_past" quiz="true" />
-      <form name="past_polite" label="uprzejma przeszła" context="past" style="uprzejma przeszła" polarity="affirmative" register="polite" polarity_group="polite_past" quiz="true" />
-      <form name="past_negative_plain" label="potoczna przeszła przecząca" context="past" style="potoczna przeszła przecząca" polarity="negative" register="plain" polarity_group="plain_past" quiz="true" />
-      <form name="past_negative_polite" label="uprzejma przeszła przecząca" context="past" style="uprzejma przeszła przecząca" polarity="negative" register="polite" polarity_group="polite_past" quiz="true" />
-      <form name="te_form" label="forma て" context="none" style="forma て" />
-      <form name="potential" label="potencjalna" context="none" style="potencjalna" />
-      <form name="passive" label="bierna" context="none" style="bierna" />
-      <form name="causative" label="kauzatywna" context="none" style="kauzatywna" />
-      <form name="tara" label="warunkowa" lesson_name="conditional" context="none" style="warunkowa たら" />
-      <form name="volitional" label="wolicjonalna" context="none" style="wolicjonalna" />
-      <form name="imperative" label="rozkazująca" context="none" style="rozkazująca" />
+      <form name="dictionary" label="forma słownikowa" context="present" polarity="affirmative" register="plain" />
+      <form name="polite_nonpast" label="uprzejma nieprzeszła" context="present" polarity="affirmative" register="polite" />
+      <form name="plain_negative" label="potoczna przecząca" context="present" polarity="negative" register="plain" />
+      <form name="polite_negative" label="uprzejma przecząca" context="present" polarity="negative" register="polite" />
+      <form name="past_plain" label="potoczna przeszła" context="past" polarity="affirmative" register="plain" />
+      <form name="past_polite" label="uprzejma przeszła" context="past" polarity="affirmative" register="polite" />
+      <form name="past_negative_plain" label="potoczna przeszła przecząca" context="past" polarity="negative" register="plain" />
+      <form name="past_negative_polite" label="uprzejma przeszła przecząca" context="past" polarity="negative" register="polite" />
+      <form name="te_form" label="forma て" context="none" />
+      <form name="potential" label="potencjalna" context="none" />
+      <form name="passive" label="bierna" context="none" />
+      <form name="causative" label="kauzatywna" context="none" />
+      <form name="tara" label="warunkowa" lesson_name="conditional" context="none" />
+      <form name="volitional" label="wolicjonalna" context="none" />
+      <form name="imperative" label="rozkazująca" context="none" />
     </form_catalog>
     <form_catalog schema="adjective">
-      <form name="predicate_plain_nonpast" label="orzecznikowa potoczna nieprzeszła" context="present" style="plain non-past" polarity="affirmative" register="plain" polarity_group="predicate_plain_nonpast" quiz="true" />
-      <form name="predicate_polite_nonpast" label="orzecznikowa uprzejma nieprzeszła" context="present" style="polite non-past" polarity="affirmative" register="polite" polarity_group="predicate_polite_nonpast" quiz="true" />
-      <form name="predicate_plain_negative" label="orzecznikowa potoczna przecząca" context="present" style="plain negative" polarity="negative" register="plain" polarity_group="predicate_plain_nonpast" quiz="true" />
-      <form name="predicate_polite_negative" label="orzecznikowa uprzejma przecząca" context="present" style="polite negative" polarity="negative" register="polite" polarity_group="predicate_polite_nonpast" quiz="true" />
-      <form name="predicate_plain_past" label="orzecznikowa potoczna przeszła" context="past" style="plain past" polarity="affirmative" register="plain" polarity_group="predicate_plain_past" quiz="true" />
-      <form name="predicate_polite_past" label="orzecznikowa uprzejma przeszła" context="past" style="polite past" polarity="affirmative" register="polite" polarity_group="predicate_polite_past" quiz="true" />
-      <form name="predicate_plain_past_negative" label="orzecznikowa potoczna przeszła przecząca" context="past" style="plain past negative" polarity="negative" register="plain" polarity_group="predicate_plain_past" quiz="true" />
-      <form name="predicate_polite_past_negative" label="orzecznikowa uprzejma przeszła przecząca" context="past" style="polite past negative" polarity="negative" register="polite" polarity_group="predicate_polite_past" quiz="true" />
-      <form name="attributive_nonpast" label="przydawkowa nieprzeszła" context="none" style="before noun" />
-      <form name="connective" label="łącząca" context="none" style="connective" />
-      <form name="adverbial" label="przysłówkowa" context="none" style="adverbial" />
-      <form name="conditional" label="warunkowa" context="none" style="conditional" />
-      <form name="nominalized" label="nominalizowana" context="none" style="nominalized noun" />
-      <form name="appearance_sou" label="wygląd 〜そう" context="none" style="looks" />
-      <form name="excessive_sugiru" label="nadmiar 〜すぎる" context="none" style="too much" />
+      <form name="predicate_plain_nonpast" label="orzecznikowa potoczna nieprzeszła" context="present" polarity="affirmative" register="plain" />
+      <form name="predicate_polite_nonpast" label="orzecznikowa uprzejma nieprzeszła" context="present" polarity="affirmative" register="polite" />
+      <form name="predicate_plain_negative" label="orzecznikowa potoczna przecząca" context="present" polarity="negative" register="plain" />
+      <form name="predicate_polite_negative" label="orzecznikowa uprzejma przecząca" context="present" polarity="negative" register="polite" />
+      <form name="predicate_plain_past" label="orzecznikowa potoczna przeszła" context="past" polarity="affirmative" register="plain" />
+      <form name="predicate_polite_past" label="orzecznikowa uprzejma przeszła" context="past" polarity="affirmative" register="polite" />
+      <form name="predicate_plain_past_negative" label="orzecznikowa potoczna przeszła przecząca" context="past" polarity="negative" register="plain" />
+      <form name="predicate_polite_past_negative" label="orzecznikowa uprzejma przeszła przecząca" context="past" polarity="negative" register="polite" />
+      <form name="attributive_nonpast" label="przydawkowa nieprzeszła" context="none" />
+      <form name="connective" label="łącząca" context="none" />
+      <form name="adverbial" label="przysłówkowa" context="none" />
+      <form name="conditional" label="warunkowa" context="none" />
+      <form name="nominalized" label="nominalizowana" context="none" />
+      <form name="appearance_sou" label="wygląd 〜そう" context="none" />
+      <form name="excessive_sugiru" label="nadmiar 〜すぎる" context="none" />
     </form_catalog>
     <form_catalog schema="copula">
-      <form name="dictionary" label="forma słownikowa" context="present" style="plain non-past" polarity="affirmative" register="plain" polarity_group="plain_nonpast" quiz="true" />
-      <form name="polite_nonpast" label="uprzejma nieprzeszła" context="present" style="polite non-past" polarity="affirmative" register="polite" polarity_group="polite_nonpast" quiz="true" />
-      <form name="plain_negative" label="potoczna przecząca" context="present" style="plain negative" polarity="negative" register="plain" polarity_group="plain_nonpast" quiz="true" />
-      <form name="polite_negative" label="uprzejma przecząca" context="present" style="polite negative" polarity="negative" register="polite" polarity_group="polite_nonpast" quiz="true" />
-      <form name="past_plain" label="potoczna przeszła" context="past" style="plain past" polarity="affirmative" register="plain" polarity_group="plain_past" quiz="true" />
-      <form name="past_polite" label="uprzejma przeszła" context="past" style="polite past" polarity="affirmative" register="polite" polarity_group="polite_past" quiz="true" />
-      <form name="past_negative_plain" label="potoczna przeszła przecząca" context="past" style="plain past negative" polarity="negative" register="plain" polarity_group="plain_past" quiz="true" />
-      <form name="past_negative_polite" label="uprzejma przeszła przecząca" context="past" style="polite past negative" polarity="negative" register="polite" polarity_group="polite_past" quiz="true" />
+      <form name="dictionary" label="forma słownikowa" context="present" polarity="affirmative" register="plain" />
+      <form name="polite_nonpast" label="uprzejma nieprzeszła" context="present" polarity="affirmative" register="polite" />
+      <form name="plain_negative" label="potoczna przecząca" context="present" polarity="negative" register="plain" />
+      <form name="polite_negative" label="uprzejma przecząca" context="present" polarity="negative" register="polite" />
+      <form name="past_plain" label="potoczna przeszła" context="past" polarity="affirmative" register="plain" />
+      <form name="past_polite" label="uprzejma przeszła" context="past" polarity="affirmative" register="polite" />
+      <form name="past_negative_plain" label="potoczna przeszła przecząca" context="past" polarity="negative" register="plain" />
+      <form name="past_negative_polite" label="uprzejma przeszła przecząca" context="past" polarity="negative" register="polite" />
     </form_catalog>
   </form_catalogs>
   <noun_case_by_form>
