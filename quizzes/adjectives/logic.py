@@ -63,37 +63,56 @@ SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 FORM_GROUPS = {
     "nonpast": {
         "label": "Nieprzeszła twierdząca",
-        "plain": "predicate_plain_nonpast",
-        "polite": "predicate_polite_nonpast",
+        "context": "present",
+        "polarity": "affirmative",
     },
     "negative": {
         "label": "Nieprzeszła przecząca",
-        "plain": "predicate_plain_negative",
-        "polite": "predicate_polite_negative",
+        "context": "present",
+        "polarity": "negative",
     },
     "past": {
         "label": "Przeszła twierdząca",
-        "plain": "predicate_plain_past",
-        "polite": "predicate_polite_past",
+        "context": "past",
+        "polarity": "affirmative",
     },
     "past_negative": {
         "label": "Przeszła przecząca",
-        "plain": "predicate_plain_past_negative",
-        "polite": "predicate_polite_past_negative",
-    },
-}
-
-COPULA_FORM_GROUPS = {
-    "nonpast": {"plain": "dictionary", "polite": "polite_nonpast"},
-    "negative": {"plain": "plain_negative", "polite": "polite_negative"},
-    "past": {"plain": "past_plain", "polite": "past_polite"},
-    "past_negative": {
-        "plain": "past_negative_plain",
-        "polite": "past_negative_polite",
+        "context": "past",
+        "polarity": "negative",
     },
 }
 
 STYLE_LABELS = {"plain": "potoczny", "polite": "uprzejmy"}
+
+def target_form_group(
+    project: QuizProject,
+    target_form: str,
+) -> tuple[str, str] | None:
+    """Resolve adjective UI group/style from grammar-owned form metadata."""
+
+    parts = [value.strip() for value in target_form.split("+") if value.strip()]
+    if not parts:
+        return None
+    schema = "copula" if len(parts) > 1 else "adjective"
+    definition = project.form_definitions.get(schema, {}).get(parts[-1])
+    if definition is None:
+        return None
+    group_id = next(
+        (
+            group_id
+            for group_id, group in FORM_GROUPS.items()
+            if (
+                group["context"] == definition.context
+                and group["polarity"] == definition.polarity
+            )
+        ),
+        None,
+    )
+    if group_id is None or definition.register not in {"plain", "polite"}:
+        return None
+    return group_id, definition.register
+
 
 FILTER_FIELDS = {
     "dictionary",
@@ -637,23 +656,60 @@ class AdjectiveQuizEngine:
     def _entity_matches_adjective(self, entity: Entity, adjective: Word) -> bool:
         return self.shared_engine.adjective_matches(entity, adjective)
 
-    @staticmethod
-    def _finite_forms(rule: GenerationRule) -> tuple[str, str]:
-        group = FORM_GROUPS[rule.category]
-        target = str(group["polite" if rule.target_polite else "plain"])
+    def _catalog_form_name(
+        self,
+        schema: str,
+        category: str,
+        polite: bool,
+    ) -> str:
+        group = FORM_GROUPS[category]
+        register = "polite" if polite else "plain"
+        matches = [
+            definition.name
+            for definition in self.project.form_definitions.get(schema, {}).values()
+            if (
+                definition.context == group["context"]
+                and definition.polarity == group["polarity"]
+                and definition.register == register
+                and definition.quiz
+            )
+        ]
+        if len(matches) != 1:
+            raise ProjectError(
+                f"Grammar catalog '{schema}' does not define exactly one "
+                f"{group['context']} {group['polarity']} {register} quiz form."
+            )
+        return matches[0]
+
+    def _finite_forms(self, rule: GenerationRule) -> tuple[str, str]:
+        target = self._catalog_form_name(
+            "adjective",
+            rule.category,
+            rule.target_polite,
+        )
         source = (
-            str(group["polite" if rule.source_polite else "plain"])
+            self._catalog_form_name(
+                "adjective",
+                rule.category,
+                rule.source_polite,
+            )
             if rule.has_source_form
             else target
         )
         return source, target
 
-    @staticmethod
-    def _copula_forms(rule: GenerationRule) -> tuple[str, str]:
-        group = COPULA_FORM_GROUPS[rule.category]
-        target = str(group["polite" if rule.target_polite else "plain"])
+    def _copula_forms(self, rule: GenerationRule) -> tuple[str, str]:
+        target = self._catalog_form_name(
+            "copula",
+            rule.category,
+            rule.target_polite,
+        )
         source = (
-            str(group["polite" if rule.source_polite else "plain"])
+            self._catalog_form_name(
+                "copula",
+                rule.category,
+                rule.source_polite,
+            )
             if rule.has_source_form
             else target
         )
