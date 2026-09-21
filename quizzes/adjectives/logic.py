@@ -671,7 +671,7 @@ class AdjectiveQuizEngine:
                 definition.context == group["context"]
                 and definition.polarity == group["polarity"]
                 and definition.register == register
-                and definition.quiz
+                and definition.is_selectable
             )
         ]
         if len(matches) != 1:
