@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 14,
+  "revision": 15,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "8e0bd29a6b8f0fd9e647303153b817c102904af43704ebcad155e481e4fa8101",
-      "url": "content_revision.json?kotomi_sha256=8e0bd29a6b8f0fd9e647303153b817c102904af43704ebcad155e481e4fa8101"
+      "sha256": "ae2b52fe5270690832b2e4e6f01f71bb208cd760e2b53b2c90c3eeab7e050bbf",
+      "url": "content_revision.json?kotomi_sha256=ae2b52fe5270690832b2e4e6f01f71bb208cd760e2b53b2c90c3eeab7e050bbf"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -49,8 +49,8 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "bd30ca15efb4553ff165e1e2f8fe50f511bfd0d956c088451962d6668a77e782",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=bd30ca15efb4553ff165e1e2f8fe50f511bfd0d956c088451962d6668a77e782"
+      "sha256": "f554d86df083105aa65c2282b9777a75998e1665d628f6f91c0396794bf78432",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=f554d86df083105aa65c2282b9777a75998e1665d628f6f91c0396794bf78432"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
