@@ -10,44 +10,29 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 from validate_repository import (  # noqa: E402
     unexpected_word_form_attributes,
-    validate_polarity_group,
+    validate_polarity_pair,
 )
 
 
 class GrammarValidationContractTests(unittest.TestCase):
-    def test_polarity_group_requires_complete_pair(self) -> None:
+    def test_polarity_pair_requires_complete_pair(self) -> None:
         with self.assertRaisesRegex(
             AssertionError,
             "exactly one affirmative and one negative",
         ):
-            validate_polarity_group(
+            validate_polarity_pair(
                 "verb",
-                "plain_nonpast",
-                {"affirmative": ("present", "plain")},
+                "present",
+                "plain",
+                {"affirmative"},
             )
 
-    def test_polarity_group_preserves_context_and_register(self) -> None:
-        with self.assertRaisesRegex(
-            AssertionError,
-            "preserve context and register",
-        ):
-            validate_polarity_group(
-                "verb",
-                "plain_nonpast",
-                {
-                    "affirmative": ("present", "plain"),
-                    "negative": ("past", "plain"),
-                },
-            )
-
-    def test_polarity_group_accepts_matching_pair(self) -> None:
-        validate_polarity_group(
+    def test_polarity_pair_accepts_matching_pair(self) -> None:
+        validate_polarity_pair(
             "verb",
-            "plain_nonpast",
-            {
-                "affirmative": ("present", "plain"),
-                "negative": ("present", "plain"),
-            },
+            "present",
+            "plain",
+            {"affirmative", "negative"},
         )
 
     def test_word_form_attribute_allowlist_matches_loader_contract(self) -> None:
