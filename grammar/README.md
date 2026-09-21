@@ -14,15 +14,15 @@ A form definition may contain:
 - `name`: canonical engine identifier.
 - `label`: human-readable form label used by lesson and quiz UIs.
 - `lesson_name`: optional persisted lesson alias when the lesson-facing name differs from the engine name.
-- `context`: context pool family, for example `present` or `past`.
-- `style`: human-readable grammatical style.
-- `polarity`: `affirmative` or `negative` when applicable.
-- `register`: `plain` or `polite` when applicable.
-- `polarity_group`: pair used by local `[polarity:...]` transformations.
-- `quiz`: whether the form is selectable as a quiz form.
+- `context`: context pool family, for example `present`, `past`, or `none`.
+- `polarity`: `affirmative` or `negative` for finite forms.
+- `register`: `plain` or `polite` for finite forms.
 
-Every polarity group must contain exactly one affirmative and one negative form.
-Both members must preserve the same `context` and `register`; only polarity may change.
+Quiz selectability is derived rather than stored. A form is a standard selectable finite form when it has a real context plus both polarity and register. Derived and non-finite forms use `context="none"` and omit polarity/register.
+
+Polarity counterparts are also derived. For every finite `(context, register)` pair the catalog must contain exactly one affirmative and one negative form, so no separate `polarity_group` is stored.
+
+Retired form attributes such as `style`, `polarity_group`, and `quiz` are not part of Schema 1 and must not be added back.
 
 Dictionary XML files store only word-specific realizations through `<form ref="...">`.
 They must not duplicate grammar metadata such as context, polarity, register, labels, or lesson aliases.
