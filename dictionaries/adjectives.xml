@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="1" id="adjectives" label="Adjectives" schema="adjective">
-  <editor required="translation kana type" optional="kanji romaji" metadata="describes forms" />
+  <editor required="translation kana type" optional="kanji romaji" metadata="describes agreement forms" />
   <words>
     <word id="akai" translation="czerwony" kana="あかい" kanji="赤い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest czerwony" kana="あかい"  />
@@ -23,6 +24,7 @@
       </forms>
     </word>
     <word id="akarui" translation="jasny" kana="あかるい" kanji="明るい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest jasny" kana="あかるい"  />
         <form ref="predicate_polite_nonpast" translation="jest jasny" kana="あかるいです"  />
@@ -42,6 +44,7 @@
       </forms>
     </word>
     <word id="amai" translation="słodki" kana="あまい" kanji="甘い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest słodki" kana="あまい"  />
@@ -62,6 +65,7 @@
       </forms>
     </word>
     <word id="anzen" translation="bezpieczny" kana="あんぜん" kanji="安全" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest bezpieczny" kana="あんぜんだ"  />
         <form ref="predicate_polite_nonpast" translation="jest bezpieczny" kana="あんぜんです"  />
@@ -81,6 +85,7 @@
       </forms>
     </word>
     <word id="aoi" translation="niebieski" kana="あおい" kanji="青い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest niebieski" kana="あおい"  />
@@ -101,6 +106,7 @@
       </forms>
     </word>
     <word id="arai" translation="szorstki" kana="あらい" kanji="荒い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest szorstki" kana="あらい"  />
@@ -121,6 +127,7 @@
       </forms>
     </word>
     <word id="atarashii" translation="nowy" kana="あたらしい" kanji="新しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest nowy" kana="あたらしい"  />
         <form ref="predicate_polite_nonpast" translation="jest nowy" kana="あたらしいです"  />
@@ -140,6 +147,7 @@
       </forms>
     </word>
     <word id="atatakai" translation="ciepły" kana="あたたかい" kanji="暖かい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ciepły" kana="あたたかい"  />
@@ -160,6 +168,7 @@
       </forms>
     </word>
     <word id="atsui" translation="gorący" kana="あつい" kanji="暑い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="place" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest gorący" kana="あつい"  />
@@ -180,6 +189,7 @@
       </forms>
     </word>
     <word id="azayaka" translation="żywy" kana="あざやか" kanji="鮮やか" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wyrazisty" kana="あざやかだ"  />
         <form ref="predicate_polite_nonpast" translation="jest wyrazisty" kana="あざやかです"  />
@@ -199,6 +209,7 @@
       </forms>
     </word>
     <word id="chiisai" translation="mały" kana="ちいさい" kanji="小さい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest mały" kana="ちいさい"  />
@@ -219,6 +230,7 @@
       </forms>
     </word>
     <word id="chikai" translation="bliski" kana="ちかい" kanji="近い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest bliski" kana="ちかい"  />
         <form ref="predicate_polite_nonpast" translation="jest bliski" kana="ちかいです"  />
@@ -238,6 +250,7 @@
       </forms>
     </word>
     <word id="fukuzatsu" translation="skomplikowany" kana="ふくざつ" kanji="複雑" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest skomplikowany" kana="ふくざつだ"  />
         <form ref="predicate_polite_nonpast" translation="jest skomplikowany" kana="ふくざつです"  />
@@ -257,6 +270,7 @@
       </forms>
     </word>
     <word id="furui" translation="stary" kana="ふるい" kanji="古い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest stary" kana="ふるい"  />
         <form ref="predicate_polite_nonpast" translation="jest stary" kana="ふるいです"  />
@@ -276,6 +290,7 @@
       </forms>
     </word>
     <word id="ganko" translation="uparty" kana="がんこ" kanji="頑固" type="na_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest uparty" kana="がんこだ"  />
@@ -296,6 +311,7 @@
       </forms>
     </word>
     <word id="genki" translation="energiczny" kana="げんき" kanji="元気" type="na_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest energiczny" kana="げんきだ"  />
@@ -316,6 +332,7 @@
       </forms>
     </word>
     <word id="hadazamui" translation="chłodny" kana="はだざむい" kanji="肌寒い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="place" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest chłodny" kana="はだざむい"  />
@@ -336,6 +353,7 @@
       </forms>
     </word>
     <word id="hayai" translation="szybki" kana="はやい" kanji="速い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <describes categories="person animal vehicle" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest szybki" kana="はやい"  />
@@ -356,6 +374,7 @@
       </forms>
     </word>
     <word id="heikinteki" translation="przeciętny" kana="へいきんてき" kanji="平均的" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest przeciętny" kana="へいきんてきだ"  />
         <form ref="predicate_polite_nonpast" translation="jest przeciętny" kana="へいきんてきです"  />
@@ -375,6 +394,7 @@
       </forms>
     </word>
     <word id="hen" translation="dziwny" kana="へん" kanji="変" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest dziwny" kana="へんだ"  />
         <form ref="predicate_polite_nonpast" translation="jest dziwny" kana="へんです"  />
@@ -394,6 +414,7 @@
       </forms>
     </word>
     <word id="hidoi" translation="okropny" kana="ひどい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest okropny" kana="ひどい"  />
         <form ref="predicate_polite_nonpast" translation="jest okropny" kana="ひどいです"  />
@@ -413,6 +434,7 @@
       </forms>
     </word>
     <word id="hikui" translation="niski" kana="ひくい" kanji="低い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest niski" kana="ひくい"  />
         <form ref="predicate_polite_nonpast" translation="jest niski" kana="ひくいです"  />
@@ -432,6 +454,7 @@
       </forms>
     </word>
     <word id="hiroi" translation="szeroki" kana="ひろい" kanji="広い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest szeroki" kana="ひろい"  />
         <form ref="predicate_polite_nonpast" translation="jest szeroki" kana="ひろいです"  />
@@ -451,6 +474,7 @@
       </forms>
     </word>
     <word id="ijou" translation="nienormalny" kana="いじょう" kanji="異常" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest nienormalny" kana="いじょうだ"  />
         <form ref="predicate_polite_nonpast" translation="jest nienormalny" kana="いじょうです"  />
@@ -470,6 +494,7 @@
       </forms>
     </word>
     <word id="juuyou" translation="ważny" kana="じゅうよう" kanji="重要" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ważny" kana="じゅうようだ"  />
         <form ref="predicate_polite_nonpast" translation="jest ważny" kana="じゅうようです"  />
@@ -489,6 +514,7 @@
       </forms>
     </word>
     <word id="kanashii" translation="smutny" kana="かなしい" kanji="悲しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest smutny" kana="かなしい"  />
         <form ref="predicate_polite_nonpast" translation="jest smutny" kana="かなしいです"  />
@@ -508,6 +534,7 @@
       </forms>
     </word>
     <word id="kantan" translation="łatwy" kana="かんたん" kanji="簡単" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest łatwy" kana="かんたんだ"  />
         <form ref="predicate_polite_nonpast" translation="jest łatwy" kana="かんたんです"  />
@@ -527,6 +554,7 @@
       </forms>
     </word>
     <word id="karai" translation="ostry" kana="からい" kanji="辛い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ostry" kana="からい"  />
@@ -547,6 +575,7 @@
       </forms>
     </word>
     <word id="karui" translation="lekki" kana="かるい" kanji="軽い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest lekki" kana="かるい"  />
         <form ref="predicate_polite_nonpast" translation="jest lekki" kana="かるいです"  />
@@ -566,6 +595,7 @@
       </forms>
     </word>
     <word id="katai" translation="twardy" kana="かたい" kanji="硬い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest twardy" kana="かたい"  />
@@ -586,6 +616,7 @@
       </forms>
     </word>
     <word id="kawaii" translation="uroczy" kana="かわいい" kanji="可愛い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest uroczy" kana="かわいい"  />
@@ -606,6 +637,7 @@
       </forms>
     </word>
     <word id="kiiroi" translation="żółty" kana="きいろい" kanji="黄色い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest żółty" kana="きいろい"  />
@@ -626,6 +658,7 @@
       </forms>
     </word>
     <word id="kiken" translation="niebezpieczny" kana="きけん" kanji="危険" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest niebezpieczny" kana="きけんだ"  />
         <form ref="predicate_polite_nonpast" translation="jest niebezpieczny" kana="きけんです"  />
@@ -645,6 +678,7 @@
       </forms>
     </word>
     <word id="kirei" translation="czysty" kana="きれい" kanji="綺麗" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest czysty" kana="きれいだ"  />
         <form ref="predicate_polite_nonpast" translation="jest czysty" kana="きれいです"  />
@@ -664,6 +698,7 @@
       </forms>
     </word>
     <word id="kitanai" translation="brudny" kana="きたない" kanji="汚い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest brudny" kana="きたない"  />
@@ -684,6 +719,7 @@
       </forms>
     </word>
     <word id="kodoku" translation="samotny" kana="こどく" kanji="孤独" type="na_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest samotny" kana="こどくだ"  />
@@ -704,6 +740,7 @@
       </forms>
     </word>
     <word id="kouka" translation="kosztowny" kana="こうか" kanji="高価" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest kosztowny" kana="こうかだ"  />
         <form ref="predicate_polite_nonpast" translation="jest kosztowny" kana="こうかです"  />
@@ -723,6 +760,7 @@
       </forms>
     </word>
     <word id="kurai" translation="ciemny" kana="くらい" kanji="暗い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ciemny" kana="くらい"  />
         <form ref="predicate_polite_nonpast" translation="jest ciemny" kana="くらいです"  />
@@ -742,6 +780,7 @@
       </forms>
     </word>
     <word id="kuroi" translation="czarny" kana="くろい" kanji="黒い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest czarny" kana="くろい"  />
@@ -762,6 +801,7 @@
       </forms>
     </word>
     <word id="majime" translation="poważny" kana="まじめ" kanji="真面目" type="na_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest poważny" kana="まじめだ"  />
@@ -782,6 +822,7 @@
       </forms>
     </word>
     <word id="marui" translation="okrągły" kana="まるい" kanji="丸い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest okrągły" kana="まるい"  />
@@ -802,6 +843,7 @@
       </forms>
     </word>
     <word id="mazui" translation="niesmaczny" kana="まずい" kanji="不味い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest niesmaczny" kana="まずい"  />
@@ -822,6 +864,7 @@
       </forms>
     </word>
     <word id="mazushii" translation="biedny" kana="まずしい" kanji="貧しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest biedny" kana="まずしい"  />
@@ -842,6 +885,7 @@
       </forms>
     </word>
     <word id="minikui" translation="brzydki" kana="みにくい" kanji="醜い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest brzydki" kana="みにくい"  />
         <form ref="predicate_polite_nonpast" translation="jest brzydki" kana="みにくいです"  />
@@ -861,6 +905,7 @@
       </forms>
     </word>
     <word id="miryokuteki" translation="atrakcyjny" kana="みりょくてき" kanji="魅力的" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest atrakcyjny" kana="みりょくてきだ"  />
         <form ref="predicate_polite_nonpast" translation="jest atrakcyjny" kana="みりょくてきです"  />
@@ -880,6 +925,7 @@
       </forms>
     </word>
     <word id="muzukashii" translation="trudny" kana="むずかしい" kanji="難しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest trudny" kana="むずかしい"  />
         <form ref="predicate_polite_nonpast" translation="jest trudny" kana="むずかしいです"  />
@@ -899,6 +945,7 @@
       </forms>
     </word>
     <word id="nameraka" translation="gładki" kana="なめらか" kanji="滑らか" type="na_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest gładki" kana="なめらかだ"  />
         <form ref="predicate_polite_nonpast" translation="jest gładki" kana="なめらかです"  />
@@ -918,6 +965,7 @@
       </forms>
     </word>
     <word id="nigai" translation="gorzki" kana="にがい" kanji="苦い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest gorzki" kana="にがい"  />
@@ -938,6 +986,7 @@
       </forms>
     </word>
     <word id="oishii" translation="pyszny" kana="おいしい" kanji="美味しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest pyszny" kana="おいしい"  />
@@ -958,6 +1007,7 @@
       </forms>
     </word>
     <word id="okanemochi" translation="bogaty" kana="おかねもち" kanji="お金持ち" type="na_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest bogaty" kana="おかねもちだ"  />
@@ -978,6 +1028,7 @@
       </forms>
     </word>
     <word id="omoi" translation="ciężki" kana="おもい" kanji="重い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ciężki" kana="おもい"  />
         <form ref="predicate_polite_nonpast" translation="jest ciężki" kana="おもいです"  />
@@ -997,6 +1048,7 @@
       </forms>
     </word>
     <word id="omoshiroi" translation="ciekawy" kana="おもしろい" kanji="面白い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ciekawy" kana="おもしろい"  />
         <form ref="predicate_polite_nonpast" translation="jest ciekawy" kana="おもしろいです"  />
@@ -1016,6 +1068,7 @@
       </forms>
     </word>
     <word id="ooi" translation="liczny" kana="おおい" kanji="多い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest liczny" kana="おおい"  />
         <form ref="predicate_polite_nonpast" translation="jest liczny" kana="おおいです"  />
@@ -1035,6 +1088,7 @@
       </forms>
     </word>
     <word id="ookii" translation="duży" kana="おおきい" kanji="大きい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest duży" kana="おおきい"  />
         <form ref="predicate_polite_nonpast" translation="jest duży" kana="おおきいです"  />
@@ -1054,6 +1108,7 @@
       </forms>
     </word>
     <word id="osoi" translation="wolny" kana="おそい" kanji="遅い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal vehicle" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wolny" kana="おそい"  />
@@ -1074,6 +1129,7 @@
       </forms>
     </word>
     <word id="otonashii" translation="spokojny" kana="おとなしい" kanji="大人しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest spokojny" kana="おとなしい"  />
@@ -1094,6 +1150,7 @@
       </forms>
     </word>
     <word id="samui" translation="zimny" kana="さむい" kanji="寒い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="place" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest zimny" kana="さむい"  />
@@ -1114,6 +1171,7 @@
       </forms>
     </word>
     <word id="seijou" translation="normalny" kana="せいじょう" kanji="正常" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest normalny" kana="せいじょうだ"  />
         <form ref="predicate_polite_nonpast" translation="jest normalny" kana="せいじょうです"  />
@@ -1133,6 +1191,7 @@
       </forms>
     </word>
     <word id="semai" translation="wąski" kana="せまい" kanji="狭い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wąski" kana="せまい"  />
         <form ref="predicate_polite_nonpast" translation="jest wąski" kana="せまいです"  />
@@ -1152,6 +1211,7 @@
       </forms>
     </word>
     <word id="shakouteki" translation="towarzyski" kana="しゃこうてき" kanji="社交的" type="na_adjective">
+      <agreement profile="regular_ki_gi" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest towarzyski" kana="しゃこうてきだ"  />
@@ -1172,6 +1232,7 @@
       </forms>
     </word>
     <word id="shikakui" translation="kwadratowy" kana="しかくい" kanji="四角い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest kwadratowy" kana="しかくい"  />
@@ -1192,6 +1253,7 @@
       </forms>
     </word>
     <word id="shiokarai" translation="słony" kana="しおからい" kanji="塩辛い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest słony" kana="しおからい"  />
@@ -1212,6 +1274,7 @@
       </forms>
     </word>
     <word id="shiroi" translation="biały" kana="しろい" kanji="白い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest biały" kana="しろい"  />
@@ -1232,6 +1295,7 @@
       </forms>
     </word>
     <word id="shitashimiyasui" translation="przystępny" kana="したしみやすい" kanji="親しみやすい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest przystępny" kana="したしみやすい"  />
@@ -1252,6 +1316,7 @@
       </forms>
     </word>
     <word id="shizuka" translation="cichy" kana="しずか" kanji="静か" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest cichy" kana="しずかだ"  />
         <form ref="predicate_polite_nonpast" translation="jest cichy" kana="しずかです"  />
@@ -1271,6 +1336,7 @@
       </forms>
     </word>
     <word id="subarashii" translation="wspaniały" kana="すばらしい" kanji="素晴らしい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wspaniały" kana="すばらしい"  />
         <form ref="predicate_polite_nonpast" translation="jest wspaniały" kana="すばらしいです"  />
@@ -1290,6 +1356,7 @@
       </forms>
     </word>
     <word id="sukunai" translation="nieliczny" kana="すくない" kanji="少ない" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest nieliczny" kana="すくない"  />
         <form ref="predicate_polite_nonpast" translation="jest nieliczny" kana="すくないです"  />
@@ -1309,6 +1376,7 @@
       </forms>
     </word>
     <word id="suppai" translation="kwaśny" kana="すっぱい" kanji="酸っぱい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest kwaśny" kana="すっぱい"  />
@@ -1329,6 +1397,7 @@
       </forms>
     </word>
     <word id="suteki" translation="świetny" kana="すてき" kanji="素敵" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest świetny" kana="すてきだ"  />
         <form ref="predicate_polite_nonpast" translation="jest świetny" kana="すてきです"  />
@@ -1348,6 +1417,7 @@
       </forms>
     </word>
     <word id="tadashii" translation="poprawny" kana="ただしい" kanji="正しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest poprawny" kana="ただしい"  />
         <form ref="predicate_polite_nonpast" translation="jest poprawny" kana="ただしいです"  />
@@ -1367,6 +1437,7 @@
       </forms>
     </word>
     <word id="takai" translation="wysoki" kana="たかい" kanji="高い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wysoki" kana="たかい"  />
         <form ref="predicate_polite_nonpast" translation="jest wysoki" kana="たかいです"  />
@@ -1386,6 +1457,7 @@
       </forms>
     </word>
     <word id="tanoshii" translation="przyjemny" kana="たのしい" kanji="楽しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest przyjemny" kana="たのしい"  />
         <form ref="predicate_polite_nonpast" translation="jest przyjemny" kana="たのしいです"  />
@@ -1405,6 +1477,7 @@
       </forms>
     </word>
     <word id="tooi" translation="daleki" kana="とおい" kanji="遠い" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest daleki" kana="とおい"  />
         <form ref="predicate_polite_nonpast" translation="jest daleki" kana="とおいです"  />
@@ -1424,6 +1497,7 @@
       </forms>
     </word>
     <word id="toumei" translation="przezroczysty" kana="とうめい" kanji="透明" type="na_adjective">
+      <agreement profile="regular_y" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="przezroczysty" kana="とうめいだ"  />
@@ -1444,6 +1518,7 @@
       </forms>
     </word>
     <word id="tsumaranai" translation="nudny" kana="つまらない" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest nudny" kana="つまらない"  />
         <form ref="predicate_polite_nonpast" translation="jest nudny" kana="つまらないです"  />
@@ -1463,6 +1538,7 @@
       </forms>
     </word>
     <word id="tsuyoi" translation="silny" kana="つよい" kanji="強い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest silny" kana="つよい"  />
         <form ref="predicate_polite_nonpast" translation="jest silny" kana="つよいです"  />
@@ -1482,6 +1558,7 @@
       </forms>
     </word>
     <word id="ureshii" translation="szczęśliwy" kana="うれしい" kanji="嬉しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest szczęśliwy" kana="うれしい"  />
@@ -1502,6 +1579,7 @@
       </forms>
     </word>
     <word id="utsukushii" translation="piękny" kana="うつくしい" kanji="美しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest piękny" kana="うつくしい"  />
         <form ref="predicate_polite_nonpast" translation="jest piękny" kana="うつくしいです"  />
@@ -1521,6 +1599,7 @@
       </forms>
     </word>
     <word id="wakai" translation="młody" kana="わかい" kanji="若い" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest młody" kana="わかい"  />
@@ -1541,6 +1620,7 @@
       </forms>
     </word>
     <word id="warui" translation="zły" kana="わるい" kanji="悪い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest zły" kana="わるい"  />
         <form ref="predicate_polite_nonpast" translation="jest zły" kana="わるいです"  />
@@ -1560,6 +1640,7 @@
       </forms>
     </word>
     <word id="yasashii" translation="miły" kana="やさしい" kanji="優しい" type="i_adjective">
+      <agreement profile="regular_y" />
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest miły" kana="やさしい"  />
@@ -1580,6 +1661,7 @@
       </forms>
     </word>
     <word id="yasui" translation="tani" kana="やすい" kanji="安い" type="i_adjective">
+      <agreement profile="regular_i" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest tani" kana="やすい"  />
         <form ref="predicate_polite_nonpast" translation="jest tani" kana="やすいです"  />
@@ -1599,6 +1681,7 @@
       </forms>
     </word>
     <word id="yawarakai" translation="miękki" kana="やわらかい" kanji="柔らかい" type="i_adjective">
+      <agreement profile="regular_ki_gi" />
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest miękki" kana="やわらかい"  />
@@ -1619,6 +1702,7 @@
       </forms>
     </word>
     <word id="yoi" translation="dobry" kana="よい" kanji="良い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest dobry" kana="よい"  />
         <form ref="predicate_polite_nonpast" translation="jest dobry" kana="よいです"  />
@@ -1638,6 +1722,7 @@
       </forms>
     </word>
     <word id="yowai" translation="słaby" kana="よわい" kanji="弱い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest słaby" kana="よわい"  />
         <form ref="predicate_polite_nonpast" translation="jest słaby" kana="よわいです"  />
@@ -1657,6 +1742,7 @@
       </forms>
     </word>
     <word id="kowai" translation="straszny, przerażający" kana="こわい" kanji="怖い" type="i_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest straszny" kana="こわい" kanji="怖い"  />
         <form ref="predicate_polite_nonpast" translation="jest straszny" kana="こわいです" kanji="怖いです"  />
@@ -1676,6 +1762,7 @@
       </forms>
     </word>
     <word id="fushigi" translation="dziwny, tajemniczy" kana="ふしぎ" kanji="不思議" type="na_adjective">
+      <agreement profile="regular_y" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest tajemniczy" kana="ふしぎだ" kanji="不思議だ"  />
         <form ref="predicate_polite_nonpast" translation="jest tajemniczy" kana="ふしぎです" kanji="不思議です"  />
