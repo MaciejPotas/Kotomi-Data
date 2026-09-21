@@ -14,8 +14,8 @@
     },
     {
       "path": "data/dictionaries/copulas.xml",
-      "sha256": "8a7776c3cf4b88fe6dadaa2d6bcd99550d40a186f0ffa9948db4962139197840",
-      "url": "dictionaries/copulas.xml?kotomi_sha256=8a7776c3cf4b88fe6dadaa2d6bcd99550d40a186f0ffa9948db4962139197840"
+      "sha256": "fd1194135d44f08e904216ff3d5fb16fb304050faf5df7bfc8816b4208fd26bd",
+      "url": "dictionaries/copulas.xml?kotomi_sha256=fd1194135d44f08e904216ff3d5fb16fb304050faf5df7bfc8816b4208fd26bd"
     },
     {
       "path": "data/dictionaries/interrogatives.xml",
@@ -39,13 +39,13 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "c8067b9a4985985b88717f8fd5054160ffab3f93ddbc64d822151f98adf5bbb8",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=c8067b9a4985985b88717f8fd5054160ffab3f93ddbc64d822151f98adf5bbb8"
+      "sha256": "f89809dc16a1631f83752bcdf44be5c9737255cfb0918a40882ef2657c0969f7",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=f89809dc16a1631f83752bcdf44be5c9737255cfb0918a40882ef2657c0969f7"
     },
     {
       "path": "data/lessons/lessons.xml",
-      "sha256": "dd4c87ee229d91436d5d62fb7b4ea9c796b478e6931c3d1f2e0d72924e13a2ed",
-      "url": "lessons/lessons.xml?kotomi_sha256=dd4c87ee229d91436d5d62fb7b4ea9c796b478e6931c3d1f2e0d72924e13a2ed"
+      "sha256": "1112d245f02fae88147462dbcf58411734750046dae765d94385d8fff5d14324",
+      "url": "lessons/lessons.xml?kotomi_sha256=1112d245f02fae88147462dbcf58411734750046dae765d94385d8fff5d14324"
     },
     {
       "path": "data/patterns/sentence_maps.xml",
