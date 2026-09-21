@@ -190,23 +190,25 @@ def create_app_class():
         return tr(key)
 
     def target_label(question: AdjectiveQuestion) -> str:
-        for group_id, group in FORM_GROUPS.items():
-            for style_id in ("plain", "polite"):
-                form_name = str(group[style_id])
-                if (
-                    question.target_form == form_name
-                    or question.target_form.endswith("+ " + form_name)
-                ):
-                    parts = [
-                        tr(f"specialized.form_group.{group_id}"),
-                        tr(f"specialized.{style_id}"),
-                    ]
-                    if question.pattern_id == "adjective_attributive":
-                        parts.append(
-                            tr("specialized.pattern.adjective_attributive")
-                        )
-                    return ", ".join(parts)
-        return question.target_label
+        engine = getattr(quiz_app(), "engine", None)
+        project = getattr(engine, "project", None)
+        resolved = (
+            target_form_group(project, question.target_form)
+            if project is not None
+            else None
+        )
+        if resolved is None:
+            return question.target_label
+        group_id, style_id = resolved
+        parts = [
+            tr(f"specialized.form_group.{group_id}"),
+            tr(f"specialized.{style_id}"),
+        ]
+        if question.pattern_id == "adjective_attributive":
+            parts.append(
+                tr("specialized.pattern.adjective_attributive")
+            )
+        return ", ".join(parts)
 
     def settings_summary(settings: AdjectiveQuizSettings) -> str:
         types = []
