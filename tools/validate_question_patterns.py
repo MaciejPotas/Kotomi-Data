@@ -66,7 +66,7 @@ def validate_copula_translations() -> None:
     if word is None:
         raise AssertionError("Missing canonical copula 'da'")
     forms = {
-        str(node.get("name", "")): str(node.get("translation", ""))
+        str(node.get("ref", "")): str(node.get("translation", ""))
         for node in word.findall("./forms/form")
     }
     for form_name, expected_translation in EXPECTED_COPULA_TRANSLATIONS.items():

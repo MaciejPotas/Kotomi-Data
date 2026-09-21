@@ -534,10 +534,14 @@ def create_app_class():
                 return field_name
         return "translation"
 
-    def form_label(form_name: str) -> str:
+    def form_label(
+        form_name: str,
+        labels: dict[str, str] | None = None,
+    ) -> str:
+        fallback = (labels or {}).get(form_name, form_name)
         return ui_text(
             f"quiz_form.{form_name}",
-            FORM_LABELS.get(form_name, form_name),
+            fallback,
         )
 
     def is_japanese_text(value: str) -> bool:
@@ -963,10 +967,6 @@ def create_app_class():
             root.add_widget(button_row([select_all, clear]))
             scroll, self.form_stack = scroll_stack(6, interactive_bar=True)
             self.checks: Dict[str, MobileOptionToggle] = {}
-            for form_name in FORM_ORDER:
-                check = MobileOptionToggle(text=form_label(form_name))
-                self.checks[form_name] = check
-                self.form_stack.add_widget(check)
             root.add_widget(scroll)
             start = AppButton(text=ui_text("action.start", ""))
             start.bind(on_release=lambda *_: self.start())
@@ -984,13 +984,21 @@ def create_app_class():
             lesson = self.kotomi.current_lesson()
             self.title.text = ui_text("quiz.conjugation", "") + "\n" + lesson.path
             self.asked.text = field_label(self.kotomi.settings.asked_field)
-            available = set(available_forms(self.kotomi.catalog, lesson))
-            for form_name, check in self.checks.items():
-                check.disabled = form_name not in available
-                check.active = (
-                    form_name in available
-                    and form_name in self.kotomi.settings.conjugation_forms
+            available = available_forms(self.kotomi.catalog, lesson)
+            self.form_stack.clear_widgets()
+            self.checks = {}
+            for form_name in available:
+                check = MobileOptionToggle(
+                    text=form_label(
+                        form_name,
+                        self.kotomi.catalog.form_labels,
+                    )
                 )
+                check.active = (
+                    form_name in self.kotomi.settings.conjugation_forms
+                )
+                self.checks[form_name] = check
+                self.form_stack.add_widget(check)
 
         def start(self) -> None:
             selected = [name for name, check in self.checks.items() if check.active]
@@ -1127,17 +1135,17 @@ def create_app_class():
             )
             self.form_checks = {}
             saved_forms = set(self.kotomi.settings.sentence_forms)
-            available_forms = list(
-                self.kotomi.sentence_engine.available_form_names()
+            available_groups = (
+                self.kotomi.sentence_engine.available_form_groups()
             )
             form_groups = (
                 (
                     ui_text("quiz.verb_forms", ""),
-                    [name for name in available_forms if not name.startswith("predicate_")],
+                    list(available_groups["verb"]),
                 ),
                 (
                     ui_text("quiz.adjective_forms", ""),
-                    [name for name in available_forms if name.startswith("predicate_")],
+                    list(available_groups["adjective"]),
                 ),
             )
             for heading, form_names in form_groups:
@@ -1148,7 +1156,10 @@ def create_app_class():
                 )
                 for form_name in form_names:
                     option_toggle = MobileOptionToggle(
-                        text=form_label(form_name),
+                        text=form_label(
+                            form_name,
+                            self.kotomi.catalog.form_labels,
+                        ),
                         active=form_name in saved_forms,
                     )
                     self.form_checks[form_name] = option_toggle
@@ -1349,7 +1360,10 @@ def create_app_class():
             form_name = question.metadata.get("form", "")
             if form_name:
                 key = f"quiz_form.{form_name}"
-                return self.tr(key, FORM_LABELS.get(form_name, form_name))
+                return self.tr(
+                    key,
+                    self.kotomi.catalog.form_labels.get(form_name, form_name),
+                )
             key = f"quiz_field.{question.answer_field}"
             fallback = field_label(question.answer_field)
             if question.answer_field == "sentence":
@@ -2225,9 +2239,16 @@ def create_app_class():
                 settings_path(INSTALL_ROOT, "lesson_quiz_settings.xml")
             )
             self.catalog = self.catalog_store.load()
-            synchronize_catalog(self.catalog, QUIZ_PROJECT)
-            self.settings = AppSettings.from_dict(self.settings_store.load())
+            synchronize_catalog(
+                self.catalog,
+                QUIZ_PROJECT,
+                include_adjective_forms=True,
+            )
             self.sentence_engine = LessonSentenceQuiz(QUIZ_PROJECT)
+            self.settings = AppSettings.from_dict(
+                self.settings_store.load(),
+                self.sentence_engine.project.form_definitions,
+            )
 
             self.manager = ScreenManager()
             self.manager.add_widget(LessonsScreen(name="lessons"))

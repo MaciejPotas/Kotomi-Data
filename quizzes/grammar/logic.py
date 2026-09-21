@@ -24,6 +24,7 @@ if str(INSTALL_ROOT) not in sys.path:
 
 from kotomi.core.project import Entity, ProjectError, Word
 from kotomi.application.generation_engine import SharedQuizEngine
+from kotomi.application.quiz_project import QuizProject
 from kotomi.core.generation import balanced_choice
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from kotomi.application.settings_xml import load_settings, save_settings, settings_path
@@ -383,7 +384,7 @@ def resolve_project_path() -> Path:
 def configure_quiz_profile(quiz_id: str) -> None:
     """Configure this reusable quiz UI from one XML quiz definition."""
 
-    project = SharedQuizEngine(resolve_project_path()).project
+    project = QuizProject.load(resolve_project_path())
     quiz = project.sentence_quizzes.get(quiz_id)
     if quiz is None:
         raise GrammarQuizError(f"Nie znaleziono quizu zdań '{quiz_id}'.")
@@ -471,8 +472,8 @@ class GrammarQuizEngine:
     ) -> None:
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.shared_engine = SharedQuizEngine(self.project_path, self.rng)
-        self.project = self.shared_engine.project
+        self.project = QuizProject.load(self.project_path)
+        self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
     def _validate_project(self) -> None:
@@ -481,8 +482,8 @@ class GrammarQuizEngine:
             raise GrammarQuizError("\n".join(issues))
 
     def reload(self) -> None:
-        self.shared_engine.reload()
-        self.project = self.shared_engine.project
+        self.project = QuizProject.load(self.project_path)
+        self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
     def build_generation_rules(

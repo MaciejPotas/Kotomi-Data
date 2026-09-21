@@ -1,28 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="1" id="copulas" label="Copulas" schema="copula">
-  <editor required="translation kana" optional="kanji romaji" metadata="forms">
-    <forms>
-      <form name="dictionary" />
-      <form name="polite_nonpast" />
-      <form name="plain_negative" />
-      <form name="polite_negative" />
-      <form name="past_plain" />
-      <form name="past_polite" />
-      <form name="past_negative_plain" />
-      <form name="past_negative_polite" />
-    </forms>
-  </editor>
+  <editor required="translation kana" optional="kanji romaji" metadata="forms" />
   <words>
     <word id="da" translation="być" kana="だ" type="copula">
       <forms>
-        <form name="dictionary" translation="jest" context="none" style="plain non-past" kana="だ" />
-        <form name="polite_nonpast" translation="jest" context="none" style="polite non-past" kana="です" />
-        <form name="plain_negative" translation="nie jest" context="none" style="plain negative" kana="じゃない" />
-        <form name="polite_negative" translation="nie jest" context="none" style="polite negative" kana="ではありません" />
-        <form name="past_plain" translation="był(a/o/y)" context="none" style="plain past" kana="だった" />
-        <form name="past_polite" translation="był(a/o/y)" context="none" style="polite past" kana="でした" />
-        <form name="past_negative_plain" translation="nie był(a/o/y)" context="none" style="plain past negative" kana="じゃなかった" />
-        <form name="past_negative_polite" translation="nie był(a/o/y)" context="none" style="polite past negative" kana="ではありませんでした" />
+        <form ref="dictionary" translation="jest" kana="だ"  />
+        <form ref="polite_nonpast" translation="jest" kana="です"  />
+        <form ref="plain_negative" translation="nie jest" kana="じゃない"  />
+        <form ref="polite_negative" translation="nie jest" kana="ではありません"  />
+        <form ref="past_plain" translation="był(a/o/y)" kana="だった"  />
+        <form ref="past_polite" translation="był(a/o/y)" kana="でした"  />
+        <form ref="past_negative_plain" translation="nie był(a/o/y)" kana="じゃなかった"  />
+        <form ref="past_negative_polite" translation="nie był(a/o/y)" kana="ではありませんでした"  />
       </forms>
     </word>
   </words>
