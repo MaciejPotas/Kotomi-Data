@@ -9,8 +9,8 @@
     },
     {
       "path": "data/dictionaries/adjectives.xml",
-      "sha256": "c5fff99edd2ca9620fd4751e06611963b22a67815e06a203fe5d894c5a7d4a9d",
-      "url": "dictionaries/adjectives.xml?kotomi_sha256=c5fff99edd2ca9620fd4751e06611963b22a67815e06a203fe5d894c5a7d4a9d"
+      "sha256": "fbdd0ad3e54f26d72a21612cbb9afff3e1ffdb89ad3c08064e33f4d00b434f37",
+      "url": "dictionaries/adjectives.xml?kotomi_sha256=fbdd0ad3e54f26d72a21612cbb9afff3e1ffdb89ad3c08064e33f4d00b434f37"
     },
     {
       "path": "data/dictionaries/copulas.xml",

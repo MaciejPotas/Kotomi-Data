@@ -18,11 +18,13 @@ The `interrogatives` dictionary stores Japanese question words as form-less lexi
 
 Polish adjective agreement is optional lexical data. Nouns may store
 `<agreement class="..." />`, while adjectives store ready-to-use values in
-`<polish_forms>`. The latter contains one optional `<common>` section and
-zero or more `<override classes="...">` sections. An override contains only
-values that differ from `common`; classes with identical overrides are grouped
-in one space-separated `classes` attribute. The writer normalizes redundant
-overrides on save.
+`<polish_forms>`. The latter contains zero or more `<common>` entries and
+zero or more `<override classes="...">` entries. Each entry uses a
+space-separated `cases` attribute and one `value`, so a form shared by several
+cases is stored only once. There may be several common and override entries.
+An override contains only values that differ from `common`; identical class
+and case groupings are combined. The writer groups values in canonical case
+and class order and removes redundant overrides on save.
 
 The runtime only looks up `specific -> common -> translation`. It does not
 infer a class from a semantic category and does not create Polish forms from
