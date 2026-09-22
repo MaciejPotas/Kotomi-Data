@@ -2462,14 +2462,14 @@
       </polish_forms>
       <describes categories="concrete" />
       <forms>
-        <form ref="predicate_plain_nonpast" translation="przezroczysty" kana="とうめいだ"  />
-        <form ref="predicate_polite_nonpast" translation="przezroczysty" kana="とうめいです"  />
-        <form ref="predicate_plain_negative" translation="przezroczysty" kana="とうめいじゃない"  />
-        <form ref="predicate_polite_negative" translation="przezroczysty" kana="とうめいではありません"  />
-        <form ref="predicate_plain_past" translation="przezroczysty" kana="とうめいだった"  />
-        <form ref="predicate_polite_past" translation="przezroczysty" kana="とうめいでした"  />
-        <form ref="predicate_plain_past_negative" translation="przezroczysty" kana="とうめいではなかった"  />
-        <form ref="predicate_polite_past_negative" translation="przezroczysty" kana="とうめいではありませんでした"  />
+        <form ref="predicate_plain_nonpast" translation="jest przezroczysty" kana="とうめいだ"  />
+        <form ref="predicate_polite_nonpast" translation="jest przezroczysty" kana="とうめいです"  />
+        <form ref="predicate_plain_negative" translation="nie jest przezroczysty" kana="とうめいじゃない"  />
+        <form ref="predicate_polite_negative" translation="nie jest przezroczysty" kana="とうめいではありません"  />
+        <form ref="predicate_plain_past" translation="był przezroczysty" kana="とうめいだった"  />
+        <form ref="predicate_polite_past" translation="był przezroczysty" kana="とうめいでした"  />
+        <form ref="predicate_plain_past_negative" translation="nie był przezroczysty" kana="とうめいではなかった"  />
+        <form ref="predicate_polite_past_negative" translation="nie był przezroczysty" kana="とうめいではありませんでした"  />
         <form ref="attributive_nonpast" translation="przezroczysty" kana="とうめいな"  />
         <form ref="connective" translation="przezroczysty" kana="とうめいで"  />
         <form ref="adverbial" translation="przezroczysty" kana="とうめいに"  />
