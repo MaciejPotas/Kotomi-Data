@@ -35,6 +35,24 @@ Pattern categories are persisted directly on `<sentence_pattern category="...">`
 The `questions` sentence quiz uses `selection="references"`, so users select question families while the engine expands composites internally and keeps form selection independent.
 
 
+
+Noun-owned source-language relations use `[relation:...]`. The selector reads
+the selected noun's relation profile and renders the full phrase by default:
+
+```text
+{noun[category:place][relation:location]}     -> w szkole / na plaży
+{noun[category:place][relation:destination]}  -> do szkoły / na plażę
+```
+
+Use `.preposition` and `.case` when a construction needs the two pieces
+separately. Do not combine `[relation:...]` with `[case:...]` or
+`[government:...]` on the same noun occurrence.
+
+Use government when the Polish realization is controlled by the selected verb.
+Use relation when the Polish realization is lexical to the selected noun. The
+Japanese role/particle remains independent from both source-language mechanisms.
+
+
 Governed Polish noun phrases use [government:phrase]. The engine links the noun to the role-bearing verb. Use the same @name only when a pattern needs to disambiguate more than one possible pair. [government:preposition] and [government:case] expose the two parts
 separately for constructions that place an adjective between them.
 
