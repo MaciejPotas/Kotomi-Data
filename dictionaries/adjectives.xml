@@ -1,8 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="1" id="adjectives" label="Adjectives" schema="adjective">
-  <editor required="translation kana type" optional="kanji romaji" metadata="describes forms" />
+  <editor required="translation kana type" optional="kanji romaji" metadata="describes polish_forms forms" />
   <words>
     <word id="akai" translation="czerwony" kana="あかい" kanji="赤い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="czerwony" />
+        <common cases="genitive" value="czerwonego" />
+        <common cases="dative" value="czerwonemu" />
+        <common cases="instrumental locative" value="czerwonym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="czerwonego" />
+        <override classes="feminine" cases="nominative vocative" value="czerwona" />
+        <override classes="feminine" cases="genitive dative locative" value="czerwonej" />
+        <override classes="feminine" cases="accusative instrumental" value="czerwoną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="czerwone" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="czerwonych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="czerwonym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="czerwonymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest czerwony" kana="あかい"  />
@@ -23,6 +37,20 @@
       </forms>
     </word>
     <word id="akarui" translation="jasny" kana="あかるい" kanji="明るい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="jasny" />
+        <common cases="genitive" value="jasnego" />
+        <common cases="dative" value="jasnemu" />
+        <common cases="instrumental locative" value="jasnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="jasnego" />
+        <override classes="feminine" cases="nominative vocative" value="jasna" />
+        <override classes="feminine" cases="genitive dative locative" value="jasnej" />
+        <override classes="feminine" cases="accusative instrumental" value="jasną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="jasne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="jasnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="jasnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="jasnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest jasny" kana="あかるい"  />
         <form ref="predicate_polite_nonpast" translation="jest jasny" kana="あかるいです"  />
@@ -42,6 +70,20 @@
       </forms>
     </word>
     <word id="amai" translation="słodki" kana="あまい" kanji="甘い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="słodki" />
+        <common cases="genitive" value="słodkiego" />
+        <common cases="dative" value="słodkiemu" />
+        <common cases="instrumental locative" value="słodkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="słodkiego" />
+        <override classes="feminine" cases="nominative vocative" value="słodka" />
+        <override classes="feminine" cases="genitive dative locative" value="słodkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="słodką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="słodkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="słodkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="słodkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="słodkimi" />
+      </polish_forms>
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest słodki" kana="あまい"  />
@@ -62,6 +104,20 @@
       </forms>
     </word>
     <word id="anzen" translation="bezpieczny" kana="あんぜん" kanji="安全" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="bezpieczny" />
+        <common cases="genitive" value="bezpiecznego" />
+        <common cases="dative" value="bezpiecznemu" />
+        <common cases="instrumental locative" value="bezpiecznym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="bezpiecznego" />
+        <override classes="feminine" cases="nominative vocative" value="bezpieczna" />
+        <override classes="feminine" cases="genitive dative locative" value="bezpiecznej" />
+        <override classes="feminine" cases="accusative instrumental" value="bezpieczną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="bezpieczne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="bezpiecznych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="bezpiecznym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="bezpiecznymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest bezpieczny" kana="あんぜんだ"  />
         <form ref="predicate_polite_nonpast" translation="jest bezpieczny" kana="あんぜんです"  />
@@ -81,6 +137,20 @@
       </forms>
     </word>
     <word id="aoi" translation="niebieski" kana="あおい" kanji="青い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="niebieski" />
+        <common cases="genitive" value="niebieskiego" />
+        <common cases="dative" value="niebieskiemu" />
+        <common cases="instrumental locative" value="niebieskim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="niebieskiego" />
+        <override classes="feminine" cases="nominative vocative" value="niebieska" />
+        <override classes="feminine" cases="genitive dative locative" value="niebieskiej" />
+        <override classes="feminine" cases="accusative instrumental" value="niebieską" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="niebieskie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="niebieskich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="niebieskim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="niebieskimi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest niebieski" kana="あおい"  />
@@ -101,6 +171,20 @@
       </forms>
     </word>
     <word id="arai" translation="szorstki" kana="あらい" kanji="荒い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="szorstki" />
+        <common cases="genitive" value="szorstkiego" />
+        <common cases="dative" value="szorstkiemu" />
+        <common cases="instrumental locative" value="szorstkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="szorstkiego" />
+        <override classes="feminine" cases="nominative vocative" value="szorstka" />
+        <override classes="feminine" cases="genitive dative locative" value="szorstkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="szorstką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="szorstkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="szorstkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="szorstkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="szorstkimi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest szorstki" kana="あらい"  />
@@ -121,6 +205,20 @@
       </forms>
     </word>
     <word id="atarashii" translation="nowy" kana="あたらしい" kanji="新しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="nowy" />
+        <common cases="genitive" value="nowego" />
+        <common cases="dative" value="nowemu" />
+        <common cases="instrumental locative" value="nowym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="nowego" />
+        <override classes="feminine" cases="nominative vocative" value="nowa" />
+        <override classes="feminine" cases="genitive dative locative" value="nowej" />
+        <override classes="feminine" cases="accusative instrumental" value="nową" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="nowe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="nowych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="nowym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="nowymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest nowy" kana="あたらしい"  />
         <form ref="predicate_polite_nonpast" translation="jest nowy" kana="あたらしいです"  />
@@ -140,6 +238,20 @@
       </forms>
     </word>
     <word id="atatakai" translation="ciepły" kana="あたたかい" kanji="暖かい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ciepły" />
+        <common cases="genitive" value="ciepłego" />
+        <common cases="dative" value="ciepłemu" />
+        <common cases="instrumental locative" value="ciepłym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="ciepłego" />
+        <override classes="feminine" cases="nominative vocative" value="ciepła" />
+        <override classes="feminine" cases="genitive dative locative" value="ciepłej" />
+        <override classes="feminine" cases="accusative instrumental" value="ciepłą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="ciepłe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="ciepłych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="ciepłym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="ciepłymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ciepły" kana="あたたかい"  />
@@ -160,6 +272,20 @@
       </forms>
     </word>
     <word id="atsui" translation="gorący" kana="あつい" kanji="暑い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="gorący" />
+        <common cases="genitive" value="gorącego" />
+        <common cases="dative" value="gorącemu" />
+        <common cases="instrumental locative" value="gorącym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="gorącego" />
+        <override classes="feminine" cases="nominative vocative" value="gorąca" />
+        <override classes="feminine" cases="genitive dative locative" value="gorącej" />
+        <override classes="feminine" cases="accusative instrumental" value="gorącą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="gorące" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="gorących" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="gorącym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="gorącymi" />
+      </polish_forms>
       <describes categories="place" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest gorący" kana="あつい"  />
@@ -180,6 +306,20 @@
       </forms>
     </word>
     <word id="azayaka" translation="żywy" kana="あざやか" kanji="鮮やか" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="żywy" />
+        <common cases="genitive" value="żywego" />
+        <common cases="dative" value="żywemu" />
+        <common cases="instrumental locative" value="żywym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="żywego" />
+        <override classes="feminine" cases="nominative vocative" value="żywa" />
+        <override classes="feminine" cases="genitive dative locative" value="żywej" />
+        <override classes="feminine" cases="accusative instrumental" value="żywą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="żywe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="żywych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="żywym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="żywymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wyrazisty" kana="あざやかだ"  />
         <form ref="predicate_polite_nonpast" translation="jest wyrazisty" kana="あざやかです"  />
@@ -199,6 +339,20 @@
       </forms>
     </word>
     <word id="chiisai" translation="mały" kana="ちいさい" kanji="小さい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="mały" />
+        <common cases="genitive" value="małego" />
+        <common cases="dative" value="małemu" />
+        <common cases="instrumental locative" value="małym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="małego" />
+        <override classes="feminine" cases="nominative vocative" value="mała" />
+        <override classes="feminine" cases="genitive dative locative" value="małej" />
+        <override classes="feminine" cases="accusative instrumental" value="małą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="małe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="małych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="małym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="małymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest mały" kana="ちいさい"  />
@@ -219,6 +373,20 @@
       </forms>
     </word>
     <word id="chikai" translation="bliski" kana="ちかい" kanji="近い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="bliski" />
+        <common cases="genitive" value="bliskiego" />
+        <common cases="dative" value="bliskiemu" />
+        <common cases="instrumental locative" value="bliskim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="bliskiego" />
+        <override classes="feminine" cases="nominative vocative" value="bliska" />
+        <override classes="feminine" cases="genitive dative locative" value="bliskiej" />
+        <override classes="feminine" cases="accusative instrumental" value="bliską" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="bliskie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="bliskich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="bliskim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="bliskimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest bliski" kana="ちかい"  />
         <form ref="predicate_polite_nonpast" translation="jest bliski" kana="ちかいです"  />
@@ -238,6 +406,20 @@
       </forms>
     </word>
     <word id="fukuzatsu" translation="skomplikowany" kana="ふくざつ" kanji="複雑" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="skomplikowany" />
+        <common cases="genitive" value="skomplikowanego" />
+        <common cases="dative" value="skomplikowanemu" />
+        <common cases="instrumental locative" value="skomplikowanym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="skomplikowanego" />
+        <override classes="feminine" cases="nominative vocative" value="skomplikowana" />
+        <override classes="feminine" cases="genitive dative locative" value="skomplikowanej" />
+        <override classes="feminine" cases="accusative instrumental" value="skomplikowaną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="skomplikowane" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="skomplikowanych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="skomplikowanym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="skomplikowanymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest skomplikowany" kana="ふくざつだ"  />
         <form ref="predicate_polite_nonpast" translation="jest skomplikowany" kana="ふくざつです"  />
@@ -257,6 +439,20 @@
       </forms>
     </word>
     <word id="furui" translation="stary" kana="ふるい" kanji="古い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="stary" />
+        <common cases="genitive" value="starego" />
+        <common cases="dative" value="staremu" />
+        <common cases="instrumental locative" value="starym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="starego" />
+        <override classes="feminine" cases="nominative vocative" value="stara" />
+        <override classes="feminine" cases="genitive dative locative" value="starej" />
+        <override classes="feminine" cases="accusative instrumental" value="starą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="stare" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="starych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="starym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="starymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest stary" kana="ふるい"  />
         <form ref="predicate_polite_nonpast" translation="jest stary" kana="ふるいです"  />
@@ -276,6 +472,20 @@
       </forms>
     </word>
     <word id="ganko" translation="uparty" kana="がんこ" kanji="頑固" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="uparty" />
+        <common cases="genitive" value="upartego" />
+        <common cases="dative" value="upartemu" />
+        <common cases="instrumental locative" value="upartym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="upartego" />
+        <override classes="feminine" cases="nominative vocative" value="uparta" />
+        <override classes="feminine" cases="genitive dative locative" value="upartej" />
+        <override classes="feminine" cases="accusative instrumental" value="upartą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="uparte" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="upartych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="upartym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="upartymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest uparty" kana="がんこだ"  />
@@ -296,6 +506,20 @@
       </forms>
     </word>
     <word id="genki" translation="energiczny" kana="げんき" kanji="元気" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="energiczny" />
+        <common cases="genitive" value="energicznego" />
+        <common cases="dative" value="energicznemu" />
+        <common cases="instrumental locative" value="energicznym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="energicznego" />
+        <override classes="feminine" cases="nominative vocative" value="energiczna" />
+        <override classes="feminine" cases="genitive dative locative" value="energicznej" />
+        <override classes="feminine" cases="accusative instrumental" value="energiczną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="energiczne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="energicznych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="energicznym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="energicznymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest energiczny" kana="げんきだ"  />
@@ -316,6 +540,20 @@
       </forms>
     </word>
     <word id="hadazamui" translation="chłodny" kana="はだざむい" kanji="肌寒い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="chłodny" />
+        <common cases="genitive" value="chłodnego" />
+        <common cases="dative" value="chłodnemu" />
+        <common cases="instrumental locative" value="chłodnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="chłodnego" />
+        <override classes="feminine" cases="nominative vocative" value="chłodna" />
+        <override classes="feminine" cases="genitive dative locative" value="chłodnej" />
+        <override classes="feminine" cases="accusative instrumental" value="chłodną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="chłodne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="chłodnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="chłodnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="chłodnymi" />
+      </polish_forms>
       <describes categories="place" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest chłodny" kana="はだざむい"  />
@@ -336,6 +574,20 @@
       </forms>
     </word>
     <word id="hayai" translation="szybki" kana="はやい" kanji="速い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="szybki" />
+        <common cases="genitive" value="szybkiego" />
+        <common cases="dative" value="szybkiemu" />
+        <common cases="instrumental locative" value="szybkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="szybkiego" />
+        <override classes="feminine" cases="nominative vocative" value="szybka" />
+        <override classes="feminine" cases="genitive dative locative" value="szybkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="szybką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="szybkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="szybkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="szybkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="szybkimi" />
+      </polish_forms>
       <describes categories="person animal vehicle" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest szybki" kana="はやい"  />
@@ -356,6 +608,20 @@
       </forms>
     </word>
     <word id="heikinteki" translation="przeciętny" kana="へいきんてき" kanji="平均的" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="przeciętny" />
+        <common cases="genitive" value="przeciętnego" />
+        <common cases="dative" value="przeciętnemu" />
+        <common cases="instrumental locative" value="przeciętnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="przeciętnego" />
+        <override classes="feminine" cases="nominative vocative" value="przeciętna" />
+        <override classes="feminine" cases="genitive dative locative" value="przeciętnej" />
+        <override classes="feminine" cases="accusative instrumental" value="przeciętną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="przeciętne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="przeciętnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="przeciętnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="przeciętnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest przeciętny" kana="へいきんてきだ"  />
         <form ref="predicate_polite_nonpast" translation="jest przeciętny" kana="へいきんてきです"  />
@@ -375,6 +641,20 @@
       </forms>
     </word>
     <word id="hen" translation="dziwny" kana="へん" kanji="変" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="dziwny" />
+        <common cases="genitive" value="dziwnego" />
+        <common cases="dative" value="dziwnemu" />
+        <common cases="instrumental locative" value="dziwnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="dziwnego" />
+        <override classes="feminine" cases="nominative vocative" value="dziwna" />
+        <override classes="feminine" cases="genitive dative locative" value="dziwnej" />
+        <override classes="feminine" cases="accusative instrumental" value="dziwną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="dziwne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="dziwnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="dziwnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="dziwnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest dziwny" kana="へんだ"  />
         <form ref="predicate_polite_nonpast" translation="jest dziwny" kana="へんです"  />
@@ -394,6 +674,20 @@
       </forms>
     </word>
     <word id="hidoi" translation="okropny" kana="ひどい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="okropny" />
+        <common cases="genitive" value="okropnego" />
+        <common cases="dative" value="okropnemu" />
+        <common cases="instrumental locative" value="okropnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="okropnego" />
+        <override classes="feminine" cases="nominative vocative" value="okropna" />
+        <override classes="feminine" cases="genitive dative locative" value="okropnej" />
+        <override classes="feminine" cases="accusative instrumental" value="okropną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="okropne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="okropnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="okropnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="okropnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest okropny" kana="ひどい"  />
         <form ref="predicate_polite_nonpast" translation="jest okropny" kana="ひどいです"  />
@@ -413,6 +707,20 @@
       </forms>
     </word>
     <word id="hikui" translation="niski" kana="ひくい" kanji="低い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="niski" />
+        <common cases="genitive" value="niskiego" />
+        <common cases="dative" value="niskiemu" />
+        <common cases="instrumental locative" value="niskim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="niskiego" />
+        <override classes="feminine" cases="nominative vocative" value="niska" />
+        <override classes="feminine" cases="genitive dative locative" value="niskiej" />
+        <override classes="feminine" cases="accusative instrumental" value="niską" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="niskie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="niskich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="niskim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="niskimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest niski" kana="ひくい"  />
         <form ref="predicate_polite_nonpast" translation="jest niski" kana="ひくいです"  />
@@ -432,6 +740,20 @@
       </forms>
     </word>
     <word id="hiroi" translation="szeroki" kana="ひろい" kanji="広い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="szeroki" />
+        <common cases="genitive" value="szerokiego" />
+        <common cases="dative" value="szerokiemu" />
+        <common cases="instrumental locative" value="szerokim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="szerokiego" />
+        <override classes="feminine" cases="nominative vocative" value="szeroka" />
+        <override classes="feminine" cases="genitive dative locative" value="szerokiej" />
+        <override classes="feminine" cases="accusative instrumental" value="szeroką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="szerokie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="szerokich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="szerokim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="szerokimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest szeroki" kana="ひろい"  />
         <form ref="predicate_polite_nonpast" translation="jest szeroki" kana="ひろいです"  />
@@ -451,6 +773,20 @@
       </forms>
     </word>
     <word id="ijou" translation="nienormalny" kana="いじょう" kanji="異常" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="nienormalny" />
+        <common cases="genitive" value="nienormalnego" />
+        <common cases="dative" value="nienormalnemu" />
+        <common cases="instrumental locative" value="nienormalnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="nienormalnego" />
+        <override classes="feminine" cases="nominative vocative" value="nienormalna" />
+        <override classes="feminine" cases="genitive dative locative" value="nienormalnej" />
+        <override classes="feminine" cases="accusative instrumental" value="nienormalną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="nienormalne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="nienormalnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="nienormalnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="nienormalnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest nienormalny" kana="いじょうだ"  />
         <form ref="predicate_polite_nonpast" translation="jest nienormalny" kana="いじょうです"  />
@@ -470,6 +806,20 @@
       </forms>
     </word>
     <word id="juuyou" translation="ważny" kana="じゅうよう" kanji="重要" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ważny" />
+        <common cases="genitive" value="ważnego" />
+        <common cases="dative" value="ważnemu" />
+        <common cases="instrumental locative" value="ważnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="ważnego" />
+        <override classes="feminine" cases="nominative vocative" value="ważna" />
+        <override classes="feminine" cases="genitive dative locative" value="ważnej" />
+        <override classes="feminine" cases="accusative instrumental" value="ważną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="ważne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="ważnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="ważnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="ważnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ważny" kana="じゅうようだ"  />
         <form ref="predicate_polite_nonpast" translation="jest ważny" kana="じゅうようです"  />
@@ -489,6 +839,20 @@
       </forms>
     </word>
     <word id="kanashii" translation="smutny" kana="かなしい" kanji="悲しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="smutny" />
+        <common cases="genitive" value="smutnego" />
+        <common cases="dative" value="smutnemu" />
+        <common cases="instrumental locative" value="smutnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="smutnego" />
+        <override classes="feminine" cases="nominative vocative" value="smutna" />
+        <override classes="feminine" cases="genitive dative locative" value="smutnej" />
+        <override classes="feminine" cases="accusative instrumental" value="smutną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="smutne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="smutnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="smutnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="smutnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest smutny" kana="かなしい"  />
         <form ref="predicate_polite_nonpast" translation="jest smutny" kana="かなしいです"  />
@@ -508,6 +872,20 @@
       </forms>
     </word>
     <word id="kantan" translation="łatwy" kana="かんたん" kanji="簡単" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="łatwy" />
+        <common cases="genitive" value="łatwego" />
+        <common cases="dative" value="łatwemu" />
+        <common cases="instrumental locative" value="łatwym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="łatwego" />
+        <override classes="feminine" cases="nominative vocative" value="łatwa" />
+        <override classes="feminine" cases="genitive dative locative" value="łatwej" />
+        <override classes="feminine" cases="accusative instrumental" value="łatwą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="łatwe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="łatwych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="łatwym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="łatwymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest łatwy" kana="かんたんだ"  />
         <form ref="predicate_polite_nonpast" translation="jest łatwy" kana="かんたんです"  />
@@ -527,6 +905,20 @@
       </forms>
     </word>
     <word id="karai" translation="ostry" kana="からい" kanji="辛い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ostry" />
+        <common cases="genitive" value="ostrego" />
+        <common cases="dative" value="ostremu" />
+        <common cases="instrumental locative" value="ostrym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="ostrego" />
+        <override classes="feminine" cases="nominative vocative" value="ostra" />
+        <override classes="feminine" cases="genitive dative locative" value="ostrej" />
+        <override classes="feminine" cases="accusative instrumental" value="ostrą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="ostre" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="ostrych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="ostrym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="ostrymi" />
+      </polish_forms>
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ostry" kana="からい"  />
@@ -547,6 +939,20 @@
       </forms>
     </word>
     <word id="karui" translation="lekki" kana="かるい" kanji="軽い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="lekki" />
+        <common cases="genitive" value="lekkiego" />
+        <common cases="dative" value="lekkiemu" />
+        <common cases="instrumental locative" value="lekkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="lekkiego" />
+        <override classes="feminine" cases="nominative vocative" value="lekka" />
+        <override classes="feminine" cases="genitive dative locative" value="lekkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="lekką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="lekkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="lekkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="lekkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="lekkimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest lekki" kana="かるい"  />
         <form ref="predicate_polite_nonpast" translation="jest lekki" kana="かるいです"  />
@@ -566,6 +972,20 @@
       </forms>
     </word>
     <word id="katai" translation="twardy" kana="かたい" kanji="硬い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="twardy" />
+        <common cases="genitive" value="twardego" />
+        <common cases="dative" value="twardemu" />
+        <common cases="instrumental locative" value="twardym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="twardego" />
+        <override classes="feminine" cases="nominative vocative" value="twarda" />
+        <override classes="feminine" cases="genitive dative locative" value="twardej" />
+        <override classes="feminine" cases="accusative instrumental" value="twardą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="twarde" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="twardych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="twardym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="twardymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest twardy" kana="かたい"  />
@@ -586,6 +1006,20 @@
       </forms>
     </word>
     <word id="kawaii" translation="uroczy" kana="かわいい" kanji="可愛い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="uroczy" />
+        <common cases="genitive" value="uroczego" />
+        <common cases="dative" value="uroczemu" />
+        <common cases="instrumental locative" value="uroczym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="uroczego" />
+        <override classes="feminine" cases="nominative vocative" value="urocza" />
+        <override classes="feminine" cases="genitive dative locative" value="uroczej" />
+        <override classes="feminine" cases="accusative instrumental" value="uroczą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="urocze" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="uroczych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="uroczym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="uroczymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest uroczy" kana="かわいい"  />
@@ -606,6 +1040,20 @@
       </forms>
     </word>
     <word id="kiiroi" translation="żółty" kana="きいろい" kanji="黄色い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="żółty" />
+        <common cases="genitive" value="żółtego" />
+        <common cases="dative" value="żółtemu" />
+        <common cases="instrumental locative" value="żółtym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="żółtego" />
+        <override classes="feminine" cases="nominative vocative" value="żółta" />
+        <override classes="feminine" cases="genitive dative locative" value="żółtej" />
+        <override classes="feminine" cases="accusative instrumental" value="żółtą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="żółte" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="żółtych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="żółtym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="żółtymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest żółty" kana="きいろい"  />
@@ -626,6 +1074,20 @@
       </forms>
     </word>
     <word id="kiken" translation="niebezpieczny" kana="きけん" kanji="危険" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="niebezpieczny" />
+        <common cases="genitive" value="niebezpiecznego" />
+        <common cases="dative" value="niebezpiecznemu" />
+        <common cases="instrumental locative" value="niebezpiecznym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="niebezpiecznego" />
+        <override classes="feminine" cases="nominative vocative" value="niebezpieczna" />
+        <override classes="feminine" cases="genitive dative locative" value="niebezpiecznej" />
+        <override classes="feminine" cases="accusative instrumental" value="niebezpieczną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="niebezpieczne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="niebezpiecznych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="niebezpiecznym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="niebezpiecznymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest niebezpieczny" kana="きけんだ"  />
         <form ref="predicate_polite_nonpast" translation="jest niebezpieczny" kana="きけんです"  />
@@ -645,6 +1107,20 @@
       </forms>
     </word>
     <word id="kirei" translation="czysty" kana="きれい" kanji="綺麗" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="czysty" />
+        <common cases="genitive" value="czystego" />
+        <common cases="dative" value="czystemu" />
+        <common cases="instrumental locative" value="czystym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="czystego" />
+        <override classes="feminine" cases="nominative vocative" value="czysta" />
+        <override classes="feminine" cases="genitive dative locative" value="czystej" />
+        <override classes="feminine" cases="accusative instrumental" value="czystą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="czyste" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="czystych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="czystym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="czystymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest czysty" kana="きれいだ"  />
         <form ref="predicate_polite_nonpast" translation="jest czysty" kana="きれいです"  />
@@ -664,6 +1140,20 @@
       </forms>
     </word>
     <word id="kitanai" translation="brudny" kana="きたない" kanji="汚い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="brudny" />
+        <common cases="genitive" value="brudnego" />
+        <common cases="dative" value="brudnemu" />
+        <common cases="instrumental locative" value="brudnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="brudnego" />
+        <override classes="feminine" cases="nominative vocative" value="brudna" />
+        <override classes="feminine" cases="genitive dative locative" value="brudnej" />
+        <override classes="feminine" cases="accusative instrumental" value="brudną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="brudne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="brudnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="brudnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="brudnymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest brudny" kana="きたない"  />
@@ -684,6 +1174,20 @@
       </forms>
     </word>
     <word id="kodoku" translation="samotny" kana="こどく" kanji="孤独" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="samotny" />
+        <common cases="genitive" value="samotnego" />
+        <common cases="dative" value="samotnemu" />
+        <common cases="instrumental locative" value="samotnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="samotnego" />
+        <override classes="feminine" cases="nominative vocative" value="samotna" />
+        <override classes="feminine" cases="genitive dative locative" value="samotnej" />
+        <override classes="feminine" cases="accusative instrumental" value="samotną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="samotne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="samotnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="samotnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="samotnymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest samotny" kana="こどくだ"  />
@@ -704,6 +1208,20 @@
       </forms>
     </word>
     <word id="kouka" translation="kosztowny" kana="こうか" kanji="高価" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="kosztowny" />
+        <common cases="genitive" value="kosztownego" />
+        <common cases="dative" value="kosztownemu" />
+        <common cases="instrumental locative" value="kosztownym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="kosztownego" />
+        <override classes="feminine" cases="nominative vocative" value="kosztowna" />
+        <override classes="feminine" cases="genitive dative locative" value="kosztownej" />
+        <override classes="feminine" cases="accusative instrumental" value="kosztowną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="kosztowne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="kosztownych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="kosztownym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="kosztownymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest kosztowny" kana="こうかだ"  />
         <form ref="predicate_polite_nonpast" translation="jest kosztowny" kana="こうかです"  />
@@ -723,6 +1241,20 @@
       </forms>
     </word>
     <word id="kurai" translation="ciemny" kana="くらい" kanji="暗い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ciemny" />
+        <common cases="genitive" value="ciemnego" />
+        <common cases="dative" value="ciemnemu" />
+        <common cases="instrumental locative" value="ciemnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="ciemnego" />
+        <override classes="feminine" cases="nominative vocative" value="ciemna" />
+        <override classes="feminine" cases="genitive dative locative" value="ciemnej" />
+        <override classes="feminine" cases="accusative instrumental" value="ciemną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="ciemne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="ciemnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="ciemnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="ciemnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ciemny" kana="くらい"  />
         <form ref="predicate_polite_nonpast" translation="jest ciemny" kana="くらいです"  />
@@ -742,6 +1274,20 @@
       </forms>
     </word>
     <word id="kuroi" translation="czarny" kana="くろい" kanji="黒い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="czarny" />
+        <common cases="genitive" value="czarnego" />
+        <common cases="dative" value="czarnemu" />
+        <common cases="instrumental locative" value="czarnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="czarnego" />
+        <override classes="feminine" cases="nominative vocative" value="czarna" />
+        <override classes="feminine" cases="genitive dative locative" value="czarnej" />
+        <override classes="feminine" cases="accusative instrumental" value="czarną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="czarne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="czarnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="czarnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="czarnymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest czarny" kana="くろい"  />
@@ -762,6 +1308,20 @@
       </forms>
     </word>
     <word id="majime" translation="poważny" kana="まじめ" kanji="真面目" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="poważny" />
+        <common cases="genitive" value="poważnego" />
+        <common cases="dative" value="poważnemu" />
+        <common cases="instrumental locative" value="poważnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="poważnego" />
+        <override classes="feminine" cases="nominative vocative" value="poważna" />
+        <override classes="feminine" cases="genitive dative locative" value="poważnej" />
+        <override classes="feminine" cases="accusative instrumental" value="poważną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="poważne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="poważnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="poważnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="poważnymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest poważny" kana="まじめだ"  />
@@ -782,6 +1342,20 @@
       </forms>
     </word>
     <word id="marui" translation="okrągły" kana="まるい" kanji="丸い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="okrągły" />
+        <common cases="genitive" value="okrągłego" />
+        <common cases="dative" value="okrągłemu" />
+        <common cases="instrumental locative" value="okrągłym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="okrągłego" />
+        <override classes="feminine" cases="nominative vocative" value="okrągła" />
+        <override classes="feminine" cases="genitive dative locative" value="okrągłej" />
+        <override classes="feminine" cases="accusative instrumental" value="okrągłą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="okrągłe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="okrągłych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="okrągłym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="okrągłymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest okrągły" kana="まるい"  />
@@ -802,6 +1376,20 @@
       </forms>
     </word>
     <word id="mazui" translation="niesmaczny" kana="まずい" kanji="不味い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="niesmaczny" />
+        <common cases="genitive" value="niesmacznego" />
+        <common cases="dative" value="niesmacznemu" />
+        <common cases="instrumental locative" value="niesmacznym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="niesmacznego" />
+        <override classes="feminine" cases="nominative vocative" value="niesmaczna" />
+        <override classes="feminine" cases="genitive dative locative" value="niesmacznej" />
+        <override classes="feminine" cases="accusative instrumental" value="niesmaczną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="niesmaczne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="niesmacznych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="niesmacznym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="niesmacznymi" />
+      </polish_forms>
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest niesmaczny" kana="まずい"  />
@@ -822,6 +1410,20 @@
       </forms>
     </word>
     <word id="mazushii" translation="biedny" kana="まずしい" kanji="貧しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="biedny" />
+        <common cases="genitive" value="biednego" />
+        <common cases="dative" value="biednemu" />
+        <common cases="instrumental locative" value="biednym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="biednego" />
+        <override classes="feminine" cases="nominative vocative" value="biedna" />
+        <override classes="feminine" cases="genitive dative locative" value="biednej" />
+        <override classes="feminine" cases="accusative instrumental" value="biedną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="biedne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="biednych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="biednym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="biednymi" />
+      </polish_forms>
       <describes categories="person" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest biedny" kana="まずしい"  />
@@ -842,6 +1444,20 @@
       </forms>
     </word>
     <word id="minikui" translation="brzydki" kana="みにくい" kanji="醜い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="brzydki" />
+        <common cases="genitive" value="brzydkiego" />
+        <common cases="dative" value="brzydkiemu" />
+        <common cases="instrumental locative" value="brzydkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="brzydkiego" />
+        <override classes="feminine" cases="nominative vocative" value="brzydka" />
+        <override classes="feminine" cases="genitive dative locative" value="brzydkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="brzydką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="brzydkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="brzydkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="brzydkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="brzydkimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest brzydki" kana="みにくい"  />
         <form ref="predicate_polite_nonpast" translation="jest brzydki" kana="みにくいです"  />
@@ -861,6 +1477,20 @@
       </forms>
     </word>
     <word id="miryokuteki" translation="atrakcyjny" kana="みりょくてき" kanji="魅力的" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="atrakcyjny" />
+        <common cases="genitive" value="atrakcyjnego" />
+        <common cases="dative" value="atrakcyjnemu" />
+        <common cases="instrumental locative" value="atrakcyjnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="atrakcyjnego" />
+        <override classes="feminine" cases="nominative vocative" value="atrakcyjna" />
+        <override classes="feminine" cases="genitive dative locative" value="atrakcyjnej" />
+        <override classes="feminine" cases="accusative instrumental" value="atrakcyjną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="atrakcyjne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="atrakcyjnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="atrakcyjnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="atrakcyjnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest atrakcyjny" kana="みりょくてきだ"  />
         <form ref="predicate_polite_nonpast" translation="jest atrakcyjny" kana="みりょくてきです"  />
@@ -880,6 +1510,20 @@
       </forms>
     </word>
     <word id="muzukashii" translation="trudny" kana="むずかしい" kanji="難しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="trudny" />
+        <common cases="genitive" value="trudnego" />
+        <common cases="dative" value="trudnemu" />
+        <common cases="instrumental locative" value="trudnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="trudnego" />
+        <override classes="feminine" cases="nominative vocative" value="trudna" />
+        <override classes="feminine" cases="genitive dative locative" value="trudnej" />
+        <override classes="feminine" cases="accusative instrumental" value="trudną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="trudne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="trudnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="trudnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="trudnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest trudny" kana="むずかしい"  />
         <form ref="predicate_polite_nonpast" translation="jest trudny" kana="むずかしいです"  />
@@ -899,6 +1543,20 @@
       </forms>
     </word>
     <word id="nameraka" translation="gładki" kana="なめらか" kanji="滑らか" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="gładki" />
+        <common cases="genitive" value="gładkiego" />
+        <common cases="dative" value="gładkiemu" />
+        <common cases="instrumental locative" value="gładkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="gładkiego" />
+        <override classes="feminine" cases="nominative vocative" value="gładka" />
+        <override classes="feminine" cases="genitive dative locative" value="gładkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="gładką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="gładkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="gładkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="gładkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="gładkimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest gładki" kana="なめらかだ"  />
         <form ref="predicate_polite_nonpast" translation="jest gładki" kana="なめらかです"  />
@@ -918,6 +1576,20 @@
       </forms>
     </word>
     <word id="nigai" translation="gorzki" kana="にがい" kanji="苦い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="gorzki" />
+        <common cases="genitive" value="gorzkiego" />
+        <common cases="dative" value="gorzkiemu" />
+        <common cases="instrumental locative" value="gorzkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="gorzkiego" />
+        <override classes="feminine" cases="nominative vocative" value="gorzka" />
+        <override classes="feminine" cases="genitive dative locative" value="gorzkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="gorzką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="gorzkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="gorzkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="gorzkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="gorzkimi" />
+      </polish_forms>
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest gorzki" kana="にがい"  />
@@ -938,6 +1610,20 @@
       </forms>
     </word>
     <word id="oishii" translation="pyszny" kana="おいしい" kanji="美味しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="pyszny" />
+        <common cases="genitive" value="pysznego" />
+        <common cases="dative" value="pysznemu" />
+        <common cases="instrumental locative" value="pysznym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="pysznego" />
+        <override classes="feminine" cases="nominative vocative" value="pyszna" />
+        <override classes="feminine" cases="genitive dative locative" value="pysznej" />
+        <override classes="feminine" cases="accusative instrumental" value="pyszną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="pyszne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="pysznych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="pysznym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="pysznymi" />
+      </polish_forms>
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest pyszny" kana="おいしい"  />
@@ -958,6 +1644,20 @@
       </forms>
     </word>
     <word id="okanemochi" translation="bogaty" kana="おかねもち" kanji="お金持ち" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="bogaty" />
+        <common cases="genitive" value="bogatego" />
+        <common cases="dative" value="bogatemu" />
+        <common cases="instrumental locative" value="bogatym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="bogatego" />
+        <override classes="feminine" cases="nominative vocative" value="bogata" />
+        <override classes="feminine" cases="genitive dative locative" value="bogatej" />
+        <override classes="feminine" cases="accusative instrumental" value="bogatą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="bogate" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="bogatych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="bogatym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="bogatymi" />
+      </polish_forms>
       <describes categories="person" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest bogaty" kana="おかねもちだ"  />
@@ -978,6 +1678,20 @@
       </forms>
     </word>
     <word id="omoi" translation="ciężki" kana="おもい" kanji="重い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ciężki" />
+        <common cases="genitive" value="ciężkiego" />
+        <common cases="dative" value="ciężkiemu" />
+        <common cases="instrumental locative" value="ciężkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="ciężkiego" />
+        <override classes="feminine" cases="nominative vocative" value="ciężka" />
+        <override classes="feminine" cases="genitive dative locative" value="ciężkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="ciężką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="ciężkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="ciężkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="ciężkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="ciężkimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ciężki" kana="おもい"  />
         <form ref="predicate_polite_nonpast" translation="jest ciężki" kana="おもいです"  />
@@ -997,6 +1711,20 @@
       </forms>
     </word>
     <word id="omoshiroi" translation="ciekawy" kana="おもしろい" kanji="面白い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ciekawy" />
+        <common cases="genitive" value="ciekawego" />
+        <common cases="dative" value="ciekawemu" />
+        <common cases="instrumental locative" value="ciekawym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="ciekawego" />
+        <override classes="feminine" cases="nominative vocative" value="ciekawa" />
+        <override classes="feminine" cases="genitive dative locative" value="ciekawej" />
+        <override classes="feminine" cases="accusative instrumental" value="ciekawą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="ciekawe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="ciekawych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="ciekawym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="ciekawymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest ciekawy" kana="おもしろい"  />
         <form ref="predicate_polite_nonpast" translation="jest ciekawy" kana="おもしろいです"  />
@@ -1016,6 +1744,20 @@
       </forms>
     </word>
     <word id="ooi" translation="liczny" kana="おおい" kanji="多い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="liczny" />
+        <common cases="genitive" value="licznego" />
+        <common cases="dative" value="licznemu" />
+        <common cases="instrumental locative" value="licznym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="licznego" />
+        <override classes="feminine" cases="nominative vocative" value="liczna" />
+        <override classes="feminine" cases="genitive dative locative" value="licznej" />
+        <override classes="feminine" cases="accusative instrumental" value="liczną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="liczne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="licznych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="licznym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="licznymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest liczny" kana="おおい"  />
         <form ref="predicate_polite_nonpast" translation="jest liczny" kana="おおいです"  />
@@ -1035,6 +1777,20 @@
       </forms>
     </word>
     <word id="ookii" translation="duży" kana="おおきい" kanji="大きい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="duży" />
+        <common cases="genitive" value="dużego" />
+        <common cases="dative" value="dużemu" />
+        <common cases="instrumental locative" value="dużym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="dużego" />
+        <override classes="feminine" cases="nominative vocative" value="duża" />
+        <override classes="feminine" cases="genitive dative locative" value="dużej" />
+        <override classes="feminine" cases="accusative instrumental" value="dużą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="duże" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="dużych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="dużym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="dużymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest duży" kana="おおきい"  />
         <form ref="predicate_polite_nonpast" translation="jest duży" kana="おおきいです"  />
@@ -1054,6 +1810,20 @@
       </forms>
     </word>
     <word id="osoi" translation="wolny" kana="おそい" kanji="遅い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="wolny" />
+        <common cases="genitive" value="wolnego" />
+        <common cases="dative" value="wolnemu" />
+        <common cases="instrumental locative" value="wolnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="wolnego" />
+        <override classes="feminine" cases="nominative vocative" value="wolna" />
+        <override classes="feminine" cases="genitive dative locative" value="wolnej" />
+        <override classes="feminine" cases="accusative instrumental" value="wolną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="wolne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="wolnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="wolnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="wolnymi" />
+      </polish_forms>
       <describes categories="person animal vehicle" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wolny" kana="おそい"  />
@@ -1074,6 +1844,20 @@
       </forms>
     </word>
     <word id="otonashii" translation="spokojny" kana="おとなしい" kanji="大人しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="spokojny" />
+        <common cases="genitive" value="spokojnego" />
+        <common cases="dative" value="spokojnemu" />
+        <common cases="instrumental locative" value="spokojnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="spokojnego" />
+        <override classes="feminine" cases="nominative vocative" value="spokojna" />
+        <override classes="feminine" cases="genitive dative locative" value="spokojnej" />
+        <override classes="feminine" cases="accusative instrumental" value="spokojną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="spokojne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="spokojnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="spokojnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="spokojnymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest spokojny" kana="おとなしい"  />
@@ -1094,6 +1878,20 @@
       </forms>
     </word>
     <word id="samui" translation="zimny" kana="さむい" kanji="寒い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="zimny" />
+        <common cases="genitive" value="zimnego" />
+        <common cases="dative" value="zimnemu" />
+        <common cases="instrumental locative" value="zimnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="zimnego" />
+        <override classes="feminine" cases="nominative vocative" value="zimna" />
+        <override classes="feminine" cases="genitive dative locative" value="zimnej" />
+        <override classes="feminine" cases="accusative instrumental" value="zimną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="zimne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="zimnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="zimnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="zimnymi" />
+      </polish_forms>
       <describes categories="place" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest zimny" kana="さむい"  />
@@ -1114,6 +1912,20 @@
       </forms>
     </word>
     <word id="seijou" translation="normalny" kana="せいじょう" kanji="正常" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="normalny" />
+        <common cases="genitive" value="normalnego" />
+        <common cases="dative" value="normalnemu" />
+        <common cases="instrumental locative" value="normalnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="normalnego" />
+        <override classes="feminine" cases="nominative vocative" value="normalna" />
+        <override classes="feminine" cases="genitive dative locative" value="normalnej" />
+        <override classes="feminine" cases="accusative instrumental" value="normalną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="normalne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="normalnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="normalnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="normalnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest normalny" kana="せいじょうだ"  />
         <form ref="predicate_polite_nonpast" translation="jest normalny" kana="せいじょうです"  />
@@ -1133,6 +1945,20 @@
       </forms>
     </word>
     <word id="semai" translation="wąski" kana="せまい" kanji="狭い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="wąski" />
+        <common cases="genitive" value="wąskiego" />
+        <common cases="dative" value="wąskiemu" />
+        <common cases="instrumental locative" value="wąskim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="wąskiego" />
+        <override classes="feminine" cases="nominative vocative" value="wąska" />
+        <override classes="feminine" cases="genitive dative locative" value="wąskiej" />
+        <override classes="feminine" cases="accusative instrumental" value="wąską" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="wąskie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="wąskich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="wąskim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="wąskimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wąski" kana="せまい"  />
         <form ref="predicate_polite_nonpast" translation="jest wąski" kana="せまいです"  />
@@ -1152,6 +1978,20 @@
       </forms>
     </word>
     <word id="shakouteki" translation="towarzyski" kana="しゃこうてき" kanji="社交的" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="towarzyski" />
+        <common cases="genitive" value="towarzyskiego" />
+        <common cases="dative" value="towarzyskiemu" />
+        <common cases="instrumental locative" value="towarzyskim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="towarzyskiego" />
+        <override classes="feminine" cases="nominative vocative" value="towarzyska" />
+        <override classes="feminine" cases="genitive dative locative" value="towarzyskiej" />
+        <override classes="feminine" cases="accusative instrumental" value="towarzyską" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="towarzyskie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="towarzyskich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="towarzyskim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="towarzyskimi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest towarzyski" kana="しゃこうてきだ"  />
@@ -1172,6 +2012,20 @@
       </forms>
     </word>
     <word id="shikakui" translation="kwadratowy" kana="しかくい" kanji="四角い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="kwadratowy" />
+        <common cases="genitive" value="kwadratowego" />
+        <common cases="dative" value="kwadratowemu" />
+        <common cases="instrumental locative" value="kwadratowym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="kwadratowego" />
+        <override classes="feminine" cases="nominative vocative" value="kwadratowa" />
+        <override classes="feminine" cases="genitive dative locative" value="kwadratowej" />
+        <override classes="feminine" cases="accusative instrumental" value="kwadratową" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="kwadratowe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="kwadratowych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="kwadratowym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="kwadratowymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest kwadratowy" kana="しかくい"  />
@@ -1192,6 +2046,20 @@
       </forms>
     </word>
     <word id="shiokarai" translation="słony" kana="しおからい" kanji="塩辛い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="słony" />
+        <common cases="genitive" value="słonego" />
+        <common cases="dative" value="słonemu" />
+        <common cases="instrumental locative" value="słonym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="słonego" />
+        <override classes="feminine" cases="nominative vocative" value="słona" />
+        <override classes="feminine" cases="genitive dative locative" value="słonej" />
+        <override classes="feminine" cases="accusative instrumental" value="słoną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="słone" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="słonych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="słonym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="słonymi" />
+      </polish_forms>
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest słony" kana="しおからい"  />
@@ -1212,6 +2080,20 @@
       </forms>
     </word>
     <word id="shiroi" translation="biały" kana="しろい" kanji="白い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="biały" />
+        <common cases="genitive" value="białego" />
+        <common cases="dative" value="białemu" />
+        <common cases="instrumental locative" value="białym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="białego" />
+        <override classes="feminine" cases="nominative vocative" value="biała" />
+        <override classes="feminine" cases="genitive dative locative" value="białej" />
+        <override classes="feminine" cases="accusative instrumental" value="białą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="białe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="białych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="białym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="białymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest biały" kana="しろい"  />
@@ -1232,6 +2114,20 @@
       </forms>
     </word>
     <word id="shitashimiyasui" translation="przystępny" kana="したしみやすい" kanji="親しみやすい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="przystępny" />
+        <common cases="genitive" value="przystępnego" />
+        <common cases="dative" value="przystępnemu" />
+        <common cases="instrumental locative" value="przystępnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="przystępnego" />
+        <override classes="feminine" cases="nominative vocative" value="przystępna" />
+        <override classes="feminine" cases="genitive dative locative" value="przystępnej" />
+        <override classes="feminine" cases="accusative instrumental" value="przystępną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="przystępne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="przystępnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="przystępnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="przystępnymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest przystępny" kana="したしみやすい"  />
@@ -1252,6 +2148,20 @@
       </forms>
     </word>
     <word id="shizuka" translation="cichy" kana="しずか" kanji="静か" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="cichy" />
+        <common cases="genitive" value="cichego" />
+        <common cases="dative" value="cichemu" />
+        <common cases="instrumental locative" value="cichym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="cichego" />
+        <override classes="feminine" cases="nominative vocative" value="cicha" />
+        <override classes="feminine" cases="genitive dative locative" value="cichej" />
+        <override classes="feminine" cases="accusative instrumental" value="cichą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="ciche" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="cichych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="cichym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="cichymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest cichy" kana="しずかだ"  />
         <form ref="predicate_polite_nonpast" translation="jest cichy" kana="しずかです"  />
@@ -1271,6 +2181,20 @@
       </forms>
     </word>
     <word id="subarashii" translation="wspaniały" kana="すばらしい" kanji="素晴らしい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="wspaniały" />
+        <common cases="genitive" value="wspaniałego" />
+        <common cases="dative" value="wspaniałemu" />
+        <common cases="instrumental locative" value="wspaniałym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="wspaniałego" />
+        <override classes="feminine" cases="nominative vocative" value="wspaniała" />
+        <override classes="feminine" cases="genitive dative locative" value="wspaniałej" />
+        <override classes="feminine" cases="accusative instrumental" value="wspaniałą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="wspaniałe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="wspaniałych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="wspaniałym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="wspaniałymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wspaniały" kana="すばらしい"  />
         <form ref="predicate_polite_nonpast" translation="jest wspaniały" kana="すばらしいです"  />
@@ -1290,6 +2214,20 @@
       </forms>
     </word>
     <word id="sukunai" translation="nieliczny" kana="すくない" kanji="少ない" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="nieliczny" />
+        <common cases="genitive" value="nielicznego" />
+        <common cases="dative" value="nielicznemu" />
+        <common cases="instrumental locative" value="nielicznym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="nielicznego" />
+        <override classes="feminine" cases="nominative vocative" value="nieliczna" />
+        <override classes="feminine" cases="genitive dative locative" value="nielicznej" />
+        <override classes="feminine" cases="accusative instrumental" value="nieliczną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="nieliczne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="nielicznych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="nielicznym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="nielicznymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest nieliczny" kana="すくない"  />
         <form ref="predicate_polite_nonpast" translation="jest nieliczny" kana="すくないです"  />
@@ -1309,6 +2247,20 @@
       </forms>
     </word>
     <word id="suppai" translation="kwaśny" kana="すっぱい" kanji="酸っぱい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="kwaśny" />
+        <common cases="genitive" value="kwaśnego" />
+        <common cases="dative" value="kwaśnemu" />
+        <common cases="instrumental locative" value="kwaśnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="kwaśnego" />
+        <override classes="feminine" cases="nominative vocative" value="kwaśna" />
+        <override classes="feminine" cases="genitive dative locative" value="kwaśnej" />
+        <override classes="feminine" cases="accusative instrumental" value="kwaśną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="kwaśne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="kwaśnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="kwaśnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="kwaśnymi" />
+      </polish_forms>
       <describes categories="food drink" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest kwaśny" kana="すっぱい"  />
@@ -1329,6 +2281,20 @@
       </forms>
     </word>
     <word id="suteki" translation="świetny" kana="すてき" kanji="素敵" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="świetny" />
+        <common cases="genitive" value="świetnego" />
+        <common cases="dative" value="świetnemu" />
+        <common cases="instrumental locative" value="świetnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="świetnego" />
+        <override classes="feminine" cases="nominative vocative" value="świetna" />
+        <override classes="feminine" cases="genitive dative locative" value="świetnej" />
+        <override classes="feminine" cases="accusative instrumental" value="świetną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="świetne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="świetnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="świetnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="świetnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest świetny" kana="すてきだ"  />
         <form ref="predicate_polite_nonpast" translation="jest świetny" kana="すてきです"  />
@@ -1348,6 +2314,20 @@
       </forms>
     </word>
     <word id="tadashii" translation="poprawny" kana="ただしい" kanji="正しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="poprawny" />
+        <common cases="genitive" value="poprawnego" />
+        <common cases="dative" value="poprawnemu" />
+        <common cases="instrumental locative" value="poprawnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="poprawnego" />
+        <override classes="feminine" cases="nominative vocative" value="poprawna" />
+        <override classes="feminine" cases="genitive dative locative" value="poprawnej" />
+        <override classes="feminine" cases="accusative instrumental" value="poprawną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="poprawne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="poprawnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="poprawnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="poprawnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest poprawny" kana="ただしい"  />
         <form ref="predicate_polite_nonpast" translation="jest poprawny" kana="ただしいです"  />
@@ -1367,6 +2347,20 @@
       </forms>
     </word>
     <word id="takai" translation="wysoki" kana="たかい" kanji="高い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="wysoki" />
+        <common cases="genitive" value="wysokiego" />
+        <common cases="dative" value="wysokiemu" />
+        <common cases="instrumental locative" value="wysokim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="wysokiego" />
+        <override classes="feminine" cases="nominative vocative" value="wysoka" />
+        <override classes="feminine" cases="genitive dative locative" value="wysokiej" />
+        <override classes="feminine" cases="accusative instrumental" value="wysoką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="wysokie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="wysokich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="wysokim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="wysokimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest wysoki" kana="たかい"  />
         <form ref="predicate_polite_nonpast" translation="jest wysoki" kana="たかいです"  />
@@ -1386,6 +2380,20 @@
       </forms>
     </word>
     <word id="tanoshii" translation="przyjemny" kana="たのしい" kanji="楽しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="przyjemny" />
+        <common cases="genitive" value="przyjemnego" />
+        <common cases="dative" value="przyjemnemu" />
+        <common cases="instrumental locative" value="przyjemnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="przyjemnego" />
+        <override classes="feminine" cases="nominative vocative" value="przyjemna" />
+        <override classes="feminine" cases="genitive dative locative" value="przyjemnej" />
+        <override classes="feminine" cases="accusative instrumental" value="przyjemną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="przyjemne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="przyjemnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="przyjemnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="przyjemnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest przyjemny" kana="たのしい"  />
         <form ref="predicate_polite_nonpast" translation="jest przyjemny" kana="たのしいです"  />
@@ -1405,6 +2413,20 @@
       </forms>
     </word>
     <word id="tooi" translation="daleki" kana="とおい" kanji="遠い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="daleki" />
+        <common cases="genitive" value="dalekiego" />
+        <common cases="dative" value="dalekiemu" />
+        <common cases="instrumental locative" value="dalekim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="dalekiego" />
+        <override classes="feminine" cases="nominative vocative" value="daleka" />
+        <override classes="feminine" cases="genitive dative locative" value="dalekiej" />
+        <override classes="feminine" cases="accusative instrumental" value="daleką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="dalekie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="dalekich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="dalekim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="dalekimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest daleki" kana="とおい"  />
         <form ref="predicate_polite_nonpast" translation="jest daleki" kana="とおいです"  />
@@ -1424,6 +2446,20 @@
       </forms>
     </word>
     <word id="toumei" translation="przezroczysty" kana="とうめい" kanji="透明" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="przezroczysty" />
+        <common cases="genitive" value="przezroczystego" />
+        <common cases="dative" value="przezroczystemu" />
+        <common cases="instrumental locative" value="przezroczystym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="przezroczystego" />
+        <override classes="feminine" cases="nominative vocative" value="przezroczysta" />
+        <override classes="feminine" cases="genitive dative locative" value="przezroczystej" />
+        <override classes="feminine" cases="accusative instrumental" value="przezroczystą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="przezroczyste" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="przezroczystych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="przezroczystym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="przezroczystymi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="przezroczysty" kana="とうめいだ"  />
@@ -1444,6 +2480,20 @@
       </forms>
     </word>
     <word id="tsumaranai" translation="nudny" kana="つまらない" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="nudny" />
+        <common cases="genitive" value="nudnego" />
+        <common cases="dative" value="nudnemu" />
+        <common cases="instrumental locative" value="nudnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="nudnego" />
+        <override classes="feminine" cases="nominative vocative" value="nudna" />
+        <override classes="feminine" cases="genitive dative locative" value="nudnej" />
+        <override classes="feminine" cases="accusative instrumental" value="nudną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="nudne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="nudnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="nudnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="nudnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest nudny" kana="つまらない"  />
         <form ref="predicate_polite_nonpast" translation="jest nudny" kana="つまらないです"  />
@@ -1463,6 +2513,20 @@
       </forms>
     </word>
     <word id="tsuyoi" translation="silny" kana="つよい" kanji="強い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="silny" />
+        <common cases="genitive" value="silnego" />
+        <common cases="dative" value="silnemu" />
+        <common cases="instrumental locative" value="silnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="silnego" />
+        <override classes="feminine" cases="nominative vocative" value="silna" />
+        <override classes="feminine" cases="genitive dative locative" value="silnej" />
+        <override classes="feminine" cases="accusative instrumental" value="silną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="silne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="silnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="silnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="silnymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest silny" kana="つよい"  />
         <form ref="predicate_polite_nonpast" translation="jest silny" kana="つよいです"  />
@@ -1482,6 +2546,20 @@
       </forms>
     </word>
     <word id="ureshii" translation="szczęśliwy" kana="うれしい" kanji="嬉しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="szczęśliwy" />
+        <common cases="genitive" value="szczęśliwego" />
+        <common cases="dative" value="szczęśliwemu" />
+        <common cases="instrumental locative" value="szczęśliwym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="szczęśliwego" />
+        <override classes="feminine" cases="nominative vocative" value="szczęśliwa" />
+        <override classes="feminine" cases="genitive dative locative" value="szczęśliwej" />
+        <override classes="feminine" cases="accusative instrumental" value="szczęśliwą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="szczęśliwe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="szczęśliwych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="szczęśliwym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="szczęśliwymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest szczęśliwy" kana="うれしい"  />
@@ -1502,6 +2580,20 @@
       </forms>
     </word>
     <word id="utsukushii" translation="piękny" kana="うつくしい" kanji="美しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="piękny" />
+        <common cases="genitive" value="pięknego" />
+        <common cases="dative" value="pięknemu" />
+        <common cases="instrumental locative" value="pięknym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="pięknego" />
+        <override classes="feminine" cases="nominative vocative" value="piękna" />
+        <override classes="feminine" cases="genitive dative locative" value="pięknej" />
+        <override classes="feminine" cases="accusative instrumental" value="piękną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="piękne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="pięknych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="pięknym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="pięknymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest piękny" kana="うつくしい"  />
         <form ref="predicate_polite_nonpast" translation="jest piękny" kana="うつくしいです"  />
@@ -1521,6 +2613,20 @@
       </forms>
     </word>
     <word id="wakai" translation="młody" kana="わかい" kanji="若い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="młody" />
+        <common cases="genitive" value="młodego" />
+        <common cases="dative" value="młodemu" />
+        <common cases="instrumental locative" value="młodym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="młodego" />
+        <override classes="feminine" cases="nominative vocative" value="młoda" />
+        <override classes="feminine" cases="genitive dative locative" value="młodej" />
+        <override classes="feminine" cases="accusative instrumental" value="młodą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="młode" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="młodych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="młodym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="młodymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest młody" kana="わかい"  />
@@ -1541,6 +2647,20 @@
       </forms>
     </word>
     <word id="warui" translation="zły" kana="わるい" kanji="悪い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="zły" />
+        <common cases="genitive" value="złego" />
+        <common cases="dative" value="złemu" />
+        <common cases="instrumental locative" value="złym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="złego" />
+        <override classes="feminine" cases="nominative vocative" value="zła" />
+        <override classes="feminine" cases="genitive dative locative" value="złej" />
+        <override classes="feminine" cases="accusative instrumental" value="złą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="złe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="złych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="złym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="złymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest zły" kana="わるい"  />
         <form ref="predicate_polite_nonpast" translation="jest zły" kana="わるいです"  />
@@ -1560,6 +2680,20 @@
       </forms>
     </word>
     <word id="yasashii" translation="miły" kana="やさしい" kanji="優しい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="miły" />
+        <common cases="genitive" value="miłego" />
+        <common cases="dative" value="miłemu" />
+        <common cases="instrumental locative" value="miłym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="miłego" />
+        <override classes="feminine" cases="nominative vocative" value="miła" />
+        <override classes="feminine" cases="genitive dative locative" value="miłej" />
+        <override classes="feminine" cases="accusative instrumental" value="miłą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="miłe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="miłych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="miłym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="miłymi" />
+      </polish_forms>
       <describes categories="person animal" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest miły" kana="やさしい"  />
@@ -1580,6 +2714,20 @@
       </forms>
     </word>
     <word id="yasui" translation="tani" kana="やすい" kanji="安い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="tani" />
+        <common cases="genitive" value="taniego" />
+        <common cases="dative" value="taniemu" />
+        <common cases="instrumental locative" value="tanim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="taniego" />
+        <override classes="feminine" cases="nominative vocative" value="tania" />
+        <override classes="feminine" cases="genitive dative locative" value="taniej" />
+        <override classes="feminine" cases="accusative instrumental" value="tanią" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="tanie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="tanich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="tanim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="tanimi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest tani" kana="やすい"  />
         <form ref="predicate_polite_nonpast" translation="jest tani" kana="やすいです"  />
@@ -1599,6 +2747,20 @@
       </forms>
     </word>
     <word id="yawarakai" translation="miękki" kana="やわらかい" kanji="柔らかい" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="miękki" />
+        <common cases="genitive" value="miękkiego" />
+        <common cases="dative" value="miękkiemu" />
+        <common cases="instrumental locative" value="miękkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="miękkiego" />
+        <override classes="feminine" cases="nominative vocative" value="miękka" />
+        <override classes="feminine" cases="genitive dative locative" value="miękkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="miękką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="miękkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="miękkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="miękkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="miękkimi" />
+      </polish_forms>
       <describes categories="concrete" />
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest miękki" kana="やわらかい"  />
@@ -1619,6 +2781,20 @@
       </forms>
     </word>
     <word id="yoi" translation="dobry" kana="よい" kanji="良い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="dobry" />
+        <common cases="genitive" value="dobrego" />
+        <common cases="dative" value="dobremu" />
+        <common cases="instrumental locative" value="dobrym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="dobrego" />
+        <override classes="feminine" cases="nominative vocative" value="dobra" />
+        <override classes="feminine" cases="genitive dative locative" value="dobrej" />
+        <override classes="feminine" cases="accusative instrumental" value="dobrą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="dobre" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="dobrych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="dobrym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="dobrymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest dobry" kana="よい"  />
         <form ref="predicate_polite_nonpast" translation="jest dobry" kana="よいです"  />
@@ -1638,6 +2814,20 @@
       </forms>
     </word>
     <word id="yowai" translation="słaby" kana="よわい" kanji="弱い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="słaby" />
+        <common cases="genitive" value="słabego" />
+        <common cases="dative" value="słabemu" />
+        <common cases="instrumental locative" value="słabym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="słabego" />
+        <override classes="feminine" cases="nominative vocative" value="słaba" />
+        <override classes="feminine" cases="genitive dative locative" value="słabej" />
+        <override classes="feminine" cases="accusative instrumental" value="słabą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="słabe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="słabych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="słabym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="słabymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest słaby" kana="よわい"  />
         <form ref="predicate_polite_nonpast" translation="jest słaby" kana="よわいです"  />
@@ -1657,6 +2847,20 @@
       </forms>
     </word>
     <word id="kowai" translation="straszny, przerażający" kana="こわい" kanji="怖い" type="i_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="straszny, przerażający" />
+        <common cases="genitive" value="strasznego, przerażającego" />
+        <common cases="dative" value="strasznemu, przerażającemu" />
+        <common cases="instrumental locative" value="strasznym, przerażającym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="strasznego, przerażającego" />
+        <override classes="feminine" cases="nominative vocative" value="straszna, przerażająca" />
+        <override classes="feminine" cases="genitive dative locative" value="strasznej, przerażającej" />
+        <override classes="feminine" cases="accusative instrumental" value="straszną, przerażającą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="straszne, przerażające" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="strasznych, przerażających" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="strasznym, przerażającym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="strasznymi, przerażającymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest straszny" kana="こわい" kanji="怖い"  />
         <form ref="predicate_polite_nonpast" translation="jest straszny" kana="こわいです" kanji="怖いです"  />
@@ -1676,6 +2880,20 @@
       </forms>
     </word>
     <word id="fushigi" translation="dziwny, tajemniczy" kana="ふしぎ" kanji="不思議" type="na_adjective">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="dziwny, tajemniczy" />
+        <common cases="genitive" value="dziwnego, tajemniczego" />
+        <common cases="dative" value="dziwnemu, tajemniczemu" />
+        <common cases="instrumental locative" value="dziwnym, tajemniczym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="dziwnego, tajemniczego" />
+        <override classes="feminine" cases="nominative vocative" value="dziwna, tajemnicza" />
+        <override classes="feminine" cases="genitive dative locative" value="dziwnej, tajemniczej" />
+        <override classes="feminine" cases="accusative instrumental" value="dziwną, tajemniczą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="dziwne, tajemnicze" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="dziwnych, tajemniczych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="dziwnym, tajemniczym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="dziwnymi, tajemniczymi" />
+      </polish_forms>
       <forms>
         <form ref="predicate_plain_nonpast" translation="jest tajemniczy" kana="ふしぎだ" kanji="不思議だ"  />
         <form ref="predicate_polite_nonpast" translation="jest tajemniczy" kana="ふしぎです" kanji="不思議です"  />
