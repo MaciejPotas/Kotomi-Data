@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="1" id="nouns" label="Nouns" schema="noun">
-  <editor required="translation kana" optional="kanji romaji" metadata="category agreement cases" />
+  <editor required="translation kana" optional="kanji romaji" metadata="category agreement cases relations" />
   <words>
     <word id="bag" translation="torba" kana="かばん" kanji="鞄" type="noun" category="thing">
       <agreement class="feminine" />
@@ -28,6 +28,7 @@
     </word>
     <word id="daidokoro" translation="kuchnia" kana="だいどころ" kanji="台所" type="noun" category="place">
       <agreement class="feminine" />
+      <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="kuchnia" genitive="kuchni" dative="kuchni" accusative="kuchnię" instrumental="kuchnią" locative="kuchni" vocative="kuchnio" />
     </word>
     <word id="email" translation="mail" kana="めーる" kanji="メール" type="noun" category="text">
@@ -48,6 +49,7 @@
     </word>
     <word id="home" translation="dom" kana="うち" kanji="家" type="noun" category="place">
       <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="dom" genitive="domu" accusative="dom" instrumental="domem" locative="domu" />
     </word>
     <word id="inu" translation="pies" kana="いぬ" kanji="犬" type="noun" category="animal">
@@ -64,6 +66,7 @@
     </word>
     <word id="kaigan" translation="plaża" kana="かいがん" kanji="海岸" type="noun" category="place">
       <agreement class="feminine" />
+      <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="plaża" genitive="plaży" accusative="plażę" instrumental="plażą" locative="plaży" />
     </word>
     <word id="letter" translation="list" kana="てがみ" kanji="手紙" type="noun" category="text">
@@ -108,6 +111,7 @@
     </word>
     <word id="park" translation="park" kana="こうえん" kanji="公園" type="noun" category="place">
       <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="park" genitive="parku" accusative="park" instrumental="parkiem" locative="parku" />
     </word>
     <word id="ringo" translation="jabłko" kana="りんご" kanji="林檎" type="noun" category="food">
@@ -116,10 +120,12 @@
     </word>
     <word id="room" translation="pokój" kana="へや" kanji="部屋" type="noun" category="place">
       <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="pokój" genitive="pokoju" accusative="pokój" instrumental="pokojem" locative="pokoju" />
     </word>
     <word id="school" translation="szkoła" kana="がっこう" kanji="学校" type="noun" category="place">
       <agreement class="feminine" />
+      <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="szkoła" genitive="szkoły" accusative="szkołę" instrumental="szkołą" locative="szkole" />
     </word>
     <word id="shigoto" translation="praca" kana="しごと" kanji="仕事" type="noun" category="availability_reason">
@@ -136,6 +142,7 @@
     </word>
     <word id="station" translation="stacja" kana="えき" kanji="駅" type="noun" category="place">
       <agreement class="feminine" />
+      <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="stacja" genitive="stacji" accusative="stację" instrumental="stacją" locative="stacji" />
     </word>
     <word id="sushi" translation="sushi" kana="すし" kanji="寿司" type="noun" category="food">
@@ -144,6 +151,7 @@
     </word>
     <word id="taiikukan" translation="sala gimnastyczna" kana="たいいくかん" kanji="体育館" type="noun" category="place">
       <agreement class="feminine" />
+      <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="sala gimnastyczna" genitive="sali gimnastycznej" dative="sali gimnastycznej" accusative="salę gimnastyczną" instrumental="salą gimnastyczną" locative="sali gimnastycznej" vocative="salo gimnastyczna" />
     </word>
     <word id="tea" translation="herbata" kana="おちゃ" kanji="お茶" type="noun" category="drink">
@@ -180,6 +188,7 @@
     </word>
     <word id="bazaaru" translation="bazar" kana="バザール" type="noun" category="place">
       <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="bazar" genitive="bazaru" dative="bazarowi" accusative="bazar" instrumental="bazarem" locative="bazarze" vocative="bazarze" />
     </word>
     <word id="roujin" translation="starzec" kana="ろうじん" kanji="老人" type="noun" category="person">
@@ -188,10 +197,12 @@
     </word>
     <word id="mise" translation="sklep" kana="みせ" kanji="店" type="noun" category="place">
       <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="sklep" genitive="sklepu" dative="sklepowi" accusative="sklep" instrumental="sklepem" locative="sklepie" vocative="sklepie" />
     </word>
     <word id="naka" translation="wnętrze" kana="なか" kanji="中" type="noun" category="place">
       <agreement class="neuter" />
+      <relations language="pl" profile="place_we_do" />
       <cases language="pl" nominative="wnętrze" genitive="wnętrza" dative="wnętrzu" accusative="wnętrze" instrumental="wnętrzem" locative="wnętrzu" vocative="wnętrze" />
     </word>
     <word id="hitori" translation="jedna osoba" kana="ひとり" kanji="一人" type="noun" category="person">
@@ -208,6 +219,7 @@
     </word>
     <word id="oku" translation="głębia" kana="おく" kanji="奥" type="noun" category="place">
       <agreement class="feminine" />
+      <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="głębia" genitive="głębi" dative="głębi" accusative="głębię" instrumental="głębią" locative="głębi" vocative="głębio" />
     </word>
     <word id="ashita" translation="jutro" kana="あした" kanji="明日" type="noun" category="abstract">
