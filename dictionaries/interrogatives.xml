@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="1" id="interrogatives" label="Interrogatives" schema="interrogative">
-  <editor required="translation kana asks_for" optional="kanji romaji" metadata="polish_forms" />
+  <editor required="translation kana asks_for" optional="kanji romaji" metadata="polish_forms target_categories" />
   <words>
     <word id="dare" translation="kto" kana="だれ" asks_for="person" kanji="誰" target_categories="person">
       <polish_forms>
