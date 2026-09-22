@@ -9,12 +9,12 @@
       <forms>
         <form ref="dictionary" translation="biorę prysznic" kana="あびる"  />
         <form ref="polite_nonpast" translation="biorę prysznic" kana="あびます"  />
-        <form ref="plain_negative" translation="nie biorę prysznic" kana="あびない"  />
-        <form ref="polite_negative" translation="nie biorę prysznic" kana="あびません"  />
+        <form ref="plain_negative" translation="nie biorę prysznica" kana="あびない"  />
+        <form ref="polite_negative" translation="nie biorę prysznica" kana="あびません"  />
         <form ref="past_plain" translation="wziąłem prysznic" kana="あびた"  />
         <form ref="past_polite" translation="wziąłem prysznic" kana="あびました"  />
-        <form ref="past_negative_plain" translation="nie wziąłem prysznic" kana="あびなかった"  />
-        <form ref="past_negative_polite" translation="nie wziąłem prysznic" kana="あびませんでした"  />
+        <form ref="past_negative_plain" translation="nie wziąłem prysznica" kana="あびなかった"  />
+        <form ref="past_negative_polite" translation="nie wziąłem prysznica" kana="あびませんでした"  />
         <form ref="te_form" kana="あびて"  />
         <form ref="potential" kana="あびられる"  />
         <form ref="passive" kana="あびられる"  />
@@ -1697,20 +1697,20 @@
         <form ref="imperative" kana="さわれ"  />
       </forms>
     </word>
-    <word id="sentakusuru" translation="robić pranie" kana="せんたくする" kanji="洗濯する" type="irregular" ending="suru">
+    <word id="sentakusuru" translation="prać" kana="せんたくする" kanji="洗濯する" type="irregular" ending="suru">
       <usage>
         <role ref="object" nouns="clothes" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" translation="robię pranie" kana="せんたくする"  />
-        <form ref="polite_nonpast" translation="robię pranie" kana="せんたくします"  />
-        <form ref="plain_negative" translation="nie robię pranie" kana="せんたくしない"  />
-        <form ref="polite_negative" translation="nie robię pranie" kana="せんたくしません"  />
-        <form ref="past_plain" translation="zrobiłem pranie" kana="せんたくした"  />
-        <form ref="past_polite" translation="zrobiłem pranie" kana="せんたくしました"  />
-        <form ref="past_negative_plain" translation="nie zrobiłem pranie" kana="せんたくしなかった"  />
-        <form ref="past_negative_polite" translation="nie zrobiłem pranie" kana="せんたくしませんでした"  />
+        <form ref="dictionary" translation="piorę" kana="せんたくする"  />
+        <form ref="polite_nonpast" translation="piorę" kana="せんたくします"  />
+        <form ref="plain_negative" translation="nie piorę" kana="せんたくしない"  />
+        <form ref="polite_negative" translation="nie piorę" kana="せんたくしません"  />
+        <form ref="past_plain" translation="prałem" kana="せんたくした"  />
+        <form ref="past_polite" translation="prałem" kana="せんたくしました"  />
+        <form ref="past_negative_plain" translation="nie prałem" kana="せんたくしなかった"  />
+        <form ref="past_negative_polite" translation="nie prałem" kana="せんたくしませんでした"  />
         <form ref="te_form" kana="せんたくして"  />
         <form ref="potential" kana="せんたくできる"  />
         <form ref="passive" kana="せんたくされる"  />
@@ -1835,21 +1835,21 @@
         <form ref="imperative" kana="そうじしろ"  />
       </forms>
     </word>
-    <word id="sugosu" translation="spędzać czas" kana="すごす" kanji="過ごす" type="godan" ending="su">
+    <word id="sugosu" translation="spędzać" kana="すごす" kanji="過ごす" type="godan" ending="su">
       <usage>
         <role ref="object" nouns="jikan" government="direct_object" />
         <role ref="companion" />
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" translation="spędzam czas" kana="すごす"  />
-        <form ref="polite_nonpast" translation="spędzam czas" kana="すごします"  />
-        <form ref="plain_negative" translation="nie spędzam czas" kana="すごさない"  />
-        <form ref="polite_negative" translation="nie spędzam czas" kana="すごしません"  />
-        <form ref="past_plain" translation="spędziłem czas" kana="すごした"  />
-        <form ref="past_polite" translation="spędziłem czas" kana="すごしました"  />
-        <form ref="past_negative_plain" translation="nie spędziłem czas" kana="すごさなかった"  />
-        <form ref="past_negative_polite" translation="nie spędziłem czas" kana="すごしませんでした"  />
+        <form ref="dictionary" translation="spędzam" kana="すごす"  />
+        <form ref="polite_nonpast" translation="spędzam" kana="すごします"  />
+        <form ref="plain_negative" translation="nie spędzam" kana="すごさない"  />
+        <form ref="polite_negative" translation="nie spędzam" kana="すごしません"  />
+        <form ref="past_plain" translation="spędziłem" kana="すごした"  />
+        <form ref="past_polite" translation="spędziłem" kana="すごしました"  />
+        <form ref="past_negative_plain" translation="nie spędziłem" kana="すごさなかった"  />
+        <form ref="past_negative_polite" translation="nie spędziłem" kana="すごしませんでした"  />
         <form ref="te_form" kana="すごして"  />
         <form ref="potential" kana="すごせる"  />
         <form ref="passive" kana="すごされる"  />
@@ -2625,21 +2625,21 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" translation="jestem zaskoczonym" kana="おどろく" kanji="驚く" romaji="odoroku"  />
-        <form ref="polite_nonpast" translation="jestem zaskoczonym" kana="おどろきます" kanji="驚きます" romaji="odorokimasu"  />
-        <form ref="plain_negative" translation="nie jestem zaskoczonym" kana="おどろかない" kanji="驚かない" romaji="odorokanai"  />
-        <form ref="polite_negative" translation="nie jestem zaskoczonym" kana="おどろきません" kanji="驚きません" romaji="odorokimasen"  />
-        <form ref="past_plain" translation="byłem zaskoczonym" kana="おどろいた" kanji="驚いた" romaji="odoroita"  />
-        <form ref="past_polite" translation="byłem zaskoczonym" kana="おどろきました" kanji="驚きました" romaji="odorokimashita"  />
-        <form ref="past_negative_plain" translation="nie byłem zaskoczonym" kana="おどろかなかった" kanji="驚かなかった" romaji="odorokanakatta"  />
-        <form ref="past_negative_polite" translation="nie byłem zaskoczonym" kana="おどろきませんでした" kanji="驚きませんでした" romaji="odorokimasendeshita"  />
+        <form ref="dictionary" translation="jestem zaskoczony" kana="おどろく" kanji="驚く" romaji="odoroku"  />
+        <form ref="polite_nonpast" translation="jestem zaskoczony" kana="おどろきます" kanji="驚きます" romaji="odorokimasu"  />
+        <form ref="plain_negative" translation="nie jestem zaskoczony" kana="おどろかない" kanji="驚かない" romaji="odorokanai"  />
+        <form ref="polite_negative" translation="nie jestem zaskoczony" kana="おどろきません" kanji="驚きません" romaji="odorokimasen"  />
+        <form ref="past_plain" translation="byłem zaskoczony" kana="おどろいた" kanji="驚いた" romaji="odoroita"  />
+        <form ref="past_polite" translation="byłem zaskoczony" kana="おどろきました" kanji="驚きました" romaji="odorokimashita"  />
+        <form ref="past_negative_plain" translation="nie byłem zaskoczony" kana="おどろかなかった" kanji="驚かなかった" romaji="odorokanakatta"  />
+        <form ref="past_negative_polite" translation="nie byłem zaskoczony" kana="おどろきませんでした" kanji="驚きませんでした" romaji="odorokimasendeshita"  />
         <form ref="te_form" translation="będąc zaskoczonym" kana="おどろいて" kanji="驚いて" romaji="odoroite"  />
-        <form ref="potential" translation="mogę być zaskoczonym" kana="おどろける" kanji="驚ける" romaji="odorokeru"  />
+        <form ref="potential" translation="mogę być zaskoczony" kana="おどろける" kanji="驚ける" romaji="odorokeru"  />
         <form ref="passive" kana="おどろかれる" kanji="驚かれる" romaji="odorokareru"  />
         <form ref="causative" translation="zaskakiwać kogoś" kana="おどろかせる" kanji="驚かせる" romaji="odorokaseru"  />
-        <form ref="tara" translation="jeśli będę być zaskoczonym" kana="おどろいたら" kanji="驚いたら" romaji="odoroitara"  />
-        <form ref="volitional" translation="bądźmy zaskoczonym" kana="おどろこう" kanji="驚こう" romaji="odorokou"  />
-        <form ref="imperative" translation="bądź zaskoczonym!" kana="おどろけ" kanji="驚け" romaji="odoroke"  />
+        <form ref="tara" translation="jeśli będę zaskoczony" kana="おどろいたら" kanji="驚いたら" romaji="odoroitara"  />
+        <form ref="volitional" translation="bądźmy zaskoczeni" kana="おどろこう" kanji="驚こう" romaji="odorokou"  />
+        <form ref="imperative" translation="bądź zaskoczony!" kana="おどろけ" kanji="驚け" romaji="odoroke"  />
       </forms>
     </word>
     <word id="damaru" translation="milczeć" kana="だまる" kanji="黙る" type="godan" ending="ru">
