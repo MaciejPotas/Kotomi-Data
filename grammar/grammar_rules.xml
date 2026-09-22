@@ -269,6 +269,34 @@
     <map polarity="negative" case_ref="genitive" />
   </noun_case_by_form>
   <!--
+    POLISH NOUN RELATION PROFILES
+
+    These profiles describe how a noun realizes one semantic relation in
+    Polish. The pattern selects a relation such as location or destination;
+    the noun selects a reusable profile. This is intentionally independent
+    from verb government and from the Japanese particle stored on the role.
+
+    Examples:
+      place_w_do  -> w szkole, do szkoły
+      place_na_na -> na plaży, na plażę
+      place_we_do -> we wnętrzu, do wnętrza
+  -->
+  <polish_noun_relations>
+    <profile id="place_w_do">
+      <realization relation="location" case_ref="locative" preposition="w" />
+      <realization relation="destination" case_ref="genitive" preposition="do" />
+    </profile>
+    <profile id="place_na_na">
+      <realization relation="location" case_ref="locative" preposition="na" />
+      <realization relation="destination" case_ref="accusative" preposition="na" />
+    </profile>
+    <profile id="place_we_do">
+      <realization relation="location" case_ref="locative" preposition="we" />
+      <realization relation="destination" case_ref="genitive" preposition="do" />
+    </profile>
+  </polish_noun_relations>
+
+  <!--
     POLISH VERB GOVERNMENT
 
     These frames describe only the Polish realization of a verb argument.

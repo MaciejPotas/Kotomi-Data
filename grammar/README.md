@@ -2,7 +2,7 @@
 
 This directory contains reusable grammar data used by the Schema 1 project.
 
-- `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, agreement catalogs, and noun-case rules.
+- `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, agreement catalogs, noun relation profiles, and noun-case rules.
 - `contexts.xml` contains reusable context pools used by sentence generation.
 
 ## Form catalogs
@@ -53,6 +53,40 @@ Copula catalogs can instead store complete realizations such as `był`,
 `była`, `było`, and `były` with `lexical="false"`. The engine resolves
 the relation, agreement class, and case, then applies this data. It does not
 contain Polish gender tables or pattern-specific exceptions.
+
+
+## Polish noun relation profiles
+
+Some Polish preposition and case choices belong to the noun, not to the verb.
+Place nouns are the clearest example:
+
+- `school`: `w szkole`, `do szkoły`;
+- `kaigan`: `na plaży`, `na plażę`;
+- `station`: `na stacji`, `na stację`.
+
+These choices live in reusable `polish_noun_relations` profiles. A noun only
+stores a profile reference:
+
+```xml
+<relations language="pl" profile="place_na_na" />
+```
+
+The profile defines each supported semantic relation:
+
+```xml
+<profile id="place_na_na">
+  <realization relation="location" case_ref="locative" preposition="na" />
+  <realization relation="destination" case_ref="accusative" preposition="na" />
+</profile>
+```
+
+The engine does not infer the Polish preposition from spelling, category, or
+Japanese particle. It resolves the selected noun's profile and reads the
+declared `preposition` and `case_ref`.
+
+This is intentionally separate from Polish verb government. Government answers
+"how does this verb realize its argument?", while a noun relation profile
+answers "how is this noun realized as a location/destination/etc.?".
 
 
 ## Polish verb government
