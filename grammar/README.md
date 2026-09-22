@@ -98,5 +98,21 @@ Japanese roles and Polish argument realization are independent:
 - government on a verb usage entry references a Polish frame from polish_government.
 
 A frame defines the noun case, an optional preposition, and whether realization
-changes with the selected form's polarity. The pattern engine never derives a
-Polish case directly from a Japanese particle.
+changes with the selected form's polarity. It also declares an
+`interrogative` phrase used by verb `[government:interrogative]`. An optional
+`interrogative_clitic` declares placement such as `nad czym się zastanawiam`;
+the engine removes and repositions only that exact declared token and never
+infers it from the translation.
+
+The pattern engine never derives a Polish case or question word directly from
+a Japanese particle. In particular, `role:object` does not mean accusative and
+does not mean `co`.
+
+## Question form rules
+
+`question_form_rules` constrain finite forms for an interrogative `asks_for`
+intent when the Polish prompt contains a fixed tense or polarity. For example,
+price, people-count, and age prompts are present affirmative, while the manner
+question permits past forms but not negative forms. Compatibility reads these
+contexts and polarities from XML instead of maintaining a pattern-name list in
+Python.

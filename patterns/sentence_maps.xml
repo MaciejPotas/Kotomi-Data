@@ -97,20 +97,20 @@
       <answer>{context[from:main].kana}{pattern[form:te_form]}{verb@main[id:iru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o miejsce" category="questions">
-      <question>Gdzie {context.translation}{verb[role:location][form].translation}?</question>
+      <question>{context.translation}gdzie {verb[role:location][form].translation}?</question>
       <answer>{context.kana}{interrogative[id:doko]}で{verb[role:location][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o cel" category="questions">
-      <question>Dokąd {context.translation}{verb[role:destination][form].translation}?</question>
+      <question>{context.translation}dokąd {verb[role:destination][form].translation}?</question>
       <answer>{context.kana}{interrogative[id:doko]}へ{verb[role:destination][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o towarzysza" category="questions">
-      <question>Z kim {context.translation}{verb[role:companion][form].translation}?</question>
+      <question>{context.translation}z kim {verb[role:companion][form].translation}?</question>
       <answer>{context.kana}{interrogative[id:dare]}と{verb[role:companion][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o rzecz" category="questions">
-      <question>Co {context.translation}{verb[role:object][form].translation}?</question>
-      <answer>{context.kana}{interrogative[id:nani]}を{verb[role:object][form]}{question}</answer>
+      <question>{context.translation}{verb@object[role:object][government:interrogative]}?</question>
+      <answer>{context.kana}{interrogative[id:nani]}を{verb@object[role:object][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie który + rzeczownik" category="questions">
       <question>{interrogative[id:dono][agree].translation} {noun[case:nominative]} to {copula[form][agree].translation}?</question>
@@ -121,19 +121,19 @@
       <answer>{interrogative[id:donna]}{noun}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie czyj" category="questions">
-      <question>{interrogative[id:dare_no][agree].translation} to {copula[form][agree].translation} {noun[category:thing][case:nominative]}?</question>
-      <answer>これは{interrogative[id:dare_no]}{noun[category:thing]}{copula[form]}{question}</answer>
+      <question>{interrogative[id:dare_no][agree].translation} {noun[category:concrete][case:nominative]} to {copula[form][agree].translation}?</question>
+      <answer>これは{interrogative[id:dare_no]}{noun[category:concrete]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie jak" category="questions">
       <question>{interrogative[id:dou][agree].translation} {copula[form][agree].translation} {noun[case:nominative]}?</question>
       <answer>{noun}は{interrogative[id:dou]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile kosztuje" category="questions">
-      <question>Ile kosztuje {noun[category:thing][case:nominative]}?</question>
-      <answer>{noun[category:thing]}は{interrogative[id:ikura]}{copula[form]}{question}</answer>
+      <question>{interrogative[id:ikura][agree].translation} {noun[category:purchasable][case:nominative]}?</question>
+      <answer>{noun[category:purchasable]}は{interrogative[id:ikura]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile osób" category="questions">
-      <question>Ile osób jest w {noun[category:place][case:locative]}?</question>
+      <question>Ile osób jest {noun[category:place][relation:location]}?</question>
       <answer>{noun[category:place]}に{interrogative[id:nannin]}{verb@main[id:iru][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile lat" category="questions">
@@ -173,7 +173,7 @@
         <pattern ref="Miejsce czynności" />
         <pattern ref="Środek transportu" />
       </patterns>
-      <question>Dlaczego {context.translation}{pattern}?</question>
+      <question>{context.translation}dlaczego {pattern}?</question>
       <answer>{context.kana}{interrogative[asks_for:reason]}{pattern}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie jakim sposobem" category="questions">
@@ -185,7 +185,7 @@
         <pattern ref="Miejsce czynności" />
         <pattern ref="Środek transportu" />
       </patterns>
-      <question>W jaki sposób {context.translation}{pattern}?</question>
+      <question>{context.translation}w jaki sposób {pattern}?</question>
       <answer>{context.kana}{interrogative[id:douyatte]}{pattern}{question}</answer>
     </sentence_pattern>
   </sentence_patterns>

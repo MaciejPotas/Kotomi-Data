@@ -63,7 +63,12 @@
         <override classes="plural_non_masculine_personal" cases="instrumental" value="jakimi" />
       </polish_forms>
     </word>
-    <word id="ikura" translation="ile kosztuje" kana="いくら" asks_for="price" />
+    <word id="ikura" translation="ile kosztuje" kana="いくら" asks_for="price">
+      <polish_forms>
+        <common cases="nominative" value="ile kosztuje" />
+        <override classes="plural_non_masculine_personal" cases="nominative" value="ile kosztują" />
+      </polish_forms>
+    </word>
     <word id="ikutsu" translation="ile" kana="いくつ" asks_for="quantity" kanji="幾つ" />
     <word id="nannin" translation="ile osób" kana="なんにん" asks_for="people_count" kanji="何人" />
     <word id="nansai" translation="ile lat" kana="なんさい" asks_for="age" kanji="何歳" />
