@@ -14,7 +14,7 @@
       <answer>{context.kana}{adjective@object[form:attributive_nonpast]}{noun@object}を{verb@object[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Cel ruchu" category="movement">
-      <question>{context.translation}{verb[role:destination][form].translation} do {noun[category:place][case:genitive]}.</question>
+      <question>{context.translation}{verb[role:destination][form].translation} {noun[category:place][relation:destination]}.</question>
       <answer>{context.kana}{noun[category:place]}へ{verb[role:destination][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Towarzysz" category="movement">
@@ -22,7 +22,7 @@
       <answer>{context.kana}{noun}と{verb[role:companion][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Miejsce czynności" category="movement">
-      <question>{context.translation}{verb[role:location][form].translation} w {noun[category:place][case:locative]}.</question>
+      <question>{context.translation}{verb[role:location][form].translation} {noun[category:place][relation:location]}.</question>
       <answer>{context.kana}{noun[category:place]}で{verb[role:location][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Środek transportu" category="movement">
