@@ -47,7 +47,7 @@
         <form ref="imperative" kana="あげろ"  />
       </forms>
     </word>
-    <word id="ajiwau" translation="delektować się" kana="あじわう" kanji="味わう" type="godan" ending="u">
+    <word id="ajiwau" translation="delektować się" kana="あじわう" kanji="味わう" type="godan" ending="u" polish_clitic="się">
       <usage>
         <role ref="object" accepts="food drink" government="instrumental_object" />
         <role ref="location" />
@@ -740,7 +740,7 @@
         <form ref="imperative" kana="かけ"  />
       </forms>
     </word>
-    <word id="kangaeru" translation="zastanawiać się" kana="かんがえる" kanji="考える" type="ichidan" ending="ru">
+    <word id="kangaeru" translation="zastanawiać się" kana="かんがえる" kanji="考える" type="ichidan" ending="ru" polish_clitic="się">
       <usage>
         <role ref="object" accepts="abstract text vehicle" government="nad_instrumental" />
         <role ref="location" />
@@ -1789,7 +1789,7 @@
         <form ref="imperative" kana="しね"  />
       </forms>
     </word>
-    <word id="shiru" translation="dowiedzieć się" kana="しる" kanji="知る" type="godan" ending="ru">
+    <word id="shiru" translation="dowiedzieć się" kana="しる" kanji="知る" type="godan" ending="ru" polish_clitic="się">
       <usage>
         <role ref="object" accepts="person abstract text" government="o_locative" />
         <role ref="location" />
@@ -1972,7 +1972,7 @@
         <form ref="imperative" kana="たべろ"  />
       </forms>
     </word>
-    <word id="tanoshimu" translation="cieszyć się" kana="たのしむ" kanji="楽しむ" type="godan" ending="mu">
+    <word id="tanoshimu" translation="cieszyć się" kana="たのしむ" kanji="楽しむ" type="godan" ending="mu" polish_clitic="się">
       <usage>
         <role ref="object" accepts="*" government="instrumental_object" />
         <role ref="location" />
@@ -2430,7 +2430,7 @@
         <form ref="imperative" kana="わかれ"  />
       </forms>
     </word>
-    <word id="warau" translation="śmiać się" kana="わらう" kanji="笑う" type="godan" ending="u">
+    <word id="warau" translation="śmiać się" kana="わらう" kanji="笑う" type="godan" ending="u" polish_clitic="się">
       <usage>
         <role ref="object" accepts="person animal" government="z_genitive" />
         <role ref="location" />
