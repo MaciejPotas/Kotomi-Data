@@ -42,13 +42,17 @@ the actual declension of a word. A catalog owns only reusable grammar behavior:
   `[agree:neuter]`; noun-bound agreement always reuses the noun's resolved case;
 - `fallback="translation"` explicitly preserves generation when a lexical
   agreement value is absent;
-- a common `<template value="...{value}...">` realizes every class unless a
-  class-specific template overrides it.
+- lexical catalogs use a common `<template value="...{value}...">` and
+  exactly one `{value}` marker; class-specific templates may override it;
+- `lexical="false"` declares a grammar-only realization whose templates do
+  not contain `{value}`, for example an inflected Polish copula.
 
 For example, predicate adjective catalogs can store `jest {value}`, plural
 `są {value}`, feminine past `była {value}`, and neuter past `było {value}`.
-The engine resolves the relation, agreement class, and case, then applies this
-data. It does not contain Polish gender tables or pattern-specific exceptions.
+Copula catalogs can instead store complete realizations such as `był`,
+`była`, `było`, and `były` with `lexical="false"`. The engine resolves
+the relation, agreement class, and case, then applies this data. It does not
+contain Polish gender tables or pattern-specific exceptions.
 
 
 ## Polish verb government
