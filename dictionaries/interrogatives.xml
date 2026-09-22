@@ -2,10 +2,31 @@
 <dictionary schema_version="1" id="interrogatives" label="Interrogatives" schema="interrogative">
   <editor required="translation kana asks_for" optional="kanji romaji" metadata="polish_forms" />
   <words>
-    <word id="dare" translation="kto" kana="だれ" asks_for="person" kanji="誰" />
-    <word id="donata" translation="kto (grzecznie)" kana="どなた" asks_for="person" />
-    <word id="nani" translation="co" kana="なに" asks_for="thing" kanji="何" />
-    <word id="nan" translation="co" kana="なん" asks_for="thing" kanji="何" />
+    <word id="dare" translation="kto" kana="だれ" asks_for="person" kanji="誰" target_categories="person">
+      <polish_forms>
+        <common cases="nominative" value="kto" />
+        <common cases="genitive accusative" value="kogo" />
+        <common cases="dative" value="komu" />
+        <common cases="instrumental locative" value="kim" />
+      </polish_forms>
+    </word>
+    <word id="donata" translation="kto (grzecznie)" kana="どなた" asks_for="person" target_categories="person" />
+    <word id="nani" translation="co" kana="なに" asks_for="thing" kanji="何" target_categories="food drink text media vehicle thing abstract">
+      <polish_forms>
+        <common cases="nominative accusative" value="co" />
+        <common cases="genitive" value="czego" />
+        <common cases="dative" value="czemu" />
+        <common cases="instrumental locative" value="czym" />
+      </polish_forms>
+    </word>
+    <word id="nan" translation="co" kana="なん" asks_for="thing" kanji="何" target_categories="food drink text media vehicle thing abstract">
+      <polish_forms>
+        <common cases="nominative accusative" value="co" />
+        <common cases="genitive" value="czego" />
+        <common cases="dative" value="czemu" />
+        <common cases="instrumental locative" value="czym" />
+      </polish_forms>
+    </word>
     <word id="itsu" translation="kiedy" kana="いつ" asks_for="time" />
     <word id="nanji" translation="o której godzinie" kana="なんじ" asks_for="time" kanji="何時" />
     <word id="doko" translation="gdzie" kana="どこ" asks_for="place" kanji="何処" />
