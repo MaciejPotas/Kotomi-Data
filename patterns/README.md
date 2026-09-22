@@ -50,5 +50,7 @@ explicit case.
 noun, for example `To {adjective[form][agree:neuter].translation}`. Lexical
 variants live in dictionary `<polish_forms>`, while grammar
 `<agreement_catalogs>` define form-specific templates, default fixed cases,
-and the explicit translation fallback. Agreement does not change Japanese
-forms, roles, government, or embedded `case_scope` behavior.
+and the explicit translation fallback. Grammar-only dependents such as the
+Polish copula use `lexical="false"`, so forms such as `była`, `było`, and
+`były` also come from grammar data rather than Python. Agreement does not
+change Japanese forms, roles, government, or embedded `case_scope` behavior.
