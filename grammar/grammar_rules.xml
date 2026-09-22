@@ -277,9 +277,9 @@
     from verb government and from the Japanese particle stored on the role.
 
     Examples:
-      place_w_do  -> w szkole / do szkoły
-      place_na_na -> na plaży / na plażę
-      place_we_do -> we wnętrzu / do wnętrza
+      place_w_do  -> w szkole, do szkoły
+      place_na_na -> na plaży, na plażę
+      place_we_do -> we wnętrzu, do wnętrza
   -->
   <polish_noun_relations>
     <profile id="place_w_do">
