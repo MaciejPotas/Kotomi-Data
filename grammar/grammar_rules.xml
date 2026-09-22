@@ -135,6 +135,75 @@
     </form_catalog>
   </form_catalogs>
   <!--
+    AGREEMENT CATALOGS
+
+    Agreement is a relation between a dependent word and a noun, or an
+    explicit fixed agreement class when no noun is present. Lexical values
+    come from the word's <polish_forms>. These catalogs describe how that
+    value is realized for one schema/form.
+
+    default_case_ref:
+      Case used only by fixed agreement such as [agree:neuter]. Noun-bound
+      agreement always reuses the noun's resolved case.
+
+    fallback="translation":
+      Explicitly allows a word without a matching <polish_forms> value to use
+      its base translation.
+
+    template/value:
+      Must contain one {value} marker. A template without classes is common;
+      class-specific templates override it. This keeps Polish copula choice in
+      grammar data instead of deriving it in Python.
+  -->
+  <agreement_catalogs>
+    <agreement_catalog schema="adjective" form="attributive_nonpast" default_case_ref="nominative" fallback="translation">
+      <template value="{value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="adjective" form="predicate_plain_nonpast" default_case_ref="nominative" fallback="translation">
+      <template value="jest {value}" />
+      <template classes="plural_non_masculine_personal" value="są {value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="adjective" form="predicate_polite_nonpast" default_case_ref="nominative" fallback="translation">
+      <template value="jest {value}" />
+      <template classes="plural_non_masculine_personal" value="są {value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="adjective" form="predicate_plain_negative" default_case_ref="nominative" fallback="translation">
+      <template value="nie jest {value}" />
+      <template classes="plural_non_masculine_personal" value="nie są {value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="adjective" form="predicate_polite_negative" default_case_ref="nominative" fallback="translation">
+      <template value="nie jest {value}" />
+      <template classes="plural_non_masculine_personal" value="nie są {value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="adjective" form="predicate_plain_past" default_case_ref="nominative" fallback="translation">
+      <template value="był {value}" />
+      <template classes="feminine" value="była {value}" />
+      <template classes="neuter" value="było {value}" />
+      <template classes="plural_non_masculine_personal" value="były {value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="adjective" form="predicate_polite_past" default_case_ref="nominative" fallback="translation">
+      <template value="był {value}" />
+      <template classes="feminine" value="była {value}" />
+      <template classes="neuter" value="było {value}" />
+      <template classes="plural_non_masculine_personal" value="były {value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="adjective" form="predicate_plain_past_negative" default_case_ref="nominative" fallback="translation">
+      <template value="nie był {value}" />
+      <template classes="feminine" value="nie była {value}" />
+      <template classes="neuter" value="nie było {value}" />
+      <template classes="plural_non_masculine_personal" value="nie były {value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="adjective" form="predicate_polite_past_negative" default_case_ref="nominative" fallback="translation">
+      <template value="nie był {value}" />
+      <template classes="feminine" value="nie była {value}" />
+      <template classes="neuter" value="nie było {value}" />
+      <template classes="plural_non_masculine_personal" value="nie były {value}" />
+    </agreement_catalog>
+    <agreement_catalog schema="interrogative" default_case_ref="nominative" fallback="translation">
+      <template value="{value}" />
+    </agreement_catalog>
+  </agreement_catalogs>
+  <!--
     DYNAMIC NOUN CASE BY FORM
 
     Used by noun placeholders with [case:form].

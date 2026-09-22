@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="1" id="interrogatives" label="Interrogatives" schema="interrogative">
-  <editor required="translation kana asks_for" optional="kanji romaji" metadata="" />
+  <editor required="translation kana asks_for" optional="kanji romaji" metadata="polish_forms" />
   <words>
     <word id="dare" translation="kto" kana="だれ" asks_for="person" kanji="誰" />
     <word id="donata" translation="kto (grzecznie)" kana="どなた" asks_for="person" />
@@ -10,18 +10,78 @@
     <word id="nanji" translation="o której godzinie" kana="なんじ" asks_for="time" kanji="何時" />
     <word id="doko" translation="gdzie" kana="どこ" asks_for="place" kanji="何処" />
     <word id="dore" translation="który" kana="どれ" asks_for="choice" />
-    <word id="dono" translation="który" kana="どの" asks_for="choice_modifier" />
+    <word id="dono" translation="który" kana="どの" asks_for="choice_modifier">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="który" />
+        <common cases="genitive" value="którego" />
+        <common cases="dative" value="któremu" />
+        <common cases="instrumental locative" value="którym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="którego" />
+        <override classes="feminine" cases="nominative vocative" value="która" />
+        <override classes="feminine" cases="genitive dative locative" value="której" />
+        <override classes="feminine" cases="accusative instrumental" value="którą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="które" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="których" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="którym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="którymi" />
+      </polish_forms>
+    </word>
     <word id="dochira" translation="która strona" kana="どちら" asks_for="choice" />
     <word id="docchi" translation="która strona (potocznie)" kana="どっち" asks_for="choice" />
-    <word id="donna" translation="jaki" kana="どんな" asks_for="kind" />
+    <word id="donna" translation="jaki" kana="どんな" asks_for="kind">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="jaki" />
+        <common cases="genitive" value="jakiego" />
+        <common cases="dative" value="jakiemu" />
+        <common cases="instrumental locative" value="jakim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="jakiego" />
+        <override classes="feminine" cases="nominative vocative" value="jaka" />
+        <override classes="feminine" cases="genitive dative locative" value="jakiej" />
+        <override classes="feminine" cases="accusative instrumental" value="jaką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="jakie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="jakich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="jakim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="jakimi" />
+      </polish_forms>
+    </word>
     <word id="naze" translation="dlaczego" kana="なぜ" asks_for="reason" kanji="何故" />
     <word id="doushite" translation="dlaczego" kana="どうして" asks_for="reason" />
     <word id="douyatte" translation="w jaki sposób" kana="どうやって" asks_for="method" />
-    <word id="dou" translation="jak" kana="どう" asks_for="manner" />
+    <word id="dou" translation="jak" kana="どう" asks_for="manner">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="jaki" />
+        <common cases="genitive" value="jakiego" />
+        <common cases="dative" value="jakiemu" />
+        <common cases="instrumental locative" value="jakim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="jakiego" />
+        <override classes="feminine" cases="nominative vocative" value="jaka" />
+        <override classes="feminine" cases="genitive dative locative" value="jakiej" />
+        <override classes="feminine" cases="accusative instrumental" value="jaką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="jakie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="jakich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="jakim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="jakimi" />
+      </polish_forms>
+    </word>
     <word id="ikura" translation="ile kosztuje" kana="いくら" asks_for="price" />
     <word id="ikutsu" translation="ile" kana="いくつ" asks_for="quantity" kanji="幾つ" />
     <word id="nannin" translation="ile osób" kana="なんにん" asks_for="people_count" kanji="何人" />
     <word id="nansai" translation="ile lat" kana="なんさい" asks_for="age" kanji="何歳" />
-    <word id="dare_no" translation="czyj" kana="だれの" asks_for="possessor" kanji="誰の" />
+    <word id="dare_no" translation="czyj" kana="だれの" asks_for="possessor" kanji="誰の">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="czyj" />
+        <common cases="genitive" value="czyjego" />
+        <common cases="dative" value="czyjemu" />
+        <common cases="instrumental locative" value="czyim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="czyjego" />
+        <override classes="feminine" cases="nominative vocative" value="czyja" />
+        <override classes="feminine" cases="genitive dative locative" value="czyjej" />
+        <override classes="feminine" cases="accusative instrumental" value="czyją" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="czyje" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="czyich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="czyim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="czyimi" />
+      </polish_forms>
+    </word>
   </words>
 </dictionary>
