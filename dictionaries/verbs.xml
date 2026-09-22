@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="1" id="verbs" label="Verbs" schema="verb">
-  <editor required="translation kana type" optional="kanji romaji ending" metadata="usage features forms" />
+  <editor required="translation kana type" optional="kanji romaji ending" metadata="usage features forms polish_clitic" />
   <words>
     <word id="abiru" translation="brać prysznic" kana="あびる" kanji="浴びる" type="ichidan" ending="ru">
       <usage>
