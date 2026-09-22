@@ -30,10 +30,10 @@ EXPECTED_COPULA_TRANSLATIONS = {
     "polite_nonpast": "jest",
     "plain_negative": "nie jest",
     "polite_negative": "nie jest",
-    "past_plain": "był(a/o/y)",
-    "past_polite": "był(a/o/y)",
-    "past_negative_plain": "nie był(a/o/y)",
-    "past_negative_polite": "nie był(a/o/y)",
+    "past_plain": "był",
+    "past_polite": "był",
+    "past_negative_plain": "nie był",
+    "past_negative_polite": "nie był",
 }
 
 
