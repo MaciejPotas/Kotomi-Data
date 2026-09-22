@@ -30,3 +30,21 @@ The runtime only looks up `specific -> common -> translation`. It does not
 infer a class from a semantic category and does not create Polish forms from
 spelling, endings, stems, or profiles. Missing agreement metadata is valid and
 falls back to the adjective's normal `translation`.
+
+
+## Noun relation profiles
+
+A noun may reference a reusable source-language relation profile:
+
+```xml
+<relations language="pl" profile="place_w_do" />
+```
+
+The profile itself is owned by `grammar/grammar_rules.xml`; the dictionary does
+not duplicate prepositions or case rules. This lets multiple nouns share the
+same realization while still allowing lexical differences such as
+`w szkole / do szkoły`, `na plaży / na plażę`, or
+`we wnętrzu / do wnętrza`.
+
+Relation profiles are authoring data. Runtime does not infer a profile from the
+noun category or Polish spelling.
