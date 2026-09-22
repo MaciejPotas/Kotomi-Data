@@ -22,12 +22,13 @@
     <category id="person" label="Person" parent="concrete" selectable="true" />
     <category id="animal" label="Animal" parent="concrete" selectable="true" />
     <category id="place" label="Place" parent="concrete" selectable="true" />
-    <category id="food" label="Food" parent="concrete" selectable="true" />
-    <category id="drink" label="Drink" parent="concrete" selectable="true" />
-    <category id="text" label="Text" parent="concrete" selectable="true" />
-    <category id="media" label="Audible media" selectable="true" />
-    <category id="vehicle" label="Vehicle" parent="concrete" selectable="true" />
-    <category id="thing" label="Thing" parent="concrete" selectable="true" />
+    <category id="purchasable" label="Purchasable" parent="concrete" selectable="false" />
+    <category id="food" label="Food" parent="purchasable" selectable="true" />
+    <category id="drink" label="Drink" parent="purchasable" selectable="true" />
+    <category id="text" label="Text" parent="purchasable" selectable="true" />
+    <category id="media" label="Audible media" parent="purchasable" selectable="true" />
+    <category id="vehicle" label="Vehicle" parent="purchasable" selectable="true" />
+    <category id="thing" label="Thing" parent="purchasable" selectable="true" />
     <category id="abstract" label="Abstract" selectable="true" />
     <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
   </noun_categories>
@@ -312,31 +313,43 @@
   -->
   <polish_government>
     <frame id="direct_object">
-      <realization polarity="affirmative" case_ref="accusative" />
-      <realization polarity="negative" case_ref="genitive" />
+      <realization polarity="affirmative" case_ref="accusative" interrogative="co" />
+      <realization polarity="negative" case_ref="genitive" interrogative="czego" />
     </frame>
     <frame id="genitive">
-      <realization polarity="any" case_ref="genitive" />
+      <realization polarity="any" case_ref="genitive" interrogative="czego" />
     </frame>
     <frame id="w_accusative">
-      <realization polarity="any" case_ref="accusative" preposition="w" />
+      <realization polarity="any" case_ref="accusative" preposition="w" interrogative="w co" />
     </frame>
     <frame id="instrumental_object">
-      <realization polarity="any" case_ref="instrumental" />
+      <realization polarity="any" case_ref="instrumental" interrogative="czym" interrogative_clitic="się" />
     </frame>
     <frame id="na_accusative">
-      <realization polarity="any" case_ref="accusative" preposition="na" />
+      <realization polarity="any" case_ref="accusative" preposition="na" interrogative="na co" />
     </frame>
     <frame id="nad_instrumental">
-      <realization polarity="any" case_ref="instrumental" preposition="nad" />
+      <realization polarity="any" case_ref="instrumental" preposition="nad" interrogative="nad czym" interrogative_clitic="się" />
     </frame>
     <frame id="o_locative">
-      <realization polarity="any" case_ref="locative" preposition="o" />
+      <realization polarity="any" case_ref="locative" preposition="o" interrogative="o czym" interrogative_clitic="się" />
     </frame>
     <frame id="z_genitive">
-      <realization polarity="any" case_ref="genitive" preposition="z" />
+      <realization polarity="any" case_ref="genitive" preposition="z" interrogative="z czego" interrogative_clitic="się" />
     </frame>
   </polish_government>
+  <!--
+    QUESTION FORM RULES
+
+    Fixed Polish prompts only allow finite forms that preserve their declared
+    context and polarity. Rules are keyed by interrogative asks_for intent.
+  -->
+  <question_form_rules>
+    <rule asks_for="manner" polarities="affirmative" />
+    <rule asks_for="price" contexts="present" polarities="affirmative" />
+    <rule asks_for="people_count" contexts="present" polarities="affirmative" />
+    <rule asks_for="age" contexts="present" polarities="affirmative" />
+  </question_form_rules>
   <!--
     ROLES
 
