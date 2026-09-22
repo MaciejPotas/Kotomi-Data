@@ -5,15 +5,15 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FORM_TRANSLATION = "{copula[form].translation}"
+FORM_TRANSLATION = "{copula[form][agree].translation}"
 EXPECTED_QUESTIONS = {
     "Pytanie który + rzeczownik": (
         "{interrogative[id:dono][agree].translation} "
-        "{noun[case:nominative]} to {copula[form].translation}?"
+        "{noun[case:nominative]} to {copula[form][agree].translation}?"
     ),
     "Pytanie o rodzaj": (
         "{interrogative[id:donna][agree].translation} to "
-        "{copula[form].translation} {noun[case:nominative]}?"
+        "{copula[form][agree].translation} {noun[case:nominative]}?"
     ),
     "Pytanie czyj": (
         "{interrogative[id:dare_no][agree].translation} to "
@@ -22,7 +22,7 @@ EXPECTED_QUESTIONS = {
     ),
     "Pytanie jak": (
         "{interrogative[id:dou][agree].translation} "
-        "{copula[form].translation} {noun[case:nominative]}?"
+        "{copula[form][agree].translation} {noun[case:nominative]}?"
     ),
 }
 EXPECTED_COPULA_TRANSLATIONS = {
