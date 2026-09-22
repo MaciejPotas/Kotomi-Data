@@ -2,7 +2,7 @@
 
 This directory contains reusable grammar data used by the Schema 1 project.
 
-- `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, and noun-case rules.
+- `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, agreement catalogs, and noun-case rules.
 - `contexts.xml` contains reusable context pools used by sentence generation.
 
 ## Form catalogs
@@ -30,6 +30,29 @@ They must not duplicate grammar metadata such as context, polarity, register, la
 `noun_case_by_form` maps grammar polarity directly to a noun case. It does not maintain a second list of form names or form sets.
 
 Both grammar files are loaded through `../quiz_project.xml`. Keep grammar-wide definitions here rather than placing them beside dictionaries or sentence patterns.
+
+## Polish agreement catalogs
+
+`agreement_catalogs` define how a stored lexical agreement value is realized
+for one dictionary schema and optional form. Dictionary `<polish_forms>` own
+the actual declension of a word. A catalog owns only reusable grammar behavior:
+
+- `schema` and optional `form` select the dependent-word realization;
+- `default_case_ref` supplies a case only for fixed agreement such as
+  `[agree:neuter]`; noun-bound agreement always reuses the noun's resolved case;
+- `fallback="translation"` explicitly preserves generation when a lexical
+  agreement value is absent;
+- lexical catalogs use a common `<template value="...{value}...">` and
+  exactly one `{value}` marker; class-specific templates may override it;
+- `lexical="false"` declares a grammar-only realization whose templates do
+  not contain `{value}`, for example an inflected Polish copula.
+
+For example, predicate adjective catalogs can store `jest {value}`, plural
+`są {value}`, feminine past `była {value}`, and neuter past `było {value}`.
+Copula catalogs can instead store complete realizations such as `był`,
+`była`, `było`, and `były` with `lexical="false"`. The engine resolves
+the relation, agreement class, and case, then applies this data. It does not
+contain Polish gender tables or pattern-specific exceptions.
 
 
 ## Polish verb government

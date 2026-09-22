@@ -34,19 +34,19 @@
       <answer>{context.kana}{noun}が{verb[role:subject][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Przymiotnik po temacie" category="adjectives">
-      <question>{noun[case:nominative]} {adjective[form].translation}.</question>
+      <question>{noun[case:nominative]} {adjective[form][agree].translation}.</question>
       <answer>この{noun}は{adjective[form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Sam przymiotnik" category="adjectives">
-      <question>To {adjective[form].translation}.</question>
+      <question>To {adjective[form][agree:neuter].translation}.</question>
       <answer>これは{adjective[form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Przymiotnik przed rzeczownikiem" category="adjectives">
-      <question>To {copula[form].translation} {adjective[form:attributive_nonpast].translation} {noun[case:nominative]}.</question>
+      <question>To {copula[form][agree].translation} {adjective[form:attributive_nonpast][agree].translation} {noun[case:nominative]}.</question>
       <answer>これは{adjective[form:attributive_nonpast]}{noun}{copula[form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Cytowana opinia" category="constructions">
-      <question>{verb[feature:reporting][form].translation}, że {noun[case:nominative]} {adjective[form:predicate_plain_nonpast].translation}.</question>
+      <question>{verb[feature:reporting][form].translation}, że {noun[case:nominative]} {adjective[form:predicate_plain_nonpast][agree].translation}.</question>
       <answer>あの{noun}が{adjective[form:predicate_plain_nonpast]}と{verb[feature:reporting][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Czynność w toku" category="constructions">
@@ -113,19 +113,19 @@
       <answer>{context.kana}{interrogative[id:nani]}を{verb[role:object][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie który + rzeczownik" category="questions">
-      <question>Który(a/e) {noun[case:nominative]} to {copula[form].translation}?</question>
+      <question>{interrogative[id:dono][agree].translation} {noun[case:nominative]} to {copula[form][agree].translation}?</question>
       <answer>{interrogative[id:dono]}{noun}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o rodzaj" category="questions">
-      <question>Jaki(a/e) to {copula[form].translation} {noun[case:nominative]}?</question>
+      <question>{interrogative[id:donna][agree].translation} to {copula[form][agree].translation} {noun[case:nominative]}?</question>
       <answer>{interrogative[id:donna]}{noun}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie czyj" category="questions">
-      <question>Czyj(a/e) to {copula[form].translation} {noun[category:thing][case:nominative]}?</question>
+      <question>{interrogative[id:dare_no][agree].translation} to {copula[form][agree].translation} {noun[category:thing][case:nominative]}?</question>
       <answer>これは{interrogative[id:dare_no]}{noun[category:thing]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie jak" category="questions">
-      <question>Jaki(a/e) {copula[form].translation} {noun[case:nominative]}?</question>
+      <question>{interrogative[id:dou][agree].translation} {copula[form][agree].translation} {noun[case:nominative]}?</question>
       <answer>{noun}は{interrogative[id:dou]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile kosztuje" category="questions">

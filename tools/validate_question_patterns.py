@@ -5,20 +5,24 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FORM_TRANSLATION = "{copula[form].translation}"
+FORM_TRANSLATION = "{copula[form][agree].translation}"
 EXPECTED_QUESTIONS = {
     "Pytanie który + rzeczownik": (
-        "Który(a/e) {noun[case:nominative]} to {copula[form].translation}?"
+        "{interrogative[id:dono][agree].translation} "
+        "{noun[case:nominative]} to {copula[form][agree].translation}?"
     ),
     "Pytanie o rodzaj": (
-        "Jaki(a/e) to {copula[form].translation} {noun[case:nominative]}?"
+        "{interrogative[id:donna][agree].translation} to "
+        "{copula[form][agree].translation} {noun[case:nominative]}?"
     ),
     "Pytanie czyj": (
-        "Czyj(a/e) to {copula[form].translation} "
+        "{interrogative[id:dare_no][agree].translation} to "
+        "{copula[form][agree].translation} "
         "{noun[category:thing][case:nominative]}?"
     ),
     "Pytanie jak": (
-        "Jaki(a/e) {copula[form].translation} {noun[case:nominative]}?"
+        "{interrogative[id:dou][agree].translation} "
+        "{copula[form][agree].translation} {noun[case:nominative]}?"
     ),
 }
 EXPECTED_COPULA_TRANSLATIONS = {
@@ -26,10 +30,10 @@ EXPECTED_COPULA_TRANSLATIONS = {
     "polite_nonpast": "jest",
     "plain_negative": "nie jest",
     "polite_negative": "nie jest",
-    "past_plain": "był(a/o/y)",
-    "past_polite": "był(a/o/y)",
-    "past_negative_plain": "nie był(a/o/y)",
-    "past_negative_polite": "nie był(a/o/y)",
+    "past_plain": "był",
+    "past_polite": "był",
+    "past_negative_plain": "nie był",
+    "past_negative_polite": "nie był",
 }
 
 
