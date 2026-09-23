@@ -17,7 +17,7 @@ EXPECTED_QUESTIONS = {
     ),
     "Pytanie czyj": (
         "{interrogative[asks_for:possessor][agree].translation} "
-        "{noun[category:concrete][case:nominative]} to "
+        "{noun[case:nominative]} to "
         "{copula[form][agree].translation}?"
     ),
     "Pytanie jak": (
