@@ -29,8 +29,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "57028d5cbcd4daba7e1fd70c5fada1df642d8e7e04276a56f816621be128b7d6",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=57028d5cbcd4daba7e1fd70c5fada1df642d8e7e04276a56f816621be128b7d6"
+      "sha256": "64baeea84cecd524ea09a8250bbb4af31a57f891a1f20b7ac18297ee4e72787f",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=64baeea84cecd524ea09a8250bbb4af31a57f891a1f20b7ac18297ee4e72787f"
     },
     {
       "path": "data/grammar/contexts.xml",
@@ -39,8 +39,8 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "2551900bb8b9451c32485332dcbd6c463c7ec1efb467e11d69a84cc409b1299d",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=2551900bb8b9451c32485332dcbd6c463c7ec1efb467e11d69a84cc409b1299d"
+      "sha256": "ddab6a3eba3d6b3d9e67008ebe5131638c3127376cf7da860189112ef5f398ca",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=ddab6a3eba3d6b3d9e67008ebe5131638c3127376cf7da860189112ef5f398ca"
     },
     {
       "path": "data/lessons/lessons.xml",
@@ -49,8 +49,8 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "28ba277d3378f267ffaf92041ccfcb569e821b4d0df851f8b96b5a2fbbe56f6c",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=28ba277d3378f267ffaf92041ccfcb569e821b4d0df851f8b96b5a2fbbe56f6c"
+      "sha256": "b4d75ab0a08c90de51d68a232d859f7f7e112103f8fddb82e23f7f37758c4636",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=b4d75ab0a08c90de51d68a232d859f7f7e112103f8fddb82e23f7f37758c4636"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
