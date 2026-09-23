@@ -162,8 +162,8 @@
     },
     {
       "path": "apps/verbs/logic.py",
-      "sha256": "c02776f265f4bc2363d996c9bea668eec490580e1291703b05c0acdd572659ba",
-      "url": "quizzes/verbs/logic.py?kotomi_sha256=c02776f265f4bc2363d996c9bea668eec490580e1291703b05c0acdd572659ba"
+      "sha256": "a09defe0bc367ee970d6d18f76340c5f39a95d126801109db609bd585a56dde3",
+      "url": "quizzes/verbs/logic.py?kotomi_sha256=a09defe0bc367ee970d6d18f76340c5f39a95d126801109db609bd585a56dde3"
     },
     {
       "path": "apps/verbs/mobile.py",
