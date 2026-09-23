@@ -311,6 +311,17 @@
     preposition:
       Optional Polish preposition emitted before the declined noun.
   -->
+  <!--
+    POLISH MOVABLE CLITICS
+
+    These are source-language tokens whose lexical presence is stored only
+    in word/form translations. The catalog defines which tokens may be
+    repositioned by Polish question rendering; it does not mark individual
+    verbs as reflexive and therefore does not duplicate dictionary data.
+  -->
+  <polish_clitics>
+    <clitic value="się" />
+  </polish_clitics>
   <polish_government>
     <frame id="direct_object">
       <realization polarity="affirmative" case_ref="accusative" />
