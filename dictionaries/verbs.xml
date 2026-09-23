@@ -178,6 +178,9 @@
       </forms>
     </word>
     <word id="asobu" translation="bawić się" kana="あそぶ" kanji="遊ぶ" type="godan" ending="bu">
+      <features>
+        <feature ref="standalone_companion" />
+      </features>
       <usage>
         <role ref="companion" government="z_instrumental" />
         <role ref="location" />
@@ -201,6 +204,9 @@
       </forms>
     </word>
     <word id="au" translation="spotykać się" kana="あう" kanji="会う" type="godan" ending="u">
+      <features>
+        <feature ref="standalone_companion" />
+      </features>
       <usage>
         <role ref="companion" government="z_instrumental" />
         <role ref="location" />
@@ -420,6 +426,7 @@
     </word>
     <word id="hanashiau" translation="rozmawiać ze sobą" kana="はなしあう" kanji="話し合う" type="godan" ending="u">
       <usage>
+        <role ref="companion" />
         <role ref="location" />
       </usage>
       <forms>
@@ -441,6 +448,9 @@
       </forms>
     </word>
     <word id="hanasu" translation="rozmawiać, mówić" kana="はなす" kanji="話す" type="godan" ending="su">
+      <features>
+        <feature ref="standalone_companion" />
+      </features>
       <usage>
         <role ref="companion" government="z_instrumental" />
         <role ref="location" />
@@ -1837,6 +1847,7 @@
     <word id="sugosu" translation="spędzać" kana="すごす" kanji="過ごす" type="godan" ending="su">
       <usage>
         <role ref="object" nouns="jikan" government="direct_object" />
+        <role ref="companion" />
         <role ref="location" />
       </usage>
       <forms>
