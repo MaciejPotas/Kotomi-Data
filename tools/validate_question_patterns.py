@@ -27,8 +27,8 @@ EXPECTED_QUESTIONS = {
 }
 EXPECTED_STRUCTURAL_QUESTIONS = {
     "Pytanie o rzecz": (
-        "{interrogative@object[id:nani].translation} "
-        "{context.translation}{verb@object[role:object][form].translation}?"
+        "{interrogative[id:nani].translation} "
+        "{context.translation}{verb[role:object][form].translation}?"
     ),
     "Pytanie ile osób": (
         "Ile osób jest {noun[category:place][relation:location]}?"
