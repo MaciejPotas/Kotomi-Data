@@ -18,20 +18,16 @@
       <answer>{context.kana}{noun[category:place]}へ{verb[role:destination][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Towarzysz" category="movement">
-      <question>{context.translation}{verb[role:companion][form].translation} z {noun[case:instrumental]}.</question>
-      <answer>{context.kana}{noun}と{verb[role:companion][form]}</answer>
+      <question>{context.translation}{verb@companion[role:companion][form].translation} {noun@companion[government:phrase]}.</question>
+      <answer>{context.kana}{noun@companion}と{verb@companion[role:companion][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Miejsce czynności" category="movement">
       <question>{context.translation}{verb[role:location][form].translation} {noun[category:place][relation:location]}.</question>
       <answer>{context.kana}{noun[category:place]}で{verb[role:location][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Środek transportu" category="movement">
-      <question>{context.translation}{verb[role:vehicle][form].translation} {noun[category:vehicle][case:instrumental]}.</question>
-      <answer>{context.kana}{noun[category:vehicle]}に{verb[role:vehicle][form]}</answer>
-    </sentence_pattern>
-    <sentence_pattern id="Podmiot z が" category="basic">
-      <question>{context.translation}{noun[case:nominative]} {verb[role:subject][form].translation}.</question>
-      <answer>{context.kana}{noun}が{verb[role:subject][form]}</answer>
+      <question>{context.translation}{verb@vehicle[role:vehicle][form].translation} {noun@vehicle[category:vehicle][government:phrase]}.</question>
+      <answer>{context.kana}{noun@vehicle[category:vehicle]}に{verb@vehicle[role:vehicle][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Przymiotnik po temacie" category="adjectives">
       <question>{noun[case:nominative]} {adjective[form][agree].translation}.</question>
@@ -49,10 +45,6 @@
       <question>{verb[feature:reporting][form].translation}, że {noun[case:nominative]} {adjective[form:predicate_plain_nonpast][agree].translation}.</question>
       <answer>あの{noun}が{adjective[form:predicate_plain_nonpast]}と{verb[feature:reporting][form]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="Czynność w toku" category="constructions">
-      <question>{context[from:main].translation}{verb[role:object][form].translation} {noun[government:phrase]}.</question>
-      <answer>{context[from:main].kana}{noun}を{verb[role:object][form:te_form]}{verb@main[id:iru][form]}</answer>
-    </sentence_pattern>
     <sentence_pattern id="Przed inną czynnością" category="constructions">
       <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[government:phrase]}, zanim {verb@before[form][polarity:affirmative].translation}.</question>
       <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun}を{verb@main[role:object][form]}</answer>
@@ -62,8 +54,8 @@
       <answer>{context.kana}{noun@first}と{noun@second}と{noun@third}がすきです</answer>
     </sentence_pattern>
     <sentence_pattern id="Reakcja na przyczynę" category="basic">
-      <question>{context.translation}{verb[role:reaction_target][form].translation} {noun[case:instrumental]}</question>
-      <answer>{context.kana}{noun}に{verb[role:reaction_target][form]}</answer>
+      <question>{context.translation}{verb@reaction[role:reaction_target][form].translation} {noun@reaction[government:phrase]}.</question>
+      <answer>{context.kana}{noun@reaction}に{verb@reaction[role:reaction_target][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Dostępność 〜がある" category="constructions">
       <patterns>
@@ -73,8 +65,8 @@
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
       </patterns>
-      <question>{context[from:main].translation}{verb@main[id:aru][form].translation} {noun[category:availability_reason][case:form]}, żeby {pattern[form:dictionary][translation:base][case_scope:embedded]}.</question>
-      <answer>{context[from:main].kana}{pattern[form:dictionary][case_scope:embedded]}{noun[category:availability_reason]}が{verb@main[id:aru][form]}</answer>
+      <question>{context[from:main].translation}{verb@main[id:aru][form].translation} {noun@main[category:availability_reason][government:phrase]}, żeby {pattern[form:dictionary][translation:base][case_scope:embedded]}.</question>
+      <answer>{context[from:main].kana}{pattern[form:dictionary][case_scope:embedded]}{noun@main[category:availability_reason]}が{verb@main[id:aru][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Możliwość ことができる" category="constructions">
       <patterns>
@@ -105,8 +97,8 @@
       <answer>{context.kana}{interrogative[asks_for:place]}へ{verb[role:destination][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o towarzysza" category="questions">
-      <question>Z kim {context.translation}{verb[role:companion][form].translation}?</question>
-      <answer>{context.kana}{interrogative[id:dare]}と{verb[role:companion][form]}{question}</answer>
+      <question>{interrogative@companion[id:dare].translation} {context.translation}{verb@companion[role:companion][form].translation}?</question>
+      <answer>{context.kana}{interrogative@companion}と{verb@companion[role:companion][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o rzecz" category="questions">
       <question>{interrogative@object[id:nani].translation} {context.translation}{verb@object[role:object][form].translation}?</question>
