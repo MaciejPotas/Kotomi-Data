@@ -406,6 +406,5 @@
   <features>
     <feature id="reporting" label="Reporting verb" />
     <feature id="progressive_auxiliary" label="Progressive auxiliary" />
-    <feature id="standalone_companion" label="Complete Polish companion predicate" />
   </features>
 </grammar_rules>
