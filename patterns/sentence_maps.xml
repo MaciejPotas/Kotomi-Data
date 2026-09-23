@@ -31,7 +31,7 @@
     </sentence_pattern>
     <sentence_pattern id="Przymiotnik po temacie" category="adjectives">
       <question>{noun[case:nominative]} {adjective[form][agree].translation}.</question>
-      <answer>この{noun}は{adjective[form]}</answer>
+      <answer>{noun}は{adjective[form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Sam przymiotnik" category="adjectives">
       <question>To {adjective[form][agree:neuter].translation}.</question>
@@ -43,15 +43,15 @@
     </sentence_pattern>
     <sentence_pattern id="Cytowana opinia" category="constructions">
       <question>{verb[feature:reporting][form].translation}, że {noun[case:nominative]} {adjective[form:predicate_plain_nonpast][agree].translation}.</question>
-      <answer>あの{noun}が{adjective[form:predicate_plain_nonpast]}と{verb[feature:reporting][form]}</answer>
+      <answer>{noun}が{adjective[form:predicate_plain_nonpast]}と{verb[feature:reporting][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Przed inną czynnością" category="constructions">
-      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun[government:phrase]}, zanim {verb@before[form][polarity:affirmative].translation}.</question>
-      <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun}を{verb@main[role:object][form]}</answer>
+      <question>{context[from:main].translation}{verb@main[role:object][form].translation} {noun@main[government:phrase]}, zanim {verb@before[form][polarity:affirmative].translation}.</question>
+      <answer>{context[from:main].kana}{verb@before[form:dictionary]}まえに{noun@main}を{verb@main[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Trzy lubiane rzeczy" category="basic">
-      <question>{context.translation}Lubię {noun@first[case:accusative]}, {noun@second[case:accusative]} i {noun@third[case:accusative]}.</question>
-      <answer>{context.kana}{noun@first}と{noun@second}と{noun@third}がすきです</answer>
+      <question>Lubię {noun@first[case:accusative]}, {noun@second[case:accusative]} i {noun@third[case:accusative]}.</question>
+      <answer>{noun@first}と{noun@second}と{noun@third}がすきです</answer>
     </sentence_pattern>
     <sentence_pattern id="Reakcja na przyczynę" category="basic">
       <question>{context.translation}{verb@reaction[role:reaction_target][form].translation} {noun@reaction[government:phrase]}.</question>
