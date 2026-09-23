@@ -97,12 +97,15 @@ Japanese roles and Polish argument realization are independent:
 - accepts and nouns constrain compatible vocabulary;
 - government on a verb usage entry references a Polish frame from polish_government.
 
-A frame defines the noun case, an optional preposition, and whether realization
-changes with the selected form's polarity. It also declares an
-`interrogative` phrase used by verb `[government:interrogative]`. An optional
-`interrogative_clitic` declares placement such as `nad czym się zastanawiam`;
-the engine removes and repositions only that exact declared token and never
-infers it from the translation.
+A frame defines only the noun case, an optional preposition, and whether
+realization changes with the selected form's polarity. Question intent stays
+on the interrogative through `asks_for`, and the interrogative's
+`polish_forms` owns case forms such as `co/czego/czym`.
+
+`polish_clitics` is a grammar-owned catalog of movable Polish tokens such as
+`się`. Their lexical presence remains only in verb/form translations, for
+example `zastanawiam się` or `nie zastanawiam się`. Question rendering may
+reposition a declared token, but government never stores or duplicates it.
 
 The pattern engine never derives a Polish case or question word directly from
 a Japanese particle. In particular, `role:object` does not mean accusative and
