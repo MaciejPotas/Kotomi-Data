@@ -10,8 +10,8 @@
       <answer>{context.kana}{noun}を{verb[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Opisane dopełnienie" category="basic">
-      <question>{context.translation}{verb[role:object][form].translation} {noun[government:preposition]}{adjective[form:attributive_nonpast][agree].translation} {noun[government:case]}.</question>
-      <answer>{context.kana}{adjective[form:attributive_nonpast]}{noun}を{verb[role:object][form]}</answer>
+      <question>{context.translation}{verb[role:object][form].translation} {noun@object[government:preposition]}{adjective@object[form:attributive_nonpast][agree].translation} {noun@object[government:case]}.</question>
+      <answer>{context.kana}{adjective@object[form:attributive_nonpast]}{noun@object}を{verb[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Cel ruchu" category="movement">
       <question>{context.translation}{verb[role:destination][form].translation} {noun[relation:destination]}.</question>
