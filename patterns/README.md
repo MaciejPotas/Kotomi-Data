@@ -52,6 +52,8 @@ Use government when the Polish realization is controlled by the selected verb.
 Use relation when the Polish realization is lexical to the selected noun. The
 Japanese role/particle remains independent from both source-language mechanisms.
 
+Object questions keep the Japanese lexical variant explicit where it matters, for example `{interrogative@object[id:nani].translation}` together with `{verb@object[role:object][form].translation}`. The shared alias binds that interrogative to the verb. The selected interrogative still carries its own `asks_for` and `target_categories`; its `polish_forms` owns `co/czego/czym`, while verb government contributes only case plus preposition. For question families where the semantic intent uniquely identifies the interrogative, prefer `[asks_for:...]` over a concrete `[id:...]`. The lexical `się` stays in verb/form translations; `grammar_rules.xml` only declares it as a movable Polish clitic for question word order. It is not part of the government frame.
+
 
 Governed Polish noun phrases use [government:phrase]. The engine links the noun to the role-bearing verb. Use the same @name only when a pattern needs to disambiguate more than one possible pair. [government:preposition] and [government:case] expose the two parts
 separately for constructions that place an adjective between them.
@@ -72,3 +74,8 @@ and the explicit translation fallback. Grammar-only dependents such as the
 Polish copula use `lexical="false"`, so forms such as `była`, `było`, and
 `były` also come from grammar data rather than Python. Agreement does not
 change Japanese forms, roles, government, or embedded `case_scope` behavior.
+
+The price question selects the non-selectable grouping category
+`purchasable`, whose descendants are the buyable leaf categories. The
+possessor question selects `concrete`. These are taxonomy constraints, not
+runtime lists of exceptional nouns.

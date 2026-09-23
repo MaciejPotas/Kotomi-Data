@@ -22,12 +22,13 @@
     <category id="person" label="Person" parent="concrete" selectable="true" />
     <category id="animal" label="Animal" parent="concrete" selectable="true" />
     <category id="place" label="Place" parent="concrete" selectable="true" />
-    <category id="food" label="Food" parent="concrete" selectable="true" />
-    <category id="drink" label="Drink" parent="concrete" selectable="true" />
-    <category id="text" label="Text" parent="concrete" selectable="true" />
-    <category id="media" label="Audible media" selectable="true" />
-    <category id="vehicle" label="Vehicle" parent="concrete" selectable="true" />
-    <category id="thing" label="Thing" parent="concrete" selectable="true" />
+    <category id="purchasable" label="Purchasable" parent="concrete" selectable="false" />
+    <category id="food" label="Food" parent="purchasable" selectable="true" />
+    <category id="drink" label="Drink" parent="purchasable" selectable="true" />
+    <category id="text" label="Text" parent="purchasable" selectable="true" />
+    <category id="media" label="Audible media" parent="purchasable" selectable="true" />
+    <category id="vehicle" label="Vehicle" parent="purchasable" selectable="true" />
+    <category id="thing" label="Thing" parent="purchasable" selectable="true" />
     <category id="abstract" label="Abstract" selectable="true" />
     <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
   </noun_categories>
@@ -310,6 +311,17 @@
     preposition:
       Optional Polish preposition emitted before the declined noun.
   -->
+  <!--
+    POLISH MOVABLE CLITICS
+
+    These are source-language tokens whose lexical presence is stored only
+    in word/form translations. The catalog defines which tokens may be
+    repositioned by Polish question rendering; it does not mark individual
+    verbs as reflexive and therefore does not duplicate dictionary data.
+  -->
+  <polish_clitics>
+    <clitic value="się" />
+  </polish_clitics>
   <polish_government>
     <frame id="direct_object">
       <realization polarity="affirmative" case_ref="accusative" />
@@ -337,6 +349,18 @@
       <realization polarity="any" case_ref="genitive" preposition="z" />
     </frame>
   </polish_government>
+  <!--
+    QUESTION FORM RULES
+
+    Fixed Polish prompts only allow finite forms that preserve their declared
+    context and polarity. Rules are keyed by interrogative asks_for intent.
+  -->
+  <question_form_rules>
+    <rule asks_for="manner" polarities="affirmative" />
+    <rule asks_for="price" contexts="present" polarities="affirmative" />
+    <rule asks_for="people_count" contexts="present" polarities="affirmative" />
+    <rule asks_for="age" contexts="present" polarities="affirmative" />
+  </question_form_rules>
   <!--
     ROLES
 

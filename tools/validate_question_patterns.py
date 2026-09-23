@@ -8,21 +8,34 @@ ROOT = Path(__file__).resolve().parents[1]
 FORM_TRANSLATION = "{copula[form][agree].translation}"
 EXPECTED_QUESTIONS = {
     "Pytanie który + rzeczownik": (
-        "{interrogative[id:dono][agree].translation} "
+        "{interrogative[asks_for:choice_modifier][agree].translation} "
         "{noun[case:nominative]} to {copula[form][agree].translation}?"
     ),
     "Pytanie o rodzaj": (
-        "{interrogative[id:donna][agree].translation} to "
+        "{interrogative[asks_for:kind][agree].translation} to "
         "{copula[form][agree].translation} {noun[case:nominative]}?"
     ),
     "Pytanie czyj": (
-        "{interrogative[id:dare_no][agree].translation} to "
-        "{copula[form][agree].translation} "
-        "{noun[category:thing][case:nominative]}?"
+        "{interrogative[asks_for:possessor][agree].translation} "
+        "{noun[category:concrete][case:nominative]} to "
+        "{copula[form][agree].translation}?"
     ),
     "Pytanie jak": (
-        "{interrogative[id:dou][agree].translation} "
+        "{interrogative[asks_for:manner][agree].translation} "
         "{copula[form][agree].translation} {noun[case:nominative]}?"
+    ),
+}
+EXPECTED_STRUCTURAL_QUESTIONS = {
+    "Pytanie o rzecz": (
+        "{interrogative@object[id:nani].translation} "
+        "{context.translation}{verb@object[role:object][form].translation}?"
+    ),
+    "Pytanie ile osób": (
+        "Ile osób jest {noun[category:place][relation:location]}?"
+    ),
+    "Pytanie ile kosztuje": (
+        "{interrogative[asks_for:price][agree].translation} "
+        "{noun[category:purchasable][case:nominative]}?"
     ),
 }
 EXPECTED_COPULA_TRANSLATIONS = {
@@ -61,6 +74,15 @@ def validate_question_prompts() -> None:
         if "{copula[form]}" not in answer:
             raise AssertionError(
                 f"{pattern_id} must render the same selected copula form in Japanese"
+            )
+    for pattern_id, expected_question in EXPECTED_STRUCTURAL_QUESTIONS.items():
+        node = patterns.get(pattern_id)
+        if node is None:
+            raise AssertionError(f"Missing audited question pattern: {pattern_id}")
+        question = node.findtext("question", default="")
+        if question != expected_question:
+            raise AssertionError(
+                f"{pattern_id} source prompt changed unexpectedly: {question!r}"
             )
 
 
