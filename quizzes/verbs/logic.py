@@ -50,7 +50,6 @@ PATTERN_LABELS = {
     "Towarzysz": "Zdanie z towarzyszem",
     "Miejsce czynności": "Zdanie z miejscem czynności",
     "Środek transportu": "Zdanie ze środkiem transportu",
-    "Podmiot z が": "Zdanie z podmiotem i が",
 }
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 
