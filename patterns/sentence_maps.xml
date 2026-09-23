@@ -10,24 +10,24 @@
       <answer>{context.kana}{noun}を{verb[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Opisane dopełnienie" category="basic">
-      <question>{context.translation}{verb[role:object][form].translation} {noun[government:preposition]}{adjective[form:attributive_nonpast][agree].translation} {noun[government:case]}.</question>
-      <answer>{context.kana}{adjective[form:attributive_nonpast]}{noun}を{verb[role:object][form]}</answer>
+      <question>{context.translation}{verb[role:object][form].translation} {noun@object[government:preposition]}{adjective@object[form:attributive_nonpast][agree].translation} {noun@object[government:case]}.</question>
+      <answer>{context.kana}{adjective@object[form:attributive_nonpast]}{noun@object}を{verb[role:object][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Cel ruchu" category="movement">
-      <question>{context.translation}{verb[role:destination][form].translation} {noun[category:place][relation:destination]}.</question>
-      <answer>{context.kana}{noun[category:place]}へ{verb[role:destination][form]}</answer>
+      <question>{context.translation}{verb[role:destination][form].translation} {noun[relation:destination]}.</question>
+      <answer>{context.kana}{noun}へ{verb[role:destination][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Towarzysz" category="movement">
       <question>{context.translation}{verb[role:companion][form].translation} {noun[government:phrase]}.</question>
       <answer>{context.kana}{noun}と{verb[role:companion][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Miejsce czynności" category="movement">
-      <question>{context.translation}{verb[role:location][form].translation} {noun[category:place][relation:location]}.</question>
-      <answer>{context.kana}{noun[category:place]}で{verb[role:location][form]}</answer>
+      <question>{context.translation}{verb[role:location][form].translation} {noun[relation:location]}.</question>
+      <answer>{context.kana}{noun}で{verb[role:location][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Środek transportu" category="movement">
-      <question>{context.translation}{verb[role:vehicle][form].translation} {noun[category:vehicle][government:phrase]}.</question>
-      <answer>{context.kana}{noun[category:vehicle]}に{verb[role:vehicle][form]}</answer>
+      <question>{context.translation}{verb[role:vehicle][form].translation} {noun[government:phrase]}.</question>
+      <answer>{context.kana}{noun}に{verb[role:vehicle][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Przymiotnik po temacie" category="adjectives">
       <question>{noun[case:nominative]} {adjective[form][agree].translation}.</question>
@@ -61,9 +61,11 @@
       <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Opisane dopełnienie" />
         <pattern ref="Cel ruchu" />
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
+        <pattern ref="Środek transportu" />
       </patterns>
       <question>{context[from:main].translation}{verb@main[id:aru][role:subject][form].translation} {noun@main[category:availability_reason][government:phrase]}, żeby {pattern[form:dictionary][translation:base][case_scope:embedded]}.</question>
       <answer>{context[from:main].kana}{pattern[form:dictionary][case_scope:embedded]}{noun@main[category:availability_reason]}が{verb@main[id:aru][role:subject][form]}</answer>
@@ -72,7 +74,11 @@
       <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Opisane dopełnienie" />
+        <pattern ref="Cel ruchu" />
+        <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
+        <pattern ref="Środek transportu" />
       </patterns>
       <question>{context[from:main].translation}{verb@main[id:dekiru][form].translation} {pattern[form:dictionary][translation:base]}.</question>
       <answer>{context[from:main].kana}{pattern[form:dictionary]}ことが{verb@main[id:dekiru][form]}</answer>
@@ -97,8 +103,8 @@
       <answer>{context.kana}{interrogative[asks_for:place]}へ{verb[role:destination][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o towarzysza" category="questions">
-      <question>{interrogative[id:dare].translation} {context.translation}{verb[role:companion][form].translation}?</question>
-      <answer>{context.kana}{interrogative[id:dare]}と{verb[role:companion][form]}{question}</answer>
+      <question>{interrogative[asks_for:person].translation} {context.translation}{verb[role:companion][form].translation}?</question>
+      <answer>{context.kana}{interrogative[asks_for:person]}と{verb[role:companion][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o rzecz" category="questions">
       <question>{interrogative[id:nani].translation} {context.translation}{verb[role:object][form].translation}?</question>
@@ -113,8 +119,8 @@
       <answer>{interrogative[asks_for:kind]}{noun}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie czyj" category="questions">
-      <question>{interrogative[asks_for:possessor][agree].translation} {noun[category:concrete][case:nominative]} to {copula[form][agree].translation}?</question>
-      <answer>これは{interrogative[asks_for:possessor]}{noun[category:concrete]}{copula[form]}{question}</answer>
+      <question>{interrogative[asks_for:possessor][agree].translation} {noun[case:nominative]} to {copula[form][agree].translation}?</question>
+      <answer>これは{interrogative[asks_for:possessor]}{noun}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie jak" category="questions">
       <question>{interrogative[asks_for:manner][agree].translation} {copula[form][agree].translation} {noun[case:nominative]}?</question>
@@ -125,7 +131,7 @@
       <answer>{noun[category:purchasable]}は{interrogative[asks_for:price]}{copula[form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile osób" category="questions">
-      <question>Ile osób jest {noun[category:place][relation:location]}?</question>
+      <question>Ile osób jest {noun[relation:location]}?</question>
       <answer>{noun[category:place]}に{interrogative[asks_for:people_count]}{verb[id:iru][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie ile lat" category="questions">
@@ -136,6 +142,7 @@
       <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Opisane dopełnienie" />
         <pattern ref="Cel ruchu" />
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
@@ -148,6 +155,7 @@
       <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Opisane dopełnienie" />
         <pattern ref="Cel ruchu" />
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
@@ -160,6 +168,7 @@
       <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Opisane dopełnienie" />
         <pattern ref="Cel ruchu" />
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
@@ -172,6 +181,7 @@
       <patterns>
         <pattern ref="Sam czasownik" />
         <pattern ref="Czasownik z dopełnieniem" />
+        <pattern ref="Opisane dopełnienie" />
         <pattern ref="Cel ruchu" />
         <pattern ref="Towarzysz" />
         <pattern ref="Miejsce czynności" />
