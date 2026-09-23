@@ -141,7 +141,7 @@
     </word>
     <word id="aru" translation="mieć" kana="ある" kanji="有る" type="godan" ending="ru">
       <usage>
-        <role ref="subject" accepts="place food drink text media vehicle thing abstract" />
+        <role ref="subject" accepts="place food drink text media vehicle thing abstract" government="direct_object" />
       </usage>
       <forms>
         <form ref="dictionary" translation="mam" kana="ある"  />
@@ -179,7 +179,7 @@
     </word>
     <word id="asobu" translation="bawić się" kana="あそぶ" kanji="遊ぶ" type="godan" ending="bu">
       <usage>
-        <role ref="companion" />
+        <role ref="companion" government="z_instrumental" />
         <role ref="location" />
       </usage>
       <forms>
@@ -202,7 +202,7 @@
     </word>
     <word id="au" translation="spotykać się" kana="あう" kanji="会う" type="godan" ending="u">
       <usage>
-        <role ref="companion" />
+        <role ref="companion" government="z_instrumental" />
         <role ref="location" />
       </usage>
       <forms>
@@ -418,20 +418,20 @@
         <form ref="imperative" kana="はじめろ"  />
       </forms>
     </word>
-    <word id="hanashiau" translation="rozmawiać ze sobą" kana="はなしあう" kanji="話し合う" type="godan" ending="u">
+    <word id="hanashiau" translation="rozmawiać" kana="はなしあう" kanji="話し合う" type="godan" ending="u">
       <usage>
-        <role ref="companion" />
+        <role ref="companion" government="z_instrumental" />
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" translation="rozmawiamy ze sobą" kana="はなしあう"  />
-        <form ref="polite_nonpast" translation="rozmawiamy ze sobą" kana="はなしあいます"  />
-        <form ref="plain_negative" translation="nie rozmawiamy ze sobą" kana="はなしあわない"  />
-        <form ref="polite_negative" translation="nie rozmawiamy ze sobą" kana="はなしあいません"  />
-        <form ref="past_plain" translation="rozmawialiśmy ze sobą" kana="はなしあった"  />
-        <form ref="past_polite" translation="rozmawialiśmy ze sobą" kana="はなしあいました"  />
-        <form ref="past_negative_plain" translation="nie rozmawialiśmy ze sobą" kana="はなしあわなかった"  />
-        <form ref="past_negative_polite" translation="nie rozmawialiśmy ze sobą" kana="はなしあいませんでした"  />
+        <form ref="dictionary" translation="rozmawiam" kana="はなしあう"  />
+        <form ref="polite_nonpast" translation="rozmawiam" kana="はなしあいます"  />
+        <form ref="plain_negative" translation="nie rozmawiam" kana="はなしあわない"  />
+        <form ref="polite_negative" translation="nie rozmawiam" kana="はなしあいません"  />
+        <form ref="past_plain" translation="rozmawiałem" kana="はなしあった"  />
+        <form ref="past_polite" translation="rozmawiałem" kana="はなしあいました"  />
+        <form ref="past_negative_plain" translation="nie rozmawiałem" kana="はなしあわなかった"  />
+        <form ref="past_negative_polite" translation="nie rozmawiałem" kana="はなしあいませんでした"  />
         <form ref="te_form" kana="はなしあって"  />
         <form ref="potential" kana="はなしあえる"  />
         <form ref="passive" kana="はなしあわれる"  />
@@ -443,7 +443,7 @@
     </word>
     <word id="hanasu" translation="rozmawiać, mówić" kana="はなす" kanji="話す" type="godan" ending="su">
       <usage>
-        <role ref="companion" />
+        <role ref="companion" government="z_instrumental" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1355,7 +1355,7 @@
     </word>
     <word id="noru" translation="jechać" kana="のる" kanji="乗る" type="godan" ending="ru">
       <usage>
-        <role ref="vehicle" />
+        <role ref="vehicle" government="instrumental_object" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1835,21 +1835,21 @@
         <form ref="imperative" kana="そうじしろ"  />
       </forms>
     </word>
-    <word id="sugosu" translation="spędzać" kana="すごす" kanji="過ごす" type="godan" ending="su">
+    <word id="sugosu" translation="spędzać czas" kana="すごす" kanji="過ごす" type="godan" ending="su">
       <usage>
         <role ref="object" nouns="jikan" government="direct_object" />
-        <role ref="companion" />
+        <role ref="companion" government="z_instrumental" />
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" translation="spędzam" kana="すごす"  />
-        <form ref="polite_nonpast" translation="spędzam" kana="すごします"  />
-        <form ref="plain_negative" translation="nie spędzam" kana="すごさない"  />
-        <form ref="polite_negative" translation="nie spędzam" kana="すごしません"  />
-        <form ref="past_plain" translation="spędziłem" kana="すごした"  />
-        <form ref="past_polite" translation="spędziłem" kana="すごしました"  />
-        <form ref="past_negative_plain" translation="nie spędziłem" kana="すごさなかった"  />
-        <form ref="past_negative_polite" translation="nie spędziłem" kana="すごしませんでした"  />
+        <form ref="dictionary" translation="spędzam czas" kana="すごす"  />
+        <form ref="polite_nonpast" translation="spędzam czas" kana="すごします"  />
+        <form ref="plain_negative" translation="nie spędzam czasu" kana="すごさない"  />
+        <form ref="polite_negative" translation="nie spędzam czasu" kana="すごしません"  />
+        <form ref="past_plain" translation="spędziłem czas" kana="すごした"  />
+        <form ref="past_polite" translation="spędziłem czas" kana="すごしました"  />
+        <form ref="past_negative_plain" translation="nie spędziłem czasu" kana="すごさなかった"  />
+        <form ref="past_negative_polite" translation="nie spędziłem czasu" kana="すごしませんでした"  />
         <form ref="te_form" kana="すごして"  />
         <form ref="potential" kana="すごせる"  />
         <form ref="passive" kana="すごされる"  />
@@ -2621,7 +2621,7 @@
     </word>
     <word id="odoroku" translation="być zaskoczonym" kana="おどろく" kanji="驚く" romaji="odoroku" type="godan" ending="ku">
       <usage>
-        <role ref="reaction_target" />
+        <role ref="reaction_target" government="instrumental_object" />
         <role ref="location" />
       </usage>
       <forms>
