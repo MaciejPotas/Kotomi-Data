@@ -52,7 +52,7 @@ Use government when the Polish realization is controlled by the selected verb.
 Use relation when the Polish realization is lexical to the selected noun. The
 Japanese role/particle remains independent from both source-language mechanisms.
 
-Object questions keep the interrogative explicit, for example `{interrogative@object[id:nani][asks_for:thing].translation}` together with `{verb@object[role:object][form].translation}`. The shared alias binds the question intent to the verb. `asks_for` selects what is being asked, the interrogative `polish_forms` owns `co/czego/czym`, and the verb government contributes only case plus preposition. A reflexive `się` is lexical verb data, not part of the government frame.
+Object questions keep the interrogative explicit, for example `{interrogative@object[id:nani][asks_for:thing].translation}` together with `{verb@object[role:object][form].translation}`. The shared alias binds the question intent to the verb. `asks_for` selects what is being asked, the interrogative `polish_forms` owns `co/czego/czym`, and the verb government contributes only case plus preposition. The lexical `się` stays in verb/form translations; `grammar_rules.xml` only declares it as a movable Polish clitic for question word order. It is not part of the government frame.
 
 
 Governed Polish noun phrases use [government:phrase]. The engine links the noun to the role-bearing verb. Use the same @name only when a pattern needs to disambiguate more than one possible pair. [government:preposition] and [government:case] expose the two parts
