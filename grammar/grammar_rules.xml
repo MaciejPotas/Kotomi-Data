@@ -336,6 +336,9 @@
     <frame id="instrumental_object">
       <realization polarity="any" case_ref="instrumental" />
     </frame>
+    <frame id="z_instrumental">
+      <realization polarity="any" case_ref="instrumental" preposition="z" />
+    </frame>
     <frame id="na_accusative">
       <realization polarity="any" case_ref="accusative" preposition="na" />
     </frame>
