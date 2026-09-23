@@ -18,8 +18,8 @@
       <answer>{context.kana}{noun[category:place]}へ{verb[role:destination][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Towarzysz" category="movement">
-      <question>{context.translation}{verb@companion[role:companion][form].translation} {noun@companion[government:phrase]}.</question>
-      <answer>{context.kana}{noun@companion}と{verb@companion[role:companion][form]}</answer>
+      <question>{context.translation}{verb@companion[role:companion][feature:standalone_companion][form].translation} {noun@companion[government:phrase]}.</question>
+      <answer>{context.kana}{noun@companion}と{verb@companion[role:companion][feature:standalone_companion][form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Miejsce czynności" category="movement">
       <question>{context.translation}{verb[role:location][form].translation} {noun[category:place][relation:location]}.</question>
@@ -97,8 +97,8 @@
       <answer>{context.kana}{interrogative[asks_for:place]}へ{verb[role:destination][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o towarzysza" category="questions">
-      <question>{interrogative@companion[id:dare].translation} {context.translation}{verb@companion[role:companion][form].translation}?</question>
-      <answer>{context.kana}{interrogative@companion}と{verb@companion[role:companion][form]}{question}</answer>
+      <question>{interrogative@companion[id:dare].translation} {context.translation}{verb@companion[role:companion][feature:standalone_companion][form].translation}?</question>
+      <answer>{context.kana}{interrogative@companion}と{verb@companion[role:companion][feature:standalone_companion][form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o rzecz" category="questions">
       <question>{interrogative@object[id:nani].translation} {context.translation}{verb@object[role:object][form].translation}?</question>
