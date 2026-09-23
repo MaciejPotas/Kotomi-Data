@@ -49,8 +49,8 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "63c224c263508afe7ea2b2a256fabae98939cd091a50722221f146437201cf2b",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=63c224c263508afe7ea2b2a256fabae98939cd091a50722221f146437201cf2b"
+      "sha256": "28ba277d3378f267ffaf92041ccfcb569e821b4d0df851f8b96b5a2fbbe56f6c",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=28ba277d3378f267ffaf92041ccfcb569e821b4d0df851f8b96b5a2fbbe56f6c"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
