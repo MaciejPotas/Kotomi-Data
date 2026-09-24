@@ -59,10 +59,10 @@ Use relation when the Polish realization is lexical to the selected noun. The
 Japanese role/particle remains independent from both source-language mechanisms.
 
 Object questions keep the Japanese lexical variant explicit where it matters,
-for example `{interrogative@object[id:nani, government:@action].translation}`
-together with `{verb@action[role:object, form].translation}`. The aliases stay
-type-local; the explicit government link connects the interrogative to the
-verb. The selected interrogative still carries its own `asks_for` and
+for example `{interrogative@object[id:nani].translation}` together with
+`{verb@action[role:object, form].translation}`. Governed interrogatives are
+matched to their unique compatible role-bearing verb. The selected
+interrogative still carries its own `asks_for` and
 `target_categories`; its `polish_forms` owns `co/czego/czym`, while verb
 government contributes only case plus preposition. For question families
 where the semantic intent uniquely identifies the interrogative, prefer
