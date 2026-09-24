@@ -5,37 +5,40 @@ import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-FORM_TRANSLATION = "{copula[form][agree].translation}"
+FORM_TRANSLATION = "{copula[form, agree:@item, case:@item].translation}"
 EXPECTED_QUESTIONS = {
     "Pytanie który + rzeczownik": (
-        "{interrogative[asks_for:choice_modifier][agree].translation} "
-        "{noun[case:nominative]} to {copula[form][agree].translation}?"
+        "{interrogative[asks_for:choice_modifier, agree:@item, case:@item].translation} "
+        "{noun@item[case:nominative]} to "
+        "{copula[form, agree:@item, case:@item].translation}?"
     ),
     "Pytanie o rodzaj": (
-        "{interrogative[asks_for:kind][agree].translation} to "
-        "{copula[form][agree].translation} {noun[case:nominative]}?"
+        "{interrogative[asks_for:kind, agree:@item, case:@item].translation} to "
+        "{copula[form, agree:@item, case:@item].translation} "
+        "{noun@item[case:nominative]}?"
     ),
     "Pytanie czyj": (
-        "{interrogative[asks_for:possessor][agree].translation} "
-        "{noun[case:nominative]} to "
-        "{copula[form][agree].translation}?"
+        "{interrogative[asks_for:possessor, agree:@item, case:@item].translation} "
+        "{noun@item[case:nominative]} to "
+        "{copula[form, agree:@item, case:@item].translation}?"
     ),
     "Pytanie jak": (
-        "{interrogative[asks_for:manner][agree].translation} "
-        "{copula[form][agree].translation} {noun[case:nominative]}?"
+        "{interrogative[asks_for:manner, agree:@item, case:@item].translation} "
+        "{copula[form, agree:@item, case:@item].translation} "
+        "{noun@item[case:nominative]}?"
     ),
 }
 EXPECTED_STRUCTURAL_QUESTIONS = {
     "Pytanie o rzecz": (
         "{interrogative[id:nani].translation} "
-        "{context.translation}{verb[role:object][form].translation}?"
+        "{context.translation}{verb[role:object, form].translation}?"
     ),
     "Pytanie ile osób": (
-        "Ile osób jest {noun[category:place][relation:location]}?"
+        "Ile osób jest {noun[category:place, relation:location].phrase}?"
     ),
     "Pytanie ile kosztuje": (
-        "{interrogative[asks_for:price][agree].translation} "
-        "{noun[category:purchasable][case:nominative]}?"
+        "{interrogative[asks_for:price, agree:@item, case:@item].translation} "
+        "{noun@item[category:purchasable, case:nominative]}?"
     ),
 }
 EXPECTED_COPULA_TRANSLATIONS = {

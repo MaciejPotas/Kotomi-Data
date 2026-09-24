@@ -15,6 +15,11 @@ from validate_repository import (  # noqa: E402
 
 
 class GrammarValidationContractTests(unittest.TestCase):
+    def test_pattern_readme_uses_supported_interrogative_syntax(self) -> None:
+        text = (ROOT / "patterns" / "README.md").read_text(encoding="utf-8")
+        self.assertNotIn("interrogative@object[id:nani, government:", text)
+        self.assertIn("interrogative@object[id:nani].translation", text)
+
     def test_polarity_pair_requires_complete_pair(self) -> None:
         with self.assertRaisesRegex(
             AssertionError,

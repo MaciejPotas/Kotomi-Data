@@ -36,38 +36,55 @@ The `questions` sentence quiz uses `selection="references"`, so users select que
 
 
 
+Every placeholder has at most one comma-separated property block. Aliases name
+selection identity, while realization links are declared explicitly with
+`agree:@alias`, `case:@alias`, `form:@alias`, `government:@alias`, and
+`pool:@alias`. Forward references are valid across the question and answer.
+
 Noun-owned source-language relations use `[relation:...]`. The selector reads
-the selected noun's relation profile and renders the full phrase by default:
+the selected noun's relation profile and renders the declined noun by default:
 
 ```text
-{noun[category:place][relation:location]}     -> w szkole / na plaży
-{noun[category:place][relation:destination]}  -> do szkoły / na plażę
+{noun[category:place, relation:location].phrase}     -> w szkole / na plaży
+{noun[category:place, relation:destination].phrase}  -> do szkoły / na plażę
 ```
 
-Use `.preposition` and `.case` when a construction needs the two pieces
-separately. Do not combine `[relation:...]` with `[case:...]` or
-`[government:...]` on the same noun occurrence.
+Use `.phrase` for the full phrase, `.preposition` for the preposition without
+trailing whitespace, and `.case` for the resolved case name. Do not combine
+`[relation:...]` with `[case:...]` or `[government]` on the same noun
+occurrence.
 
 Use government when the Polish realization is controlled by the selected verb.
 Use relation when the Polish realization is lexical to the selected noun. The
 Japanese role/particle remains independent from both source-language mechanisms.
 
-Object questions keep the Japanese lexical variant explicit where it matters, for example `{interrogative@object[id:nani].translation}` together with `{verb@object[role:object][form].translation}`. The shared alias binds that interrogative to the verb. The selected interrogative still carries its own `asks_for` and `target_categories`; its `polish_forms` owns `co/czego/czym`, while verb government contributes only case plus preposition. For question families where the semantic intent uniquely identifies the interrogative, prefer `[asks_for:...]` over a concrete `[id:...]`. The lexical `się` stays in verb/form translations; `grammar_rules.xml` only declares it as a movable Polish clitic for question word order. It is not part of the government frame.
+Object questions keep the Japanese lexical variant explicit where it matters,
+for example `{interrogative@object[id:nani].translation}` together with
+`{verb@action[role:object, form].translation}`. Governed interrogatives are
+matched to their unique compatible role-bearing verb. The selected
+interrogative still carries its own `asks_for` and
+`target_categories`; its `polish_forms` owns `co/czego/czym`, while verb
+government contributes only case plus preposition. For question families
+where the semantic intent uniquely identifies the interrogative, prefer
+`[asks_for:...]` over a concrete `[id:...]`. The lexical `się` stays in
+verb/form translations; `grammar_rules.xml` only declares it as a movable
+Polish clitic for question word order. It is not part of the government frame.
 
 
-Governed Polish noun phrases use [government:phrase]. The engine links the noun to the role-bearing verb. Use the same @name only when a pattern needs to disambiguate more than one possible pair. [government:preposition] and [government:case] expose the two parts
-separately for constructions that place an adjective between them.
+Governed Polish noun phrases use `[government]`. The engine infers a unique
+role-bearing verb, or the pattern names it explicitly as `[government:@action]`.
+The `.phrase`, `.preposition`, and `.case` outputs expose the full phrase or its
+parts for constructions that place an adjective between them.
 
-Use `[agree].translation` on a dependent word when its Polish translation must
-agree with a noun. A shared alias declares the relationship, for example
-`adjective@object` and `noun@object`, or `interrogative@item` and `noun@item`.
-With one noun the binding can be inferred. With several nouns the common alias
-is required; token order is never a fallback. Agreement uses the exact case
-already resolved for the noun by `[government:...]`, `[case:form]`, or an
-explicit case.
+Use `[agree]` on a dependent word when its Polish translation must agree with a
+noun. With one compatible noun the binding can be inferred. With several nouns
+declare `[agree:@item, case:@item]`; agreement class and case are independent
+links and token order is never a fallback. Agreement can also use a fixed class
+such as `[agree:neuter]`. Noun aliases and adjective or interrogative aliases
+must remain distinct.
 
 `[agree:neuter]` declares a fixed agreement class for a construction without a
-noun, for example `To {adjective[form][agree:neuter].translation}`. Lexical
+noun, for example `To {adjective[form, agree:neuter].translation}`. Lexical
 variants live in dictionary `<polish_forms>`, while grammar
 `<agreement_catalogs>` define form-specific templates, default fixed cases,
 and the explicit translation fallback. Grammar-only dependents such as the
