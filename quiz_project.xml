@@ -2,6 +2,7 @@
 <quiz_project schema_version="1">
   <dictionaries>
     <dictionary id="adjectives" file="dictionaries/adjectives.xml" label="Adjectives" schema="adjective" />
+    <dictionary id="connectors" file="dictionaries/connectors.xml" label="Connectors" schema="connector" />
     <dictionary id="copulas" file="dictionaries/copulas.xml" label="Copulas" schema="copula" />
     <dictionary id="interrogatives" file="dictionaries/interrogatives.xml" label="Interrogatives" schema="interrogative" />
     <dictionary id="nouns" file="dictionaries/nouns.xml" label="Nouns" schema="noun" />

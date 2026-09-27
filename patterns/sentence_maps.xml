@@ -94,6 +94,34 @@
       <question>{context[pool:@main].translation}{pattern[form:te_form]}.</question>
       <answer>{context[pool:@main].kana}{pattern[form:te_form]}{verb@main[id:iru, form]}</answer>
     </sentence_pattern>
+    <sentence_pattern id="Łącznik だから" category="connectors">
+      <question>jestem zmęczony, {connector[id:dakara].translation} śpię.</question>
+      <answer>つかれる。{connector[id:dakara]}、ねる。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Łącznik それか" category="connectors">
+      <question>piję herbatę {connector[id:soreka].translation} piję kawę.</question>
+      <answer>おちゃをのむ。{connector[id:soreka]}、コーヒーをのむ。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Łącznik だけど" category="connectors">
+      <question>jestem zmęczony, {connector[id:dakedo].translation} pracuję.</question>
+      <answer>つかれる。{connector[id:dakedo]}、はたらく。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Łącznik それなら" category="connectors">
+      <question>To kawa? W takim razie piję kawę.</question>
+      <answer>これはコーヒーですか？{connector[id:sorenara]}、コーヒーをのみます。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Łącznik それより" category="connectors">
+      <question>oglądam telewizję; {connector[id:soreyori].translation} czytam książkę.</question>
+      <answer>テレビをみる。{connector[id:soreyori]}、ほんをよむ。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Łącznik しかも" category="connectors">
+      <question>czytam książkę, {connector[id:shikamo].translation}, piję herbatę.</question>
+      <answer>ほんをよむ。{connector[id:shikamo]}、おちゃをのむ。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Łącznik でも" category="connectors">
+      <question>jestem zmęczony, {connector[id:demo].translation} pracuję.</question>
+      <answer>つかれます。{connector[id:demo]}、はたらきます。</answer>
+    </sentence_pattern>
     <sentence_pattern id="Pytanie o miejsce" category="questions">
       <question>Gdzie {context.translation}{verb[role:location, form].translation}?</question>
       <answer>{context.kana}{interrogative[asks_for:place]}で{verb[role:location, form]}{question}</answer>

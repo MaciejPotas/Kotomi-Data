@@ -10,6 +10,17 @@
       <pattern ref="Czynność w toku 〜ている" />
     </patterns>
   </quiz>
+  <quiz id="connectors" label="Łączniki" description="だから, それか, だけど, それなら, それより, しかも i でも" selection="references">
+    <patterns>
+      <pattern ref="Łącznik だから" />
+      <pattern ref="Łącznik それか" />
+      <pattern ref="Łącznik だけど" />
+      <pattern ref="Łącznik それなら" />
+      <pattern ref="Łącznik それより" />
+      <pattern ref="Łącznik しかも" />
+      <pattern ref="Łącznik でも" />
+    </patterns>
+  </quiz>
   <quiz id="questions" label="Pytania" description="Słowa pytające i konstrukcje pytań" selection="references">
     <patterns>
       <pattern ref="Pytanie o miejsce" />

@@ -7,6 +7,7 @@ Files:
 - `verbs.xml`
 - `nouns.xml`
 - `adjectives.xml`
+- `connectors.xml`
 - `copulas.xml`
 - `interrogatives.xml`
 
@@ -15,6 +16,12 @@ All dictionary files use project Schema 1 and are referenced by `../quiz_project
 Keep word data here. Grammar rules, sentence patterns, and lesson organization belong in their corresponding directories.
 
 The `interrogatives` dictionary stores Japanese question words as form-less lexical entries. `asks_for` describes the information requested (for example `place`, `reason`, or `method`); grammar patterns still own particles and sentence structure.
+
+The `connectors` dictionary stores form-less discourse connectors. Connector
+entries own only their lexical Japanese value and Polish meaning. Sentence
+patterns own clause order, punctuation, register and example context, so
+near-synonyms such as `だけど` and `でも` are not selected interchangeably in
+an unsuitable random sentence.
 
 Polish adjective agreement is optional lexical data. Nouns may store
 `<agreement class="..." />`, while adjectives store ready-to-use values in
