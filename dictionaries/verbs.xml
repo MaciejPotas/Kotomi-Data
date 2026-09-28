@@ -159,6 +159,9 @@
         <role ref="destination" />
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_option_a" />
+      </features>
       <forms>
         <form ref="dictionary" translation="idę pieszo" kana="あるく"  />
         <form ref="polite_nonpast" translation="idę pieszo" kana="あるきます"  />
@@ -182,6 +185,9 @@
         <role ref="companion" government="z_instrumental" />
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_option_b" />
+      </features>
       <forms>
         <form ref="dictionary" translation="bawię się" kana="あそぶ"  />
         <form ref="polite_nonpast" translation="bawię się" kana="あそびます"  />
@@ -514,6 +520,9 @@
         <role ref="destination" />
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_option_a" />
+      </features>
       <forms>
         <form ref="dictionary" translation="biegnę" kana="はしる"  />
         <form ref="polite_nonpast" translation="biegnę" kana="はしります"  />
@@ -536,6 +545,11 @@
       <usage>
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_exertion" />
+        <feature ref="connector_effort" />
+        <feature ref="connector_addition_a" />
+      </features>
       <forms>
         <form ref="dictionary" translation="pracuję" kana="はたらく"  />
         <form ref="polite_nonpast" translation="pracuję" kana="はたらきます"  />
@@ -837,6 +851,11 @@
         <role ref="object" nouns="music song" government="direct_object" />
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_exertion" />
+        <feature ref="connector_effort" />
+        <feature ref="connector_addition_b" />
+      </features>
       <forms>
         <form ref="dictionary" translation="trenuję" kana="けいこする"  />
         <form ref="polite_nonpast" translation="trenuję" kana="けいこします"  />
@@ -1200,6 +1219,9 @@
         <role ref="subject" accepts="person animal" />
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_adversity" />
+      </features>
       <forms>
         <form ref="dictionary" translation="płaczę" kana="なく"  />
         <form ref="polite_nonpast" translation="płaczę" kana="なきます"  />
@@ -1290,6 +1312,10 @@
       <usage>
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_rest" />
+        <feature ref="connector_option_b" />
+      </features>
       <forms>
         <form ref="dictionary" translation="śpię" kana="ねる"  />
         <form ref="polite_nonpast" translation="śpię" kana="ねます"  />
@@ -1335,6 +1361,10 @@
       <usage>
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_rest" />
+        <feature ref="connector_option_b" />
+      </features>
       <forms>
         <form ref="dictionary" translation="leniuchuję" kana="のんびりする"  />
         <form ref="polite_nonpast" translation="leniuchuję" kana="のんびりします"  />
@@ -1610,6 +1640,9 @@
       <usage>
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_option_a" />
+      </features>
       <forms>
         <form ref="dictionary" translation="pływam" kana="およぐ"  />
         <form ref="polite_nonpast" translation="pływam" kana="およぎます"  />
@@ -1633,6 +1666,10 @@
         <role ref="object" nouns="music song" government="direct_object" />
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_effort" />
+        <feature ref="connector_addition_b" />
+      </features>
       <forms>
         <form ref="dictionary" translation="ćwiczę" kana="れんしゅうする"  />
         <form ref="polite_nonpast" translation="ćwiczę" kana="れんしゅうします"  />
@@ -1817,6 +1854,10 @@
         <role ref="object" accepts="place thing" government="direct_object" />
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_effort" />
+        <feature ref="connector_addition_a" />
+      </features>
       <forms>
         <form ref="dictionary" translation="sprzątam" kana="そうじする"  />
         <form ref="polite_nonpast" translation="sprzątam" kana="そうじします"  />
@@ -2183,6 +2224,10 @@
         <role ref="subject" accepts="person animal" />
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_exertion" />
+        <feature ref="connector_adversity" />
+      </features>
       <forms>
         <form ref="dictionary" translation="jestem zmęczony" kana="つかれる"  />
         <form ref="polite_nonpast" translation="jestem zmęczony" kana="つかれます"  />
@@ -2343,6 +2388,10 @@
       <usage>
         <role ref="location" />
       </usage>
+      <features>
+        <feature ref="connector_effort" />
+        <feature ref="connector_addition_b" />
+      </features>
       <forms>
         <form ref="dictionary" translation="ćwiczę fizycznie" kana="うんどうする"  />
         <form ref="polite_nonpast" translation="ćwiczę fizycznie" kana="うんどうします"  />

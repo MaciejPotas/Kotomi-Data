@@ -406,5 +406,13 @@
   <features>
     <feature id="reporting" label="Reporting verb" />
     <feature id="progressive_auxiliary" label="Progressive auxiliary" />
+    <feature id="connector_exertion" label="Connector Exertion" />
+    <feature id="connector_adversity" label="Connector Adversity" />
+    <feature id="connector_effort" label="Connector Effort" />
+    <feature id="connector_rest" label="Connector Rest" />
+    <feature id="connector_option_a" label="Connector Option A" />
+    <feature id="connector_option_b" label="Connector Option B" />
+    <feature id="connector_addition_a" label="Connector Addition A" />
+    <feature id="connector_addition_b" label="Connector Addition B" />
   </features>
 </grammar_rules>

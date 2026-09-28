@@ -95,32 +95,32 @@
       <answer>{context[pool:@main].kana}{pattern[form:te_form]}{verb@main[id:iru, form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik だから" category="connectors">
-      <question>jestem zmęczony, {connector[id:dakara].translation} śpię.</question>
-      <answer>つかれる。{connector[id:dakara]}、ねる。</answer>
+      <question>{verb@cause[feature:connector_exertion, form:dictionary].translation}, {connector[id:dakara].translation} {verb@response[feature:connector_rest, form:dictionary].translation}.</question>
+      <answer>{verb@cause[feature:connector_exertion, form:dictionary]}。{connector[id:dakara]}、{verb@response[feature:connector_rest, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それか" category="connectors">
-      <question>piję herbatę {connector[id:soreka].translation} piję kawę.</question>
-      <answer>おちゃをのむ。{connector[id:soreka]}、コーヒーをのむ。</answer>
+      <question>{verb@first[feature:connector_option_a, form:dictionary].translation} {connector[id:soreka].translation} {verb@second[feature:connector_option_b, form:dictionary].translation}.</question>
+      <answer>{verb@first[feature:connector_option_a, form:dictionary]}。{connector[id:soreka]}、{verb@second[feature:connector_option_b, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik だけど" category="connectors">
-      <question>jestem zmęczony, {connector[id:dakedo].translation} pracuję.</question>
-      <answer>つかれる。{connector[id:dakedo]}、はたらく。</answer>
+      <question>{verb@difficulty[feature:connector_adversity, form:dictionary].translation}, {connector[id:dakedo].translation} {verb@action[feature:connector_effort, form:dictionary].translation}.</question>
+      <answer>{verb@difficulty[feature:connector_adversity, form:dictionary]}。{connector[id:dakedo]}、{verb@action[feature:connector_effort, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それなら" category="connectors">
-      <question>To kawa? W takim razie piję kawę.</question>
-      <answer>これはコーヒーですか？{connector[id:sorenara]}、コーヒーをのみます。</answer>
+      <question>{verb@cancelled[feature:connector_effort, form:plain_negative].translation}; {connector[id:sorenara].translation} {verb@response[feature:connector_rest, form:dictionary].translation}.</question>
+      <answer>{verb@cancelled[feature:connector_effort, form:plain_negative]}。{connector[id:sorenara]}、{verb@response[feature:connector_rest, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それより" category="connectors">
-      <question>oglądam telewizję; {connector[id:soreyori].translation} czytam książkę.</question>
-      <answer>テレビをみる。{connector[id:soreyori]}、ほんをよむ。</answer>
+      <question>{verb@cancelled[feature:connector_option_a, form:plain_negative].translation}; {connector[id:soreyori].translation} {verb@replacement[feature:connector_option_b, form:dictionary].translation}.</question>
+      <answer>{verb@cancelled[feature:connector_option_a, form:plain_negative]}。{connector[id:soreyori]}、{verb@replacement[feature:connector_option_b, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik しかも" category="connectors">
-      <question>czytam książkę, {connector[id:shikamo].translation}, piję herbatę.</question>
-      <answer>ほんをよむ。{connector[id:shikamo]}、おちゃをのむ。</answer>
+      <question>{verb@first[feature:connector_addition_a, form:dictionary].translation}, {connector[id:shikamo].translation}, {verb@second[feature:connector_addition_b, form:dictionary].translation}.</question>
+      <answer>{verb@first[feature:connector_addition_a, form:dictionary]}。{connector[id:shikamo]}、{verb@second[feature:connector_addition_b, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik でも" category="connectors">
-      <question>jestem zmęczony, {connector[id:demo].translation} pracuję.</question>
-      <answer>つかれます。{connector[id:demo]}、はたらきます。</answer>
+      <question>{verb@difficulty[feature:connector_adversity, form:polite_nonpast].translation}, {connector[id:demo].translation} {verb@action[feature:connector_effort, form:polite_nonpast].translation}.</question>
+      <answer>{verb@difficulty[feature:connector_adversity, form:polite_nonpast]}。{connector[id:demo]}、{verb@action[feature:connector_effort, form:polite_nonpast]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o miejsce" category="questions">
       <question>Gdzie {context.translation}{verb[role:location, form].translation}?</question>

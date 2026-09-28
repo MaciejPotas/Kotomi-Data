@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 import sys
 import unittest
 import xml.etree.ElementTree as ET
@@ -31,7 +32,6 @@ class GrammarValidationContractTests(unittest.TestCase):
                 for word in dictionary.findall("./words/word")
             },
         )
-
         quizzes = ET.parse(
             ROOT / "patterns" / "sentence_quizzes.xml"
         ).getroot()
@@ -53,6 +53,43 @@ class GrammarValidationContractTests(unittest.TestCase):
                 for pattern in quiz.findall("./patterns/pattern")
             },
         )
+
+    def test_connector_patterns_select_both_verbs_and_render_the_same_forms(self) -> None:
+        patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+        verbs = ET.parse(ROOT / "dictionaries" / "verbs.xml").getroot()
+        features = {
+            feature.get("ref")
+            for feature in verbs.findall("./words/word/features/feature")
+        }
+        expected = {
+            "dakara", "soreka", "dakedo", "sorenara",
+            "soreyori", "shikamo", "demo",
+        }
+        seen = set()
+        for pattern in patterns.findall("./sentence_patterns/sentence_pattern"):
+            if pattern.get("category") != "connectors":
+                continue
+            question = pattern.findtext("question", "")
+            answer = pattern.findtext("answer", "")
+            connector = re.search(r"\{connector\[id:([a-z]+)\]", question)
+            self.assertIsNotNone(connector, pattern.get("id"))
+            connector_id = connector.group(1)
+            seen.add(connector_id)
+            self.assertIn(f"{{connector[id:{connector_id}]}}", answer)
+            for text in (question, answer):
+                tokens = re.findall(r"\{verb@[^}]+\}", text)
+                self.assertEqual(2, len(tokens), (pattern.get("id"), text))
+                self.assertEqual(0, len(re.findall(r"\{verb\[id:", text)))
+                for token in tokens:
+                    feature = re.search(r"feature:([a-z_]+)", token)
+                    self.assertIsNotNone(feature, token)
+                    self.assertIn(feature.group(1), features)
+                    self.assertRegex(token, r"form:(dictionary|plain_negative|polite_nonpast)")
+            self.assertEqual(
+                re.findall(r"\{verb@([^}\[]+)", question),
+                re.findall(r"\{verb@([^}\[]+)", answer),
+            )
+        self.assertEqual(expected, seen)
 
     def test_pattern_readme_uses_supported_interrogative_syntax(self) -> None:
         text = (ROOT / "patterns" / "README.md").read_text(encoding="utf-8")

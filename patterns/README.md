@@ -34,11 +34,20 @@ Pattern categories are persisted directly on `<sentence_pattern category="...">`
 
 The `questions` sentence quiz uses `selection="references"`, so users select question families while the engine expands composites internally and keeps form selection independent.
 
-The `connectors` quiz also uses explicit references. It has one controlled
-pattern per discourse connector, and each pattern selects its lexical item
-from `dictionaries/connectors.xml` with `{connector[id:...]}`. This avoids a
-single random two-clause template that could produce semantically misleading
-examples for consequence, alternative, contrast and addition.
+The `connectors` quiz uses one pattern per discourse connector. Each selects
+its connector with `{connector[id:...]}` and two independent verbs with named
+aliases. For example, `verb@cause[feature:connector_exertion, form:dictionary]`
+and `verb@response[feature:connector_rest, form:dictionary]` make a cause
+and a plausible response. The same aliases and forms appear in the Polish
+question and Japanese answer. For `それなら` and `それより`, the first verb
+uses `plain_negative` in both languages.
+
+The connector feature pools live on verbs in `dictionaries/verbs.xml` and
+are declared in `grammar/grammar_rules.xml`. They keep consequence, contrast,
+alternatives, replacement and addition from becoming arbitrary combinations.
+The two pools for alternatives and addition do not overlap, so the same verb
+cannot be selected on both sides. Add new verbs to a pool only after checking
+every connector that uses it and both its affirmative and negative forms.
 
 
 
