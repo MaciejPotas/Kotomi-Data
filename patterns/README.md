@@ -34,6 +34,12 @@ Pattern categories are persisted directly on `<sentence_pattern category="...">`
 
 The `questions` sentence quiz uses `selection="references"`, so users select question families while the engine expands composites internally and keeps form selection independent.
 
+The `connectors` quiz also uses explicit references. It has one controlled
+pattern per discourse connector, and each pattern selects its lexical item
+from `dictionaries/connectors.xml` with `{connector[id:...]}`. This avoids a
+single random two-clause template that could produce semantically misleading
+examples for consequence, alternative, contrast and addition.
+
 
 
 Every placeholder has at most one comma-separated property block. Aliases name

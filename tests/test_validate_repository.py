@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 import sys
 import unittest
+import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,6 +16,44 @@ from validate_repository import (  # noqa: E402
 
 
 class GrammarValidationContractTests(unittest.TestCase):
+    def test_connector_dictionary_and_quiz_cover_requested_inventory(self) -> None:
+        dictionary = ET.parse(
+            ROOT / "dictionaries" / "connectors.xml"
+        ).getroot()
+        self.assertEqual("connector", dictionary.get("schema"))
+        self.assertEqual(
+            {
+                "dakara", "soreka", "dakedo", "sorenara", "soreyori",
+                "shikamo", "demo",
+            },
+            {
+                word.get("id", "")
+                for word in dictionary.findall("./words/word")
+            },
+        )
+
+        quizzes = ET.parse(
+            ROOT / "patterns" / "sentence_quizzes.xml"
+        ).getroot()
+        quiz = quizzes.find("./quiz[@id='connectors']")
+        self.assertIsNotNone(quiz)
+        self.assertEqual("references", quiz.get("selection"))
+        self.assertEqual(
+            {
+                "Łącznik だから",
+                "Łącznik それか",
+                "Łącznik だけど",
+                "Łącznik それなら",
+                "Łącznik それより",
+                "Łącznik しかも",
+                "Łącznik でも",
+            },
+            {
+                pattern.get("ref", "")
+                for pattern in quiz.findall("./patterns/pattern")
+            },
+        )
+
     def test_pattern_readme_uses_supported_interrogative_syntax(self) -> None:
         text = (ROOT / "patterns" / "README.md").read_text(encoding="utf-8")
         self.assertNotIn("interrogative@object[id:nani, government:", text)

@@ -13,6 +13,7 @@ TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
 PROJECT_SCHEMA_FILES = {
     "quiz_project.xml",
     "dictionaries/adjectives.xml",
+    "dictionaries/connectors.xml",
     "dictionaries/copulas.xml",
     "dictionaries/interrogatives.xml",
     "dictionaries/nouns.xml",
@@ -27,6 +28,7 @@ LEARNING_XML_FILES = PROJECT_SCHEMA_FILES | {LESSON_SCHEMA_FILE}
 CONTENT_MANIFEST_ORDER = [
     "data/content_revision.json",
     "data/dictionaries/adjectives.xml",
+    "data/dictionaries/connectors.xml",
     "data/dictionaries/copulas.xml",
     "data/dictionaries/interrogatives.xml",
     "data/dictionaries/nouns.xml",

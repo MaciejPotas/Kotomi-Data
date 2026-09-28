@@ -9,7 +9,7 @@ The two public update channels have deliberately different responsibilities. **C
 | Path | Purpose | Update channel |
 | --- | --- | --- |
 | `quiz_project.xml` | Canonical Schema 1 project entrypoint. | Content |
-| `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, and copulas. | Content |
+| `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, copulas, interrogatives, and connectors. | Content |
 | `grammar/` | Shared roles, categories, features, and context pools. | Content |
 | `patterns/` | Sentence maps and sentence-quiz definitions. | Content |
 | `lessons/` | Schema 4 lesson catalog. | Content |
