@@ -43,6 +43,11 @@ no connector-specific features, roles, nouns or fixed verb IDs in these
 templates. The two random clauses can occasionally make an odd combination;
 the quiz practices the connector and verb forms rather than modeling causal
 or discourse semantics.
+Connector punctuation follows the target language rather than using a technical
+separator. Polish uses normal conjunction punctuation, including no comma before
+`albo`. Japanese uses connector-appropriate punctuation. In particular, `だから`
+starts a new sentence (`A。だから、B。`), so a finite polite form such as `ます`
+remains natural before it; other connector patterns keep their existing `、` linkage.
 
 
 
