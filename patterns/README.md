@@ -35,19 +35,19 @@ Pattern categories are persisted directly on `<sentence_pattern category="...">`
 The `questions` sentence quiz uses `selection="references"`, so users select question families while the engine expands composites internally and keeps form selection independent.
 
 The `connectors` quiz uses one pattern per discourse connector. Each selects
-its connector with `{connector[id:...]}` and two independent verbs with named
-aliases. For example, `verb@cause[feature:connector_exertion, form:dictionary]`
-and `verb@response[feature:connector_rest, form:dictionary]` make a cause
-and a plausible response. The same aliases and forms appear in the Polish
-question and Japanese answer. For `それなら` and `それより`, the first verb
-uses `plain_negative` in both languages.
+the connector with `{connector[id:...]}`. The first clause uses an explicit
+dictionary verb such as `verb@state[id:tsukareru, form:dictionary]` to set up
+the meaning. The second clause selects a compatible verb through the existing
+`role:companion` selector and a person through
+`noun@person[category:person, government:@action]`. Thus the engine varies
+both the action and its companion while the relation remains grammatical.
+The verb and noun aliases connect the Polish question to the Japanese answer.
 
-The connector feature pools live on verbs in `dictionaries/verbs.xml` and
-are declared in `grammar/grammar_rules.xml`. They keep consequence, contrast,
-alternatives, replacement and addition from becoming arbitrary combinations.
-The two pools for alternatives and addition do not overlap, so the same verb
-cannot be selected on both sides. Add new verbs to a pool only after checking
-every connector that uses it and both its affirmative and negative forms.
+The first clause of `だから` also uses the existing `aru` government for
+`jikan` (time). For `それなら` and `それより`, the first verb uses
+`plain_negative` in both languages. `でも` uses `polite_nonpast` for
+both verbs. Connector examples add no grammar features or connector-specific
+selection rules.
 
 
 

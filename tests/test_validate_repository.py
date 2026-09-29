@@ -54,13 +54,18 @@ class GrammarValidationContractTests(unittest.TestCase):
             },
         )
 
-    def test_connector_patterns_select_both_verbs_and_render_the_same_forms(self) -> None:
+    def test_connector_patterns_use_existing_roles_without_new_features(self) -> None:
         patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
         verbs = ET.parse(ROOT / "dictionaries" / "verbs.xml").getroot()
-        features = {
-            feature.get("ref")
+        grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
+        self.assertFalse(any(
+            (feature.get("id") or "").startswith("connector_")
+            for feature in grammar.findall("./features/feature")
+        ))
+        self.assertFalse(any(
+            (feature.get("ref") or "").startswith("connector_")
             for feature in verbs.findall("./words/word/features/feature")
-        }
+        ))
         expected = {
             "dakara", "soreka", "dakedo", "sorenara",
             "soreyori", "shikamo", "demo",
@@ -79,12 +84,14 @@ class GrammarValidationContractTests(unittest.TestCase):
             for text in (question, answer):
                 tokens = re.findall(r"\{verb@[^}]+\}", text)
                 self.assertEqual(2, len(tokens), (pattern.get("id"), text))
-                self.assertEqual(0, len(re.findall(r"\{verb\[id:", text)))
-                for token in tokens:
-                    feature = re.search(r"feature:([a-z_]+)", token)
-                    self.assertIsNotNone(feature, token)
-                    self.assertIn(feature.group(1), features)
-                    self.assertRegex(token, r"form:(dictionary|plain_negative|polite_nonpast)")
+                self.assertIn("{verb@action[role:companion, form:", text)
+                self.assertIn("{noun@person[category:person", text)
+                self.assertNotIn("feature:connector_", text)
+            for alias in ("verb@action",):
+                question_form = re.search(
+                    rf"\{{{alias}\[([^}}]+)\]\.translation\}}", question
+                ).group(1).split("form:", 1)[1].split(",", 1)[0]
+                self.assertIn(f"{{{alias}[role:companion, form:{question_form}]}}", answer)
             self.assertEqual(
                 re.findall(r"\{verb@([^}\[]+)", question),
                 re.findall(r"\{verb@([^}\[]+)", answer),
