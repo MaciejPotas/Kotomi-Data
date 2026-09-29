@@ -43,8 +43,9 @@ no connector-specific features, roles, nouns or fixed verb IDs in these
 templates. The two random clauses can occasionally make an odd combination;
 the quiz practices the connector and verb forms rather than modeling causal
 or discourse semantics.
-All connector prompts and Japanese answers use `;` as the clause separator.
-The final Japanese sentence terminator remains `。`.
+Connector punctuation follows the target language rather than using a technical
+separator. Polish uses normal conjunction punctuation, including no comma before
+`albo`; Japanese uses `、` inside the sentence and keeps the final `。`.
 
 
 
