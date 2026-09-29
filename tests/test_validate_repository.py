@@ -76,9 +76,9 @@ class GrammarValidationContractTests(unittest.TestCase):
             self.assertNotIn(";", answer)
             self.assertIn(f"、{{connector[id:{connector_id}]}}", answer)
             if connector_id == "soreka":
-                self.assertIn(f"] {{connector[id:{connector_id}]", question)
+                self.assertIn(f"} {{connector[id:{connector_id}]", question)
             else:
-                self.assertIn(f"], {{connector[id:{connector_id}]", question)
+                self.assertIn(f"}, {{connector[id:{connector_id}]", question)
             self.assertEqual(
                 ["first", "second"],
                 re.findall(r"\{verb@([^}\[]+)\[form\]\.translation\}", question),
