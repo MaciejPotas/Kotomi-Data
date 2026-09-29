@@ -74,7 +74,13 @@ class GrammarValidationContractTests(unittest.TestCase):
             self.assertIn(f"{{connector[id:{connector_id}]}}", answer)
             self.assertNotIn(";", question)
             self.assertNotIn(";", answer)
-            self.assertIn(f"、{{connector[id:{connector_id}]}}", answer)
+            if connector_id == "dakara":
+                self.assertIn(
+                    "{verb@first[form]}。{connector[id:dakara]}、{verb@second[form]}。",
+                    answer,
+                )
+            else:
+                self.assertIn(f"、{{connector[id:{connector_id}]}}", answer)
             if connector_id == "soreka":
                 self.assertIn("} {connector[id:" + connector_id + "]", question)
             else:
@@ -93,6 +99,18 @@ class GrammarValidationContractTests(unittest.TestCase):
         self.assertEqual(
             {"dakara", "soreka", "dakedo", "sorenara", "soreyori", "shikamo", "demo"},
             seen,
+        )
+
+    def test_dakara_keeps_finite_polite_verb_before_sentence_boundary(self) -> None:
+        patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+        pattern = patterns.find(
+            "./sentence_patterns/sentence_pattern[@id='Łącznik だから']"
+        )
+        self.assertIsNotNone(pattern)
+        assert pattern is not None
+        self.assertEqual(
+            "{verb@first[form]}。{connector[id:dakara]}、{verb@second[form]}。",
+            pattern.findtext("answer", ""),
         )
 
     def test_pattern_readme_uses_supported_interrogative_syntax(self) -> None:
