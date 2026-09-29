@@ -34,20 +34,14 @@ Pattern categories are persisted directly on `<sentence_pattern category="...">`
 
 The `questions` sentence quiz uses `selection="references"`, so users select question families while the engine expands composites internally and keeps form selection independent.
 
-The `connectors` quiz uses one pattern per discourse connector. Each selects
-the connector with `{connector[id:...]}`. The first clause uses an explicit
-dictionary verb such as `verb@state[id:tsukareru, form:dictionary]` to set up
-the meaning. The second clause selects a compatible verb through the existing
-`role:companion` selector and a person through
-`noun@person[category:person, government:@action]`. Thus the engine varies
-both the action and its companion while the relation remains grammatical.
-The verb and noun aliases connect the Polish question to the Japanese answer.
-
-The first clause of `だから` also uses the existing `aru` government for
-`jikan` (time). For `それなら` and `それより`, the first verb uses
-`plain_negative` in both languages. `でも` uses `polite_nonpast` for
-both verbs. Connector examples add no grammar features or connector-specific
-selection rules.
+The `connectors` quiz has one pattern per connector. Each pattern contains
+two independently selected verbs, `verb@first[form:dictionary]` and
+`verb@second[form:dictionary]`, plus `connector[id:...]`. The same aliases
+select the same verbs in the Polish question and Japanese answer. There are
+no connector-specific features, roles, nouns or fixed verb IDs in these
+templates. The two random clauses can occasionally make an odd combination;
+the quiz practices the connector and verb forms rather than modeling causal
+or discourse semantics.
 
 
 

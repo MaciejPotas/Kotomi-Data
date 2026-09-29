@@ -95,32 +95,32 @@
       <answer>{context[pool:@main].kana}{pattern[form:te_form]}{verb@main[id:iru, form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik だから" category="connectors">
-      <question>{verb@have[id:aru, role:subject, form:dictionary].translation} {noun@time[id:jikan, government:@have].phrase}, {connector[id:dakara].translation} {verb@action[role:companion, form:dictionary].translation} {noun@person[category:person, government:@action].phrase}.</question>
-      <answer>{noun@time[id:jikan]}が{verb@have[id:aru, role:subject, form:dictionary]}。{connector[id:dakara]}、{noun@person[category:person]}と{verb@action[role:companion, form:dictionary]}。</answer>
+      <question>{verb@first[form:dictionary].translation}, {connector[id:dakara].translation} {verb@second[form:dictionary].translation}.</question>
+      <answer>{verb@first[form:dictionary]}。{connector[id:dakara]}、{verb@second[form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それか" category="connectors">
-      <question>{verb@rest[id:nonbiri_suru, form:dictionary].translation} {connector[id:soreka].translation} {verb@action[role:companion, form:dictionary].translation} {noun@person[category:person, government:@action].phrase}.</question>
-      <answer>{verb@rest[id:nonbiri_suru, form:dictionary]}。{connector[id:soreka]}、{noun@person[category:person]}と{verb@action[role:companion, form:dictionary]}。</answer>
+      <question>{verb@first[form:dictionary].translation} {connector[id:soreka].translation} {verb@second[form:dictionary].translation}.</question>
+      <answer>{verb@first[form:dictionary]}。{connector[id:soreka]}、{verb@second[form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik だけど" category="connectors">
-      <question>{verb@state[id:tsukareru, form:dictionary].translation}, {connector[id:dakedo].translation} {verb@action[role:companion, form:dictionary].translation} {noun@person[category:person, government:@action].phrase}.</question>
-      <answer>{verb@state[id:tsukareru, form:dictionary]}。{connector[id:dakedo]}、{noun@person[category:person]}と{verb@action[role:companion, form:dictionary]}。</answer>
+      <question>{verb@first[form:dictionary].translation}, {connector[id:dakedo].translation} {verb@second[form:dictionary].translation}.</question>
+      <answer>{verb@first[form:dictionary]}。{connector[id:dakedo]}、{verb@second[form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それなら" category="connectors">
-      <question>{verb@cancelled[id:hataraku, form:plain_negative].translation}; {connector[id:sorenara].translation} {verb@action[role:companion, form:dictionary].translation} {noun@person[category:person, government:@action].phrase}.</question>
-      <answer>{verb@cancelled[id:hataraku, form:plain_negative]}。{connector[id:sorenara]}、{noun@person[category:person]}と{verb@action[role:companion, form:dictionary]}。</answer>
+      <question>{verb@first[form:dictionary].translation}; {connector[id:sorenara].translation} {verb@second[form:dictionary].translation}.</question>
+      <answer>{verb@first[form:dictionary]}。{connector[id:sorenara]}、{verb@second[form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それより" category="connectors">
-      <question>{verb@cancelled[id:nonbiri_suru, form:plain_negative].translation}; {connector[id:soreyori].translation} {verb@action[role:companion, form:dictionary].translation} {noun@person[category:person, government:@action].phrase}.</question>
-      <answer>{verb@cancelled[id:nonbiri_suru, form:plain_negative]}。{connector[id:soreyori]}、{noun@person[category:person]}と{verb@action[role:companion, form:dictionary]}。</answer>
+      <question>{verb@first[form:dictionary].translation}; {connector[id:soreyori].translation} {verb@second[form:dictionary].translation}.</question>
+      <answer>{verb@first[form:dictionary]}。{connector[id:soreyori]}、{verb@second[form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik しかも" category="connectors">
-      <question>{verb@work[id:hataraku, form:dictionary].translation}, {connector[id:shikamo].translation}, {verb@action[role:companion, form:dictionary].translation} {noun@person[category:person, government:@action].phrase}.</question>
-      <answer>{verb@work[id:hataraku, form:dictionary]}。{connector[id:shikamo]}、{noun@person[category:person]}と{verb@action[role:companion, form:dictionary]}。</answer>
+      <question>{verb@first[form:dictionary].translation}, {connector[id:shikamo].translation}, {verb@second[form:dictionary].translation}.</question>
+      <answer>{verb@first[form:dictionary]}。{connector[id:shikamo]}、{verb@second[form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik でも" category="connectors">
-      <question>{verb@state[id:tsukareru, form:polite_nonpast].translation}, {connector[id:demo].translation} {verb@action[role:companion, form:polite_nonpast].translation} {noun@person[category:person, government:@action].phrase}.</question>
-      <answer>{verb@state[id:tsukareru, form:polite_nonpast]}。{connector[id:demo]}、{noun@person[category:person]}と{verb@action[role:companion, form:polite_nonpast]}。</answer>
+      <question>{verb@first[form:dictionary].translation}, {connector[id:demo].translation} {verb@second[form:dictionary].translation}.</question>
+      <answer>{verb@first[form:dictionary]}。{connector[id:demo]}、{verb@second[form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o miejsce" category="questions">
       <question>Gdzie {context.translation}{verb[role:location, form].translation}?</question>
