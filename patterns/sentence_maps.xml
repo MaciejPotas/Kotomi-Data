@@ -95,32 +95,32 @@
       <answer>{context[pool:@main].kana}{pattern[form:te_form]}{verb@main[id:iru, form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik だから" category="connectors">
-      <question>{verb@first[form].translation}; {connector[id:dakara].translation} {verb@second[form].translation}.</question>
-      <answer>{verb@first[form]}; {connector[id:dakara]}、{verb@second[form]}。</answer>
+      <question>{verb@first[form].translation}, {connector[id:dakara].translation} {verb@second[form].translation}.</question>
+      <answer>{verb@first[form]}、{connector[id:dakara]}{verb@second[form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それか" category="connectors">
-      <question>{verb@first[form].translation}; {connector[id:soreka].translation} {verb@second[form].translation}.</question>
-      <answer>{verb@first[form]}; {connector[id:soreka]}、{verb@second[form]}。</answer>
+      <question>{verb@first[form].translation} {connector[id:soreka].translation} {verb@second[form].translation}.</question>
+      <answer>{verb@first[form]}、{connector[id:soreka]}{verb@second[form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik だけど" category="connectors">
-      <question>{verb@first[form].translation}; {connector[id:dakedo].translation} {verb@second[form].translation}.</question>
-      <answer>{verb@first[form]}; {connector[id:dakedo]}、{verb@second[form]}。</answer>
+      <question>{verb@first[form].translation}, {connector[id:dakedo].translation} {verb@second[form].translation}.</question>
+      <answer>{verb@first[form]}、{connector[id:dakedo]}{verb@second[form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それなら" category="connectors">
-      <question>{verb@first[form].translation}; {connector[id:sorenara].translation} {verb@second[form].translation}.</question>
-      <answer>{verb@first[form]}; {connector[id:sorenara]}、{verb@second[form]}。</answer>
+      <question>{verb@first[form].translation}, {connector[id:sorenara].translation} {verb@second[form].translation}.</question>
+      <answer>{verb@first[form]}、{connector[id:sorenara]}{verb@second[form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それより" category="connectors">
-      <question>{verb@first[form].translation}; {connector[id:soreyori].translation} {verb@second[form].translation}.</question>
-      <answer>{verb@first[form]}; {connector[id:soreyori]}、{verb@second[form]}。</answer>
+      <question>{verb@first[form].translation}, {connector[id:soreyori].translation} {verb@second[form].translation}.</question>
+      <answer>{verb@first[form]}、{connector[id:soreyori]}{verb@second[form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik しかも" category="connectors">
-      <question>{verb@first[form].translation}; {connector[id:shikamo].translation} {verb@second[form].translation}.</question>
-      <answer>{verb@first[form]}; {connector[id:shikamo]}、{verb@second[form]}。</answer>
+      <question>{verb@first[form].translation}, {connector[id:shikamo].translation}, {verb@second[form].translation}.</question>
+      <answer>{verb@first[form]}、{connector[id:shikamo]}{verb@second[form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik でも" category="connectors">
-      <question>{verb@first[form].translation}; {connector[id:demo].translation} {verb@second[form].translation}.</question>
-      <answer>{verb@first[form]}; {connector[id:demo]}、{verb@second[form]}。</answer>
+      <question>{verb@first[form].translation}, {connector[id:demo].translation} {verb@second[form].translation}.</question>
+      <answer>{verb@first[form]}、{connector[id:demo]}{verb@second[form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Pytanie o miejsce" category="questions">
       <question>Gdzie {context.translation}{verb[role:location, form].translation}?</question>
