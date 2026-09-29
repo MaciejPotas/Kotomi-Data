@@ -35,9 +35,10 @@ Pattern categories are persisted directly on `<sentence_pattern category="...">`
 The `questions` sentence quiz uses `selection="references"`, so users select question families while the engine expands composites internally and keeps form selection independent.
 
 The `connectors` quiz has one pattern per connector. Each pattern contains
-two independently selected verbs, `verb@first[form:dictionary]` and
-`verb@second[form:dictionary]`, plus `connector[id:...]`. The same aliases
-select the same verbs in the Polish question and Japanese answer. There are
+two independently selected verbs, `verb@first[form]` and
+`verb@second[form]`, plus `connector[id:...]`. The quiz selects one
+compatible form for both clauses. The same aliases select the same verbs
+and forms in the Polish question and Japanese answer. There are
 no connector-specific features, roles, nouns or fixed verb IDs in these
 templates. The two random clauses can occasionally make an odd combination;
 the quiz practices the connector and verb forms rather than modeling causal

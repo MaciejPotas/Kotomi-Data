@@ -74,11 +74,11 @@ class GrammarValidationContractTests(unittest.TestCase):
             self.assertIn(f"{{connector[id:{connector_id}]}}", answer)
             self.assertEqual(
                 ["first", "second"],
-                re.findall(r"\{verb@([^}\[]+)\[form:dictionary\]\.translation\}", question),
+                re.findall(r"\{verb@([^}\[]+)\[form\]\.translation\}", question),
             )
             self.assertEqual(
                 ["first", "second"],
-                re.findall(r"\{verb@([^}\[]+)\[form:dictionary\]\}", answer),
+                re.findall(r"\{verb@([^}\[]+)\[form\]\}", answer),
             )
             for text in (question, answer):
                 self.assertNotIn("{noun", text)
