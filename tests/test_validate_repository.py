@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 import sys
 import unittest
 import xml.etree.ElementTree as ET
@@ -31,7 +32,6 @@ class GrammarValidationContractTests(unittest.TestCase):
                 for word in dictionary.findall("./words/word")
             },
         )
-
         quizzes = ET.parse(
             ROOT / "patterns" / "sentence_quizzes.xml"
         ).getroot()
@@ -52,6 +52,40 @@ class GrammarValidationContractTests(unittest.TestCase):
                 pattern.get("ref", "")
                 for pattern in quiz.findall("./patterns/pattern")
             },
+        )
+
+    def test_connector_patterns_use_two_unconstrained_verbs(self) -> None:
+        patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+        grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
+        self.assertFalse(any(
+            (feature.get("id") or "").startswith("connector_")
+            for feature in grammar.findall("./features/feature")
+        ))
+        seen = set()
+        for pattern in patterns.findall("./sentence_patterns/sentence_pattern"):
+            if pattern.get("category") != "connectors":
+                continue
+            question = pattern.findtext("question", "")
+            answer = pattern.findtext("answer", "")
+            connector = re.search(r"\{connector\[id:([a-z]+)\]", question)
+            self.assertIsNotNone(connector, pattern.get("id"))
+            connector_id = connector.group(1)
+            seen.add(connector_id)
+            self.assertIn(f"{{connector[id:{connector_id}]}}", answer)
+            self.assertEqual(
+                ["first", "second"],
+                re.findall(r"\{verb@([^}\[]+)\[form\]\.translation\}", question),
+            )
+            self.assertEqual(
+                ["first", "second"],
+                re.findall(r"\{verb@([^}\[]+)\[form\]\}", answer),
+            )
+            for text in (question, answer):
+                self.assertNotIn("{noun", text)
+                self.assertNotRegex(text, r"\{verb@[^}]*\b(id|role|feature|government):")
+        self.assertEqual(
+            {"dakara", "soreka", "dakedo", "sorenara", "soreyori", "shikamo", "demo"},
+            seen,
         )
 
     def test_pattern_readme_uses_supported_interrogative_syntax(self) -> None:
