@@ -43,6 +43,8 @@ no connector-specific features, roles, nouns or fixed verb IDs in these
 templates. The two random clauses can occasionally make an odd combination;
 the quiz practices the connector and verb forms rather than modeling causal
 or discourse semantics.
+All connector prompts use `;` as the clause separator. Japanese answers mirror
+that boundary with the full-width `；`; the final sentence terminator remains `。`.
 
 
 
