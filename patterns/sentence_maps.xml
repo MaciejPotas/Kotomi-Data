@@ -96,7 +96,7 @@
     </sentence_pattern>
     <sentence_pattern id="Łącznik だから" category="connectors">
       <question>{verb@first[form].translation}, {connector[id:dakara].translation} {verb@second[form].translation}.</question>
-      <answer>{verb@first[form]}、{connector[id:dakara]}{verb@second[form]}。</answer>
+      <answer>{verb@first[form]}。{connector[id:dakara]}、{verb@second[form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Łącznik それか" category="connectors">
       <question>{verb@first[form].translation} {connector[id:soreka].translation} {verb@second[form].translation}.</question>
