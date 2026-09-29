@@ -72,6 +72,9 @@ class GrammarValidationContractTests(unittest.TestCase):
             connector_id = connector.group(1)
             seen.add(connector_id)
             self.assertIn(f"{{connector[id:{connector_id}]}}", answer)
+            self.assertIn(f"; {{connector[id:{connector_id}]", question)
+            self.assertIn(f"；{{connector[id:{connector_id}]", answer)
+            self.assertNotIn(f"。{{connector[id:{connector_id}]", answer)
             self.assertEqual(
                 ["first", "second"],
                 re.findall(r"\{verb@([^}\[]+)\[form\]\.translation\}", question),
