@@ -119,3 +119,8 @@ price, people-count, and age prompts are present affirmative, while the manner
 question permits past forms but not negative forms. Compatibility reads these
 contexts and polarities from XML instead of maintaining a pattern-name list in
 Python.
+
+
+## Counting metadata
+
+Schema 2 grammar defines reusable `counting_classes`, `count_source_profiles`, exact quantity-to-profile mappings and named `number_sets`. A number's semantic identity stays language-neutral. Polish counted noun selection is resolved from the grammar mapping and effective case.
