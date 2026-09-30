@@ -504,7 +504,7 @@ def validate_counting_data() -> None:
         if value in number_values:
             raise AssertionError(f"Duplicate number value: {value}")
         number_values[value] = word_id
-    missing_values = set(range(1, 11)) | {20} - set(number_values)
+    missing_values = (set(range(1, 11)) | {20}) - set(number_values)
     if missing_values:
         raise AssertionError(
             f"Counting numbers are missing values: {sorted(missing_values)}"
