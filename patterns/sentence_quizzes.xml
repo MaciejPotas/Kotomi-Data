@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<sentence_quizzes schema_version="1">
+<sentence_quizzes schema_version="2">
   <quiz id="grammar" label="Gramatyka" description="Możliwość ことができる">
     <patterns>
       <pattern ref="Możliwość ことができる" />
@@ -38,6 +38,19 @@
       <pattern ref="Pytanie o godzinę" />
       <pattern ref="Pytanie dlaczego" />
       <pattern ref="Pytanie jakim sposobem" />
+    </patterns>
+  </quiz>
+  <quiz id="counting" label="Liczenie" description="Liczby, countery i pytania ile" selection="references">
+    <patterns>
+      <pattern ref="Są trzy psy" />
+      <pattern ref="Jest pięć psów" />
+      <pattern ref="Rozpoznaj liczbę z 匹" />
+      <pattern ref="Wybierz counter dla rzeczownika" />
+      <pattern ref="Ile jest psów" />
+      <pattern ref="Godzina czwarta" />
+      <pattern ref="Trzy minuty" />
+      <pattern ref="Wiek dwadzieścia lat" />
+      <pattern ref="Trzecie piętro" />
     </patterns>
   </quiz>
 </sentence_quizzes>
