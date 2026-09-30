@@ -111,3 +111,16 @@ The price question selects the non-selectable grouping category
 `purchasable`, whose descendants are the buyable leaf categories. The
 possessor question selects `concrete`. These are taxonomy constraints, not
 runtime lists of exceptional nouns.
+
+
+## Counting placeholders
+
+Use separate aliases for the counted noun, quantity and counter:
+
+```text
+{noun@item[category:animal]}
+{number@count[range:1..10]}
+{counter@unit[counts:@item, preferred, quantity:@count]}
+```
+
+A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantity source. Time, minutes, age and floors select their counter explicitly by `id`. A counter with `quantity` renders the exact stored full realization.
