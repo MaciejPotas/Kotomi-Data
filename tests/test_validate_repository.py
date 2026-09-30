@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 
 from validate_repository import (  # noqa: E402
     unexpected_word_form_attributes,
+    validate_counting_data,
     validate_polarity_pair,
 )
 
@@ -117,6 +118,30 @@ class GrammarValidationContractTests(unittest.TestCase):
         text = (ROOT / "patterns" / "README.md").read_text(encoding="utf-8")
         self.assertNotIn("interrogative@object[id:nani, government:", text)
         self.assertIn("interrogative@object[id:nani].translation", text)
+
+    def test_schema2_counting_inventory_is_complete(self) -> None:
+        validate_counting_data()
+
+    def test_age_twenty_and_domain_counters_are_exact_data(self) -> None:
+        counters = ET.parse(
+            ROOT / "dictionaries" / "counters.xml"
+        ).getroot()
+        expected = {
+            "ji": ("4", "よじ", "四時"),
+            "fun": ("3", "さんぷん", "三分"),
+            "sai": ("20", "はたち", "二十歳"),
+            "kai": ("3", "さんがい", "三階"),
+        }
+        for counter_id, (number, kana, kanji) in expected.items():
+            with self.subTest(counter=counter_id):
+                node = counters.find(
+                    "./words/word[@id='" + counter_id + "']/"
+                    "quantity_realizations/realization[@number='" + number + "']"
+                )
+                self.assertIsNotNone(node)
+                assert node is not None
+                self.assertEqual(kana, node.get("kana"))
+                self.assertEqual(kanji, node.get("kanji"))
 
     def test_polarity_pair_requires_complete_pair(self) -> None:
         with self.assertRaisesRegex(
