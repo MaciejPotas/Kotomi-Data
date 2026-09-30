@@ -15,8 +15,10 @@ PROJECT_SCHEMA_FILES = {
     "dictionaries/adjectives.xml",
     "dictionaries/connectors.xml",
     "dictionaries/copulas.xml",
+    "dictionaries/counters.xml",
     "dictionaries/interrogatives.xml",
     "dictionaries/nouns.xml",
+    "dictionaries/numbers.xml",
     "dictionaries/verbs.xml",
     "grammar/contexts.xml",
     "grammar/grammar_rules.xml",
@@ -30,8 +32,10 @@ CONTENT_MANIFEST_ORDER = [
     "data/dictionaries/adjectives.xml",
     "data/dictionaries/connectors.xml",
     "data/dictionaries/copulas.xml",
+    "data/dictionaries/counters.xml",
     "data/dictionaries/interrogatives.xml",
     "data/dictionaries/nouns.xml",
+    "data/dictionaries/numbers.xml",
     "data/dictionaries/verbs.xml",
     "data/grammar/contexts.xml",
     "data/grammar/grammar_rules.xml",
@@ -182,8 +186,8 @@ def validate_xml_and_schemas() -> None:
             raise AssertionError(f"Malformed XML in {relative}: {exc}") from exc
 
         if relative in PROJECT_SCHEMA_FILES:
-            if root.get("schema_version") != "1":
-                raise AssertionError(f"{relative} must use project/pattern Schema 1")
+            if root.get("schema_version") != "2":
+                raise AssertionError(f"{relative} must use project/pattern Schema 2")
         elif root.get("schema_version") != "4":
             raise AssertionError(
                 f"{LESSON_SCHEMA_FILE} must use lesson catalog Schema 4"
@@ -478,6 +482,132 @@ def validate_lesson_references() -> None:
                 )
 
 
+def validate_counting_data() -> None:
+    """Validate the complete Schema 2 counting acceptance inventory."""
+
+    numbers = ET.parse(ROOT / "dictionaries" / "numbers.xml").getroot()
+    counters = ET.parse(ROOT / "dictionaries" / "counters.xml").getroot()
+    nouns = ET.parse(ROOT / "dictionaries" / "nouns.xml").getroot()
+    interrogatives = ET.parse(
+        ROOT / "dictionaries" / "interrogatives.xml"
+    ).getroot()
+    grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
+    patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+
+    number_values: dict[int, str] = {}
+    for word in numbers.findall("./words/word"):
+        word_id = str(word.get("id", ""))
+        try:
+            value = int(str(word.get("value", "")))
+        except ValueError as exc:
+            raise AssertionError(f"Number {word_id} has invalid value") from exc
+        if value in number_values:
+            raise AssertionError(f"Duplicate number value: {value}")
+        number_values[value] = word_id
+    missing_values = set(range(1, 11)) | {20} - set(number_values)
+    if missing_values:
+        raise AssertionError(
+            f"Counting numbers are missing values: {sorted(missing_values)}"
+        )
+
+    quantity_sources = {
+        str(word.get("quantity_symbol", "")): str(word.get("id", ""))
+        for word in interrogatives.findall("./words/word")
+        if word.get("quantity_symbol")
+    }
+    if quantity_sources.get("how_many") != "how_many":
+        raise AssertionError(
+            "Interrogative how_many must expose quantity_symbol='how_many'"
+        )
+
+    class_ids = {
+        str(node.get("id", ""))
+        for node in grammar.findall("./counting_classes/class")
+    }
+    required_classes = {
+        "person", "small_animal", "long_object", "flat_object",
+        "bound_volume", "machine", "small_object",
+    }
+    if not required_classes.issubset(class_ids):
+        raise AssertionError(
+            "Missing counting classes: "
+            + ", ".join(sorted(required_classes - class_ids))
+        )
+
+    counter_words = {
+        str(word.get("id", "")): word
+        for word in counters.findall("./words/word")
+    }
+    required_counters = {
+        "nin", "hiki", "hon", "mai", "satsu", "dai", "ko",
+        "ji", "fun", "sai", "kai",
+    }
+    if not required_counters.issubset(counter_words):
+        raise AssertionError(
+            "Missing counters: "
+            + ", ".join(sorted(required_counters - set(counter_words)))
+        )
+    for counter_id in required_counters:
+        word = counter_words[counter_id]
+        identities = {
+            ("number", str(node.get("number")))
+            if node.get("number") is not None
+            else ("symbol", str(node.get("symbol")))
+            for node in word.findall("./quantity_realizations/realization")
+        }
+        required = {("number", str(value)) for value in range(1, 11)}
+        required.add(("symbol", "how_many"))
+        if not required.issubset(identities):
+            raise AssertionError(
+                f"Counter {counter_id} lacks required 1..10/how_many data"
+            )
+    sai_twenty = counter_words["sai"].find(
+        "./quantity_realizations/realization[@number='20']"
+    )
+    if sai_twenty is None or sai_twenty.get("kana") != "はたち":
+        raise AssertionError("Counter sai must realize 20 exactly as はたち")
+
+    counted_classes: set[str] = set()
+    for word in nouns.findall("./words/word"):
+        counting = word.find("./counting")
+        if counting is None:
+            continue
+        classes = set(str(counting.get("classes", "")).split())
+        unknown = classes - class_ids
+        if unknown:
+            raise AssertionError(
+                f"Noun {word.get('id')} uses unknown counting classes: "
+                + ", ".join(sorted(unknown))
+            )
+        counted_classes.update(classes)
+        preferred = str(counting.get("preferred_counter", ""))
+        if preferred and preferred not in counter_words:
+            raise AssertionError(
+                f"Noun {word.get('id')} uses unknown preferred counter {preferred}"
+            )
+    if not required_classes.issubset(counted_classes):
+        raise AssertionError(
+            "No noun example for classes: "
+            + ", ".join(sorted(required_classes - counted_classes))
+        )
+
+    pattern_ids = {
+        str(node.get("id", ""))
+        for node in patterns.findall("./sentence_patterns/sentence_pattern")
+    }
+    required_patterns = {
+        "Są trzy psy", "Jest pięć psów", "Rozpoznaj liczbę z 匹",
+        "Wybierz counter dla rzeczownika", "Ile jest psów",
+        "Godzina czwarta", "Trzy minuty", "Wiek dwadzieścia lat",
+        "Trzecie piętro",
+    }
+    if not required_patterns.issubset(pattern_ids):
+        raise AssertionError(
+            "Missing counting patterns: "
+            + ", ".join(sorted(required_patterns - pattern_ids))
+        )
+
+
 def validate_content_manifest() -> None:
     revision = load_json(ROOT / "content_revision.json")
     manifest = load_json(ROOT / "content_update_manifest.json")
@@ -631,6 +761,7 @@ def main() -> None:
     validate_shared_grammar_dependencies()
     validate_composite_case_scopes()
     validate_lesson_references()
+    validate_counting_data()
     validate_content_manifest()
     validate_quiz_manifest()
     print("Kotomi-Data validation passed")
