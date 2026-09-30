@@ -247,12 +247,12 @@
       <answer>{counter@unit[id:fun, quantity:@count]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Wiek dwadzieścia lat" category="counting">
-      <question>dwadzieścia lat</question>
-      <answer>{number@age[id:twenty]}{counter@unit[id:sai, quantity:@age]}</answer>
+      <question>wiek: {number@age[id:twenty].translation} lat</question>
+      <answer>{counter@unit[id:sai, quantity:@age]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Trzecie piętro" category="counting">
-      <question>trzecie piętro</question>
-      <answer>{number@floor[id:three]}{counter@unit[id:kai, quantity:@floor]}</answer>
+      <question>piętro numer {number@floor[id:three].value}</question>
+      <answer>{counter@unit[id:kai, quantity:@floor]}</answer>
     </sentence_pattern>
   </sentence_patterns>
 </sentence_maps>
