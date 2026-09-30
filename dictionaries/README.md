@@ -55,3 +55,13 @@ same realization while still allowing lexical differences such as
 
 Relation profiles are authoring data. Runtime does not infer a profile from the
 noun category or Polish spelling.
+
+
+## Schema 2 counting dictionaries
+
+- `numbers.xml` stores semantic integer values and standalone Japanese and Polish forms.
+- `counters.xml` stores noun compatibility and exact full realizations keyed by numeric or symbolic quantity.
+- noun `<counting>` metadata stores counting classes, one preferred counter and Polish counted forms.
+- the `how_many` interrogative exposes `quantity_symbol="how_many"`.
+
+Counter realization tables are authoritative. Do not replace missing rows with number plus counter concatenation.
