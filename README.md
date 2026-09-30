@@ -8,8 +8,8 @@ The two public update channels have deliberately different responsibilities. **C
 
 | Path | Purpose | Update channel |
 | --- | --- | --- |
-| `quiz_project.xml` | Canonical Schema 1 project entrypoint. | Content |
-| `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, copulas, interrogatives, and connectors. | Content |
+| `quiz_project.xml` | Canonical Schema 2 project entrypoint. | Content |
+| `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, copulas, interrogatives, connectors, numbers, and counters. | Content |
 | `grammar/` | Shared roles, categories, features, and context pools. | Content |
 | `patterns/` | Sentence maps and sentence-quiz definitions. | Content |
 | `lessons/` | Schema 4 lesson catalog. | Content |
@@ -60,7 +60,11 @@ The Quiz catalog version is independent from the Content revision.
 
 Kotomi opens `data/quiz_project.xml`. References inside the project file are relative to that file, so dictionaries, grammar, contexts, patterns, and sentence-quiz definitions form one project without special runtime lookup rules.
 
-The project/pattern files use Schema 1. The lesson catalog uses Schema 4.
+The project/pattern files use Schema 2. The lesson catalog uses Schema 4.
+
+## Counting data
+
+Schema 2 keeps semantic numbers and counters as separate lexical selections. The dictionaries provide numbers 1 through 10 plus 20, exact counter realizations for 人, 匹, 本, 枚, 冊, 台, 個, 時, 分, 歳 and 階, and the symbolic how_many quantity. All irregular readings, including 20歳 as はたち, are stored explicitly. Grammar owns counting classes, Polish source count profiles and named number sets. Runtime must never infer pronunciation by concatenation.
 
 ## Publishing changes
 
