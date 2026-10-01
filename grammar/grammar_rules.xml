@@ -63,12 +63,34 @@
     </quantity_mappings>
   </count_source_profiles>
   <number_sets>
-    <set id="counting_basics" label="Podstawowe liczby do liczenia">
+    <set id="one_to_ten" label="Liczby od 1 do 10">
       <number ref="one" />
       <number ref="two" />
       <number ref="three" />
+      <number ref="four" />
       <number ref="five" />
+      <number ref="six" />
+      <number ref="seven" />
+      <number ref="eight" />
+      <number ref="nine" />
       <number ref="ten" />
+    </set>
+    <set id="two_to_four" label="Liczby od 2 do 4">
+      <number ref="two" />
+      <number ref="three" />
+      <number ref="four" />
+    </set>
+    <set id="two_or_more" label="Dwa lub więcej">
+      <number ref="two" />
+      <number ref="three" />
+      <number ref="four" />
+      <number ref="five" />
+      <number ref="six" />
+      <number ref="seven" />
+      <number ref="eight" />
+      <number ref="nine" />
+      <number ref="ten" />
+      <number ref="twenty" />
     </set>
   </number_sets>
   <!--

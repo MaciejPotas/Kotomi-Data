@@ -220,7 +220,7 @@
     </sentence_pattern>
     <sentence_pattern id="Są trzy psy" category="counting">
       <question>Są {number@count[id:three].translation} {noun@item[id:inu, quantity:@count, case:nominative]}.</question>
-      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@count].kanji}。</answer>
+      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@count]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Jest pięć psów" category="counting">
       <question>Jest {number@count[id:five].translation} {noun@item[id:inu, quantity:@count, case:nominative]}.</question>
@@ -228,7 +228,7 @@
     </sentence_pattern>
     <sentence_pattern id="Rozpoznaj liczbę z 匹" category="counting">
       <question>{counter@unit[id:hiki, quantity:@count].kanji}</question>
-      <answer>{number@count[range:1..10].value}</answer>
+      <answer>{number@count[set:one_to_ten].value}</answer>
     </sentence_pattern>
     <sentence_pattern id="Wybierz counter dla rzeczownika" category="counting">
       <question>{noun@item[category:thing].translation}</question>

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="2" id="nouns" label="Nouns" schema="noun">
-  <editor required="translation kana" optional="kanji romaji" metadata="category agreement cases relations" />
+  <editor required="translation kana" optional="kanji romaji" metadata="category agreement cases relations counting" />
   <words>
     <word id="bag" translation="torba" kana="かばん" kanji="鞄" type="noun" category="thing">
       <agreement class="feminine" />

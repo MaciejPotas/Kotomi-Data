@@ -5,7 +5,7 @@ This directory contains sentence-generation and sentence-quiz definitions.
 - `sentence_maps.xml` owns sentence patterns and constructions used by the generator.
 - `sentence_quizzes.xml` owns sentence-quiz definitions that select or combine those patterns.
 
-Both files use Schema 1 and are referenced by `../quiz_project.xml`.
+Both files use Schema 2 and are referenced by `../quiz_project.xml`.
 
 ## Pattern identifiers
 
@@ -119,8 +119,8 @@ Use separate aliases for the counted noun, quantity and counter:
 
 ```text
 {noun@item[category:animal]}
-{number@count[range:1..10]}
+{number@count[set:one_to_ten]}
 {counter@unit[counts:@item, preferred, quantity:@count]}
 ```
 
-A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantity source. Time, minutes, age and floors select their counter explicitly by `id`. A counter with `quantity` renders the exact stored full realization.
+A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantity source. Time, minutes, age and floors select their counter explicitly by `id`. A counter with `quantity` renders the exact stored full realization. Bare output defaults to `kana`; use `.kanji` or `.romaji` only when that output is required.

@@ -122,6 +122,33 @@ class GrammarValidationContractTests(unittest.TestCase):
     def test_schema2_counting_inventory_is_complete(self) -> None:
         validate_counting_data()
 
+    def test_canonical_number_sets_are_declared(self) -> None:
+        grammar = ET.parse(
+            ROOT / "grammar" / "grammar_rules.xml"
+        ).getroot()
+        sets = {
+            node.get("id"): {
+                number.get("ref")
+                for number in node.findall("./number")
+            }
+            for node in grammar.findall("./number_sets/set")
+        }
+        self.assertEqual(
+            {
+                "one", "two", "three", "four", "five",
+                "six", "seven", "eight", "nine", "ten",
+            },
+            sets["one_to_ten"],
+        )
+        self.assertEqual({"two", "three", "four"}, sets["two_to_four"])
+        self.assertEqual(
+            {
+                "two", "three", "four", "five", "six",
+                "seven", "eight", "nine", "ten", "twenty",
+            },
+            sets["two_or_more"],
+        )
+
     def test_age_twenty_and_domain_counters_are_exact_data(self) -> None:
         counters = ET.parse(
             ROOT / "dictionaries" / "counters.xml"

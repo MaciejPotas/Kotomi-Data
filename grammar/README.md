@@ -1,6 +1,6 @@
 # Grammar
 
-This directory contains reusable grammar data used by the Schema 1 project.
+This directory contains reusable grammar data used by the Schema 2 project.
 
 - `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, agreement catalogs, noun relation profiles, and noun-case rules.
 - `contexts.xml` contains reusable context pools used by sentence generation.
@@ -22,7 +22,7 @@ Quiz selectability is derived rather than stored. A form is a standard selectabl
 
 Polarity counterparts are also derived. For every finite `(context, register)` pair the catalog must contain exactly one affirmative and one negative form, so no separate `polarity_group` is stored.
 
-Retired form attributes such as `style`, `polarity_group`, and `quiz` are not part of Schema 1 and must not be added back.
+Retired form attributes such as `style`, `polarity_group`, and `quiz` are not part of Schema 2 and must not be added back.
 
 Dictionary XML files store only word-specific realizations through `<form ref="...">`.
 They must not duplicate grammar metadata such as context, polarity, register, labels, or lesson aliases.
@@ -124,3 +124,10 @@ Python.
 ## Counting metadata
 
 Schema 2 grammar defines reusable `counting_classes`, `count_source_profiles`, exact quantity-to-profile mappings and named `number_sets`. A number's semantic identity stays language-neutral. Polish counted noun selection is resolved from the grammar mapping and effective case.
+
+## Named number sets
+
+Schema 2 publishes the canonical counting domains `one_to_ten`,
+`two_to_four`, and `two_or_more`. Sets contain only existing number
+dictionary entries. Exact exceptional values, such as age 20, remain ordinary
+number entries selected by `id` or another pattern constraint.
