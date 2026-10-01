@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 37,
+  "revision": 38,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "764b35ab3b186ab0a19ba1f05a02d0be4cbda14a00a847c690cf2bfb58142224",
-      "url": "content_revision.json?kotomi_sha256=764b35ab3b186ab0a19ba1f05a02d0be4cbda14a00a847c690cf2bfb58142224"
+      "sha256": "a42722ae3b953d7d2a7f72f069c4deeed91264308329c6429b4d1b569641c405",
+      "url": "content_revision.json?kotomi_sha256=a42722ae3b953d7d2a7f72f069c4deeed91264308329c6429b4d1b569641c405"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -44,8 +44,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "f20c0afd8b89d55bfbed6282f426af068e25a335f2aa436867ff10bc0bd08049",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=f20c0afd8b89d55bfbed6282f426af068e25a335f2aa436867ff10bc0bd08049"
+      "sha256": "db285347355e094775bbcb03f8fe0f762bf7ff14b40d29532fa45af65ef525fb",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=db285347355e094775bbcb03f8fe0f762bf7ff14b40d29532fa45af65ef525fb"
     },
     {
       "path": "data/grammar/contexts.xml",
