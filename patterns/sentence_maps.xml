@@ -218,13 +218,9 @@
       <question>W jaki sposób {context.translation}{pattern}?</question>
       <answer>{context.kana}{interrogative[asks_for:method]}{pattern}{question}</answer>
     </sentence_pattern>
-    <sentence_pattern id="Są trzy psy" category="counting">
-      <question>Są {number@count[id:three].translation} {noun@item[id:inu, quantity:@count, case:nominative]}.</question>
-      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb[id:iru, form:dictionary]}。</answer>
-    </sentence_pattern>
-    <sentence_pattern id="Jest pięć psów" category="counting">
-      <question>Jest {number@count[id:five].translation} {noun@item[id:inu, quantity:@count, case:nominative]}.</question>
-      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb[id:iru, form:dictionary]}。</answer>
+    <sentence_pattern id="Istnienie policzonych rzeczowników" category="counting">
+      <question>{verb@existence[role:subject, feature:existential, form:dictionary, agree:@count].translation} {number@count[set:one_to_ten, agree:@item, case:nominative].translation} {noun@item[quantity:@count, case:nominative]}.</question>
+      <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb@existence[role:subject, feature:existential, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Rozpoznaj liczbę z 匹" category="counting">
       <question>{counter@unit[id:hiki, quantity:@count]}</question>
@@ -234,9 +230,9 @@
       <question>{noun@item.translation}</question>
       <answer>{counter@unit[counts:@item, preferred].kanji}</answer>
     </sentence_pattern>
-    <sentence_pattern id="Ile jest psów" category="counting">
-      <question>{interrogative@amount[id:how_many].translation} jest {noun@item[id:inu, quantity:@amount, case:nominative]}?</question>
-      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb[id:iru, form:dictionary]}？</answer>
+    <sentence_pattern id="Ile jest policzonych rzeczowników" category="counting">
+      <question>{interrogative@amount[id:how_many].translation} jest {noun@item[quantity:@amount, case:nominative]}?</question>
+      <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form:dictionary]}？</answer>
     </sentence_pattern>
     <sentence_pattern id="Godzina zegarowa" category="counting">
       <question>godzina {number@count[range:1..24].value}</question>

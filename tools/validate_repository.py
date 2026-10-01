@@ -524,6 +524,18 @@ def validate_counting_data() -> None:
                 f"Count source profile {profile_id} must declare "
                 f"source_form_strategy='{expected}'"
             )
+    expected_agreements = {
+        "one": "singular",
+        "few": "plural",
+        "many": "singular",
+    }
+    for profile_id, expected in expected_agreements.items():
+        profile = source_profiles.get(profile_id)
+        if profile is None or profile.get("source_agreement") != expected:
+            raise AssertionError(
+                f"Count source profile {profile_id} must declare "
+                f"source_agreement='{expected}'"
+            )
 
     number_values: dict[int, str] = {}
     for word in numbers.findall("./words/word"):
@@ -675,8 +687,9 @@ def validate_counting_data() -> None:
         for node in patterns.findall("./sentence_patterns/sentence_pattern")
     }
     required_patterns = {
-        "Są trzy psy", "Jest pięć psów", "Rozpoznaj liczbę z 匹",
-        "Wybierz counter dla rzeczownika", "Ile jest psów",
+        "Istnienie policzonych rzeczowników", "Rozpoznaj liczbę z 匹",
+        "Wybierz counter dla rzeczownika",
+        "Ile jest policzonych rzeczowników",
         "Godzina zegarowa", "Trzy minuty", "Wiek dwadzieścia lat",
         "Numer piętra",
     }
@@ -690,13 +703,36 @@ def validate_counting_data() -> None:
         str(node.get("id", "")): node
         for node in patterns.findall("./sentence_patterns/sentence_pattern")
     }
-    iru_placeholder = "{verb[id:iru, form:dictionary]}"
-    for pattern_id in ("Są trzy psy", "Jest pięć psów", "Ile jest psów"):
-        answer = patterns_by_id[pattern_id].findtext("answer", default="")
-        if iru_placeholder not in answer or "いる" in answer:
-            raise AssertionError(
-                f"Counting pattern '{pattern_id}' must render iru from the verb dictionary."
-            )
+    existential = patterns_by_id["Istnienie policzonych rzeczowników"]
+    existential_text = "".join(existential.itertext())
+    required_fragments = {
+        "role:subject",
+        "feature:existential",
+        "agree:@count",
+        "quantity:@count",
+        "counts:@item, preferred",
+    }
+    if not required_fragments.issubset(set(
+        fragment
+        for fragment in required_fragments
+        if fragment in existential_text
+    )):
+        raise AssertionError(
+            "Generic existential counting pattern is missing a data-driven "
+            "dependency."
+        )
+    forbidden = ("id:iru", "id:aru", "id:hiki", "id:satsu", "id:dai", "いる", "ある")
+    if any(value in existential_text for value in forbidden):
+        raise AssertionError(
+            "Generic existential counting pattern hardcodes a verb or counter."
+        )
+    query_answer = patterns_by_id[
+        "Ile jest policzonych rzeczowników"
+    ].findtext("answer", default="")
+    if "role:subject" not in query_answer or "id:iru" in query_answer:
+        raise AssertionError(
+            "Count question must resolve its existential verb through role data."
+        )
     counter_answer = patterns_by_id[
         "Wybierz counter dla rzeczownika"
     ].findtext("answer", default="")

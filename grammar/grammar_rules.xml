@@ -251,6 +251,10 @@
     <agreement_catalog schema="number" default_case_ref="nominative" fallback="translation">
       <template value="{value}" />
     </agreement_catalog>
+    <agreement_catalog schema="verb" form="dictionary" default_case_ref="nominative" fallback="translation" lexical="false">
+      <template value="Jest" />
+      <template classes="plural" value="Są" />
+    </agreement_catalog>
   </agreement_catalogs>
   <!--
     DYNAMIC NOUN CASE BY FORM
@@ -410,5 +414,6 @@
   <features>
     <feature id="reporting" label="Reporting verb" />
     <feature id="progressive_auxiliary" label="Progressive auxiliary" />
+    <feature id="existential" label="Existential verb" />
   </features>
 </grammar_rules>

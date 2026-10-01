@@ -45,6 +45,9 @@ only explicit `few` and `many` forms that differ from their ordinary cases.
 The file-level `source_language` identifies those editable source forms.
 Non-fallback profiles declare `source_form_strategy`; Studio executes that
 strategy without inferring a profile's meaning from its mapped quantities.
+Every profile also declares `source_agreement`. This metadata can feed the
+ordinary `agree:@alias` resolver, so source predicates such as Polish
+`jest`/`są` are selected by grammar data rather than number heuristics.
 
 ## Polish agreement catalogs
 

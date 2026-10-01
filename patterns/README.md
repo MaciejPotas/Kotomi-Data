@@ -98,6 +98,12 @@ links and token order is never a fallback. Agreement can also use a fixed class
 such as `[agree:neuter]`. Noun aliases and adjective or interrogative aliases
 must remain distinct.
 
+An agreement alias may instead name a number or count interrogative. Its exact
+quantity maps to a profile in `counting.xml`, and that profile supplies the
+explicit `source_agreement` value. This is how the generic existential counting
+pattern selects Polish `jest` or `są` while ordinary `role`, `feature`, and
+`usage/accepts` data select the Japanese verb.
+
 `[agree:neuter]` declares a fixed agreement class for a construction without a
 noun, for example `To {adjective[form, agree:neuter].translation}`. Lexical
 variants live in dictionary `<polish_forms>`, while grammar

@@ -141,6 +141,9 @@ class GrammarValidationContractTests(unittest.TestCase):
             "genitive_plural",
             profiles["many"].get("source_form_strategy"),
         )
+        self.assertEqual("singular", profiles["one"].get("source_agreement"))
+        self.assertEqual("plural", profiles["few"].get("source_agreement"))
+        self.assertEqual("singular", profiles["many"].get("source_agreement"))
 
     def test_canonical_number_sets_are_declared(self) -> None:
         grammar = ET.parse(

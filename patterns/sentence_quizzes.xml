@@ -42,11 +42,10 @@
   </quiz>
   <quiz id="counting" label="Liczenie" description="Liczby, countery i pytania ile" selection="references">
     <patterns>
-      <pattern ref="Są trzy psy" />
-      <pattern ref="Jest pięć psów" />
+      <pattern ref="Istnienie policzonych rzeczowników" />
       <pattern ref="Rozpoznaj liczbę z 匹" />
       <pattern ref="Wybierz counter dla rzeczownika" />
-      <pattern ref="Ile jest psów" />
+      <pattern ref="Ile jest policzonych rzeczowników" />
       <pattern ref="Godzina zegarowa" />
       <pattern ref="Trzy minuty" />
       <pattern ref="Wiek dwadzieścia lat" />

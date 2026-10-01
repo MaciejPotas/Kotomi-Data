@@ -25,9 +25,9 @@
   </counting_classes>
   <count_source_profiles>
     <profiles>
-      <profile id="one" label="jeden" fallback="noun_case" />
-      <profile id="few" label="kilka" source_form_strategy="paucal" />
-      <profile id="many" label="wiele lub ile" source_form_strategy="genitive_plural" />
+      <profile id="one" label="jeden" fallback="noun_case" source_agreement="singular" />
+      <profile id="few" label="kilka" source_form_strategy="paucal" source_agreement="plural" />
+      <profile id="many" label="wiele lub ile" source_form_strategy="genitive_plural" source_agreement="singular" />
     </profiles>
     <quantity_mappings>
       <quantity number="1" profile="one" />
