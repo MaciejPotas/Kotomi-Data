@@ -56,6 +56,8 @@ for one dictionary schema and optional form. Dictionary `<polish_forms>` own
 the actual declension of a word. A catalog owns only reusable grammar behavior:
 
 - `schema` and optional `form` select the dependent-word realization;
+- optional `features` restricts a catalog to words declaring all listed
+  grammar features;
 - `default_case_ref` supplies a case only for fixed agreement such as
   `[agree:neuter]`; noun-bound agreement always reuses the noun's resolved case;
 - `fallback="translation"` explicitly preserves generation when a lexical
@@ -71,6 +73,10 @@ Copula catalogs can instead store complete realizations such as `był`,
 `była`, `było`, and `były` with `lexical="false"`. The engine resolves
 the relation, agreement class, and case, then applies this data. It does not
 contain Polish gender tables or pattern-specific exceptions.
+
+The verb catalogs for `jest`, `są`, `była`, `było`, and `były` require the
+generic `existential` feature. Consequently ordinary verbs cannot acquire an
+existential Polish realization merely by declaring `[agree:...]`.
 
 
 ## Polish noun relation profiles

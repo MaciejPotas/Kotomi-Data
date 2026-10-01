@@ -17,6 +17,12 @@ Keep word data here. Grammar rules, sentence patterns, and lesson organization b
 
 The `interrogatives` dictionary stores Japanese question words as form-less lexical entries. `asks_for` describes the information requested (for example `place`, `reason`, or `method`); grammar patterns still own particles and sentence structure.
 
+Japanese homographs with different source-language syntax remain separate
+lexical entries. In particular, `aru_possessive` owns Polish `mieć` and
+direct-object government, while `aru_existential` owns `być / istnieć`, the
+`existential` feature, and nominative/genitive existential government. Both
+entries realize Japanese `ある`; patterns never switch an entry's meaning.
+
 The `connectors` dictionary stores form-less discourse connectors. Connector
 entries own only their lexical Japanese value and Polish meaning. Sentence
 patterns own clause order, punctuation, register and example context, so

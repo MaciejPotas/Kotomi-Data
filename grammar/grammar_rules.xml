@@ -156,6 +156,10 @@
       Set lexical="false" for grammar-only realizations such as a Polish copula;
       those templates must not contain {value}.
 
+    features:
+      Optional generic restriction on the dependent word. A scoped catalog is
+      available only when the selected word declares every listed feature.
+
     template/value:
       A template without classes is common; class-specific templates override
       it. This keeps Polish copula choice in grammar data instead of deriving it
@@ -251,9 +255,49 @@
     <agreement_catalog schema="number" default_case_ref="nominative" fallback="translation">
       <template value="{value}" />
     </agreement_catalog>
-    <agreement_catalog schema="verb" form="dictionary" default_case_ref="nominative" fallback="translation" lexical="false">
-      <template value="Jest" />
+    <agreement_catalog schema="verb" form="dictionary" default_case_ref="nominative" fallback="translation" lexical="false" features="existential">
+      <template value="jest" />
+      <template classes="singular" value="Jest" />
       <template classes="plural" value="Są" />
+      <template classes="plural_non_masculine_personal" value="są" />
+    </agreement_catalog>
+    <agreement_catalog schema="verb" form="polite_nonpast" default_case_ref="nominative" fallback="translation" lexical="false" features="existential">
+      <template value="jest" />
+      <template classes="singular" value="Jest" />
+      <template classes="plural" value="Są" />
+      <template classes="plural_non_masculine_personal" value="są" />
+    </agreement_catalog>
+    <agreement_catalog schema="verb" form="plain_negative" default_case_ref="nominative" fallback="translation" lexical="false" features="existential">
+      <template value="nie ma" />
+      <template classes="singular plural" value="Nie ma" />
+    </agreement_catalog>
+    <agreement_catalog schema="verb" form="polite_negative" default_case_ref="nominative" fallback="translation" lexical="false" features="existential">
+      <template value="nie ma" />
+      <template classes="singular plural" value="Nie ma" />
+    </agreement_catalog>
+    <agreement_catalog schema="verb" form="past_plain" default_case_ref="nominative" fallback="translation" lexical="false" features="existential">
+      <template value="był" />
+      <template classes="feminine" value="była" />
+      <template classes="neuter" value="było" />
+      <template classes="plural_non_masculine_personal" value="były" />
+      <template classes="singular" value="Był" />
+      <template classes="plural" value="Były" />
+    </agreement_catalog>
+    <agreement_catalog schema="verb" form="past_polite" default_case_ref="nominative" fallback="translation" lexical="false" features="existential">
+      <template value="był" />
+      <template classes="feminine" value="była" />
+      <template classes="neuter" value="było" />
+      <template classes="plural_non_masculine_personal" value="były" />
+      <template classes="singular" value="Był" />
+      <template classes="plural" value="Były" />
+    </agreement_catalog>
+    <agreement_catalog schema="verb" form="past_negative_plain" default_case_ref="nominative" fallback="translation" lexical="false" features="existential">
+      <template value="nie było" />
+      <template classes="singular plural" value="Nie było" />
+    </agreement_catalog>
+    <agreement_catalog schema="verb" form="past_negative_polite" default_case_ref="nominative" fallback="translation" lexical="false" features="existential">
+      <template value="nie było" />
+      <template classes="singular plural" value="Nie było" />
     </agreement_catalog>
   </agreement_catalogs>
   <!--
@@ -332,6 +376,10 @@
   <polish_government>
     <frame id="direct_object">
       <realization polarity="affirmative" case_ref="accusative" />
+      <realization polarity="negative" case_ref="genitive" />
+    </frame>
+    <frame id="existential_subject">
+      <realization polarity="affirmative" case_ref="nominative" />
       <realization polarity="negative" case_ref="genitive" />
     </frame>
     <frame id="genitive">

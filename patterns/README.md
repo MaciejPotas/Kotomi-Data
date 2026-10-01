@@ -104,6 +104,10 @@ explicit `source_agreement` value. This is how the generic existential counting
 pattern selects Polish `jest` or `są` while ordinary `role`, `feature`, and
 `usage/accepts` data select the Japanese verb.
 
+The selected non-living existential is `aru_existential`, not the independent
+possessive entry `aru_possessive`. Its source agreement and government remain
+ordinary grammar data, while Japanese output for both entries is `ある`.
+
 `[agree:neuter]` declares a fixed agreement class for a construction without a
 noun, for example `To {adjective[form, agree:neuter].translation}`. Lexical
 variants live in dictionary `<polish_forms>`, while grammar

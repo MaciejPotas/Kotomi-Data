@@ -67,8 +67,8 @@
         <pattern ref="Miejsce czynności" />
         <pattern ref="Środek transportu" />
       </patterns>
-      <question>{context[pool:@main].translation}{verb@main[id:aru, role:subject, form].translation} {noun@reason[category:availability_reason, government:@main].phrase}, żeby {pattern[form:dictionary, translation:base, case_scope:embedded]}.</question>
-      <answer>{context[pool:@main].kana}{pattern[form:dictionary, case_scope:embedded]}{noun@reason[category:availability_reason]}が{verb@main[id:aru, role:subject, form]}</answer>
+      <question>{context[pool:@main].translation}{verb@main[id:aru_existential, role:subject, form, agree:@reason].translation} {noun@reason[category:availability_reason, government:@main].phrase}, żeby {pattern[form:dictionary, translation:base, case_scope:embedded]}.</question>
+      <answer>{context[pool:@main].kana}{pattern[form:dictionary, case_scope:embedded]}{noun@reason[category:availability_reason]}が{verb@main[id:aru_existential, role:subject, form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Możliwość ことができる" category="constructions">
       <patterns>
