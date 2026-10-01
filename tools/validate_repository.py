@@ -21,6 +21,7 @@ PROJECT_SCHEMA_FILES = {
     "dictionaries/numbers.xml",
     "dictionaries/verbs.xml",
     "grammar/contexts.xml",
+    "grammar/counting.xml",
     "grammar/grammar_rules.xml",
     "patterns/sentence_maps.xml",
     "patterns/sentence_quizzes.xml",
@@ -38,6 +39,7 @@ CONTENT_MANIFEST_ORDER = [
     "data/dictionaries/numbers.xml",
     "data/dictionaries/verbs.xml",
     "data/grammar/contexts.xml",
+    "data/grammar/counting.xml",
     "data/grammar/grammar_rules.xml",
     "data/lessons/lessons.xml",
     "data/patterns/sentence_maps.xml",
@@ -492,6 +494,7 @@ def validate_counting_data() -> None:
         ROOT / "dictionaries" / "interrogatives.xml"
     ).getroot()
     grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
+    counting_grammar = ET.parse(ROOT / "grammar" / "counting.xml").getroot()
     patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
 
     number_values: dict[int, str] = {}
@@ -522,7 +525,7 @@ def validate_counting_data() -> None:
 
     class_ids = {
         str(node.get("id", ""))
-        for node in grammar.findall("./counting_classes/class")
+        for node in counting_grammar.findall("./counting_classes/class")
     }
     required_classes = {
         "person", "small_animal", "long_object", "flat_object",
@@ -538,6 +541,10 @@ def validate_counting_data() -> None:
         str(word.get("id", "")): word
         for word in counters.findall("./words/word")
     }
+    if any(word.find("./counts") is not None for word in counter_words.values()):
+        raise AssertionError(
+            "Counter compatibility must be defined only in counting.xml"
+        )
     required_counters = {
         "nin", "hiki", "hon", "mai", "satsu", "dai", "ko",
         "ji", "fun", "sai", "kai",
@@ -547,6 +554,31 @@ def validate_counting_data() -> None:
             "Missing counters: "
             + ", ".join(sorted(required_counters - set(counter_words)))
         )
+    counters_by_class: dict[str, set[str]] = {}
+    for class_node in counting_grammar.findall("./counting_classes/class"):
+        class_id = str(class_node.get("id", ""))
+        refs = [
+            str(counter.get("ref", ""))
+            for counter in class_node.findall("./counter")
+        ]
+        default_counter = str(class_node.get("default_counter", ""))
+        if not refs:
+            raise AssertionError(f"Counting class {class_id} has no counters")
+        if len(refs) != len(set(refs)):
+            raise AssertionError(
+                f"Counting class {class_id} repeats a counter reference"
+            )
+        if default_counter not in refs:
+            raise AssertionError(
+                f"Counting class {class_id} has invalid default counter"
+            )
+        unknown = set(refs) - set(counter_words)
+        if unknown:
+            raise AssertionError(
+                f"Counting class {class_id} references unknown counters: "
+                + ", ".join(sorted(unknown))
+            )
+        counters_by_class[class_id] = set(refs)
     for counter_id in required_counters:
         word = counter_words[counter_id]
         identities = {
@@ -581,9 +613,16 @@ def validate_counting_data() -> None:
             )
         counted_classes.update(classes)
         preferred = str(counting.get("preferred_counter", ""))
-        if preferred and preferred not in counter_words:
+        compatible = set().union(*(
+            counters_by_class.get(class_id, set()) for class_id in classes
+        )) if classes else set()
+        if preferred and preferred not in compatible:
             raise AssertionError(
-                f"Noun {word.get('id')} uses unknown preferred counter {preferred}"
+                f"Noun {word.get('id')} uses incompatible preferred counter {preferred}"
+            )
+        if counting.find("./source_forms/form[@profile='one']") is not None:
+            raise AssertionError(
+                f"Noun {word.get('id')} duplicates one instead of noun_case fallback"
             )
     if not required_classes.issubset(counted_classes):
         raise AssertionError(

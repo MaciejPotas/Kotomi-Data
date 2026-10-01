@@ -11,6 +11,7 @@
     <dictionary id="verbs" file="dictionaries/verbs.xml" label="Verbs" schema="verb" />
   </dictionaries>
   <grammar file="grammar/grammar_rules.xml" />
+  <counting file="grammar/counting.xml" />
   <contexts file="grammar/contexts.xml" />
   <sentence_maps file="patterns/sentence_maps.xml" />
   <sentence_quizzes file="patterns/sentence_quizzes.xml" />

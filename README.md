@@ -10,7 +10,7 @@ The two public update channels have deliberately different responsibilities. **C
 | --- | --- | --- |
 | `quiz_project.xml` | Canonical Schema 2 project entrypoint. | Content |
 | `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, copulas, interrogatives, connectors, numbers, and counters. | Content |
-| `grammar/` | Shared roles, categories, features, and context pools. | Content |
+| `grammar/` | Shared grammar rules, counting configuration, and context pools. | Content |
 | `patterns/` | Sentence maps and sentence-quiz definitions. | Content |
 | `lessons/` | Schema 4 lesson catalog. | Content |
 | `quizzes/` | Published first-party executable quiz package files. | Quiz |

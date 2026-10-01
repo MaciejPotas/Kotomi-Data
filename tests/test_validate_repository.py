@@ -124,7 +124,7 @@ class GrammarValidationContractTests(unittest.TestCase):
 
     def test_canonical_number_sets_are_declared(self) -> None:
         grammar = ET.parse(
-            ROOT / "grammar" / "grammar_rules.xml"
+            ROOT / "grammar" / "counting.xml"
         ).getroot()
         sets = {
             node.get("id"): {

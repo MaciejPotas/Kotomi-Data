@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<counting schema_version="2">
+  <counting_classes>
+    <class id="person" label="Osoby" default_counter="nin">
+      <counter ref="nin" />
+    </class>
+    <class id="small_animal" label="Małe zwierzęta" default_counter="hiki">
+      <counter ref="hiki" />
+    </class>
+    <class id="long_object" label="Długie przedmioty" default_counter="hon">
+      <counter ref="hon" />
+    </class>
+    <class id="flat_object" label="Płaskie przedmioty" default_counter="mai">
+      <counter ref="mai" />
+    </class>
+    <class id="bound_volume" label="Oprawione tomy" default_counter="satsu">
+      <counter ref="satsu" />
+    </class>
+    <class id="machine" label="Maszyny i pojazdy" default_counter="dai">
+      <counter ref="dai" />
+    </class>
+    <class id="small_object" label="Małe przedmioty" default_counter="ko">
+      <counter ref="ko" />
+    </class>
+  </counting_classes>
+  <count_source_profiles>
+    <profiles>
+      <profile id="one" label="jeden" fallback="noun_case" />
+      <profile id="few" label="kilka" />
+      <profile id="many" label="wiele lub ile" />
+    </profiles>
+    <quantity_mappings>
+      <quantity number="1" profile="one" />
+      <quantity number="2" profile="few" />
+      <quantity number="3" profile="few" />
+      <quantity number="4" profile="few" />
+      <quantity number="5" profile="many" />
+      <quantity number="6" profile="many" />
+      <quantity number="7" profile="many" />
+      <quantity number="8" profile="many" />
+      <quantity number="9" profile="many" />
+      <quantity number="10" profile="many" />
+      <quantity number="20" profile="many" />
+      <quantity symbol="how_many" profile="many" />
+    </quantity_mappings>
+  </count_source_profiles>
+  <number_sets>
+    <set id="one_to_ten" label="Liczby od 1 do 10">
+      <number ref="one" />
+      <number ref="two" />
+      <number ref="three" />
+      <number ref="four" />
+      <number ref="five" />
+      <number ref="six" />
+      <number ref="seven" />
+      <number ref="eight" />
+      <number ref="nine" />
+      <number ref="ten" />
+    </set>
+    <set id="two_to_four" label="Liczby od 2 do 4">
+      <number ref="two" />
+      <number ref="three" />
+      <number ref="four" />
+    </set>
+    <set id="two_or_more" label="Dwa lub więcej">
+      <number ref="two" />
+      <number ref="three" />
+      <number ref="four" />
+      <number ref="five" />
+      <number ref="six" />
+      <number ref="seven" />
+      <number ref="eight" />
+      <number ref="nine" />
+      <number ref="ten" />
+      <number ref="twenty" />
+    </set>
+  </number_sets>
+</counting>

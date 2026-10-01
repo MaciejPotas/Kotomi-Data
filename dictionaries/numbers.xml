@@ -10,6 +10,7 @@
         <override classes="feminine" cases="nominative" value="jedna" />
         <override classes="feminine" cases="accusative" value="jedną" />
         <override classes="neuter" cases="nominative accusative" value="jedno" />
+        <override classes="masculine_animate masculine_personal" cases="accusative" value="jednego" />
       </polish_forms>
     </word>
     <word id="two" value="2" translation="dwa" kana="に" kanji="二" romaji="ni">

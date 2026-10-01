@@ -3,6 +3,7 @@
 This directory contains reusable grammar data used by the Schema 2 project.
 
 - `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, agreement catalogs, noun relation profiles, and noun-case rules.
+- `counting.xml` owns counting classes, class-to-counter compatibility, class defaults, source count profiles, quantity mappings, and named number sets.
 - `contexts.xml` contains reusable context pools used by sentence generation.
 
 ## Form catalogs
@@ -29,7 +30,18 @@ They must not duplicate grammar metadata such as context, polarity, register, la
 
 `noun_case_by_form` maps grammar polarity directly to a noun case. It does not maintain a second list of form names or form sets.
 
-Both grammar files are loaded through `../quiz_project.xml`. Keep grammar-wide definitions here rather than placing them beside dictionaries or sentence patterns.
+All grammar files are loaded through `../quiz_project.xml`. Keep grammar-wide definitions here rather than placing them beside dictionaries or sentence patterns.
+
+## Counting grammar
+
+Each counting class lists its compatible counter references and one default
+counter. Nouns store only selected class IDs and an optional exceptional
+`preferred_counter` override. Counter dictionaries store lexical values and
+exact quantity realizations, not noun compatibility. This makes
+`counting.xml` the single source of truth for class-to-counter matching.
+
+The `one` source profile uses `fallback="noun_case"`; nouns therefore store
+only explicit `few` and `many` forms that differ from their ordinary cases.
 
 ## Polish agreement catalogs
 
