@@ -637,13 +637,32 @@ def validate_counting_data() -> None:
     required_patterns = {
         "Są trzy psy", "Jest pięć psów", "Rozpoznaj liczbę z 匹",
         "Wybierz counter dla rzeczownika", "Ile jest psów",
-        "Godzina czwarta", "Trzy minuty", "Wiek dwadzieścia lat",
-        "Trzecie piętro",
+        "Godzina zegarowa", "Trzy minuty", "Wiek dwadzieścia lat",
+        "Numer piętra",
     }
     if not required_patterns.issubset(pattern_ids):
         raise AssertionError(
             "Missing counting patterns: "
             + ", ".join(sorted(required_patterns - pattern_ids))
+        )
+
+    patterns_by_id = {
+        str(node.get("id", "")): node
+        for node in patterns.findall("./sentence_patterns/sentence_pattern")
+    }
+    iru_placeholder = "{verb[id:iru, form:dictionary]}"
+    for pattern_id in ("Są trzy psy", "Jest pięć psów", "Ile jest psów"):
+        answer = patterns_by_id[pattern_id].findtext("answer", default="")
+        if iru_placeholder not in answer or "いる" in answer:
+            raise AssertionError(
+                f"Counting pattern '{pattern_id}' must render iru from the verb dictionary."
+            )
+    counter_answer = patterns_by_id[
+        "Wybierz counter dla rzeczownika"
+    ].findtext("answer", default="")
+    if "{counter@unit[counts:@item, preferred].kanji}" not in counter_answer:
+        raise AssertionError(
+            "Counter-choice pattern must resolve the grammar-owned default or noun override."
         )
 
 

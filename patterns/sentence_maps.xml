@@ -220,11 +220,11 @@
     </sentence_pattern>
     <sentence_pattern id="Są trzy psy" category="counting">
       <question>Są {number@count[id:three].translation} {noun@item[id:inu, quantity:@count, case:nominative]}.</question>
-      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@count]}いる。</answer>
+      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb[id:iru, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Jest pięć psów" category="counting">
       <question>Jest {number@count[id:five].translation} {noun@item[id:inu, quantity:@count, case:nominative]}.</question>
-      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@count]}いる。</answer>
+      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb[id:iru, form:dictionary]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Rozpoznaj liczbę z 匹" category="counting">
       <question>{counter@unit[id:hiki, quantity:@count]}</question>
@@ -232,13 +232,13 @@
     </sentence_pattern>
     <sentence_pattern id="Wybierz counter dla rzeczownika" category="counting">
       <question>{noun@item.translation}</question>
-      <answer>{counter@unit[counts:@item].kanji}</answer>
+      <answer>{counter@unit[counts:@item, preferred].kanji}</answer>
     </sentence_pattern>
     <sentence_pattern id="Ile jest psów" category="counting">
       <question>{interrogative@amount[id:how_many].translation} jest {noun@item[id:inu, quantity:@amount, case:nominative]}?</question>
-      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@amount]}いる？</answer>
+      <answer>{noun@item[id:inu]}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb[id:iru, form:dictionary]}？</answer>
     </sentence_pattern>
-    <sentence_pattern id="Godzina czwarta" category="counting">
+    <sentence_pattern id="Godzina zegarowa" category="counting">
       <question>godzina {number@count[range:1..24].value}</question>
       <answer>{counter@unit[id:ji, quantity:@count]}</answer>
     </sentence_pattern>
@@ -250,7 +250,7 @@
       <question>wiek: {number@age[id:twenty].translation} lat</question>
       <answer>{counter@unit[id:sai, quantity:@age]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="Trzecie piętro" category="counting">
+    <sentence_pattern id="Numer piętra" category="counting">
       <question>piętro numer {number@floor[range:1..10].value}</question>
       <answer>{counter@unit[id:kai, quantity:@floor]}</answer>
     </sentence_pattern>

@@ -47,10 +47,10 @@
       <pattern ref="Rozpoznaj liczbę z 匹" />
       <pattern ref="Wybierz counter dla rzeczownika" />
       <pattern ref="Ile jest psów" />
-      <pattern ref="Godzina czwarta" />
+      <pattern ref="Godzina zegarowa" />
       <pattern ref="Trzy minuty" />
       <pattern ref="Wiek dwadzieścia lat" />
-      <pattern ref="Trzecie piętro" />
+      <pattern ref="Numer piętra" />
     </patterns>
   </quiz>
 </sentence_quizzes>

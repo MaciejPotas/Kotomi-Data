@@ -62,8 +62,13 @@ noun category or Polish spelling.
 - `numbers.xml` stores semantic integer values and standalone Japanese and Polish forms.
 - `counters.xml` stores lexical values and exact full realizations keyed by numeric or symbolic quantity.
 - `grammar/counting.xml` is the single source of class-to-counter compatibility and class defaults.
-- noun `<counting>` metadata stores counting classes, an optional exceptional preferred-counter override, and explicit Polish `few`/`many` forms.
+- noun `<counting>` metadata stores counting classes, an optional exceptional preferred-counter override, and explicit Polish profile-by-case forms.
 - the `how_many` interrogative exposes `quantity_symbol="how_many"`.
 
 Counter realization tables are authoritative. Do not replace missing rows with number plus counter concatenation.
 The `one` profile falls back to ordinary noun cases and must not duplicate them.
+Studio builds its counted-form table from the profiles in `counting.xml` and
+all cases supported by the project model. Authoring-time autofill may propose
+only conservative forms supported by the noun translation, agreement class,
+ordinary cases and quantity mappings. The proposal is saved as editable XML;
+unknown forms stay empty and runtime never performs Polish morphology.
