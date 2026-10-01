@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 33,
+  "revision": 34,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "43e5065b59253ae6ee6f89c71f0a1c3cc2cc1b23247f751965778ca2dfb15ed9",
-      "url": "content_revision.json?kotomi_sha256=43e5065b59253ae6ee6f89c71f0a1c3cc2cc1b23247f751965778ca2dfb15ed9"
+      "sha256": "90e30f332f4f63742be92b4f9243b28425e85eeccb15fafee35c6a4e03f1c9f0",
+      "url": "content_revision.json?kotomi_sha256=90e30f332f4f63742be92b4f9243b28425e85eeccb15fafee35c6a4e03f1c9f0"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -54,8 +54,8 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "39988e2f2930e19dfa91f907a832584013ac768d0f562e81731021c0e7ef35d5",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=39988e2f2930e19dfa91f907a832584013ac768d0f562e81731021c0e7ef35d5"
+      "sha256": "b9b4677766bc01af1a1667f0d5f4e783555f94188a9527ff48c0c7a8c46674d3",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=b9b4677766bc01af1a1667f0d5f4e783555f94188a9527ff48c0c7a8c46674d3"
     },
     {
       "path": "data/lessons/lessons.xml",

@@ -45,7 +45,7 @@
     <profiles>
       <profile id="one" label="jeden" fallback="noun_case" />
       <profile id="few" label="kilka" />
-      <profile id="many" label="wiele / ile" />
+      <profile id="many" label="wiele lub ile" />
     </profiles>
     <quantity_mappings>
       <quantity number="1" profile="one" />
