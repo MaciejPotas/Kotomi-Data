@@ -159,7 +159,7 @@
         <feature ref="existential" />
       </features>
       <usage>
-        <role ref="subject" accepts="place food drink text media vehicle thing abstract availability_reason" government="existential_subject" />
+        <role ref="subject" accepts="place food drink text media vehicle thing abstract" government="existential_subject" />
       </usage>
       <forms>
         <form ref="dictionary" translation="jest" kana="ある"  />
