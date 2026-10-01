@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<counting schema_version="2">
+<counting schema_version="2" source_language="pl">
   <counting_classes>
     <class id="person" label="Osoby" default_counter="nin">
       <counter ref="nin" />
@@ -26,8 +26,8 @@
   <count_source_profiles>
     <profiles>
       <profile id="one" label="jeden" fallback="noun_case" />
-      <profile id="few" label="kilka" />
-      <profile id="many" label="wiele lub ile" />
+      <profile id="few" label="kilka" source_form_strategy="paucal" />
+      <profile id="many" label="wiele lub ile" source_form_strategy="genitive_plural" />
     </profiles>
     <quantity_mappings>
       <quantity number="1" profile="one" />

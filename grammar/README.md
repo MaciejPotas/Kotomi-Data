@@ -3,7 +3,7 @@
 This directory contains reusable grammar data used by the Schema 2 project.
 
 - `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, agreement catalogs, noun relation profiles, and noun-case rules.
-- `counting.xml` owns counting classes, class-to-counter compatibility, class defaults, source count profiles, quantity mappings, and named number sets.
+- `counting.xml` owns counting classes, class-to-counter compatibility, class defaults, the source language, source count profiles and their authoring strategies, quantity mappings, and named number sets.
 - `contexts.xml` contains reusable context pools used by sentence generation.
 
 ## Form catalogs
@@ -42,6 +42,9 @@ exact quantity realizations, not noun compatibility. This makes
 
 The `one` source profile uses `fallback="noun_case"`; nouns therefore store
 only explicit `few` and `many` forms that differ from their ordinary cases.
+The file-level `source_language` identifies those editable source forms.
+Non-fallback profiles declare `source_form_strategy`; Studio executes that
+strategy without inferring a profile's meaning from its mapped quantities.
 
 ## Polish agreement catalogs
 
@@ -135,7 +138,7 @@ Python.
 
 ## Counting metadata
 
-Schema 2 grammar defines reusable `counting_classes`, `count_source_profiles`, exact quantity-to-profile mappings and named `number_sets`. A number's semantic identity stays language-neutral. Polish counted noun selection is resolved from the grammar mapping and effective case.
+Schema 2 grammar defines reusable `counting_classes`, `count_source_profiles`, exact quantity-to-profile mappings and named `number_sets`. A number's semantic identity stays language-neutral. Source-form language and authoring strategy are explicit `counting.xml` data. Polish counted noun selection is resolved from the grammar mapping and effective case.
 
 ## Named number sets
 

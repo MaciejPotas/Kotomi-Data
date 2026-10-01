@@ -122,6 +122,26 @@ class GrammarValidationContractTests(unittest.TestCase):
     def test_schema2_counting_inventory_is_complete(self) -> None:
         validate_counting_data()
 
+    def test_count_source_authoring_metadata_is_explicit(self) -> None:
+        grammar = ET.parse(
+            ROOT / "grammar" / "counting.xml"
+        ).getroot()
+        profiles = {
+            node.get("id"): node
+            for node in grammar.findall(
+                "./count_source_profiles/profiles/profile"
+            )
+        }
+        self.assertEqual("pl", grammar.get("source_language"))
+        self.assertEqual("noun_case", profiles["one"].get("fallback"))
+        self.assertEqual(
+            "paucal", profiles["few"].get("source_form_strategy")
+        )
+        self.assertEqual(
+            "genitive_plural",
+            profiles["many"].get("source_form_strategy"),
+        )
+
     def test_canonical_number_sets_are_declared(self) -> None:
         grammar = ET.parse(
             ROOT / "grammar" / "counting.xml"

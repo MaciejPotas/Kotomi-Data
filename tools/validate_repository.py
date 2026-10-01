@@ -497,6 +497,34 @@ def validate_counting_data() -> None:
     counting_grammar = ET.parse(ROOT / "grammar" / "counting.xml").getroot()
     patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
 
+    if counting_grammar.get("source_language") != "pl":
+        raise AssertionError(
+            "Counting grammar must declare source_language='pl'"
+        )
+    source_profiles = {
+        str(node.get("id", "")): node
+        for node in counting_grammar.findall(
+            "./count_source_profiles/profiles/profile"
+        )
+    }
+    if source_profiles.get("one") is None or (
+        source_profiles["one"].get("fallback") != "noun_case"
+    ):
+        raise AssertionError(
+            "Count source profile one must use noun_case fallback"
+        )
+    expected_strategies = {
+        "few": "paucal",
+        "many": "genitive_plural",
+    }
+    for profile_id, expected in expected_strategies.items():
+        profile = source_profiles.get(profile_id)
+        if profile is None or profile.get("source_form_strategy") != expected:
+            raise AssertionError(
+                f"Count source profile {profile_id} must declare "
+                f"source_form_strategy='{expected}'"
+            )
+
     number_values: dict[int, str] = {}
     for word in numbers.findall("./words/word"):
         word_id = str(word.get("id", ""))
@@ -555,6 +583,7 @@ def validate_counting_data() -> None:
             + ", ".join(sorted(required_counters - set(counter_words)))
         )
     counters_by_class: dict[str, set[str]] = {}
+    defaults_by_class: dict[str, str] = {}
     for class_node in counting_grammar.findall("./counting_classes/class"):
         class_id = str(class_node.get("id", ""))
         refs = [
@@ -579,6 +608,7 @@ def validate_counting_data() -> None:
                 + ", ".join(sorted(unknown))
             )
         counters_by_class[class_id] = set(refs)
+        defaults_by_class[class_id] = default_counter
     for counter_id in required_counters:
         word = counter_words[counter_id]
         identities = {
@@ -613,6 +643,16 @@ def validate_counting_data() -> None:
             )
         counted_classes.update(classes)
         preferred = str(counting.get("preferred_counter", ""))
+        defaults = {
+            defaults_by_class[class_id]
+            for class_id in classes
+            if defaults_by_class.get(class_id)
+        }
+        if len(defaults) > 1 and not preferred:
+            raise AssertionError(
+                f"Noun {word.get('id')} has ambiguous class defaults and "
+                "must declare preferred_counter"
+            )
         compatible = set().union(*(
             counters_by_class.get(class_id, set()) for class_id in classes
         )) if classes else set()

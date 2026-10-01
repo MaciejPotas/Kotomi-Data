@@ -54,8 +54,8 @@
     },
     {
       "path": "data/grammar/counting.xml",
-      "sha256": "0f20532debd4106bb85ec89c4966343f008738d90d2e3ce28252258fbae992b2",
-      "url": "grammar/counting.xml?kotomi_sha256=0f20532debd4106bb85ec89c4966343f008738d90d2e3ce28252258fbae992b2"
+      "sha256": "1e7b12a9258d71b46b96e52adb32ec01cd4ba7795d269fe4e4edec13d394a70a",
+      "url": "grammar/counting.xml?kotomi_sha256=1e7b12a9258d71b46b96e52adb32ec01cd4ba7795d269fe4e4edec13d394a70a"
     },
     {
       "path": "data/grammar/grammar_rules.xml",
