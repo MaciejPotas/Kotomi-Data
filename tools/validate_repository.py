@@ -613,7 +613,7 @@ def validate_counting_data() -> None:
         )
     required_counters = {
         "nin", "hiki", "hon", "mai", "satsu", "dai", "ko",
-        "ji", "fun", "sai", "kai",
+        "ji", "fun", "sai", "kai", "kai_times",
     }
     if not required_counters.issubset(counter_words):
         raise AssertionError(
@@ -657,6 +657,8 @@ def validate_counting_data() -> None:
             raise AssertionError(
                 f"Counter {counter_id} needs a valid composition profile"
             )
+        if counter_id == "kai_times":
+            continue
         identities = {
             ("number", str(node.get("number")))
             if node.get("number") is not None
@@ -675,6 +677,31 @@ def validate_counting_data() -> None:
     if sai_twenty is None or sai_twenty.get("kana") != "はたち":
         raise AssertionError("Counter sai must realize 20 exactly as はたち")
     kai_times = counter_words.get("kai_times")
+    kai_times_composition = (
+        kai_times.find("./composition") if kai_times is not None else None
+    )
+    if (
+        kai_times_composition is None
+        or kai_times_composition.get("profile") != "kai_times"
+    ):
+        raise AssertionError(
+            "Counter kai_times must use its dedicated composition profile"
+        )
+    kai_times_hundred = (
+        kai_times.find(
+            "./quantity_realizations/realization[@number='100']"
+        )
+        if kai_times is not None else None
+    )
+    if (
+        kai_times_hundred is None
+        or kai_times_hundred.get("kana") != "ひゃっかい"
+        or kai_times_hundred.get("kanji") != "百回"
+        or kai_times_hundred.get("romaji") != "hyakkai"
+    ):
+        raise AssertionError(
+            "Counter kai_times must realize 100 exactly as ひゃっかい / 百回"
+        )
     kai_times_question = (
         kai_times.find(
             "./quantity_realizations/realization[@symbol='how_many']"
@@ -738,7 +765,8 @@ def validate_counting_data() -> None:
     required_patterns = {
         "Istnienie policzonych rzeczowników",
         "Ile jest policzonych rzeczowników",
-        "Godzina zegarowa", "Wiek", "Ile razy w miesiącu", "Numer piętra",
+        "Godzina zegarowa", "Wiek", "Ile razy w miesiącu",
+        "Liczba razy w miesiącu", "Numer piętra",
     }
     if not required_patterns.issubset(pattern_ids):
         raise AssertionError(
@@ -809,6 +837,25 @@ def validate_counting_data() -> None:
     if "id:kai_times" not in frequency_answer or "一か月に" not in frequency_answer:
         raise AssertionError(
             "Monthly frequency pattern must use the dedicated 回 counter."
+        )
+    numeric_frequency = patterns_by_id["Liczba razy w miesiącu"]
+    numeric_frequency_question = numeric_frequency.findtext(
+        "question", default=""
+    )
+    numeric_frequency_answer = numeric_frequency.findtext(
+        "answer", default=""
+    )
+    if "range:1..500" not in numeric_frequency_question:
+        raise AssertionError(
+            "Numeric monthly frequency must use generated range 1..500."
+        )
+    if (
+        "id:kai_times" not in numeric_frequency_answer
+        or "quantity:@count" not in numeric_frequency_answer
+        or ".kanji" not in numeric_frequency_answer
+    ):
+        raise AssertionError(
+            "Numeric monthly frequency must render generated 回 quantities."
         )
 
 

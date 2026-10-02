@@ -238,6 +238,10 @@
       <question>{interrogative@amount[asks_for:count].translation} razy w miesiącu?</question>
       <answer>一か月に{counter@unit[id:kai_times, quantity:@amount]}？</answer>
     </sentence_pattern>
+    <sentence_pattern id="Liczba razy w miesiącu" category="counting">
+      <question>{number@count[range:1..500].value} razy w miesiącu</question>
+      <answer>一か月に{counter@unit[id:kai_times, quantity:@count].kanji}</answer>
+    </sentence_pattern>
     <sentence_pattern id="Numer piętra" category="counting">
       <question>piętro numer {number@floor[range:1..10].value}</question>
       <answer>{counter@unit[id:kai, quantity:@floor]}</answer>

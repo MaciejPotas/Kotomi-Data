@@ -93,6 +93,12 @@
       <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっかい" remove_kanji="十" kanji="十階" remove_romaji="juu" romaji="jukkai" />
       <variant terminal="unit" value="100" remove_kana="く" kana="っかい" kanji="階" remove_romaji="ku" romaji="kkai" />
     </profile>
+    <profile id="kai_times" kana="かい" kanji="回" romaji="kai">
+      <variant terminal="digit" value="1" remove_kana="いち" kana="いっかい" remove_kanji="一" kanji="一回" remove_romaji="ichi" romaji="ikkai" />
+      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっかい" remove_kanji="六" kanji="六回" remove_romaji="roku" romaji="rokkai" />
+      <variant terminal="digit" value="8" remove_kana="はち" kana="はっかい" remove_kanji="八" kanji="八回" remove_romaji="hachi" romaji="hakkai" />
+      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっかい" remove_kanji="十" kanji="十回" remove_romaji="juu" romaji="jukkai" />
+    </profile>
   </counter_composition_profiles>
   <counting_classes>
     <class id="person" label="Osoby" default_counter="nin">

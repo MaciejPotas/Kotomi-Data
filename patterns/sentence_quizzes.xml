@@ -47,6 +47,7 @@
       <pattern ref="Godzina zegarowa" />
       <pattern ref="Wiek" />
       <pattern ref="Ile razy w miesiącu" />
+      <pattern ref="Liczba razy w miesiącu" />
       <pattern ref="Numer piętra" />
     </patterns>
   </quiz>

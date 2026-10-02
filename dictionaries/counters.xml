@@ -183,7 +183,9 @@
       </quantity_realizations>
     </word>
     <word id="kai_times" translation="raz, liczba powtórzeń" kana="かい" kanji="回" romaji="kai">
+      <composition profile="kai_times" />
       <quantity_realizations>
+        <realization number="100" kana="ひゃっかい" kanji="百回" romaji="hyakkai" />
         <realization symbol="how_many" kana="なんかい" kanji="何回" romaji="nankai" />
       </quantity_realizations>
     </word>
