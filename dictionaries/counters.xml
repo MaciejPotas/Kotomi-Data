@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="2" id="counters" label="Counters" schema="counter">
-  <editor required="translation kana" optional="kanji romaji" metadata="quantity_realizations" />
+  <editor required="translation kana" optional="kanji romaji" metadata="quantity_realizations counter_composition" />
   <words>
     <word id="nin" translation="counter osób" kana="にん" kanji="人" romaji="nin">
+      <composition profile="nin" />
       <quantity_realizations>
         <realization number="1" kana="ひとり" kanji="一人" romaji="hitori" />
         <realization number="2" kana="ふたり" kanji="二人" romaji="futari" />
@@ -18,6 +19,7 @@
       </quantity_realizations>
     </word>
     <word id="hiki" translation="counter małych zwierząt" kana="ひき" kanji="匹" romaji="hiki">
+      <composition profile="hiki" />
       <quantity_realizations>
         <realization number="1" kana="いっぴき" kanji="一匹" romaji="ippiki" />
         <realization number="2" kana="にひき" kanji="二匹" romaji="nihiki" />
@@ -33,6 +35,7 @@
       </quantity_realizations>
     </word>
     <word id="hon" translation="counter długich przedmiotów" kana="ほん" kanji="本" romaji="hon">
+      <composition profile="hon" />
       <quantity_realizations>
         <realization number="1" kana="いっぽん" kanji="一本" romaji="ippon" />
         <realization number="2" kana="にほん" kanji="二本" romaji="nihon" />
@@ -48,6 +51,7 @@
       </quantity_realizations>
     </word>
     <word id="mai" translation="counter płaskich przedmiotów" kana="まい" kanji="枚" romaji="mai">
+      <composition profile="mai" />
       <quantity_realizations>
         <realization number="1" kana="いちまい" kanji="一枚" romaji="ichimai" />
         <realization number="2" kana="にまい" kanji="二枚" romaji="nimai" />
@@ -63,6 +67,7 @@
       </quantity_realizations>
     </word>
     <word id="satsu" translation="counter oprawionych tomów" kana="さつ" kanji="冊" romaji="satsu">
+      <composition profile="satsu" />
       <quantity_realizations>
         <realization number="1" kana="いっさつ" kanji="一冊" romaji="issatsu" />
         <realization number="2" kana="にさつ" kanji="二冊" romaji="nisatsu" />
@@ -78,6 +83,7 @@
       </quantity_realizations>
     </word>
     <word id="dai" translation="counter maszyn i pojazdów" kana="だい" kanji="台" romaji="dai">
+      <composition profile="dai" />
       <quantity_realizations>
         <realization number="1" kana="いちだい" kanji="一台" romaji="ichidai" />
         <realization number="2" kana="にだい" kanji="二台" romaji="nidai" />
@@ -93,6 +99,7 @@
       </quantity_realizations>
     </word>
     <word id="ko" translation="ogólny counter małych przedmiotów" kana="こ" kanji="個" romaji="ko">
+      <composition profile="ko" />
       <quantity_realizations>
         <realization number="1" kana="いっこ" kanji="一個" romaji="ikko" />
         <realization number="2" kana="にこ" kanji="二個" romaji="niko" />
@@ -108,6 +115,7 @@
       </quantity_realizations>
     </word>
     <word id="ji" translation="godzina zegarowa" kana="じ" kanji="時" romaji="ji">
+      <composition profile="ji" />
       <quantity_realizations>
         <realization number="1" kana="いちじ" kanji="一時" romaji="ichiji" />
         <realization number="2" kana="にじ" kanji="二時" romaji="niji" />
@@ -124,6 +132,7 @@
       </quantity_realizations>
     </word>
     <word id="fun" translation="minuta" kana="ふん" kanji="分" romaji="fun">
+      <composition profile="fun" />
       <quantity_realizations>
         <realization number="1" kana="いっぷん" kanji="一分" romaji="ippun" />
         <realization number="2" kana="にふん" kanji="二分" romaji="nifun" />
@@ -140,6 +149,7 @@
       </quantity_realizations>
     </word>
     <word id="sai" translation="wiek w latach" kana="さい" kanji="歳" romaji="sai">
+      <composition profile="sai" />
       <quantity_realizations>
         <realization number="1" kana="いっさい" kanji="一歳" romaji="issai" />
         <realization number="2" kana="にさい" kanji="二歳" romaji="nisai" />
@@ -156,6 +166,7 @@
       </quantity_realizations>
     </word>
     <word id="kai" translation="piętro budynku" kana="かい" kanji="階" romaji="kai">
+      <composition profile="kai" />
       <quantity_realizations>
         <realization number="1" kana="いっかい" kanji="一階" romaji="ikkai" />
         <realization number="2" kana="にかい" kanji="二階" romaji="nikai" />

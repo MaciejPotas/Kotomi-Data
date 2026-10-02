@@ -3,7 +3,7 @@
 This directory contains reusable grammar data used by the Schema 2 project.
 
 - `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, agreement catalogs, noun relation profiles, and noun-case rules.
-- `counting.xml` owns counting classes, class-to-counter compatibility, class defaults, the source language, source count profiles and their authoring strategies, quantity mappings, and named number sets.
+- `counting.xml` owns counting classes, class-to-counter compatibility, class defaults, compositional number and counter profiles, the source language, source count profiles and their authoring strategies, exact or ranged quantity mappings, and named number sets.
 - `contexts.xml` contains reusable context pools used by sentence generation.
 
 ## Form catalogs
@@ -36,9 +36,12 @@ All grammar files are loaded through `../quiz_project.xml`. Keep grammar-wide de
 
 Each counting class lists its compatible counter references and one default
 counter. Nouns store only selected class IDs and an optional exceptional
-`preferred_counter` override. Counter dictionaries store lexical values and
-exact quantity realizations, not noun compatibility. This makes
-`counting.xml` the single source of truth for class-to-counter matching.
+`preferred_counter` override. Counter dictionaries store lexical values,
+exact quantity realizations and a reference to a grammar-owned composition
+profile, but not noun compatibility. Exact output fields override composition
+independently, while symbolic quantities always require exact data. This makes
+`counting.xml` the single source of truth for class-to-counter matching and
+reusable composition rules.
 
 The `one` source profile uses `fallback="noun_case"`; nouns therefore store
 only explicit `few` and `many` forms that differ from their ordinary cases.
@@ -147,7 +150,7 @@ Python.
 
 ## Counting metadata
 
-Schema 2 grammar defines reusable `counting_classes`, `count_source_profiles`, exact quantity-to-profile mappings and named `number_sets`. A number's semantic identity stays language-neutral. Source-form language and authoring strategy are explicit `counting.xml` data. Polish counted noun selection is resolved from the grammar mapping and effective case.
+Schema 2 grammar defines reusable `counting_classes`, `count_source_profiles`, exact or inclusive range quantity-to-profile mappings, compositional number/counter profiles, and named `number_sets`. A number's semantic identity stays language-neutral. Ranges create lazy numeric candidates without adding dictionary words. Source-form language and authoring strategy are explicit `counting.xml` data. Polish counted noun selection is resolved from the grammar mapping and effective case.
 
 ## Named number sets
 

@@ -501,6 +501,32 @@ def validate_counting_data() -> None:
         raise AssertionError(
             "Counting grammar must declare source_language='pl'"
         )
+    number_composition = counting_grammar.find("./number_composition")
+    if number_composition is None:
+        raise AssertionError("Counting grammar needs number composition data")
+    if (
+        number_composition.get("min") != "1"
+        or number_composition.get("max") != "99999999"
+    ):
+        raise AssertionError("Unexpected number composition bounds")
+    digits = {
+        int(str(node.get("value", "0")))
+        for node in number_composition.findall("./digits/digit")
+    }
+    if digits != set(range(1, 10)):
+        raise AssertionError("Number composition must define digits 1..9")
+    units = {
+        int(str(node.get("value", "0")))
+        for node in number_composition.findall("./units/unit")
+    }
+    if units != {10, 100, 1000, 10000}:
+        raise AssertionError("Number composition units are incomplete")
+    composition_profiles = {
+        str(node.get("id", ""))
+        for node in counting_grammar.findall(
+            "./counter_composition_profiles/profile"
+        )
+    }
     source_profiles = {
         str(node.get("id", "")): node
         for node in counting_grammar.findall(
@@ -623,6 +649,14 @@ def validate_counting_data() -> None:
         defaults_by_class[class_id] = default_counter
     for counter_id in required_counters:
         word = counter_words[counter_id]
+        composition = word.find("./composition")
+        if (
+            composition is None
+            or composition.get("profile") not in composition_profiles
+        ):
+            raise AssertionError(
+                f"Counter {counter_id} needs a valid composition profile"
+            )
         identities = {
             ("number", str(node.get("number")))
             if node.get("number") is not None
@@ -732,6 +766,13 @@ def validate_counting_data() -> None:
     if "role:subject" not in query_answer or "id:iru" in query_answer:
         raise AssertionError(
             "Count question must resolve its existential verb through role data."
+        )
+    query_question = patterns_by_id[
+        "Ile jest policzonych rzeczowników"
+    ].findtext("question", default="")
+    if "interrogative@amount[asks_for:count]" not in query_question:
+        raise AssertionError(
+            "Count question must select its interrogative semantically."
         )
     counter_answer = patterns_by_id[
         "Wybierz counter dla rzeczownika"

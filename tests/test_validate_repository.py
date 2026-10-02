@@ -145,6 +145,48 @@ class GrammarValidationContractTests(unittest.TestCase):
         self.assertEqual("plural", profiles["few"].get("source_agreement"))
         self.assertEqual("singular", profiles["many"].get("source_agreement"))
 
+    def test_counting_composition_catalog_is_declared(self) -> None:
+        grammar = ET.parse(
+            ROOT / "grammar" / "counting.xml"
+        ).getroot()
+        composition = grammar.find("./number_composition")
+        self.assertIsNotNone(composition)
+        assert composition is not None
+        self.assertEqual("1", composition.get("min"))
+        self.assertEqual("99999999", composition.get("max"))
+        self.assertEqual(
+            {1, 2, 3, 4, 5, 6, 7, 8, 9},
+            {
+                int(node.get("value", "0"))
+                for node in composition.findall("./digits/digit")
+            },
+        )
+        profiles = {
+            node.get("id")
+            for node in grammar.findall(
+                "./counter_composition_profiles/profile"
+            )
+        }
+        self.assertTrue(
+            {"nin", "hiki", "hon", "mai", "satsu", "dai", "ko",
+             "ji", "fun", "sai", "kai"}.issubset(profiles)
+        )
+
+    def test_source_profiles_use_ranges_for_open_numeric_domains(self) -> None:
+        grammar = ET.parse(
+            ROOT / "grammar" / "counting.xml"
+        ).getroot()
+        ranges = {
+            (node.get("min"), node.get("max"), node.get("profile"))
+            for node in grammar.findall(
+                "./count_source_profiles/quantity_mappings/range"
+            )
+        }
+        self.assertEqual(
+            {("2", "4", "few"), ("5", "*", "many")},
+            ranges,
+        )
+
     def test_canonical_number_sets_are_declared(self) -> None:
         grammar = ET.parse(
             ROOT / "grammar" / "counting.xml"

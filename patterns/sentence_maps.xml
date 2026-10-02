@@ -231,7 +231,7 @@
       <answer>{counter@unit[counts:@item, preferred].kanji}</answer>
     </sentence_pattern>
     <sentence_pattern id="Ile jest policzonych rzeczowników" category="counting">
-      <question>{interrogative@amount[id:how_many].translation} jest {noun@item[quantity:@amount, case:nominative]}?</question>
+      <question>{interrogative@amount[asks_for:count].translation} jest {noun@item[quantity:@amount, case:nominative]}?</question>
       <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form:dictionary]}？</answer>
     </sentence_pattern>
     <sentence_pattern id="Godzina zegarowa" category="counting">

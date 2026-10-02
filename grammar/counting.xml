@@ -1,5 +1,86 @@
 <?xml version='1.0' encoding='utf-8'?>
 <counting schema_version="2" source_language="pl">
+  <number_composition min="1" max="99999999">
+    <digits>
+      <digit value="1" kana="いち" kanji="一" romaji="ichi" />
+      <digit value="2" kana="に" kanji="二" romaji="ni" />
+      <digit value="3" kana="さん" kanji="三" romaji="san" />
+      <digit value="4" kana="よん" kanji="四" romaji="yon" />
+      <digit value="5" kana="ご" kanji="五" romaji="go" />
+      <digit value="6" kana="ろく" kanji="六" romaji="roku" />
+      <digit value="7" kana="なな" kanji="七" romaji="nana" />
+      <digit value="8" kana="はち" kanji="八" romaji="hachi" />
+      <digit value="9" kana="きゅう" kanji="九" romaji="kyuu" />
+    </digits>
+    <units>
+      <unit value="10" kana="じゅう" kanji="十" romaji="juu" />
+      <unit value="100" kana="ひゃく" kanji="百" romaji="hyaku">
+        <variant multiplier="3" kana="さんびゃく" kanji="三百" romaji="sanbyaku" />
+        <variant multiplier="6" kana="ろっぴゃく" kanji="六百" romaji="roppyaku" />
+        <variant multiplier="8" kana="はっぴゃく" kanji="八百" romaji="happyaku" />
+      </unit>
+      <unit value="1000" kana="せん" kanji="千" romaji="sen">
+        <variant multiplier="3" kana="さんぜん" kanji="三千" romaji="sanzen" />
+        <variant multiplier="8" kana="はっせん" kanji="八千" romaji="hassen" />
+      </unit>
+      <unit value="10000" kana="まん" kanji="万" romaji="man" omit_one="false" />
+    </units>
+  </number_composition>
+  <counter_composition_profiles>
+    <profile id="nin" kana="にん" kanji="人" romaji="nin" />
+    <profile id="hiki" kana="ひき" kanji="匹" romaji="hiki">
+      <variant multiplier="0" kana="じゅっぴき" kanji="十匹" romaji="juppiki" />
+      <variant multiplier="1" kana="いっぴき" kanji="一匹" romaji="ippiki" />
+      <variant multiplier="3" kana="さんびき" kanji="三匹" romaji="sanbiki" />
+      <variant multiplier="6" kana="ろっぴき" kanji="六匹" romaji="roppiki" />
+      <variant multiplier="8" kana="はっぴき" kanji="八匹" romaji="happiki" />
+    </profile>
+    <profile id="hon" kana="ほん" kanji="本" romaji="hon">
+      <variant multiplier="0" kana="じゅっぽん" kanji="十本" romaji="juppon" />
+      <variant multiplier="1" kana="いっぽん" kanji="一本" romaji="ippon" />
+      <variant multiplier="3" kana="さんぼん" kanji="三本" romaji="sanbon" />
+      <variant multiplier="6" kana="ろっぽん" kanji="六本" romaji="roppon" />
+      <variant multiplier="8" kana="はっぽん" kanji="八本" romaji="happon" />
+    </profile>
+    <profile id="mai" kana="まい" kanji="枚" romaji="mai" />
+    <profile id="satsu" kana="さつ" kanji="冊" romaji="satsu">
+      <variant multiplier="0" kana="じゅっさつ" kanji="十冊" romaji="jussatsu" />
+      <variant multiplier="1" kana="いっさつ" kanji="一冊" romaji="issatsu" />
+      <variant multiplier="8" kana="はっさつ" kanji="八冊" romaji="hassatsu" />
+    </profile>
+    <profile id="dai" kana="だい" kanji="台" romaji="dai" />
+    <profile id="ko" kana="こ" kanji="個" romaji="ko">
+      <variant multiplier="0" kana="じゅっこ" kanji="十個" romaji="jukko" />
+      <variant multiplier="1" kana="いっこ" kanji="一個" romaji="ikko" />
+      <variant multiplier="6" kana="ろっこ" kanji="六個" romaji="rokko" />
+      <variant multiplier="8" kana="はっこ" kanji="八個" romaji="hakko" />
+    </profile>
+    <profile id="ji" kana="じ" kanji="時" romaji="ji">
+      <variant multiplier="4" kana="よじ" kanji="四時" romaji="yoji" />
+      <variant multiplier="7" kana="しちじ" kanji="七時" romaji="shichiji" />
+      <variant multiplier="9" kana="くじ" kanji="九時" romaji="kuji" />
+    </profile>
+    <profile id="fun" kana="ふん" kanji="分" romaji="fun">
+      <variant multiplier="0" kana="じゅっぷん" kanji="十分" romaji="juppun" />
+      <variant multiplier="1" kana="いっぷん" kanji="一分" romaji="ippun" />
+      <variant multiplier="3" kana="さんぷん" kanji="三分" romaji="sanpun" />
+      <variant multiplier="4" kana="よんぷん" kanji="四分" romaji="yonpun" />
+      <variant multiplier="6" kana="ろっぷん" kanji="六分" romaji="roppun" />
+      <variant multiplier="8" kana="はっぷん" kanji="八分" romaji="happun" />
+    </profile>
+    <profile id="sai" kana="さい" kanji="歳" romaji="sai">
+      <variant multiplier="0" kana="じゅっさい" kanji="十歳" romaji="jussai" />
+      <variant multiplier="1" kana="いっさい" kanji="一歳" romaji="issai" />
+      <variant multiplier="8" kana="はっさい" kanji="八歳" romaji="hassai" />
+    </profile>
+    <profile id="kai" kana="かい" kanji="階" romaji="kai">
+      <variant multiplier="0" kana="じゅっかい" kanji="十階" romaji="jukkai" />
+      <variant multiplier="1" kana="いっかい" kanji="一階" romaji="ikkai" />
+      <variant multiplier="3" kana="さんがい" kanji="三階" romaji="sangai" />
+      <variant multiplier="6" kana="ろっかい" kanji="六階" romaji="rokkai" />
+      <variant multiplier="8" kana="はっかい" kanji="八階" romaji="hakkai" />
+    </profile>
+  </counter_composition_profiles>
   <counting_classes>
     <class id="person" label="Osoby" default_counter="nin">
       <counter ref="nin" />
@@ -31,16 +112,8 @@
     </profiles>
     <quantity_mappings>
       <quantity number="1" profile="one" />
-      <quantity number="2" profile="few" />
-      <quantity number="3" profile="few" />
-      <quantity number="4" profile="few" />
-      <quantity number="5" profile="many" />
-      <quantity number="6" profile="many" />
-      <quantity number="7" profile="many" />
-      <quantity number="8" profile="many" />
-      <quantity number="9" profile="many" />
-      <quantity number="10" profile="many" />
-      <quantity number="20" profile="many" />
+      <range min="2" max="4" profile="few" />
+      <range min="5" max="*" profile="many" />
       <quantity symbol="how_many" profile="many" />
     </quantity_mappings>
   </count_source_profiles>
