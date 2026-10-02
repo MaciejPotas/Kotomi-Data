@@ -24,8 +24,8 @@
     },
     {
       "path": "data/dictionaries/counters.xml",
-      "sha256": "49f49b9126b07f25b51d783c6b30c8aef531abaacf467c459ab73f6851281a5d",
-      "url": "dictionaries/counters.xml?kotomi_sha256=49f49b9126b07f25b51d783c6b30c8aef531abaacf467c459ab73f6851281a5d"
+      "sha256": "59e098282fe84c3bd81e4541c25b19810d750289e34eed79e8156b4a8b101123",
+      "url": "dictionaries/counters.xml?kotomi_sha256=59e098282fe84c3bd81e4541c25b19810d750289e34eed79e8156b4a8b101123"
     },
     {
       "path": "data/dictionaries/interrogatives.xml",

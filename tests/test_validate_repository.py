@@ -193,6 +193,20 @@ class GrammarValidationContractTests(unittest.TestCase):
                 self.assertEqual(kana, node.get("kana"))
                 self.assertEqual(kanji, node.get("kanji"))
 
+    def test_twenty_oclock_is_exact_data(self) -> None:
+        counters = ET.parse(
+            ROOT / "dictionaries" / "counters.xml"
+        ).getroot()
+        realization = counters.find(
+            "./words/word[@id='ji']/"
+            "quantity_realizations/realization[@number='20']"
+        )
+        self.assertIsNotNone(realization)
+        assert realization is not None
+        self.assertEqual("にじゅうじ", realization.get("kana"))
+        self.assertEqual("二十時", realization.get("kanji"))
+        self.assertEqual("nijuuji", realization.get("romaji"))
+
     def test_polarity_pair_requires_complete_pair(self) -> None:
         with self.assertRaisesRegex(
             AssertionError,

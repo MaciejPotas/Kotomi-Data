@@ -119,6 +119,7 @@
         <realization number="8" kana="はちじ" kanji="八時" romaji="hachiji" />
         <realization number="9" kana="くじ" kanji="九時" romaji="kuji" />
         <realization number="10" kana="じゅうじ" kanji="十時" romaji="juuji" />
+        <realization number="20" kana="にじゅうじ" kanji="二十時" romaji="nijuuji" />
         <realization symbol="how_many" kana="なんじ" kanji="何時" romaji="nanji" />
       </quantity_realizations>
     </word>
