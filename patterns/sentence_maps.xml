@@ -222,14 +222,6 @@
       <question>{verb@existence[role:subject, feature:existential, form:dictionary, agree:@count].translation} {number@count[set:one_to_ten, agree:@item, case:nominative].translation} {noun@item[quantity:@count, case:nominative]}.</question>
       <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb@existence[role:subject, feature:existential, form:dictionary]}。</answer>
     </sentence_pattern>
-    <sentence_pattern id="Rozpoznaj liczbę z 匹" category="counting">
-      <question>{counter@unit[id:hiki, quantity:@count]}</question>
-      <answer>{number@count[set:one_to_ten].value}</answer>
-    </sentence_pattern>
-    <sentence_pattern id="Wybierz counter dla rzeczownika" category="counting">
-      <question>{noun@item.translation}</question>
-      <answer>{counter@unit[counts:@item, preferred].kanji}</answer>
-    </sentence_pattern>
     <sentence_pattern id="Ile jest policzonych rzeczowników" category="counting">
       <question>{interrogative@amount[asks_for:count].translation} jest {noun@item[quantity:@amount, case:nominative]}?</question>
       <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form:dictionary]}？</answer>
@@ -238,13 +230,13 @@
       <question>godzina {number@count[range:1..24].value}</question>
       <answer>{counter@unit[id:ji, quantity:@count]}</answer>
     </sentence_pattern>
-    <sentence_pattern id="Trzy minuty" category="counting">
-      <question>{number@count[id:three].translation} minuty</question>
-      <answer>{counter@unit[id:fun, quantity:@count]}</answer>
-    </sentence_pattern>
-    <sentence_pattern id="Wiek dwadzieścia lat" category="counting">
-      <question>wiek: {number@age[id:twenty].translation} lat</question>
+    <sentence_pattern id="Wiek" category="counting">
+      <question>wiek: {number@age[range:1..150].value} lat</question>
       <answer>{counter@unit[id:sai, quantity:@age]}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Ile razy w miesiącu" category="counting">
+      <question>{interrogative@amount[asks_for:count].translation} razy w miesiącu?</question>
+      <answer>一か月に{counter@unit[id:kai_times, quantity:@amount]}？</answer>
     </sentence_pattern>
     <sentence_pattern id="Numer piętra" category="counting">
       <question>piętro numer {number@floor[range:1..10].value}</question>

@@ -182,5 +182,10 @@
         <realization symbol="how_many" kana="なんかい" kanji="何階" romaji="nankai" />
       </quantity_realizations>
     </word>
+    <word id="kai_times" translation="raz, liczba powtórzeń" kana="かい" kanji="回" romaji="kai">
+      <quantity_realizations>
+        <realization symbol="how_many" kana="なんかい" kanji="何回" romaji="nankai" />
+      </quantity_realizations>
+    </word>
   </words>
 </dictionary>

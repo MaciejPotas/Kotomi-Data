@@ -43,6 +43,10 @@ from platforms.mobile.identity import (
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
 from kotomi.application.settings_xml import settings_path
+from kotomi.application.quiz_preflight import (
+    calculate_quiz_statistics,
+    quiz_has_possibilities,
+)
 from kotomi.application.paths import FONTS_DIR
 from kotomi.application.update_transport import QuizUpdater, UpdateError, load_update_url
 
@@ -1152,11 +1156,13 @@ def create_app_class(policy: object = None):
             try:
                 settings = self.read_settings()
                 app = quiz_app()
-                app.save_settings(settings)
-                self.status.color = accent_ok
-                self.status.text = tr("settings.saved")
                 if start_after_save:
-                    app.start_quiz()
+                    self.status.text = tr("specialized.counting")
+                    app.start_quiz(settings, save_on_success=True)
+                else:
+                    app.save_settings(settings)
+                    self.status.color = accent_ok
+                    self.status.text = tr("settings.saved")
             except (policy_error, OSError) as exception:
                 self.status.color = accent_bad
                 self.status.text = mobile_error_text(self, exception)
@@ -2055,7 +2061,12 @@ def create_app_class(policy: object = None):
                     button_scale_state["value"],
                 )
 
-        def start_quiz(self) -> None:
+        def start_quiz(
+            self,
+            settings: Optional[object] = None,
+            *,
+            save_on_success: bool = False,
+        ) -> None:
             if self.restart_required:
                 self.update_message = tr("hub.restart_required")
                 self.go_home()
@@ -2063,15 +2074,40 @@ def create_app_class(policy: object = None):
             if not self.reload_engine() or self.engine is None:
                 self.go_home()
                 return
-            try:
-                session = policy_session(self.engine, self.settings)
-                quiz = self.manager.get_screen("quiz")
-                self.manager.transition = SlideTransition(direction="left")
-                self.manager.current = "quiz"
-                quiz.set_session(session)
-            except (policy_error, ProjectError) as exception:
-                self.engine_error = mobile_error_text(self, exception)
-                self.go_home()
+            selected_settings = settings or self.settings
+
+            def ready(values: Optional[Dict[str, int]], error: str) -> None:
+                if error or values is None:
+                    self._show_quiz_preflight_error(
+                        error or tr("specialized.count_failed")
+                    )
+                    return
+                if not quiz_has_possibilities(values):
+                    self._show_quiz_preflight_error(
+                        tr("specialized.no_possible_questions")
+                    )
+                    return
+                try:
+                    if save_on_success:
+                        self.save_settings(selected_settings)
+                    session = policy_session(self.engine, selected_settings)
+                    quiz = self.manager.get_screen("quiz")
+                    self.manager.transition = SlideTransition(direction="left")
+                    self.manager.current = "quiz"
+                    quiz.set_session(session)
+                except (policy_error, ProjectError, OSError) as exception:
+                    self._show_quiz_preflight_error(
+                        mobile_error_text(self, exception)
+                    )
+
+            self.calculate_statistics(selected_settings, ready)
+
+        def _show_quiz_preflight_error(self, message: str) -> None:
+            setup = self.manager.get_screen("settings")
+            setup.status.color = accent_bad
+            setup.status.text = message
+            self.manager.transition = SlideTransition(direction="left")
+            self.manager.current = "settings"
 
         def open_settings(self) -> None:
             self.manager.transition = SlideTransition(direction="left")
@@ -2097,7 +2133,7 @@ def create_app_class(policy: object = None):
 
             def worker() -> None:
                 try:
-                    result = engine.statistics(settings)
+                    result = calculate_quiz_statistics(engine, settings)
                     Clock.schedule_once(
                         lambda _dt: callback(result, ""),
                         0,

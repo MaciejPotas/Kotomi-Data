@@ -674,6 +674,21 @@ def validate_counting_data() -> None:
     )
     if sai_twenty is None or sai_twenty.get("kana") != "はたち":
         raise AssertionError("Counter sai must realize 20 exactly as はたち")
+    kai_times = counter_words.get("kai_times")
+    kai_times_question = (
+        kai_times.find(
+            "./quantity_realizations/realization[@symbol='how_many']"
+        )
+        if kai_times is not None else None
+    )
+    if (
+        kai_times_question is None
+        or kai_times_question.get("kana") != "なんかい"
+        or kai_times_question.get("kanji") != "何回"
+    ):
+        raise AssertionError(
+            "Counter kai_times must realize how_many as なんかい / 何回"
+        )
 
     counted_classes: set[str] = set()
     for word in nouns.findall("./words/word"):
@@ -721,16 +736,25 @@ def validate_counting_data() -> None:
         for node in patterns.findall("./sentence_patterns/sentence_pattern")
     }
     required_patterns = {
-        "Istnienie policzonych rzeczowników", "Rozpoznaj liczbę z 匹",
-        "Wybierz counter dla rzeczownika",
+        "Istnienie policzonych rzeczowników",
         "Ile jest policzonych rzeczowników",
-        "Godzina zegarowa", "Trzy minuty", "Wiek dwadzieścia lat",
-        "Numer piętra",
+        "Godzina zegarowa", "Wiek", "Ile razy w miesiącu", "Numer piętra",
     }
     if not required_patterns.issubset(pattern_ids):
         raise AssertionError(
             "Missing counting patterns: "
             + ", ".join(sorted(required_patterns - pattern_ids))
+        )
+    retired_patterns = {
+        "Rozpoznaj liczbę z 匹",
+        "Wybierz counter dla rzeczownika",
+        "Trzy minuty",
+        "Wiek dwadzieścia lat",
+    }
+    if retired_patterns & pattern_ids:
+        raise AssertionError(
+            "Retired counting patterns remain: "
+            + ", ".join(sorted(retired_patterns & pattern_ids))
         )
 
     patterns_by_id = {
@@ -774,12 +798,17 @@ def validate_counting_data() -> None:
         raise AssertionError(
             "Count question must select its interrogative semantically."
         )
-    counter_answer = patterns_by_id[
-        "Wybierz counter dla rzeczownika"
-    ].findtext("answer", default="")
-    if "{counter@unit[counts:@item, preferred].kanji}" not in counter_answer:
+    age = patterns_by_id["Wiek"]
+    if "range:1..150" not in age.findtext("question", default=""):
         raise AssertionError(
-            "Counter-choice pattern must resolve the grammar-owned default or noun override."
+            "Age pattern must use the generated range 1..150."
+        )
+    frequency_answer = patterns_by_id[
+        "Ile razy w miesiącu"
+    ].findtext("answer", default="")
+    if "id:kai_times" not in frequency_answer or "一か月に" not in frequency_answer:
+        raise AssertionError(
+            "Monthly frequency pattern must use the dedicated 回 counter."
         )
 
 
