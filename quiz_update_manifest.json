@@ -87,8 +87,8 @@
     },
     {
       "path": "apps/adjectives/mobile.py",
-      "sha256": "c23c7d5b2175e4a4a6dcd4329a052d2f98fab68b560488cea614321e593d4805",
-      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=c23c7d5b2175e4a4a6dcd4329a052d2f98fab68b560488cea614321e593d4805"
+      "sha256": "739dc92a21a7efe271e736a02ecaaeeaef888ef3359f4fe96194204a08b1a6aa",
+      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=739dc92a21a7efe271e736a02ecaaeeaef888ef3359f4fe96194204a08b1a6aa"
     },
     {
       "path": "apps/availability/Kotomi_availability.py",
@@ -107,8 +107,8 @@
     },
     {
       "path": "apps/availability/mobile.py",
-      "sha256": "cbf8b81b4da3aa51df7dd1245163674c4e1738d37109ea3e6ce92a3e31738f9f",
-      "url": "quizzes/availability/mobile.py?kotomi_sha256=cbf8b81b4da3aa51df7dd1245163674c4e1738d37109ea3e6ce92a3e31738f9f"
+      "sha256": "9332147b1d22c316ee8dec0cb5821637bca84af31340c8da73a09a5441f5a20d",
+      "url": "quizzes/availability/mobile.py?kotomi_sha256=9332147b1d22c316ee8dec0cb5821637bca84af31340c8da73a09a5441f5a20d"
     },
     {
       "path": "apps/grammar/Kotomi_grammar.py",
@@ -167,8 +167,8 @@
     },
     {
       "path": "apps/verbs/mobile.py",
-      "sha256": "4109ba01bac7b54be1b1fb1a73a03c9e69cc2228ffe3bfa279e9accb71861e28",
-      "url": "quizzes/verbs/mobile.py?kotomi_sha256=4109ba01bac7b54be1b1fb1a73a03c9e69cc2228ffe3bfa279e9accb71861e28"
+      "sha256": "6990745a000b75ce7e3cee58bf66a15e94a54a67bfd9efa2329e51a896914a56",
+      "url": "quizzes/verbs/mobile.py?kotomi_sha256=6990745a000b75ce7e3cee58bf66a15e94a54a67bfd9efa2329e51a896914a56"
     }
   ]
 }

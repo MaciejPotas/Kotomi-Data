@@ -2074,9 +2074,16 @@ def create_app_class(policy: object = None):
             if not self.reload_engine() or self.engine is None:
                 self.go_home()
                 return
+            engine = self.engine
             selected_settings = settings or self.settings
+            request_generation = (
+                getattr(self, "_quiz_preflight_generation", 0) + 1
+            )
+            self._quiz_preflight_generation = request_generation
 
             def ready(values: Optional[Dict[str, int]], error: str) -> None:
+                if request_generation != self._quiz_preflight_generation:
+                    return
                 if error or values is None:
                     self._show_quiz_preflight_error(
                         error or tr("specialized.count_failed")
@@ -2090,7 +2097,7 @@ def create_app_class(policy: object = None):
                 try:
                     if save_on_success:
                         self.save_settings(selected_settings)
-                    session = policy_session(self.engine, selected_settings)
+                    session = policy_session(engine, selected_settings)
                     quiz = self.manager.get_screen("quiz")
                     self.manager.transition = SlideTransition(direction="left")
                     self.manager.current = "quiz"
@@ -2100,7 +2107,11 @@ def create_app_class(policy: object = None):
                         mobile_error_text(self, exception)
                     )
 
-            self.calculate_statistics(selected_settings, ready)
+            self.calculate_statistics(
+                selected_settings,
+                ready,
+                engine=engine,
+            )
 
         def _show_quiz_preflight_error(self, message: str) -> None:
             setup = self.manager.get_screen("settings")
@@ -2125,15 +2136,20 @@ def create_app_class(policy: object = None):
             self,
             settings: object,
             callback,
+            *,
+            engine=None,
         ) -> None:
-            if self.engine is None:
+            selected_engine = self.engine if engine is None else engine
+            if selected_engine is None:
                 callback(None, self.engine_error)
                 return
-            engine = self.engine
 
             def worker() -> None:
                 try:
-                    result = calculate_quiz_statistics(engine, settings)
+                    result = calculate_quiz_statistics(
+                        selected_engine,
+                        settings,
+                    )
                     Clock.schedule_once(
                         lambda _dt: callback(result, ""),
                         0,
