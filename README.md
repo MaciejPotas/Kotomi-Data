@@ -64,7 +64,7 @@ The project/pattern files use Schema 2. The lesson catalog uses Schema 4.
 
 ## Counting data
 
-Schema 2 keeps semantic numbers and counters as separate lexical selections. The dictionaries provide numbers 1 through 10 plus 20, exact counter realizations for 人, 匹, 本, 枚, 冊, 台, 個, 時, 分, 歳 and 階, and the symbolic how_many quantity. All irregular readings, including 20歳 as はたち, are stored explicitly. Grammar owns counting classes, Polish source count profiles and named number sets. Runtime must never infer pronunciation by concatenation.
+Schema 2 keeps semantic numbers and counters as separate selections. The dictionaries provide lexical numbers 1 through 10 plus 20, exact counter realizations for 人, 匹, 本, 枚, 冊, 台, 個, 時, 分, 歳 and 階, and the symbolic how_many quantity. All full-quantity irregulars, including 20歳 as はたち, are stored explicitly. Grammar owns the generated numeric domain, terminal digit/unit counter composition, Polish source count profiles with periodic suffix mappings, and named lexical number sets. Generated ranges expose value/kana/kanji/romaji rather than synthesized Polish number words.
 
 ## Publishing changes
 

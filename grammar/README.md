@@ -3,7 +3,7 @@
 This directory contains reusable grammar data used by the Schema 2 project.
 
 - `grammar_rules.xml` owns grammar-wide roles, features, noun categories, form catalogs, agreement catalogs, noun relation profiles, and noun-case rules.
-- `counting.xml` owns counting classes, class-to-counter compatibility, class defaults, compositional number and counter profiles, the source language, source count profiles and their authoring strategies, exact or ranged quantity mappings, and named number sets.
+- `counting.xml` owns counting classes, class-to-counter compatibility, class defaults, compositional number and counter profiles, terminal digit/unit rewrites, the source language, source count profiles and their authoring strategies, exact, periodic or ranged quantity mappings, and named number sets.
 - `contexts.xml` contains reusable context pools used by sentence generation.
 
 ## Form catalogs
@@ -150,7 +150,7 @@ Python.
 
 ## Counting metadata
 
-Schema 2 grammar defines reusable `counting_classes`, `count_source_profiles`, exact or inclusive range quantity-to-profile mappings, compositional number/counter profiles, and named `number_sets`. A number's semantic identity stays language-neutral. Ranges create lazy numeric candidates without adding dictionary words. Source-form language and authoring strategy are explicit `counting.xml` data. Polish counted noun selection is resolved from the grammar mapping and effective case.
+Schema 2 grammar defines reusable `counting_classes`, `count_source_profiles`, exact, periodic or inclusive range quantity-to-profile mappings, compositional number/counter profiles, and named `number_sets`. A number's semantic identity stays language-neutral. Periodic mappings classify suffix-dependent source forms without embedding language rules in Python. Counter variants match the terminal numeric component, not the full value modulo ten. Ranges create lazy numeric candidates without adding dictionary words and must stay inside the declared number-composition domain. Generated ranges expose numeric/Japanese outputs only; lexical `id` and `set` selections own source-language translation and agreement. Source-form language and authoring strategy are explicit `counting.xml` data. Polish counted noun selection is resolved from the grammar mapping and effective case.
 
 ## Named number sets
 

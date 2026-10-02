@@ -27,58 +27,71 @@
     </units>
   </number_composition>
   <counter_composition_profiles>
-    <profile id="nin" kana="にん" kanji="人" romaji="nin" />
+    <profile id="nin" kana="にん" kanji="人" romaji="nin">
+      <variant terminal="digit" value="4" remove_kana="よん" kana="よにん" kanji="人" remove_romaji="yon" romaji="yonin" />
+    </profile>
     <profile id="hiki" kana="ひき" kanji="匹" romaji="hiki">
-      <variant multiplier="0" kana="じゅっぴき" kanji="十匹" romaji="juppiki" />
-      <variant multiplier="1" kana="いっぴき" kanji="一匹" romaji="ippiki" />
-      <variant multiplier="3" kana="さんびき" kanji="三匹" romaji="sanbiki" />
-      <variant multiplier="6" kana="ろっぴき" kanji="六匹" romaji="roppiki" />
-      <variant multiplier="8" kana="はっぴき" kanji="八匹" romaji="happiki" />
+      <variant terminal="digit" value="1" remove_kana="いち" kana="いっぴき" remove_kanji="一" kanji="一匹" remove_romaji="ichi" romaji="ippiki" />
+      <variant terminal="digit" value="3" remove_kana="さん" kana="さんびき" remove_kanji="三" kanji="三匹" remove_romaji="san" romaji="sanbiki" />
+      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっぴき" remove_kanji="六" kanji="六匹" remove_romaji="roku" romaji="roppiki" />
+      <variant terminal="digit" value="8" remove_kana="はち" kana="はっぴき" remove_kanji="八" kanji="八匹" remove_romaji="hachi" romaji="happiki" />
+      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっぴき" remove_kanji="十" kanji="十匹" remove_romaji="juu" romaji="juppiki" />
+      <variant terminal="unit" value="100" remove_kana="く" kana="っぴき" kanji="匹" remove_romaji="ku" romaji="ppiki" />
+      <variant terminal="unit" value="1000" kana="びき" kanji="匹" romaji="biki" />
+      <variant terminal="unit" value="10000" kana="びき" kanji="匹" romaji="biki" />
     </profile>
     <profile id="hon" kana="ほん" kanji="本" romaji="hon">
-      <variant multiplier="0" kana="じゅっぽん" kanji="十本" romaji="juppon" />
-      <variant multiplier="1" kana="いっぽん" kanji="一本" romaji="ippon" />
-      <variant multiplier="3" kana="さんぼん" kanji="三本" romaji="sanbon" />
-      <variant multiplier="6" kana="ろっぽん" kanji="六本" romaji="roppon" />
-      <variant multiplier="8" kana="はっぽん" kanji="八本" romaji="happon" />
+      <variant terminal="digit" value="1" remove_kana="いち" kana="いっぽん" remove_kanji="一" kanji="一本" remove_romaji="ichi" romaji="ippon" />
+      <variant terminal="digit" value="3" remove_kana="さん" kana="さんぼん" remove_kanji="三" kanji="三本" remove_romaji="san" romaji="sanbon" />
+      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっぽん" remove_kanji="六" kanji="六本" remove_romaji="roku" romaji="roppon" />
+      <variant terminal="digit" value="8" remove_kana="はち" kana="はっぽん" remove_kanji="八" kanji="八本" remove_romaji="hachi" romaji="happon" />
+      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっぽん" remove_kanji="十" kanji="十本" remove_romaji="juu" romaji="juppon" />
+      <variant terminal="unit" value="100" remove_kana="く" kana="っぽん" kanji="本" remove_romaji="ku" romaji="ppon" />
+      <variant terminal="unit" value="1000" kana="ぼん" kanji="本" romaji="bon" />
+      <variant terminal="unit" value="10000" kana="ぼん" kanji="本" romaji="bon" />
     </profile>
     <profile id="mai" kana="まい" kanji="枚" romaji="mai" />
     <profile id="satsu" kana="さつ" kanji="冊" romaji="satsu">
-      <variant multiplier="0" kana="じゅっさつ" kanji="十冊" romaji="jussatsu" />
-      <variant multiplier="1" kana="いっさつ" kanji="一冊" romaji="issatsu" />
-      <variant multiplier="8" kana="はっさつ" kanji="八冊" romaji="hassatsu" />
+      <variant terminal="digit" value="1" remove_kana="いち" kana="いっさつ" remove_kanji="一" kanji="一冊" remove_romaji="ichi" romaji="issatsu" />
+      <variant terminal="digit" value="8" remove_kana="はち" kana="はっさつ" remove_kanji="八" kanji="八冊" remove_romaji="hachi" romaji="hassatsu" />
+      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっさつ" remove_kanji="十" kanji="十冊" remove_romaji="juu" romaji="jussatsu" />
     </profile>
     <profile id="dai" kana="だい" kanji="台" romaji="dai" />
     <profile id="ko" kana="こ" kanji="個" romaji="ko">
-      <variant multiplier="0" kana="じゅっこ" kanji="十個" romaji="jukko" />
-      <variant multiplier="1" kana="いっこ" kanji="一個" romaji="ikko" />
-      <variant multiplier="6" kana="ろっこ" kanji="六個" romaji="rokko" />
-      <variant multiplier="8" kana="はっこ" kanji="八個" romaji="hakko" />
+      <variant terminal="digit" value="1" remove_kana="いち" kana="いっこ" remove_kanji="一" kanji="一個" remove_romaji="ichi" romaji="ikko" />
+      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっこ" remove_kanji="六" kanji="六個" remove_romaji="roku" romaji="rokko" />
+      <variant terminal="digit" value="8" remove_kana="はち" kana="はっこ" remove_kanji="八" kanji="八個" remove_romaji="hachi" romaji="hakko" />
+      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっこ" remove_kanji="十" kanji="十個" remove_romaji="juu" romaji="jukko" />
+      <variant terminal="unit" value="100" remove_kana="く" kana="っこ" kanji="個" remove_romaji="ku" romaji="kko" />
     </profile>
     <profile id="ji" kana="じ" kanji="時" romaji="ji">
-      <variant multiplier="4" kana="よじ" kanji="四時" romaji="yoji" />
-      <variant multiplier="7" kana="しちじ" kanji="七時" romaji="shichiji" />
-      <variant multiplier="9" kana="くじ" kanji="九時" romaji="kuji" />
+      <variant terminal="digit" value="4" remove_kana="よん" kana="よじ" remove_kanji="四" kanji="四時" remove_romaji="yon" romaji="yoji" />
+      <variant terminal="digit" value="7" remove_kana="なな" kana="しちじ" remove_kanji="七" kanji="七時" remove_romaji="nana" romaji="shichiji" />
+      <variant terminal="digit" value="9" remove_kana="きゅう" kana="くじ" remove_kanji="九" kanji="九時" remove_romaji="kyuu" romaji="kuji" />
     </profile>
     <profile id="fun" kana="ふん" kanji="分" romaji="fun">
-      <variant multiplier="0" kana="じゅっぷん" kanji="十分" romaji="juppun" />
-      <variant multiplier="1" kana="いっぷん" kanji="一分" romaji="ippun" />
-      <variant multiplier="3" kana="さんぷん" kanji="三分" romaji="sanpun" />
-      <variant multiplier="4" kana="よんぷん" kanji="四分" romaji="yonpun" />
-      <variant multiplier="6" kana="ろっぷん" kanji="六分" romaji="roppun" />
-      <variant multiplier="8" kana="はっぷん" kanji="八分" romaji="happun" />
+      <variant terminal="digit" value="1" remove_kana="いち" kana="いっぷん" remove_kanji="一" kanji="一分" remove_romaji="ichi" romaji="ippun" />
+      <variant terminal="digit" value="3" remove_kana="さん" kana="さんぷん" remove_kanji="三" kanji="三分" remove_romaji="san" romaji="sanpun" />
+      <variant terminal="digit" value="4" remove_kana="よん" kana="よんぷん" remove_kanji="四" kanji="四分" remove_romaji="yon" romaji="yonpun" />
+      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっぷん" remove_kanji="六" kanji="六分" remove_romaji="roku" romaji="roppun" />
+      <variant terminal="digit" value="8" remove_kana="はち" kana="はっぷん" remove_kanji="八" kanji="八分" remove_romaji="hachi" romaji="happun" />
+      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっぷん" remove_kanji="十" kanji="十分" remove_romaji="juu" romaji="juppun" />
+      <variant terminal="unit" value="100" remove_kana="く" kana="っぷん" kanji="分" remove_romaji="ku" romaji="ppun" />
+      <variant terminal="unit" value="1000" kana="ぷん" kanji="分" romaji="pun" />
+      <variant terminal="unit" value="10000" kana="ぷん" kanji="分" romaji="pun" />
     </profile>
     <profile id="sai" kana="さい" kanji="歳" romaji="sai">
-      <variant multiplier="0" kana="じゅっさい" kanji="十歳" romaji="jussai" />
-      <variant multiplier="1" kana="いっさい" kanji="一歳" romaji="issai" />
-      <variant multiplier="8" kana="はっさい" kanji="八歳" romaji="hassai" />
+      <variant terminal="digit" value="1" remove_kana="いち" kana="いっさい" remove_kanji="一" kanji="一歳" remove_romaji="ichi" romaji="issai" />
+      <variant terminal="digit" value="8" remove_kana="はち" kana="はっさい" remove_kanji="八" kanji="八歳" remove_romaji="hachi" romaji="hassai" />
+      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっさい" remove_kanji="十" kanji="十歳" remove_romaji="juu" romaji="jussai" />
     </profile>
     <profile id="kai" kana="かい" kanji="階" romaji="kai">
-      <variant multiplier="0" kana="じゅっかい" kanji="十階" romaji="jukkai" />
-      <variant multiplier="1" kana="いっかい" kanji="一階" romaji="ikkai" />
-      <variant multiplier="3" kana="さんがい" kanji="三階" romaji="sangai" />
-      <variant multiplier="6" kana="ろっかい" kanji="六階" romaji="rokkai" />
-      <variant multiplier="8" kana="はっかい" kanji="八階" romaji="hakkai" />
+      <variant terminal="digit" value="1" remove_kana="いち" kana="いっかい" remove_kanji="一" kanji="一階" remove_romaji="ichi" romaji="ikkai" />
+      <variant terminal="digit" value="3" remove_kana="さん" kana="さんがい" remove_kanji="三" kanji="三階" remove_romaji="san" romaji="sangai" />
+      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっかい" remove_kanji="六" kanji="六階" remove_romaji="roku" romaji="rokkai" />
+      <variant terminal="digit" value="8" remove_kana="はち" kana="はっかい" remove_kanji="八" kanji="八階" remove_romaji="hachi" romaji="hakkai" />
+      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっかい" remove_kanji="十" kanji="十階" remove_romaji="juu" romaji="jukkai" />
+      <variant terminal="unit" value="100" remove_kana="く" kana="っかい" kanji="階" remove_romaji="ku" romaji="kkai" />
     </profile>
   </counter_composition_profiles>
   <counting_classes>
@@ -112,8 +125,8 @@
     </profiles>
     <quantity_mappings>
       <quantity number="1" profile="one" />
-      <range min="2" max="4" profile="few" />
-      <range min="5" max="*" profile="many" />
+      <rule min="2" max="*" modulo="10" remainder_min="2" remainder_max="4" exclude_modulo="100" exclude_remainder_min="12" exclude_remainder_max="14" profile="few" />
+      <range min="2" max="*" profile="many" />
       <quantity symbol="how_many" profile="many" />
     </quantity_mappings>
   </count_source_profiles>

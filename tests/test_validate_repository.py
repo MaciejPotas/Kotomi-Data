@@ -172,7 +172,7 @@ class GrammarValidationContractTests(unittest.TestCase):
              "ji", "fun", "sai", "kai"}.issubset(profiles)
         )
 
-    def test_source_profiles_use_ranges_for_open_numeric_domains(self) -> None:
+    def test_source_profiles_use_periodic_rules_for_open_numeric_domains(self) -> None:
         grammar = ET.parse(
             ROOT / "grammar" / "counting.xml"
         ).getroot()
@@ -183,9 +183,49 @@ class GrammarValidationContractTests(unittest.TestCase):
             )
         }
         self.assertEqual(
-            {("2", "4", "few"), ("5", "*", "many")},
+            {("2", "*", "many")},
             ranges,
         )
+        rules = grammar.findall(
+            "./count_source_profiles/quantity_mappings/rule"
+        )
+        self.assertEqual(1, len(rules))
+        self.assertEqual(
+            {
+                "min": "2",
+                "max": "*",
+                "modulo": "10",
+                "remainder_min": "2",
+                "remainder_max": "4",
+                "exclude_modulo": "100",
+                "exclude_remainder_min": "12",
+                "exclude_remainder_max": "14",
+                "profile": "few",
+            },
+            rules[0].attrib,
+        )
+
+    def test_counter_profiles_declare_terminal_component_variants(self) -> None:
+        grammar = ET.parse(
+            ROOT / "grammar" / "counting.xml"
+        ).getroot()
+        profiles = {
+            node.get("id"): node
+            for node in grammar.findall(
+                "./counter_composition_profiles/profile"
+            )
+        }
+        hon_variants = {
+            (node.get("terminal"), node.get("value"))
+            for node in profiles["hon"].findall("./variant")
+        }
+        self.assertTrue({
+            ("digit", "3"),
+            ("unit", "10"),
+            ("unit", "100"),
+            ("unit", "1000"),
+            ("unit", "10000"),
+        }.issubset(hon_variants))
 
     def test_canonical_number_sets_are_declared(self) -> None:
         grammar = ET.parse(
