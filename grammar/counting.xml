@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <counting schema_version="2" source_language="pl">
+  <!--
+Number composition defines how arbitrary Numeric quantities are rendered.
+Generated ranges must fit min..max. Digits and units are language
+data, not runtime rules.
+-->
   <number_composition min="1" max="99999999">
     <digits>
       <digit value="1" kana="いち" kanji="一" romaji="ichi" />
@@ -26,6 +31,13 @@
       <unit value="10000" kana="まん" kanji="万" romaji="man" omit_one="false" />
     </units>
   </number_composition>
+  <!--
+Counter composition profiles modify the terminal component of an
+already composed number. terminal="digit" matches its final digit;
+terminal="unit" matches its final unit. remove_* removes a suffix
+before replacement output is appended. Exact counter realizations
+from counters.xml always take precedence over composition.
+-->
   <counter_composition_profiles>
     <profile id="nin" kana="にん" kanji="人" romaji="nin">
       <variant terminal="digit" value="4" remove_kana="よん" kana="よにん" kanji="人" remove_romaji="yon" romaji="yonin" />
@@ -100,6 +112,11 @@
       <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっかい" remove_kanji="十" kanji="十回" remove_romaji="juu" romaji="jukkai" />
     </profile>
   </counter_composition_profiles>
+  <!--
+Counting classes connect nouns to compatible counters. Each class
+declares one normal default; noun preferred_counter is only an
+exceptional override.
+-->
   <counting_classes>
     <class id="person" label="Osoby" default_counter="nin">
       <counter ref="nin" />
@@ -123,12 +140,22 @@
       <counter ref="ko" />
     </class>
   </counting_classes>
+  <!--
+Count source profiles describe source-language noun forms and
+agreement. fallback="noun_case" reuses the ordinary noun case;
+other profiles require explicit counted forms on the noun.
+-->
   <count_source_profiles>
     <profiles>
       <profile id="one" label="jeden" fallback="noun_case" source_agreement="singular" />
       <profile id="few" label="kilka" source_form_strategy="paucal" source_agreement="plural" />
       <profile id="many" label="wiele lub ile" source_form_strategy="genitive_plural" source_agreement="singular" />
     </profiles>
+    <!--
+Quantity mappings select a source profile for Numeric or Symbolic
+quantities. Exact mappings, periodic rules, and ordinary ranges are
+grammar data and must resolve without ambiguity.
+-->
     <quantity_mappings>
       <quantity number="1" profile="one" />
       <rule min="2" max="*" modulo="10" remainder_min="2" remainder_max="4" exclude_modulo="100" exclude_remainder_min="12" exclude_remainder_max="14" profile="few" />
@@ -136,6 +163,10 @@
       <quantity symbol="how_many" profile="many" />
     </quantity_mappings>
   </count_source_profiles>
+  <!--
+Number sets are named lexical selections. Generated numeric ranges
+use number composition instead and are never materialized as words.
+-->
   <number_sets>
     <set id="one_to_ten" label="Liczby od 1 do 10">
       <number ref="one" />

@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 41,
+  "revision": 42,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "256f4f58ab8266f6afbff3442b6a296d7fb0c4114b324bcc37f1c2c72417eca3",
-      "url": "content_revision.json?kotomi_sha256=256f4f58ab8266f6afbff3442b6a296d7fb0c4114b324bcc37f1c2c72417eca3"
+      "sha256": "9a22b8c0c590a1bab3242b7d94633d97fc9396fc6912a421f43b07fa6d1f59b3",
+      "url": "content_revision.json?kotomi_sha256=9a22b8c0c590a1bab3242b7d94633d97fc9396fc6912a421f43b07fa6d1f59b3"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -54,8 +54,8 @@
     },
     {
       "path": "data/grammar/counting.xml",
-      "sha256": "fd54d0dc18893e6eb22769346d844a5adbef9686a30fdc59924002fdc48d6769",
-      "url": "grammar/counting.xml?kotomi_sha256=fd54d0dc18893e6eb22769346d844a5adbef9686a30fdc59924002fdc48d6769"
+      "sha256": "a292feb3b5ab1c5b1079d97ee9f1209be7a5fb38f9029a4d952c783908f1be57",
+      "url": "grammar/counting.xml?kotomi_sha256=a292feb3b5ab1c5b1079d97ee9f1209be7a5fb38f9029a4d952c783908f1be57"
     },
     {
       "path": "data/grammar/grammar_rules.xml",
