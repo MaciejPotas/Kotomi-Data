@@ -918,6 +918,24 @@ class GrammarQuizEngine:
             "entities": len(self.project.entities),
         }
 
+    def has_possible_question(self, settings: GrammarQuizSettings) -> bool:
+        """Stop after the first assignment that runtime can render."""
+
+        rules = parse_slot_filter(settings.word_filter)
+        combinations = self.build_combinations(settings)
+        for attempt in range(128):
+            combination = combinations[attempt % len(combinations)]
+            question = self._question_for_combination(
+                settings,
+                combination,
+                rules,
+                {},
+                (),
+            )
+            if question is not None:
+                return True
+        return False
+
 
 GrammarQuizSession = AvailabilityQuizSession
 QUIZ_SETTINGS_CLASS = GrammarQuizSettings

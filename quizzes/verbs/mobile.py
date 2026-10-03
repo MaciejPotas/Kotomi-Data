@@ -25,7 +25,7 @@ from kotomi.core.project import ProjectError
 from kotomi.application.settings_xml import settings_path
 from kotomi.application.quiz_preflight import (
     calculate_quiz_statistics,
-    quiz_has_possibilities,
+    quiz_is_feasible,
 )
 from kotomi.application.paths import FONTS_DIR
 from platforms.mobile.presentation import (
@@ -2049,15 +2049,15 @@ def create_app_class():
             )
             self._quiz_preflight_generation = request_generation
 
-            def ready(values: Optional[Dict[str, int]], error: str) -> None:
+            def ready(feasible: Optional[bool], error: str) -> None:
                 if request_generation != self._quiz_preflight_generation:
                     return
-                if error or values is None:
+                if error or feasible is None:
                     self._show_quiz_preflight_error(
                         error or tr("specialized.count_failed")
                     )
                     return
-                if not quiz_has_possibilities(values):
+                if not feasible:
                     self._show_quiz_preflight_error(
                         tr("specialized.no_possible_questions")
                     )
@@ -2075,11 +2075,43 @@ def create_app_class():
                         mobile_error_text(self, exception)
                     )
 
-            self.calculate_statistics(
+            self.check_feasibility(
                 selected_settings,
                 ready,
                 engine=engine,
             )
+
+        def check_feasibility(
+            self,
+            settings: VerbQuizSettings,
+            callback,
+            *,
+            engine=None,
+        ) -> None:
+            selected_engine = self.engine if engine is None else engine
+            if selected_engine is None:
+                callback(None, self.engine_error)
+                return
+
+            def worker() -> None:
+                try:
+                    result = quiz_is_feasible(selected_engine, settings)
+                    Clock.schedule_once(
+                        lambda _dt: callback(result, ""),
+                        0,
+                    )
+                except Exception as exception:
+                    message = mobile_error_text(
+                        self,
+                        exception,
+                        key="mobile.update_failed",
+                    )
+                    Clock.schedule_once(
+                        lambda _dt: callback(None, message),
+                        0,
+                    )
+
+            threading.Thread(target=worker, daemon=True).start()
 
         def _show_quiz_preflight_error(self, message: str) -> None:
             setup = self.manager.get_screen("settings")
