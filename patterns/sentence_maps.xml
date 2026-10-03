@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<sentence_maps schema_version="1">
+<sentence_maps schema_version="2">
   <sentence_patterns>
     <sentence_pattern id="Sam czasownik" category="basic">
       <question>{context.translation}{verb[form].translation}.</question>
@@ -67,8 +67,8 @@
         <pattern ref="Miejsce czynności" />
         <pattern ref="Środek transportu" />
       </patterns>
-      <question>{context[pool:@main].translation}{verb@main[id:aru, role:subject, form].translation} {noun@reason[category:availability_reason, government:@main].phrase}, żeby {pattern[form:dictionary, translation:base, case_scope:embedded]}.</question>
-      <answer>{context[pool:@main].kana}{pattern[form:dictionary, case_scope:embedded]}{noun@reason[category:availability_reason]}が{verb@main[id:aru, role:subject, form]}</answer>
+      <question>{context[pool:@main].translation}{verb@main[id:aru_existential, role:subject, form, agree:@reason].translation} {noun@reason[category:availability_reason, government:@main].phrase}, żeby {pattern[form:dictionary, translation:base, case_scope:embedded]}.</question>
+      <answer>{context[pool:@main].kana}{pattern[form:dictionary, case_scope:embedded]}{noun@reason[category:availability_reason]}が{verb@main[id:aru_existential, role:subject, form]}</answer>
     </sentence_pattern>
     <sentence_pattern id="Możliwość ことができる" category="constructions">
       <patterns>
@@ -217,6 +217,34 @@
       </patterns>
       <question>W jaki sposób {context.translation}{pattern}?</question>
       <answer>{context.kana}{interrogative[asks_for:method]}{pattern}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Istnienie policzonych rzeczowników" category="counting">
+      <question>{verb@existence[role:subject, feature:existential, form:dictionary, agree:@count].translation} {number@count[set:one_to_ten, agree:@item, case:nominative].translation} {noun@item[quantity:@count, case:nominative]}.</question>
+      <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb@existence[role:subject, feature:existential, form:dictionary]}。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Ile jest policzonych rzeczowników" category="counting">
+      <question>{interrogative@amount[asks_for:count].translation} jest {noun@item[quantity:@amount, case:nominative]}?</question>
+      <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form:dictionary]}？</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Godzina zegarowa" category="counting">
+      <question>godzina {number@count[range:1..24].value}</question>
+      <answer>{counter@unit[id:ji, quantity:@count]}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Wiek" category="counting">
+      <question>wiek: {number@age[range:1..150].value} lat</question>
+      <answer>{counter@unit[id:sai, quantity:@age]}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Ile razy w miesiącu" category="counting">
+      <question>{interrogative@amount[asks_for:count].translation} razy w miesiącu?</question>
+      <answer>一か月に{counter@unit[id:kai_times, quantity:@amount]}？</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Liczba razy w miesiącu" category="counting">
+      <question>{number@count[range:1..500].value} razy w miesiącu</question>
+      <answer>一か月に{counter@unit[id:kai_times, quantity:@count].kanji}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Numer piętra" category="counting">
+      <question>piętro numer {number@floor[range:1..10].value}</question>
+      <answer>{counter@unit[id:kai, quantity:@floor]}</answer>
     </sentence_pattern>
   </sentence_patterns>
 </sentence_maps>

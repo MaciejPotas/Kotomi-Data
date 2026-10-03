@@ -10,12 +10,20 @@ Files:
 - `connectors.xml`
 - `copulas.xml`
 - `interrogatives.xml`
+- `numbers.xml`
+- `counters.xml`
 
-All dictionary files use project Schema 1 and are referenced by `../quiz_project.xml`. Dictionary IDs are part of the data contract and can be referenced by lessons, grammar, patterns, and quiz code, so renaming an ID requires updating every reference and the validation tests.
+All dictionary files use project Schema 2 and are referenced by `../quiz_project.xml`. Dictionary IDs are part of the data contract and can be referenced by lessons, grammar, patterns, and quiz code, so renaming an ID requires updating every reference and the validation tests.
 
 Keep word data here. Grammar rules, sentence patterns, and lesson organization belong in their corresponding directories.
 
 The `interrogatives` dictionary stores Japanese question words as form-less lexical entries. `asks_for` describes the information requested (for example `place`, `reason`, or `method`); grammar patterns still own particles and sentence structure.
+
+Japanese homographs with different source-language syntax remain separate
+lexical entries. In particular, `aru_possessive` owns Polish `mieć` and
+direct-object government, while `aru_existential` owns `być / istnieć`, the
+`existential` feature, and nominative/genitive existential government. Both
+entries realize Japanese `ある`; patterns never switch an entry's meaning.
 
 The `connectors` dictionary stores form-less discourse connectors. Connector
 entries own only their lexical Japanese value and Polish meaning. Sentence
@@ -55,3 +63,20 @@ same realization while still allowing lexical differences such as
 
 Relation profiles are authoring data. Runtime does not infer a profile from the
 noun category or Polish spelling.
+
+
+## Schema 2 counting dictionaries
+
+- `numbers.xml` stores semantic integer values and standalone Japanese and Polish forms.
+- `counters.xml` stores lexical values, exact per-output realizations keyed by numeric or symbolic quantity, and references to grammar-owned composition profiles.
+- `grammar/counting.xml` is the single source of class-to-counter compatibility and class defaults.
+- noun `<counting>` metadata stores counting classes, an optional exceptional preferred-counter override, and explicit Polish profile-by-case forms.
+- the `how_many` interrogative exposes `quantity_symbol="how_many"`.
+
+Exact counter realization fields are authoritative and override composition. Numeric gaps may use the profile declared in `grammar/counting.xml`; symbolic quantities remain exact-only.
+The `one` profile falls back to ordinary noun cases and must not duplicate them.
+Studio builds its counted-form table from the profiles in `counting.xml` and
+all cases supported by the project model. Authoring-time autofill may propose
+only conservative forms supported by the noun translation, agreement class,
+ordinary cases and quantity mappings. The proposal is saved as editable XML;
+unknown forms stay empty and runtime never performs Polish morphology.

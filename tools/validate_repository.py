@@ -15,10 +15,13 @@ PROJECT_SCHEMA_FILES = {
     "dictionaries/adjectives.xml",
     "dictionaries/connectors.xml",
     "dictionaries/copulas.xml",
+    "dictionaries/counters.xml",
     "dictionaries/interrogatives.xml",
     "dictionaries/nouns.xml",
+    "dictionaries/numbers.xml",
     "dictionaries/verbs.xml",
     "grammar/contexts.xml",
+    "grammar/counting.xml",
     "grammar/grammar_rules.xml",
     "patterns/sentence_maps.xml",
     "patterns/sentence_quizzes.xml",
@@ -30,10 +33,13 @@ CONTENT_MANIFEST_ORDER = [
     "data/dictionaries/adjectives.xml",
     "data/dictionaries/connectors.xml",
     "data/dictionaries/copulas.xml",
+    "data/dictionaries/counters.xml",
     "data/dictionaries/interrogatives.xml",
     "data/dictionaries/nouns.xml",
+    "data/dictionaries/numbers.xml",
     "data/dictionaries/verbs.xml",
     "data/grammar/contexts.xml",
+    "data/grammar/counting.xml",
     "data/grammar/grammar_rules.xml",
     "data/lessons/lessons.xml",
     "data/patterns/sentence_maps.xml",
@@ -182,8 +188,8 @@ def validate_xml_and_schemas() -> None:
             raise AssertionError(f"Malformed XML in {relative}: {exc}") from exc
 
         if relative in PROJECT_SCHEMA_FILES:
-            if root.get("schema_version") != "1":
-                raise AssertionError(f"{relative} must use project/pattern Schema 1")
+            if root.get("schema_version") != "2":
+                raise AssertionError(f"{relative} must use project/pattern Schema 2")
         elif root.get("schema_version") != "4":
             raise AssertionError(
                 f"{LESSON_SCHEMA_FILE} must use lesson catalog Schema 4"
@@ -478,6 +484,381 @@ def validate_lesson_references() -> None:
                 )
 
 
+def validate_counting_data() -> None:
+    """Validate the complete Schema 2 counting acceptance inventory."""
+
+    numbers = ET.parse(ROOT / "dictionaries" / "numbers.xml").getroot()
+    counters = ET.parse(ROOT / "dictionaries" / "counters.xml").getroot()
+    nouns = ET.parse(ROOT / "dictionaries" / "nouns.xml").getroot()
+    interrogatives = ET.parse(
+        ROOT / "dictionaries" / "interrogatives.xml"
+    ).getroot()
+    grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
+    counting_grammar = ET.parse(ROOT / "grammar" / "counting.xml").getroot()
+    patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+
+    if counting_grammar.get("source_language") != "pl":
+        raise AssertionError(
+            "Counting grammar must declare source_language='pl'"
+        )
+    number_composition = counting_grammar.find("./number_composition")
+    if number_composition is None:
+        raise AssertionError("Counting grammar needs number composition data")
+    if (
+        number_composition.get("min") != "1"
+        or number_composition.get("max") != "99999999"
+    ):
+        raise AssertionError("Unexpected number composition bounds")
+    digits = {
+        int(str(node.get("value", "0")))
+        for node in number_composition.findall("./digits/digit")
+    }
+    if digits != set(range(1, 10)):
+        raise AssertionError("Number composition must define digits 1..9")
+    units = {
+        int(str(node.get("value", "0")))
+        for node in number_composition.findall("./units/unit")
+    }
+    if units != {10, 100, 1000, 10000}:
+        raise AssertionError("Number composition units are incomplete")
+    composition_profiles = {
+        str(node.get("id", ""))
+        for node in counting_grammar.findall(
+            "./counter_composition_profiles/profile"
+        )
+    }
+    source_profiles = {
+        str(node.get("id", "")): node
+        for node in counting_grammar.findall(
+            "./count_source_profiles/profiles/profile"
+        )
+    }
+    if source_profiles.get("one") is None or (
+        source_profiles["one"].get("fallback") != "noun_case"
+    ):
+        raise AssertionError(
+            "Count source profile one must use noun_case fallback"
+        )
+    expected_strategies = {
+        "few": "paucal",
+        "many": "genitive_plural",
+    }
+    for profile_id, expected in expected_strategies.items():
+        profile = source_profiles.get(profile_id)
+        if profile is None or profile.get("source_form_strategy") != expected:
+            raise AssertionError(
+                f"Count source profile {profile_id} must declare "
+                f"source_form_strategy='{expected}'"
+            )
+    expected_agreements = {
+        "one": "singular",
+        "few": "plural",
+        "many": "singular",
+    }
+    for profile_id, expected in expected_agreements.items():
+        profile = source_profiles.get(profile_id)
+        if profile is None or profile.get("source_agreement") != expected:
+            raise AssertionError(
+                f"Count source profile {profile_id} must declare "
+                f"source_agreement='{expected}'"
+            )
+
+    number_values: dict[int, str] = {}
+    for word in numbers.findall("./words/word"):
+        word_id = str(word.get("id", ""))
+        try:
+            value = int(str(word.get("value", "")))
+        except ValueError as exc:
+            raise AssertionError(f"Number {word_id} has invalid value") from exc
+        if value in number_values:
+            raise AssertionError(f"Duplicate number value: {value}")
+        number_values[value] = word_id
+    missing_values = (set(range(1, 11)) | {20}) - set(number_values)
+    if missing_values:
+        raise AssertionError(
+            f"Counting numbers are missing values: {sorted(missing_values)}"
+        )
+
+    quantity_sources = {
+        str(word.get("quantity_symbol", "")): str(word.get("id", ""))
+        for word in interrogatives.findall("./words/word")
+        if word.get("quantity_symbol")
+    }
+    if quantity_sources.get("how_many") != "how_many":
+        raise AssertionError(
+            "Interrogative how_many must expose quantity_symbol='how_many'"
+        )
+
+    class_ids = {
+        str(node.get("id", ""))
+        for node in counting_grammar.findall("./counting_classes/class")
+    }
+    required_classes = {
+        "person", "small_animal", "long_object", "flat_object",
+        "bound_volume", "machine", "small_object",
+    }
+    if not required_classes.issubset(class_ids):
+        raise AssertionError(
+            "Missing counting classes: "
+            + ", ".join(sorted(required_classes - class_ids))
+        )
+
+    counter_words = {
+        str(word.get("id", "")): word
+        for word in counters.findall("./words/word")
+    }
+    if any(word.find("./counts") is not None for word in counter_words.values()):
+        raise AssertionError(
+            "Counter compatibility must be defined only in counting.xml"
+        )
+    required_counters = {
+        "nin", "hiki", "hon", "mai", "satsu", "dai", "ko",
+        "ji", "fun", "sai", "kai", "kai_times",
+    }
+    if not required_counters.issubset(counter_words):
+        raise AssertionError(
+            "Missing counters: "
+            + ", ".join(sorted(required_counters - set(counter_words)))
+        )
+    counters_by_class: dict[str, set[str]] = {}
+    defaults_by_class: dict[str, str] = {}
+    for class_node in counting_grammar.findall("./counting_classes/class"):
+        class_id = str(class_node.get("id", ""))
+        refs = [
+            str(counter.get("ref", ""))
+            for counter in class_node.findall("./counter")
+        ]
+        default_counter = str(class_node.get("default_counter", ""))
+        if not refs:
+            raise AssertionError(f"Counting class {class_id} has no counters")
+        if len(refs) != len(set(refs)):
+            raise AssertionError(
+                f"Counting class {class_id} repeats a counter reference"
+            )
+        if default_counter not in refs:
+            raise AssertionError(
+                f"Counting class {class_id} has invalid default counter"
+            )
+        unknown = set(refs) - set(counter_words)
+        if unknown:
+            raise AssertionError(
+                f"Counting class {class_id} references unknown counters: "
+                + ", ".join(sorted(unknown))
+            )
+        counters_by_class[class_id] = set(refs)
+        defaults_by_class[class_id] = default_counter
+    for counter_id in required_counters:
+        word = counter_words[counter_id]
+        composition = word.find("./composition")
+        if (
+            composition is None
+            or composition.get("profile") not in composition_profiles
+        ):
+            raise AssertionError(
+                f"Counter {counter_id} needs a valid composition profile"
+            )
+        if counter_id == "kai_times":
+            continue
+        identities = {
+            ("number", str(node.get("number")))
+            if node.get("number") is not None
+            else ("symbol", str(node.get("symbol")))
+            for node in word.findall("./quantity_realizations/realization")
+        }
+        required = {("number", str(value)) for value in range(1, 11)}
+        required.add(("symbol", "how_many"))
+        if not required.issubset(identities):
+            raise AssertionError(
+                f"Counter {counter_id} lacks required 1..10/how_many data"
+            )
+    sai_twenty = counter_words["sai"].find(
+        "./quantity_realizations/realization[@number='20']"
+    )
+    if sai_twenty is None or sai_twenty.get("kana") != "はたち":
+        raise AssertionError("Counter sai must realize 20 exactly as はたち")
+    kai_times = counter_words.get("kai_times")
+    kai_times_composition = (
+        kai_times.find("./composition") if kai_times is not None else None
+    )
+    if (
+        kai_times_composition is None
+        or kai_times_composition.get("profile") != "kai_times"
+    ):
+        raise AssertionError(
+            "Counter kai_times must use its dedicated composition profile"
+        )
+    kai_times_hundred = (
+        kai_times.find(
+            "./quantity_realizations/realization[@number='100']"
+        )
+        if kai_times is not None else None
+    )
+    if (
+        kai_times_hundred is None
+        or kai_times_hundred.get("kana") != "ひゃっかい"
+        or kai_times_hundred.get("kanji") != "百回"
+        or kai_times_hundred.get("romaji") != "hyakkai"
+    ):
+        raise AssertionError(
+            "Counter kai_times must realize 100 exactly as ひゃっかい / 百回"
+        )
+    kai_times_question = (
+        kai_times.find(
+            "./quantity_realizations/realization[@symbol='how_many']"
+        )
+        if kai_times is not None else None
+    )
+    if (
+        kai_times_question is None
+        or kai_times_question.get("kana") != "なんかい"
+        or kai_times_question.get("kanji") != "何回"
+    ):
+        raise AssertionError(
+            "Counter kai_times must realize how_many as なんかい / 何回"
+        )
+
+    counted_classes: set[str] = set()
+    for word in nouns.findall("./words/word"):
+        counting = word.find("./counting")
+        if counting is None:
+            continue
+        classes = set(str(counting.get("classes", "")).split())
+        unknown = classes - class_ids
+        if unknown:
+            raise AssertionError(
+                f"Noun {word.get('id')} uses unknown counting classes: "
+                + ", ".join(sorted(unknown))
+            )
+        counted_classes.update(classes)
+        preferred = str(counting.get("preferred_counter", ""))
+        defaults = {
+            defaults_by_class[class_id]
+            for class_id in classes
+            if defaults_by_class.get(class_id)
+        }
+        if len(defaults) > 1 and not preferred:
+            raise AssertionError(
+                f"Noun {word.get('id')} has ambiguous class defaults and "
+                "must declare preferred_counter"
+            )
+        compatible = set().union(*(
+            counters_by_class.get(class_id, set()) for class_id in classes
+        )) if classes else set()
+        if preferred and preferred not in compatible:
+            raise AssertionError(
+                f"Noun {word.get('id')} uses incompatible preferred counter {preferred}"
+            )
+        if counting.find("./source_forms/form[@profile='one']") is not None:
+            raise AssertionError(
+                f"Noun {word.get('id')} duplicates one instead of noun_case fallback"
+            )
+    if not required_classes.issubset(counted_classes):
+        raise AssertionError(
+            "No noun example for classes: "
+            + ", ".join(sorted(required_classes - counted_classes))
+        )
+
+    pattern_ids = {
+        str(node.get("id", ""))
+        for node in patterns.findall("./sentence_patterns/sentence_pattern")
+    }
+    required_patterns = {
+        "Istnienie policzonych rzeczowników",
+        "Ile jest policzonych rzeczowników",
+        "Godzina zegarowa", "Wiek", "Ile razy w miesiącu",
+        "Liczba razy w miesiącu", "Numer piętra",
+    }
+    if not required_patterns.issubset(pattern_ids):
+        raise AssertionError(
+            "Missing counting patterns: "
+            + ", ".join(sorted(required_patterns - pattern_ids))
+        )
+    retired_patterns = {
+        "Rozpoznaj liczbę z 匹",
+        "Wybierz counter dla rzeczownika",
+        "Trzy minuty",
+        "Wiek dwadzieścia lat",
+    }
+    if retired_patterns & pattern_ids:
+        raise AssertionError(
+            "Retired counting patterns remain: "
+            + ", ".join(sorted(retired_patterns & pattern_ids))
+        )
+
+    patterns_by_id = {
+        str(node.get("id", "")): node
+        for node in patterns.findall("./sentence_patterns/sentence_pattern")
+    }
+    existential = patterns_by_id["Istnienie policzonych rzeczowników"]
+    existential_text = "".join(existential.itertext())
+    required_fragments = {
+        "role:subject",
+        "feature:existential",
+        "agree:@count",
+        "quantity:@count",
+        "counts:@item, preferred",
+    }
+    if not required_fragments.issubset(set(
+        fragment
+        for fragment in required_fragments
+        if fragment in existential_text
+    )):
+        raise AssertionError(
+            "Generic existential counting pattern is missing a data-driven "
+            "dependency."
+        )
+    forbidden = ("id:iru", "id:aru", "id:hiki", "id:satsu", "id:dai", "いる", "ある")
+    if any(value in existential_text for value in forbidden):
+        raise AssertionError(
+            "Generic existential counting pattern hardcodes a verb or counter."
+        )
+    query_answer = patterns_by_id[
+        "Ile jest policzonych rzeczowników"
+    ].findtext("answer", default="")
+    if "role:subject" not in query_answer or "id:iru" in query_answer:
+        raise AssertionError(
+            "Count question must resolve its existential verb through role data."
+        )
+    query_question = patterns_by_id[
+        "Ile jest policzonych rzeczowników"
+    ].findtext("question", default="")
+    if "interrogative@amount[asks_for:count]" not in query_question:
+        raise AssertionError(
+            "Count question must select its interrogative semantically."
+        )
+    age = patterns_by_id["Wiek"]
+    if "range:1..150" not in age.findtext("question", default=""):
+        raise AssertionError(
+            "Age pattern must use the generated range 1..150."
+        )
+    frequency_answer = patterns_by_id[
+        "Ile razy w miesiącu"
+    ].findtext("answer", default="")
+    if "id:kai_times" not in frequency_answer or "一か月に" not in frequency_answer:
+        raise AssertionError(
+            "Monthly frequency pattern must use the dedicated 回 counter."
+        )
+    numeric_frequency = patterns_by_id["Liczba razy w miesiącu"]
+    numeric_frequency_question = numeric_frequency.findtext(
+        "question", default=""
+    )
+    numeric_frequency_answer = numeric_frequency.findtext(
+        "answer", default=""
+    )
+    if "range:1..500" not in numeric_frequency_question:
+        raise AssertionError(
+            "Numeric monthly frequency must use generated range 1..500."
+        )
+    if (
+        "id:kai_times" not in numeric_frequency_answer
+        or "quantity:@count" not in numeric_frequency_answer
+        or ".kanji" not in numeric_frequency_answer
+    ):
+        raise AssertionError(
+            "Numeric monthly frequency must render generated 回 quantities."
+        )
+
+
 def validate_content_manifest() -> None:
     revision = load_json(ROOT / "content_revision.json")
     manifest = load_json(ROOT / "content_update_manifest.json")
@@ -631,6 +1012,7 @@ def main() -> None:
     validate_shared_grammar_dependencies()
     validate_composite_case_scopes()
     validate_lesson_references()
+    validate_counting_data()
     validate_content_manifest()
     validate_quiz_manifest()
     print("Kotomi-Data validation passed")

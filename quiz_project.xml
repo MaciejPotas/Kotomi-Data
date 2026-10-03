@@ -1,14 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<quiz_project schema_version="1">
+<quiz_project schema_version="2">
   <dictionaries>
     <dictionary id="adjectives" file="dictionaries/adjectives.xml" label="Adjectives" schema="adjective" />
     <dictionary id="connectors" file="dictionaries/connectors.xml" label="Connectors" schema="connector" />
     <dictionary id="copulas" file="dictionaries/copulas.xml" label="Copulas" schema="copula" />
     <dictionary id="interrogatives" file="dictionaries/interrogatives.xml" label="Interrogatives" schema="interrogative" />
     <dictionary id="nouns" file="dictionaries/nouns.xml" label="Nouns" schema="noun" />
+    <dictionary id="numbers" file="dictionaries/numbers.xml" label="Numbers" schema="number" />
+    <dictionary id="counters" file="dictionaries/counters.xml" label="Counters" schema="counter" />
     <dictionary id="verbs" file="dictionaries/verbs.xml" label="Verbs" schema="verb" />
   </dictionaries>
   <grammar file="grammar/grammar_rules.xml" />
+  <counting file="grammar/counting.xml" />
   <contexts file="grammar/contexts.xml" />
   <sentence_maps file="patterns/sentence_maps.xml" />
   <sentence_quizzes file="patterns/sentence_quizzes.xml" />

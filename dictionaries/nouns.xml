@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="1" id="nouns" label="Nouns" schema="noun">
-  <editor required="translation kana" optional="kanji romaji" metadata="category agreement cases relations" />
+<dictionary schema_version="2" id="nouns" label="Nouns" schema="noun">
+  <editor required="translation kana" optional="kanji romaji" metadata="category agreement cases relations counting" />
   <words>
     <word id="bag" translation="torba" kana="かばん" kanji="鞄" type="noun" category="thing">
       <agreement class="feminine" />
@@ -9,6 +9,13 @@
     <word id="book" translation="książka" kana="ほん" kanji="本" type="noun" category="text">
       <agreement class="feminine" />
       <cases language="pl" nominative="książka" genitive="książki" accusative="książkę" instrumental="książką" locative="książce" dative="książce" vocative="książko" />
+      <counting classes="bound_volume">
+        <source_forms language="pl">
+        <form profile="few" cases="nominative accusative" value="książki" />
+        <form profile="few" cases="genitive" value="książek" />
+        <form profile="many" cases="nominative accusative genitive" value="książek" />
+        </source_forms>
+      </counting>
     </word>
     <word id="box" translation="pudełko" kana="はこ" kanji="箱" type="noun" category="thing">
       <agreement class="neuter" />
@@ -17,6 +24,13 @@
     <word id="car" translation="samochód" kana="くるま" kanji="車" type="noun" category="vehicle">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="samochód" genitive="samochodu" accusative="samochód" instrumental="samochodem" locative="samochodzie" dative="samochodowi" vocative="samochodzie" />
+      <counting classes="machine">
+        <source_forms language="pl">
+        <form profile="few" cases="nominative accusative" value="samochody" />
+        <form profile="few" cases="genitive" value="samochodów" />
+        <form profile="many" cases="nominative accusative genitive" value="samochodów" />
+        </source_forms>
+      </counting>
     </word>
     <word id="clothes" translation="ubrania" kana="ふく" kanji="服" type="noun" category="thing">
       <agreement class="plural_non_masculine_personal" />
@@ -55,6 +69,13 @@
     <word id="inu" translation="pies" kana="いぬ" kanji="犬" type="noun" category="animal">
       <agreement class="masculine_animate" />
       <cases language="pl" nominative="pies" genitive="psa" dative="psu" accusative="psa" instrumental="psem" locative="psie" vocative="psie" />
+      <counting classes="small_animal">
+        <source_forms language="pl">
+        <form profile="few" cases="nominative accusative" value="psy" />
+        <form profile="few" cases="genitive" value="psów" />
+        <form profile="many" cases="nominative accusative genitive" value="psów" />
+        </source_forms>
+      </counting>
     </word>
     <word id="jikan" translation="czas" kana="じかん" kanji="時間" type="noun" category="availability_reason">
       <agreement class="masculine_inanimate" />
@@ -117,6 +138,13 @@
     <word id="ringo" translation="jabłko" kana="りんご" kanji="林檎" type="noun" category="food">
       <agreement class="neuter" />
       <cases language="pl" nominative="jabłko" genitive="jabłka" accusative="jabłko" instrumental="jabłkiem" locative="jabłku" dative="jabłku" vocative="jabłko" />
+      <counting classes="small_object">
+        <source_forms language="pl">
+        <form profile="few" cases="nominative accusative" value="jabłka" />
+        <form profile="few" cases="genitive" value="jabłek" />
+        <form profile="many" cases="nominative accusative genitive" value="jabłek" />
+        </source_forms>
+      </counting>
     </word>
     <word id="room" translation="pokój" kana="へや" kanji="部屋" type="noun" category="place">
       <agreement class="masculine_inanimate" />
@@ -216,6 +244,13 @@
     <word id="hito" translation="osoba" kana="ひと" kanji="人" type="noun" category="person">
       <agreement class="feminine" />
       <cases language="pl" nominative="osoba" genitive="osoby" dative="osobie" accusative="osobę" instrumental="osobą" locative="osobie" vocative="osobo" />
+      <counting classes="person">
+        <source_forms language="pl">
+        <form profile="few" cases="nominative accusative" value="osoby" />
+        <form profile="few" cases="genitive" value="osób" />
+        <form profile="many" cases="nominative accusative genitive" value="osób" />
+        </source_forms>
+      </counting>
     </word>
     <word id="oku" translation="głębia" kana="おく" kanji="奥" type="noun" category="place">
       <agreement class="feminine" />
@@ -249,6 +284,28 @@
     <word id="detarame" translation="nonsens" kana="でたらめ" type="noun" category="abstract">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="nonsens" genitive="nonsensu" dative="nonsensowi" accusative="nonsens" instrumental="nonsensem" locative="nonsensie" vocative="nonsensie" />
+    </word>
+    <word id="pencil" translation="ołówek" kana="えんぴつ" kanji="鉛筆" type="noun" category="thing">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="ołówek" genitive="ołówka" dative="ołówkowi" accusative="ołówek" instrumental="ołówkiem" locative="ołówku" vocative="ołówku" />
+      <counting classes="long_object">
+        <source_forms language="pl">
+        <form profile="few" cases="nominative accusative" value="ołówki" />
+        <form profile="few" cases="genitive" value="ołówków" />
+        <form profile="many" cases="nominative accusative genitive" value="ołówków" />
+        </source_forms>
+      </counting>
+    </word>
+    <word id="paper_sheet" translation="kartka papieru" kana="かみ" kanji="紙" type="noun" category="thing">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="kartka papieru" genitive="kartki papieru" dative="kartce papieru" accusative="kartkę papieru" instrumental="kartką papieru" locative="kartce papieru" vocative="kartko papieru" />
+      <counting classes="flat_object">
+        <source_forms language="pl">
+        <form profile="few" cases="nominative accusative" value="kartki papieru" />
+        <form profile="few" cases="genitive" value="kartek papieru" />
+        <form profile="many" cases="nominative accusative genitive" value="kartek papieru" />
+        </source_forms>
+      </counting>
     </word>
   </words>
 </dictionary>

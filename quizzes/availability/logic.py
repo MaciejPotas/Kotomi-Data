@@ -475,7 +475,7 @@ class AvailabilityQuizEngine:
                 if pattern.composite_id != "Dostępność 〜がある":
                     continue
                 if (
-                    "aru" not in analysis.fixed_words.values()
+                    "aru_existential" not in analysis.fixed_words.values()
                     or not analysis.focus_slot
                     or analysis.slots[analysis.focus_slot].dictionary != "verbs"
                 ):

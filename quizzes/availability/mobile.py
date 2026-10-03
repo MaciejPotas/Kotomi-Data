@@ -43,6 +43,12 @@ from platforms.mobile.identity import (
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
 from kotomi.application.settings_xml import settings_path
+from kotomi.application.quiz_preflight import (
+    calculate_quiz_statistics,
+    QuantityRangeInputError,
+    quantity_range_setting_values,
+    quiz_is_feasible,
+)
 from kotomi.application.paths import FONTS_DIR
 from kotomi.application.update_transport import QuizUpdater, UpdateError, load_update_url
 
@@ -235,6 +241,9 @@ def create_app_class(policy: object = None):
     mobile_title = getattr(policy, "MOBILE_APP_TITLE", "Kotomi")
     mobile_subtitle = getattr(policy, "MOBILE_SUBTITLE", "")
     mobile_filter_hint = getattr(policy, "MOBILE_FILTER_HINT", "")
+    supports_quantity_range = bool(
+        getattr(policy, "SUPPORTS_NUMERIC_QUANTITY_RANGE", False)
+    )
     is_default_availability = policy is sys.modules[__name__]
     mobile_title_key = (
         "specialized.availability_title"
@@ -297,17 +306,22 @@ def create_app_class(policy: object = None):
             tr(f"specialized.pattern.{name}")
             for name in settings.enabled_patterns
         )
-        return "\n".join(
-            (
-                mode_label(settings.mode),
-                f"{tr('specialized.question_count')}: {settings.question_count}",
-                f"{tr('specialized.tab.forms')}: {forms}",
-                f"{tr('specialized.tab.patterns')}: {patterns}",
-                f"{tr('specialized.text_scale')}: {round(settings.font_scale * 100)}%; "
-                f"{tr('specialized.button_scale')}: "
-                f"{round(settings.mobile_button_scale * 100)}%",
+        lines = [
+            mode_label(settings.mode),
+            f"{tr('specialized.question_count')}: {settings.question_count}",
+            f"{tr('specialized.tab.forms')}: {forms}",
+            f"{tr('specialized.tab.patterns')}: {patterns}",
+            f"{tr('specialized.text_scale')}: "
+            f"{round(settings.font_scale * 100)}%; "
+            f"{tr('specialized.button_scale')}: "
+            f"{round(settings.mobile_button_scale * 100)}%",
+        ]
+        if bool(getattr(settings, "quantity_range_enabled", False)):
+            lines.append(
+                f"{tr('specialized.quantity_range')}: "
+                f"{settings.quantity_range_min}–{settings.quantity_range_max}"
             )
-        )
+        return "\n".join(lines)
 
     def return_to_quiz_menu() -> bool:
         """Return an embedded quiz to Kotomi's main quiz selector."""
@@ -808,6 +822,34 @@ def create_app_class(policy: object = None):
             )
             self.content.add_widget(self.word_filter)
 
+            self.quantity_range_min = None
+            self.quantity_range_max = None
+            if supports_quantity_range:
+                self._section(tr("specialized.quantity_range"))
+                range_row, range_toggle = setting_row(
+                    tr("specialized.quantity_range_enable"),
+                    False,
+                    self._quantity_range_changed,
+                )
+                self.value_checks["quantity_range_enabled"] = range_toggle
+                self.content.add_widget(range_row)
+                range_help = PolishLabel(
+                    text=tr("specialized.quantity_range_help"),
+                    font_size=15,
+                    halign="left",
+                    valign="middle",
+                    size_hint_y=None,
+                    height=dp(70),
+                )
+                wrap_label(range_help)
+                self.content.add_widget(range_help)
+                self.quantity_range_min = self._number_input(
+                    tr("specialized.quantity_range_from"),
+                )
+                self.quantity_range_max = self._number_input(
+                    tr("specialized.quantity_range_to"),
+                )
+
             self._section(tr("specialized.flow"))
             font_row = BoxLayout(
                 orientation="vertical",
@@ -1078,6 +1120,12 @@ def create_app_class(policy: object = None):
             for name, checkbox in self.pattern_checks.items():
                 checkbox.active = name in settings.enabled_patterns
             self.word_filter.text = settings.word_filter
+            if self.quantity_range_min is not None:
+                enabled = bool(settings.quantity_range_enabled)
+                self.value_checks["quantity_range_enabled"].active = enabled
+                self.quantity_range_min.text = str(settings.quantity_range_min)
+                self.quantity_range_max.text = str(settings.quantity_range_max)
+                self._quantity_range_changed(enabled)
             self.question_count.text = str(settings.question_count)
             self.auto_advance.text = str(
                 settings.auto_advance_seconds
@@ -1098,7 +1146,7 @@ def create_app_class(policy: object = None):
             self.statistics.text = ""
 
         def read_settings(self):
-            settings = policy_settings(
+            values = dict(
                 mode=policy_mode,
                 plain_output=self.value_checks["plain_output"].active,
                 polite_output=self.value_checks["polite_output"].active,
@@ -1125,8 +1173,31 @@ def create_app_class(policy: object = None):
                     self.mobile_button_scale_slider.value
                 ),
             )
+            if self.quantity_range_min is not None:
+                try:
+                    values.update(quantity_range_setting_values(
+                        quiz_app().settings,
+                        self.value_checks[
+                            "quantity_range_enabled"
+                        ].active,
+                        self.quantity_range_min.text,
+                        self.quantity_range_max.text,
+                    ))
+                except QuantityRangeInputError as exception:
+                    raise policy_error(
+                        tr(f"specialized.{exception.code}")
+                    ) from exception
+            settings = policy_settings(**values)
             settings.validate()
             return settings
+
+        def _quantity_range_changed(self, enabled: bool) -> None:
+            for field in (
+                self.quantity_range_min,
+                self.quantity_range_max,
+            ):
+                if field is not None:
+                    field.disabled = not enabled
 
         def _font_scale_changed(
             self,
@@ -1152,11 +1223,13 @@ def create_app_class(policy: object = None):
             try:
                 settings = self.read_settings()
                 app = quiz_app()
-                app.save_settings(settings)
-                self.status.color = accent_ok
-                self.status.text = tr("settings.saved")
                 if start_after_save:
-                    app.start_quiz()
+                    self.status.text = tr("specialized.counting")
+                    app.start_quiz(settings, save_on_success=True)
+                else:
+                    app.save_settings(settings)
+                    self.status.color = accent_ok
+                    self.status.text = tr("settings.saved")
             except (policy_error, OSError) as exception:
                 self.status.color = accent_bad
                 self.status.text = mobile_error_text(self, exception)
@@ -2055,7 +2128,12 @@ def create_app_class(policy: object = None):
                     button_scale_state["value"],
                 )
 
-        def start_quiz(self) -> None:
+        def start_quiz(
+            self,
+            settings: Optional[object] = None,
+            *,
+            save_on_success: bool = False,
+        ) -> None:
             if self.restart_required:
                 self.update_message = tr("hub.restart_required")
                 self.go_home()
@@ -2063,15 +2141,83 @@ def create_app_class(policy: object = None):
             if not self.reload_engine() or self.engine is None:
                 self.go_home()
                 return
-            try:
-                session = policy_session(self.engine, self.settings)
-                quiz = self.manager.get_screen("quiz")
-                self.manager.transition = SlideTransition(direction="left")
-                self.manager.current = "quiz"
-                quiz.set_session(session)
-            except (policy_error, ProjectError) as exception:
-                self.engine_error = mobile_error_text(self, exception)
-                self.go_home()
+            engine = self.engine
+            selected_settings = settings or self.settings
+            request_generation = (
+                getattr(self, "_quiz_preflight_generation", 0) + 1
+            )
+            self._quiz_preflight_generation = request_generation
+
+            def ready(feasible: Optional[bool], error: str) -> None:
+                if request_generation != self._quiz_preflight_generation:
+                    return
+                if error or feasible is None:
+                    self._show_quiz_preflight_error(
+                        error or tr("specialized.count_failed")
+                    )
+                    return
+                if not feasible:
+                    self._show_quiz_preflight_error(
+                        tr("specialized.no_possible_questions")
+                    )
+                    return
+                try:
+                    if save_on_success:
+                        self.save_settings(selected_settings)
+                    session = policy_session(engine, selected_settings)
+                    quiz = self.manager.get_screen("quiz")
+                    self.manager.transition = SlideTransition(direction="left")
+                    self.manager.current = "quiz"
+                    quiz.set_session(session)
+                except (policy_error, ProjectError, OSError) as exception:
+                    self._show_quiz_preflight_error(
+                        mobile_error_text(self, exception)
+                    )
+
+            self.check_feasibility(
+                selected_settings,
+                ready,
+                engine=engine,
+            )
+
+        def check_feasibility(
+            self,
+            settings: object,
+            callback,
+            *,
+            engine=None,
+        ) -> None:
+            selected_engine = self.engine if engine is None else engine
+            if selected_engine is None:
+                callback(None, self.engine_error)
+                return
+
+            def worker() -> None:
+                try:
+                    result = quiz_is_feasible(selected_engine, settings)
+                    Clock.schedule_once(
+                        lambda _dt: callback(result, ""),
+                        0,
+                    )
+                except Exception as exception:
+                    message = mobile_error_text(
+                        self,
+                        exception,
+                        key="mobile.update_failed",
+                    )
+                    Clock.schedule_once(
+                        lambda _dt: callback(None, message),
+                        0,
+                    )
+
+            threading.Thread(target=worker, daemon=True).start()
+
+        def _show_quiz_preflight_error(self, message: str) -> None:
+            setup = self.manager.get_screen("settings")
+            setup.status.color = accent_bad
+            setup.status.text = message
+            self.manager.transition = SlideTransition(direction="left")
+            self.manager.current = "settings"
 
         def open_settings(self) -> None:
             self.manager.transition = SlideTransition(direction="left")
@@ -2089,15 +2235,20 @@ def create_app_class(policy: object = None):
             self,
             settings: object,
             callback,
+            *,
+            engine=None,
         ) -> None:
-            if self.engine is None:
+            selected_engine = self.engine if engine is None else engine
+            if selected_engine is None:
                 callback(None, self.engine_error)
                 return
-            engine = self.engine
 
             def worker() -> None:
                 try:
-                    result = engine.statistics(settings)
+                    result = calculate_quiz_statistics(
+                        selected_engine,
+                        settings,
+                    )
                     Clock.schedule_once(
                         lambda _dt: callback(result, ""),
                         0,

@@ -5,7 +5,7 @@ This directory contains sentence-generation and sentence-quiz definitions.
 - `sentence_maps.xml` owns sentence patterns and constructions used by the generator.
 - `sentence_quizzes.xml` owns sentence-quiz definitions that select or combine those patterns.
 
-Both files use Schema 1 and are referenced by `../quiz_project.xml`.
+Both files use Schema 2 and are referenced by `../quiz_project.xml`.
 
 ## Pattern identifiers
 
@@ -98,6 +98,16 @@ links and token order is never a fallback. Agreement can also use a fixed class
 such as `[agree:neuter]`. Noun aliases and adjective or interrogative aliases
 must remain distinct.
 
+An agreement alias may instead name a number or count interrogative. Its exact
+quantity maps to a profile in `counting.xml`, and that profile supplies the
+explicit `source_agreement` value. This is how the generic existential counting
+pattern selects Polish `jest` or `są` while ordinary `role`, `feature`, and
+`usage/accepts` data select the Japanese verb.
+
+The selected non-living existential is `aru_existential`, not the independent
+possessive entry `aru_possessive`. Its source agreement and government remain
+ordinary grammar data, while Japanese output for both entries is `ある`.
+
 `[agree:neuter]` declares a fixed agreement class for a construction without a
 noun, for example `To {adjective[form, agree:neuter].translation}`. Lexical
 variants live in dictionary `<polish_forms>`, while grammar
@@ -111,3 +121,16 @@ The price question selects the non-selectable grouping category
 `purchasable`, whose descendants are the buyable leaf categories. The
 possessor question selects `concrete`. These are taxonomy constraints, not
 runtime lists of exceptional nouns.
+
+
+## Counting placeholders
+
+Use separate aliases for the counted noun, quantity and counter:
+
+```text
+{noun@item[category:animal]}
+{number@count[set:one_to_ten]}
+{counter@unit[counts:@item, preferred, quantity:@count]}
+```
+
+A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantity source. Time, minutes, age and floors select their counter explicitly by `id`. A counter with `quantity` renders the exact stored full realization. Bare output defaults to `kana`; use `.kanji` or `.romaji` only when that output is required.

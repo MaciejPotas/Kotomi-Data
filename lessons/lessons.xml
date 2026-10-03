@@ -1054,7 +1054,7 @@
         <dictionary_ref dictionary="verbs" word="suwaru" />
       </word>
       <word id="ola_l24_dokkai_verbs_010">
-        <dictionary_ref dictionary="verbs" word="aru" />
+        <dictionary_ref dictionary="verbs" word="aru_possessive" />
       </word>
       <word id="ola_l24_dokkai_verbs_011">
         <dictionary_ref dictionary="verbs" word="shinu" />

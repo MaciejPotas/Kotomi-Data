@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="1" id="interrogatives" label="Interrogatives" schema="interrogative">
-  <editor required="translation kana asks_for" optional="kanji romaji" metadata="polish_forms target_categories" />
+<dictionary schema_version="2" id="interrogatives" label="Interrogatives" schema="interrogative">
+  <editor required="translation kana asks_for" optional="kanji romaji" metadata="polish_forms target_categories quantity_symbol" />
   <words>
     <word id="dare" translation="kto" kana="だれ" asks_for="person" kanji="誰" target_categories="person">
       <polish_forms>
@@ -109,5 +109,6 @@
         <override classes="plural_non_masculine_personal" cases="instrumental" value="czyimi" />
       </polish_forms>
     </word>
+    <word id="how_many" translation="ile" kana="なん" kanji="何" romaji="nan" asks_for="count" quantity_symbol="how_many" />
   </words>
 </dictionary>

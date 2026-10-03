@@ -25,7 +25,12 @@ if str(INSTALL_ROOT) not in sys.path:
 from kotomi.core.project import Entity, ProjectError, Word
 from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.application.quiz_project import QuizProject
-from kotomi.core.generation import balanced_choice
+from kotomi.core.generation import (
+    balanced_choice,
+)
+from kotomi.core.generation import compatibility as compatibility_solver
+from kotomi.core.generation.counting import NumericRangeCandidates
+from kotomi.core.generation.models import ChoiceScope, NumericRangeScope
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from kotomi.application.settings_xml import load_settings, save_settings, settings_path
 from apps.availability.logic import (
@@ -59,6 +64,7 @@ PATTERN_LABELS = {
 }
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 PATTERN_EXPANSIONS = {pattern_id: (pattern_id,) for pattern_id in SUPPORTED_PATTERNS}
+SUPPORTS_NUMERIC_QUANTITY_RANGE = False
 
 MOBILE_APP_TITLE = "Kotomi, gramatyka"
 MOBILE_SUBTITLE = "ことができる"
@@ -137,6 +143,9 @@ class GrammarQuizSettings:
         default_factory=lambda: list(SUPPORTED_PATTERNS)
     )
     word_filter: str = ""
+    quantity_range_enabled: bool = False
+    quantity_range_min: int = 1
+    quantity_range_max: int = 20
     question_count: int = 25
     number_of_tries: int = 1
     random_order: bool = True
@@ -162,6 +171,20 @@ class GrammarQuizSettings:
                 if str(value) in SUPPORTED_PATTERNS
             ],
             word_filter=str(values.get("word_filter", defaults.word_filter)),
+            quantity_range_enabled=bool(
+                values.get(
+                    "quantity_range_enabled",
+                    defaults.quantity_range_enabled,
+                )
+            ),
+            quantity_range_min=_safe_int(
+                values.get("quantity_range_min"),
+                defaults.quantity_range_min,
+            ),
+            quantity_range_max=_safe_int(
+                values.get("quantity_range_max"),
+                defaults.quantity_range_max,
+            ),
             question_count=_safe_int(
                 values.get("question_count"), defaults.question_count
             ),
@@ -192,6 +215,13 @@ class GrammarQuizSettings:
             raise GrammarQuizError(
                 "Wybierz co najmniej jeden styl japońskiej odpowiedzi."
             )
+        if (
+            self.quantity_range_enabled
+            and self.quantity_range_min > self.quantity_range_max
+        ):
+            raise GrammarQuizError(
+                "Początek zakresu liczb nie może być większy od końca."
+            )
         if not 1 <= self.question_count <= 200:
             raise GrammarQuizError("Liczba pytań musi mieścić się w zakresie 1–200.")
         if not 0.0 <= self.auto_advance_seconds <= 600.0:
@@ -209,7 +239,7 @@ class GrammarQuizSettings:
     def summary(self) -> str:
         forms = ", ".join(FORM_GROUPS[name]["label"] for name in self.enabled_forms)
         patterns = ", ".join(PATTERN_LABELS[name] for name in self.enabled_patterns)
-        return (
+        summary = (
             f"{MODE_LABELS[self.mode]}\n"
             f"Pytania: {self.question_count}\n"
             f"Formy: {forms}\n"
@@ -218,6 +248,12 @@ class GrammarQuizSettings:
             f"Rozmiar przycisków: "
             f"{round(self.mobile_button_scale * 100)}%"
         )
+        if self.quantity_range_enabled:
+            summary += (
+                "\nZakres liczb: "
+                f"{self.quantity_range_min}–{self.quantity_range_max}"
+            )
+        return summary
 
 
 @dataclass(frozen=True)
@@ -399,6 +435,7 @@ def configure_quiz_profile(quiz_id: str) -> None:
     global PATTERN_LABELS
     global SUPPORTED_PATTERNS
     global PATTERN_EXPANSIONS
+    global SUPPORTS_NUMERIC_QUANTITY_RANGE
     global MOBILE_APP_TITLE
     global MOBILE_SUBTITLE
     global MOBILE_SETTINGS_TITLE
@@ -417,6 +454,18 @@ def configure_quiz_profile(quiz_id: str) -> None:
         )
     SUPPORTED_PATTERNS = tuple(selection_ids)
     PATTERN_EXPANSIONS = expansions
+    SUPPORTS_NUMERIC_QUANTITY_RANGE = any(
+        any(
+            slot.number_range is not None
+            and not slot.fixed_word_id
+            and not slot.number_sets
+            for slot in project.analyze_pattern(
+                project.patterns[pattern_id]
+            ).slots.values()
+        )
+        for pattern_id in effective_ids
+        if pattern_id in project.patterns
+    )
     MOBILE_APP_TITLE = f"Kotomi, {quiz.label}"
     MOBILE_SUBTITLE = quiz.description
     MOBILE_SETTINGS_TITLE = f"Ustawienia: {quiz.label}"
@@ -527,7 +576,20 @@ class GrammarQuizEngine:
                     analysis = self.shared_engine.analyze_pattern(pattern)
                 except ProjectError:
                     continue
-                if not analysis.focus_slot or not analysis.dynamic_slots:
+                if not analysis.focus_slot:
+                    continue
+                if not analysis.dynamic_slots:
+                    combinations.append(
+                        GenerationCombination(
+                            pattern_id,
+                            GenerationRule(
+                                category="fixed",
+                                source_form="",
+                                target_form="",
+                                target_label="",
+                            ),
+                        )
+                    )
                     continue
                 eligible_forms = set(
                     self.shared_engine.eligible_form_names(pattern_id)
@@ -543,6 +605,30 @@ class GrammarQuizEngine:
             )
         return combinations
 
+    def choice_scope(
+        self,
+        settings: GrammarQuizSettings,
+        pattern_id: str,
+    ) -> ChoiceScope:
+        """Build the shared solver scope for one effective sentence pattern."""
+
+        if not settings.quantity_range_enabled:
+            return ChoiceScope()
+        analysis = self.shared_engine.analyze_pattern(pattern_id)
+        numeric_range = NumericRangeScope(
+            settings.quantity_range_min,
+            settings.quantity_range_max,
+        )
+        return ChoiceScope(
+            numeric_range_by_slot={
+                slot_id: numeric_range
+                for slot_id in analysis.word_slots
+                if analysis.slots[slot_id].number_range is not None
+                and slot_id not in analysis.fixed_words
+                and not analysis.slots[slot_id].number_sets
+            }
+        )
+
     def _select_bindings(
         self,
         pattern_id: str,
@@ -550,6 +636,7 @@ class GrammarQuizEngine:
         rules: Sequence[SlotFilterRule],
         word_usage: Mapping[str, int],
         recent_word_ids: Sequence[str],
+        choice_scope: ChoiceScope,
     ) -> Optional[tuple[Dict[str, str], Dict[str, str]]]:
         analysis = self.shared_engine.analyze_pattern(pattern_id)
         word_choices: Dict[str, str] = {}
@@ -573,21 +660,28 @@ class GrammarQuizEngine:
                     form_name=form_name,
                     word_choices=word_choices,
                     entity_choices=entity_choices,
+                    choice_scope=choice_scope,
                 )
             except ProjectError:
                 return None
-            candidates = [
-                word
-                for word in compatible.words.get(slot, [])
-                if _item_matches(
-                    word,
-                    slot_rules,
-                    self.project.effective_entity_categories,
-                )
-            ]
+            candidate_values = compatible.words.get(slot, [])
+            candidates = (
+                [
+                    word
+                    for word in candidate_values
+                    if _item_matches(
+                        word,
+                        slot_rules,
+                        self.project.effective_entity_categories,
+                    )
+                ]
+                if slot_rules else candidate_values
+            )
             if not candidates:
                 return None
-            if slot == analysis.focus_slot:
+            if isinstance(candidates, NumericRangeCandidates):
+                selected = self.rng.choice(candidates)
+            elif slot == analysis.focus_slot:
                 selected = balanced_choice(
                     candidates,
                     word_usage,
@@ -605,6 +699,7 @@ class GrammarQuizEngine:
                     form_name=form_name,
                     word_choices=word_choices,
                     entity_choices=entity_choices,
+                    choice_scope=choice_scope,
                 )
             except ProjectError:
                 return None
@@ -644,6 +739,7 @@ class GrammarQuizEngine:
                 else self.rng.choice(combinations)
             )
             question = self._question_for_combination(
+                settings,
                 combination,
                 rules,
                 word_usage or {},
@@ -658,17 +754,23 @@ class GrammarQuizEngine:
 
     def _question_for_combination(
         self,
+        settings: GrammarQuizSettings,
         combination: GenerationCombination,
         rules: Sequence[SlotFilterRule],
         word_usage: Mapping[str, int],
         recent_word_ids: Sequence[str],
     ) -> Optional[GrammarQuestion]:
+        choice_scope = self.choice_scope(
+            settings,
+            combination.pattern_id,
+        )
         selected = self._select_bindings(
             combination.pattern_id,
             combination.rule.target_form,
             rules,
             word_usage,
             recent_word_ids,
+            choice_scope,
         )
         if selected is None:
             return None
@@ -678,6 +780,7 @@ class GrammarQuizEngine:
                 form_name=combination.rule.target_form,
                 word_choices=selected[0],
                 entity_choices=selected[1],
+                choice_scope=choice_scope,
                 rng=self.rng,
             )
             preview = self.shared_engine.preview(
@@ -693,7 +796,13 @@ class GrammarQuizEngine:
         analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
         main_slot = analysis.focus_slot
         main_dictionary = analysis.slots[main_slot].dictionary
-        main_word = self.project.words[main_dictionary][preview.words[main_slot]]
+        main_word = compatibility_solver.resolve_word_selection(
+            self.project,
+            main_dictionary,
+            preview.words[main_slot],
+        )
+        if main_word is None:
+            return None
         bindings = ", ".join(
             [
                 *(f"{slot}={word}" for slot, word in preview.words.items()),
@@ -736,7 +845,13 @@ class GrammarQuizEngine:
         result: List[tuple[str, str]] = []
         for slot in analysis.word_slots:
             dictionary = analysis.slots[slot].dictionary
-            word = self.project.words[dictionary][preview.words[slot]]
+            word = compatibility_solver.resolve_word_selection(
+                self.project,
+                dictionary,
+                preview.words[slot],
+            )
+            if word is None:
+                continue
             result.append((word.translation, word.kana))
         for slot in analysis.entity_slots:
             entity = self.project.entities[preview.entities[slot]]
@@ -752,14 +867,26 @@ class GrammarQuizEngine:
         for combination in combinations:
             active_patterns.add(combination.pattern_id)
             analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
+            choice_scope = self.choice_scope(
+                settings,
+                combination.pattern_id,
+            )
             for preview in self.shared_engine.iter_previews(
                 combination.pattern_id,
                 form_name=combination.rule.target_form,
+                choice_scope=choice_scope,
             ):
                 matches = True
                 for slot in analysis.word_slots:
                     dictionary = analysis.slots[slot].dictionary
-                    word = self.project.words[dictionary][preview.words[slot]]
+                    word = compatibility_solver.resolve_word_selection(
+                        self.project,
+                        dictionary,
+                        preview.words[slot],
+                    )
+                    if word is None:
+                        matches = False
+                        break
                     if not _item_matches(
                         word,
                         _rules_for_engine_slot(rules, analysis, slot),
@@ -790,6 +917,24 @@ class GrammarQuizEngine:
             "words": len(eligible_verbs),
             "entities": len(self.project.entities),
         }
+
+    def has_possible_question(self, settings: GrammarQuizSettings) -> bool:
+        """Stop after the first assignment that runtime can render."""
+
+        rules = parse_slot_filter(settings.word_filter)
+        combinations = self.build_combinations(settings)
+        for attempt in range(128):
+            combination = combinations[attempt % len(combinations)]
+            question = self._question_for_combination(
+                settings,
+                combination,
+                rules,
+                {},
+                (),
+            )
+            if question is not None:
+                return True
+        return False
 
 
 GrammarQuizSession = AvailabilityQuizSession
@@ -835,6 +980,7 @@ __all__ = [
     "SETTINGS_STORE_CLASS",
     "SUPPORTED_PATTERNS",
     "PATTERN_EXPANSIONS",
+    "SUPPORTS_NUMERIC_QUANTITY_RANGE",
     "SettingsStore",
     "SlotFilterRule",
     "SubmissionResult",

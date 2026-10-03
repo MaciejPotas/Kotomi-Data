@@ -23,6 +23,10 @@ from apps.adjectives.logic import *
 from apps.adjectives.logic import _safe_float, _safe_int
 from kotomi.core.project import ProjectError
 from kotomi.application.settings_xml import settings_path
+from kotomi.application.quiz_preflight import (
+    calculate_quiz_statistics,
+    quiz_is_feasible,
+)
 from kotomi.application.paths import FONTS_DIR
 from platforms.mobile.presentation import (
     DEFAULT_MOBILE_BUTTON_SCALE,
@@ -1091,11 +1095,13 @@ def create_app_class():
             try:
                 settings = self.read_settings()
                 app = quiz_app()
-                app.save_settings(settings)
-                self.status.color = accent_ok
-                self.status.text = tr("settings.saved")
                 if start_after_save:
-                    app.start_quiz()
+                    self.status.text = tr("specialized.counting")
+                    app.start_quiz(settings, save_on_success=True)
+                else:
+                    app.save_settings(settings)
+                    self.status.color = accent_ok
+                    self.status.text = tr("settings.saved")
             except (MobileQuizError, OSError) as exception:
                 self.status.color = accent_bad
                 self.status.text = mobile_error_text(self, exception)
@@ -2027,7 +2033,12 @@ def create_app_class():
             for child in getattr(widget, "children", []):
                 self._resize_mobile_controls(child, scale)
 
-        def start_quiz(self) -> None:
+        def start_quiz(
+            self,
+            settings: Optional[AdjectiveQuizSettings] = None,
+            *,
+            save_on_success: bool = False,
+        ) -> None:
             if self.restart_required:
                 self.update_message = tr("hub.restart_required")
                 self.go_home()
@@ -2035,15 +2046,83 @@ def create_app_class():
             if not self.reload_engine() or self.engine is None:
                 self.go_home()
                 return
-            try:
-                session = AdjectiveQuizSession(self.engine, self.settings)
-                quiz = self.manager.get_screen("quiz")
-                self.manager.transition = SlideTransition(direction="left")
-                self.manager.current = "quiz"
-                quiz.set_session(session)
-            except (MobileQuizError, ProjectError) as exception:
-                self.engine_error = mobile_error_text(self, exception)
-                self.go_home()
+            engine = self.engine
+            selected_settings = settings or self.settings
+            request_generation = (
+                getattr(self, "_quiz_preflight_generation", 0) + 1
+            )
+            self._quiz_preflight_generation = request_generation
+
+            def ready(feasible: Optional[bool], error: str) -> None:
+                if request_generation != self._quiz_preflight_generation:
+                    return
+                if error or feasible is None:
+                    self._show_quiz_preflight_error(
+                        error or tr("specialized.count_failed")
+                    )
+                    return
+                if not feasible:
+                    self._show_quiz_preflight_error(
+                        tr("specialized.no_possible_questions")
+                    )
+                    return
+                try:
+                    if save_on_success:
+                        self.save_settings(selected_settings)
+                    session = AdjectiveQuizSession(engine, selected_settings)
+                    quiz = self.manager.get_screen("quiz")
+                    self.manager.transition = SlideTransition(direction="left")
+                    self.manager.current = "quiz"
+                    quiz.set_session(session)
+                except (MobileQuizError, ProjectError, OSError) as exception:
+                    self._show_quiz_preflight_error(
+                        mobile_error_text(self, exception)
+                    )
+
+            self.check_feasibility(
+                selected_settings,
+                ready,
+                engine=engine,
+            )
+
+        def check_feasibility(
+            self,
+            settings: AdjectiveQuizSettings,
+            callback,
+            *,
+            engine=None,
+        ) -> None:
+            selected_engine = self.engine if engine is None else engine
+            if selected_engine is None:
+                callback(None, self.engine_error)
+                return
+
+            def worker() -> None:
+                try:
+                    result = quiz_is_feasible(selected_engine, settings)
+                    Clock.schedule_once(
+                        lambda _dt: callback(result, ""),
+                        0,
+                    )
+                except Exception as exception:
+                    message = mobile_error_text(
+                        self,
+                        exception,
+                        key="mobile.update_failed",
+                    )
+                    Clock.schedule_once(
+                        lambda _dt: callback(None, message),
+                        0,
+                    )
+
+            threading.Thread(target=worker, daemon=True).start()
+
+        def _show_quiz_preflight_error(self, message: str) -> None:
+            setup = self.manager.get_screen("settings")
+            setup.status.color = accent_bad
+            setup.status.text = message
+            self.manager.transition = SlideTransition(direction="left")
+            self.manager.current = "settings"
 
         def open_settings(self) -> None:
             self.manager.transition = SlideTransition(direction="left")
@@ -2070,15 +2149,20 @@ def create_app_class():
             self,
             settings: AdjectiveQuizSettings,
             callback,
+            *,
+            engine=None,
         ) -> None:
-            if self.engine is None:
+            selected_engine = self.engine if engine is None else engine
+            if selected_engine is None:
                 callback(None, self.engine_error)
                 return
-            engine = self.engine
 
             def worker() -> None:
                 try:
-                    result = engine.statistics(settings)
+                    result = calculate_quiz_statistics(
+                        selected_engine,
+                        settings,
+                    )
                     Clock.schedule_once(
                         lambda _dt: callback(result, ""),
                         0,
