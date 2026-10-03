@@ -239,6 +239,9 @@ def create_app_class(policy: object = None):
     mobile_title = getattr(policy, "MOBILE_APP_TITLE", "Kotomi")
     mobile_subtitle = getattr(policy, "MOBILE_SUBTITLE", "")
     mobile_filter_hint = getattr(policy, "MOBILE_FILTER_HINT", "")
+    supports_quantity_range = bool(
+        getattr(policy, "SUPPORTS_NUMERIC_QUANTITY_RANGE", False)
+    )
     is_default_availability = policy is sys.modules[__name__]
     mobile_title_key = (
         "specialized.availability_title"
@@ -301,17 +304,22 @@ def create_app_class(policy: object = None):
             tr(f"specialized.pattern.{name}")
             for name in settings.enabled_patterns
         )
-        return "\n".join(
-            (
-                mode_label(settings.mode),
-                f"{tr('specialized.question_count')}: {settings.question_count}",
-                f"{tr('specialized.tab.forms')}: {forms}",
-                f"{tr('specialized.tab.patterns')}: {patterns}",
-                f"{tr('specialized.text_scale')}: {round(settings.font_scale * 100)}%; "
-                f"{tr('specialized.button_scale')}: "
-                f"{round(settings.mobile_button_scale * 100)}%",
+        lines = [
+            mode_label(settings.mode),
+            f"{tr('specialized.question_count')}: {settings.question_count}",
+            f"{tr('specialized.tab.forms')}: {forms}",
+            f"{tr('specialized.tab.patterns')}: {patterns}",
+            f"{tr('specialized.text_scale')}: "
+            f"{round(settings.font_scale * 100)}%; "
+            f"{tr('specialized.button_scale')}: "
+            f"{round(settings.mobile_button_scale * 100)}%",
+        ]
+        if bool(getattr(settings, "quantity_range_enabled", False)):
+            lines.append(
+                f"{tr('specialized.quantity_range')}: "
+                f"{settings.quantity_range_min}–{settings.quantity_range_max}"
             )
-        )
+        return "\n".join(lines)
 
     def return_to_quiz_menu() -> bool:
         """Return an embedded quiz to Kotomi's main quiz selector."""
@@ -812,6 +820,34 @@ def create_app_class(policy: object = None):
             )
             self.content.add_widget(self.word_filter)
 
+            self.quantity_range_min = None
+            self.quantity_range_max = None
+            if supports_quantity_range:
+                self._section(tr("specialized.quantity_range"))
+                range_row, range_toggle = setting_row(
+                    tr("specialized.quantity_range_enable"),
+                    False,
+                    self._quantity_range_changed,
+                )
+                self.value_checks["quantity_range_enabled"] = range_toggle
+                self.content.add_widget(range_row)
+                range_help = PolishLabel(
+                    text=tr("specialized.quantity_range_help"),
+                    font_size=15,
+                    halign="left",
+                    valign="middle",
+                    size_hint_y=None,
+                    height=dp(70),
+                )
+                wrap_label(range_help)
+                self.content.add_widget(range_help)
+                self.quantity_range_min = self._number_input(
+                    tr("specialized.quantity_range_from"),
+                )
+                self.quantity_range_max = self._number_input(
+                    tr("specialized.quantity_range_to"),
+                )
+
             self._section(tr("specialized.flow"))
             font_row = BoxLayout(
                 orientation="vertical",
@@ -1082,6 +1118,12 @@ def create_app_class(policy: object = None):
             for name, checkbox in self.pattern_checks.items():
                 checkbox.active = name in settings.enabled_patterns
             self.word_filter.text = settings.word_filter
+            if self.quantity_range_min is not None:
+                enabled = bool(settings.quantity_range_enabled)
+                self.value_checks["quantity_range_enabled"].active = enabled
+                self.quantity_range_min.text = str(settings.quantity_range_min)
+                self.quantity_range_max.text = str(settings.quantity_range_max)
+                self._quantity_range_changed(enabled)
             self.question_count.text = str(settings.question_count)
             self.auto_advance.text = str(
                 settings.auto_advance_seconds
@@ -1102,7 +1144,7 @@ def create_app_class(policy: object = None):
             self.statistics.text = ""
 
         def read_settings(self):
-            settings = policy_settings(
+            values = dict(
                 mode=policy_mode,
                 plain_output=self.value_checks["plain_output"].active,
                 polite_output=self.value_checks["polite_output"].active,
@@ -1129,8 +1171,31 @@ def create_app_class(policy: object = None):
                     self.mobile_button_scale_slider.value
                 ),
             )
+            if self.quantity_range_min is not None:
+                values.update(
+                    quantity_range_enabled=self.value_checks[
+                        "quantity_range_enabled"
+                    ].active,
+                    quantity_range_min=_safe_int(
+                        self.quantity_range_min.text,
+                        0,
+                    ),
+                    quantity_range_max=_safe_int(
+                        self.quantity_range_max.text,
+                        0,
+                    ),
+                )
+            settings = policy_settings(**values)
             settings.validate()
             return settings
+
+        def _quantity_range_changed(self, enabled: bool) -> None:
+            for field in (
+                self.quantity_range_min,
+                self.quantity_range_max,
+            ):
+                if field is not None:
+                    field.disabled = not enabled
 
         def _font_scale_changed(
             self,
