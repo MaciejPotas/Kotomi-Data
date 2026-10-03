@@ -107,8 +107,8 @@
     },
     {
       "path": "apps/availability/mobile.py",
-      "sha256": "ebbacb934675666c65a2d5c1eca41dbea41ed776a4433795f5e41346142168df",
-      "url": "quizzes/availability/mobile.py?kotomi_sha256=ebbacb934675666c65a2d5c1eca41dbea41ed776a4433795f5e41346142168df"
+      "sha256": "afb3942ef4b9b971bcf30b1864ac4a84a02537419d7ac48a912c5c785c0e0453",
+      "url": "quizzes/availability/mobile.py?kotomi_sha256=afb3942ef4b9b971bcf30b1864ac4a84a02537419d7ac48a912c5c785c0e0453"
     },
     {
       "path": "apps/grammar/Kotomi_grammar.py",

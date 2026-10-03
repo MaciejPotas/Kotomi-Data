@@ -45,6 +45,7 @@ from platforms.mobile.i18n import mobile_error_text, mobile_text
 from kotomi.application.settings_xml import settings_path
 from kotomi.application.quiz_preflight import (
     calculate_quiz_statistics,
+    quantity_range_setting_values,
     quiz_has_possibilities,
 )
 from kotomi.application.paths import FONTS_DIR
@@ -1172,19 +1173,17 @@ def create_app_class(policy: object = None):
                 ),
             )
             if self.quantity_range_min is not None:
-                values.update(
-                    quantity_range_enabled=self.value_checks[
-                        "quantity_range_enabled"
-                    ].active,
-                    quantity_range_min=_safe_int(
+                try:
+                    values.update(quantity_range_setting_values(
+                        quiz_app().settings,
+                        self.value_checks[
+                            "quantity_range_enabled"
+                        ].active,
                         self.quantity_range_min.text,
-                        0,
-                    ),
-                    quantity_range_max=_safe_int(
                         self.quantity_range_max.text,
-                        0,
-                    ),
-                )
+                    ))
+                except ValueError as exception:
+                    raise policy_error(str(exception)) from exception
             settings = policy_settings(**values)
             settings.validate()
             return settings
