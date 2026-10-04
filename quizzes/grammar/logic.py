@@ -871,7 +871,7 @@ class GrammarQuizEngine:
                 settings,
                 combination.pattern_id,
             )
-            for preview in self.shared_engine.iter_previews(
+            for completed in self.shared_engine.iter_completed_possibilities(
                 combination.pattern_id,
                 form_name=combination.rule.target_form,
                 choice_scope=choice_scope,
@@ -882,7 +882,7 @@ class GrammarQuizEngine:
                     word = compatibility_solver.resolve_word_selection(
                         self.project,
                         dictionary,
-                        preview.words[slot],
+                        completed.words[slot],
                     )
                     if word is None:
                         matches = False
@@ -897,7 +897,7 @@ class GrammarQuizEngine:
                 if not matches:
                     continue
                 for slot in analysis.entity_slots:
-                    entity = self.project.entities[preview.entities[slot]]
+                    entity = self.project.entities[completed.entities[slot]]
                     if not _item_matches(
                         entity,
                         _rules_for_engine_slot(rules, analysis, slot),
@@ -907,7 +907,7 @@ class GrammarQuizEngine:
                         break
                 if matches:
                     possible += 1
-                    eligible_verbs.add(preview.words[analysis.focus_slot])
+                    eligible_verbs.add(completed.words[analysis.focus_slot])
         return {
             "possible": possible,
             "active_patterns": len(active_patterns),
