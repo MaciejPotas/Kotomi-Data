@@ -518,10 +518,12 @@ class GrammarQuizEngine:
         self,
         project_path: Path | str,
         rng: Optional[random.Random] = None,
+        *, language_context=None,
     ) -> None:
+        self.language_context = language_context
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = QuizProject.load(self.project_path)
+        self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
@@ -531,7 +533,7 @@ class GrammarQuizEngine:
             raise GrammarQuizError("\n".join(issues))
 
     def reload(self) -> None:
-        self.project = QuizProject.load(self.project_path)
+        self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" id="interrogatives" label="Interrogatives" schema="interrogative">
+<dictionary schema_version="2" id="interrogatives" label="Interrogatives" schema="interrogative" instruction_language_id="pl">
   <editor required="translation kana asks_for" optional="kanji romaji" metadata="polish_forms target_categories quantity_symbol" />
   <words>
     <word id="dare" translation="kto" kana="だれ" asks_for="person" kanji="誰" target_categories="person">
