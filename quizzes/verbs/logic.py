@@ -698,7 +698,7 @@ class VerbQuizEngine:
         )
 
     def statistics(self, settings: VerbQuizSettings) -> Dict[str, int]:
-        """Calculate exact statistics. The GUI calls this on a worker thread."""
+        """Calculate exact statistics without rendering unused sentence text."""
         filter_rules = parse_word_filter(settings.word_filter)
         combinations = self.build_combinations(settings)
         possible = 0
@@ -708,12 +708,12 @@ class VerbQuizEngine:
                 combination.pattern_id
             )
             enabled_patterns.add(combination.pattern_id)
-            for preview in self.shared_engine.iter_previews(
+            for completed in self.shared_engine.iter_completed_possibilities(
                 combination.pattern_id,
                 form_name=combination.rule.target_form,
             ):
                 word = self.project.words["verbs"][
-                    preview.words[analysis.focus_slot]
+                    completed.words[analysis.focus_slot]
                 ]
                 if (
                     word_matches_filter(word, filter_rules)
