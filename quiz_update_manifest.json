@@ -122,8 +122,8 @@
     },
     {
       "path": "apps/grammar/logic.py",
-      "sha256": "f80a32a148ef52daa783bb937dbd7aa51988a5edcd2955ab51440e6880c50482",
-      "url": "quizzes/grammar/logic.py?kotomi_sha256=f80a32a148ef52daa783bb937dbd7aa51988a5edcd2955ab51440e6880c50482"
+      "sha256": "0f2773f54c8a0a93e93d381a523067aee6aabfb37868411b20a9009f469ac303",
+      "url": "quizzes/grammar/logic.py?kotomi_sha256=0f2773f54c8a0a93e93d381a523067aee6aabfb37868411b20a9009f469ac303"
     },
     {
       "path": "apps/grammar/mobile.py",
