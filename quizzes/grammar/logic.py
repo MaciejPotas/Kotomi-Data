@@ -833,7 +833,7 @@ class GrammarQuizEngine:
             target_form=combination.rule.target_form,
             source_form="",
             word_id=main_word.id,
-            word_meaning=main_word.translation,
+            word_meaning=self.project.instruction_language.translation(main_word),
             word_kana=main_word.kana,
             word_kanji=main_word.kanji,
             hint_pairs=self._hint_pairs(combination.pattern_id, preview),
@@ -854,10 +854,10 @@ class GrammarQuizEngine:
             )
             if word is None:
                 continue
-            result.append((word.translation, word.kana))
+            result.append((self.project.instruction_language.translation(word), word.kana))
         for slot in analysis.entity_slots:
             entity = self.project.entities[preview.entities[slot]]
-            result.append((entity.translation, entity.kana))
+            result.append((self.project.instruction_language.translation(entity), entity.kana))
         return result
 
     def statistics(self, settings: GrammarQuizSettings) -> Dict[str, int]:

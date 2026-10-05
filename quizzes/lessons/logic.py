@@ -165,7 +165,7 @@ def sentence_lexical_items(question: Question, project: object) -> List[str]:
 
         kana = str(getattr(item, "kana", "") or "").strip()
         kanji = str(getattr(item, "kanji", "") or "").strip()
-        translation = str(getattr(item, "translation", "") or "").strip()
+        translation = str(project.instruction_language.translation(item) or "").strip()
         romaji = str(getattr(item, "romaji", "") or "").strip()
         entries.append(
             {
@@ -207,7 +207,7 @@ def conjugation_lexical_hint(question: Question, project: object) -> str:
     if selected is not None:
         return format_grammatical_hint_entry(
             {
-                "translation": str(getattr(selected, "translation", "") or ""),
+                "translation": str(project.instruction_language.translation(selected) or ""),
                 "kana": str(getattr(selected, "kana", "") or ""),
                 "kanji": str(getattr(selected, "kanji", "") or ""),
                 "romaji": str(getattr(selected, "romaji", "") or ""),

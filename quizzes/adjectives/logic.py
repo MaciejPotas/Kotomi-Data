@@ -413,15 +413,17 @@ class AdjectiveQuizEngine:
         self,
         project_path: Path | str,
         rng: Optional[random.Random] = None,
+        *, language_context=None,
     ) -> None:
+        self.language_context = language_context
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = load_quiz_project(self.project_path)
+        self.project = load_quiz_project(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
     def reload(self) -> None:
-        self.project = load_quiz_project(self.project_path)
+        self.project = load_quiz_project(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
@@ -862,13 +864,13 @@ class AdjectiveQuizEngine:
             target_form=target_name,
             source_form=source_name,
             adjective_ids=ids,
-            word_meaning=" + ".join(word.translation for word in chain),
+            word_meaning=" + ".join(self.project.instruction_language.translation(word) for word in chain),
             word_kana=" + ".join(word.kana for word in chain),
             word_kanji=" + ".join(word.kanji for word in chain),
             adjective_count=len(chain),
             bindings="; ".join(bindings),
             context_translation=str(
-                context_option.translation or ""
+                self.project.instruction_language.translation(context_option) or ""
             ).strip(),
             context_kana=str(context_option.kana or "").strip(),
         )
