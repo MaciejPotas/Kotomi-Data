@@ -91,7 +91,7 @@ def mobile_sentence_hint_items(
         kana = str(getattr(item, "kana", "") or "").strip()
         kanji = str(getattr(item, "kanji", "") or "").strip()
         translation = str(
-            getattr(item, "translation", "") or ""
+            project.instruction_language.translation(item) or ""
         ).strip()
         if kana.casefold() == "n/a":
             kana = ""
@@ -100,7 +100,7 @@ def mobile_sentence_hint_items(
         if translation.casefold() == "n/a":
             translation = ""
         if translation or kana or kanji:
-            formatted = format_grammatical_hint_entry(item)
+            formatted = format_grammatical_hint_entry(item, translation_override=translation)
             if formatted and formatted not in result:
                 result.append(formatted)
 

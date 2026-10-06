@@ -152,7 +152,9 @@ def mobile_sentence_hint_entries(
                 ).get(identifier)
             if item is not None and key not in seen:
                 seen.add(key)
-                formatted = format_grammatical_hint_entry(item)
+                formatted = format_grammatical_hint_entry(
+                    item, translation_override=project.instruction_language.translation(item)
+                )
                 if formatted:
                     entries.append(formatted)
                 binding_entries_found = True
