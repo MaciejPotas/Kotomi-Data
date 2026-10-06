@@ -42,6 +42,7 @@ from platforms.mobile.identity import (
     configure_windows_app_id,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
+from kotomi.application.instruction_languages import configure_quiz_controller
 from kotomi.application.settings_xml import settings_path
 from kotomi.application.quiz_preflight import (
     calculate_quiz_statistics,
@@ -1918,7 +1919,10 @@ def create_app_class(policy: object = None):
         def build(self):
             apply_kivy_window_icon(Window)
             self.title = tr(mobile_title_key)
-            self.project_path = resolve_policy_project()
+            configure_quiz_controller(
+                self, INSTALL_ROOT / "data", INSTALL_ROOT / "settings" / "mobile_launcher.xml",
+                project_resolver=resolve_policy_project,
+            )
             self.settings_store = policy_store(policy_settings_path())
             self.settings = self.settings_store.load()
             font_scale_state["value"] = self.settings.font_scale
@@ -1956,7 +1960,7 @@ def create_app_class(policy: object = None):
         def reload_engine(self) -> bool:
             try:
                 if self.engine is None:
-                    self.engine = policy_engine(self.project_path)
+                    self.engine = policy_engine(self.project_path, language_context=self.language_context)
                 else:
                     self.engine.reload()
                 self.engine_error = ""

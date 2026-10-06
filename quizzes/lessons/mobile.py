@@ -21,6 +21,7 @@ if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
 from apps.lessons.logic import *
+from kotomi.application.instruction_languages import configure_quiz_controller, load_instruction_runtime
 from kotomi.application.settings_xml import settings_path
 from kotomi.application.paths import FONTS_DIR
 from platforms.mobile.identity import (
@@ -2234,20 +2235,21 @@ def create_app_class():
             self.session: Optional[QuizSession] = None
             self.quiz_title = ""
 
-            self.catalog_store = CatalogStore(QUIZ_DATA_DIR)
+            configure_quiz_controller(
+                self, QUIZ_DATA_DIR, INSTALL_ROOT / "settings" / "mobile_launcher.xml",
+            )
+            runtime = load_instruction_runtime(self.instruction_selection)
+            self.catalog_store = runtime.catalog_store
+            self.catalog = runtime.catalog
+            self.sentence_engine = runtime.sentence_engine
             self.settings_store = SettingsStore(
                 settings_path(INSTALL_ROOT, "lesson_quiz_settings.xml")
             )
-            self.catalog = self.catalog_store.load()
-            synchronize_catalog(
-                self.catalog,
-                QUIZ_PROJECT,
-                include_adjective_forms=True,
-            )
-            self.sentence_engine = LessonSentenceQuiz(QUIZ_PROJECT)
+            values = self.settings_store.load()
+            values["instruction_language_id"] = self.language_context.instruction.id
+            values["interface_language"] = self.interface_language if hasattr(self, "interface_language") else self.language_context.ui_locale
             self.settings = AppSettings.from_dict(
-                self.settings_store.load(),
-                self.sentence_engine.project.form_definitions,
+                values, self.sentence_engine.project.form_definitions,
             )
 
             self.manager = ScreenManager()
