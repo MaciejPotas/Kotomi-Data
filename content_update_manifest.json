@@ -39,8 +39,8 @@
     },
     {
       "path": "data/dictionaries/numbers.xml",
-      "sha256": "bc4658f3e1fadd9c210df4f56f66c4781f7e52b5ee30f361cbbec1e2b00eda73",
-      "url": "dictionaries/numbers.xml?kotomi_sha256=bc4658f3e1fadd9c210df4f56f66c4781f7e52b5ee30f361cbbec1e2b00eda73"
+      "sha256": "bc4658f3e1fadd9c210df4f56c66c4781f7e52b5ee30f361cbbec1e2b00eda73",
+      "url": "dictionaries/numbers.xml?kotomi_sha256=bc4658f3e1fadd9c210df4f56c66c4781f7e52b5ee30f361cbbec1e2b00eda73"
     },
     {
       "path": "data/dictionaries/verbs.xml",
