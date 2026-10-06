@@ -13,8 +13,8 @@ Legacy Polish element names are preserved by the Polish language implementation.
 It exists to exercise the same runtime language-selection path as a future real
 instruction language, while declaring no cases, agreement classes or morphology.
 Its source strings are simple English-like test values, not production English
-content. The bundle is deliberately separate from the canonical Polish Content
-snapshot and is not listed in `content_update_manifest.json`.
+content. It is published through the normal Content manifest so Desktop, fresh
+Mobile packages and Content Update can exercise the same selectable bundle.
 
 A future production language should use its own project manifest and source file
 paths. Source patterns can differ structurally and do not require one-to-one slot
