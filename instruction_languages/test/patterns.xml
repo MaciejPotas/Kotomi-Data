@@ -1,0 +1,6 @@
+<sentence_maps schema_version="2" instruction_language_id="test"><sentence_patterns>
+  <sentence_pattern id="simple"><question>{verb[id:swim, form:dictionary].translation}</question><answer>{verb[id:swim, form:dictionary]}</answer></sentence_pattern>
+  <sentence_pattern id="government"><question>{context.translation} {verb@action[id:listen, role:object, form:dictionary].translation} {noun@item[id:teacher, government:@action].phrase}</question><answer>{context.kana}{noun@item[id:teacher]}を{verb@action[id:listen, role:object, form:dictionary]}</answer></sentence_pattern>
+  <sentence_pattern id="relation"><question>{noun@item[id:teacher, relation:destination].phrase}</question><answer>{noun@item[id:teacher]}へ</answer></sentence_pattern>
+  <sentence_pattern id="counting"><question>{number@count.translation} {noun@item[id:cat, quantity:@count]}</question><answer>{number@count} {noun@item[id:cat]}</answer></sentence_pattern>
+</sentence_patterns></sentence_maps>

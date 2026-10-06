@@ -1,0 +1,6 @@
+<counting schema_version="2" instruction_language_id="test" source_language="test">
+  <count_source_profiles>
+    <profiles><profile id="one" label="One" /><profile id="two" label="Two" /></profiles>
+    <quantity_mappings><quantity number="1" profile="one" /><quantity number="2" profile="two" /></quantity_mappings>
+  </count_source_profiles>
+</counting>

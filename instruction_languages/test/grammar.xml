@@ -1,0 +1,7 @@
+<grammar_rules schema_version="2" instruction_language_id="test">
+  <noun_categories><category id="item" label="Item" /></noun_categories>
+  <form_catalogs><form_catalog schema="verb"><form label="Dictionary" name="dictionary" context="none" /></form_catalog></form_catalogs>
+  <source_government><frame id="listen"><realization preposition="to" /></frame></source_government>
+  <source_noun_relations><profile id="destination"><realization relation="destination" preposition="to" /></profile></source_noun_relations>
+  <roles><role id="object" label="Object" particle="を" accepts="item" /></roles>
+</grammar_rules>

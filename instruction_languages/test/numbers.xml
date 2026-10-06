@@ -1,0 +1,4 @@
+<dictionary schema_version="2" instruction_language_id="test" id="numbers" schema="number"><words>
+  <word id="one" kana="いち" translation="one" value="1" />
+  <word id="two" kana="に" translation="two" value="2" />
+</words></dictionary>

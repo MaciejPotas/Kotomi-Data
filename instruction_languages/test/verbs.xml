@@ -1,0 +1,7 @@
+<dictionary schema_version="2" instruction_language_id="test" id="verbs" schema="verb"><words>
+  <word id="swim" kana="およぐ" translation="swim" type="godan"><forms><form ref="dictionary" kana="およぐ" translation="swim" /></forms></word>
+  <word id="listen" kana="きく" translation="listen" type="godan">
+    <usage><role ref="object" accepts="item" government="listen" /></usage>
+    <forms><form ref="dictionary" kana="きく" translation="listen" /></forms>
+  </word>
+</words></dictionary>

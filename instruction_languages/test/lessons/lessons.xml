@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<lesson_catalog schema_version="4" instruction_language_id="test">
+  <lessons>
+    <lesson id="test_language_probe" group="Test" main="Language boundary" name="No grammar">
+      <word id="test_swim"><dictionary_ref dictionary="verbs" word="swim" /></word>
+      <word id="test_teacher"><dictionary_ref dictionary="nouns" word="teacher" /></word>
+      <word id="test_new"><dictionary_ref dictionary="adjectives" word="new" /></word>
+      <word id="test_one"><dictionary_ref dictionary="numbers" word="one" /></word>
+    </lesson>
+  </lessons>
+</lesson_catalog>
