@@ -1,3 +1,6 @@
-<dictionary schema_version="2" instruction_language_id="test" id="connectors" schema="connector"><words>
-  <word id="also" kana="それに" translation="also" />
-</words></dictionary>
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" instruction_language_id="test" id="connectors" schema="connector" shared_target="../../shared/ja/dictionaries/connectors.xml">
+  <words>
+    <word id="also" translation="also" />
+  </words>
+</dictionary>

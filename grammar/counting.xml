@@ -1,161 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
-<counting schema_version="2" source_language="pl">
-  <!--
-Number composition defines how arbitrary Numeric quantities are rendered.
-Generated ranges must fit min..max. Digits and units are language
-data, not runtime rules.
--->
-  <number_composition min="1" max="99999999">
-    <digits>
-      <digit value="1" kana="いち" kanji="一" romaji="ichi" />
-      <digit value="2" kana="に" kanji="二" romaji="ni" />
-      <digit value="3" kana="さん" kanji="三" romaji="san" />
-      <digit value="4" kana="よん" kanji="四" romaji="yon" />
-      <digit value="5" kana="ご" kanji="五" romaji="go" />
-      <digit value="6" kana="ろく" kanji="六" romaji="roku" />
-      <digit value="7" kana="なな" kanji="七" romaji="nana" />
-      <digit value="8" kana="はち" kanji="八" romaji="hachi" />
-      <digit value="9" kana="きゅう" kanji="九" romaji="kyuu" />
-    </digits>
-    <units>
-      <unit value="10" kana="じゅう" kanji="十" romaji="juu" />
-      <unit value="100" kana="ひゃく" kanji="百" romaji="hyaku">
-        <variant multiplier="3" kana="さんびゃく" kanji="三百" romaji="sanbyaku" />
-        <variant multiplier="6" kana="ろっぴゃく" kanji="六百" romaji="roppyaku" />
-        <variant multiplier="8" kana="はっぴゃく" kanji="八百" romaji="happyaku" />
-      </unit>
-      <unit value="1000" kana="せん" kanji="千" romaji="sen">
-        <variant multiplier="3" kana="さんぜん" kanji="三千" romaji="sanzen" />
-        <variant multiplier="8" kana="はっせん" kanji="八千" romaji="hassen" />
-      </unit>
-      <unit value="10000" kana="まん" kanji="万" romaji="man" omit_one="false" />
-    </units>
-  </number_composition>
-  <!--
-Counter composition profiles modify the terminal component of an
-already composed number. terminal="digit" matches its final digit;
-terminal="unit" matches its final unit. remove_* removes a suffix
-before replacement output is appended. Exact counter realizations
-from counters.xml always take precedence over composition.
--->
-  <counter_composition_profiles>
-    <profile id="nin" kana="にん" kanji="人" romaji="nin">
-      <variant terminal="digit" value="4" remove_kana="よん" kana="よにん" kanji="人" remove_romaji="yon" romaji="yonin" />
-    </profile>
-    <profile id="hiki" kana="ひき" kanji="匹" romaji="hiki">
-      <variant terminal="digit" value="1" remove_kana="いち" kana="いっぴき" remove_kanji="一" kanji="一匹" remove_romaji="ichi" romaji="ippiki" />
-      <variant terminal="digit" value="3" remove_kana="さん" kana="さんびき" remove_kanji="三" kanji="三匹" remove_romaji="san" romaji="sanbiki" />
-      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっぴき" remove_kanji="六" kanji="六匹" remove_romaji="roku" romaji="roppiki" />
-      <variant terminal="digit" value="8" remove_kana="はち" kana="はっぴき" remove_kanji="八" kanji="八匹" remove_romaji="hachi" romaji="happiki" />
-      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっぴき" remove_kanji="十" kanji="十匹" remove_romaji="juu" romaji="juppiki" />
-      <variant terminal="unit" value="100" remove_kana="く" kana="っぴき" kanji="匹" remove_romaji="ku" romaji="ppiki" />
-      <variant terminal="unit" value="1000" kana="びき" kanji="匹" romaji="biki" />
-      <variant terminal="unit" value="10000" kana="びき" kanji="匹" romaji="biki" />
-    </profile>
-    <profile id="hon" kana="ほん" kanji="本" romaji="hon">
-      <variant terminal="digit" value="1" remove_kana="いち" kana="いっぽん" remove_kanji="一" kanji="一本" remove_romaji="ichi" romaji="ippon" />
-      <variant terminal="digit" value="3" remove_kana="さん" kana="さんぼん" remove_kanji="三" kanji="三本" remove_romaji="san" romaji="sanbon" />
-      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっぽん" remove_kanji="六" kanji="六本" remove_romaji="roku" romaji="roppon" />
-      <variant terminal="digit" value="8" remove_kana="はち" kana="はっぽん" remove_kanji="八" kanji="八本" remove_romaji="hachi" romaji="happon" />
-      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっぽん" remove_kanji="十" kanji="十本" remove_romaji="juu" romaji="juppon" />
-      <variant terminal="unit" value="100" remove_kana="く" kana="っぽん" kanji="本" remove_romaji="ku" romaji="ppon" />
-      <variant terminal="unit" value="1000" kana="ぼん" kanji="本" romaji="bon" />
-      <variant terminal="unit" value="10000" kana="ぼん" kanji="本" romaji="bon" />
-    </profile>
-    <profile id="mai" kana="まい" kanji="枚" romaji="mai" />
-    <profile id="satsu" kana="さつ" kanji="冊" romaji="satsu">
-      <variant terminal="digit" value="1" remove_kana="いち" kana="いっさつ" remove_kanji="一" kanji="一冊" remove_romaji="ichi" romaji="issatsu" />
-      <variant terminal="digit" value="8" remove_kana="はち" kana="はっさつ" remove_kanji="八" kanji="八冊" remove_romaji="hachi" romaji="hassatsu" />
-      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっさつ" remove_kanji="十" kanji="十冊" remove_romaji="juu" romaji="jussatsu" />
-    </profile>
-    <profile id="dai" kana="だい" kanji="台" romaji="dai" />
-    <profile id="ko" kana="こ" kanji="個" romaji="ko">
-      <variant terminal="digit" value="1" remove_kana="いち" kana="いっこ" remove_kanji="一" kanji="一個" remove_romaji="ichi" romaji="ikko" />
-      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっこ" remove_kanji="六" kanji="六個" remove_romaji="roku" romaji="rokko" />
-      <variant terminal="digit" value="8" remove_kana="はち" kana="はっこ" remove_kanji="八" kanji="八個" remove_romaji="hachi" romaji="hakko" />
-      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっこ" remove_kanji="十" kanji="十個" remove_romaji="juu" romaji="jukko" />
-      <variant terminal="unit" value="100" remove_kana="く" kana="っこ" kanji="個" remove_romaji="ku" romaji="kko" />
-    </profile>
-    <profile id="ji" kana="じ" kanji="時" romaji="ji">
-      <variant terminal="digit" value="4" remove_kana="よん" kana="よじ" remove_kanji="四" kanji="四時" remove_romaji="yon" romaji="yoji" />
-      <variant terminal="digit" value="7" remove_kana="なな" kana="しちじ" remove_kanji="七" kanji="七時" remove_romaji="nana" romaji="shichiji" />
-      <variant terminal="digit" value="9" remove_kana="きゅう" kana="くじ" remove_kanji="九" kanji="九時" remove_romaji="kyuu" romaji="kuji" />
-    </profile>
-    <profile id="fun" kana="ふん" kanji="分" romaji="fun">
-      <variant terminal="digit" value="1" remove_kana="いち" kana="いっぷん" remove_kanji="一" kanji="一分" remove_romaji="ichi" romaji="ippun" />
-      <variant terminal="digit" value="3" remove_kana="さん" kana="さんぷん" remove_kanji="三" kanji="三分" remove_romaji="san" romaji="sanpun" />
-      <variant terminal="digit" value="4" remove_kana="よん" kana="よんぷん" remove_kanji="四" kanji="四分" remove_romaji="yon" romaji="yonpun" />
-      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっぷん" remove_kanji="六" kanji="六分" remove_romaji="roku" romaji="roppun" />
-      <variant terminal="digit" value="8" remove_kana="はち" kana="はっぷん" remove_kanji="八" kanji="八分" remove_romaji="hachi" romaji="happun" />
-      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっぷん" remove_kanji="十" kanji="十分" remove_romaji="juu" romaji="juppun" />
-      <variant terminal="unit" value="100" remove_kana="く" kana="っぷん" kanji="分" remove_romaji="ku" romaji="ppun" />
-      <variant terminal="unit" value="1000" kana="ぷん" kanji="分" romaji="pun" />
-      <variant terminal="unit" value="10000" kana="ぷん" kanji="分" romaji="pun" />
-    </profile>
-    <profile id="sai" kana="さい" kanji="歳" romaji="sai">
-      <variant terminal="digit" value="1" remove_kana="いち" kana="いっさい" remove_kanji="一" kanji="一歳" remove_romaji="ichi" romaji="issai" />
-      <variant terminal="digit" value="8" remove_kana="はち" kana="はっさい" remove_kanji="八" kanji="八歳" remove_romaji="hachi" romaji="hassai" />
-      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっさい" remove_kanji="十" kanji="十歳" remove_romaji="juu" romaji="jussai" />
-    </profile>
-    <profile id="kai" kana="かい" kanji="階" romaji="kai">
-      <variant terminal="digit" value="1" remove_kana="いち" kana="いっかい" remove_kanji="一" kanji="一階" remove_romaji="ichi" romaji="ikkai" />
-      <variant terminal="digit" value="3" remove_kana="さん" kana="さんがい" remove_kanji="三" kanji="三階" remove_romaji="san" romaji="sangai" />
-      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっかい" remove_kanji="六" kanji="六階" remove_romaji="roku" romaji="rokkai" />
-      <variant terminal="digit" value="8" remove_kana="はち" kana="はっかい" remove_kanji="八" kanji="八階" remove_romaji="hachi" romaji="hakkai" />
-      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっかい" remove_kanji="十" kanji="十階" remove_romaji="juu" romaji="jukkai" />
-      <variant terminal="unit" value="100" remove_kana="く" kana="っかい" kanji="階" remove_romaji="ku" romaji="kkai" />
-    </profile>
-    <profile id="kai_times" kana="かい" kanji="回" romaji="kai">
-      <variant terminal="digit" value="1" remove_kana="いち" kana="いっかい" remove_kanji="一" kanji="一回" remove_romaji="ichi" romaji="ikkai" />
-      <variant terminal="digit" value="6" remove_kana="ろく" kana="ろっかい" remove_kanji="六" kanji="六回" remove_romaji="roku" romaji="rokkai" />
-      <variant terminal="digit" value="8" remove_kana="はち" kana="はっかい" remove_kanji="八" kanji="八回" remove_romaji="hachi" romaji="hakkai" />
-      <variant terminal="unit" value="10" remove_kana="じゅう" kana="じゅっかい" remove_kanji="十" kanji="十回" remove_romaji="juu" romaji="jukkai" />
-    </profile>
-  </counter_composition_profiles>
-  <!--
-Counting classes connect nouns to compatible counters. Each class
-declares one normal default; noun preferred_counter is only an
-exceptional override.
--->
+<counting schema_version="2" source_language="pl" shared_target="../shared/ja/counting.xml">
   <counting_classes>
-    <class id="person" label="Osoby" default_counter="nin">
-      <counter ref="nin" />
-    </class>
-    <class id="small_animal" label="Małe zwierzęta" default_counter="hiki">
-      <counter ref="hiki" />
-    </class>
-    <class id="long_object" label="Długie przedmioty" default_counter="hon">
-      <counter ref="hon" />
-    </class>
-    <class id="flat_object" label="Płaskie przedmioty" default_counter="mai">
-      <counter ref="mai" />
-    </class>
-    <class id="bound_volume" label="Oprawione tomy" default_counter="satsu">
-      <counter ref="satsu" />
-    </class>
-    <class id="machine" label="Maszyny i pojazdy" default_counter="dai">
-      <counter ref="dai" />
-    </class>
-    <class id="small_object" label="Małe przedmioty" default_counter="ko">
-      <counter ref="ko" />
-    </class>
+    <class id="person" label="Osoby" />
+    <class id="small_animal" label="Małe zwierzęta" />
+    <class id="long_object" label="Długie przedmioty" />
+    <class id="flat_object" label="Płaskie przedmioty" />
+    <class id="bound_volume" label="Oprawione tomy" />
+    <class id="machine" label="Maszyny i pojazdy" />
+    <class id="small_object" label="Małe przedmioty" />
   </counting_classes>
-  <!--
-Count source profiles describe source-language noun forms and
-agreement. fallback="noun_case" reuses the ordinary noun case;
-other profiles require explicit counted forms on the noun.
--->
   <count_source_profiles>
     <profiles>
       <profile id="one" label="jeden" fallback="noun_case" source_agreement="singular" />
       <profile id="few" label="kilka" source_form_strategy="paucal" source_agreement="plural" />
       <profile id="many" label="wiele lub ile" source_form_strategy="genitive_plural" source_agreement="singular" />
     </profiles>
-    <!--
-Quantity mappings select a source profile for Numeric or Symbolic
-quantities. Exact mappings, periodic rules, and ordinary ranges are
-grammar data and must resolve without ambiguity.
--->
     <quantity_mappings>
       <quantity number="1" profile="one" />
       <rule min="2" max="*" modulo="10" remainder_min="2" remainder_max="4" exclude_modulo="100" exclude_remainder_min="12" exclude_remainder_max="14" profile="few" />
@@ -163,39 +22,9 @@ grammar data and must resolve without ambiguity.
       <quantity symbol="how_many" profile="many" />
     </quantity_mappings>
   </count_source_profiles>
-  <!--
-Number sets are named lexical selections. Generated numeric ranges
-use number composition instead and are never materialized as words.
--->
   <number_sets>
-    <set id="one_to_ten" label="Liczby od 1 do 10">
-      <number ref="one" />
-      <number ref="two" />
-      <number ref="three" />
-      <number ref="four" />
-      <number ref="five" />
-      <number ref="six" />
-      <number ref="seven" />
-      <number ref="eight" />
-      <number ref="nine" />
-      <number ref="ten" />
-    </set>
-    <set id="two_to_four" label="Liczby od 2 do 4">
-      <number ref="two" />
-      <number ref="three" />
-      <number ref="four" />
-    </set>
-    <set id="two_or_more" label="Dwa lub więcej">
-      <number ref="two" />
-      <number ref="three" />
-      <number ref="four" />
-      <number ref="five" />
-      <number ref="six" />
-      <number ref="seven" />
-      <number ref="eight" />
-      <number ref="nine" />
-      <number ref="ten" />
-      <number ref="twenty" />
-    </set>
+    <set id="one_to_ten" label="Liczby od 1 do 10" />
+    <set id="two_to_four" label="Liczby od 2 do 4" />
+    <set id="two_or_more" label="Dwa lub więcej" />
   </number_sets>
 </counting>

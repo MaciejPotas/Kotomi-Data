@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" id="copulas" schema="copula" target_language_id="ja">
+  <words>
+    <word id="da" kana="だ" type="copula">
+      <forms>
+        <form ref="dictionary" kana="だ" />
+        <form ref="polite_nonpast" kana="です" />
+        <form ref="plain_negative" kana="じゃない" />
+        <form ref="polite_negative" kana="ではありません" />
+        <form ref="past_plain" kana="だった" />
+        <form ref="past_polite" kana="でした" />
+        <form ref="past_negative_plain" kana="じゃなかった" />
+        <form ref="past_negative_polite" kana="ではありませんでした" />
+      </forms>
+    </word>
+  </words>
+</dictionary>

@@ -1,3 +1,6 @@
-<dictionary schema_version="2" instruction_language_id="test" id="copulas" schema="copula"><words>
-  <word id="copula" kana="だ" translation="be" />
-</words></dictionary>
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" instruction_language_id="test" id="copulas" schema="copula" shared_target="../../shared/ja/dictionaries/copulas.xml">
+  <words>
+    <word id="da" translation="be" />
+  </words>
+</dictionary>

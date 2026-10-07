@@ -9,8 +9,9 @@ The two public update channels have deliberately different responsibilities. **C
 | Path | Purpose | Update channel |
 | --- | --- | --- |
 | `quiz_project.xml` | Canonical Schema 2 project entrypoint. | Content |
-| `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, copulas, interrogatives, connectors, numbers, and counters. | Content |
-| `grammar/` | Shared grammar rules, counting configuration, and context pools. | Content |
+| `dictionaries/` | Polish source overlays, selecting stable Japanese word IDs and providing source values. | Content |
+| `grammar/` | Polish grammar, labels and context overlays. | Content |
+| `shared/ja/` | One Japanese target catalog and word/counting definitions, referenced by every source bundle. | Content |
 | `patterns/` | Sentence maps and sentence-quiz definitions. | Content |
 | `lessons/` | Schema 4 lesson catalog. | Content |
 | `quizzes/` | Published first-party executable quiz package files. | Quiz |
@@ -29,6 +30,7 @@ Content Update owns one semantic snapshot:
 quiz_project.xml
 dictionaries/**
 grammar/**
+shared/ja/**
 patterns/**
 lessons/**
 content_revision.json
@@ -98,3 +100,16 @@ CI runs the same validation for pull requests and `main`. The validator checks c
 ## Kotomi integration
 
 The Kotomi source repository mounts this repository as the `data` git submodule. Desktop builds and mobile packages include the complete Content snapshot plus the separately owned executable quiz packages required for a fresh installation.
+
+## Japanese definitions and instruction overlays
+
+`shared/ja/` owns the Japanese lexical surfaces, semantic categories/roles,
+form catalogs and Japanese number/counter data. The existing `dictionaries/`
+and `grammar/` XML files are Polish source overlays referencing those files
+through `shared_target`. `instruction_languages/test/` references the same
+Japanese definitions and contains no source grammar fixtures. Caseless grammar
+examples are covered by Kotomi's tests-only English fixture instead.
+
+Overlay word IDs select vocabulary and join shared definitions. Translations,
+source forms, agreement, government and relation profiles remain independent.
+Do not copy Japanese data into a new instruction-language bundle.

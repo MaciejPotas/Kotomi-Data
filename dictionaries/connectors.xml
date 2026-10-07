@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" id="connectors" label="Connectors" schema="connector" instruction_language_id="pl">
+<dictionary schema_version="2" id="connectors" label="Connectors" schema="connector" instruction_language_id="pl" shared_target="../shared/ja/dictionaries/connectors.xml">
   <editor required="translation kana" optional="kanji romaji" metadata="" />
   <words>
-    <word id="dakara" translation="dlatego" kana="だから" romaji="dakara" />
-    <word id="soreka" translation="albo" kana="それか" romaji="soreka" />
-    <word id="dakedo" translation="ale" kana="だけど" romaji="dakedo" />
-    <word id="sorenara" translation="w takim razie" kana="それなら" romaji="sorenara" />
-    <word id="soreyori" translation="zamiast tego" kana="それより" romaji="soreyori" />
-    <word id="shikamo" translation="co więcej" kana="しかも" romaji="shikamo" />
-    <word id="demo" translation="jednak" kana="でも" romaji="demo" />
+    <word id="dakara" translation="dlatego" />
+    <word id="soreka" translation="albo" />
+    <word id="dakedo" translation="ale" />
+    <word id="sorenara" translation="w takim razie" />
+    <word id="soreyori" translation="zamiast tego" />
+    <word id="shikamo" translation="co więcej" />
+    <word id="demo" translation="jednak" />
   </words>
 </dictionary>

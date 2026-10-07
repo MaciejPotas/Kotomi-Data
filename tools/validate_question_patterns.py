@@ -4,6 +4,8 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
+from composed_xml import parse as parse_composed
+
 ROOT = Path(__file__).resolve().parents[1]
 FORM_TRANSLATION = "{copula[form, agree:@item, case:@item].translation}"
 EXPECTED_QUESTIONS = {
@@ -54,7 +56,7 @@ EXPECTED_COPULA_TRANSLATIONS = {
 
 
 def validate_question_prompts() -> None:
-    maps_root = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+    maps_root = parse_composed(ROOT / "patterns" / "sentence_maps.xml").getroot()
     patterns = {
         str(node.get("id", "")): node
         for node in maps_root.findall("./sentence_patterns/sentence_pattern")
@@ -90,7 +92,7 @@ def validate_question_prompts() -> None:
 
 
 def validate_copula_translations() -> None:
-    root = ET.parse(ROOT / "dictionaries" / "copulas.xml").getroot()
+    root = parse_composed(ROOT / "dictionaries" / "copulas.xml").getroot()
     word = root.find("./words/word[@id='da']")
     if word is None:
         raise AssertionError("Missing canonical copula 'da'")

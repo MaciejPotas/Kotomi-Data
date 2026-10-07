@@ -7,6 +7,8 @@ from urllib.parse import parse_qs, urlsplit
 import xml.etree.ElementTree as ET
 
 
+from composed_xml import parse as parse_composed
+
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
 
@@ -61,12 +63,18 @@ CONTENT_MANIFEST_ORDER = [
     "data/patterns/sentence_quizzes.xml",
     "data/quiz_project.xml",
 ]
+CONTENT_MANIFEST_ORDER.extend(
+    "data/" + path.relative_to(ROOT).as_posix()
+    for path in sorted((ROOT / "shared").rglob("*.xml"))
+)
+CONTENT_MANIFEST_ORDER.sort(key=str.casefold)
 CONTENT_SOURCE_FILES = {
     path.removeprefix("data/")
     for path in CONTENT_MANIFEST_ORDER
     if path != "data/content_revision.json"
 }
 CONTENT_DIRECTORIES = {
+    "shared",
     "dictionaries",
     "grammar",
     "lessons",
@@ -198,7 +206,7 @@ def validate_xml_and_schemas() -> None:
     for relative in sorted(LEARNING_XML_FILES):
         path = ROOT / relative
         try:
-            root = ET.parse(path).getroot()
+            root = parse_composed(path).getroot()
         except ET.ParseError as exc:
             raise AssertionError(f"Malformed XML in {relative}: {exc}") from exc
 
@@ -213,7 +221,7 @@ def validate_xml_and_schemas() -> None:
 
 def validate_project_references() -> None:
     manifest_path = ROOT / "quiz_project.xml"
-    root = ET.parse(manifest_path).getroot()
+    root = parse_composed(manifest_path).getroot()
     references = {
         node.get("file", "")
         for node in root.iter()
@@ -232,8 +240,8 @@ def validate_project_references() -> None:
 
 
 def validate_shared_grammar_dependencies() -> None:
-    grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
-    contexts = ET.parse(ROOT / "grammar" / "contexts.xml").getroot()
+    grammar = parse_composed(ROOT / "grammar" / "grammar_rules.xml").getroot()
+    contexts = parse_composed(ROOT / "grammar" / "contexts.xml").getroot()
     defined_roles = {
         value for node in grammar.findall("./roles/role")
         for value in [node.get("id")] if value
@@ -251,7 +259,7 @@ def validate_shared_grammar_dependencies() -> None:
         for value in [node.get("id")] if value
     }
     dictionary_roots = [
-        (path, ET.parse(path).getroot())
+        (path, parse_composed(path).getroot())
         for path in sorted((ROOT / "dictionaries").glob("*.xml"))
     ]
     form_catalogs: dict[str, set[str]] = {}
@@ -442,7 +450,7 @@ def validate_shared_grammar_dependencies() -> None:
 
 
 def validate_composite_case_scopes() -> None:
-    root = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+    root = parse_composed(ROOT / "patterns" / "sentence_maps.xml").getroot()
     for pattern in root.findall("./sentence_patterns/sentence_pattern"):
         patterns = pattern.find("patterns")
         if patterns is None:
@@ -456,7 +464,7 @@ def validate_composite_case_scopes() -> None:
 
 
 def validate_lesson_references() -> None:
-    project_root = ET.parse(ROOT / "quiz_project.xml").getroot()
+    project_root = parse_composed(ROOT / "quiz_project.xml").getroot()
     dictionary_files = {
         str(node.get("id", "")): str(node.get("file", ""))
         for node in project_root.findall("./dictionaries/dictionary")
@@ -465,14 +473,14 @@ def validate_lesson_references() -> None:
     for dictionary_id, relative in dictionary_files.items():
         if not dictionary_id or not relative:
             raise AssertionError("quiz_project.xml contains an incomplete dictionary entry")
-        dictionary_root = ET.parse(ROOT / relative).getroot()
+        dictionary_root = parse_composed(ROOT / relative).getroot()
         dictionary_words[dictionary_id] = {
             str(word.get("id", ""))
             for word in dictionary_root.findall("./words/word")
             if word.get("id")
         }
 
-    lessons_root = ET.parse(ROOT / LESSON_SCHEMA_FILE).getroot()
+    lessons_root = parse_composed(ROOT / LESSON_SCHEMA_FILE).getroot()
     for lesson in lessons_root.findall("./lessons/lesson"):
         lesson_id = str(lesson.get("id", "")) or "<missing>"
         references = lesson.findall("./word/dictionary_ref")
@@ -502,15 +510,15 @@ def validate_lesson_references() -> None:
 def validate_counting_data() -> None:
     """Validate the complete Schema 2 counting acceptance inventory."""
 
-    numbers = ET.parse(ROOT / "dictionaries" / "numbers.xml").getroot()
-    counters = ET.parse(ROOT / "dictionaries" / "counters.xml").getroot()
-    nouns = ET.parse(ROOT / "dictionaries" / "nouns.xml").getroot()
-    interrogatives = ET.parse(
+    numbers = parse_composed(ROOT / "dictionaries" / "numbers.xml").getroot()
+    counters = parse_composed(ROOT / "dictionaries" / "counters.xml").getroot()
+    nouns = parse_composed(ROOT / "dictionaries" / "nouns.xml").getroot()
+    interrogatives = parse_composed(
         ROOT / "dictionaries" / "interrogatives.xml"
     ).getroot()
-    grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
-    counting_grammar = ET.parse(ROOT / "grammar" / "counting.xml").getroot()
-    patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+    grammar = parse_composed(ROOT / "grammar" / "grammar_rules.xml").getroot()
+    counting_grammar = parse_composed(ROOT / "grammar" / "counting.xml").getroot()
+    patterns = parse_composed(ROOT / "patterns" / "sentence_maps.xml").getroot()
 
     if counting_grammar.get("source_language") != "pl":
         raise AssertionError(

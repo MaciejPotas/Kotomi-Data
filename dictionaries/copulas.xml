@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" id="copulas" label="Copulas" schema="copula" instruction_language_id="pl">
+<dictionary schema_version="2" id="copulas" label="Copulas" schema="copula" instruction_language_id="pl" shared_target="../shared/ja/dictionaries/copulas.xml">
   <editor required="translation kana" optional="kanji romaji" metadata="forms" />
   <words>
-    <word id="da" translation="być" kana="だ" type="copula">
+    <word id="da" translation="być">
       <forms>
-        <form ref="dictionary" translation="jest" kana="だ"  />
-        <form ref="polite_nonpast" translation="jest" kana="です"  />
-        <form ref="plain_negative" translation="nie jest" kana="じゃない"  />
-        <form ref="polite_negative" translation="nie jest" kana="ではありません"  />
-        <form ref="past_plain" translation="był" kana="だった"  />
-        <form ref="past_polite" translation="był" kana="でした"  />
-        <form ref="past_negative_plain" translation="nie był" kana="じゃなかった"  />
-        <form ref="past_negative_polite" translation="nie był" kana="ではありませんでした"  />
+        <form ref="dictionary" translation="jest" />
+        <form ref="polite_nonpast" translation="jest" />
+        <form ref="plain_negative" translation="nie jest" />
+        <form ref="polite_negative" translation="nie jest" />
+        <form ref="past_plain" translation="był" />
+        <form ref="past_polite" translation="był" />
+        <form ref="past_negative_plain" translation="nie był" />
+        <form ref="past_negative_polite" translation="nie był" />
       </forms>
     </word>
   </words>

@@ -1,7 +1,27 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" instruction_language_id="test" id="interrogatives" schema="interrogative">
+<dictionary schema_version="2" instruction_language_id="test" id="interrogatives" schema="interrogative" shared_target="../../shared/ja/dictionaries/interrogatives.xml">
   <words>
-    <word id="who" kana="だれ" translation="who" asks_for="person" />
-    <word id="how_many" translation="how_many" kana="なん" kanji="何" romaji="nan" asks_for="count" quantity_symbol="how_many" />
+    <word id="how_many" translation="how_many" />
+    <word id="dare" translation="dare" />
+    <word id="donata" translation="donata" />
+    <word id="nani" translation="nani" />
+    <word id="nan" translation="nan" />
+    <word id="itsu" translation="itsu" />
+    <word id="nanji" translation="nanji" />
+    <word id="doko" translation="doko" />
+    <word id="dore" translation="dore" />
+    <word id="dono" translation="dono" />
+    <word id="dochira" translation="dochira" />
+    <word id="docchi" translation="docchi" />
+    <word id="donna" translation="donna" />
+    <word id="naze" translation="naze" />
+    <word id="doushite" translation="doushite" />
+    <word id="douyatte" translation="douyatte" />
+    <word id="dou" translation="dou" />
+    <word id="ikura" translation="ikura" />
+    <word id="ikutsu" translation="ikutsu" />
+    <word id="nannin" translation="nannin" />
+    <word id="nansai" translation="nansai" />
+    <word id="dare_no" translation="dare no" />
   </words>
 </dictionary>

@@ -1,126 +1,126 @@
 {
   "format": 1,
-  "revision": 46,
+  "revision": 47,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "cf4003e27c7e537c9ec97bdd993563034bdca8385891542a2342386a5be25639",
-      "url": "content_revision.json?kotomi_sha256=cf4003e27c7e537c9ec97bdd993563034bdca8385891542a2342386a5be25639"
+      "sha256": "7b6b1b510fccc66af7a5e64c6b929787268117bafb634242eb96f874b8a43b96",
+      "url": "content_revision.json?kotomi_sha256=7b6b1b510fccc66af7a5e64c6b929787268117bafb634242eb96f874b8a43b96"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
-      "sha256": "005e78201bafb71dbcaf04e5bc04a07b05195b62cac1cb34736629f1ee438c94",
-      "url": "dictionaries/adjectives.xml?kotomi_sha256=005e78201bafb71dbcaf04e5bc04a07b05195b62cac1cb34736629f1ee438c94"
+      "sha256": "f575857bee44398f291c76d8e8c7f9235a4e16595151cd547cdae8e61c97e0d1",
+      "url": "dictionaries/adjectives.xml?kotomi_sha256=f575857bee44398f291c76d8e8c7f9235a4e16595151cd547cdae8e61c97e0d1"
     },
     {
       "path": "data/dictionaries/connectors.xml",
-      "sha256": "10a8d86dfcf3e20205ee652970d419c1441f9c2c51aa995fcf058aa5b68c3652",
-      "url": "dictionaries/connectors.xml?kotomi_sha256=10a8d86dfcf3e20205ee652970d419c1441f9c2c51aa995fcf058aa5b68c3652"
+      "sha256": "a10767fb29a855f17478c39b3e1af6b293f646a3afe51e1b36f6834f0c1cdbd4",
+      "url": "dictionaries/connectors.xml?kotomi_sha256=a10767fb29a855f17478c39b3e1af6b293f646a3afe51e1b36f6834f0c1cdbd4"
     },
     {
       "path": "data/dictionaries/copulas.xml",
-      "sha256": "703ae0ae82487a64324ad834e8ed5c1c1d6699586a6eb20c4db2b4c30598696d",
-      "url": "dictionaries/copulas.xml?kotomi_sha256=703ae0ae82487a64324ad834e8ed5c1c1d6699586a6eb20c4db2b4c30598696d"
+      "sha256": "ed8196a035ec75d305e1ce14fcd0b0350c99286513f01cf1eaede7839b8eedaa",
+      "url": "dictionaries/copulas.xml?kotomi_sha256=ed8196a035ec75d305e1ce14fcd0b0350c99286513f01cf1eaede7839b8eedaa"
     },
     {
       "path": "data/dictionaries/counters.xml",
-      "sha256": "0a430d76fd2a81ebdb89d6ca96101303affa2d2d675de5d74e8794be0653235c",
-      "url": "dictionaries/counters.xml?kotomi_sha256=0a430d76fd2a81ebdb89d6ca96101303affa2d2d675de5d74e8794be0653235c"
+      "sha256": "677e066f4ff4e4d8776a79cb110bb45deea3db21bde84e286a922c89af3ad782",
+      "url": "dictionaries/counters.xml?kotomi_sha256=677e066f4ff4e4d8776a79cb110bb45deea3db21bde84e286a922c89af3ad782"
     },
     {
       "path": "data/dictionaries/interrogatives.xml",
-      "sha256": "0e7cf3a56cc42f91dbea350b77cfcc942f82f72ccd4cbbcccb66e0027b9e48c6",
-      "url": "dictionaries/interrogatives.xml?kotomi_sha256=0e7cf3a56cc42f91dbea350b77cfcc942f82f72ccd4cbbcccb66e0027b9e48c6"
+      "sha256": "cf4d58fd5a158143a129dd4d122364399d3a456c68b5de1f644ecf4fa380bb1d",
+      "url": "dictionaries/interrogatives.xml?kotomi_sha256=cf4d58fd5a158143a129dd4d122364399d3a456c68b5de1f644ecf4fa380bb1d"
     },
     {
       "path": "data/dictionaries/nouns.xml",
-      "sha256": "bfcfddc98daf6c79143b81ad0140445c114531329c43fa8a194ffc9e41f9efd3",
-      "url": "dictionaries/nouns.xml?kotomi_sha256=bfcfddc98daf6c79143b81ad0140445c114531329c43fa8a194ffc9e41f9efd3"
+      "sha256": "9da3db57128a5327c02e6d9961cd648197fa3219579e11236fd4fc317380c6d2",
+      "url": "dictionaries/nouns.xml?kotomi_sha256=9da3db57128a5327c02e6d9961cd648197fa3219579e11236fd4fc317380c6d2"
     },
     {
       "path": "data/dictionaries/numbers.xml",
-      "sha256": "bc4658f3e1fadd9c210df4f56c66c4781f7e52b5ee30f361cbbec1e2b00eda73",
-      "url": "dictionaries/numbers.xml?kotomi_sha256=bc4658f3e1fadd9c210df4f56c66c4781f7e52b5ee30f361cbbec1e2b00eda73"
+      "sha256": "2c5788eb8e8770ac087abfa482cb0914886c149431f67b04cf59a455bf553b38",
+      "url": "dictionaries/numbers.xml?kotomi_sha256=2c5788eb8e8770ac087abfa482cb0914886c149431f67b04cf59a455bf553b38"
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "06082094b16ec7ffe5b1d8791206187eab2cbe8e3bf98960bf027aa90e73024e",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=06082094b16ec7ffe5b1d8791206187eab2cbe8e3bf98960bf027aa90e73024e"
+      "sha256": "b0e518cc003a271881fa54626cdc600502436dd33be3aa58bb336ccb4de751d2",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=b0e518cc003a271881fa54626cdc600502436dd33be3aa58bb336ccb4de751d2"
     },
     {
       "path": "data/grammar/contexts.xml",
-      "sha256": "7c34ca9caddab6c6711d559c80d4a35bcf270f10358839427a945ecd4691981d",
-      "url": "grammar/contexts.xml?kotomi_sha256=7c34ca9caddab6c6711d559c80d4a35bcf270f10358839427a945ecd4691981d"
+      "sha256": "17b4d7ebd4af5a9f86de5ee61f449ecea9ecc3dab9ccc14a6ce83846088af909",
+      "url": "grammar/contexts.xml?kotomi_sha256=17b4d7ebd4af5a9f86de5ee61f449ecea9ecc3dab9ccc14a6ce83846088af909"
     },
     {
       "path": "data/grammar/counting.xml",
-      "sha256": "a292feb3b5ab1c5b1079d97ee9f1209be7a5fb38f9029a4d952c783908f1be57",
-      "url": "grammar/counting.xml?kotomi_sha256=a292feb3b5ab1c5b1079d97ee9f1209be7a5fb38f9029a4d952c783908f1be57"
+      "sha256": "80ff2177c39ffc1b6f7404e9c0fc5ad767e03126930beac942f0d4c67348cbfa",
+      "url": "grammar/counting.xml?kotomi_sha256=80ff2177c39ffc1b6f7404e9c0fc5ad767e03126930beac942f0d4c67348cbfa"
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "3f8a17b64c7eda230eaf4eefc37c76b3340039746c15308e337d5ff74e517266",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=3f8a17b64c7eda230eaf4eefc37c76b3340039746c15308e337d5ff74e517266"
+      "sha256": "1d07a59ee69a46f5dd03b055fc82b2a9f190d22f1deee19a2b5e8853bdc9f742",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=1d07a59ee69a46f5dd03b055fc82b2a9f190d22f1deee19a2b5e8853bdc9f742"
     },
     {
       "path": "data/instruction_languages/test/adjectives.xml",
-      "sha256": "6726eedf90f3fa4857f8434c76a13aa346031d30a8a7e64112c42256ad524659",
-      "url": "instruction_languages/test/adjectives.xml?kotomi_sha256=6726eedf90f3fa4857f8434c76a13aa346031d30a8a7e64112c42256ad524659"
+      "sha256": "08fd2f4fe932e037dcd70e04026afcb1924d2d7eea41536285f7f01ad8f94263",
+      "url": "instruction_languages/test/adjectives.xml?kotomi_sha256=08fd2f4fe932e037dcd70e04026afcb1924d2d7eea41536285f7f01ad8f94263"
     },
     {
       "path": "data/instruction_languages/test/connectors.xml",
-      "sha256": "bd75d8f2cfb98802aff27342ef63dc1671739d008134c34f7379dfc232a67036",
-      "url": "instruction_languages/test/connectors.xml?kotomi_sha256=bd75d8f2cfb98802aff27342ef63dc1671739d008134c34f7379dfc232a67036"
+      "sha256": "696857d0ee51c294c846565d4393f6ef49640a3702bac50c6558fe583c6dcfb7",
+      "url": "instruction_languages/test/connectors.xml?kotomi_sha256=696857d0ee51c294c846565d4393f6ef49640a3702bac50c6558fe583c6dcfb7"
     },
     {
       "path": "data/instruction_languages/test/contexts.xml",
-      "sha256": "56cac5339f4831e5852d265d6b57645827393deb4efffc8fd5ff51a91e105064",
-      "url": "instruction_languages/test/contexts.xml?kotomi_sha256=56cac5339f4831e5852d265d6b57645827393deb4efffc8fd5ff51a91e105064"
+      "sha256": "39764e27d0c6ec1f586e28bf3e64cb4c4a647cb2b9defaa6e06023ca3d98088b",
+      "url": "instruction_languages/test/contexts.xml?kotomi_sha256=39764e27d0c6ec1f586e28bf3e64cb4c4a647cb2b9defaa6e06023ca3d98088b"
     },
     {
       "path": "data/instruction_languages/test/copulas.xml",
-      "sha256": "143da3a209f0802ad322ffd2cd7b72d54c7541bfd3a33388fc8441e72d514d54",
-      "url": "instruction_languages/test/copulas.xml?kotomi_sha256=143da3a209f0802ad322ffd2cd7b72d54c7541bfd3a33388fc8441e72d514d54"
+      "sha256": "59d29dd033b03c920910a3607ff7b36d6f2b3aebc4f1650e2692d203815cb179",
+      "url": "instruction_languages/test/copulas.xml?kotomi_sha256=59d29dd033b03c920910a3607ff7b36d6f2b3aebc4f1650e2692d203815cb179"
     },
     {
       "path": "data/instruction_languages/test/counters.xml",
-      "sha256": "072e8e6bff1c1565c483db02e9a817c73eac5debd78e1de211a37ff081ce8230",
-      "url": "instruction_languages/test/counters.xml?kotomi_sha256=072e8e6bff1c1565c483db02e9a817c73eac5debd78e1de211a37ff081ce8230"
+      "sha256": "7ab3d0d27eb6db7c35d13adb75bdc13f7572a2d135db334d20f88ee919c68137",
+      "url": "instruction_languages/test/counters.xml?kotomi_sha256=7ab3d0d27eb6db7c35d13adb75bdc13f7572a2d135db334d20f88ee919c68137"
     },
     {
       "path": "data/instruction_languages/test/counting.xml",
-      "sha256": "5dd2ba51032f92478dfa8b3a5f1486a7f34c01bfd61c26068f922c956d3b5b24",
-      "url": "instruction_languages/test/counting.xml?kotomi_sha256=5dd2ba51032f92478dfa8b3a5f1486a7f34c01bfd61c26068f922c956d3b5b24"
+      "sha256": "4e476e582eafa64d1f1f8b87df203ad0e4d25de5c409c25b3e347c62752af4e8",
+      "url": "instruction_languages/test/counting.xml?kotomi_sha256=4e476e582eafa64d1f1f8b87df203ad0e4d25de5c409c25b3e347c62752af4e8"
     },
     {
       "path": "data/instruction_languages/test/grammar.xml",
-      "sha256": "9068337439ac3fff5371768ec5e026b7ea4819d3b374c5eef803064f7ecded5f",
-      "url": "instruction_languages/test/grammar.xml?kotomi_sha256=9068337439ac3fff5371768ec5e026b7ea4819d3b374c5eef803064f7ecded5f"
+      "sha256": "5411f8404faa4c9d597f6576652d2ef7d905868a77830147e0bc2ab4bbb93224",
+      "url": "instruction_languages/test/grammar.xml?kotomi_sha256=5411f8404faa4c9d597f6576652d2ef7d905868a77830147e0bc2ab4bbb93224"
     },
     {
       "path": "data/instruction_languages/test/interrogatives.xml",
-      "sha256": "6fd88f2d2940f6691fb4c100cf27ca98551c04c4cdd3abf3f398c4a2e1206e22",
-      "url": "instruction_languages/test/interrogatives.xml?kotomi_sha256=6fd88f2d2940f6691fb4c100cf27ca98551c04c4cdd3abf3f398c4a2e1206e22"
+      "sha256": "7aca8ff50a68bd9fa881874088568cf42c848828638e659cd2f238309a90320f",
+      "url": "instruction_languages/test/interrogatives.xml?kotomi_sha256=7aca8ff50a68bd9fa881874088568cf42c848828638e659cd2f238309a90320f"
     },
     {
       "path": "data/instruction_languages/test/lessons/lessons.xml",
-      "sha256": "a85865916851475e397b7e34d7cc7f7741c7d24d0f09177120a4c74eccf7be62",
-      "url": "instruction_languages/test/lessons/lessons.xml?kotomi_sha256=a85865916851475e397b7e34d7cc7f7741c7d24d0f09177120a4c74eccf7be62"
+      "sha256": "eb8c9b172c4623fdd0d010ce96fd2b923bd1c2f00aba7622ad9b58621c0ea010",
+      "url": "instruction_languages/test/lessons/lessons.xml?kotomi_sha256=eb8c9b172c4623fdd0d010ce96fd2b923bd1c2f00aba7622ad9b58621c0ea010"
     },
     {
       "path": "data/instruction_languages/test/nouns.xml",
-      "sha256": "9fadae1107ff9ec9aa147f5b7a31d535925de07b0fd22b4a006536ae00c687af",
-      "url": "instruction_languages/test/nouns.xml?kotomi_sha256=9fadae1107ff9ec9aa147f5b7a31d535925de07b0fd22b4a006536ae00c687af"
+      "sha256": "49e216eb39fe18348319b987b84ab79af710de0e9c6049906d6a8690c4d78669",
+      "url": "instruction_languages/test/nouns.xml?kotomi_sha256=49e216eb39fe18348319b987b84ab79af710de0e9c6049906d6a8690c4d78669"
     },
     {
       "path": "data/instruction_languages/test/numbers.xml",
-      "sha256": "7fbc595644b7152bf726d2b0a2da946cbe22a4fca5856a1cd9803b61831c3243",
-      "url": "instruction_languages/test/numbers.xml?kotomi_sha256=7fbc595644b7152bf726d2b0a2da946cbe22a4fca5856a1cd9803b61831c3243"
+      "sha256": "7766e0174cad9947a950dd49ca147e983d20609d238de9d8ffd3870981c81a9f",
+      "url": "instruction_languages/test/numbers.xml?kotomi_sha256=7766e0174cad9947a950dd49ca147e983d20609d238de9d8ffd3870981c81a9f"
     },
     {
       "path": "data/instruction_languages/test/patterns.xml",
-      "sha256": "0f6bdc503dcb9a530ec0d07206e626a40d22489aade12d1e000b3e55647bf953",
-      "url": "instruction_languages/test/patterns.xml?kotomi_sha256=0f6bdc503dcb9a530ec0d07206e626a40d22489aade12d1e000b3e55647bf953"
+      "sha256": "2e4eb08cf20912b0bc01e2d40fb87b4e0d29fc7af3b1418580761a26bc771cf4",
+      "url": "instruction_languages/test/patterns.xml?kotomi_sha256=2e4eb08cf20912b0bc01e2d40fb87b4e0d29fc7af3b1418580761a26bc771cf4"
     },
     {
       "path": "data/instruction_languages/test/quiz_project.xml",
@@ -129,13 +129,13 @@
     },
     {
       "path": "data/instruction_languages/test/quizzes.xml",
-      "sha256": "d45d87678f22a6bad3352ac99a1a0ef57b9966bf4a02f369555248b53058fb50",
-      "url": "instruction_languages/test/quizzes.xml?kotomi_sha256=d45d87678f22a6bad3352ac99a1a0ef57b9966bf4a02f369555248b53058fb50"
+      "sha256": "3d8207fecf4cce355947afdf2850771322c20831ba76dc365f0cc9a03f00773f",
+      "url": "instruction_languages/test/quizzes.xml?kotomi_sha256=3d8207fecf4cce355947afdf2850771322c20831ba76dc365f0cc9a03f00773f"
     },
     {
       "path": "data/instruction_languages/test/verbs.xml",
-      "sha256": "b760a395cd3b1bc9efbf147b188fb5b2b9907de90cb85b6a30ee07f3a2a227a9",
-      "url": "instruction_languages/test/verbs.xml?kotomi_sha256=b760a395cd3b1bc9efbf147b188fb5b2b9907de90cb85b6a30ee07f3a2a227a9"
+      "sha256": "405e0bdf3ff92b4cbc2935d3d041fca3923d44d0c401889d00bbfaeb286780fe",
+      "url": "instruction_languages/test/verbs.xml?kotomi_sha256=405e0bdf3ff92b4cbc2935d3d041fca3923d44d0c401889d00bbfaeb286780fe"
     },
     {
       "path": "data/lessons/lessons.xml",
@@ -156,6 +156,61 @@
       "path": "data/quiz_project.xml",
       "sha256": "b33d81e90a510f82116bba6c07b56d5a9481f2a75f1c848e04df7697b9241e1e",
       "url": "quiz_project.xml?kotomi_sha256=b33d81e90a510f82116bba6c07b56d5a9481f2a75f1c848e04df7697b9241e1e"
+    },
+    {
+      "path": "data/shared/ja/contexts.xml",
+      "sha256": "ffbb4b6860d426cee9f0855e3959a18469f469888bfd0dcd76b55966c2bd382e",
+      "url": "shared/ja/contexts.xml?kotomi_sha256=ffbb4b6860d426cee9f0855e3959a18469f469888bfd0dcd76b55966c2bd382e"
+    },
+    {
+      "path": "data/shared/ja/counting.xml",
+      "sha256": "304527bd20ce0c6289859f9fb85e1b667f33ffa574f82c6f8b87c47ca2e09261",
+      "url": "shared/ja/counting.xml?kotomi_sha256=304527bd20ce0c6289859f9fb85e1b667f33ffa574f82c6f8b87c47ca2e09261"
+    },
+    {
+      "path": "data/shared/ja/dictionaries/adjectives.xml",
+      "sha256": "a99f8d6aacd91ea31045da2dcc9190a8990b4990afb83f58b118483efcd49dda",
+      "url": "shared/ja/dictionaries/adjectives.xml?kotomi_sha256=a99f8d6aacd91ea31045da2dcc9190a8990b4990afb83f58b118483efcd49dda"
+    },
+    {
+      "path": "data/shared/ja/dictionaries/connectors.xml",
+      "sha256": "1f1c4ba473d571293156cd9c90e244be4d9e98972766592174952814b615edeb",
+      "url": "shared/ja/dictionaries/connectors.xml?kotomi_sha256=1f1c4ba473d571293156cd9c90e244be4d9e98972766592174952814b615edeb"
+    },
+    {
+      "path": "data/shared/ja/dictionaries/copulas.xml",
+      "sha256": "67a1d0973258f7bc9eb27719c8fe5c4ad103b2806bf8a9c63175703f509916b6",
+      "url": "shared/ja/dictionaries/copulas.xml?kotomi_sha256=67a1d0973258f7bc9eb27719c8fe5c4ad103b2806bf8a9c63175703f509916b6"
+    },
+    {
+      "path": "data/shared/ja/dictionaries/counters.xml",
+      "sha256": "327ceaaebfed025044d8145d13653a7862b1e4aa90a4e8d353376f6ece1a4807",
+      "url": "shared/ja/dictionaries/counters.xml?kotomi_sha256=327ceaaebfed025044d8145d13653a7862b1e4aa90a4e8d353376f6ece1a4807"
+    },
+    {
+      "path": "data/shared/ja/dictionaries/interrogatives.xml",
+      "sha256": "339860b05c204e3e500d15d2bbfbc297bd0a854983f0ad186429e8d5fa9fdb27",
+      "url": "shared/ja/dictionaries/interrogatives.xml?kotomi_sha256=339860b05c204e3e500d15d2bbfbc297bd0a854983f0ad186429e8d5fa9fdb27"
+    },
+    {
+      "path": "data/shared/ja/dictionaries/nouns.xml",
+      "sha256": "e006abdb4923c478ec91510e4cfee3021a1a06bd8995ed347ec9e32235df042b",
+      "url": "shared/ja/dictionaries/nouns.xml?kotomi_sha256=e006abdb4923c478ec91510e4cfee3021a1a06bd8995ed347ec9e32235df042b"
+    },
+    {
+      "path": "data/shared/ja/dictionaries/numbers.xml",
+      "sha256": "bae4a84c1fdbdb87c9de397635496fa17a5b3cf1d97bb0222f91415d72f885c2",
+      "url": "shared/ja/dictionaries/numbers.xml?kotomi_sha256=bae4a84c1fdbdb87c9de397635496fa17a5b3cf1d97bb0222f91415d72f885c2"
+    },
+    {
+      "path": "data/shared/ja/dictionaries/verbs.xml",
+      "sha256": "8e70328a283b60df3381fb00f85decd334b40afb8b5eb54cdeeb34434bab4b63",
+      "url": "shared/ja/dictionaries/verbs.xml?kotomi_sha256=8e70328a283b60df3381fb00f85decd334b40afb8b5eb54cdeeb34434bab4b63"
+    },
+    {
+      "path": "data/shared/ja/grammar.xml",
+      "sha256": "fa94a76062817cb5f6f6897c7fae13581cf843e313ba55586d72d66ac81164ca",
+      "url": "shared/ja/grammar.xml?kotomi_sha256=fa94a76062817cb5f6f6897c7fae13581cf843e313ba55586d72d66ac81164ca"
     }
   ]
 }

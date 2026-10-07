@@ -10,6 +10,8 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
+from composed_xml import parse as parse_composed
+
 from validate_repository import (  # noqa: E402
     unexpected_word_form_attributes,
     validate_counting_data,
@@ -19,7 +21,7 @@ from validate_repository import (  # noqa: E402
 
 class GrammarValidationContractTests(unittest.TestCase):
     def test_connector_dictionary_and_quiz_cover_requested_inventory(self) -> None:
-        dictionary = ET.parse(
+        dictionary = parse_composed(
             ROOT / "dictionaries" / "connectors.xml"
         ).getroot()
         self.assertEqual("connector", dictionary.get("schema"))
@@ -33,7 +35,7 @@ class GrammarValidationContractTests(unittest.TestCase):
                 for word in dictionary.findall("./words/word")
             },
         )
-        quizzes = ET.parse(
+        quizzes = parse_composed(
             ROOT / "patterns" / "sentence_quizzes.xml"
         ).getroot()
         quiz = quizzes.find("./quiz[@id='connectors']")
@@ -56,8 +58,8 @@ class GrammarValidationContractTests(unittest.TestCase):
         )
 
     def test_connector_patterns_use_two_unconstrained_verbs(self) -> None:
-        patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
-        grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
+        patterns = parse_composed(ROOT / "patterns" / "sentence_maps.xml").getroot()
+        grammar = parse_composed(ROOT / "grammar" / "grammar_rules.xml").getroot()
         self.assertFalse(any(
             (feature.get("id") or "").startswith("connector_")
             for feature in grammar.findall("./features/feature")
@@ -103,7 +105,7 @@ class GrammarValidationContractTests(unittest.TestCase):
         )
 
     def test_dakara_keeps_finite_polite_verb_before_sentence_boundary(self) -> None:
-        patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
+        patterns = parse_composed(ROOT / "patterns" / "sentence_maps.xml").getroot()
         pattern = patterns.find(
             "./sentence_patterns/sentence_pattern[@id='Łącznik だから']"
         )
@@ -123,7 +125,7 @@ class GrammarValidationContractTests(unittest.TestCase):
         validate_counting_data()
 
     def test_count_source_authoring_metadata_is_explicit(self) -> None:
-        grammar = ET.parse(
+        grammar = parse_composed(
             ROOT / "grammar" / "counting.xml"
         ).getroot()
         profiles = {
@@ -146,7 +148,7 @@ class GrammarValidationContractTests(unittest.TestCase):
         self.assertEqual("singular", profiles["many"].get("source_agreement"))
 
     def test_counting_composition_catalog_is_declared(self) -> None:
-        grammar = ET.parse(
+        grammar = parse_composed(
             ROOT / "grammar" / "counting.xml"
         ).getroot()
         composition = grammar.find("./number_composition")
@@ -173,7 +175,7 @@ class GrammarValidationContractTests(unittest.TestCase):
         )
 
     def test_source_profiles_use_periodic_rules_for_open_numeric_domains(self) -> None:
-        grammar = ET.parse(
+        grammar = parse_composed(
             ROOT / "grammar" / "counting.xml"
         ).getroot()
         ranges = {
@@ -206,7 +208,7 @@ class GrammarValidationContractTests(unittest.TestCase):
         )
 
     def test_counter_profiles_declare_terminal_component_variants(self) -> None:
-        grammar = ET.parse(
+        grammar = parse_composed(
             ROOT / "grammar" / "counting.xml"
         ).getroot()
         profiles = {
@@ -228,7 +230,7 @@ class GrammarValidationContractTests(unittest.TestCase):
         }.issubset(hon_variants))
 
     def test_canonical_number_sets_are_declared(self) -> None:
-        grammar = ET.parse(
+        grammar = parse_composed(
             ROOT / "grammar" / "counting.xml"
         ).getroot()
         sets = {
@@ -255,7 +257,7 @@ class GrammarValidationContractTests(unittest.TestCase):
         )
 
     def test_age_twenty_and_domain_counters_are_exact_data(self) -> None:
-        counters = ET.parse(
+        counters = parse_composed(
             ROOT / "dictionaries" / "counters.xml"
         ).getroot()
         expected = {
@@ -276,7 +278,7 @@ class GrammarValidationContractTests(unittest.TestCase):
                 self.assertEqual(kanji, node.get("kanji"))
 
     def test_twenty_oclock_is_exact_data(self) -> None:
-        counters = ET.parse(
+        counters = parse_composed(
             ROOT / "dictionaries" / "counters.xml"
         ).getroot()
         realization = counters.find(

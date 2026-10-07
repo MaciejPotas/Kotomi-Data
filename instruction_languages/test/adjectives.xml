@@ -1,3 +1,6 @@
-<dictionary schema_version="2" instruction_language_id="test" id="adjectives" schema="adjective"><words>
-  <word id="new" kana="あたらしい" translation="new" type="i_adjective" />
-</words></dictionary>
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" instruction_language_id="test" id="adjectives" schema="adjective" shared_target="../../shared/ja/dictionaries/adjectives.xml">
+  <words>
+    <word id="atarashii" translation="new" />
+  </words>
+</dictionary>

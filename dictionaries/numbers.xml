@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" id="numbers" label="Numbers" schema="number" instruction_language_id="pl">
+<dictionary schema_version="2" id="numbers" label="Numbers" schema="number" instruction_language_id="pl" shared_target="../shared/ja/dictionaries/numbers.xml">
   <editor required="value translation kana" optional="kanji romaji" metadata="polish_forms" />
   <words>
-    <word id="one" value="1" translation="jeden" kana="いち" kanji="一" romaji="ichi">
+    <word id="one" translation="jeden">
       <polish_forms>
         <common cases="nominative accusative" value="jeden" />
         <common cases="genitive dative locative" value="jednego" />
@@ -13,7 +13,7 @@
         <override classes="masculine_animate masculine_personal" cases="accusative" value="jednego" />
       </polish_forms>
     </word>
-    <word id="two" value="2" translation="dwa" kana="に" kanji="二" romaji="ni">
+    <word id="two" translation="dwa">
       <polish_forms>
         <common cases="nominative accusative" value="dwa" />
         <common cases="genitive locative" value="dwóch" />
@@ -22,47 +22,47 @@
         <override classes="feminine" cases="nominative accusative" value="dwie" />
       </polish_forms>
     </word>
-    <word id="three" value="3" translation="trzy" kana="さん" kanji="三" romaji="san">
+    <word id="three" translation="trzy">
       <polish_forms>
         <common cases="nominative accusative" value="trzy" />
       </polish_forms>
     </word>
-    <word id="four" value="4" translation="cztery" kana="よん" kanji="四" romaji="yon">
+    <word id="four" translation="cztery">
       <polish_forms>
         <common cases="nominative accusative" value="cztery" />
       </polish_forms>
     </word>
-    <word id="five" value="5" translation="pięć" kana="ご" kanji="五" romaji="go">
+    <word id="five" translation="pięć">
       <polish_forms>
         <common cases="nominative accusative" value="pięć" />
       </polish_forms>
     </word>
-    <word id="six" value="6" translation="sześć" kana="ろく" kanji="六" romaji="roku">
+    <word id="six" translation="sześć">
       <polish_forms>
         <common cases="nominative accusative" value="sześć" />
       </polish_forms>
     </word>
-    <word id="seven" value="7" translation="siedem" kana="なな" kanji="七" romaji="nana">
+    <word id="seven" translation="siedem">
       <polish_forms>
         <common cases="nominative accusative" value="siedem" />
       </polish_forms>
     </word>
-    <word id="eight" value="8" translation="osiem" kana="はち" kanji="八" romaji="hachi">
+    <word id="eight" translation="osiem">
       <polish_forms>
         <common cases="nominative accusative" value="osiem" />
       </polish_forms>
     </word>
-    <word id="nine" value="9" translation="dziewięć" kana="きゅう" kanji="九" romaji="kyuu">
+    <word id="nine" translation="dziewięć">
       <polish_forms>
         <common cases="nominative accusative" value="dziewięć" />
       </polish_forms>
     </word>
-    <word id="ten" value="10" translation="dziesięć" kana="じゅう" kanji="十" romaji="juu">
+    <word id="ten" translation="dziesięć">
       <polish_forms>
         <common cases="nominative accusative" value="dziesięć" />
       </polish_forms>
     </word>
-    <word id="twenty" value="20" translation="dwadzieścia" kana="にじゅう" kanji="二十" romaji="nijuu">
+    <word id="twenty" translation="dwadzieścia">
       <polish_forms>
         <common cases="nominative accusative" value="dwadzieścia" />
       </polish_forms>

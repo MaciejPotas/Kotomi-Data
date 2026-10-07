@@ -1,4 +1,7 @@
-<dictionary schema_version="2" instruction_language_id="test" id="nouns" schema="noun"><words>
-  <word id="teacher" kana="せんせい" translation="teacher" category="item"><relations profile="destination" /></word>
-  <word id="cat" kana="ねこ" translation="cat" category="item" />
-</words></dictionary>
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" instruction_language_id="test" id="nouns" schema="noun" shared_target="../../shared/ja/dictionaries/nouns.xml">
+  <words>
+    <word id="teacher" translation="teacher" />
+    <word id="cat" translation="cat" />
+  </words>
+</dictionary>
