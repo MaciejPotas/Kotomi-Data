@@ -424,14 +424,16 @@ class AvailabilityQuizEngine:
         self.rng = rng or random.Random()
         self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = self.project.validate()
+        issues = [issue for issue in self.project.validate()
+                  if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
 
     def reload(self) -> None:
         self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = self.project.validate()
+        issues = [issue for issue in self.project.validate()
+                  if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
 

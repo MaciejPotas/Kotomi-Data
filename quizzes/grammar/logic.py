@@ -528,7 +528,8 @@ class GrammarQuizEngine:
         self._validate_project()
 
     def _validate_project(self) -> None:
-        issues = self.project.validate()
+        issues = [issue for issue in self.project.validate()
+                  if not issue.startswith("WARNING:")]
         if issues:
             raise GrammarQuizError("\n".join(issues))
 
