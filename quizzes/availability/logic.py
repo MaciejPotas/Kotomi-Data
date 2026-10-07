@@ -305,7 +305,7 @@ def selected_context_hint(
     if option is None:
         return "", ""
     return (
-        str(getattr(option, "translation", "") or "").strip(),
+        str(project.instruction_language.translation(option) or "").strip(),
         str(getattr(option, "kana", "") or "").strip(),
     )
 
@@ -417,19 +417,23 @@ class AvailabilityQuizEngine:
         self,
         project_path: Path | str,
         rng: Optional[random.Random] = None,
+        *, language_context=None,
     ) -> None:
+        self.language_context = language_context
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = QuizProject.load(self.project_path)
+        self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = self.project.validate()
+        issues = [issue for issue in self.project.validate()
+                  if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
 
     def reload(self) -> None:
-        self.project = QuizProject.load(self.project_path)
+        self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = self.project.validate()
+        issues = [issue for issue in self.project.validate()
+                  if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
 
@@ -621,7 +625,7 @@ class AvailabilityQuizEngine:
             target_form=combination.rule.target_form,
             source_form=combination.rule.source_form,
             word_id=selected_word.id,
-            word_meaning=selected_word.translation,
+            word_meaning=self.project.instruction_language.translation(selected_word),
             word_kana=selected_word.kana,
             word_kanji=selected_word.kanji,
             hint_pairs=self._build_hint_pairs(preview),
@@ -637,10 +641,10 @@ class AvailabilityQuizEngine:
         for slot in analysis.word_slots:
             dictionary_id = analysis.slots[slot].dictionary
             word = self.project.words[dictionary_id][preview.words[slot]]
-            result.append((word.translation, word.kana))
+            result.append((self.project.instruction_language.translation(word), word.kana))
         for slot in analysis.entity_slots:
             entity = self.project.entities[preview.entities[slot]]
-            result.append((entity.translation, entity.kana))
+            result.append((self.project.instruction_language.translation(entity), entity.kana))
         return result
 
     def statistics(self, settings: AvailabilityQuizSettings) -> Dict[str, int]:

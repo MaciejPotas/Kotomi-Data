@@ -412,19 +412,23 @@ class VerbQuizEngine:
         self,
         project_path: Path | str,
         rng: Optional[random.Random] = None,
+        *, language_context=None,
     ) -> None:
+        self.language_context = language_context
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = QuizProject.load(self.project_path)
+        self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = self.project.validate()
+        issues = [issue for issue in self.project.validate()
+                  if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
 
     def reload(self) -> None:
-        self.project = QuizProject.load(self.project_path)
+        self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = self.project.validate()
+        issues = [issue for issue in self.project.validate()
+                  if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
 
@@ -635,7 +639,7 @@ class VerbQuizEngine:
         )
         if context_option is not None:
             context_translation = str(
-                context_option.translation or ""
+                self.project.instruction_language.translation(context_option) or ""
             ).strip()
             context_kana = str(context_option.kana or "").strip()
         key = "|".join(
@@ -657,7 +661,7 @@ class VerbQuizEngine:
             target_form=combination.rule.target_form,
             source_form=combination.rule.source_form,
             word_id=selected_word.id,
-            word_meaning=selected_word.translation,
+            word_meaning=self.project.instruction_language.translation(selected_word),
             word_kana=selected_word.kana,
             word_kanji=selected_word.kanji,
             bindings=", ".join(binding_parts),

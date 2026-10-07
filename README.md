@@ -9,8 +9,8 @@ The two public update channels have deliberately different responsibilities. **C
 | Path | Purpose | Update channel |
 | --- | --- | --- |
 | `quiz_project.xml` | Canonical Schema 2 project entrypoint. | Content |
-| `dictionaries/` | Word dictionaries for verbs, nouns, adjectives, copulas, interrogatives, connectors, numbers, and counters. | Content |
-| `grammar/` | Shared grammar rules, counting configuration, and context pools. | Content |
+| `dictionaries/` | Complete dictionary entries, including Japanese and source lexical values. | Content |
+| `grammar/` | Context options, lexical counter bindings and number sets. | Content |
 | `patterns/` | Sentence maps and sentence-quiz definitions. | Content |
 | `lessons/` | Schema 4 lesson catalog. | Content |
 | `quizzes/` | Published first-party executable quiz package files. | Quiz |
@@ -34,7 +34,7 @@ lessons/**
 content_revision.json
 ```
 
-The published manifest is `content_update_manifest.json`. These files are intentionally versioned together because they reference one another. Dictionaries use role, category, feature, and context IDs from grammar data; sentence patterns use the same shared grammar vocabulary and dictionaries. Updating only one side could create a project that loads but cannot generate valid sentences.
+The published manifest is `content_update_manifest.json`. These files are intentionally versioned together because they reference one another. Dictionaries and patterns reference grammar IDs supplied by the compatible Kotomi version, plus contexts and other words from this Content revision. Updating only one side could create a project that loads but cannot generate valid sentences.
 
 Advance `content_revision.json` when publishing a new official Content state. SHA-256 hashes decide which individual files need downloading, while the integer revision identifies the complete compatible snapshot. Installation is atomic at the manifest level.
 
@@ -98,3 +98,27 @@ CI runs the same validation for pull requests and `main`. The validator checks c
 ## Kotomi integration
 
 The Kotomi source repository mounts this repository as the `data` git submodule. Desktop builds and mobile packages include the complete Content snapshot plus the separately owned executable quiz packages required for a fresh installation.
+
+## Content and Kotomi grammar
+
+A dictionary contains complete word entries: Japanese surfaces, translations,
+lexical forms, cases and assignments to grammar IDs. One edit has one dictionary
+owner. Grammar selection never selects a different Content database. Default
+uses opaque source text; Polish enables optional enrichment on the same Word.
+Switching grammar is non-destructive and does not mutate Content. Test-only
+providers and fixtures are not published in this repository.
+
+Kotomi provides form catalogs, roles/categories/features, agreement templates,
+government frames, noun relation profiles, source clitics and counting rules.
+Content references these IDs but does not define grammar or Studio field schemas.
+`grammar/counting.xml` contains lexical counter bindings and learning number sets;
+contexts, patterns, quizzes and lessons also remain Content.
+
+`quiz_project.xml` declares `min_kotomi_version="1.2"`. The update manifest copies
+this requirement automatically. Compatible Kotomi versions have the same major
+and a minor at least as high; patch is ignored. Thus 1.1.3 and 2.0.0 cannot install
+this Content, while 1.2.0 and 1.3.0 can. No separate grammar version is maintained.
+
+Data CI validates lexical structure and local references. Kotomi's integration
+suite validates these references against the shipped grammar using its pinned
+Data commit, so Data does not maintain a duplicate grammar registry.

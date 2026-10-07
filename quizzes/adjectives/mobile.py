@@ -22,6 +22,7 @@ if str(INSTALL_ROOT) not in sys.path:
 from apps.adjectives.logic import *
 from apps.adjectives.logic import _safe_float, _safe_int
 from kotomi.core.project import ProjectError
+from kotomi.application.instruction_languages import configure_quiz_controller
 from kotomi.application.settings_xml import settings_path
 from kotomi.application.quiz_preflight import (
     calculate_quiz_statistics,
@@ -91,7 +92,7 @@ def mobile_sentence_hint_items(
         kana = str(getattr(item, "kana", "") or "").strip()
         kanji = str(getattr(item, "kanji", "") or "").strip()
         translation = str(
-            getattr(item, "translation", "") or ""
+            project.instruction_language.translation(item) or ""
         ).strip()
         if kana.casefold() == "n/a":
             kana = ""
@@ -100,7 +101,7 @@ def mobile_sentence_hint_items(
         if translation.casefold() == "n/a":
             translation = ""
         if translation or kana or kanji:
-            formatted = format_grammatical_hint_entry(item)
+            formatted = format_grammatical_hint_entry(item, translation_override=translation)
             if formatted and formatted not in result:
                 result.append(formatted)
 
@@ -1778,7 +1779,10 @@ def create_app_class():
         def build(self):
             apply_kivy_window_icon(Window)
             self.title = tr("specialized.adjectives_title")
-            self.project_path = resolve_project_path()
+            configure_quiz_controller(
+                self, INSTALL_ROOT / "data", INSTALL_ROOT / "settings" / "mobile_launcher.xml",
+                project_resolver=resolve_project_path,
+            )
             self.settings_store = SettingsStore(
                 settings_path(INSTALL_ROOT, SETTINGS_FILENAME)
             )
@@ -1815,7 +1819,7 @@ def create_app_class():
         def reload_engine(self) -> bool:
             try:
                 if self.engine is None:
-                    self.engine = AdjectiveQuizEngine(self.project_path)
+                    self.engine = AdjectiveQuizEngine(self.project_path, language_context=self.language_context)
                 else:
                     self.engine.reload()
                 self.engine_error = ""

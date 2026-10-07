@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='utf-8'?>
-<contexts schema_version="2">
+<contexts schema_version="2" target_language_id="ja" instruction_language_id="pl">
   <context id="none" label="none">
-    <option id="neutral" translation="" kana="" weight="1" />
+    <option id="neutral" kana="" weight="1" translation="" />
   </context>
   <context id="present" label="present">
-    <option id="neutral" translation="" kana="" weight="2" />
-    <option id="now" translation="Teraz " kana="いま、" weight="1" />
-    <option id="today" translation="Dzisiaj " kana="きょう、" weight="1" />
+    <option id="neutral" kana="" weight="2" translation="" />
+    <option id="now" kana="いま、" weight="1" translation="Teraz " />
+    <option id="today" kana="きょう、" weight="1" translation="Dzisiaj " />
   </context>
   <context id="past" label="past">
-    <option id="yesterday" translation="Wczoraj " kana="きのう、" weight="2" />
-    <option id="last_week" translation="W zeszłym tygodniu " kana="せんしゅう、" weight="1" />
-    <option id="recently" translation="Ostatnio " kana="さいきん、" weight="1" />
+    <option id="yesterday" kana="きのう、" weight="2" translation="Wczoraj " />
+    <option id="last_week" kana="せんしゅう、" weight="1" translation="W zeszłym tygodniu " />
+    <option id="recently" kana="さいきん、" weight="1" translation="Ostatnio " />
   </context>
   <context id="future" label="future">
-    <option id="tomorrow" translation="Jutro " kana="あした、" weight="2" />
-    <option id="next_week" translation="W przyszłym tygodniu " kana="らいしゅう、" weight="1" />
-    <option id="soon" translation="Wkrótce " kana="もうすぐ、" weight="1" />
+    <option id="tomorrow" kana="あした、" weight="2" translation="Jutro " />
+    <option id="next_week" kana="らいしゅう、" weight="1" translation="W przyszłym tygodniu " />
+    <option id="soon" kana="もうすぐ、" weight="1" translation="Wkrótce " />
   </context>
 </contexts>

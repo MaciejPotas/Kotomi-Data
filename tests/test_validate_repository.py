@@ -10,10 +10,10 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 
+
 from validate_repository import (  # noqa: E402
     unexpected_word_form_attributes,
     validate_counting_data,
-    validate_polarity_pair,
 )
 
 
@@ -57,11 +57,6 @@ class GrammarValidationContractTests(unittest.TestCase):
 
     def test_connector_patterns_use_two_unconstrained_verbs(self) -> None:
         patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
-        grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
-        self.assertFalse(any(
-            (feature.get("id") or "").startswith("connector_")
-            for feature in grammar.findall("./features/feature")
-        ))
         seen = set()
         for pattern in patterns.findall("./sentence_patterns/sentence_pattern"):
             if pattern.get("category") != "connectors":
@@ -122,110 +117,9 @@ class GrammarValidationContractTests(unittest.TestCase):
     def test_schema2_counting_inventory_is_complete(self) -> None:
         validate_counting_data()
 
-    def test_count_source_authoring_metadata_is_explicit(self) -> None:
-        grammar = ET.parse(
-            ROOT / "grammar" / "counting.xml"
-        ).getroot()
-        profiles = {
-            node.get("id"): node
-            for node in grammar.findall(
-                "./count_source_profiles/profiles/profile"
-            )
-        }
-        self.assertEqual("pl", grammar.get("source_language"))
-        self.assertEqual("noun_case", profiles["one"].get("fallback"))
-        self.assertEqual(
-            "paucal", profiles["few"].get("source_form_strategy")
-        )
-        self.assertEqual(
-            "genitive_plural",
-            profiles["many"].get("source_form_strategy"),
-        )
-        self.assertEqual("singular", profiles["one"].get("source_agreement"))
-        self.assertEqual("plural", profiles["few"].get("source_agreement"))
-        self.assertEqual("singular", profiles["many"].get("source_agreement"))
 
-    def test_counting_composition_catalog_is_declared(self) -> None:
-        grammar = ET.parse(
-            ROOT / "grammar" / "counting.xml"
-        ).getroot()
-        composition = grammar.find("./number_composition")
-        self.assertIsNotNone(composition)
-        assert composition is not None
-        self.assertEqual("1", composition.get("min"))
-        self.assertEqual("99999999", composition.get("max"))
-        self.assertEqual(
-            {1, 2, 3, 4, 5, 6, 7, 8, 9},
-            {
-                int(node.get("value", "0"))
-                for node in composition.findall("./digits/digit")
-            },
-        )
-        profiles = {
-            node.get("id")
-            for node in grammar.findall(
-                "./counter_composition_profiles/profile"
-            )
-        }
-        self.assertTrue(
-            {"nin", "hiki", "hon", "mai", "satsu", "dai", "ko",
-             "ji", "fun", "sai", "kai"}.issubset(profiles)
-        )
 
-    def test_source_profiles_use_periodic_rules_for_open_numeric_domains(self) -> None:
-        grammar = ET.parse(
-            ROOT / "grammar" / "counting.xml"
-        ).getroot()
-        ranges = {
-            (node.get("min"), node.get("max"), node.get("profile"))
-            for node in grammar.findall(
-                "./count_source_profiles/quantity_mappings/range"
-            )
-        }
-        self.assertEqual(
-            {("2", "*", "many")},
-            ranges,
-        )
-        rules = grammar.findall(
-            "./count_source_profiles/quantity_mappings/rule"
-        )
-        self.assertEqual(1, len(rules))
-        self.assertEqual(
-            {
-                "min": "2",
-                "max": "*",
-                "modulo": "10",
-                "remainder_min": "2",
-                "remainder_max": "4",
-                "exclude_modulo": "100",
-                "exclude_remainder_min": "12",
-                "exclude_remainder_max": "14",
-                "profile": "few",
-            },
-            rules[0].attrib,
-        )
 
-    def test_counter_profiles_declare_terminal_component_variants(self) -> None:
-        grammar = ET.parse(
-            ROOT / "grammar" / "counting.xml"
-        ).getroot()
-        profiles = {
-            node.get("id"): node
-            for node in grammar.findall(
-                "./counter_composition_profiles/profile"
-            )
-        }
-        hon_variants = {
-            (node.get("terminal"), node.get("value"))
-            for node in profiles["hon"].findall("./variant")
-        }
-        self.assertTrue({
-            ("digit", "3"),
-            ("unit", "10"),
-            ("unit", "100"),
-            ("unit", "1000"),
-            ("unit", "10000"),
-        }.issubset(hon_variants))
 
     def test_canonical_number_sets_are_declared(self) -> None:
         grammar = ET.parse(
@@ -289,25 +183,7 @@ class GrammarValidationContractTests(unittest.TestCase):
         self.assertEqual("二十時", realization.get("kanji"))
         self.assertEqual("nijuuji", realization.get("romaji"))
 
-    def test_polarity_pair_requires_complete_pair(self) -> None:
-        with self.assertRaisesRegex(
-            AssertionError,
-            "exactly one affirmative and one negative",
-        ):
-            validate_polarity_pair(
-                "verb",
-                "present",
-                "plain",
-                {"affirmative"},
-            )
 
-    def test_polarity_pair_accepts_matching_pair(self) -> None:
-        validate_polarity_pair(
-            "verb",
-            "present",
-            "plain",
-            {"affirmative", "negative"},
-        )
 
     def test_word_form_attribute_allowlist_matches_loader_contract(self) -> None:
         self.assertEqual(

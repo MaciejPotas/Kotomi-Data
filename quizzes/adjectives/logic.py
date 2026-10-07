@@ -413,20 +413,23 @@ class AdjectiveQuizEngine:
         self,
         project_path: Path | str,
         rng: Optional[random.Random] = None,
+        *, language_context=None,
     ) -> None:
+        self.language_context = language_context
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = load_quiz_project(self.project_path)
+        self.project = load_quiz_project(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
     def reload(self) -> None:
-        self.project = load_quiz_project(self.project_path)
+        self.project = load_quiz_project(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
     def _validate_project(self) -> None:
-        issues = self.project.validate()
+        issues = [issue for issue in self.project.validate()
+                  if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
         for dictionary_id in ("adjectives", "copulas"):
@@ -494,8 +497,12 @@ class AdjectiveQuizEngine:
         adjectives = list(self.project.words["adjectives"].values())
         spaces: List[QuestionSpace] = []
         prefix_count = settings.adjective_count - 1
+        enabled_patterns = {
+            pattern_id for reference in settings.enabled_patterns
+            for pattern_id in self.project.pattern_ids_for_reference(reference)
+        }
 
-        if "Przymiotnik po temacie" in settings.enabled_patterns:
+        if "Przymiotnik po temacie" in enabled_patterns:
             pattern = self.project.patterns["Przymiotnik po temacie"]
             for rule in rules:
                 source_form, target_form = self._finite_forms(rule)
@@ -528,7 +535,7 @@ class AdjectiveQuizEngine:
                             prefix_count,
                         )
 
-        if "Sam przymiotnik" in settings.enabled_patterns:
+        if "Sam przymiotnik" in enabled_patterns:
             pattern = self.project.patterns["Sam przymiotnik"]
             prefix_base = self._prefix_candidates(settings, filters, None)
             for rule in rules:
@@ -557,7 +564,7 @@ class AdjectiveQuizEngine:
                         prefix_count,
                     )
 
-        if "Przymiotnik przed rzeczownikiem" in settings.enabled_patterns:
+        if "Przymiotnik przed rzeczownikiem" in enabled_patterns:
             pattern = self.project.patterns["Przymiotnik przed rzeczownikiem"]
             for rule in rules:
                 source_copula, target_copula = self._copula_forms(rule)
@@ -862,13 +869,13 @@ class AdjectiveQuizEngine:
             target_form=target_name,
             source_form=source_name,
             adjective_ids=ids,
-            word_meaning=" + ".join(word.translation for word in chain),
+            word_meaning=" + ".join(self.project.instruction_language.translation(word) for word in chain),
             word_kana=" + ".join(word.kana for word in chain),
             word_kanji=" + ".join(word.kanji for word in chain),
             adjective_count=len(chain),
             bindings="; ".join(bindings),
             context_translation=str(
-                context_option.translation or ""
+                self.project.instruction_language.translation(context_option) or ""
             ).strip(),
             context_kana=str(context_option.kana or "").strip(),
         )

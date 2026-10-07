@@ -7,6 +7,7 @@ from urllib.parse import parse_qs, urlsplit
 import xml.etree.ElementTree as ET
 
 
+
 ROOT = Path(__file__).resolve().parents[1]
 TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
 
@@ -22,7 +23,6 @@ PROJECT_SCHEMA_FILES = {
     "dictionaries/verbs.xml",
     "grammar/contexts.xml",
     "grammar/counting.xml",
-    "grammar/grammar_rules.xml",
     "patterns/sentence_maps.xml",
     "patterns/sentence_quizzes.xml",
 }
@@ -40,12 +40,12 @@ CONTENT_MANIFEST_ORDER = [
     "data/dictionaries/verbs.xml",
     "data/grammar/contexts.xml",
     "data/grammar/counting.xml",
-    "data/grammar/grammar_rules.xml",
     "data/lessons/lessons.xml",
     "data/patterns/sentence_maps.xml",
     "data/patterns/sentence_quizzes.xml",
     "data/quiz_project.xml",
 ]
+CONTENT_MANIFEST_ORDER.sort(key=str.casefold)
 CONTENT_SOURCE_FILES = {
     path.removeprefix("data/")
     for path in CONTENT_MANIFEST_ORDER
@@ -60,7 +60,6 @@ CONTENT_DIRECTORIES = {
     "tools",
 }
 ROOT_XML_FILES = {"quiz_project.xml"}
-VALID_POLARITIES = {"affirmative", "negative"}
 WORD_FORM_ATTRIBUTES = {
     "ref",
     "translation",
@@ -68,31 +67,6 @@ WORD_FORM_ATTRIBUTES = {
     "kanji",
     "romaji",
 }
-FORM_DEFINITION_ATTRIBUTES = {
-    "name",
-    "label",
-    "lesson_name",
-    "context",
-    "polarity",
-    "register",
-}
-
-
-def validate_polarity_pair(
-    schema: str,
-    context: str,
-    register: str,
-    polarities: set[str],
-) -> None:
-    """Validate one polarity pair derived from context and register."""
-
-    if polarities != VALID_POLARITIES:
-        raise AssertionError(
-            f"Form catalog {schema} must define exactly one affirmative "
-            f"and one negative form for context {context} and register "
-            f"{register}"
-        )
-
 
 def unexpected_word_form_attributes(attributes: object) -> set[str]:
     """Return attributes that do not belong in a word-local form value."""
@@ -216,214 +190,26 @@ def validate_project_references() -> None:
             raise AssertionError(f"quiz_project.xml references missing file: {relative}")
 
 
-def validate_shared_grammar_dependencies() -> None:
-    grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
-    contexts = ET.parse(ROOT / "grammar" / "contexts.xml").getroot()
-    defined_roles = {
-        value for node in grammar.findall("./roles/role")
-        for value in [node.get("id")] if value
-    }
-    defined_categories = {
-        value for node in grammar.findall("./noun_categories/category")
-        for value in [node.get("id")] if value
-    }
-    defined_features = {
-        value for node in grammar.findall("./features/feature")
-        for value in [node.get("id")] if value
-    }
-    defined_contexts = {
-        value for node in contexts.findall("./context")
-        for value in [node.get("id")] if value
-    }
-    dictionary_roots = [
-        (path, ET.parse(path).getroot())
-        for path in sorted((ROOT / "dictionaries").glob("*.xml"))
-    ]
-    form_catalogs: dict[str, set[str]] = {}
-    form_polarities: set[str] = set()
-    for catalog in grammar.findall("./form_catalogs/form_catalog"):
-        schema = str(catalog.get("schema", "")).strip()
-        if not schema:
-            raise AssertionError("form_catalog must define schema")
-        if schema in form_catalogs:
-            raise AssertionError(f"Duplicate form catalog for schema: {schema}")
-        names: set[str] = set()
-        lesson_names: set[str] = set()
-        polarity_targets: set[tuple[str, str, str]] = set()
-        polarity_pairs: dict[tuple[str, str], set[str]] = {}
-        for node in catalog.findall("./form"):
-            unexpected = set(node.attrib) - FORM_DEFINITION_ATTRIBUTES
-            if unexpected:
-                raise AssertionError(
-                    f"Grammar form {schema} contains unsupported attributes: "
-                    f"{sorted(unexpected)}"
-                )
-            name = str(node.get("name", "")).strip()
-            if not name:
-                raise AssertionError(
-                    f"form_catalog {schema} contains form without name"
-                )
-            if name in names:
-                raise AssertionError(
-                    f"Duplicate grammar form in {schema}: {name}"
-                )
-            names.add(name)
-            label = str(node.get("label", "")).strip()
-            if not label:
-                raise AssertionError(
-                    f"Grammar form {schema}/{name} must define label"
-                )
-            lesson_name = str(node.get("lesson_name", "")).strip() or name
-            if lesson_name in lesson_names:
-                raise AssertionError(
-                    f"Form catalog {schema} defines duplicate lesson name: "
-                    f"{lesson_name}"
-                )
-            lesson_names.add(lesson_name)
-            context = str(node.get("context", "none")).strip() or "none"
-            if context not in defined_contexts:
-                raise AssertionError(
-                    f"Grammar form {schema}/{name} references unknown "
-                    f"context: {context}"
-                )
-            polarity = str(node.get("polarity", "")).strip()
-            if polarity and polarity not in VALID_POLARITIES:
-                raise AssertionError(
-                    f"Grammar form {schema}/{name} has invalid polarity: "
-                    f"{polarity}"
-                )
-            if polarity:
-                form_polarities.add(polarity)
-            register = str(node.get("register", "")).strip()
-            if register and register not in {"plain", "polite"}:
-                raise AssertionError(
-                    f"Grammar form {schema}/{name} has invalid register: "
-                    f"{register}"
-                )
-            finite_metadata = (
-                context != "none"
-                or bool(polarity)
-                or bool(register)
-            )
-            if finite_metadata and not (
-                context != "none"
-                and polarity
-                and register
-            ):
-                raise AssertionError(
-                    f"Grammar form {schema}/{name} must define context, "
-                    "polarity, and register together"
-                )
-            if context != "none" and polarity and register:
-                target = (context, register, polarity)
-                if target in polarity_targets:
-                    raise AssertionError(
-                        f"Form catalog {schema} defines more than one "
-                        f"{polarity} form for context {context} and "
-                        f"register {register}"
-                    )
-                polarity_targets.add(target)
-                pair = polarity_pairs.setdefault(
-                    (context, register),
-                    set(),
-                )
-                pair.add(polarity)
-        for (context, register), polarities in polarity_pairs.items():
-            validate_polarity_pair(
-                schema,
-                context,
-                register,
-                polarities,
-            )
-        form_catalogs[schema] = names
-    defined_cases = {
-        attribute
-        for _path, dictionary in dictionary_roots
-        for cases in dictionary.findall(".//cases")
-        for attribute in cases.attrib
-        if attribute != "language"
-    }
-    noun_case_by_form = grammar.find("./noun_case_by_form")
-    if noun_case_by_form is None:
-        raise AssertionError("grammar_rules.xml must define noun_case_by_form")
-    mappings = noun_case_by_form.findall("./map")
-    if not mappings:
-        raise AssertionError("noun_case_by_form must contain mappings")
-    mapped_polarities: set[str] = set()
-    for mapping in mappings:
-        unexpected = set(mapping.attrib) - {"polarity", "case_ref"}
-        if unexpected:
-            raise AssertionError(
-                "noun_case_by_form mapping contains unsupported attributes: "
-                f"{sorted(unexpected)}"
-            )
-        polarity = str(mapping.get("polarity", "")).strip()
-        case_ref = str(mapping.get("case_ref", "")).strip()
-        if polarity not in VALID_POLARITIES:
-            raise AssertionError(
-                f"noun_case_by_form uses invalid polarity: {polarity}"
-            )
-        if polarity not in form_polarities:
-            raise AssertionError(
-                f"noun_case_by_form references unused polarity: {polarity}"
-            )
-        if polarity in mapped_polarities:
-            raise AssertionError(
-                f"noun_case_by_form maps polarity more than once: {polarity}"
-            )
-        if case_ref not in defined_cases:
-            raise AssertionError(
-                f"noun_case_by_form references unknown noun case: {case_ref}"
-            )
-        mapped_polarities.add(polarity)
-
-    for path, dictionary in dictionary_roots:
-        schema = str(dictionary.get("schema", "")).strip()
-        catalog = form_catalogs.get(schema, set())
-        word_forms = dictionary.findall("./words/word/forms/form")
-        if word_forms and not catalog:
-            raise AssertionError(
-                f"{path.name} defines word forms but schema '{schema}' "
-                "has no grammar form catalog"
-            )
-        if dictionary.find("./editor/forms") is not None:
-            raise AssertionError(
-                f"{path.name} must not define editor forms; use grammar form catalog"
-            )
-        for form in word_forms:
-            ref = str(form.get("ref", "")).strip()
-            if not ref:
-                raise AssertionError(
-                    f"{path.name} word form must use ref"
-                )
-            if ref not in catalog:
-                raise AssertionError(
-                    f"{path.name} references unknown {schema} form: {ref}"
-                )
-            unexpected = unexpected_word_form_attributes(form.attrib)
-            if unexpected:
-                raise AssertionError(
-                    f"{path.name} form {ref} contains unsupported attributes: "
-                    f"{sorted(unexpected)}"
-                )
-            if (form.text or "").strip():
-                raise AssertionError(
-                    f"{path.name} form {ref} must store Japanese values in "
-                    "attributes, not element text"
-                )
-        for role in dictionary.findall(".//usage/role"):
-            ref = role.get("ref")
-            if ref and ref not in defined_roles:
-                raise AssertionError(f"{path.name} references unknown role: {ref}")
-            for category in (role.get("accepts") or "").split():
-                if category != "*" and category not in defined_categories:
-                    raise AssertionError(
-                        f"{path.name} role {ref} references unknown category: {category}"
-                    )
-        for feature in dictionary.findall(".//features/feature"):
-            ref = feature.get("ref")
-            if ref and ref not in defined_features:
-                raise AssertionError(f"{path.name} references unknown feature: {ref}")
+def validate_content_grammar_boundary() -> None:
+    """Grammar IDs resolve against Kotomi in its integration suite, not a duplicate registry here."""
+    forbidden = {"form_catalogs", "agreement_catalogs", "noun_case_by_form", "polish_government",
+                 "polish_noun_relations", "polish_clitics", "count_source_profiles",
+                 "number_composition", "counter_composition_profiles", "counting_classes", "editor"}
+    for path in ROOT.rglob("*.xml"):
+        root = ET.parse(path).getroot()
+        for node in root.iter():
+            if node.tag in forbidden or "shared_target" in node.attrib:
+                raise AssertionError(f"{path}: grammar definition {node.tag} does not belong in Content")
+        if root.tag == "dictionary":
+            for word in root.findall("./words/word"):
+                if not all(word.get(key) for key in ("id", "translation", "kana")):
+                    raise AssertionError(f"{path}: words must contain complete lexical data")
+                for form in word.findall("./forms/form"):
+                    if not form.get("ref") or unexpected_word_form_attributes(form.attrib):
+                        raise AssertionError(f"{path}: forms must reference a Kotomi grammar ID")
+        if root.tag == "quiz_project":
+            if not root.get("min_kotomi_version") or root.find("grammar") is not None:
+                raise AssertionError(f"{path}: Content must declare its minimum Kotomi version")
 
 
 def validate_composite_case_scopes() -> None:
@@ -493,76 +279,11 @@ def validate_counting_data() -> None:
     interrogatives = ET.parse(
         ROOT / "dictionaries" / "interrogatives.xml"
     ).getroot()
-    grammar = ET.parse(ROOT / "grammar" / "grammar_rules.xml").getroot()
     counting_grammar = ET.parse(ROOT / "grammar" / "counting.xml").getroot()
     patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
 
-    if counting_grammar.get("source_language") != "pl":
-        raise AssertionError(
-            "Counting grammar must declare source_language='pl'"
-        )
-    number_composition = counting_grammar.find("./number_composition")
-    if number_composition is None:
-        raise AssertionError("Counting grammar needs number composition data")
-    if (
-        number_composition.get("min") != "1"
-        or number_composition.get("max") != "99999999"
-    ):
-        raise AssertionError("Unexpected number composition bounds")
-    digits = {
-        int(str(node.get("value", "0")))
-        for node in number_composition.findall("./digits/digit")
-    }
-    if digits != set(range(1, 10)):
-        raise AssertionError("Number composition must define digits 1..9")
-    units = {
-        int(str(node.get("value", "0")))
-        for node in number_composition.findall("./units/unit")
-    }
-    if units != {10, 100, 1000, 10000}:
-        raise AssertionError("Number composition units are incomplete")
-    composition_profiles = {
-        str(node.get("id", ""))
-        for node in counting_grammar.findall(
-            "./counter_composition_profiles/profile"
-        )
-    }
-    source_profiles = {
-        str(node.get("id", "")): node
-        for node in counting_grammar.findall(
-            "./count_source_profiles/profiles/profile"
-        )
-    }
-    if source_profiles.get("one") is None or (
-        source_profiles["one"].get("fallback") != "noun_case"
-    ):
-        raise AssertionError(
-            "Count source profile one must use noun_case fallback"
-        )
-    expected_strategies = {
-        "few": "paucal",
-        "many": "genitive_plural",
-    }
-    for profile_id, expected in expected_strategies.items():
-        profile = source_profiles.get(profile_id)
-        if profile is None or profile.get("source_form_strategy") != expected:
-            raise AssertionError(
-                f"Count source profile {profile_id} must declare "
-                f"source_form_strategy='{expected}'"
-            )
-    expected_agreements = {
-        "one": "singular",
-        "few": "plural",
-        "many": "singular",
-    }
-    for profile_id, expected in expected_agreements.items():
-        profile = source_profiles.get(profile_id)
-        if profile is None or profile.get("source_agreement") != expected:
-            raise AssertionError(
-                f"Count source profile {profile_id} must declare "
-                f"source_agreement='{expected}'"
-            )
-
+    if counting_grammar.get("source_language"):
+        raise AssertionError("Content counter bindings are not source grammar")
     number_values: dict[int, str] = {}
     for word in numbers.findall("./words/word"):
         word_id = str(word.get("id", ""))
@@ -590,8 +311,8 @@ def validate_counting_data() -> None:
         )
 
     class_ids = {
-        str(node.get("id", ""))
-        for node in counting_grammar.findall("./counting_classes/class")
+        str(node.get("ref", ""))
+        for node in counting_grammar.findall("./counter_bindings/class")
     }
     required_classes = {
         "person", "small_animal", "long_object", "flat_object",
@@ -622,8 +343,8 @@ def validate_counting_data() -> None:
         )
     counters_by_class: dict[str, set[str]] = {}
     defaults_by_class: dict[str, str] = {}
-    for class_node in counting_grammar.findall("./counting_classes/class"):
-        class_id = str(class_node.get("id", ""))
+    for class_node in counting_grammar.findall("./counter_bindings/class"):
+        class_id = str(class_node.get("ref", ""))
         refs = [
             str(counter.get("ref", ""))
             for counter in class_node.findall("./counter")
@@ -652,7 +373,7 @@ def validate_counting_data() -> None:
         composition = word.find("./composition")
         if (
             composition is None
-            or composition.get("profile") not in composition_profiles
+            or not composition.get("profile")
         ):
             raise AssertionError(
                 f"Counter {counter_id} needs a valid composition profile"
@@ -1009,7 +730,7 @@ def main() -> None:
     validate_repository_layout()
     validate_xml_and_schemas()
     validate_project_references()
-    validate_shared_grammar_dependencies()
+    validate_content_grammar_boundary()
     validate_composite_case_scopes()
     validate_lesson_references()
     validate_counting_data()
