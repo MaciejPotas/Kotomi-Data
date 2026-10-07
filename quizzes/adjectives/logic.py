@@ -497,8 +497,12 @@ class AdjectiveQuizEngine:
         adjectives = list(self.project.words["adjectives"].values())
         spaces: List[QuestionSpace] = []
         prefix_count = settings.adjective_count - 1
+        enabled_patterns = {
+            pattern_id for reference in settings.enabled_patterns
+            for pattern_id in self.project.pattern_ids_for_reference(reference)
+        }
 
-        if "Przymiotnik po temacie" in settings.enabled_patterns:
+        if "Przymiotnik po temacie" in enabled_patterns:
             pattern = self.project.patterns["Przymiotnik po temacie"]
             for rule in rules:
                 source_form, target_form = self._finite_forms(rule)
@@ -531,7 +535,7 @@ class AdjectiveQuizEngine:
                             prefix_count,
                         )
 
-        if "Sam przymiotnik" in settings.enabled_patterns:
+        if "Sam przymiotnik" in enabled_patterns:
             pattern = self.project.patterns["Sam przymiotnik"]
             prefix_base = self._prefix_candidates(settings, filters, None)
             for rule in rules:
@@ -560,7 +564,7 @@ class AdjectiveQuizEngine:
                         prefix_count,
                     )
 
-        if "Przymiotnik przed rzeczownikiem" in settings.enabled_patterns:
+        if "Przymiotnik przed rzeczownikiem" in enabled_patterns:
             pattern = self.project.patterns["Przymiotnik przed rzeczownikiem"]
             for rule in rules:
                 source_copula, target_copula = self._copula_forms(rule)
