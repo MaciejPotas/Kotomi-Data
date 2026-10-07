@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 44,
+  "revision": 45,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "a1742f73931e2fd3bb012fb0aa20ca0826250d9c5a9c736d71fe002d3f32d7b9",
-      "url": "content_revision.json?kotomi_sha256=a1742f73931e2fd3bb012fb0aa20ca0826250d9c5a9c736d71fe002d3f32d7b9"
+      "sha256": "747b8a22d9279eb9e9e78b574403fb002026aa8238190159c055729943230489",
+      "url": "content_revision.json?kotomi_sha256=747b8a22d9279eb9e9e78b574403fb002026aa8238190159c055729943230489"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -59,8 +59,8 @@
     },
     {
       "path": "data/grammar/grammar_rules.xml",
-      "sha256": "ed8d06a425a46424683b3f1725c4fca0337926cd47e28740a1b7a84642c52a02",
-      "url": "grammar/grammar_rules.xml?kotomi_sha256=ed8d06a425a46424683b3f1725c4fca0337926cd47e28740a1b7a84642c52a02"
+      "sha256": "3f8a17b64c7eda230eaf4eefc37c76b3340039746c15308e337d5ff74e517266",
+      "url": "grammar/grammar_rules.xml?kotomi_sha256=3f8a17b64c7eda230eaf4eefc37c76b3340039746c15308e337d5ff74e517266"
     },
     {
       "path": "data/instruction_languages/test/adjectives.xml",

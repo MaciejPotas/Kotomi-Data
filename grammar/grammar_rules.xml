@@ -29,6 +29,7 @@
     <category id="media" label="Audible media" parent="purchasable" selectable="true" />
     <category id="vehicle" label="Vehicle" parent="purchasable" selectable="true" />
     <category id="thing" label="Thing" parent="purchasable" selectable="true" />
+    <category id="item" label="Item" parent="thing" selectable="true" />
     <category id="abstract" label="Abstract" selectable="true" />
     <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
   </noun_categories>
