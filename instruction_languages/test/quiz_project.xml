@@ -1,4 +1,5 @@
-<quiz_project schema_version="2" instruction_language_id="test" target_language_id="ja">
+<?xml version='1.0' encoding='utf-8'?>
+<quiz_project schema_version="2" instruction_language_id="test" target_language_id="ja" min_kotomi_version="1.2">
   <dictionaries>
     <dictionary id="verbs" schema="verb" file="verbs.xml" />
     <dictionary id="nouns" schema="noun" file="nouns.xml" />
@@ -9,7 +10,6 @@
     <dictionary id="counters" schema="counter" file="counters.xml" />
     <dictionary id="connectors" schema="connector" file="connectors.xml" />
   </dictionaries>
-  <grammar file="grammar.xml" />
   <counting file="counting.xml" />
   <contexts file="contexts.xml" />
   <sentence_maps file="patterns.xml" />

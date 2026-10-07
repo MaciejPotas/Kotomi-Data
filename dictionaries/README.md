@@ -55,7 +55,7 @@ A noun may reference a reusable source-language relation profile:
 <relations language="pl" profile="place_w_do" />
 ```
 
-The profile itself is owned by `grammar/grammar_rules.xml`; the dictionary does
+The profile itself is owned by the selected Kotomi grammar; the dictionary does
 not duplicate prepositions or case rules. This lets multiple nouns share the
 same realization while still allowing lexical differences such as
 `w szkole / do szkoły`, `na plaży / na plażę`, or

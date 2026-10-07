@@ -1,17 +1,49 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" instruction_language_id="test" id="verbs" schema="verb" shared_target="../../shared/ja/dictionaries/verbs.xml">
+<dictionary schema_version="2" id="verbs" schema="verb" target_language_id="ja" instruction_language_id="test">
   <words>
-    <word id="oyogu" translation="swim">
-      <forms>
-        <form ref="dictionary" translation="swim" />
-      </forms>
-    </word>
-    <word id="kiku" translation="listen">
+    <word id="oyogu" kana="およぐ" kanji="泳ぐ" type="godan" ending="gu" translation="swim">
       <usage>
-        <role ref="object" />
+        <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" translation="listen" />
+        <form ref="dictionary" kana="およぐ" translation="swim" />
+        <form ref="polite_nonpast" kana="およぎます" />
+        <form ref="plain_negative" kana="およがない" />
+        <form ref="polite_negative" kana="およぎません" />
+        <form ref="past_plain" kana="およいだ" />
+        <form ref="past_polite" kana="およぎました" />
+        <form ref="past_negative_plain" kana="およがなかった" />
+        <form ref="past_negative_polite" kana="およぎませんでした" />
+        <form ref="te_form" kana="およいで" />
+        <form ref="potential" kana="およげる" />
+        <form ref="passive" kana="およがれる" />
+        <form ref="causative" kana="およがせる" />
+        <form ref="tara" kana="およいだら" />
+        <form ref="volitional" kana="およごう" />
+        <form ref="imperative" kana="およげ" />
+      </forms>
+    </word>
+    <word id="kiku" kana="きく" kanji="聞く" type="godan" ending="ku" translation="listen">
+      <usage>
+        <role ref="object" accepts="media abstract" />
+        <role ref="location" />
+      </usage>
+      <forms>
+        <form ref="dictionary" kana="きく" translation="listen" />
+        <form ref="polite_nonpast" kana="ききます" />
+        <form ref="plain_negative" kana="きかない" />
+        <form ref="polite_negative" kana="ききません" />
+        <form ref="past_plain" kana="きいた" />
+        <form ref="past_polite" kana="ききました" />
+        <form ref="past_negative_plain" kana="きかなかった" />
+        <form ref="past_negative_polite" kana="ききませんでした" />
+        <form ref="te_form" kana="きいて" />
+        <form ref="potential" kana="きける" />
+        <form ref="passive" kana="きかれる" />
+        <form ref="causative" kana="きかせる" />
+        <form ref="tara" kana="きいたら" />
+        <form ref="volitional" kana="きこう" />
+        <form ref="imperative" kana="きけ" />
       </forms>
     </word>
   </words>

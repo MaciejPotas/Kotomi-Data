@@ -1,30 +1,57 @@
 <?xml version='1.0' encoding='utf-8'?>
-<counting schema_version="2" source_language="pl" shared_target="../shared/ja/counting.xml">
-  <counting_classes>
-    <class id="person" label="Osoby" />
-    <class id="small_animal" label="Małe zwierzęta" />
-    <class id="long_object" label="Długie przedmioty" />
-    <class id="flat_object" label="Płaskie przedmioty" />
-    <class id="bound_volume" label="Oprawione tomy" />
-    <class id="machine" label="Maszyny i pojazdy" />
-    <class id="small_object" label="Małe przedmioty" />
-  </counting_classes>
-  <count_source_profiles>
-    <profiles>
-      <profile id="one" label="jeden" fallback="noun_case" source_agreement="singular" />
-      <profile id="few" label="kilka" source_form_strategy="paucal" source_agreement="plural" />
-      <profile id="many" label="wiele lub ile" source_form_strategy="genitive_plural" source_agreement="singular" />
-    </profiles>
-    <quantity_mappings>
-      <quantity number="1" profile="one" />
-      <rule min="2" max="*" modulo="10" remainder_min="2" remainder_max="4" exclude_modulo="100" exclude_remainder_min="12" exclude_remainder_max="14" profile="few" />
-      <range min="2" max="*" profile="many" />
-      <quantity symbol="how_many" profile="many" />
-    </quantity_mappings>
-  </count_source_profiles>
+<counting schema_version="2" source_language="pl">
+  <counter_bindings>
+    <class ref="person" default_counter="nin">
+      <counter ref="nin" />
+    </class>
+    <class ref="small_animal" default_counter="hiki">
+      <counter ref="hiki" />
+    </class>
+    <class ref="long_object" default_counter="hon">
+      <counter ref="hon" />
+    </class>
+    <class ref="flat_object" default_counter="mai">
+      <counter ref="mai" />
+    </class>
+    <class ref="bound_volume" default_counter="satsu">
+      <counter ref="satsu" />
+    </class>
+    <class ref="machine" default_counter="dai">
+      <counter ref="dai" />
+    </class>
+    <class ref="small_object" default_counter="ko">
+      <counter ref="ko" />
+    </class>
+  </counter_bindings>
   <number_sets>
-    <set id="one_to_ten" label="Liczby od 1 do 10" />
-    <set id="two_to_four" label="Liczby od 2 do 4" />
-    <set id="two_or_more" label="Dwa lub więcej" />
+    <set id="one_to_ten" label="Liczby od 1 do 10">
+      <number ref="one" />
+      <number ref="two" />
+      <number ref="three" />
+      <number ref="four" />
+      <number ref="five" />
+      <number ref="six" />
+      <number ref="seven" />
+      <number ref="eight" />
+      <number ref="nine" />
+      <number ref="ten" />
+    </set>
+    <set id="two_to_four" label="Liczby od 2 do 4">
+      <number ref="two" />
+      <number ref="three" />
+      <number ref="four" />
+    </set>
+    <set id="two_or_more" label="Dwa lub więcej">
+      <number ref="two" />
+      <number ref="three" />
+      <number ref="four" />
+      <number ref="five" />
+      <number ref="six" />
+      <number ref="seven" />
+      <number ref="eight" />
+      <number ref="nine" />
+      <number ref="ten" />
+      <number ref="twenty" />
+    </set>
   </number_sets>
 </counting>

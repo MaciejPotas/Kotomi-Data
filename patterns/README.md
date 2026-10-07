@@ -82,7 +82,7 @@ interrogative still carries its own `asks_for` and
 government contributes only case plus preposition. For question families
 where the semantic intent uniquely identifies the interrogative, prefer
 `[asks_for:...]` over a concrete `[id:...]`. The lexical `się` stays in
-verb/form translations; `grammar_rules.xml` only declares it as a movable
+verb/form translations; Kotomi grammar declares it as a movable
 Polish clitic for question word order. It is not part of the government frame.
 
 

@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" id="interrogatives" label="Interrogatives" schema="interrogative" instruction_language_id="pl" shared_target="../shared/ja/dictionaries/interrogatives.xml">
-  <editor required="translation kana asks_for" optional="kanji romaji" metadata="polish_forms target_categories quantity_symbol" />
+<dictionary schema_version="2" id="interrogatives" schema="interrogative" target_language_id="ja" label="Interrogatives" instruction_language_id="pl">
   <words>
-    <word id="dare" translation="kto">
+    <word id="dare" kana="だれ" asks_for="person" kanji="誰" target_categories="person" translation="kto">
       <polish_forms>
         <common cases="nominative" value="kto" />
         <common cases="genitive accusative" value="kogo" />
@@ -10,8 +9,8 @@
         <common cases="instrumental locative" value="kim" />
       </polish_forms>
     </word>
-    <word id="donata" translation="kto (grzecznie)" />
-    <word id="nani" translation="co">
+    <word id="donata" kana="どなた" asks_for="person" target_categories="person" translation="kto (grzecznie)" />
+    <word id="nani" kana="なに" asks_for="thing" kanji="何" target_categories="food drink text media vehicle thing abstract" translation="co">
       <polish_forms>
         <common cases="nominative accusative" value="co" />
         <common cases="genitive" value="czego" />
@@ -19,7 +18,7 @@
         <common cases="instrumental locative" value="czym" />
       </polish_forms>
     </word>
-    <word id="nan" translation="co">
+    <word id="nan" kana="なん" asks_for="thing" kanji="何" target_categories="food drink text media vehicle thing abstract" translation="co">
       <polish_forms>
         <common cases="nominative accusative" value="co" />
         <common cases="genitive" value="czego" />
@@ -27,11 +26,11 @@
         <common cases="instrumental locative" value="czym" />
       </polish_forms>
     </word>
-    <word id="itsu" translation="kiedy" />
-    <word id="nanji" translation="o której godzinie" />
-    <word id="doko" translation="gdzie" />
-    <word id="dore" translation="który" />
-    <word id="dono" translation="który">
+    <word id="itsu" kana="いつ" asks_for="time" translation="kiedy" />
+    <word id="nanji" kana="なんじ" asks_for="time" kanji="何時" translation="o której godzinie" />
+    <word id="doko" kana="どこ" asks_for="place" kanji="何処" translation="gdzie" />
+    <word id="dore" kana="どれ" asks_for="choice" translation="który" />
+    <word id="dono" kana="どの" asks_for="choice_modifier" translation="który">
       <polish_forms>
         <common cases="nominative accusative vocative" value="który" />
         <common cases="genitive" value="którego" />
@@ -47,9 +46,9 @@
         <override classes="plural_non_masculine_personal" cases="instrumental" value="którymi" />
       </polish_forms>
     </word>
-    <word id="dochira" translation="która strona" />
-    <word id="docchi" translation="która strona (potocznie)" />
-    <word id="donna" translation="jaki">
+    <word id="dochira" kana="どちら" asks_for="choice" translation="która strona" />
+    <word id="docchi" kana="どっち" asks_for="choice" translation="która strona (potocznie)" />
+    <word id="donna" kana="どんな" asks_for="kind" translation="jaki">
       <polish_forms>
         <common cases="nominative accusative vocative" value="jaki" />
         <common cases="genitive" value="jakiego" />
@@ -65,10 +64,10 @@
         <override classes="plural_non_masculine_personal" cases="instrumental" value="jakimi" />
       </polish_forms>
     </word>
-    <word id="naze" translation="dlaczego" />
-    <word id="doushite" translation="dlaczego" />
-    <word id="douyatte" translation="w jaki sposób" />
-    <word id="dou" translation="jak">
+    <word id="naze" kana="なぜ" asks_for="reason" kanji="何故" translation="dlaczego" />
+    <word id="doushite" kana="どうして" asks_for="reason" translation="dlaczego" />
+    <word id="douyatte" kana="どうやって" asks_for="method" translation="w jaki sposób" />
+    <word id="dou" kana="どう" asks_for="manner" translation="jak">
       <polish_forms>
         <common cases="nominative accusative vocative" value="jaki" />
         <common cases="genitive" value="jakiego" />
@@ -84,16 +83,16 @@
         <override classes="plural_non_masculine_personal" cases="instrumental" value="jakimi" />
       </polish_forms>
     </word>
-    <word id="ikura" translation="ile kosztuje">
+    <word id="ikura" kana="いくら" asks_for="price" translation="ile kosztuje">
       <polish_forms>
         <common cases="nominative" value="ile kosztuje" />
         <override classes="plural_non_masculine_personal" cases="nominative" value="ile kosztują" />
       </polish_forms>
     </word>
-    <word id="ikutsu" translation="ile" />
-    <word id="nannin" translation="ile osób" />
-    <word id="nansai" translation="ile lat" />
-    <word id="dare_no" translation="czyj">
+    <word id="ikutsu" kana="いくつ" asks_for="quantity" kanji="幾つ" translation="ile" />
+    <word id="nannin" kana="なんにん" asks_for="people_count" kanji="何人" translation="ile osób" />
+    <word id="nansai" kana="なんさい" asks_for="age" kanji="何歳" translation="ile lat" />
+    <word id="dare_no" kana="だれの" asks_for="possessor" kanji="誰の" translation="czyj">
       <polish_forms>
         <common cases="nominative accusative vocative" value="czyj" />
         <common cases="genitive" value="czyjego" />
@@ -109,6 +108,6 @@
         <override classes="plural_non_masculine_personal" cases="instrumental" value="czyimi" />
       </polish_forms>
     </word>
-    <word id="how_many" translation="ile" />
+    <word id="how_many" kana="なん" kanji="何" romaji="nan" asks_for="count" quantity_symbol="how_many" translation="ile" />
   </words>
 </dictionary>
