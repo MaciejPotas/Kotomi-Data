@@ -43,9 +43,9 @@ def _sync_profile_exports() -> None:
         globals()[name] = getattr(_logic, name)
 
 
-def configure_quiz_profile(quiz_id: str) -> None:
+def configure_quiz_profile(quiz_id: str, *, project=None) -> None:
     """Configure the live Grammar policy and refresh compatibility exports."""
-    _logic.configure_quiz_profile(quiz_id)
+    _logic.configure_quiz_profile(quiz_id, project=project)
     _sync_profile_exports()
 
 

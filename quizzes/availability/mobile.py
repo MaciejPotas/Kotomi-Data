@@ -1960,7 +1960,14 @@ def create_app_class(policy: object = None):
         def reload_engine(self) -> bool:
             try:
                 if self.engine is None:
-                    self.engine = policy_engine(self.project_path, language_context=self.language_context)
+                    kwargs = {"language_context": self.language_context}
+                    project = getattr(self, "preloaded_project", None)
+                    if project is not None:
+                        kwargs["project"] = project
+                    self.engine = policy_engine(self.project_path, **kwargs)
+                    # Transfer ownership to the engine; reload must read fresh data.
+                    if project is not None:
+                        del self.preloaded_project
                 else:
                     self.engine.reload()
                 self.engine_error = ""

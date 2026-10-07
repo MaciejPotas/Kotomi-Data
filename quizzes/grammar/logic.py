@@ -417,10 +417,12 @@ def resolve_project_path() -> Path:
     raise GrammarQuizError("Nie znaleziono quiz_project.xml.")
 
 
-def configure_quiz_profile(quiz_id: str) -> None:
+def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) -> None:
     """Configure this reusable quiz UI from one XML quiz definition."""
 
-    project = QuizProject.load(resolve_project_path())
+    # No-argument loading is retained only for standalone legacy callers.
+    if project is None:
+        project = QuizProject.load(resolve_project_path())
     quiz = project.sentence_quizzes.get(quiz_id)
     if quiz is None:
         raise GrammarQuizError(f"Nie znaleziono quizu zdań '{quiz_id}'.")
@@ -518,12 +520,20 @@ class GrammarQuizEngine:
         self,
         project_path: Path | str,
         rng: Optional[random.Random] = None,
-        *, language_context=None,
+        *, language_context=None, project: QuizProject | None = None,
     ) -> None:
         self.language_context = language_context
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = QuizProject.load(self.project_path, language_context=self.language_context)
+        if project is not None:
+            if project.manifest_path != self.project_path:
+                raise GrammarQuizError("Quiz project belongs to a different Content manifest.")
+            if language_context is not None and project.language_context is not language_context:
+                raise GrammarQuizError("Quiz project belongs to a different LanguageContext.")
+        self.project = project if project is not None else QuizProject.load(
+            self.project_path, language_context=self.language_context,
+        )
+        self.language_context = self.project.language_context
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
