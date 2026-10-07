@@ -1,7 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
 <grammar_rules schema_version="2" instruction_language_id="test">
-  <noun_categories><category id="item" label="Item" /></noun_categories>
-  <form_catalogs><form_catalog schema="verb"><form label="Dictionary" name="dictionary" context="none" /></form_catalog></form_catalogs>
-  <source_government><frame id="listen"><realization preposition="to" /></frame></source_government>
-  <source_noun_relations><profile id="destination"><realization relation="destination" preposition="to" /></profile></source_noun_relations>
-  <roles><role id="object" label="Object" particle="を" accepts="item" /></roles>
+  <noun_categories>
+    <category id="concrete" label="Concrete" selectable="false" />
+    <category id="person" label="Person" parent="concrete" selectable="true" />
+    <category id="animal" label="Animal" parent="concrete" selectable="true" />
+    <category id="place" label="Place" parent="concrete" selectable="true" />
+    <category id="purchasable" label="Purchasable" parent="concrete" selectable="false" />
+    <category id="food" label="Food" parent="purchasable" selectable="true" />
+    <category id="drink" label="Drink" parent="purchasable" selectable="true" />
+    <category id="text" label="Text" parent="purchasable" selectable="true" />
+    <category id="media" label="Audible media" parent="purchasable" selectable="true" />
+    <category id="vehicle" label="Vehicle" parent="purchasable" selectable="true" />
+    <category id="thing" label="Thing" parent="purchasable" selectable="true" />
+    <category id="item" label="Item" parent="thing" selectable="true" />
+    <category id="abstract" label="Abstract" selectable="true" />
+    <category id="availability_reason" label="Availability reason" parent="abstract" selectable="true" />
+  </noun_categories>
+  <form_catalogs>
+    <form_catalog schema="verb">
+      <form name="dictionary" label="Dictionary" context="present" polarity="affirmative" register="plain" />
+      <form name="polite_nonpast" label="Polite nonpast" context="present" polarity="affirmative" register="polite" />
+      <form name="plain_negative" label="Plain negative" context="present" polarity="negative" register="plain" />
+      <form name="polite_negative" label="Polite negative" context="present" polarity="negative" register="polite" />
+      <form name="past_plain" label="Past plain" context="past" polarity="affirmative" register="plain" />
+      <form name="past_polite" label="Past polite" context="past" polarity="affirmative" register="polite" />
+      <form name="past_negative_plain" label="Past negative plain" context="past" polarity="negative" register="plain" />
+      <form name="past_negative_polite" label="Past negative polite" context="past" polarity="negative" register="polite" />
+      <form name="te_form" label="Te form" context="none" />
+      <form name="potential" label="Potential" context="none" />
+      <form name="passive" label="Passive" context="none" />
+      <form name="causative" label="Causative" context="none" />
+      <form name="tara" label="Conditional" lesson_name="conditional" context="none" />
+      <form name="volitional" label="Volitional" context="none" />
+      <form name="imperative" label="Imperative" context="none" />
+    </form_catalog>
+    <form_catalog schema="adjective">
+      <form name="predicate_plain_nonpast" label="Predicate plain nonpast" context="present" polarity="affirmative" register="plain" />
+      <form name="predicate_polite_nonpast" label="Predicate polite nonpast" context="present" polarity="affirmative" register="polite" />
+      <form name="predicate_plain_negative" label="Predicate plain negative" context="present" polarity="negative" register="plain" />
+      <form name="predicate_polite_negative" label="Predicate polite negative" context="present" polarity="negative" register="polite" />
+      <form name="predicate_plain_past" label="Predicate plain past" context="past" polarity="affirmative" register="plain" />
+      <form name="predicate_polite_past" label="Predicate polite past" context="past" polarity="affirmative" register="polite" />
+      <form name="predicate_plain_past_negative" label="Predicate plain past negative" context="past" polarity="negative" register="plain" />
+      <form name="predicate_polite_past_negative" label="Predicate polite past negative" context="past" polarity="negative" register="polite" />
+      <form name="attributive_nonpast" label="Attributive nonpast" context="none" />
+      <form name="connective" label="Connective" context="none" />
+      <form name="adverbial" label="Adverbial" context="none" />
+      <form name="conditional" label="Conditional" context="none" />
+      <form name="nominalized" label="Nominalized" context="none" />
+      <form name="appearance_sou" label="Appearance sou" context="none" />
+      <form name="excessive_sugiru" label="Excessive sugiru" context="none" />
+    </form_catalog>
+    <form_catalog schema="copula">
+      <form name="dictionary" label="Dictionary" context="present" polarity="affirmative" register="plain" />
+      <form name="polite_nonpast" label="Polite nonpast" context="present" polarity="affirmative" register="polite" />
+      <form name="plain_negative" label="Plain negative" context="present" polarity="negative" register="plain" />
+      <form name="polite_negative" label="Polite negative" context="present" polarity="negative" register="polite" />
+      <form name="past_plain" label="Past plain" context="past" polarity="affirmative" register="plain" />
+      <form name="past_polite" label="Past polite" context="past" polarity="affirmative" register="polite" />
+      <form name="past_negative_plain" label="Past negative plain" context="past" polarity="negative" register="plain" />
+      <form name="past_negative_polite" label="Past negative polite" context="past" polarity="negative" register="polite" />
+    </form_catalog>
+  </form_catalogs>
+  <source_government>
+    <frame id="listen">
+      <realization preposition="to" />
+    </frame>
+  </source_government>
+  <source_noun_relations>
+    <profile id="destination">
+      <realization relation="destination" preposition="to" />
+    </profile>
+  </source_noun_relations>
+  <roles>
+    <role id="object" label="Object" particle="を" accepts="item" />
+  </roles>
 </grammar_rules>

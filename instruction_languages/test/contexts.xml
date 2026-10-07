@@ -1,3 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
 <contexts schema_version="2" instruction_language_id="test">
-  <context id="none"><option id="now" translation="now" kana="いま、" /></context>
+  <context id="none">
+    <option id="now" translation="now" kana="いま、" />
+  </context>
+  <context id="present">
+    <option id="now" translation="now" kana="いま、" />
+  </context>
+  <context id="past">
+    <option id="past" translation="past" kana="むかし、" />
+  </context>
 </contexts>

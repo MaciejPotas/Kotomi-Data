@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 45,
+  "revision": 46,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "747b8a22d9279eb9e9e78b574403fb002026aa8238190159c055729943230489",
-      "url": "content_revision.json?kotomi_sha256=747b8a22d9279eb9e9e78b574403fb002026aa8238190159c055729943230489"
+      "sha256": "cf4003e27c7e537c9ec97bdd993563034bdca8385891542a2342386a5be25639",
+      "url": "content_revision.json?kotomi_sha256=cf4003e27c7e537c9ec97bdd993563034bdca8385891542a2342386a5be25639"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -74,8 +74,8 @@
     },
     {
       "path": "data/instruction_languages/test/contexts.xml",
-      "sha256": "682a90080a76afb5d765a85187e311c2396110a95d7bf3fc0b1f750809c52287",
-      "url": "instruction_languages/test/contexts.xml?kotomi_sha256=682a90080a76afb5d765a85187e311c2396110a95d7bf3fc0b1f750809c52287"
+      "sha256": "56cac5339f4831e5852d265d6b57645827393deb4efffc8fd5ff51a91e105064",
+      "url": "instruction_languages/test/contexts.xml?kotomi_sha256=56cac5339f4831e5852d265d6b57645827393deb4efffc8fd5ff51a91e105064"
     },
     {
       "path": "data/instruction_languages/test/copulas.xml",
@@ -84,23 +84,23 @@
     },
     {
       "path": "data/instruction_languages/test/counters.xml",
-      "sha256": "e097ec918051664ffeab6082dc7d48ba66147707eed6aa6e4ccfa3b8794d7487",
-      "url": "instruction_languages/test/counters.xml?kotomi_sha256=e097ec918051664ffeab6082dc7d48ba66147707eed6aa6e4ccfa3b8794d7487"
+      "sha256": "072e8e6bff1c1565c483db02e9a817c73eac5debd78e1de211a37ff081ce8230",
+      "url": "instruction_languages/test/counters.xml?kotomi_sha256=072e8e6bff1c1565c483db02e9a817c73eac5debd78e1de211a37ff081ce8230"
     },
     {
       "path": "data/instruction_languages/test/counting.xml",
-      "sha256": "f3c0ddaa6c3c440f2c3b89e9ce300bb9a470e8bb558b6133f91674d5e7f23e3b",
-      "url": "instruction_languages/test/counting.xml?kotomi_sha256=f3c0ddaa6c3c440f2c3b89e9ce300bb9a470e8bb558b6133f91674d5e7f23e3b"
+      "sha256": "5dd2ba51032f92478dfa8b3a5f1486a7f34c01bfd61c26068f922c956d3b5b24",
+      "url": "instruction_languages/test/counting.xml?kotomi_sha256=5dd2ba51032f92478dfa8b3a5f1486a7f34c01bfd61c26068f922c956d3b5b24"
     },
     {
       "path": "data/instruction_languages/test/grammar.xml",
-      "sha256": "7294d7477a9a2b9e2165fdad6da40fba52426bd16ce99990b99bcbfaae8daa98",
-      "url": "instruction_languages/test/grammar.xml?kotomi_sha256=7294d7477a9a2b9e2165fdad6da40fba52426bd16ce99990b99bcbfaae8daa98"
+      "sha256": "9068337439ac3fff5371768ec5e026b7ea4819d3b374c5eef803064f7ecded5f",
+      "url": "instruction_languages/test/grammar.xml?kotomi_sha256=9068337439ac3fff5371768ec5e026b7ea4819d3b374c5eef803064f7ecded5f"
     },
     {
       "path": "data/instruction_languages/test/interrogatives.xml",
-      "sha256": "a746d5dbcbb363faa4c49da5e98b2bf11faba8184c73466ea11c171e18663415",
-      "url": "instruction_languages/test/interrogatives.xml?kotomi_sha256=a746d5dbcbb363faa4c49da5e98b2bf11faba8184c73466ea11c171e18663415"
+      "sha256": "6fd88f2d2940f6691fb4c100cf27ca98551c04c4cdd3abf3f398c4a2e1206e22",
+      "url": "instruction_languages/test/interrogatives.xml?kotomi_sha256=6fd88f2d2940f6691fb4c100cf27ca98551c04c4cdd3abf3f398c4a2e1206e22"
     },
     {
       "path": "data/instruction_languages/test/lessons/lessons.xml",

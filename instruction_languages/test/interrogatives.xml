@@ -1,3 +1,7 @@
-<dictionary schema_version="2" instruction_language_id="test" id="interrogatives" schema="interrogative"><words>
-  <word id="who" kana="だれ" translation="who" asks_for="person" />
-</words></dictionary>
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" instruction_language_id="test" id="interrogatives" schema="interrogative">
+  <words>
+    <word id="who" kana="だれ" translation="who" asks_for="person" />
+    <word id="how_many" translation="how_many" kana="なん" kanji="何" romaji="nan" asks_for="count" quantity_symbol="how_many" />
+  </words>
+</dictionary>
