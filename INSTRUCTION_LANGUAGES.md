@@ -1,21 +1,30 @@
-# Source-language scope
+# One Content database, optional source grammar
 
-The canonical production bundle declares `instruction_language_id="pl"`; the
-project target is `target_language_id="ja"`. Translation, case, agreement,
-government, context and source-pattern data belong to that instruction-language
-scope. Japanese lexical IDs and exact Japanese forms keep their existing meaning.
+`quiz_project.xml` is the single canonical production project. Grammar selection
+never selects a different Content database. Switching grammar is non-destructive
+and does not mutate Content, word IDs, paths, patterns, lessons or Content revision.
 
-The additive metadata is compatible with Project Schema 2. New readers reject a
-file whose declared instruction language conflicts with the active project.
-Legacy Polish element names are preserved by the Polish language implementation.
+Kotomi offers Default and Polski. Default always retains Japanese/common grammar,
+counting and authoring, while treating translation as opaque text. Polish activates
+optional source cases, agreement, government, relations and counted forms on the
+same Word. It neither verifies existing translations nor enriches them automatically.
+Autofill is an explicit authoring action, committed only with the accepted edit.
 
-`instruction_languages/test/` is an intentionally small no-grammar probe bundle.
-It exists to exercise the same runtime language-selection path as a future real
-instruction language, while declaring no cases, agreement classes or morphology.
-Its source strings are simple English-like test values, not production English
-content. It is published through the normal Content manifest so Desktop, fresh
-Mobile packages and Content Update can exercise the same selectable bundle.
+The manifest's `instruction_language_id="pl"` remains default/compatibility metadata.
+An explicitly selected grammar context may load the same Content as Default.
+Nested source declarations are validated when that source grammar is active.
+Default ignores source extensions for generation and preserves them during edits.
+No multi-source Word or translation overlay is introduced.
 
-A future production language should use its own project manifest and source file
-paths. Source patterns can differ structurally and do not require one-to-one slot
-mapping to Polish. A real English implementation and dataset remain out of scope.
+Words without source morphology remain valid. A pattern requiring a missing
+realization cannot select that word; a simple translation pattern can. Unknown
+class/profile/frame references remain structural errors under the active provider.
+
+Japanese grammar and source grammar definitions belong to Kotomi. Content owns
+complete lexical entries and learning material. New Content rejects `<editor>`,
+`<grammar file>` and grammar-owned counting sections. `grammar/counting.xml` owns
+only counter bindings/defaults and number sets; it declares no source language.
+
+TestLanguage and its diagnostic Content are test-only fixtures in Kotomi. They are
+not production registry options or Content update files. Production English and
+multi-source storage remain outside this PR.

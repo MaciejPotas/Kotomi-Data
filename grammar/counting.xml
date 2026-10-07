@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<counting schema_version="2" source_language="pl">
+<counting schema_version="2">
   <counter_bindings>
     <class ref="person" default_counter="nin">
       <counter ref="nin" />

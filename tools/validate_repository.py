@@ -40,20 +40,6 @@ CONTENT_MANIFEST_ORDER = [
     "data/dictionaries/verbs.xml",
     "data/grammar/contexts.xml",
     "data/grammar/counting.xml",
-    "data/instruction_languages/test/adjectives.xml",
-    "data/instruction_languages/test/connectors.xml",
-    "data/instruction_languages/test/contexts.xml",
-    "data/instruction_languages/test/copulas.xml",
-    "data/instruction_languages/test/counters.xml",
-    "data/instruction_languages/test/counting.xml",
-    "data/instruction_languages/test/interrogatives.xml",
-    "data/instruction_languages/test/lessons/lessons.xml",
-    "data/instruction_languages/test/nouns.xml",
-    "data/instruction_languages/test/numbers.xml",
-    "data/instruction_languages/test/patterns.xml",
-    "data/instruction_languages/test/quiz_project.xml",
-    "data/instruction_languages/test/quizzes.xml",
-    "data/instruction_languages/test/verbs.xml",
     "data/lessons/lessons.xml",
     "data/patterns/sentence_maps.xml",
     "data/patterns/sentence_quizzes.xml",
@@ -296,10 +282,8 @@ def validate_counting_data() -> None:
     counting_grammar = ET.parse(ROOT / "grammar" / "counting.xml").getroot()
     patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
 
-    if counting_grammar.get("source_language") != "pl":
-        raise AssertionError(
-            "Counting grammar must declare source_language='pl'"
-        )
+    if counting_grammar.get("source_language"):
+        raise AssertionError("Content counter bindings are not source grammar")
     number_values: dict[int, str] = {}
     for word in numbers.findall("./words/word"):
         word_id = str(word.get("id", ""))

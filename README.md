@@ -103,8 +103,10 @@ The Kotomi source repository mounts this repository as the `data` git submodule.
 
 A dictionary contains complete word entries: Japanese surfaces, translations,
 lexical forms, cases and assignments to grammar IDs. One edit has one dictionary
-owner. The diagnostic TestLanguage bundle is a separate small sample database,
-not another translation layer over the Polish vocabulary.
+owner. Grammar selection never selects a different Content database. Default
+uses opaque source text; Polish enables optional enrichment on the same Word.
+Switching grammar is non-destructive and does not mutate Content. Test-only
+providers and fixtures are not published in this repository.
 
 Kotomi provides form catalogs, roles/categories/features, agreement templates,
 government frames, noun relation profiles, source clitics and counting rules.

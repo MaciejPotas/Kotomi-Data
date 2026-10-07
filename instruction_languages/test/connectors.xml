@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" id="connectors" schema="connector" target_language_id="ja" instruction_language_id="test">
-  <words>
-    <word id="also" kana="それに" translation="also" />
-  </words>
-</dictionary>
