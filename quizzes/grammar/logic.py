@@ -530,12 +530,14 @@ class GrammarQuizEngine:
                 raise GrammarQuizError("Quiz project belongs to a different Content manifest.")
             if language_context is not None and project.language_context is not language_context:
                 raise GrammarQuizError("Quiz project belongs to a different LanguageContext.")
-        self.project = project if project is not None else QuizProject.load(
-            self.project_path, language_context=self.language_context,
-        )
+            self.project = project
+        else:
+            self.project = QuizProject.load(
+                self.project_path, language_context=self.language_context,
+            )
+            self._validate_project()
         self.language_context = self.project.language_context
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        self._validate_project()
 
     def _validate_project(self) -> None:
         issues = [issue for issue in self.project.validate()
