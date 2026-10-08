@@ -33,6 +33,7 @@ from kotomi.core.project import (
 )
 from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.application.quiz_project import load_quiz_project
+from kotomi.application import quiz_project
 from kotomi.core.generation import normalize_answer
 from kotomi.application.settings_xml import load_settings, save_settings
 from platforms.mobile.presentation import (
@@ -413,14 +414,24 @@ class AdjectiveQuizEngine:
         self,
         project_path: Path | str,
         rng: Optional[random.Random] = None,
-        *, language_context=None,
+        *, language_context=None, project: quiz_project.QuizProject | None = None,
     ) -> None:
         self.language_context = language_context
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = load_quiz_project(self.project_path, language_context=self.language_context)
+        if project is not None:
+            if project.manifest_path != self.project_path:
+                raise ValueError("Quiz project belongs to a different Content manifest.")
+            if language_context is not None and project.language_context is not language_context:
+                raise ValueError("Quiz project belongs to a different LanguageContext.")
+            self.language_context = project.language_context
+            self.project = project
+        else:
+            self.project = load_quiz_project(
+                self.project_path, language_context=self.language_context
+            )
+            self._validate_project()
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        self._validate_project()
 
     def reload(self) -> None:
         self.project = load_quiz_project(self.project_path, language_context=self.language_context)
@@ -740,6 +751,17 @@ class AdjectiveQuizEngine:
         for index in range(selected_count):
             result *= candidate_count - index
         return result
+
+    def has_possible_question(self, settings: AdjectiveQuizSettings) -> bool:
+        """Check feasibility by generating one question without consuming RNG."""
+        rng_state = self.rng.getstate()
+        try:
+            self.generate_question(settings)
+        except MobileQuizError:
+            return False
+        finally:
+            self.rng.setstate(rng_state)
+        return True
 
     def statistics(self, settings: AdjectiveQuizSettings) -> Dict[str, int]:
         spaces = self.build_spaces(settings)
