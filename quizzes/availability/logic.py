@@ -25,7 +25,7 @@ if str(INSTALL_ROOT) not in sys.path:
 from kotomi.core.project import ProjectError, Word
 from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.application.quiz_project import QuizProject
-from kotomi.core.generation import balanced_choice, normalize_answer
+from kotomi.core.generation import ChoiceScope, balanced_choice, normalize_answer
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from kotomi.application.settings_xml import load_settings, save_settings
 
@@ -424,7 +424,7 @@ class AvailabilityQuizEngine:
         self.rng = rng or random.Random()
         self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = [issue for issue in self.project.validate()
+        issues = [issue for issue in self.project.validate(include_pattern_renderability=False)
                   if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
@@ -432,7 +432,7 @@ class AvailabilityQuizEngine:
     def reload(self) -> None:
         self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = [issue for issue in self.project.validate()
+        issues = [issue for issue in self.project.validate(include_pattern_renderability=False)
                   if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
@@ -653,20 +653,28 @@ class AvailabilityQuizEngine:
         combinations = self.build_combinations(settings)
         possible = 0
         enabled_patterns: Set[str] = set()
+        eligible_ids = frozenset(
+            word.id for word in self.project.words["verbs"].values()
+            if word_matches_filter(word, filter_rules)
+        )
         for combination in combinations:
             enabled_patterns.add(combination.pattern_id)
-            for preview in self.shared_engine.iter_previews(
+            if not eligible_ids:
+                continue
+            analysis = self.shared_engine.analyze_pattern(
+                combination.pattern_id
+            )
+            # An availability pattern can contain more than one verb slot.
+            # Narrow only the main/focus slot, never the existential verb.
+            scope = ChoiceScope(
+                allowed_by_slot={analysis.focus_slot: eligible_ids}
+            )
+            for _preview in self.shared_engine.iter_previews(
                 combination.pattern_id,
                 form_name=combination.rule.target_form,
+                choice_scope=scope,
             ):
-                analysis = self.shared_engine.analyze_pattern(
-                    combination.pattern_id
-                )
-                word = self.project.words["verbs"][
-                    preview.words[analysis.focus_slot]
-                ]
-                if word_matches_filter(word, filter_rules):
-                    possible += 1
+                possible += 1
         return {
             "words": sum(
                 len(dictionary)

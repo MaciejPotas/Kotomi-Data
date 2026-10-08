@@ -27,7 +27,7 @@ from kotomi.core.project import (
 )
 from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.application.quiz_project import QuizProject
-from kotomi.core.generation import balanced_choice, normalize_answer
+from kotomi.core.generation import ChoiceScope, balanced_choice, normalize_answer
 from kotomi.application.settings_xml import load_settings, save_settings
 from kotomi.application.settings import validate_mobile_button_scale
 PROJECT_ENVIRONMENT_VARIABLE = "JAPANESE_QUIZ_PROJECT"
@@ -419,7 +419,7 @@ class VerbQuizEngine:
         self.rng = rng or random.Random()
         self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = [issue for issue in self.project.validate()
+        issues = [issue for issue in self.project.validate(include_pattern_renderability=False)
                   if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
@@ -427,7 +427,7 @@ class VerbQuizEngine:
     def reload(self) -> None:
         self.project = QuizProject.load(self.project_path, language_context=self.language_context)
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = [issue for issue in self.project.validate()
+        issues = [issue for issue in self.project.validate(include_pattern_renderability=False)
                   if not issue.startswith("WARNING:")]
         if issues:
             raise MobileQuizError("\n".join(issues))
@@ -712,21 +712,24 @@ class VerbQuizEngine:
                 combination.pattern_id
             )
             enabled_patterns.add(combination.pattern_id)
-            for preview in self.shared_engine.iter_previews(
+            # The filter concerns only the focus verb. Apply it before
+            # compatibility search instead of rendering discarded previews.
+            eligible_ids = frozenset(
+                word.id for word in self.project.words["verbs"].values()
+                if word_matches_filter(word, filter_rules)
+                and self._has_compatible_source_form(word, combination.rule)
+            )
+            if not eligible_ids:
+                continue
+            scope = ChoiceScope(
+                allowed_by_slot={analysis.focus_slot: eligible_ids}
+            )
+            for _preview in self.shared_engine.iter_previews(
                 combination.pattern_id,
                 form_name=combination.rule.target_form,
+                choice_scope=scope,
             ):
-                word = self.project.words["verbs"][
-                    preview.words[analysis.focus_slot]
-                ]
-                if (
-                    word_matches_filter(word, filter_rules)
-                    and self._has_compatible_source_form(
-                        word,
-                        combination.rule,
-                    )
-                ):
-                    possible += 1
+                possible += 1
         return {
             "words": sum(
                 len(dictionary)
