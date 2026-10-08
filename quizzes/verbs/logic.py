@@ -412,17 +412,29 @@ class VerbQuizEngine:
         self,
         project_path: Path | str,
         rng: Optional[random.Random] = None,
-        *, language_context=None,
+        *, language_context=None, project: quiz_project.QuizProject | None = None,
     ) -> None:
         self.language_context = language_context
         self.project_path = Path(project_path).resolve()
         self.rng = rng or random.Random()
-        self.project = QuizProject.load(self.project_path, language_context=self.language_context)
+        if project is not None:
+            if project.manifest_path != self.project_path:
+                raise ValueError("Quiz project belongs to a different Content manifest.")
+            if language_context is not None and project.language_context is not language_context:
+                raise ValueError("Quiz project belongs to a different LanguageContext.")
+            self.language_context = project.language_context
+            self.project = project
+        else:
+            self.project = QuizProject.load(
+                self.project_path, language_context=self.language_context
+            )
+            issues = [
+                issue for issue in self.project.validate()
+                if not issue.startswith("WARNING:")
+            ]
+            if issues:
+                raise MobileQuizError("\n".join(issues))
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
-        issues = [issue for issue in self.project.validate()
-                  if not issue.startswith("WARNING:")]
-        if issues:
-            raise MobileQuizError("\n".join(issues))
 
     def reload(self) -> None:
         self.project = QuizProject.load(self.project_path, language_context=self.language_context)
@@ -700,6 +712,17 @@ class VerbQuizEngine:
             preview,
             {analysis.focus_slot: source_form.name},
         )
+
+    def has_possible_question(self, settings: VerbQuizSettings) -> bool:
+        """Check feasibility by generating one question without consuming RNG."""
+        rng_state = self.rng.getstate()
+        try:
+            self.generate_question(settings)
+        except MobileQuizError:
+            return False
+        finally:
+            self.rng.setstate(rng_state)
+        return True
 
     def statistics(self, settings: VerbQuizSettings) -> Dict[str, int]:
         """Calculate exact statistics. The GUI calls this on a worker thread."""
