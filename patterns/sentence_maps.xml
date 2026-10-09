@@ -227,8 +227,12 @@
       <answer>{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb@existence[role:subject, feature:existential, form]}。</answer>
     </sentence_pattern>
     <sentence_pattern id="Ile jest policzonych rzeczowników" category="counting">
-      <question>{interrogative@amount[asks_for:count].translation} jest {noun@item[quantity:@amount, case:nominative]}?</question>
-      <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form:dictionary]}？</answer>
+      <question>{interrogative@amount[asks_for:count].translation} {verb@existence[role:subject, feature:existential, form, agree:@amount].translation} {noun@item[quantity:@amount, government:@existence]}?</question>
+      <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form]}{question}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Ile jest opisanych policzonych rzeczowników" category="counting">
+      <question>{interrogative@amount[asks_for:count].translation} {verb@existence[role:subject, feature:existential, form, agree:@amount].translation} {adjective@quality[form:attributive_nonpast, agree:@item].translation} {noun@item[quantity:@amount, government:@existence]}?</question>
+      <answer>{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form]}{question}</answer>
     </sentence_pattern>
     <sentence_pattern id="Godzina zegarowa" category="counting">
       <question>godzina {number@count[range:1..24].value}</question>

@@ -101,7 +101,7 @@ wspólnego `verb@existence`, jak w przykładzie. Jeden kontekst ma po jednej
 źródłowej realizacji składnika; kolejne użycie wymaga osobnego kontekstu.
 Nie powstał drugi solver ani osobny edytor kontekstów.
 
-Content 52 wymaga Kotomi 1.5, aplikacja ma wersję 1.5.0. Starsza aplikacja odrzuci
+Content 54 wymaga Kotomi 1.6, aplikacja ma wersję 1.6.0. Starsza aplikacja odrzuci
 nowe dane przed instalacją. Nie obsługujemy historycznego XML z usuniętym atrybutem.
 Najpierw zmerguj PR Data, potem PR aplikacji. Zachowaj commit przypięty gitlinkiem;
 po squash merge zaktualizuj przypięcie i sprawdź je przed merge aplikacji.
@@ -109,3 +109,75 @@ Oba PR-y wymagają review i zielonego CI, bez automatycznego merge.
 
 
 Przymiotnik nieodmienny nie ma obecnie trwałej deklaracji nieodmienności. Normalizacja usuwa nadpisania identyczne z formą wspólną. Przy wymaganym rodzaju żeńskim, nijakim w mianowniku lub liczbie mnogiej brak nadpisania daje Unsupported. Dodanie takich samych wartości jako nadpisań nie jest obejściem tego ograniczenia.
+
+## Pytania o nieznaną ilość
+
+`how_many` oznacza pytanie „ile”, a nie konkretną liczbę. Wybiera je
+`interrogative@amount[asks_for:count]`. Tożsamość `Symbolic("how_many")`
+pozostaje niezmieniona również po wybraniu polskiego profilu `many`.
+Profil nie podstawia piątki i nie uruchamia przeglądania zakresów liczbowych.
+
+Relacje są takie same jak w zdaniu oznajmującym: rzeczownik wskazuje ilość
+przez `quantity:@amount` i orzeczenie przez `government:@existence`, a
+orzeczenie wskazuje ilość przez `agree:@amount`. Interrogative ma własne
+znaczenie „ile”, więc nie potrzebuje liczebnikowych `agree:@item` ani
+`case:@item`. W tym kontekście `agree:@item` na przymiotniku wystarcza.
+Nie dopisuj mu `case:genitive` ani `case:@item`.
+
+Polski profil `many` wybiera zapisaną formę rzeczownika, np. „książek”,
+„samochodów”, „psów” lub „jabłek”. Konstrukcja twierdząca nadal ma przypadek
+nominative, ale efektywna forma rzeczownika i przymiotnika jest dopełniaczem
+liczby mnogiej. Dlatego otrzymujemy „czerwonych książek”, mimo że klasa
+rzeczownika to feminine. Te trzy informacje nie są zamienne.
+
+Forma orzeczenia pochodzi z katalogu gramatyki. Pytanie ma cztery formy:
+
+| Forma | Polski czasownik | Japońskie zakończenie dla książek |
+|---|---|---|
+| `dictionary` | jest | `あるの？` |
+| `polite_nonpast` | jest | `ありますか？` |
+| `past_plain` | było | `あったの？` |
+| `past_polite` | było | `ありましたか？` |
+
+Wybór `ある` lub `いる` nadal zależy od rzeczownika. Counter korzysta ze
+swojej zapisanej realizacji `how_many`, np. `なんさつ` dla książek lub
+`なんびき` dla psów. `{question}` dobiera końcówkę z rejestru formy.
+Przymiotnik japoński zachowuje formę przydawkową, także `な` przy
+na-adjective, np. `げんきないぬ`.
+
+Przykłady wygenerowane przez silnik: „Ile było czerwonych książek?” →
+`あかいほんがなんさつあったの？`, „Ile jest energicznych psów?” →
+`げんきないぬがなんびきいるの？`.
+
+Oba wzorce należą do quizu **Liczenie** i wybierają czas dynamicznie:
+
+```xml
+<sentence_pattern id="Ile jest policzonych rzeczowników" category="counting">
+      <question>{interrogative@amount[asks_for:count].translation} {verb@existence[role:subject, feature:existential, form, agree:@amount].translation} {noun@item[quantity:@amount, government:@existence]}?</question>
+      <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form]}{question}</answer>
+    </sentence_pattern>
+<sentence_pattern id="Ile jest opisanych policzonych rzeczowników" category="counting">
+      <question>{interrogative@amount[asks_for:count].translation} {verb@existence[role:subject, feature:existential, form, agree:@amount].translation} {adjective@quality[form:attributive_nonpast, agree:@item].translation} {noun@item[quantity:@amount, government:@existence]}?</question>
+      <answer>{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form]}{question}</answer>
+    </sentence_pattern>
+```
+
+Planer rozpoznaje pytanie po zależnościach i `asks_for:count`. Nie sprawdza
+nazwy wzorca ani sąsiedztwa tokenów. Zwykły `RealizationRequest` dostaje
+wspólne zależności konstrukcji, a polska warstwa korzysta z tej samej operacji
+co dla liczebników. Nie ma drugiego solvera. Brak wyboru daje `Pending`;
+komplet wyborów bez wymaganych form daje `Unsupported`. Błąd struktury
+pozostaje błędem konfiguracji. Wyjaśnienia, preview, enumeracja, statystyki,
+preflight, quiz i bound rendering korzystają ze wspólnego planu.
+
+Reguła `asks_for="count"` dopuszcza present/past i wyłącznie affirmative.
+Nie obsługujemy pytań „Ile nie ma…” ani „Ile nie było…”. Wymuszona negacja
+jest odrzucana także przez bound rendering i `render_answer_with_forms`.
+Pozostałe intencje pytań zachowują dotychczasowe reguły. Przeczące zdania
+z konkretną liczbą nadal działają. Ograniczenia klas rzeczowników i jawnych
+form przymiotników opisane wyżej nadal obowiązują.
+
+Content 54 wymaga Kotomi 1.6. Aplikacja ma wersję 1.6.0. Najpierw zmerguj
+PR danych, następnie PR aplikacji. Zachowaj commit danych wskazany przez
+gitlink. Po squash merge trzeba przypiąć wynikowy commit i ponownie sprawdzić
+manifesty oraz CI. Samo wdrożenie aplikacji 1.6 może nadal używać starszych danych.

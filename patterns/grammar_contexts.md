@@ -107,7 +107,7 @@ analysis; use the shared existential selection demonstrated above. A context
 has one source realization per constituent; repeating a constituent requires a
 separate named context. There is no new context editor or separate solver.
 
-Content revision 52 requires Kotomi 1.5; the application version is 1.5.0.
+Content revision 54 requires Kotomi 1.6; the application version is 1.6.0.
 Old applications reject the new Content requirement before installation.
 Historical XML with the removed attribute is not supported. Merge the Data PR
 first, then the application PR. Preserve the Data commit referenced by the
@@ -116,3 +116,67 @@ the application. Both PRs require review and green CI; do not auto-merge.
 
 
 Indeclinable adjectives have no persistent indeclinability declaration. Normalization removes overrides identical to common forms. Where feminine, neuter nominative or plural needs an explicit override, missing data yields Unsupported. Repeating common forms as overrides is not a supported workaround.
+
+## Questions about an unknown quantity
+
+`interrogative@amount[asks_for:count]` selects `how_many`, whose identity remains
+`Symbolic("how_many")`. Its Polish `many` profile describes inflection, not a
+concrete number. No replacement with five, numeric draw or numeric range scan
+occurs.
+
+The noun declares `quantity:@amount` and `government:@existence`; the
+existential predicate declares `agree:@amount`. The interrogative supplies its
+own translation and needs no numeral agreement or case edge. An adjective uses
+only `agree:@item`, inheriting the effective noun realization. Do not duplicate
+its case with `case:genitive` or `case:@item`.
+
+The affirmative construction case stays nominative. The `many` profile supplies
+the stored genitive-plural noun, and the adjective receives plural agreement and
+genitive case. Noun class, construction case and effective constituent case are
+distinct. For example, feminine book becomes `czerwonych książek`.
+
+| Form | Polish predicate | Japanese ending for books |
+|---|---|---|
+| `dictionary` | jest | `あるの？` |
+| `polite_nonpast` | jest | `ありますか？` |
+| `past_plain` | było | `あったの？` |
+| `past_polite` | było | `ありましたか？` |
+
+The existing noun/governor data still select ある/いる. Counters keep their own
+stored `how_many` realizations, including `なんさつ` and `なんびき`. `{question}`
+uses form register, and Japanese attributive adjectives keep their usual i/na
+forms. Real-engine examples: `Ile było czerwonych książek?` →
+`あかいほんがなんさつあったの？`; `Ile jest energicznych psów?` →
+`げんきないぬがなんびきいるの？`.
+
+Both ordinary patterns are included in **Liczenie**, with dynamic tense:
+
+```xml
+<sentence_pattern id="Ile jest policzonych rzeczowników" category="counting">
+      <question>{interrogative@amount[asks_for:count].translation} {verb@existence[role:subject, feature:existential, form, agree:@amount].translation} {noun@item[quantity:@amount, government:@existence]}?</question>
+      <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form]}{question}</answer>
+    </sentence_pattern>
+<sentence_pattern id="Ile jest opisanych policzonych rzeczowników" category="counting">
+      <question>{interrogative@amount[asks_for:count].translation} {verb@existence[role:subject, feature:existential, form, agree:@amount].translation} {adjective@quality[form:attributive_nonpast, agree:@item].translation} {noun@item[quantity:@amount, government:@existence]}?</question>
+      <answer>{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form]}{question}</answer>
+    </sentence_pattern>
+```
+
+The existing planner recognizes explicit edges plus `asks_for:count`, without
+pattern-name or adjacency inference. Constituent RealizationRequests share the
+construction dependencies and call the same language operation as numerals.
+Missing dependencies are Pending; complete selections lacking mandatory forms
+are Unsupported. Structural errors propagate. Preview, explanations, bound
+rendering, enumeration, statistics, preflight and quiz generation share that
+plan. MRV, bounded search caches, ChoiceScope and lazy numeric ranges remain.
+
+The declarative count-question rule allows present/past affirmative forms only.
+Negative questions are outside this stage. Forced negative bindings fail in
+bound rendering and `render_answer_with_forms`, too. Other question intents and
+negative numeric statements retain their existing rules. The noun-class and
+strict adjective-override limitations above still apply.
+
+Content revision 54 requires Kotomi 1.6; application version is 1.6.0. Merge Data
+first, then the application PR. Preserve the pinned Data commit; after squashing,
+update the gitlink to the resulting commit and rerun manifest checks and CI.
+Application 1.6 can still load older compatible Content.

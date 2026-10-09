@@ -1,12 +1,12 @@
 {
   "format": 1,
-  "revision": 53,
-  "min_kotomi_version": "1.5",
+  "revision": 54,
+  "min_kotomi_version": "1.6",
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "e2ae23333e015dfba8c0d70664f0d77c1f8405d918e1f5a07ee50926a87dba0a",
-      "url": "content_revision.json?kotomi_sha256=e2ae23333e015dfba8c0d70664f0d77c1f8405d918e1f5a07ee50926a87dba0a"
+      "sha256": "e84fcc4670cb3fe2e8b365d07a5799cf577e1f1bdcc8d0c9f1a121c28b2a862c",
+      "url": "content_revision.json?kotomi_sha256=e84fcc4670cb3fe2e8b365d07a5799cf577e1f1bdcc8d0c9f1a121c28b2a862c"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -65,18 +65,18 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "885fc584ebe597e0fd62cea5dfbd43b3ab434d4a5648ba30af55a6dff3cbe891",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=885fc584ebe597e0fd62cea5dfbd43b3ab434d4a5648ba30af55a6dff3cbe891"
+      "sha256": "fc02060f4d7869fdeb9951b7877a0d42da30bc4e6300a107fd5886a751416bee",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=fc02060f4d7869fdeb9951b7877a0d42da30bc4e6300a107fd5886a751416bee"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
-      "sha256": "c497449cd84c13bf494d7f4e0827598554d610725103d67be2bfb00de22dcc6b",
-      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=c497449cd84c13bf494d7f4e0827598554d610725103d67be2bfb00de22dcc6b"
+      "sha256": "53d8c9df6e87de55d2e3f62c06f070987c01f17180735dc130f39819fcfeeb94",
+      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=53d8c9df6e87de55d2e3f62c06f070987c01f17180735dc130f39819fcfeeb94"
     },
     {
       "path": "data/quiz_project.xml",
-      "sha256": "a9b23d9034bdb037efbc07380c60694ab2d3696ee4287ecb89477962def26111",
-      "url": "quiz_project.xml?kotomi_sha256=a9b23d9034bdb037efbc07380c60694ab2d3696ee4287ecb89477962def26111"
+      "sha256": "636c41b7e2f934656f925f94a9d7323437b0a61bbf95e7b78c3ad0bda9e0ee3d",
+      "url": "quiz_project.xml?kotomi_sha256=636c41b7e2f934656f925f94a9d7323437b0a61bbf95e7b78c3ad0bda9e0ee3d"
     }
   ]
 }
