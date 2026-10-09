@@ -645,7 +645,7 @@
         <feature ref="existential" />
       </features>
       <usage>
-        <role ref="subject" accepts="person animal" />
+        <role ref="subject" accepts="person animal" government="existential_subject" />
       </usage>
       <forms>
         <form ref="dictionary" kana="いる" translation="jestem" />

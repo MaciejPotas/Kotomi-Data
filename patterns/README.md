@@ -134,3 +134,9 @@ Use separate aliases for the counted noun, quantity and counter:
 ```
 
 A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantity source. Time, minutes, age and floors select their counter explicitly by `id`. A counter with `quantity` renders the exact stored full realization. Bare output defaults to `kana`; use `.kanji` or `.romaji` only when that output is required.
+
+## Contextual existential migration
+
+Content revision 50 opts `Istnienie policzonych rzeczowników` into `semantics_version="2"`.
+It requires Kotomi 1.3. See [migration notes](contextual_existentials.md) or
+[opis po polsku](contextual_existentials.pl.md). The count-question pattern remains unchanged.
