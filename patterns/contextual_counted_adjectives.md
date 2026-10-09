@@ -63,6 +63,23 @@ Examples from the engine: `Jest jedna czerwona książka`, `Są trzy czerwone ks
 `Było pięć czerwonych książek`, `Nie było trzech czerwonych książek`.
 Japanese: `あかいほんがいっさつある。`, `あかいほんがいっさつあった。`.
 
+## Indeclinable adjectives are outside stage 4A
+
+Stage 4A does not provide a persistent declaration of indeclinability. A Polish
+adjective such as `super`, represented only by identical common forms, is not
+supported across the construction's agreement classes. `AgreementForms.normalized()`
+removes overrides equal to the common value, including during XML persistence.
+Writing duplicate overrides is therefore not a supported workaround.
+
+Where this construction requires a feminine, neuter-nominative or plural override,
+normalized common-only forms produce `Unsupported` after all dependencies are
+bound, and generation reports `NoCompatibleChoices`. Incomplete assignments remain
+`Pending`. Combinations already using the common masculine singular form may still
+resolve; that is not full support for indeclinable adjectives. Semantics 1 keeps
+its existing common-form behavior. A future extension needs an explicit declaration
+that survives normalization and a save/load round trip. Inferring indeclinability
+from missing overrides would also accept accidentally incomplete inflected words.
+
 ## Scope and release
 
 Supported noun classes: feminine, neuter, masculine inanimate and masculine animate.

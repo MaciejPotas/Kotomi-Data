@@ -61,6 +61,24 @@ Silnik generuje m.in. „Jest jedna czerwona książka”, „Są trzy czerwone 
 „Było pięć czerwonych książek” i „Nie było trzech czerwonych książek”. Po japońsku:
 `あかいほんがいっさつある。` oraz `あかいほんがいっさつあった。`.
 
+## Przymiotniki nieodmienne pozostają poza etapem 4A
+
+Etap 4A nie ma trwałej deklaracji nieodmienności. Przymiotnik taki jak `super`,
+zapisany wyłącznie jako jednakowe formy wspólne, nie jest obsługiwany we wszystkich
+klasach uzgodnienia tej konstrukcji. `AgreementForms.normalized()` usuwa nadpisania
+identyczne z formą wspólną, również przy zapisie i wczytywaniu XML. Wpisanie takich
+samych wartości jako `override` nie jest więc obsługiwanym obejściem.
+
+Gdy konstrukcja wymaga nadpisania żeńskiego, nijakiego w mianowniku lub mnogiego,
+po normalizacji same formy wspólne dają `Unsupported` przy kompletnych wyborach,
+a generowanie zgłasza `NoCompatibleChoices`. Niepełny wybór nadal daje `Pending`.
+Połączenia korzystające ze wspólnej formy męskiej liczby pojedynczej mogą działać,
+ale nie oznacza to pełnej obsługi przymiotnika nieodmiennego. Semantyka 1 zachowuje
+obecne działanie form wspólnych. Pełna obsługa wymaga osobnej deklaracji, która
+przetrwa normalizację i zapis oraz ponowne wczytanie. Nie można wnioskować o
+nieodmienności z braku nadpisań, bo w ten sposób zaakceptowalibyśmy też niekompletną
+odmianę zwykłego przymiotnika.
+
 ## Zakres i bezpieczne wdrożenie
 
 Obsługujemy rzeczowniki żeńskie, nijakie, męskie nieżywotne i męskie żywotne.
