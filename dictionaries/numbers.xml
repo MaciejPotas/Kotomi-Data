@@ -4,13 +4,14 @@
     <word id="one" value="1" kana="いち" kanji="一" romaji="ichi" translation="jeden">
       <polish_forms>
         <common cases="nominative accusative" value="jeden" />
-        <common cases="genitive dative locative" value="jednego" />
-        <common cases="instrumental" value="jednym" />
+        <common cases="genitive" value="jednego" />
+        <common cases="instrumental locative" value="jednym" />
         <override classes="feminine" cases="nominative" value="jedna" />
-        <override classes="feminine" cases="accusative" value="jedną" />
-        <override classes="feminine" cases="genitive" value="jednej" />
+        <override classes="feminine" cases="accusative instrumental" value="jedną" />
+        <override classes="feminine" cases="genitive dative locative" value="jednej" />
         <override classes="neuter" cases="nominative accusative" value="jedno" />
         <override classes="masculine_animate masculine_personal" cases="accusative" value="jednego" />
+        <common cases="dative" value="jednemu" />
       </polish_forms>
     </word>
     <word id="two" value="2" kana="に" kanji="二" romaji="ni" translation="dwa">
@@ -25,54 +26,73 @@
     <word id="three" value="3" kana="さん" kanji="三" romaji="san" translation="trzy">
       <polish_forms>
         <common cases="nominative accusative" value="trzy" />
-        <common cases="genitive" value="trzech" />
+        <common cases="genitive locative" value="trzech" />
+        <common cases="dative" value="trzem" />
+        <common cases="instrumental" value="trzema" />
       </polish_forms>
     </word>
     <word id="four" value="4" kana="よん" kanji="四" romaji="yon" translation="cztery">
       <polish_forms>
         <common cases="nominative accusative" value="cztery" />
-        <common cases="genitive" value="czterech" />
+        <common cases="genitive locative" value="czterech" />
+        <common cases="dative" value="czterem" />
+        <common cases="instrumental" value="czterema" />
       </polish_forms>
     </word>
     <word id="five" value="5" kana="ご" kanji="五" romaji="go" translation="pięć">
       <polish_forms>
         <common cases="nominative accusative" value="pięć" />
-        <common cases="genitive" value="pięciu" />
+        <common cases="genitive locative" value="pięciu" />
+        <common cases="dative" value="pięciu" />
+        <common cases="instrumental" value="pięcioma" />
       </polish_forms>
     </word>
     <word id="six" value="6" kana="ろく" kanji="六" romaji="roku" translation="sześć">
       <polish_forms>
         <common cases="nominative accusative" value="sześć" />
-        <common cases="genitive" value="sześciu" />
+        <common cases="genitive locative" value="sześciu" />
+        <common cases="dative" value="sześciu" />
+        <common cases="instrumental" value="sześcioma" />
       </polish_forms>
     </word>
     <word id="seven" value="7" kana="なな" kanji="七" romaji="nana" translation="siedem">
       <polish_forms>
         <common cases="nominative accusative" value="siedem" />
-        <common cases="genitive" value="siedmiu" />
+        <common cases="genitive locative" value="siedmiu" />
+        <common cases="dative" value="siedmiu" />
+        <common cases="instrumental" value="siedmioma" />
       </polish_forms>
     </word>
     <word id="eight" value="8" kana="はち" kanji="八" romaji="hachi" translation="osiem">
       <polish_forms>
         <common cases="nominative accusative" value="osiem" />
-        <common cases="genitive" value="ośmiu" />
+        <common cases="genitive locative" value="ośmiu" />
+        <common cases="dative" value="ośmiu" />
+        <common cases="instrumental" value="ośmioma" />
       </polish_forms>
     </word>
     <word id="nine" value="9" kana="きゅう" kanji="九" romaji="kyuu" translation="dziewięć">
       <polish_forms>
         <common cases="nominative accusative" value="dziewięć" />
-        <common cases="genitive" value="dziewięciu" />
+        <common cases="genitive locative" value="dziewięciu" />
+        <common cases="dative" value="dziewięciu" />
+        <common cases="instrumental" value="dziewięcioma" />
       </polish_forms>
     </word>
     <word id="ten" value="10" kana="じゅう" kanji="十" romaji="juu" translation="dziesięć">
       <polish_forms>
         <common cases="nominative accusative" value="dziesięć" />
-        <common cases="genitive" value="dziesięciu" />
+        <common cases="genitive locative" value="dziesięciu" />
+        <common cases="dative" value="dziesięciu" />
+        <common cases="instrumental" value="dziesięcioma" />
       </polish_forms>
     </word>
     <word id="twenty" value="20" kana="にじゅう" kanji="二十" romaji="nijuu" translation="dwadzieścia">
       <polish_forms>
         <common cases="nominative accusative" value="dwadzieścia" />
+        <common value="dwudziestu" cases="genitive locative" />
+        <common cases="dative" value="dwudziestu" />
+        <common cases="instrumental" value="dwudziestoma" />
       </polish_forms>
     </word>
   </words>

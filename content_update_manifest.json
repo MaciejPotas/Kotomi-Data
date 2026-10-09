@@ -1,12 +1,12 @@
 {
   "format": 1,
-  "revision": 52,
+  "revision": 53,
   "min_kotomi_version": "1.5",
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "9a922a490886aaab276bda974e74ad0fc1f29c81c9231f573307a7e7e0e50041",
-      "url": "content_revision.json?kotomi_sha256=9a922a490886aaab276bda974e74ad0fc1f29c81c9231f573307a7e7e0e50041"
+      "sha256": "e2ae23333e015dfba8c0d70664f0d77c1f8405d918e1f5a07ee50926a87dba0a",
+      "url": "content_revision.json?kotomi_sha256=e2ae23333e015dfba8c0d70664f0d77c1f8405d918e1f5a07ee50926a87dba0a"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -40,8 +40,8 @@
     },
     {
       "path": "data/dictionaries/numbers.xml",
-      "sha256": "116c7e61c7296836b1d672f2cddd644f8c1e2af4abe180b46461154c1c68bb30",
-      "url": "dictionaries/numbers.xml?kotomi_sha256=116c7e61c7296836b1d672f2cddd644f8c1e2af4abe180b46461154c1c68bb30"
+      "sha256": "a67fe6a11c35fecdfd73a753aa4076ae5a593419ee3e9efb8dd75e6570208a95",
+      "url": "dictionaries/numbers.xml?kotomi_sha256=a67fe6a11c35fecdfd73a753aa4076ae5a593419ee3e9efb8dd75e6570208a95"
     },
     {
       "path": "data/dictionaries/verbs.xml",

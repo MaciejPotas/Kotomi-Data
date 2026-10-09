@@ -41,10 +41,10 @@ An override contains only values that differ from `common`; identical class
 and case groupings are combined. The writer groups values in canonical case
 and class order and removes redundant overrides on save.
 
-The runtime only looks up `specific -> common -> translation`. It does not
-infer a class from a semantic category and does not create Polish forms from
-spelling, endings, stems, or profiles. Missing agreement metadata is valid and
-falls back to the adjective's normal `translation`.
+For required Polish agreement the runtime looks up a specific override and then
+the common form. It never invents morphology or falls back to base translation
+when a required realization is missing. Optional enrichment may be absent on a
+valid word, but such a word cannot satisfy a pattern requiring that realization.
 
 
 ## Noun relation profiles
@@ -73,9 +73,9 @@ noun category or Polish spelling.
 - noun `<counting>` metadata stores counting classes, an optional exceptional preferred-counter override, and explicit Polish profile-by-case forms.
 - the `how_many` interrogative exposes `quantity_symbol="how_many"`.
 
-Exact counter realization fields are authoritative and override composition. Numeric gaps may use the profile declared in `grammar/counting.xml`; symbolic quantities remain exact-only.
+Exact counter realization fields are authoritative and override composition. Numeric gaps may use the composition profile defined by Kotomi Japanese grammar; symbolic quantities remain exact-only.
 The `one` profile falls back to ordinary noun cases and must not duplicate them.
-Studio builds its counted-form table from the profiles in `counting.xml` and
+Studio builds its counted-form table from the profiles supplied by the active Kotomi language and
 all cases supported by the project model. Authoring-time autofill may propose
 only conservative forms supported by the noun translation, agreement class,
 ordinary cases and quantity mappings. The proposal is saved as editable XML;
