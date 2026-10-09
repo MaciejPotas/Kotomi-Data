@@ -43,6 +43,7 @@
   <quiz id="counting" label="Liczenie" description="Liczby, countery i pytania ile" selection="references">
     <patterns>
       <pattern ref="Istnienie policzonych rzeczowników" />
+      <pattern ref="Istnienie policzonych opisanych rzeczowników" />
       <pattern ref="Ile jest policzonych rzeczowników" />
       <pattern ref="Godzina zegarowa" />
       <pattern ref="Wiek" />

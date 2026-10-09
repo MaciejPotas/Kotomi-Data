@@ -1,12 +1,12 @@
 {
   "format": 1,
-  "revision": 50,
-  "min_kotomi_version": "1.3",
+  "revision": 51,
+  "min_kotomi_version": "1.4",
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "995b684fe106b433822d91a6f1ee54a06f5654c2c817b1ae34af932b2dae1144",
-      "url": "content_revision.json?kotomi_sha256=995b684fe106b433822d91a6f1ee54a06f5654c2c817b1ae34af932b2dae1144"
+      "sha256": "085fb11a4eb8f0646ccbfa048190dee46ba19091a575b7df71b1316d0c910bc5",
+      "url": "content_revision.json?kotomi_sha256=085fb11a4eb8f0646ccbfa048190dee46ba19091a575b7df71b1316d0c910bc5"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -65,18 +65,18 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "3a10089a45907bf9adfc97185392dd6c033ff77c314e98e2adcad6f7d9d8665d",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=3a10089a45907bf9adfc97185392dd6c033ff77c314e98e2adcad6f7d9d8665d"
+      "sha256": "35318f60f5d4dbeb82c956dd2e532ec97bc37c0ec5c4132b9fff893a1fec7b59",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=35318f60f5d4dbeb82c956dd2e532ec97bc37c0ec5c4132b9fff893a1fec7b59"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
-      "sha256": "b3fea43692ad91fbe08d8a28612a86c7f168daa6b74fe966eb14f64c6d38661b",
-      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=b3fea43692ad91fbe08d8a28612a86c7f168daa6b74fe966eb14f64c6d38661b"
+      "sha256": "593c9b3f2dec2dcd31bf9b9e622c336b7bde6aad123802b07e5b9a08215402aa",
+      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=593c9b3f2dec2dcd31bf9b9e622c336b7bde6aad123802b07e5b9a08215402aa"
     },
     {
       "path": "data/quiz_project.xml",
-      "sha256": "fa563ea31e95cca0890e2158d398a6e8d4bf8f24a1f5446cb261076b70a5a156",
-      "url": "quiz_project.xml?kotomi_sha256=fa563ea31e95cca0890e2158d398a6e8d4bf8f24a1f5446cb261076b70a5a156"
+      "sha256": "3e51d0d640c5ff61e915b7dc11f50cb56ba29381d7f8237ce068ecfcb475ff90",
+      "url": "quiz_project.xml?kotomi_sha256=3e51d0d640c5ff61e915b7dc11f50cb56ba29381d7f8237ce068ecfcb475ff90"
     }
   ]
 }
