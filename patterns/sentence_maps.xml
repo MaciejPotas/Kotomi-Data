@@ -218,11 +218,11 @@
       <question>W jaki sposób {context.translation}{pattern}?</question>
       <answer>{context.kana}{interrogative[asks_for:method]}{pattern}{question}</answer>
     </sentence_pattern>
-    <sentence_pattern id="Istnienie policzonych rzeczowników" category="counting" semantics_version="2">
+    <sentence_pattern id="Istnienie policzonych rzeczowników" category="counting">
       <question>{verb@existence[role:subject, feature:existential, form, agree:@count].translation} {number@count[set:one_to_ten, agree:@item, case:@item].translation} {noun@item[quantity:@count, government:@existence]}.</question>
       <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb@existence[role:subject, feature:existential, form]}。</answer>
     </sentence_pattern>
-    <sentence_pattern id="Istnienie policzonych opisanych rzeczowników" category="counting" semantics_version="2">
+    <sentence_pattern id="Istnienie policzonych opisanych rzeczowników" category="counting">
       <question>{verb@existence[role:subject, feature:existential, form, agree:@count].translation} {number@count[set:one_to_ten, agree:@item, case:@item].translation} {adjective@quality[form:attributive_nonpast, agree:@item].translation} {noun@item[quantity:@count, government:@existence]}.</question>
       <answer>{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb@existence[role:subject, feature:existential, form]}。</answer>
     </sentence_pattern>
@@ -249,6 +249,10 @@
     <sentence_pattern id="Numer piętra" category="counting">
       <question>piętro numer {number@floor[range:1..10].value}</question>
       <answer>{counter@unit[id:kai, quantity:@floor]}</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Dwie policzone grupy opisanych rzeczowników" category="counting">
+      <question>{verb@existence[role:subject, feature:existential, form, occurrence:left, agree:@left_count#left].translation} {number@left_count[set:one_to_ten, occurrence:left, agree:@item#left, case:@item#left].translation} {adjective@quality[form:attributive_nonpast, occurrence:left, agree:@item#left].translation} {noun@item[occurrence:left, quantity:@left_count#left, government:@existence#left]}, a obok {verb@existence[role:subject, feature:existential, form, occurrence:right, agree:@right_count#right].translation} {number@right_count[set:one_to_ten, occurrence:right, agree:@item#right, case:@item#right].translation} {adjective@quality[form:attributive_nonpast, occurrence:right, agree:@item#right].translation} {noun@item[occurrence:right, quantity:@right_count#right, government:@existence#right]}.</question>
+      <answer>{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@left_count]}{verb@existence[role:subject, feature:existential, form]}。そのとなりに{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@right_count]}{verb@existence[role:subject, feature:existential, form]}。</answer>
     </sentence_pattern>
   </sentence_patterns>
 </sentence_maps>
