@@ -2,7 +2,7 @@
 
 Polish: [Opis migracji](contextual_existentials.pl.md).
 
-Content revision 50 requires Kotomi 1.3. Only `Istnienie policzonych rzeczowników`
+Content revision 51 requires Kotomi 1.4. Only `Istnienie policzonych rzeczowników`
 opts into `semantics_version="2"`: its predicate form is dynamic, the noun is
 governed by that predicate, and number agreement follows the noun's construction
 case. No forms are embedded as literal text. `Ile jest policzonych rzeczowników`

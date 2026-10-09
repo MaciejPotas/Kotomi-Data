@@ -222,6 +222,10 @@
       <question>{verb@existence[role:subject, feature:existential, form, agree:@count].translation} {number@count[set:one_to_ten, agree:@item, case:@item].translation} {noun@item[quantity:@count, government:@existence]}.</question>
       <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb@existence[role:subject, feature:existential, form]}。</answer>
     </sentence_pattern>
+    <sentence_pattern id="Istnienie policzonych opisanych rzeczowników" category="counting" semantics_version="2">
+      <question>{verb@existence[role:subject, feature:existential, form, agree:@count].translation} {number@count[set:one_to_ten, agree:@item, case:@item].translation} {adjective@quality[form:attributive_nonpast, agree:@item].translation} {noun@item[quantity:@count, government:@existence]}.</question>
+      <answer>{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@count]}{verb@existence[role:subject, feature:existential, form]}。</answer>
+    </sentence_pattern>
     <sentence_pattern id="Ile jest policzonych rzeczowników" category="counting">
       <question>{interrogative@amount[asks_for:count].translation} jest {noun@item[quantity:@amount, case:nominative]}?</question>
       <answer>{noun@item}が{counter@unit[counts:@item, preferred, quantity:@amount]}{verb@existence[role:subject, feature:existential, form:dictionary]}？</answer>

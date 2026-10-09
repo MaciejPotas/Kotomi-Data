@@ -2,7 +2,7 @@
 
 English: [Migration notes](contextual_existentials.md).
 
-Content w rewizji 50 wymaga Kotomi 1.3. Tylko pattern
+Content w rewizji 51 wymaga Kotomi 1.4. Tylko pattern
 `Istnienie policzonych rzeczowników` włącza `semantics_version="2"`: forma
 orzeczenia jest dynamiczna, rzeczownik korzysta z jego rekcji, a liczebnik
 uzgadnia się z rzeczownikiem i przypadkiem konstrukcji. Nie zapisujemy gotowych
