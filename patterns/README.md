@@ -137,15 +137,4 @@ A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantit
 
 ## Contextual existential migration
 
-Content revision 50 opts `Istnienie policzonych rzeczowników` into `semantics_version="2"`.
-It requires Kotomi 1.3. See [migration notes](contextual_existentials.md) or
-[opis po polsku](contextual_existentials.pl.md). The count-question pattern remains unchanged.
-
-
-## Contextual counted adjectives (stage 4A)
-
-Content revision 51 adds `Istnienie policzonych opisanych rzeczowników` to the
-existing `counting` quiz. It requires Kotomi 1.4. The adjective uses only
-`form:attributive_nonpast, agree:@item`; its case and number come from the same
-construction as the noun. See [English](contextual_counted_adjectives.md) and
-[Polish](contextual_counted_adjectives.pl.md) for the complete contract.
+Content revision 52 requires Kotomi 1.5. See [grammar contexts](grammar_contexts.md) and [Polish documentation](grammar_contexts.pl.md) for the canonical two-context pattern, source agreement and release order.

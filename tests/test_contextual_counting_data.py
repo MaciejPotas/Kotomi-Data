@@ -1,4 +1,4 @@
-"""Data-side contracts for the coordinated Kotomi 1.4 migration."""
+"""Data-side contracts for the coordinated Kotomi 1.5 migration."""
 from pathlib import Path
 import unittest
 import xml.etree.ElementTree as ET
@@ -7,20 +7,26 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class ContextualCountingDataTests(unittest.TestCase):
-    def test_both_statements_opt_in_and_require_the_new_loader(self):
+    def test_contextual_statements_require_the_new_loader(self):
         root = ET.parse(ROOT / 'patterns/sentence_maps.xml').getroot()
-        opted_in = [node for node in root.findall('./sentence_patterns/sentence_pattern')
-                    if node.get('semantics_version', '1') != '1']
-        self.assertEqual([node.get('id') for node in opted_in], [
-            'Istnienie policzonych rzeczowników', 'Istnienie policzonych opisanych rzeczowników'])
-        node = opted_in[0]
-        self.assertEqual(node.get('semantics_version'), '2')
-        self.assertIn('government:@existence', node.findtext('question'))
-        self.assertIn('case:@item', node.findtext('question'))
-        self.assertNotIn('form:dictionary', node.findtext('question'))
-        self.assertNotIn('form:dictionary', node.findtext('answer'))
+        for ident in ('Istnienie policzonych rzeczowników', 'Istnienie policzonych opisanych rzeczowników'):
+            node = root.find(f"./sentence_patterns/sentence_pattern[@id='{ident}']")
+            self.assertEqual(set(node.attrib), {'id', 'category'})
+            self.assertIn('government:@existence', node.findtext('question'))
         project = ET.parse(ROOT / 'quiz_project.xml').getroot()
-        self.assertEqual(project.get('min_kotomi_version'), '1.4')
+        self.assertEqual(project.get('min_kotomi_version'), '1.5')
+
+    def test_two_contexts_share_lexemes_and_have_independent_quantities(self):
+        ident = 'Dwie policzone grupy opisanych rzeczowników'
+        root = ET.parse(ROOT / 'patterns/sentence_maps.xml').getroot()
+        node = root.find(f"./sentence_patterns/sentence_pattern[@id='{ident}']")
+        for name in ('left', 'right'):
+            self.assertIn(f'occurrence:{name}', node.findtext('question'))
+            self.assertIn(f'agree:@item#{name}', node.findtext('question'))
+            self.assertIn(f'quantity:@{name}_count', node.findtext('answer'))
+        self.assertEqual(node.findtext('answer').count('{noun@item}'), 2)
+        quiz = ET.parse(ROOT / 'patterns/sentence_quizzes.xml').getroot().find("./quiz[@id='counting']")
+        self.assertIsNotNone(quiz.find(f".//pattern[@ref='{ident}']"))
 
     def test_one_to_ten_has_required_genitives(self):
         root = ET.parse(ROOT / 'dictionaries/numbers.xml').getroot()
@@ -54,7 +60,6 @@ class ContextualCountingDataTests(unittest.TestCase):
         root = ET.parse(ROOT / 'patterns/sentence_maps.xml').getroot()
         node = root.find(f"./sentence_patterns/sentence_pattern[@id='{ident}']")
         self.assertEqual(node.get('category'), 'counting')
-        self.assertEqual(node.get('semantics_version'), '2')
         self.assertIn('{adjective@quality[form:attributive_nonpast, agree:@item].translation}', node.findtext('question'))
         self.assertIn('{adjective@quality[form:attributive_nonpast]}{noun@item}', node.findtext('answer'))
         quiz = ET.parse(ROOT / 'patterns/sentence_quizzes.xml').getroot().find("./quiz[@id='counting']")
