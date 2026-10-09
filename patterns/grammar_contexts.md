@@ -56,9 +56,14 @@ The two choices are `number@left_count` and `number@right_count`; `noun@item`,
 `RealizationPlan.constructions` contains independent grammatical bindings.
 `occurrence_requests` addresses each required output by `OccurrenceId`. The
 string-keyed request/replacement view is retained only for existing trace and
-inspection consumers. Rendering assembles occurrence values with
+inspection consumers. Rendering uses the same occurrence assembler as
 `render_occurrences`, without parsing inserted text again. Braces in a selected
 value are text. A rendered result is never cached by lexical slot alone.
+Mapping writes (including `update`, `setdefault` and `|=`) broadcast to matching
+occurrences; deletion removes their values. `copy()` preserves independent local
+values. `render_text(fragment, preview.replacements)` uses the token-keyed view
+for a different fragment, preserving the mapping API. Polish question formatting
+changes only the addressed occurrence in the original question.
 
 A context with missing dependencies is Pending and cannot prune a valid partial
 selection. A complete context without required lexical forms is Unsupported.
@@ -71,9 +76,12 @@ the finite source-numeral catalog, rather than scanning every integer.
 Pass a preview's words, entities, forms and context selection to bound rendering.
 A dynamic predicate still needs explicit form overrides. Both clauses can share
 tense and polarity. Statement-initial capitalization is a neutral structural
-input: the first predicate is capitalized only when its token is preceded solely
-by whitespace in the source template. Embedded predicates retain catalog case;
-no whole-fragment lowercasing or output punctuation guessing is used.
+input: a predicate is capitalized at the start of the template or after terminal
+punctuation (`.`, `!`, `?`, `。`, `！`, `？`) in the preceding static literal.
+Whitespace, quotes and brackets may follow that punctuation, but lexical text
+may not. Other predicates retain catalog case. This template convention does
+not distinguish abbreviations from sentence endings. Dots inside placeholder
+syntax and punctuation in generated values are never sentence boundaries.
 
 Composite expansion scopes context names alongside the existing `embedded_*`
 aliases, separately for each fragment occurrence. Shared selections stay shared

@@ -52,9 +52,14 @@ Osobne wybory to `number@left_count` i `number@right_count`. Wspólne pozostają
 `RealizationPlan.constructions` przechowuje osobne zależności konstrukcji,
 a `occurrence_requests` przypisuje żądania do `OccurrenceId`. Widok indeksowany
 tekstem tokena służy istniejącym podglądom i diagnostyce. Składanie zdania używa
-wartości konkretnych wystąpień i `render_occurrences`. Gotowy tekst nie jest
+wartości konkretnych wystąpień i mechanizmu `render_occurrences`. Gotowy tekst nie jest
 ponownie parsowany, więc nawiasy klamrowe w wartości pozostają tekstem.
 Cache wyniku nie jest indeksowany samym aliasem słowa.
+Zapis do mapowania (także `update`, `setdefault` i `|=`) aktualizuje pasujące
+wystąpienia, a usunięcie klucza usuwa ich wartości. `copy()` zachowuje niezależne
+wartości lokalne. `render_text(fragment, preview.replacements)` używa widoku
+indeksowanego tekstem tokena dla innego fragmentu, zachowując API mapowania.
+Formatowanie polskiego pytania zmienia wyłącznie wskazane wystąpienie w pytaniu.
 
 Brak zależności daje Pending, więc nie odrzuca jeszcze poprawnego częściowego
 wyboru. Dopiero kompletny kontekst bez wymaganej odmiany daje Unsupported.
@@ -67,9 +72,12 @@ katalogu, bez przechodzenia po milionie wartości.
 Żeby odtworzyć preview przez bound rendering, przekaż jego słowa, rzeczowniki,
 formy i wybrany kontekst sytuacyjny. Dynamiczne orzeczenie wymaga jawnej formy.
 Obie części mogą współdzielić czas i negację. Wielka litera wynika z pozycji
-w szablonie: orzeczenie rozpoczyna zdanie, jeśli przed jego tokenem są tylko
-białe znaki. W środku zdania zachowuje zapis z katalogu. Nie obniżamy bezwarunkowo
-wielkości liter całego fragmentu i nie analizujemy interpunkcji gotowego wyniku.
+w szablonie: orzeczenie rozpoczyna zdanie na początku szablonu lub po znaku
+kończącym zdanie (`.`, `!`, `?`, `。`, `！`, `？`) w poprzedzającym statycznym
+fragmencie. Po tym znaku mogą wystąpić białe znaki, cudzysłowy i nawiasy, ale nie
+tekst słowny. Pozostałe orzeczenia zachowują zapis z katalogu. Ta konwencja
+szablonu nie rozróżnia skrótów od końca zdania. Kropki w składni placeholderów
+ani interpunkcja wygenerowanych wartości nie wyznaczają granic zdań.
 
 Composite nadaje kontekstom ten sam zakres `embedded_*` co aliasom, osobno dla
 każdego osadzenia. Wewnątrz fragmentu zachowuje wspólne wybory, między osadzeniami
