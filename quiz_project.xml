@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<quiz_project schema_version="2" instruction_language_id="pl" target_language_id="ja" min_kotomi_version="1.5">
+<quiz_project schema_version="2" instruction_language_id="pl" target_language_id="ja" min_kotomi_version="1.6">
   <dictionaries>
     <dictionary id="adjectives" file="dictionaries/adjectives.xml" label="Adjectives" schema="adjective" />
     <dictionary id="connectors" file="dictionaries/connectors.xml" label="Connectors" schema="connector" />

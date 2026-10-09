@@ -1,4 +1,4 @@
-"""Data-side contracts for the coordinated Kotomi 1.5 migration."""
+"""Data-side contracts for the coordinated Kotomi 1.6 migration."""
 from pathlib import Path
 import unittest
 import xml.etree.ElementTree as ET
@@ -14,7 +14,7 @@ class ContextualCountingDataTests(unittest.TestCase):
             self.assertEqual(set(node.attrib), {'id', 'category'})
             self.assertIn('government:@existence', node.findtext('question'))
         project = ET.parse(ROOT / 'quiz_project.xml').getroot()
-        self.assertEqual(project.get('min_kotomi_version'), '1.5')
+        self.assertEqual(project.get('min_kotomi_version'), '1.6')
 
     def test_two_contexts_share_lexemes_and_have_independent_quantities(self):
         ident = 'Dwie policzone grupy opisanych rzeczowników'
@@ -64,3 +64,24 @@ class ContextualCountingDataTests(unittest.TestCase):
         self.assertIn('{adjective@quality[form:attributive_nonpast]}{noun@item}', node.findtext('answer'))
         quiz = ET.parse(ROOT / 'patterns/sentence_quizzes.xml').getroot().find("./quiz[@id='counting']")
         self.assertIsNotNone(quiz.find(f".//pattern[@ref='{ident}']"))
+
+    def test_symbolic_questions_share_dynamic_existential_dependencies(self):
+        root = ET.parse(ROOT / 'patterns/sentence_maps.xml').getroot()
+        quiz = ET.parse(ROOT / 'patterns/sentence_quizzes.xml').getroot().find("./quiz[@id='counting']")
+        for ident in ('Ile jest policzonych rzeczowników', 'Ile jest opisanych policzonych rzeczowników'):
+            with self.subTest(pattern=ident):
+                node = root.find(f"./sentence_patterns/sentence_pattern[@id='{ident}']")
+                question, answer = node.findtext('question'), node.findtext('answer')
+                self.assertEqual(node.get('category'), 'counting')
+                self.assertIn('interrogative@amount[asks_for:count]', question)
+                self.assertIn('form, agree:@amount', question)
+                self.assertIn('quantity:@amount, government:@existence', question)
+                self.assertNotIn('case:', question)
+                self.assertNotIn('number@', question)
+                self.assertNotIn(' jest ', question)
+                self.assertIn('quantity:@amount', answer)
+                self.assertTrue(answer.endswith('form]}{question}'))
+                self.assertIsNotNone(quiz.find(f".//pattern[@ref='{ident}']"))
+        amount = ET.parse(ROOT / 'dictionaries/interrogatives.xml').getroot().find("./words/word[@id='how_many']")
+        self.assertEqual(amount.get('quantity_symbol'), 'how_many')
+        self.assertIsNone(amount.get('number_value'))

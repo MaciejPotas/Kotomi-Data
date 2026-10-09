@@ -46,6 +46,7 @@
       <pattern ref="Istnienie policzonych opisanych rzeczowników" />
       <pattern ref="Dwie policzone grupy opisanych rzeczowników" />
       <pattern ref="Ile jest policzonych rzeczowników" />
+      <pattern ref="Ile jest opisanych policzonych rzeczowników" />
       <pattern ref="Godzina zegarowa" />
       <pattern ref="Wiek" />
       <pattern ref="Ile razy w miesiącu" />
