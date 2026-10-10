@@ -91,3 +91,5 @@
 - **Znaczenie idiomu:** `窓際族` jest potoczne i może być pejoratywne. Opis oznacza pracownika odsuniętego na boczny tor, a nie dosłowną „rodzinę przy oknie”.
 
 Bez dodatkowego rozwijania patternów zdań ten PR udostępnia dane i lekcję referencyjną, nie zmienia semantyki istniejących konstrukcji.
+
+`住む` ma rolę `target` ograniczoną do kategorii `place`, zgodnie z japońskim `場所に住む`. Nie przypisujemy mu `location`, ponieważ ta rola wybiera wzorce miejsca czynności z `で`. Forma `住んでいます` nadal powstaje z `te_form` i `いる`, bez osobnego hasła w słowniku.

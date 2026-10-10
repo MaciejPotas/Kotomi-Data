@@ -88,3 +88,5 @@ Słówka nieodmienne i gotowe zwroty z lekcji otrzymały oddzielne słowniki z `
 Forma `住んでいます` nie jest odrębnym słowem: `verbs/sumu` zawiera słownikowe `住む` i `te_form=住んで`. Konstrukcje z `～ています` pozostają po stronie patternów. Nieodmienne określenia czasu nie dostają sztucznego liczenia, a dni tygodnia oraz `聞き取り` mają polskie przypadki bez counterów. Policzalne hasła otrzymują istniejące klasy counterów i komplet przypadków w profilach few/many.
 
 Pełny audyt: `lessons/szymon_pierwsza_audit.pl.md`.
+
+`住む` ma rolę `target` ograniczoną do kategorii `place`, zgodnie z japońskim `場所に住む`. Nie przypisujemy mu `location`, ponieważ ta rola wybiera wzorce miejsca czynności z `で`. Forma `住んでいます` nadal powstaje z `te_form` i `いる`, bez osobnego hasła w słowniku.

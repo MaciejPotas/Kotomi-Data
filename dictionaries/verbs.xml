@@ -2756,7 +2756,7 @@
     </word>
     <word id="sumu" kana="すむ" kanji="住む" type="godan" ending="mu" translation="mieszkać">
       <usage>
-        <role ref="location" />
+        <role ref="target" accepts="place" />
       </usage>
       <forms>
         <form ref="dictionary" kana="すむ" kanji="住む" translation="mieszkam" />

@@ -16,7 +16,7 @@ class SzymonFirstLessonTests(unittest.TestCase):
         refs = [(word.get("dictionary"), word.get("word")) for lesson in lessons for word in lesson.findall("./word/dictionary_ref")]
         self.assertEqual(58, len(refs))
         self.assertEqual(58, len(set(refs)))
-        self.assertTrue(all(not lesson.findall("local_word") for lesson in lessons))
+        self.assertTrue(all(not lesson.findall(".//local_word") for lesson in lessons))
         for dictionary, word in refs:
             with self.subTest(dictionary=dictionary, word=word):
                 dictionary_root = ET.parse(ROOT / "dictionaries" / (dictionary + ".xml")).getroot()
@@ -50,6 +50,13 @@ class SzymonFirstLessonTests(unittest.TestCase):
                     self.assertTrue(all(form.get("kana") and form.get("kanji") and form.get("translation") for form in forms))
         verbs = ET.parse(ROOT / "dictionaries/verbs.xml").getroot()
         self.assertEqual("住んで", verbs.find("./words/word[@id='sumu']/forms/form[@ref='te_form']").get("kanji"))
+
+    def test_sumu_uses_ni_target_for_places_not_de_location(self):
+        verbs = ET.parse(ROOT / "dictionaries/verbs.xml").getroot()
+        usage = verbs.find("./words/word[@id='sumu']/usage")
+        self.assertIsNotNone(usage)
+        self.assertEqual([{"ref": "target", "accepts": "place"}],
+                         [role.attrib for role in usage.findall("role")])
 
     def test_sundeimasu_is_not_a_separate_vocabulary_entry(self):
         roots = [ET.parse(ROOT / "dictionaries" / (name + ".xml")).getroot() for name in ("verbs", "expressions")]

@@ -7,7 +7,7 @@ question models from here.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass, field
+from dataclasses import asdict, dataclass, field, replace
 import os
 from pathlib import Path
 import random
@@ -873,19 +873,48 @@ class GrammarQuizEngine:
             result.append((self.project.instruction_language.translation(entity), entity.kana))
         return result
 
+    def _statistics_choice_scope(self, settings, pattern_id, analysis, rules):
+        """Push lexical filters into the solver before rendering possibilities.
+
+        Generated number ranges stay lazy. Fixed selections and generated
+        numbers retain the final filter check in statistics().
+        """
+        scope = self.choice_scope(settings, pattern_id)
+        allowed = dict(scope.allowed_by_slot)
+        for slot in (*analysis.word_slots, *analysis.entity_slots):
+            slot_rules = _rules_for_engine_slot(rules, analysis, slot)
+            if not slot_rules or slot in analysis.fixed_words:
+                continue
+            definition = analysis.slots[slot]
+            if definition.number_range is not None:
+                continue
+            dictionary = definition.dictionary
+            candidates = (
+                self.project.entities.values() if slot in analysis.entity_slots
+                else self.project.words.get(dictionary, {}).values()
+            )
+            allowed[slot] = frozenset(
+                item.id for item in candidates
+                if scope.allows(dictionary, slot, item.id)
+                and _item_matches(item, slot_rules, self.project.effective_entity_categories)
+            )
+        return replace(scope, allowed_by_slot=allowed)
+
     def statistics(self, settings: GrammarQuizSettings) -> Dict[str, int]:
         rules = parse_slot_filter(settings.word_filter)
         combinations = self.build_combinations(settings)
         possible = 0
         eligible_verbs: Set[str] = set()
         active_patterns: Set[str] = set()
+        scopes = {}
         for combination in combinations:
             active_patterns.add(combination.pattern_id)
             analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
-            choice_scope = self.choice_scope(
-                settings,
-                combination.pattern_id,
-            )
+            if combination.pattern_id not in scopes:
+                scopes[combination.pattern_id] = self._statistics_choice_scope(
+                    settings, combination.pattern_id, analysis, rules,
+                )
+            choice_scope = scopes[combination.pattern_id]
             for preview in self.shared_engine.iter_previews(
                 combination.pattern_id,
                 form_name=combination.rule.target_form,
