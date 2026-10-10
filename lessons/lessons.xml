@@ -1178,37 +1178,37 @@
     </lesson>
     <lesson id="szymon_pierwsza_czas" group="Szymon" main="pierwsza" name="Powtórka: czas">
       <word id="szymon_pierwsza_czas_01">
-        <dictionary_ref dictionary="time_expressions" word="mainichi" />
+        <dictionary_ref dictionary="adverbs" word="mainichi" />
       </word>
       <word id="szymon_pierwsza_czas_02">
-        <dictionary_ref dictionary="time_expressions" word="asatte" />
+        <dictionary_ref dictionary="adverbs" word="asatte" />
       </word>
       <word id="szymon_pierwsza_czas_03">
-        <dictionary_ref dictionary="time_expressions" word="kinou" />
+        <dictionary_ref dictionary="adverbs" word="kinou" />
       </word>
       <word id="szymon_pierwsza_czas_04">
-        <dictionary_ref dictionary="time_expressions" word="kyou" />
+        <dictionary_ref dictionary="adverbs" word="kyou" />
       </word>
       <word id="szymon_pierwsza_czas_05">
         <dictionary_ref dictionary="nouns" word="ashita" />
       </word>
       <word id="szymon_pierwsza_czas_06">
-        <dictionary_ref dictionary="time_expressions" word="ototoi" />
+        <dictionary_ref dictionary="adverbs" word="ototoi" />
       </word>
       <word id="szymon_pierwsza_czas_07">
-        <dictionary_ref dictionary="time_expressions" word="sensenshuu" />
+        <dictionary_ref dictionary="adverbs" word="sensenshuu" />
       </word>
       <word id="szymon_pierwsza_czas_08">
-        <dictionary_ref dictionary="time_expressions" word="senshuu" />
+        <dictionary_ref dictionary="adverbs" word="senshuu" />
       </word>
       <word id="szymon_pierwsza_czas_09">
-        <dictionary_ref dictionary="time_expressions" word="konshuu" />
+        <dictionary_ref dictionary="adverbs" word="konshuu" />
       </word>
       <word id="szymon_pierwsza_czas_10">
-        <dictionary_ref dictionary="time_expressions" word="raishuu" />
+        <dictionary_ref dictionary="adverbs" word="raishuu" />
       </word>
       <word id="szymon_pierwsza_czas_11">
-        <dictionary_ref dictionary="time_expressions" word="saraishuu" />
+        <dictionary_ref dictionary="adverbs" word="saraishuu" />
       </word>
     </lesson>
     <lesson id="szymon_pierwsza_miasto" group="Szymon" main="pierwsza" name="Nowe: obiekty w mieście">

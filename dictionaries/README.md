@@ -83,7 +83,7 @@ unknown forms stay empty and runtime never performs Polish morphology.
 
 ## Lesson Szymon / pierwsza
 
-Słówka nieodmienne i gotowe zwroty z lekcji otrzymały oddzielne słowniki z `schema="generic"`: `demonstratives`, `time_expressions`, `adverbs`, `expressions`. Nie udajemy, że przysłówki czy zaimki wskazujące są rzeczownikami, a odmianę polską demonstratywów zapisujemy pomocniczo we właściwościach `cases` lub `polish_forms`.
+`adverbs`, `demonstratives` i `expressions` mają własne schematy oraz tokeny w IntelliSense. Określenia czasu używane przysłówkowo są w `adverbs`; `nouns/ashita` pozostaje na swoim miejscu. Konteksty wskazują istniejące słówka przez `dictionary` i `word`, zamiast kopiować ich tekst. Osobny słownik `time_expressions` został wycofany. Polskie przypadki demonstratywów są zapisane w `polish_forms`: wspólne dla `kore/sore/are`, z nadpisaniami rodzaju dla `kono/sono/ano`.
 
 Forma `住んでいます` nie jest odrębnym słowem: `verbs/sumu` zawiera słownikowe `住む` i `te_form=住んで`. Konstrukcje z `～ています` pozostają po stronie patternów. Nieodmienne określenia czasu nie dostają sztucznego liczenia, a dni tygodnia oraz `聞き取り` mają polskie przypadki bez counterów. Policzalne hasła otrzymują istniejące klasy counterów i komplet przypadków w profilach few/many.
 

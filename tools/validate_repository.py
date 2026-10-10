@@ -17,7 +17,6 @@ PROJECT_SCHEMA_FILES = {
     "dictionaries/adverbs.xml",
     "dictionaries/demonstratives.xml",
     "dictionaries/expressions.xml",
-    "dictionaries/time_expressions.xml",
     "dictionaries/connectors.xml",
     "dictionaries/copulas.xml",
     "dictionaries/counters.xml",
@@ -44,7 +43,6 @@ CONTENT_MANIFEST_ORDER = [
     "data/dictionaries/interrogatives.xml",
     "data/dictionaries/nouns.xml",
     "data/dictionaries/numbers.xml",
-    "data/dictionaries/time_expressions.xml",
     "data/dictionaries/verbs.xml",
     "data/grammar/contexts.xml",
     "data/grammar/counting.xml",
@@ -234,8 +232,9 @@ def validate_composite_case_scopes() -> None:
             )
 
 
-def validate_lesson_references() -> None:
-    project_root = ET.parse(ROOT / "quiz_project.xml").getroot()
+def validate_lesson_references(root: Path | None = None) -> None:
+    root = ROOT if root is None else root
+    project_root = ET.parse(root / "quiz_project.xml").getroot()
     dictionary_files = {
         str(node.get("id", "")): str(node.get("file", ""))
         for node in project_root.findall("./dictionaries/dictionary")
@@ -244,14 +243,14 @@ def validate_lesson_references() -> None:
     for dictionary_id, relative in dictionary_files.items():
         if not dictionary_id or not relative:
             raise AssertionError("quiz_project.xml contains an incomplete dictionary entry")
-        dictionary_root = ET.parse(ROOT / relative).getroot()
+        dictionary_root = ET.parse(root / relative).getroot()
         dictionary_words[dictionary_id] = {
             str(word.get("id", ""))
             for word in dictionary_root.findall("./words/word")
             if word.get("id")
         }
 
-    lessons_root = ET.parse(ROOT / LESSON_SCHEMA_FILE).getroot()
+    lessons_root = ET.parse(root / LESSON_SCHEMA_FILE).getroot()
     for lesson in lessons_root.findall("./lessons/lesson"):
         lesson_id = str(lesson.get("id", "")) or "<missing>"
         references = lesson.findall("./word/dictionary_ref")
@@ -276,6 +275,28 @@ def validate_lesson_references() -> None:
                     f"Lesson {lesson_id} references missing word "
                     f"{dictionary_id}:{word_id}"
                 )
+
+
+def validate_context_references(root: Path | None = None) -> None:
+    """Check lexical references without depending on the application's engine."""
+    root = ROOT if root is None else root
+    manifest = ET.parse(root / "quiz_project.xml").getroot()
+    dictionaries = {
+        node.get("id"): {word.get("id") for word in ET.parse(root / node.get("file")).getroot().findall("./words/word")}
+        for node in manifest.findall("./dictionaries/dictionary")
+    }
+    contexts = ET.parse(root / "grammar/contexts.xml").getroot()
+    for option in contexts.findall("./context/option"):
+        dictionary, word = option.get("dictionary", ""), option.get("word", "")
+        if bool(dictionary) != bool(word):
+            raise AssertionError("Context reference requires dictionary and word together")
+        if dictionary:
+            if option.get("kana") or option.get("translation"):
+                raise AssertionError("Context reference cannot mix inline lexical text")
+            if word not in dictionaries.get(dictionary, set()):
+                raise AssertionError(f"Context references missing word {dictionary}:{word}")
+        elif option.get("kana_suffix") or option.get("translation_suffix"):
+            raise AssertionError("Context suffixes require a word reference")
 
 
 def validate_counting_data() -> None:
@@ -741,6 +762,7 @@ def main() -> None:
     validate_content_grammar_boundary()
     validate_composite_case_scopes()
     validate_lesson_references()
+    validate_context_references()
     validate_counting_data()
     validate_content_manifest()
     validate_quiz_manifest()

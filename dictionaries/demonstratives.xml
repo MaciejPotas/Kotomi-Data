@@ -1,14 +1,38 @@
 <?xml version='1.0' encoding='utf-8'?>
-<dictionary schema_version="2" id="demonstratives" schema="generic" target_language_id="ja" label="Demonstratives" instruction_language_id="pl">
+<dictionary schema_version="2" id="demonstratives" schema="demonstrative" target_language_id="ja" label="Demonstratives" instruction_language_id="pl">
   <words>
     <word id="kore" kana="これ" translation="to (blisko mówiącego)">
-      <cases language="pl" nominative="to" genitive="tego" dative="temu" accusative="to" instrumental="tym" locative="tym" vocative="to" />
+      <polish_forms>
+        <common cases="nominative" value="to" />
+        <common cases="genitive" value="tego" />
+        <common cases="dative" value="temu" />
+        <common cases="accusative" value="to" />
+        <common cases="instrumental" value="tym" />
+        <common cases="locative" value="tym" />
+        <common cases="vocative" value="to" />
+      </polish_forms>
     </word>
     <word id="sore" kana="それ" translation="tamto (blisko rozmówcy)">
-      <cases language="pl" nominative="tamto" genitive="tamtego" dative="tamtemu" accusative="tamto" instrumental="tamtym" locative="tamtym" vocative="tamto" />
+      <polish_forms>
+        <common cases="nominative" value="tamto" />
+        <common cases="genitive" value="tamtego" />
+        <common cases="dative" value="tamtemu" />
+        <common cases="accusative" value="tamto" />
+        <common cases="instrumental" value="tamtym" />
+        <common cases="locative" value="tamtym" />
+        <common cases="vocative" value="tamto" />
+      </polish_forms>
     </word>
     <word id="are" kana="あれ" translation="tamto (daleko od obu rozmówców)">
-      <cases language="pl" nominative="tamto" genitive="tamtego" dative="tamtemu" accusative="tamto" instrumental="tamtym" locative="tamtym" vocative="tamto" />
+      <polish_forms>
+        <common cases="nominative" value="tamto" />
+        <common cases="genitive" value="tamtego" />
+        <common cases="dative" value="tamtemu" />
+        <common cases="accusative" value="tamto" />
+        <common cases="instrumental" value="tamtym" />
+        <common cases="locative" value="tamtym" />
+        <common cases="vocative" value="tamto" />
+      </polish_forms>
     </word>
     <word id="kono" kana="この" translation="ten (blisko mówiącego)">
       <polish_forms>

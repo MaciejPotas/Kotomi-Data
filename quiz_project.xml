@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<quiz_project schema_version="2" instruction_language_id="pl" target_language_id="ja" min_kotomi_version="1.6">
+<quiz_project schema_version="2" instruction_language_id="pl" target_language_id="ja" min_kotomi_version="1.7">
   <dictionaries>
     <dictionary id="adjectives" file="dictionaries/adjectives.xml" label="Adjectives" schema="adjective" />
     <dictionary id="connectors" file="dictionaries/connectors.xml" label="Connectors" schema="connector" />
@@ -9,11 +9,13 @@
     <dictionary id="numbers" file="dictionaries/numbers.xml" label="Numbers" schema="number" />
     <dictionary id="counters" file="dictionaries/counters.xml" label="Counters" schema="counter" />
     <dictionary id="verbs" file="dictionaries/verbs.xml" label="Verbs" schema="verb" />
-    <dictionary id="adverbs" file="dictionaries/adverbs.xml" label="Adverbs" schema="generic" />
-    <dictionary id="demonstratives" file="dictionaries/demonstratives.xml" label="Demonstratives" schema="generic" />
-    <dictionary id="expressions" file="dictionaries/expressions.xml" label="Expressions" schema="generic" />
-    <dictionary id="time_expressions" file="dictionaries/time_expressions.xml" label="Time expressions" schema="generic" />
+    <dictionary id="adverbs" file="dictionaries/adverbs.xml" label="Adverbs" schema="adverb" />
+    <dictionary id="demonstratives" file="dictionaries/demonstratives.xml" label="Demonstratives" schema="demonstrative" />
+    <dictionary id="expressions" file="dictionaries/expressions.xml" label="Expressions" schema="expression" />
   </dictionaries>
+  <retired_dictionaries>
+    <dictionary id="time_expressions" />
+  </retired_dictionaries>
   <counting file="grammar/counting.xml" />
   <contexts file="grammar/contexts.xml" />
   <sentence_maps file="patterns/sentence_maps.xml" />

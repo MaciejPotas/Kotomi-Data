@@ -14,7 +14,7 @@ class ContextualCountingDataTests(unittest.TestCase):
             self.assertEqual(set(node.attrib), {'id', 'category'})
             self.assertIn('government:@existence', node.findtext('question'))
         project = ET.parse(ROOT / 'quiz_project.xml').getroot()
-        self.assertEqual(project.get('min_kotomi_version'), '1.6')
+        self.assertGreaterEqual(tuple(map(int, project.get('min_kotomi_version').split('.'))), (1, 6))
 
     def test_two_contexts_share_lexemes_and_have_independent_quantities(self):
         ident = 'Dwie policzone grupy opisanych rzeczowników'

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" id="adverbs" schema="adverb" target_language_id="ja" label="Adverbs" instruction_language_id="pl">
+  <words>
+    <word id="kinou" kana="きのう" kanji="昨日" translation="wczoraj" />
+    <word id="kyou" kana="きょう" kanji="今日" translation="dzisiaj" />
+  </words>
+</dictionary>
