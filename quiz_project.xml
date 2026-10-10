@@ -9,6 +9,10 @@
     <dictionary id="numbers" file="dictionaries/numbers.xml" label="Numbers" schema="number" />
     <dictionary id="counters" file="dictionaries/counters.xml" label="Counters" schema="counter" />
     <dictionary id="verbs" file="dictionaries/verbs.xml" label="Verbs" schema="verb" />
+    <dictionary id="adverbs" file="dictionaries/adverbs.xml" label="Adverbs" schema="generic" />
+    <dictionary id="demonstratives" file="dictionaries/demonstratives.xml" label="Demonstratives" schema="generic" />
+    <dictionary id="expressions" file="dictionaries/expressions.xml" label="Expressions" schema="generic" />
+    <dictionary id="time_expressions" file="dictionaries/time_expressions.xml" label="Time expressions" schema="generic" />
   </dictionaries>
   <counting file="grammar/counting.xml" />
   <contexts file="grammar/contexts.xml" />

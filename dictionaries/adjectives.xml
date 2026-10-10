@@ -2911,5 +2911,105 @@
         <override classes="plural_non_masculine_personal" cases="instrumental" value="dziwnymi, tajemniczymi" />
       </polish_forms>
     </word>
+    <word id="shoppai" kana="しょっぱい" kanji="しょっぱい" type="i_adjective" translation="słony">
+      <describes categories="food drink" />
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="しょっぱい" kanji="しょっぱい" translation="jest słony" />
+        <form ref="predicate_polite_nonpast" kana="しょっぱいです" kanji="しょっぱいです" translation="jest słony" />
+        <form ref="predicate_plain_negative" kana="しょっぱくない" kanji="しょっぱくない" translation="nie jest słony" />
+        <form ref="predicate_polite_negative" kana="しょっぱくないです" kanji="しょっぱくないです" translation="nie jest słony" />
+        <form ref="predicate_plain_past" kana="しょっぱかった" kanji="しょっぱかった" translation="był słony" />
+        <form ref="predicate_polite_past" kana="しょっぱかったです" kanji="しょっぱかったです" translation="był słony" />
+        <form ref="predicate_plain_past_negative" kana="しょっぱくなかった" kanji="しょっぱくなかった" translation="nie był słony" />
+        <form ref="predicate_polite_past_negative" kana="しょっぱくなかったです" kanji="しょっぱくなかったです" translation="nie był słony" />
+        <form ref="attributive_nonpast" kana="しょっぱい" kanji="しょっぱい" translation="słony" />
+        <form ref="connective" kana="しょっぱくて" kanji="しょっぱくて" translation="słony" />
+        <form ref="adverbial" kana="しょっぱく" kanji="しょっぱく" translation="słony" />
+        <form ref="conditional" kana="しょっぱければ" kanji="しょっぱければ" translation="słony" />
+        <form ref="nominalized" kana="しょっぱさ" kanji="しょっぱさ" translation="słony" />
+        <form ref="appearance_sou" kana="しょっぱそう" kanji="しょっぱそう" translation="słony" />
+        <form ref="excessive_sugiru" kana="しょっぱすぎる" kanji="しょっぱすぎる" translation="słony" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="słony" />
+        <common cases="genitive" value="słonego" />
+        <common cases="dative" value="słonemu" />
+        <common cases="instrumental locative" value="słonym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="słonego" />
+        <override classes="feminine" cases="nominative vocative" value="słona" />
+        <override classes="feminine" cases="genitive dative locative" value="słonej" />
+        <override classes="feminine" cases="accusative instrumental" value="słoną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="słone" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="słonych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="słonym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="słonymi" />
+      </polish_forms>
+    </word>
+    <word id="saikou" kana="さいこう" kanji="最高" type="na_adjective" translation="najlepszy">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="さいこうだ" kanji="最高だ" translation="jest najlepszy" />
+        <form ref="predicate_polite_nonpast" kana="さいこうです" kanji="最高です" translation="jest najlepszy" />
+        <form ref="predicate_plain_negative" kana="さいこうじゃない" kanji="最高じゃない" translation="nie jest najlepszy" />
+        <form ref="predicate_polite_negative" kana="さいこうではありません" kanji="最高ではありません" translation="nie jest najlepszy" />
+        <form ref="predicate_plain_past" kana="さいこうだった" kanji="最高だった" translation="był najlepszy" />
+        <form ref="predicate_polite_past" kana="さいこうでした" kanji="最高でした" translation="był najlepszy" />
+        <form ref="predicate_plain_past_negative" kana="さいこうではなかった" kanji="最高ではなかった" translation="nie był najlepszy" />
+        <form ref="predicate_polite_past_negative" kana="さいこうではありませんでした" kanji="最高ではありませんでした" translation="nie był najlepszy" />
+        <form ref="attributive_nonpast" kana="さいこうな" kanji="最高な" translation="najlepszy" />
+        <form ref="connective" kana="さいこうで" kanji="最高で" translation="najlepszy" />
+        <form ref="adverbial" kana="さいこうに" kanji="最高に" translation="najlepszy" />
+        <form ref="conditional" kana="さいこうなら" kanji="最高なら" translation="najlepszy" />
+        <form ref="nominalized" kana="さいこうさ" kanji="最高さ" translation="najlepszy" />
+        <form ref="appearance_sou" kana="さいこうそう" kanji="最高そう" translation="najlepszy" />
+        <form ref="excessive_sugiru" kana="さいこうすぎる" kanji="最高すぎる" translation="najlepszy" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="najlepszy" />
+        <common cases="genitive" value="najlepszego" />
+        <common cases="dative" value="najlepszemu" />
+        <common cases="instrumental locative" value="najlepszym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="najlepszego" />
+        <override classes="feminine" cases="nominative vocative" value="najlepsza" />
+        <override classes="feminine" cases="genitive dative locative" value="najlepszej" />
+        <override classes="feminine" cases="accusative instrumental" value="najlepszą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="najlepsze" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="najlepszych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="najlepszym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="najlepszymi" />
+      </polish_forms>
+    </word>
+    <word id="saitei" kana="さいてい" kanji="最低" type="na_adjective" translation="najgorszy">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="さいていだ" kanji="最低だ" translation="jest najgorszy" />
+        <form ref="predicate_polite_nonpast" kana="さいていです" kanji="最低です" translation="jest najgorszy" />
+        <form ref="predicate_plain_negative" kana="さいていじゃない" kanji="最低じゃない" translation="nie jest najgorszy" />
+        <form ref="predicate_polite_negative" kana="さいていではありません" kanji="最低ではありません" translation="nie jest najgorszy" />
+        <form ref="predicate_plain_past" kana="さいていだった" kanji="最低だった" translation="był najgorszy" />
+        <form ref="predicate_polite_past" kana="さいていでした" kanji="最低でした" translation="był najgorszy" />
+        <form ref="predicate_plain_past_negative" kana="さいていではなかった" kanji="最低ではなかった" translation="nie był najgorszy" />
+        <form ref="predicate_polite_past_negative" kana="さいていではありませんでした" kanji="最低ではありませんでした" translation="nie był najgorszy" />
+        <form ref="attributive_nonpast" kana="さいていな" kanji="最低な" translation="najgorszy" />
+        <form ref="connective" kana="さいていで" kanji="最低で" translation="najgorszy" />
+        <form ref="adverbial" kana="さいていに" kanji="最低に" translation="najgorszy" />
+        <form ref="conditional" kana="さいていなら" kanji="最低なら" translation="najgorszy" />
+        <form ref="nominalized" kana="さいていさ" kanji="最低さ" translation="najgorszy" />
+        <form ref="appearance_sou" kana="さいていそう" kanji="最低そう" translation="najgorszy" />
+        <form ref="excessive_sugiru" kana="さいていすぎる" kanji="最低すぎる" translation="najgorszy" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="najgorszy" />
+        <common cases="genitive" value="najgorszego" />
+        <common cases="dative" value="najgorszemu" />
+        <common cases="instrumental locative" value="najgorszym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="najgorszego" />
+        <override classes="feminine" cases="nominative vocative" value="najgorsza" />
+        <override classes="feminine" cases="genitive dative locative" value="najgorszej" />
+        <override classes="feminine" cases="accusative instrumental" value="najgorszą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="najgorsze" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="najgorszych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="najgorszym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="najgorszymi" />
+      </polish_forms>
+    </word>
   </words>
 </dictionary>

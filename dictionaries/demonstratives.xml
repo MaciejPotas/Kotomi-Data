@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" id="demonstratives" schema="generic" target_language_id="ja" label="Demonstratives" instruction_language_id="pl">
+  <words>
+    <word id="kore" kana="これ" translation="to (blisko mówiącego)">
+      <cases language="pl" nominative="to" genitive="tego" dative="temu" accusative="to" instrumental="tym" locative="tym" vocative="to" />
+    </word>
+    <word id="sore" kana="それ" translation="tamto (blisko rozmówcy)">
+      <cases language="pl" nominative="tamto" genitive="tamtego" dative="tamtemu" accusative="tamto" instrumental="tamtym" locative="tamtym" vocative="tamto" />
+    </word>
+    <word id="are" kana="あれ" translation="tamto (daleko od obu rozmówców)">
+      <cases language="pl" nominative="tamto" genitive="tamtego" dative="tamtemu" accusative="tamto" instrumental="tamtym" locative="tamtym" vocative="tamto" />
+    </word>
+    <word id="kono" kana="この" translation="ten (blisko mówiącego)">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ten" />
+        <common cases="genitive" value="tego" />
+        <common cases="dative" value="temu" />
+        <common cases="instrumental locative" value="tym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="tego" />
+        <override classes="feminine" cases="nominative vocative" value="ta" />
+        <override classes="feminine" cases="genitive dative locative" value="tej" />
+        <override classes="feminine" cases="accusative" value="tę" />
+        <override classes="feminine" cases="instrumental" value="tą" />
+        <override classes="neuter" cases="nominative accusative vocative" value="to" />
+        <override classes="plural_non_masculine_personal" cases="nominative accusative vocative" value="te" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="tych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="tym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="tymi" />
+      </polish_forms>
+    </word>
+    <word id="sono" kana="その" translation="ten (blisko rozmówcy)">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ten" />
+        <common cases="genitive" value="tego" />
+        <common cases="dative" value="temu" />
+        <common cases="instrumental locative" value="tym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="tego" />
+        <override classes="feminine" cases="nominative vocative" value="ta" />
+        <override classes="feminine" cases="genitive dative locative" value="tej" />
+        <override classes="feminine" cases="accusative" value="tę" />
+        <override classes="feminine" cases="instrumental" value="tą" />
+        <override classes="neuter" cases="nominative accusative vocative" value="to" />
+        <override classes="plural_non_masculine_personal" cases="nominative accusative vocative" value="te" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="tych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="tym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="tymi" />
+      </polish_forms>
+    </word>
+    <word id="ano" kana="あの" translation="tamten (daleko od obu rozmówców)">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="tamten" />
+        <common cases="genitive" value="tamtego" />
+        <common cases="dative" value="tamtemu" />
+        <common cases="instrumental locative" value="tamtym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="tamtego" />
+        <override classes="feminine" cases="nominative vocative" value="tamta" />
+        <override classes="feminine" cases="genitive dative locative" value="tamtej" />
+        <override classes="feminine" cases="accusative" value="tamtą" />
+        <override classes="feminine" cases="instrumental" value="tamtą" />
+        <override classes="neuter" cases="nominative accusative vocative" value="tamto" />
+        <override classes="plural_non_masculine_personal" cases="nominative accusative vocative" value="tamte" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="tamtych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="tamtym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="tamtymi" />
+      </polish_forms>
+    </word>
+  </words>
+</dictionary>
