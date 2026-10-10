@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" id="adverbs" schema="generic" target_language_id="ja" label="Adverbs" instruction_language_id="pl">
+  <words>
+    <word id="tokuni" kana="とくに" kanji="特に" translation="szczególnie" />
+  </words>
+</dictionary>

@@ -4,7 +4,7 @@ import unittest
 import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 CASES = set('nominative genitive dative accusative instrumental locative vocative'.split())
-NON_COUNTABLE = set('gohan jikan music okane television naka oku ashita hitori saisho detarame'.split())
+NON_COUNTABLE = set('gohan jikan music okane television naka oku ashita hitori saisho detarame kikitori getsuyoubi kayoubi suiyoubi mokuyoubi kinyoubi doyoubi nichiyoubi'.split())
 VERBS = set('dictionary polite_nonpast plain_negative polite_negative past_plain past_polite past_negative_plain past_negative_polite te_form potential passive causative tara volitional imperative'.split())
 ADJECTIVES = set('predicate_plain_nonpast predicate_polite_nonpast predicate_plain_negative predicate_polite_negative predicate_plain_past predicate_polite_past predicate_plain_past_negative predicate_polite_past_negative attributive_nonpast connective adverbial conditional nominalized appearance_sou excessive_sugiru'.split())
 NONPRODUCTIVE = {'aru_possessive': {'potential', 'passive', 'causative'}, 'aru_existential': {'potential', 'passive', 'causative'}, 'dekiru': {'potential', 'passive'}, 'mieru': {'potential', 'passive'}, 'chigau': {'passive'}, 'hareru': {'passive'}, 'kumoru': {'passive'}}

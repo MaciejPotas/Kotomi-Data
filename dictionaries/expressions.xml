@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" id="expressions" schema="generic" target_language_id="ja" label="Expressions" instruction_language_id="pl">
+  <words>
+    <word id="shikata_ga_nai" kana="しかたがない" kanji="仕方がない" translation="nic nie da się zrobić" />
+    <word id="shouganai" kana="しょうがない" translation="nic nie poradzisz (potocznie)" />
+  </words>
+</dictionary>

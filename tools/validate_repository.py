@@ -14,6 +14,10 @@ TEXT_SUFFIXES = {".py", ".xml", ".json", ".md", ".txt"}
 PROJECT_SCHEMA_FILES = {
     "quiz_project.xml",
     "dictionaries/adjectives.xml",
+    "dictionaries/adverbs.xml",
+    "dictionaries/demonstratives.xml",
+    "dictionaries/expressions.xml",
+    "dictionaries/time_expressions.xml",
     "dictionaries/connectors.xml",
     "dictionaries/copulas.xml",
     "dictionaries/counters.xml",

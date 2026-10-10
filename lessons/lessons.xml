@@ -1113,5 +1113,193 @@
       <local_word id="ola_l24_dokkai_expressions_igai_ni" translation="poza..." kana="いがいに" kanji="以外に" romaji="" example="" />
       <local_word id="ola_l24_dokkai_expressions_sono_toori" translation="tak, zgadza się" kana="そのとおり" kanji="その通り" romaji="" example="" />
     </lesson>
+    <lesson id="szymon_pierwsza_pytajniki" group="Szymon" main="pierwsza" name="Powtórka: pytajniki">
+      <word id="szymon_pierwsza_pytajniki_01">
+        <dictionary_ref dictionary="interrogatives" word="dare" />
+      </word>
+      <word id="szymon_pierwsza_pytajniki_02">
+        <dictionary_ref dictionary="interrogatives" word="donata" />
+      </word>
+      <word id="szymon_pierwsza_pytajniki_03">
+        <dictionary_ref dictionary="interrogatives" word="dono" />
+      </word>
+      <word id="szymon_pierwsza_pytajniki_04">
+        <dictionary_ref dictionary="interrogatives" word="nani" />
+      </word>
+      <word id="szymon_pierwsza_pytajniki_05">
+        <dictionary_ref dictionary="interrogatives" word="nan" />
+      </word>
+      <word id="szymon_pierwsza_pytajniki_06">
+        <dictionary_ref dictionary="interrogatives" word="dore" />
+      </word>
+    </lesson>
+    <lesson id="szymon_pierwsza_wskazujace" group="Szymon" main="pierwsza" name="Powtórka: zaimki wskazujące">
+      <word id="szymon_pierwsza_wskazujace_01">
+        <dictionary_ref dictionary="demonstratives" word="kore" />
+      </word>
+      <word id="szymon_pierwsza_wskazujace_02">
+        <dictionary_ref dictionary="demonstratives" word="sore" />
+      </word>
+      <word id="szymon_pierwsza_wskazujace_03">
+        <dictionary_ref dictionary="demonstratives" word="are" />
+      </word>
+      <word id="szymon_pierwsza_wskazujace_04">
+        <dictionary_ref dictionary="demonstratives" word="kono" />
+      </word>
+      <word id="szymon_pierwsza_wskazujace_05">
+        <dictionary_ref dictionary="demonstratives" word="sono" />
+      </word>
+      <word id="szymon_pierwsza_wskazujace_06">
+        <dictionary_ref dictionary="demonstratives" word="ano" />
+      </word>
+    </lesson>
+    <lesson id="szymon_pierwsza_dni_tygodnia" group="Szymon" main="pierwsza" name="Powtórka: dni tygodnia">
+      <word id="szymon_pierwsza_dni_tygodnia_01">
+        <dictionary_ref dictionary="nouns" word="getsuyoubi" />
+      </word>
+      <word id="szymon_pierwsza_dni_tygodnia_02">
+        <dictionary_ref dictionary="nouns" word="kayoubi" />
+      </word>
+      <word id="szymon_pierwsza_dni_tygodnia_03">
+        <dictionary_ref dictionary="nouns" word="suiyoubi" />
+      </word>
+      <word id="szymon_pierwsza_dni_tygodnia_04">
+        <dictionary_ref dictionary="nouns" word="mokuyoubi" />
+      </word>
+      <word id="szymon_pierwsza_dni_tygodnia_05">
+        <dictionary_ref dictionary="nouns" word="kinyoubi" />
+      </word>
+      <word id="szymon_pierwsza_dni_tygodnia_06">
+        <dictionary_ref dictionary="nouns" word="doyoubi" />
+      </word>
+      <word id="szymon_pierwsza_dni_tygodnia_07">
+        <dictionary_ref dictionary="nouns" word="nichiyoubi" />
+      </word>
+    </lesson>
+    <lesson id="szymon_pierwsza_czas" group="Szymon" main="pierwsza" name="Powtórka: czas">
+      <word id="szymon_pierwsza_czas_01">
+        <dictionary_ref dictionary="time_expressions" word="mainichi" />
+      </word>
+      <word id="szymon_pierwsza_czas_02">
+        <dictionary_ref dictionary="time_expressions" word="asatte" />
+      </word>
+      <word id="szymon_pierwsza_czas_03">
+        <dictionary_ref dictionary="time_expressions" word="kinou" />
+      </word>
+      <word id="szymon_pierwsza_czas_04">
+        <dictionary_ref dictionary="time_expressions" word="kyou" />
+      </word>
+      <word id="szymon_pierwsza_czas_05">
+        <dictionary_ref dictionary="nouns" word="ashita" />
+      </word>
+      <word id="szymon_pierwsza_czas_06">
+        <dictionary_ref dictionary="time_expressions" word="ototoi" />
+      </word>
+      <word id="szymon_pierwsza_czas_07">
+        <dictionary_ref dictionary="time_expressions" word="sensenshuu" />
+      </word>
+      <word id="szymon_pierwsza_czas_08">
+        <dictionary_ref dictionary="time_expressions" word="senshuu" />
+      </word>
+      <word id="szymon_pierwsza_czas_09">
+        <dictionary_ref dictionary="time_expressions" word="konshuu" />
+      </word>
+      <word id="szymon_pierwsza_czas_10">
+        <dictionary_ref dictionary="time_expressions" word="raishuu" />
+      </word>
+      <word id="szymon_pierwsza_czas_11">
+        <dictionary_ref dictionary="time_expressions" word="saraishuu" />
+      </word>
+    </lesson>
+    <lesson id="szymon_pierwsza_miasto" group="Szymon" main="pierwsza" name="Nowe: obiekty w mieście">
+      <word id="szymon_pierwsza_miasto_01">
+        <dictionary_ref dictionary="nouns" word="tatemono" />
+      </word>
+      <word id="szymon_pierwsza_miasto_02">
+        <dictionary_ref dictionary="nouns" word="yuubinkyoku" />
+      </word>
+      <word id="szymon_pierwsza_miasto_03">
+        <dictionary_ref dictionary="nouns" word="byouin" />
+      </word>
+      <word id="szymon_pierwsza_miasto_04">
+        <dictionary_ref dictionary="nouns" word="biru" />
+      </word>
+      <word id="szymon_pierwsza_miasto_05">
+        <dictionary_ref dictionary="nouns" word="jimusitsu" />
+      </word>
+      <word id="szymon_pierwsza_miasto_06">
+        <dictionary_ref dictionary="nouns" word="park" />
+      </word>
+      <word id="szymon_pierwsza_miasto_07">
+        <dictionary_ref dictionary="nouns" word="school" />
+      </word>
+      <word id="szymon_pierwsza_miasto_08">
+        <dictionary_ref dictionary="nouns" word="eigakan" />
+      </word>
+      <word id="szymon_pierwsza_miasto_09">
+        <dictionary_ref dictionary="nouns" word="ginkou" />
+      </word>
+    </lesson>
+    <lesson id="szymon_pierwsza_smaki" group="Szymon" main="pierwsza" name="Nowe: smaki">
+      <word id="szymon_pierwsza_smaki_01">
+        <dictionary_ref dictionary="nouns" word="aji" />
+      </word>
+      <word id="szymon_pierwsza_smaki_02">
+        <dictionary_ref dictionary="adjectives" word="oishii" />
+      </word>
+      <word id="szymon_pierwsza_smaki_03">
+        <dictionary_ref dictionary="adjectives" word="amai" />
+      </word>
+      <word id="szymon_pierwsza_smaki_04">
+        <dictionary_ref dictionary="adjectives" word="nigai" />
+      </word>
+      <word id="szymon_pierwsza_smaki_05">
+        <dictionary_ref dictionary="adjectives" word="karai" />
+      </word>
+      <word id="szymon_pierwsza_smaki_06">
+        <dictionary_ref dictionary="adjectives" word="suppai" />
+      </word>
+      <word id="szymon_pierwsza_smaki_07">
+        <dictionary_ref dictionary="adjectives" word="shoppai" />
+      </word>
+    </lesson>
+    <lesson id="szymon_pierwsza_zwroty" group="Szymon" main="pierwsza" name="Nowe: słowa i zwroty">
+      <word id="szymon_pierwsza_zwroty_01">
+        <dictionary_ref dictionary="verbs" word="sumu" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_02">
+        <dictionary_ref dictionary="nouns" word="programmer" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_03">
+        <dictionary_ref dictionary="adverbs" word="tokuni" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_04">
+        <dictionary_ref dictionary="adjectives" word="saikou" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_05">
+        <dictionary_ref dictionary="adjectives" word="saitei" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_06">
+        <dictionary_ref dictionary="expressions" word="shikata_ga_nai" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_07">
+        <dictionary_ref dictionary="expressions" word="shouganai" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_08">
+        <dictionary_ref dictionary="nouns" word="kikitori" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_09">
+        <dictionary_ref dictionary="nouns" word="shuumatsu" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_10">
+        <dictionary_ref dictionary="nouns" word="fukushuu" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_11">
+        <dictionary_ref dictionary="verbs" word="tsukau" />
+      </word>
+      <word id="szymon_pierwsza_zwroty_12">
+        <dictionary_ref dictionary="nouns" word="madogiwazoku" />
+      </word>
+    </lesson>
   </lessons>
 </lesson_catalog>
