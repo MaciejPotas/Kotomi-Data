@@ -90,6 +90,7 @@ under Polish grammar. Japanese forms are not conjugated for these types.
         <override classes="neuter" cases="nominative accusative vocative" value="to" />
         <override classes="plural_non_masculine_personal" cases="nominative accusative vocative" value="te" />
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="tych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="tym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="tymi" />
       </polish_forms>
     </word>
