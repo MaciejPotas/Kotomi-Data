@@ -188,5 +188,180 @@
         <realization symbol="how_many" kana="なんかい" kanji="何回" romaji="nankai" />
       </quantity_realizations>
     </word>
+    <word id="tsu" kana="つ" kanji="つ" romaji="tsu" translation="Przedmioty i sprawy (ogólnie)">
+      <quantity_realizations>
+        <realization number="1" kana="ひとつ" kanji="一つ" romaji="hitotsu" />
+        <realization number="2" kana="ふたつ" kanji="二つ" romaji="futatsu" />
+        <realization number="3" kana="みっつ" kanji="三つ" romaji="mittsu" />
+        <realization number="4" kana="よっつ" kanji="四つ" romaji="yottsu" />
+        <realization number="5" kana="いつつ" kanji="五つ" romaji="itsutsu" />
+        <realization number="6" kana="むっつ" kanji="六つ" romaji="muttsu" />
+        <realization number="7" kana="ななつ" kanji="七つ" romaji="nanatsu" />
+        <realization number="8" kana="やっつ" kanji="八つ" romaji="yattsu" />
+        <realization number="9" kana="ここのつ" kanji="九つ" romaji="kokonotsu" />
+        <realization number="10" kana="とお" kanji="十" romaji="too" />
+        <realization symbol="how_many" kana="いくつ" kanji="幾つ" romaji="ikutsu" />
+      </quantity_realizations>
+    </word>
+    <word id="chaku" kana="ちゃく" kanji="着" romaji="chaku" translation="Sztuki odzieży">
+      <composition profile="chaku" />
+      <quantity_realizations>
+        <realization number="1" kana="いっちゃく" kanji="一着" romaji="icchaku" />
+        <realization number="2" kana="にちゃく" kanji="二着" romaji="nichaku" />
+        <realization number="3" kana="さんちゃく" kanji="三着" romaji="sanchaku" />
+        <realization number="4" kana="よんちゃく" kanji="四着" romaji="yonchaku" />
+        <realization number="5" kana="ごちゃく" kanji="五着" romaji="gochaku" />
+        <realization number="6" kana="ろくちゃく" kanji="六着" romaji="rokuchaku" />
+        <realization number="7" kana="ななちゃく" kanji="七着" romaji="nanachaku" />
+        <realization number="8" kana="はっちゃく" kanji="八着" romaji="hacchaku" />
+        <realization number="9" kana="きゅうちゃく" kanji="九着" romaji="kyuuchaku" />
+        <realization number="10" kana="じゅっちゃく" kanji="十着" romaji="jucchaku" />
+        <realization symbol="how_many" kana="なんちゃく" kanji="何着" romaji="nanchaku" />
+      </quantity_realizations>
+    </word>
+    <word id="hai" kana="はい" kanji="杯" romaji="hai" translation="Napoje w filiżankach lub szklankach">
+      <composition profile="hai" />
+      <quantity_realizations>
+        <realization number="1" kana="いっぱい" kanji="一杯" romaji="ippai" />
+        <realization number="2" kana="にはい" kanji="二杯" romaji="nihai" />
+        <realization number="3" kana="さんばい" kanji="三杯" romaji="sanbai" />
+        <realization number="4" kana="よんはい" kanji="四杯" romaji="yonhai" />
+        <realization number="5" kana="ごはい" kanji="五杯" romaji="gohai" />
+        <realization number="6" kana="ろっぱい" kanji="六杯" romaji="roppai" />
+        <realization number="7" kana="ななはい" kanji="七杯" romaji="nanahai" />
+        <realization number="8" kana="はっぱい" kanji="八杯" romaji="happai" />
+        <realization number="9" kana="きゅうはい" kanji="九杯" romaji="kyuuhai" />
+        <realization number="10" kana="じゅっぱい" kanji="十杯" romaji="juppai" />
+        <realization symbol="how_many" kana="なんばい" kanji="何杯" romaji="nanbai" />
+      </quantity_realizations>
+    </word>
+    <word id="tsuu" kana="つう" kanji="通" romaji="tsuu" translation="Listy i wiadomości">
+      <composition profile="tsuu" />
+      <quantity_realizations>
+        <realization number="1" kana="いっつう" kanji="一通" romaji="ittsuu" />
+        <realization number="2" kana="につう" kanji="二通" romaji="nitsuu" />
+        <realization number="3" kana="さんつう" kanji="三通" romaji="santsuu" />
+        <realization number="4" kana="よんつう" kanji="四通" romaji="yontsuu" />
+        <realization number="5" kana="ごつう" kanji="五通" romaji="gotsuu" />
+        <realization number="6" kana="ろくつう" kanji="六通" romaji="rokutsuu" />
+        <realization number="7" kana="ななつう" kanji="七通" romaji="nanatsuu" />
+        <realization number="8" kana="はっつう" kanji="八通" romaji="hattsuu" />
+        <realization number="9" kana="きゅうつう" kanji="九通" romaji="kyuutsuu" />
+        <realization number="10" kana="じゅっつう" kanji="十通" romaji="juttsuu" />
+        <realization symbol="how_many" kana="なんつう" kanji="何通" romaji="nantsuu" />
+      </quantity_realizations>
+    </word>
+    <word id="sou" kana="そう" kanji="艘" romaji="sou" translation="Łodzie">
+      <composition profile="sou" />
+      <quantity_realizations>
+        <realization number="1" kana="いっそう" kanji="一艘" romaji="issou" />
+        <realization number="2" kana="にそう" kanji="二艘" romaji="nisou" />
+        <realization number="3" kana="さんそう" kanji="三艘" romaji="sansou" />
+        <realization number="4" kana="よんそう" kanji="四艘" romaji="yonsou" />
+        <realization number="5" kana="ごそう" kanji="五艘" romaji="gosou" />
+        <realization number="6" kana="ろくそう" kanji="六艘" romaji="rokusou" />
+        <realization number="7" kana="ななそう" kanji="七艘" romaji="nanasou" />
+        <realization number="8" kana="はっそう" kanji="八艘" romaji="hassou" />
+        <realization number="9" kana="きゅうそう" kanji="九艘" romaji="kyuusou" />
+        <realization number="10" kana="じゅっそう" kanji="十艘" romaji="jussou" />
+        <realization symbol="how_many" kana="なんそう" kanji="何艘" romaji="nansou" />
+      </quantity_realizations>
+    </word>
+    <word id="ken" kana="けん" kanji="軒" romaji="ken" translation="Budynki i sklepy">
+      <composition profile="ken" />
+      <quantity_realizations>
+        <realization number="1" kana="いっけん" kanji="一軒" romaji="ikken" />
+        <realization number="2" kana="にけん" kanji="二軒" romaji="niken" />
+        <realization number="3" kana="さんけん" kanji="三軒" romaji="sanken" />
+        <realization number="4" kana="よんけん" kanji="四軒" romaji="yonken" />
+        <realization number="5" kana="ごけん" kanji="五軒" romaji="goken" />
+        <realization number="6" kana="ろっけん" kanji="六軒" romaji="rokken" />
+        <realization number="7" kana="ななけん" kanji="七軒" romaji="nanaken" />
+        <realization number="8" kana="はっけん" kanji="八軒" romaji="hakken" />
+        <realization number="9" kana="きゅうけん" kanji="九軒" romaji="kyuuken" />
+        <realization number="10" kana="じゅっけん" kanji="十軒" romaji="jukken" />
+        <realization symbol="how_many" kana="なんけん" kanji="何軒" romaji="nanken" />
+      </quantity_realizations>
+    </word>
+    <word id="kasho" kana="かしょ" kanji="箇所" romaji="kasho" translation="Miejsca">
+      <composition profile="kasho" />
+      <quantity_realizations>
+        <realization number="1" kana="いっかしょ" kanji="一箇所" romaji="ikkasho" />
+        <realization number="2" kana="にかしょ" kanji="二箇所" romaji="nikasho" />
+        <realization number="3" kana="さんかしょ" kanji="三箇所" romaji="sankasho" />
+        <realization number="4" kana="よんかしょ" kanji="四箇所" romaji="yonkasho" />
+        <realization number="5" kana="ごかしょ" kanji="五箇所" romaji="gokasho" />
+        <realization number="6" kana="ろっかしょ" kanji="六箇所" romaji="rokkasho" />
+        <realization number="7" kana="ななかしょ" kanji="七箇所" romaji="nanakasho" />
+        <realization number="8" kana="はっかしょ" kanji="八箇所" romaji="hakkasho" />
+        <realization number="9" kana="きゅうかしょ" kanji="九箇所" romaji="kyuukasho" />
+        <realization number="10" kana="じゅっかしょ" kanji="十箇所" romaji="jukkasho" />
+        <realization symbol="how_many" kana="なんかしょ" kanji="何箇所" romaji="nankasho" />
+      </quantity_realizations>
+    </word>
+    <word id="bu" kana="ぶ" kanji="部" romaji="bu" translation="Egzemplarze gazet">
+      <composition profile="bu" />
+      <quantity_realizations>
+        <realization number="1" kana="いちぶ" kanji="一部" romaji="ichibu" />
+        <realization number="2" kana="にぶ" kanji="二部" romaji="nibu" />
+        <realization number="3" kana="さんぶ" kanji="三部" romaji="sanbu" />
+        <realization number="4" kana="よんぶ" kanji="四部" romaji="yonbu" />
+        <realization number="5" kana="ごぶ" kanji="五部" romaji="gobu" />
+        <realization number="6" kana="ろくぶ" kanji="六部" romaji="rokubu" />
+        <realization number="7" kana="ななぶ" kanji="七部" romaji="nanabu" />
+        <realization number="8" kana="はちぶ" kanji="八部" romaji="hachibu" />
+        <realization number="9" kana="きゅうぶ" kanji="九部" romaji="kyuubu" />
+        <realization number="10" kana="じゅうぶ" kanji="十部" romaji="juubu" />
+        <realization symbol="how_many" kana="なんぶ" kanji="何部" romaji="nanbu" />
+      </quantity_realizations>
+    </word>
+    <word id="shoku" kana="しょく" kanji="食" romaji="shoku" translation="Posiłki">
+      <composition profile="shoku" />
+      <quantity_realizations>
+        <realization number="1" kana="いっしょく" kanji="一食" romaji="isshoku" />
+        <realization number="2" kana="にしょく" kanji="二食" romaji="nishoku" />
+        <realization number="3" kana="さんしょく" kanji="三食" romaji="sanshoku" />
+        <realization number="4" kana="よんしょく" kanji="四食" romaji="yonshoku" />
+        <realization number="5" kana="ごしょく" kanji="五食" romaji="goshoku" />
+        <realization number="6" kana="ろくしょく" kanji="六食" romaji="rokushoku" />
+        <realization number="7" kana="ななしょく" kanji="七食" romaji="nanashoku" />
+        <realization number="8" kana="はっしょく" kanji="八食" romaji="hasshoku" />
+        <realization number="9" kana="きゅうしょく" kanji="九食" romaji="kyuushoku" />
+        <realization number="10" kana="じゅっしょく" kanji="十食" romaji="jusshoku" />
+        <realization symbol="how_many" kana="なんしょく" kanji="何食" romaji="nanshoku" />
+      </quantity_realizations>
+    </word>
+    <word id="kyoku" kana="きょく" kanji="曲" romaji="kyoku" translation="Utwory muzyczne">
+      <composition profile="kyoku" />
+      <quantity_realizations>
+        <realization number="1" kana="いっきょく" kanji="一曲" romaji="ikkyoku" />
+        <realization number="2" kana="にきょく" kanji="二曲" romaji="nikyoku" />
+        <realization number="3" kana="さんきょく" kanji="三曲" romaji="sankyoku" />
+        <realization number="4" kana="よんきょく" kanji="四曲" romaji="yonkyoku" />
+        <realization number="5" kana="ごきょく" kanji="五曲" romaji="gokyoku" />
+        <realization number="6" kana="ろっきょく" kanji="六曲" romaji="rokkyoku" />
+        <realization number="7" kana="ななきょく" kanji="七曲" romaji="nanakyoku" />
+        <realization number="8" kana="はっきょく" kanji="八曲" romaji="hakkyoku" />
+        <realization number="9" kana="きゅうきょく" kanji="九曲" romaji="kyuukyoku" />
+        <realization number="10" kana="じゅっきょく" kanji="十曲" romaji="jukkyoku" />
+        <realization symbol="how_many" kana="なんきょく" kanji="何曲" romaji="nankyoku" />
+      </quantity_realizations>
+    </word>
+    <word id="wa" kana="わ" kanji="羽" romaji="wa" translation="Ptaki">
+      <composition profile="wa" />
+      <quantity_realizations>
+        <realization number="1" kana="いちわ" kanji="一羽" romaji="ichiwa" />
+        <realization number="2" kana="にわ" kanji="二羽" romaji="niwa" />
+        <realization number="3" kana="さんわ" kanji="三羽" romaji="sanwa" />
+        <realization number="4" kana="よんわ" kanji="四羽" romaji="yonwa" />
+        <realization number="5" kana="ごわ" kanji="五羽" romaji="gowa" />
+        <realization number="6" kana="ろくわ" kanji="六羽" romaji="rokuwa" />
+        <realization number="7" kana="ななわ" kanji="七羽" romaji="nanawa" />
+        <realization number="8" kana="はちわ" kanji="八羽" romaji="hachiwa" />
+        <realization number="9" kana="きゅうわ" kanji="九羽" romaji="kyuuwa" />
+        <realization number="10" kana="じゅうわ" kanji="十羽" romaji="juuwa" />
+        <realization symbol="how_many" kana="なんわ" kanji="何羽" romaji="nanwa" />
+      </quantity_realizations>
+    </word>
   </words>
 </dictionary>

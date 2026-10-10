@@ -2,57 +2,173 @@
 <dictionary schema_version="2" id="nouns" schema="noun" target_language_id="ja" label="Nouns" instruction_language_id="pl">
   <words>
     <word id="bag" kana="かばん" kanji="鞄" type="noun" category="thing" translation="torba">
+      <counting classes="small_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="torby" />
+          <form profile="few" cases="genitive" value="torb" />
+          <form profile="few" cases="dative" value="torbom" />
+          <form profile="few" cases="instrumental" value="torbami" />
+          <form profile="few" cases="locative" value="torbach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="torb" />
+          <form profile="many" cases="dative" value="torbom" />
+          <form profile="many" cases="instrumental" value="torbami" />
+          <form profile="many" cases="locative" value="torbach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="torba" genitive="torby" accusative="torbę" instrumental="torbą" locative="torbie" dative="torbie" vocative="torbo" />
     </word>
     <word id="book" kana="ほん" kanji="本" type="noun" category="text" translation="książka">
       <counting classes="bound_volume">
         <source_forms language="pl">
-          <form profile="few" cases="nominative accusative" value="książki" />
+          <form profile="few" cases="nominative accusative vocative" value="książki" />
           <form profile="few" cases="genitive" value="książek" />
-          <form profile="many" cases="nominative accusative genitive" value="książek" />
+          <form profile="few" cases="dative" value="książkom" />
+          <form profile="few" cases="instrumental" value="książkami" />
+          <form profile="few" cases="locative" value="książkach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="książek" />
+          <form profile="many" cases="dative" value="książkom" />
+          <form profile="many" cases="instrumental" value="książkami" />
+          <form profile="many" cases="locative" value="książkach" />
         </source_forms>
       </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="książka" genitive="książki" accusative="książkę" instrumental="książką" locative="książce" dative="książce" vocative="książko" />
     </word>
     <word id="box" kana="はこ" kanji="箱" type="noun" category="thing" translation="pudełko">
+      <counting classes="small_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="pudełka" />
+          <form profile="few" cases="genitive" value="pudełek" />
+          <form profile="few" cases="dative" value="pudełkom" />
+          <form profile="few" cases="instrumental" value="pudełkami" />
+          <form profile="few" cases="locative" value="pudełkach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="pudełek" />
+          <form profile="many" cases="dative" value="pudełkom" />
+          <form profile="many" cases="instrumental" value="pudełkami" />
+          <form profile="many" cases="locative" value="pudełkach" />
+        </source_forms>
+      </counting>
       <agreement class="neuter" />
       <cases language="pl" nominative="pudełko" genitive="pudełka" accusative="pudełko" instrumental="pudełkiem" locative="pudełku" dative="pudełku" vocative="pudełko" />
     </word>
     <word id="car" kana="くるま" kanji="車" type="noun" category="vehicle" translation="samochód">
       <counting classes="machine">
         <source_forms language="pl">
-          <form profile="few" cases="nominative accusative" value="samochody" />
+          <form profile="few" cases="nominative accusative vocative" value="samochody" />
           <form profile="few" cases="genitive" value="samochodów" />
-          <form profile="many" cases="nominative accusative genitive" value="samochodów" />
+          <form profile="few" cases="dative" value="samochodom" />
+          <form profile="few" cases="instrumental" value="samochodami" />
+          <form profile="few" cases="locative" value="samochodach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="samochodów" />
+          <form profile="many" cases="dative" value="samochodom" />
+          <form profile="many" cases="instrumental" value="samochodami" />
+          <form profile="many" cases="locative" value="samochodach" />
         </source_forms>
       </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="samochód" genitive="samochodu" accusative="samochód" instrumental="samochodem" locative="samochodzie" dative="samochodowi" vocative="samochodzie" />
     </word>
-    <word id="clothes" kana="ふく" kanji="服" type="noun" category="thing" translation="ubrania">
-      <agreement class="plural_non_masculine_personal" />
-      <cases language="pl" nominative="ubrania" genitive="ubrań" accusative="ubrania" instrumental="ubraniami" locative="ubraniach" dative="ubraniom" vocative="ubrania" />
+    <word id="clothes" kana="ふく" kanji="服" type="noun" category="thing" translation="ubranie">
+      <counting classes="garment">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="ubrania" />
+          <form profile="few" cases="genitive" value="ubrań" />
+          <form profile="few" cases="dative" value="ubraniom" />
+          <form profile="few" cases="instrumental" value="ubraniami" />
+          <form profile="few" cases="locative" value="ubraniach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="ubrań" />
+          <form profile="many" cases="dative" value="ubraniom" />
+          <form profile="many" cases="instrumental" value="ubraniami" />
+          <form profile="many" cases="locative" value="ubraniach" />
+        </source_forms>
+      </counting>
+      <agreement class="neuter" />
+      <cases language="pl" nominative="ubranie" genitive="ubrania" accusative="ubranie" instrumental="ubraniem" locative="ubraniu" dative="ubraniu" vocative="ubranie" />
     </word>
     <word id="coffee" kana="コーヒー" kanji="珈琲" type="noun" category="drink" translation="kawa">
+      <counting classes="cupful">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="kawy" />
+          <form profile="few" cases="genitive" value="kaw" />
+          <form profile="few" cases="dative" value="kawom" />
+          <form profile="few" cases="instrumental" value="kawami" />
+          <form profile="few" cases="locative" value="kawach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="kaw" />
+          <form profile="many" cases="dative" value="kawom" />
+          <form profile="many" cases="instrumental" value="kawami" />
+          <form profile="many" cases="locative" value="kawach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="kawa" genitive="kawy" accusative="kawę" instrumental="kawą" locative="kawie" dative="kawie" vocative="kawo" />
     </word>
     <word id="daidokoro" kana="だいどころ" kanji="台所" type="noun" category="place" translation="kuchnia">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="kuchnie" />
+          <form profile="few" cases="genitive" value="kuchni" />
+          <form profile="few" cases="dative" value="kuchniom" />
+          <form profile="few" cases="instrumental" value="kuchniami" />
+          <form profile="few" cases="locative" value="kuchniach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="kuchni" />
+          <form profile="many" cases="dative" value="kuchniom" />
+          <form profile="many" cases="instrumental" value="kuchniami" />
+          <form profile="many" cases="locative" value="kuchniach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="kuchnia" genitive="kuchni" dative="kuchni" accusative="kuchnię" instrumental="kuchnią" locative="kuchni" vocative="kuchnio" />
     </word>
     <word id="email" kana="めーる" kanji="メール" type="noun" category="text" translation="mail">
+      <counting classes="correspondence">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="maile" />
+          <form profile="few" cases="genitive" value="maili" />
+          <form profile="few" cases="dative" value="mailom" />
+          <form profile="few" cases="instrumental" value="mailami" />
+          <form profile="few" cases="locative" value="mailach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="maili" />
+          <form profile="many" cases="dative" value="mailom" />
+          <form profile="many" cases="instrumental" value="mailami" />
+          <form profile="many" cases="locative" value="mailach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="mail" genitive="maila" accusative="mail" instrumental="mailem" locative="mailu" dative="mailowi" vocative="mailu" />
     </word>
     <word id="friend" kana="ともだち" kanji="友達" type="noun" category="person" translation="przyjaciel">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="przyjaciele" />
+          <form profile="few" cases="genitive accusative" value="przyjaciół" />
+          <form profile="few" cases="dative" value="przyjaciołom" />
+          <form profile="few" cases="instrumental" value="przyjaciółmi" />
+          <form profile="few" cases="locative" value="przyjaciołach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="przyjaciół" />
+          <form profile="many" cases="dative" value="przyjaciołom" />
+          <form profile="many" cases="instrumental" value="przyjaciółmi" />
+          <form profile="many" cases="locative" value="przyjaciołach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="przyjaciel" genitive="przyjaciela" accusative="przyjaciela" instrumental="przyjacielem" locative="przyjacielu" dative="przyjacielowi" vocative="przyjacielu" />
     </word>
     <word id="fune" kana="ふね" kanji="船" type="noun" category="vehicle" translation="łódź">
+      <counting classes="boat">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="łodzie" />
+          <form profile="few" cases="genitive" value="łodzi" />
+          <form profile="few" cases="dative" value="łodziom" />
+          <form profile="few" cases="instrumental" value="łodziami" />
+          <form profile="few" cases="locative" value="łodziach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="łodzi" />
+          <form profile="many" cases="dative" value="łodziom" />
+          <form profile="many" cases="instrumental" value="łodziami" />
+          <form profile="many" cases="locative" value="łodziach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="łódź" genitive="łodzi" dative="łodzi" accusative="łódź" instrumental="łodzią" locative="łodzi" vocative="łodzi" />
     </word>
@@ -61,6 +177,19 @@
       <cases language="pl" nominative="ryż" genitive="ryżu" accusative="ryż" instrumental="ryżem" locative="ryżu" dative="ryżowi" vocative="ryżu" />
     </word>
     <word id="home" kana="うち" kanji="家" type="noun" category="place" translation="dom">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="domy" />
+          <form profile="few" cases="genitive" value="domów" />
+          <form profile="few" cases="dative" value="domom" />
+          <form profile="few" cases="instrumental" value="domami" />
+          <form profile="few" cases="locative" value="domach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="domów" />
+          <form profile="many" cases="dative" value="domom" />
+          <form profile="many" cases="instrumental" value="domami" />
+          <form profile="many" cases="locative" value="domach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="dom" genitive="domu" accusative="dom" instrumental="domem" locative="domu" dative="domowi" vocative="domu" />
@@ -68,9 +197,15 @@
     <word id="inu" kana="いぬ" kanji="犬" type="noun" category="animal" translation="pies">
       <counting classes="small_animal">
         <source_forms language="pl">
-          <form profile="few" cases="nominative accusative" value="psy" />
+          <form profile="few" cases="nominative accusative vocative" value="psy" />
           <form profile="few" cases="genitive" value="psów" />
-          <form profile="many" cases="nominative accusative genitive" value="psów" />
+          <form profile="few" cases="dative" value="psom" />
+          <form profile="few" cases="instrumental" value="psami" />
+          <form profile="few" cases="locative" value="psach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="psów" />
+          <form profile="many" cases="dative" value="psom" />
+          <form profile="many" cases="instrumental" value="psami" />
+          <form profile="many" cases="locative" value="psach" />
         </source_forms>
       </counting>
       <agreement class="masculine_animate" />
@@ -81,31 +216,122 @@
       <cases language="pl" nominative="czas" genitive="czasu" dative="czasowi" accusative="czas" instrumental="czasem" locative="czasie" vocative="czasie" />
     </word>
     <word id="keikaku" kana="けいかく" kanji="計画" type="noun" category="availability_reason" translation="plan działania">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="plany działania" />
+          <form profile="few" cases="genitive" value="planów działania" />
+          <form profile="few" cases="dative" value="planom działania" />
+          <form profile="few" cases="instrumental" value="planami działania" />
+          <form profile="few" cases="locative" value="planach działania" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="planów działania" />
+          <form profile="many" cases="dative" value="planom działania" />
+          <form profile="many" cases="instrumental" value="planami działania" />
+          <form profile="many" cases="locative" value="planach działania" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="plan działania" genitive="planu działania" accusative="plan działania" instrumental="planem działania" locative="planie działania" dative="planowi działania" vocative="planie działania" />
     </word>
     <word id="kaigan" kana="かいがん" kanji="海岸" type="noun" category="place" translation="plaża">
+      <counting classes="location">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="plaże" />
+          <form profile="few" cases="genitive" value="plaż" />
+          <form profile="few" cases="dative" value="plażom" />
+          <form profile="few" cases="instrumental" value="plażami" />
+          <form profile="few" cases="locative" value="plażach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="plaż" />
+          <form profile="many" cases="dative" value="plażom" />
+          <form profile="many" cases="instrumental" value="plażami" />
+          <form profile="many" cases="locative" value="plażach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="plaża" genitive="plaży" accusative="plażę" instrumental="plażą" locative="plaży" dative="plaży" vocative="plażo" />
     </word>
     <word id="letter" kana="てがみ" kanji="手紙" type="noun" category="text" translation="list">
+      <counting classes="correspondence">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="listy" />
+          <form profile="few" cases="genitive" value="listów" />
+          <form profile="few" cases="dative" value="listom" />
+          <form profile="few" cases="instrumental" value="listami" />
+          <form profile="few" cases="locative" value="listach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="listów" />
+          <form profile="many" cases="dative" value="listom" />
+          <form profile="many" cases="instrumental" value="listami" />
+          <form profile="many" cases="locative" value="listach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="list" genitive="listu" accusative="list" instrumental="listem" locative="liście" dative="listowi" vocative="liście" />
     </word>
     <word id="manga" kana="まんが" kanji="漫画" type="noun" category="text" translation="manga">
+      <counting classes="bound_volume">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="mangi" />
+          <form profile="few" cases="genitive" value="mang" />
+          <form profile="few" cases="dative" value="mangom" />
+          <form profile="few" cases="instrumental" value="mangami" />
+          <form profile="few" cases="locative" value="mangach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="mang" />
+          <form profile="many" cases="dative" value="mangom" />
+          <form profile="many" cases="instrumental" value="mangami" />
+          <form profile="many" cases="locative" value="mangach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="manga" genitive="mangi" accusative="mangę" instrumental="mangą" locative="mandze" dative="mandze" vocative="mango" />
     </word>
     <word id="meal" kana="しょくじ" kanji="食事" type="noun" category="food" translation="posiłek">
+      <counting classes="meal">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="posiłki" />
+          <form profile="few" cases="genitive" value="posiłków" />
+          <form profile="few" cases="dative" value="posiłkom" />
+          <form profile="few" cases="instrumental" value="posiłkami" />
+          <form profile="few" cases="locative" value="posiłkach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="posiłków" />
+          <form profile="many" cases="dative" value="posiłkom" />
+          <form profile="many" cases="instrumental" value="posiłkami" />
+          <form profile="many" cases="locative" value="posiłkach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="posiłek" genitive="posiłku" accusative="posiłek" instrumental="posiłkiem" locative="posiłku" dative="posiłkowi" vocative="posiłku" />
     </word>
     <word id="mother" kana="おかあさん" kanji="お母さん" type="noun" category="person" translation="mama">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="mamy" />
+          <form profile="few" cases="genitive" value="mam" />
+          <form profile="few" cases="dative" value="mamom" />
+          <form profile="few" cases="instrumental" value="mamami" />
+          <form profile="few" cases="locative" value="mamach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="mam" />
+          <form profile="many" cases="dative" value="mamom" />
+          <form profile="many" cases="instrumental" value="mamami" />
+          <form profile="many" cases="locative" value="mamach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="mama" genitive="mamy" accusative="mamę" instrumental="mamą" locative="mamie" dative="mamie" vocative="mamo" />
     </word>
     <word id="motorcycle" kana="バイク" type="noun" category="vehicle" translation="motocykl">
+      <counting classes="machine">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="motocykle" />
+          <form profile="few" cases="genitive" value="motocykli" />
+          <form profile="few" cases="dative" value="motocyklom" />
+          <form profile="few" cases="instrumental" value="motocyklami" />
+          <form profile="few" cases="locative" value="motocyklach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="motocykli" />
+          <form profile="many" cases="dative" value="motocyklom" />
+          <form profile="many" cases="instrumental" value="motocyklami" />
+          <form profile="many" cases="locative" value="motocyklach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="motocykl" genitive="motocykla" accusative="motocykl" instrumental="motocyklem" locative="motocyklu" dative="motocyklowi" vocative="motocyklu" />
     </word>
@@ -114,10 +340,36 @@
       <cases language="pl" nominative="muzyka" genitive="muzyki" accusative="muzykę" instrumental="muzyką" locative="muzyce" dative="muzyce" vocative="muzyko" />
     </word>
     <word id="newspaper" kana="しんぶん" kanji="新聞" type="noun" category="text" translation="gazeta">
+      <counting classes="publication">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="gazety" />
+          <form profile="few" cases="genitive" value="gazet" />
+          <form profile="few" cases="dative" value="gazetom" />
+          <form profile="few" cases="instrumental" value="gazetami" />
+          <form profile="few" cases="locative" value="gazetach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="gazet" />
+          <form profile="many" cases="dative" value="gazetom" />
+          <form profile="many" cases="instrumental" value="gazetami" />
+          <form profile="many" cases="locative" value="gazetach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="gazeta" genitive="gazety" accusative="gazetę" instrumental="gazetą" locative="gazecie" dative="gazecie" vocative="gazeto" />
     </word>
     <word id="note" kana="めも" kanji="メモ" type="noun" category="text" translation="notatka">
+      <counting classes="flat_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="notatki" />
+          <form profile="few" cases="genitive" value="notatek" />
+          <form profile="few" cases="dative" value="notatkom" />
+          <form profile="few" cases="instrumental" value="notatkami" />
+          <form profile="few" cases="locative" value="notatkach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="notatek" />
+          <form profile="many" cases="dative" value="notatkom" />
+          <form profile="many" cases="instrumental" value="notatkami" />
+          <form profile="many" cases="locative" value="notatkach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="notatka" genitive="notatki" accusative="notatkę" instrumental="notatką" locative="notatce" dative="notatce" vocative="notatko" />
     </word>
@@ -126,10 +378,36 @@
       <cases language="pl" nominative="pieniądze" genitive="pieniędzy" accusative="pieniądze" instrumental="pieniędzmi" locative="pieniądzach" dative="pieniądzom" vocative="pieniądze" />
     </word>
     <word id="pan" kana="パン" type="noun" category="food" translation="chleb">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="chleby" />
+          <form profile="few" cases="genitive" value="chlebów" />
+          <form profile="few" cases="dative" value="chlebom" />
+          <form profile="few" cases="instrumental" value="chlebami" />
+          <form profile="few" cases="locative" value="chlebach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="chlebów" />
+          <form profile="many" cases="dative" value="chlebom" />
+          <form profile="many" cases="instrumental" value="chlebami" />
+          <form profile="many" cases="locative" value="chlebach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="chleb" genitive="chleba" accusative="chleb" instrumental="chlebem" locative="chlebie" dative="chlebowi" vocative="chlebie" />
     </word>
     <word id="park" kana="こうえん" kanji="公園" type="noun" category="place" translation="park">
+      <counting classes="location">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="parki" />
+          <form profile="few" cases="genitive" value="parków" />
+          <form profile="few" cases="dative" value="parkom" />
+          <form profile="few" cases="instrumental" value="parkami" />
+          <form profile="few" cases="locative" value="parkach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="parków" />
+          <form profile="many" cases="dative" value="parkom" />
+          <form profile="many" cases="instrumental" value="parkami" />
+          <form profile="many" cases="locative" value="parkach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="park" genitive="parku" accusative="park" instrumental="parkiem" locative="parku" dative="parkowi" vocative="parku" />
@@ -137,55 +415,184 @@
     <word id="ringo" kana="りんご" kanji="林檎" type="noun" category="food" translation="jabłko">
       <counting classes="small_object">
         <source_forms language="pl">
-          <form profile="few" cases="nominative accusative" value="jabłka" />
+          <form profile="few" cases="nominative accusative vocative" value="jabłka" />
           <form profile="few" cases="genitive" value="jabłek" />
-          <form profile="many" cases="nominative accusative genitive" value="jabłek" />
+          <form profile="few" cases="dative" value="jabłkom" />
+          <form profile="few" cases="instrumental" value="jabłkami" />
+          <form profile="few" cases="locative" value="jabłkach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="jabłek" />
+          <form profile="many" cases="dative" value="jabłkom" />
+          <form profile="many" cases="instrumental" value="jabłkami" />
+          <form profile="many" cases="locative" value="jabłkach" />
         </source_forms>
       </counting>
       <agreement class="neuter" />
       <cases language="pl" nominative="jabłko" genitive="jabłka" accusative="jabłko" instrumental="jabłkiem" locative="jabłku" dative="jabłku" vocative="jabłko" />
     </word>
     <word id="room" kana="へや" kanji="部屋" type="noun" category="place" translation="pokój">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="pokoje" />
+          <form profile="few" cases="genitive" value="pokoi" />
+          <form profile="few" cases="dative" value="pokojom" />
+          <form profile="few" cases="instrumental" value="pokojami" />
+          <form profile="few" cases="locative" value="pokojach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="pokoi" />
+          <form profile="many" cases="dative" value="pokojom" />
+          <form profile="many" cases="instrumental" value="pokojami" />
+          <form profile="many" cases="locative" value="pokojach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="pokój" genitive="pokoju" accusative="pokój" instrumental="pokojem" locative="pokoju" dative="pokojowi" vocative="pokoju" />
     </word>
     <word id="school" kana="がっこう" kanji="学校" type="noun" category="place" translation="szkoła">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="szkoły" />
+          <form profile="few" cases="genitive" value="szkół" />
+          <form profile="few" cases="dative" value="szkołom" />
+          <form profile="few" cases="instrumental" value="szkołami" />
+          <form profile="few" cases="locative" value="szkołach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="szkół" />
+          <form profile="many" cases="dative" value="szkołom" />
+          <form profile="many" cases="instrumental" value="szkołami" />
+          <form profile="many" cases="locative" value="szkołach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="szkoła" genitive="szkoły" accusative="szkołę" instrumental="szkołą" locative="szkole" dative="szkole" vocative="szkoło" />
     </word>
     <word id="shigoto" kana="しごと" kanji="仕事" type="noun" category="availability_reason" translation="praca">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="prace" />
+          <form profile="few" cases="genitive" value="prac" />
+          <form profile="few" cases="dative" value="pracom" />
+          <form profile="few" cases="instrumental" value="pracami" />
+          <form profile="few" cases="locative" value="pracach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="prac" />
+          <form profile="many" cases="dative" value="pracom" />
+          <form profile="many" cases="instrumental" value="pracami" />
+          <form profile="many" cases="locative" value="pracach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="praca" genitive="pracy" accusative="pracę" instrumental="pracą" locative="pracy" dative="pracy" vocative="praco" />
     </word>
     <word id="sister" kana="あね" kanji="姉" type="noun" category="person" translation="siostra">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="siostry" />
+          <form profile="few" cases="genitive" value="sióstr" />
+          <form profile="few" cases="dative" value="siostrom" />
+          <form profile="few" cases="instrumental" value="siostrami" />
+          <form profile="few" cases="locative" value="siostrach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="sióstr" />
+          <form profile="many" cases="dative" value="siostrom" />
+          <form profile="many" cases="instrumental" value="siostrami" />
+          <form profile="many" cases="locative" value="siostrach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="siostra" genitive="siostry" accusative="siostrę" instrumental="siostrą" locative="siostrze" dative="siostrze" vocative="siostro" />
     </word>
     <word id="song" kana="うた" kanji="歌" type="noun" category="media" translation="piosenka">
+      <counting classes="song">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="piosenki" />
+          <form profile="few" cases="genitive" value="piosenek" />
+          <form profile="few" cases="dative" value="piosenkom" />
+          <form profile="few" cases="instrumental" value="piosenkami" />
+          <form profile="few" cases="locative" value="piosenkach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="piosenek" />
+          <form profile="many" cases="dative" value="piosenkom" />
+          <form profile="many" cases="instrumental" value="piosenkami" />
+          <form profile="many" cases="locative" value="piosenkach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="piosenka" genitive="piosenki" accusative="piosenkę" instrumental="piosenką" locative="piosence" dative="piosence" vocative="piosenko" />
     </word>
     <word id="station" kana="えき" kanji="駅" type="noun" category="place" translation="stacja">
+      <counting classes="location">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="stacje" />
+          <form profile="few" cases="genitive" value="stacji" />
+          <form profile="few" cases="dative" value="stacjom" />
+          <form profile="few" cases="instrumental" value="stacjami" />
+          <form profile="few" cases="locative" value="stacjach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="stacji" />
+          <form profile="many" cases="dative" value="stacjom" />
+          <form profile="many" cases="instrumental" value="stacjami" />
+          <form profile="many" cases="locative" value="stacjach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="stacja" genitive="stacji" accusative="stację" instrumental="stacją" locative="stacji" dative="stacji" vocative="stacjo" />
     </word>
     <word id="sushi" kana="すし" kanji="寿司" type="noun" category="food" translation="sushi">
+      <counting classes="small_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative genitive dative accusative instrumental locative vocative" value="sushi" />
+          <form profile="many" cases="nominative genitive dative accusative instrumental locative vocative" value="sushi" />
+        </source_forms>
+      </counting>
       <agreement class="neuter" />
       <cases language="pl" nominative="sushi" genitive="sushi" accusative="sushi" instrumental="sushi" locative="sushi" dative="sushi" vocative="sushi" />
     </word>
     <word id="taiikukan" kana="たいいくかん" kanji="体育館" type="noun" category="place" translation="sala gimnastyczna">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="sale gimnastyczne" />
+          <form profile="few" cases="genitive" value="sal gimnastycznych" />
+          <form profile="few" cases="dative" value="salom gimnastycznym" />
+          <form profile="few" cases="instrumental" value="salami gimnastycznymi" />
+          <form profile="few" cases="locative" value="salach gimnastycznych" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="sal gimnastycznych" />
+          <form profile="many" cases="dative" value="salom gimnastycznym" />
+          <form profile="many" cases="instrumental" value="salami gimnastycznymi" />
+          <form profile="many" cases="locative" value="salach gimnastycznych" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="sala gimnastyczna" genitive="sali gimnastycznej" dative="sali gimnastycznej" accusative="salę gimnastyczną" instrumental="salą gimnastyczną" locative="sali gimnastycznej" vocative="salo gimnastyczna" />
     </word>
     <word id="tea" kana="おちゃ" kanji="お茶" type="noun" category="drink" translation="herbata">
+      <counting classes="cupful">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="herbaty" />
+          <form profile="few" cases="genitive" value="herbat" />
+          <form profile="few" cases="dative" value="herbatom" />
+          <form profile="few" cases="instrumental" value="herbatami" />
+          <form profile="few" cases="locative" value="herbatach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="herbat" />
+          <form profile="many" cases="dative" value="herbatom" />
+          <form profile="many" cases="instrumental" value="herbatami" />
+          <form profile="many" cases="locative" value="herbatach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="herbata" genitive="herbaty" accusative="herbatę" instrumental="herbatą" locative="herbacie" dative="herbacie" vocative="herbato" />
     </word>
     <word id="teacher" kana="せんせい" kanji="先生" type="noun" category="person" translation="nauczyciel">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="nauczyciele" />
+          <form profile="few" cases="genitive accusative" value="nauczycieli" />
+          <form profile="few" cases="dative" value="nauczycielom" />
+          <form profile="few" cases="instrumental" value="nauczycielami" />
+          <form profile="few" cases="locative" value="nauczycielach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="nauczycieli" />
+          <form profile="many" cases="dative" value="nauczycielom" />
+          <form profile="many" cases="instrumental" value="nauczycielami" />
+          <form profile="many" cases="locative" value="nauczycielach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="nauczyciel" genitive="nauczyciela" accusative="nauczyciela" instrumental="nauczycielem" locative="nauczycielu" dative="nauczycielowi" vocative="nauczycielu" />
     </word>
@@ -194,35 +601,139 @@
       <cases language="pl" nominative="telewizja" genitive="telewizji" accusative="telewizję" instrumental="telewizją" locative="telewizji" dative="telewizji" vocative="telewizjo" />
     </word>
     <word id="tori" kana="とり" kanji="鳥" type="noun" category="animal" translation="ptak">
+      <counting classes="bird">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="ptaki" />
+          <form profile="few" cases="genitive" value="ptaków" />
+          <form profile="few" cases="dative" value="ptakom" />
+          <form profile="few" cases="instrumental" value="ptakami" />
+          <form profile="few" cases="locative" value="ptakach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="ptaków" />
+          <form profile="many" cases="dative" value="ptakom" />
+          <form profile="many" cases="instrumental" value="ptakami" />
+          <form profile="many" cases="locative" value="ptakach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_animate" />
       <cases language="pl" nominative="ptak" genitive="ptaka" dative="ptakowi" accusative="ptaka" instrumental="ptakiem" locative="ptaku" vocative="ptaku" />
     </word>
     <word id="water" kana="みず" kanji="水" type="noun" category="drink" translation="woda">
+      <counting classes="cupful">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="wody" />
+          <form profile="few" cases="genitive" value="wód" />
+          <form profile="few" cases="dative" value="wodom" />
+          <form profile="few" cases="instrumental" value="wodami" />
+          <form profile="few" cases="locative" value="wodach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="wód" />
+          <form profile="many" cases="dative" value="wodom" />
+          <form profile="many" cases="instrumental" value="wodami" />
+          <form profile="many" cases="locative" value="wodach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="woda" genitive="wody" accusative="wodę" instrumental="wodą" locative="wodzie" dative="wodzie" vocative="wodo" />
     </word>
     <word id="yakusoku" kana="やくそく" kanji="約束" type="noun" category="abstract" translation="obietnica">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="obietnice" />
+          <form profile="few" cases="genitive" value="obietnic" />
+          <form profile="few" cases="dative" value="obietnicom" />
+          <form profile="few" cases="instrumental" value="obietnicami" />
+          <form profile="few" cases="locative" value="obietnicach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="obietnic" />
+          <form profile="many" cases="dative" value="obietnicom" />
+          <form profile="many" cases="instrumental" value="obietnicami" />
+          <form profile="many" cases="locative" value="obietnicach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="obietnica" genitive="obietnicy" accusative="obietnicę" instrumental="obietnicą" locative="obietnicy" dative="obietnicy" vocative="obietnico" />
     </word>
     <word id="yotei" kana="よてい" kanji="予定" type="noun" category="availability_reason" translation="plan">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="plany" />
+          <form profile="few" cases="genitive" value="planów" />
+          <form profile="few" cases="dative" value="planom" />
+          <form profile="few" cases="instrumental" value="planami" />
+          <form profile="few" cases="locative" value="planach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="planów" />
+          <form profile="many" cases="dative" value="planom" />
+          <form profile="many" cases="instrumental" value="planami" />
+          <form profile="many" cases="locative" value="planach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="plan" genitive="planu" dative="planowi" accusative="plan" instrumental="planem" locative="planie" vocative="planie" />
     </word>
     <word id="youji" kana="ようじ" kanji="用事" type="noun" category="abstract" translation="sprawa do załatwienia">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="sprawy do załatwienia" />
+          <form profile="few" cases="genitive" value="spraw do załatwienia" />
+          <form profile="few" cases="dative" value="sprawom do załatwienia" />
+          <form profile="few" cases="instrumental" value="sprawami do załatwienia" />
+          <form profile="few" cases="locative" value="sprawach do załatwienia" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="spraw do załatwienia" />
+          <form profile="many" cases="dative" value="sprawom do załatwienia" />
+          <form profile="many" cases="instrumental" value="sprawami do załatwienia" />
+          <form profile="many" cases="locative" value="sprawach do załatwienia" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="sprawa do załatwienia" genitive="sprawy do załatwienia" accusative="sprawę do załatwienia" instrumental="sprawą do załatwienia" locative="sprawie do załatwienia" dative="sprawie do załatwienia" vocative="sprawo do załatwienia" />
     </word>
     <word id="bazaaru" kana="バザール" type="noun" category="place" translation="bazar">
+      <counting classes="location">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="bazary" />
+          <form profile="few" cases="genitive" value="bazarów" />
+          <form profile="few" cases="dative" value="bazarom" />
+          <form profile="few" cases="instrumental" value="bazarami" />
+          <form profile="few" cases="locative" value="bazarach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="bazarów" />
+          <form profile="many" cases="dative" value="bazarom" />
+          <form profile="many" cases="instrumental" value="bazarami" />
+          <form profile="many" cases="locative" value="bazarach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="bazar" genitive="bazaru" dative="bazarowi" accusative="bazar" instrumental="bazarem" locative="bazarze" vocative="bazarze" />
     </word>
     <word id="roujin" kana="ろうじん" kanji="老人" type="noun" category="person" translation="starzec">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="starcy" />
+          <form profile="few" cases="genitive accusative" value="starców" />
+          <form profile="few" cases="dative" value="starcom" />
+          <form profile="few" cases="instrumental" value="starcami" />
+          <form profile="few" cases="locative" value="starcach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="starców" />
+          <form profile="many" cases="dative" value="starcom" />
+          <form profile="many" cases="instrumental" value="starcami" />
+          <form profile="many" cases="locative" value="starcach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="starzec" genitive="starca" dative="starcowi" accusative="starca" instrumental="starcem" locative="starcu" vocative="starcze" />
     </word>
     <word id="mise" kana="みせ" kanji="店" type="noun" category="place" translation="sklep">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="sklepy" />
+          <form profile="few" cases="genitive" value="sklepów" />
+          <form profile="few" cases="dative" value="sklepom" />
+          <form profile="few" cases="instrumental" value="sklepami" />
+          <form profile="few" cases="locative" value="sklepach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="sklepów" />
+          <form profile="many" cases="dative" value="sklepom" />
+          <form profile="many" cases="instrumental" value="sklepami" />
+          <form profile="many" cases="locative" value="sklepach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="sklep" genitive="sklepu" dative="sklepowi" accusative="sklep" instrumental="sklepem" locative="sklepie" vocative="sklepie" />
@@ -237,15 +748,34 @@
       <cases language="pl" nominative="jedna osoba" genitive="jednej osoby" dative="jednej osobie" accusative="jedną osobę" instrumental="jedną osobą" locative="jednej osobie" vocative="jedna osobo" />
     </word>
     <word id="koe" kana="こえ" kanji="声" type="noun" category="media" translation="głos">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="głosy" />
+          <form profile="few" cases="genitive" value="głosów" />
+          <form profile="few" cases="dative" value="głosom" />
+          <form profile="few" cases="instrumental" value="głosami" />
+          <form profile="few" cases="locative" value="głosach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="głosów" />
+          <form profile="many" cases="dative" value="głosom" />
+          <form profile="many" cases="instrumental" value="głosami" />
+          <form profile="many" cases="locative" value="głosach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="głos" genitive="głosu" dative="głosowi" accusative="głos" instrumental="głosem" locative="głosie" vocative="głosie" />
     </word>
     <word id="hito" kana="ひと" kanji="人" type="noun" category="person" translation="osoba">
       <counting classes="person">
         <source_forms language="pl">
-          <form profile="few" cases="nominative accusative" value="osoby" />
+          <form profile="few" cases="nominative accusative vocative" value="osoby" />
           <form profile="few" cases="genitive" value="osób" />
-          <form profile="many" cases="nominative accusative genitive" value="osób" />
+          <form profile="few" cases="dative" value="osobom" />
+          <form profile="few" cases="instrumental" value="osobami" />
+          <form profile="few" cases="locative" value="osobach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="osób" />
+          <form profile="many" cases="dative" value="osobom" />
+          <form profile="many" cases="instrumental" value="osobami" />
+          <form profile="many" cases="locative" value="osobach" />
         </source_forms>
       </counting>
       <agreement class="feminine" />
@@ -261,18 +791,69 @@
       <cases language="pl" nominative="jutro" genitive="jutra" dative="jutru" accusative="jutro" instrumental="jutrem" locative="jutrze" vocative="jutro" />
     </word>
     <word id="kagi" kana="かぎ" kanji="鍵" type="noun" category="thing" translation="klucz">
+      <counting classes="small_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="klucze" />
+          <form profile="few" cases="genitive" value="kluczy" />
+          <form profile="few" cases="dative" value="kluczom" />
+          <form profile="few" cases="instrumental" value="kluczami" />
+          <form profile="few" cases="locative" value="kluczach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="kluczy" />
+          <form profile="many" cases="dative" value="kluczom" />
+          <form profile="many" cases="instrumental" value="kluczami" />
+          <form profile="many" cases="locative" value="kluczach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="klucz" genitive="klucza" dative="kluczowi" accusative="klucz" instrumental="kluczem" locative="kluczu" vocative="kluczu" />
     </word>
     <word id="inochi" kana="いのち" kanji="命" type="noun" category="abstract" translation="życie">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="życia" />
+          <form profile="few" cases="genitive" value="żyć" />
+          <form profile="few" cases="dative" value="życiom" />
+          <form profile="few" cases="instrumental" value="życiami" />
+          <form profile="few" cases="locative" value="życiach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="żyć" />
+          <form profile="many" cases="dative" value="życiom" />
+          <form profile="many" cases="instrumental" value="życiami" />
+          <form profile="many" cases="locative" value="życiach" />
+        </source_forms>
+      </counting>
       <agreement class="neuter" />
       <cases language="pl" nominative="życie" genitive="życia" dative="życiu" accusative="życie" instrumental="życiem" locative="życiu" vocative="życie" />
     </word>
     <word id="riyuu" kana="りゆう" kanji="理由" type="noun" category="abstract" translation="powód">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="powody" />
+          <form profile="few" cases="genitive" value="powodów" />
+          <form profile="few" cases="dative" value="powodom" />
+          <form profile="few" cases="instrumental" value="powodami" />
+          <form profile="few" cases="locative" value="powodach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="powodów" />
+          <form profile="many" cases="dative" value="powodom" />
+          <form profile="many" cases="instrumental" value="powodami" />
+          <form profile="many" cases="locative" value="powodach" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="powód" genitive="powodu" dative="powodowi" accusative="powód" instrumental="powodem" locative="powodzie" vocative="powodzie" />
     </word>
     <word id="hanashi" kana="はなし" kanji="話" type="noun" category="abstract" translation="opowieść">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative genitive accusative vocative" value="opowieści" />
+          <form profile="few" cases="dative" value="opowieściom" />
+          <form profile="few" cases="instrumental" value="opowieściami" />
+          <form profile="few" cases="locative" value="opowieściach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="opowieści" />
+          <form profile="many" cases="dative" value="opowieściom" />
+          <form profile="many" cases="instrumental" value="opowieściami" />
+          <form profile="many" cases="locative" value="opowieściach" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="opowieść" genitive="opowieści" dative="opowieści" accusative="opowieść" instrumental="opowieścią" locative="opowieści" vocative="opowieści" />
     </word>
@@ -287,9 +868,15 @@
     <word id="pencil" kana="えんぴつ" kanji="鉛筆" type="noun" category="thing" translation="ołówek">
       <counting classes="long_object">
         <source_forms language="pl">
-          <form profile="few" cases="nominative accusative" value="ołówki" />
+          <form profile="few" cases="nominative accusative vocative" value="ołówki" />
           <form profile="few" cases="genitive" value="ołówków" />
-          <form profile="many" cases="nominative accusative genitive" value="ołówków" />
+          <form profile="few" cases="dative" value="ołówkom" />
+          <form profile="few" cases="instrumental" value="ołówkami" />
+          <form profile="few" cases="locative" value="ołówkach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="ołówków" />
+          <form profile="many" cases="dative" value="ołówkom" />
+          <form profile="many" cases="instrumental" value="ołówkami" />
+          <form profile="many" cases="locative" value="ołówkach" />
         </source_forms>
       </counting>
       <agreement class="masculine_inanimate" />
@@ -298,9 +885,15 @@
     <word id="paper_sheet" kana="かみ" kanji="紙" type="noun" category="thing" translation="kartka papieru">
       <counting classes="flat_object">
         <source_forms language="pl">
-          <form profile="few" cases="nominative accusative" value="kartki papieru" />
+          <form profile="few" cases="nominative accusative vocative" value="kartki papieru" />
           <form profile="few" cases="genitive" value="kartek papieru" />
-          <form profile="many" cases="nominative accusative genitive" value="kartek papieru" />
+          <form profile="few" cases="dative" value="kartkom papieru" />
+          <form profile="few" cases="instrumental" value="kartkami papieru" />
+          <form profile="few" cases="locative" value="kartkach papieru" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="kartek papieru" />
+          <form profile="many" cases="dative" value="kartkom papieru" />
+          <form profile="many" cases="instrumental" value="kartkami papieru" />
+          <form profile="many" cases="locative" value="kartkach papieru" />
         </source_forms>
       </counting>
       <agreement class="feminine" />

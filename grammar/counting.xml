@@ -22,6 +22,39 @@
     <class ref="small_object" default_counter="ko">
       <counter ref="ko" />
     </class>
+    <class ref="general_item" default_counter="tsu">
+      <counter ref="tsu" />
+    </class>
+    <class ref="garment" default_counter="chaku">
+      <counter ref="chaku" />
+    </class>
+    <class ref="cupful" default_counter="hai">
+      <counter ref="hai" />
+    </class>
+    <class ref="correspondence" default_counter="tsuu">
+      <counter ref="tsuu" />
+    </class>
+    <class ref="boat" default_counter="sou">
+      <counter ref="sou" />
+    </class>
+    <class ref="building" default_counter="ken">
+      <counter ref="ken" />
+    </class>
+    <class ref="location" default_counter="kasho">
+      <counter ref="kasho" />
+    </class>
+    <class ref="publication" default_counter="bu">
+      <counter ref="bu" />
+    </class>
+    <class ref="meal" default_counter="shoku">
+      <counter ref="shoku" />
+    </class>
+    <class ref="song" default_counter="kyoku">
+      <counter ref="kyoku" />
+    </class>
+    <class ref="bird" default_counter="wa">
+      <counter ref="wa" />
+    </class>
   </counter_bindings>
   <number_sets>
     <set id="one_to_ten" label="Liczby od 1 do 10">
