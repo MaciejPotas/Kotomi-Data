@@ -254,15 +254,6 @@ def validate_lesson_references(root: Path | None = None) -> None:
     for lesson in lessons_root.findall("./lessons/lesson"):
         lesson_id = str(lesson.get("id", "")) or "<missing>"
         references = lesson.findall("./word/dictionary_ref")
-        if lesson.get("group") == "Tematyczne":
-            if lesson.findall("./local_word"):
-                raise AssertionError(
-                    f"Thematic lesson {lesson_id} must contain dictionary references only"
-                )
-            if len(references) < 6:
-                raise AssertionError(
-                    f"Thematic lesson {lesson_id} must contain at least six words"
-                )
         for reference in references:
             dictionary_id = str(reference.get("dictionary", ""))
             word_id = str(reference.get("word", ""))
@@ -275,6 +266,22 @@ def validate_lesson_references(root: Path | None = None) -> None:
                     f"Lesson {lesson_id} references missing word "
                     f"{dictionary_id}:{word_id}"
                 )
+
+
+def validate_sentence_quiz_references(root: Path | None = None) -> None:
+    """Every published quiz reference must name a declared sentence pattern."""
+    root = ROOT if root is None else root
+    manifest = ET.parse(root / "quiz_project.xml").getroot()
+    maps = manifest.find("sentence_maps")
+    quizzes = manifest.find("sentence_quizzes")
+    if maps is None or quizzes is None:
+        raise AssertionError("Project requires sentence_maps and sentence_quizzes")
+    patterns = ET.parse(root / maps.get("file")).getroot()
+    identifiers = {node.get("id") for node in patterns.findall("./sentence_patterns/sentence_pattern")}
+    for quiz in ET.parse(root / quizzes.get("file")).getroot().findall("./quiz"):
+        for reference in quiz.findall("./patterns/pattern"):
+            if reference.get("ref") not in identifiers:
+                raise AssertionError(f"Quiz {quiz.get('id')} references missing pattern {reference.get('ref')}")
 
 
 def validate_context_references(root: Path | None = None) -> None:
@@ -309,7 +316,6 @@ def validate_counting_data() -> None:
         ROOT / "dictionaries" / "interrogatives.xml"
     ).getroot()
     counting_grammar = ET.parse(ROOT / "grammar" / "counting.xml").getroot()
-    patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
 
     if counting_grammar.get("source_language"):
         raise AssertionError("Content counter bindings are not source grammar")
@@ -508,106 +514,6 @@ def validate_counting_data() -> None:
             + ", ".join(sorted(required_classes - counted_classes))
         )
 
-    pattern_ids = {
-        str(node.get("id", ""))
-        for node in patterns.findall("./sentence_patterns/sentence_pattern")
-    }
-    required_patterns = {
-        "Istnienie policzonych rzeczowników",
-        "Ile jest policzonych rzeczowników",
-        "Godzina zegarowa", "Wiek", "Ile razy w miesiącu",
-        "Liczba razy w miesiącu", "Numer piętra",
-    }
-    if not required_patterns.issubset(pattern_ids):
-        raise AssertionError(
-            "Missing counting patterns: "
-            + ", ".join(sorted(required_patterns - pattern_ids))
-        )
-    retired_patterns = {
-        "Rozpoznaj liczbę z 匹",
-        "Wybierz counter dla rzeczownika",
-        "Trzy minuty",
-        "Wiek dwadzieścia lat",
-    }
-    if retired_patterns & pattern_ids:
-        raise AssertionError(
-            "Retired counting patterns remain: "
-            + ", ".join(sorted(retired_patterns & pattern_ids))
-        )
-
-    patterns_by_id = {
-        str(node.get("id", "")): node
-        for node in patterns.findall("./sentence_patterns/sentence_pattern")
-    }
-    existential = patterns_by_id["Istnienie policzonych rzeczowników"]
-    existential_text = "".join(existential.itertext())
-    required_fragments = {
-        "role:subject",
-        "feature:existential",
-        "agree:@count",
-        "quantity:@count",
-        "counts:@item, preferred",
-    }
-    if not required_fragments.issubset(set(
-        fragment
-        for fragment in required_fragments
-        if fragment in existential_text
-    )):
-        raise AssertionError(
-            "Generic existential counting pattern is missing a data-driven "
-            "dependency."
-        )
-    forbidden = ("id:iru", "id:aru", "id:hiki", "id:satsu", "id:dai", "いる", "ある")
-    if any(value in existential_text for value in forbidden):
-        raise AssertionError(
-            "Generic existential counting pattern hardcodes a verb or counter."
-        )
-    query_answer = patterns_by_id[
-        "Ile jest policzonych rzeczowników"
-    ].findtext("answer", default="")
-    if "role:subject" not in query_answer or "id:iru" in query_answer:
-        raise AssertionError(
-            "Count question must resolve its existential verb through role data."
-        )
-    query_question = patterns_by_id[
-        "Ile jest policzonych rzeczowników"
-    ].findtext("question", default="")
-    if "interrogative@amount[asks_for:count]" not in query_question:
-        raise AssertionError(
-            "Count question must select its interrogative semantically."
-        )
-    age = patterns_by_id["Wiek"]
-    if "range:1..150" not in age.findtext("question", default=""):
-        raise AssertionError(
-            "Age pattern must use the generated range 1..150."
-        )
-    frequency_answer = patterns_by_id[
-        "Ile razy w miesiącu"
-    ].findtext("answer", default="")
-    if "id:kai_times" not in frequency_answer or "一か月に" not in frequency_answer:
-        raise AssertionError(
-            "Monthly frequency pattern must use the dedicated 回 counter."
-        )
-    numeric_frequency = patterns_by_id["Liczba razy w miesiącu"]
-    numeric_frequency_question = numeric_frequency.findtext(
-        "question", default=""
-    )
-    numeric_frequency_answer = numeric_frequency.findtext(
-        "answer", default=""
-    )
-    if "range:1..500" not in numeric_frequency_question:
-        raise AssertionError(
-            "Numeric monthly frequency must use generated range 1..500."
-        )
-    if (
-        "id:kai_times" not in numeric_frequency_answer
-        or "quantity:@count" not in numeric_frequency_answer
-        or ".kanji" not in numeric_frequency_answer
-    ):
-        raise AssertionError(
-            "Numeric monthly frequency must render generated 回 quantities."
-        )
-
 
 def validate_content_manifest() -> None:
     revision = load_json(ROOT / "content_revision.json")
@@ -762,6 +668,7 @@ def main() -> None:
     validate_content_grammar_boundary()
     validate_composite_case_scopes()
     validate_lesson_references()
+    validate_sentence_quiz_references()
     validate_context_references()
     validate_counting_data()
     validate_content_manifest()

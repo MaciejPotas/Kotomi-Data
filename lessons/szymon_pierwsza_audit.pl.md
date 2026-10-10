@@ -1,5 +1,10 @@
 # Szymon / pierwsza: audyt materiału
 
+To zapis konkretnego importu materiału, nie kontrakt testowy. Liczby i podział
+opisują ten import; późniejsza edycja lekcji nie wymaga utrzymywania takich
+asercji. Walidacja obejmuje ogólne reguły referencji. Aktualną architekturę
+opisuje [przewodnik słowników i kontekstów](../docs/pl/context_vocabulary.md).
+
 Źródło: „Słówka z lekcji.docx”. Łącznie 58 pozycji, zachowano kolejność i pierwotny podział na materiał powtórkowy oraz nowy. Lekcja odwołuje się wyłącznie do istniejących lub uzupełnionych słowników, bez kopii `local_word`.
 
 **15 pozycji już istniało**, **43 zostały dodane** (w tym słownikowy `住む` zamiast odrębnej pozycji `住んでいます`).

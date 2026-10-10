@@ -7,7 +7,7 @@ It checks:
 - the canonical learning-data directory layout;
 - XML syntax and expected schema versions;
 - references from `quiz_project.xml`;
-- lesson dictionary references, including the reference-only and minimum-size rules for `Tematyczne` lessons;
+- all lesson and context dictionary references, plus every sentence-quiz pattern reference, without rules tied to a lesson or group name;
 - Content revision and manifest coverage, hashes, and URLs;
 - published quiz package descriptors and file inventories;
 - Python syntax in published quiz packages.

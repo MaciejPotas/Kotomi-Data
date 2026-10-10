@@ -137,4 +137,4 @@ A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantit
 
 ## Contextual existential migration
 
-Content revision 52 requires Kotomi 1.5. See [grammar contexts](grammar_contexts.md) and [Polish documentation](grammar_contexts.pl.md) for the canonical two-context pattern, source agreement and release order.
+Current Content revision 57 requires Kotomi 1.7, including lexical context references. See [grammar contexts](grammar_contexts.md) and [Polish documentation](grammar_contexts.pl.md) for the canonical two-context pattern, source agreement and release order.

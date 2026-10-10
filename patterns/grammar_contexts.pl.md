@@ -101,7 +101,7 @@ wspólnego `verb@existence`, jak w przykładzie. Jeden kontekst ma po jednej
 źródłowej realizacji składnika; kolejne użycie wymaga osobnego kontekstu.
 Nie powstał drugi solver ani osobny edytor kontekstów.
 
-Content 54 wymaga Kotomi 1.6, aplikacja ma wersję 1.6.0. Starsza aplikacja odrzuci
+Aktualny Content 57 wymaga Kotomi 1.7, aplikacja ma wersję 1.7.0. Ta wersja obejmuje także referencje kontekstów. Starsza aplikacja odrzuci
 nowe dane przed instalacją. Nie obsługujemy historycznego XML z usuniętym atrybutem.
 Najpierw zmerguj PR Data, potem PR aplikacji. Zachowaj commit przypięty gitlinkiem;
 po squash merge zaktualizuj przypięcie i sprawdź je przed merge aplikacji.
@@ -177,7 +177,7 @@ Pozostałe intencje pytań zachowują dotychczasowe reguły. Przeczące zdania
 z konkretną liczbą nadal działają. Ograniczenia klas rzeczowników i jawnych
 form przymiotników opisane wyżej nadal obowiązują.
 
-Content 54 wymaga Kotomi 1.6. Aplikacja ma wersję 1.6.0. Najpierw zmerguj
+Aktualny Content 57 wymaga Kotomi 1.7. Aplikacja ma wersję 1.7.0. Najpierw zmerguj
 PR danych, następnie PR aplikacji. Zachowaj commit danych wskazany przez
 gitlink. Po squash merge trzeba przypiąć wynikowy commit i ponownie sprawdzić
-manifesty oraz CI. Samo wdrożenie aplikacji 1.6 może nadal używać starszych danych.
+manifesty oraz CI. Samo wdrożenie aplikacji 1.7 może nadal używać starszych danych.
