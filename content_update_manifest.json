@@ -1,12 +1,12 @@
 {
   "format": 1,
-  "revision": 57,
-  "min_kotomi_version": "1.7",
+  "revision": 58,
+  "min_kotomi_version": "1.8.0",
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "fd257aa630491a17d95c01da23f3a0ea546e6dbb2dcdc0986691b1f87c9f5f45",
-      "url": "content_revision.json?kotomi_sha256=fd257aa630491a17d95c01da23f3a0ea546e6dbb2dcdc0986691b1f87c9f5f45"
+      "sha256": "208b02c1dddeec94a04cb53fb80c6f4d1ea276b340811eb36f8216c8cfc1a05e",
+      "url": "content_revision.json?kotomi_sha256=208b02c1dddeec94a04cb53fb80c6f4d1ea276b340811eb36f8216c8cfc1a05e"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -15,8 +15,8 @@
     },
     {
       "path": "data/dictionaries/adverbs.xml",
-      "sha256": "ffc7707585336658dfd53ea5d8c09ff8622c78549bcb756d9a31a761cf571c44",
-      "url": "dictionaries/adverbs.xml?kotomi_sha256=ffc7707585336658dfd53ea5d8c09ff8622c78549bcb756d9a31a761cf571c44"
+      "sha256": "141f8aaf07b9e21c3009d6f9c4dcc6683e54c3294a6926bd4727d90b090551be",
+      "url": "dictionaries/adverbs.xml?kotomi_sha256=141f8aaf07b9e21c3009d6f9c4dcc6683e54c3294a6926bd4727d90b090551be"
     },
     {
       "path": "data/dictionaries/connectors.xml",
@@ -90,8 +90,8 @@
     },
     {
       "path": "data/quiz_project.xml",
-      "sha256": "7ec66e7964db250cb34d94dba06c3adcd7264db393bec34073370e323b042dc8",
-      "url": "quiz_project.xml?kotomi_sha256=7ec66e7964db250cb34d94dba06c3adcd7264db393bec34073370e323b042dc8"
+      "sha256": "feb12708eb43caed1faa10de4e1fd3e2e50187970e2743913e556ccdcb4258e3",
+      "url": "quiz_project.xml?kotomi_sha256=feb12708eb43caed1faa10de4e1fd3e2e50187970e2743913e556ccdcb4258e3"
     }
   ]
 }

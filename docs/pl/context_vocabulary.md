@@ -10,13 +10,13 @@ wielu lekcji i pul bez kopiowania tłumaczenia lub kany. Wycofany słownik
 
 | ID słownika | Schemat | Token | Wybór | Realizacja |
 |---|---|---|---|---|
-| `adverbs` | `adverb` | `adverb` | `id`, alias | wyjścia bezpośrednie |
+| `adverbs` | `adverb` | `adverb` | `id`, `category`, alias | wyjścia bezpośrednie |
 | `demonstratives` | `demonstrative` | `demonstrative` | `id`, alias | wyjścia bezpośrednie; `agree`, `case` dla tłumaczenia |
 | `expressions` | `expression` | `expression` | `id`, alias | wyjścia bezpośrednie |
 
 Wszystkie trzy obsługują `occurrence` oraz wyjścia `id`, `translation`, `kana`,
 `kanji`, `romaji`. Token bez końcówki zwraca kanę. Nie obsługują selektorów
-`form`, `polarity`, `role`, `feature` ani `category`. Jawne żądanie pustego pola opcjonalnego kończy się komunikatem błędu;
+`form`, `polarity`, `role` ani `feature`. Przysłówki dodatkowo obsługują `category`. Jawne żądanie pustego pola opcjonalnego kończy się komunikatem błędu;
 silnik nie wymyśla brakującego tekstu. Alias współdzieli wybór słowa, a `occurrence` wskazuje
 jedno lokalne użycie gramatyczne tego wyboru.
 
@@ -236,3 +236,5 @@ Edytor słowników blokuje usunięcie lub zmianę ID słowa używanego przez kon
 albo lekcję w Schema 4. Jeśli plik lekcji jest uszkodzony i nie można sprawdzić
 referencji, operacja również jest blokowana. Zmiana wartości słowa pod tym samym
 ID pozostaje dozwolona i zmienia kolejne rozwiązania referencji kontekstów.
+
+[Kategorie semantyczne: XML, wybór, IntelliSense i Studio](adverb_categories.md).

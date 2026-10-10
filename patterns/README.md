@@ -138,3 +138,5 @@ A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantit
 ## Contextual existential migration
 
 Current Content revision 57 requires Kotomi 1.7, including lexical context references. See [grammar contexts](grammar_contexts.md) and [Polish documentation](grammar_contexts.pl.md) for the canonical two-context pattern, source agreement and release order.
+
+Semantic adverb selection uses `{adverb@when[category:time]}` with a shared alias in both languages. See [English](../docs/eng/adverb_categories.md) / [Polski](../docs/pl/adverb_categories.md) for valid/invalid examples and empty-domain behavior.

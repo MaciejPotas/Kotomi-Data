@@ -10,13 +10,13 @@ The retired `time_expressions` dictionary is not a separate source of words.
 
 | Dictionary ID | Schema | Token | Selection | Realization |
 |---|---|---|---|---|
-| `adverbs` | `adverb` | `adverb` | `id`, alias | direct outputs |
+| `adverbs` | `adverb` | `adverb` | `id`, `category`, alias | direct outputs |
 | `demonstratives` | `demonstrative` | `demonstrative` | `id`, alias | direct outputs; `agree`, `case` for source translation |
 | `expressions` | `expression` | `expression` | `id`, alias | direct outputs |
 
 All three support `occurrence` and the outputs `id`, `translation`, `kana`,
 `kanji`, `romaji`. A bare token returns kana. They do not support `form`,
-`polarity`, `role`, `feature` or `category` selectors. An explicit output requesting an empty optional field fails with a diagnostic;
+`polarity`, `role` or `feature` selectors. Only adverbs additionally support `category`. An explicit output requesting an empty optional field fails with a diagnostic;
 it does not invent text. An alias shares the selection, while `occurrence` identifies
 one local grammatical use of that selection.
 
@@ -232,3 +232,5 @@ Dictionary editing blocks deletion or ID changes when a context or a Schema 4
 lesson references the word. A malformed lesson file prevents this safety check
 and blocks the destructive edit until it can be read. Editing lexical values
 under the same ID remains allowed and updates subsequent context resolutions.
+
+[Semantic categories: XML, selection, IntelliSense and Studio](adverb_categories.md).

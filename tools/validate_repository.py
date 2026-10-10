@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import re
 import json
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
@@ -282,6 +283,37 @@ def validate_sentence_quiz_references(root: Path | None = None) -> None:
         for reference in quiz.findall("./patterns/pattern"):
             if reference.get("ref") not in identifiers:
                 raise AssertionError(f"Quiz {quiz.get('id')} references missing pattern {reference.get('ref')}")
+
+
+def validate_semantic_categories(root: Path | None = None) -> None:
+    """Validate declared catalogs and memberships, independent of word inventory."""
+    root = root or ROOT
+    manifest = ET.parse(root / "quiz_project.xml").getroot()
+    for entry in manifest.findall("./dictionaries/dictionary"):
+        dictionary = ET.parse(root / entry.get("file")).getroot()
+        schema = dictionary.get("schema") or entry.get("schema")
+        catalogs = dictionary.findall("categories")
+        for catalog in catalogs:
+            if catalog.attrib or any(node.tag != "category" or set(node.attrib) != {"id"}
+                                     or len(node) for node in catalog):
+                raise AssertionError("Invalid semantic category catalog entry")
+        categories = [node.get("id", "") for node in dictionary.findall("./categories/category")]
+        if catalogs and schema != "adverb":
+            raise AssertionError("Semantic category catalogs require adverb schema")
+        if len(catalogs) > 1 or len(categories) != len(set(categories)):
+            raise AssertionError("Duplicate semantic category declaration")
+        if any(not re.fullmatch(r"[a-z][a-z0-9_]*", value) for value in categories):
+            raise AssertionError("Invalid semantic category identifier")
+        for word in dictionary.findall("./words/word"):
+            values = word.get("categories", "").split()
+            if values and schema != "adverb":
+                raise AssertionError("Semantic memberships require adverb schema")
+            if schema == "adverb" and word.get("category"):
+                raise AssertionError("Adverbs use categories, not noun category")
+            if len(values) != len(set(values)):
+                raise AssertionError("Duplicate semantic category membership")
+            if set(values) - set(categories):
+                raise AssertionError(f"Unknown semantic category on {entry.get('id')}/{word.get('id')}")
 
 
 def validate_context_references(root: Path | None = None) -> None:
@@ -670,6 +702,7 @@ def main() -> None:
     validate_lesson_references()
     validate_sentence_quiz_references()
     validate_context_references()
+    validate_semantic_categories()
     validate_counting_data()
     validate_content_manifest()
     validate_quiz_manifest()
