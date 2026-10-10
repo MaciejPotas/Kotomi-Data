@@ -12,6 +12,9 @@ Files:
 - `interrogatives.xml`
 - `numbers.xml`
 - `counters.xml`
+- `adverbs.xml`
+- `demonstratives.xml`
+- `expressions.xml`
 
 All dictionary files use project Schema 2 and are referenced by `../quiz_project.xml`. Dictionary IDs are part of the data contract and can be referenced by lessons, grammar, patterns, and quiz code, so renaming an ID requires updating every reference and the validation tests.
 
@@ -81,12 +84,19 @@ only conservative forms supported by the noun translation, agreement class,
 ordinary cases and quantity mappings. The proposal is saved as editable XML;
 unknown forms stay empty and runtime never performs Polish morphology.
 
-## Lesson Szymon / pierwsza
+## Reusable lexical entries
 
-Słówka nieodmienne i gotowe zwroty z lekcji otrzymały oddzielne słowniki z `schema="generic"`: `demonstratives`, `time_expressions`, `adverbs`, `expressions`. Nie udajemy, że przysłówki czy zaimki wskazujące są rzeczownikami, a odmianę polską demonstratywów zapisujemy pomocniczo we właściwościach `cases` lub `polish_forms`.
+`adverbs`, `demonstratives` and `expressions` have explicit schemas and public
+placeholder contracts. Contexts reference canonical words with `dictionary`
+and `word`; `nouns/ashita` remains a noun. `time_expressions` is retired through
+the project manifest, without deleting user files. Demonstrative source cases
+use `polish_forms`, with common values and gender overrides.
 
-Forma `住んでいます` nie jest odrębnym słowem: `verbs/sumu` zawiera słownikowe `住む` i `te_form=住んで`. Konstrukcje z `～ています` pozostają po stronie patternów. Nieodmienne określenia czasu nie dostają sztucznego liczenia, a dni tygodnia oraz `聞き取り` mają polskie przypadki bez counterów. Policzalne hasła otrzymują istniejące klasy counterów i komplet przypadków w profilach few/many.
+Complete XML, token outputs, lesson/context references and testing rules:
+[English](../docs/eng/context_vocabulary.md) / [Polski](../docs/pl/context_vocabulary.md).
 
-Pełny audyt: `lessons/szymon_pierwsza_audit.pl.md`.
-
-`住む` ma rolę `target` ograniczoną do kategorii `place`, zgodnie z japońskim `場所に住む`. Nie przypisujemy mu `location`, ponieważ ta rola wybiera wzorce miejsca czynności z `で`. Forma `住んでいます` nadal powstaje z `te_form` i `いる`, bez osobnego hasła w słowniku.
+The lexical entry for residence is `verbs/sumu`, with dictionary form `住む`
+and `te_form=住んで`. Patterns construct `住んでいます`; it is not another word.
+Its `target` role accepts places for `に`, not activity-location `で`.
+The dated [lesson import record](../lessons/szymon_pierwsza_audit.pl.md) documents
+an editorial change, not a test contract or a fixed vocabulary inventory.

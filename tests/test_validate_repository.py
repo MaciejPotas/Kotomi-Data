@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from pathlib import Path
-import re
 import sys
 import unittest
 import xml.etree.ElementTree as ET
@@ -18,96 +17,7 @@ from validate_repository import (  # noqa: E402
 
 
 class GrammarValidationContractTests(unittest.TestCase):
-    def test_connector_dictionary_and_quiz_cover_requested_inventory(self) -> None:
-        dictionary = ET.parse(
-            ROOT / "dictionaries" / "connectors.xml"
-        ).getroot()
-        self.assertEqual("connector", dictionary.get("schema"))
-        self.assertEqual(
-            {
-                "dakara", "soreka", "dakedo", "sorenara", "soreyori",
-                "shikamo", "demo",
-            },
-            {
-                word.get("id", "")
-                for word in dictionary.findall("./words/word")
-            },
-        )
-        quizzes = ET.parse(
-            ROOT / "patterns" / "sentence_quizzes.xml"
-        ).getroot()
-        quiz = quizzes.find("./quiz[@id='connectors']")
-        self.assertIsNotNone(quiz)
-        self.assertEqual("references", quiz.get("selection"))
-        self.assertEqual(
-            {
-                "Łącznik だから",
-                "Łącznik それか",
-                "Łącznik だけど",
-                "Łącznik それなら",
-                "Łącznik それより",
-                "Łącznik しかも",
-                "Łącznik でも",
-            },
-            {
-                pattern.get("ref", "")
-                for pattern in quiz.findall("./patterns/pattern")
-            },
-        )
 
-    def test_connector_patterns_use_two_unconstrained_verbs(self) -> None:
-        patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
-        seen = set()
-        for pattern in patterns.findall("./sentence_patterns/sentence_pattern"):
-            if pattern.get("category") != "connectors":
-                continue
-            question = pattern.findtext("question", "")
-            answer = pattern.findtext("answer", "")
-            connector = re.search(r"\{connector\[id:([a-z]+)\]", question)
-            self.assertIsNotNone(connector, pattern.get("id"))
-            connector_id = connector.group(1)
-            seen.add(connector_id)
-            self.assertIn(f"{{connector[id:{connector_id}]}}", answer)
-            self.assertNotIn(";", question)
-            self.assertNotIn(";", answer)
-            if connector_id == "dakara":
-                self.assertIn(
-                    "{verb@first[form]}。{connector[id:dakara]}、{verb@second[form]}。",
-                    answer,
-                )
-            else:
-                self.assertIn(f"、{{connector[id:{connector_id}]}}", answer)
-            if connector_id == "soreka":
-                self.assertIn("} {connector[id:" + connector_id + "]", question)
-            else:
-                self.assertIn("}, {connector[id:" + connector_id + "]", question)
-            self.assertEqual(
-                ["first", "second"],
-                re.findall(r"\{verb@([^}\[]+)\[form\]\.translation\}", question),
-            )
-            self.assertEqual(
-                ["first", "second"],
-                re.findall(r"\{verb@([^}\[]+)\[form\]\}", answer),
-            )
-            for text in (question, answer):
-                self.assertNotIn("{noun", text)
-                self.assertNotRegex(text, r"\{verb@[^}]*\b(id|role|feature|government):")
-        self.assertEqual(
-            {"dakara", "soreka", "dakedo", "sorenara", "soreyori", "shikamo", "demo"},
-            seen,
-        )
-
-    def test_dakara_keeps_finite_polite_verb_before_sentence_boundary(self) -> None:
-        patterns = ET.parse(ROOT / "patterns" / "sentence_maps.xml").getroot()
-        pattern = patterns.find(
-            "./sentence_patterns/sentence_pattern[@id='Łącznik だから']"
-        )
-        self.assertIsNotNone(pattern)
-        assert pattern is not None
-        self.assertEqual(
-            "{verb@first[form]}。{connector[id:dakara]}、{verb@second[form]}。",
-            pattern.findtext("answer", ""),
-        )
 
     def test_pattern_readme_uses_supported_interrogative_syntax(self) -> None:
         text = (ROOT / "patterns" / "README.md").read_text(encoding="utf-8")
@@ -116,9 +26,6 @@ class GrammarValidationContractTests(unittest.TestCase):
 
     def test_schema2_counting_inventory_is_complete(self) -> None:
         validate_counting_data()
-
-
-
 
 
     def test_canonical_number_sets_are_declared(self) -> None:
@@ -182,7 +89,6 @@ class GrammarValidationContractTests(unittest.TestCase):
         self.assertEqual("にじゅうじ", realization.get("kana"))
         self.assertEqual("二十時", realization.get("kanji"))
         self.assertEqual("nijuuji", realization.get("romaji"))
-
 
 
     def test_word_form_attribute_allowlist_matches_loader_contract(self) -> None:

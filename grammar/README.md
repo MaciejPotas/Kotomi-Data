@@ -3,7 +3,8 @@
 This directory contains learning material and lexical relationships, not grammar definitions.
 
 - `contexts.xml` owns concrete options such as today, yesterday and next week,
-  their Japanese/source text and selection weights.
+  their word references, literal separator suffixes and selection weights. Inline
+  options remain supported; referenced lexical text belongs to dictionaries.
 - `counting.xml` owns `number_sets` and `counter_bindings`. A binding references a
   Kotomi counting class and lists this database's compatible/default counter IDs.
 - Noun counting classes and preferred counters, exact counter surfaces and

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" id="verbs" schema="verb" target_language_id="ja" label="Verbs" instruction_language_id="pl">
+  <words>
+    <word id="sumu" kana="すむ" kanji="住む" type="godan" ending="mu" translation="mieszkać">
+      <usage>
+        <role ref="target" accepts="place" />
+      </usage>
+      <forms>
+        <form ref="dictionary" kana="すむ" kanji="住む" translation="mieszkam" />
+        <form ref="polite_nonpast" kana="すみます" kanji="住みます" translation="mieszkam" />
+        <form ref="plain_negative" kana="すまない" kanji="住まない" translation="nie mieszkam" />
+        <form ref="polite_negative" kana="すみません" kanji="住みません" translation="nie mieszkam" />
+        <form ref="past_plain" kana="すんだ" kanji="住んだ" translation="mieszkałem" />
+        <form ref="past_polite" kana="すみました" kanji="住みました" translation="mieszkałem" />
+        <form ref="past_negative_plain" kana="すまなかった" kanji="住まなかった" translation="nie mieszkałem" />
+        <form ref="past_negative_polite" kana="すみませんでした" kanji="住みませんでした" translation="nie mieszkałem" />
+        <form ref="te_form" kana="すんで" kanji="住んで" translation="mieszkając" />
+        <form ref="potential" kana="すめる" kanji="住める" translation="mogę mieszkać" />
+        <form ref="passive" kana="すまれる" kanji="住まれる" translation="ktoś mieszka, co mi przeszkadza" />
+        <form ref="causative" kana="すませる" kanji="住ませる" translation="pozwalam komuś mieszkać" />
+        <form ref="tara" kana="すんだら" kanji="住んだら" translation="jeśli mieszkam" />
+        <form ref="volitional" kana="すもう" kanji="住もう" translation="zamieszkajmy" />
+        <form ref="imperative" kana="すめ" kanji="住め" translation="mieszkaj!" />
+      </forms>
+    </word>
+  </words>
+</dictionary>

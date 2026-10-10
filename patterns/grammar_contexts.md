@@ -107,7 +107,7 @@ analysis; use the shared existential selection demonstrated above. A context
 has one source realization per constituent; repeating a constituent requires a
 separate named context. There is no new context editor or separate solver.
 
-Content revision 54 requires Kotomi 1.6; the application version is 1.6.0.
+Current Content revision 57 requires Kotomi 1.7; the application version is 1.7.0. Context references are part of this minimum contract.
 Old applications reject the new Content requirement before installation.
 Historical XML with the removed attribute is not supported. Merge the Data PR
 first, then the application PR. Preserve the Data commit referenced by the
@@ -176,7 +176,7 @@ bound rendering and `render_answer_with_forms`, too. Other question intents and
 negative numeric statements retain their existing rules. The noun-class and
 strict adjective-override limitations above still apply.
 
-Content revision 54 requires Kotomi 1.6; application version is 1.6.0. Merge Data
+Current Content revision 57 requires Kotomi 1.7; application version is 1.7.0. Merge Data
 first, then the application PR. Preserve the pinned Data commit; after squashing,
 update the gitlink to the resulting commit and rerun manifest checks and CI.
-Application 1.6 can still load older compatible Content.
+Application 1.7 can still load older compatible Content.

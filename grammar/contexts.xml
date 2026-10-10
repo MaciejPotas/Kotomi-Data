@@ -6,16 +6,22 @@
   <context id="present" label="present">
     <option id="neutral" kana="" weight="2" translation="" />
     <option id="now" kana="いま、" weight="1" translation="Teraz " />
-    <option id="today" kana="きょう、" weight="1" translation="Dzisiaj " />
+    <option id="today" weight="1" dictionary="adverbs" word="kyou" translation_suffix=" " kana_suffix="、" />
+    <option id="every_day" weight="1" dictionary="adverbs" word="mainichi" translation_suffix=" " kana_suffix="、" />
+    <option id="this_week" weight="1" dictionary="adverbs" word="konshuu" translation_suffix=" " kana_suffix="、" />
   </context>
   <context id="past" label="past">
-    <option id="yesterday" kana="きのう、" weight="2" translation="Wczoraj " />
-    <option id="last_week" kana="せんしゅう、" weight="1" translation="W zeszłym tygodniu " />
+    <option id="yesterday" weight="2" dictionary="adverbs" word="kinou" translation_suffix=" " kana_suffix="、" />
+    <option id="last_week" weight="1" dictionary="adverbs" word="senshuu" translation_suffix=" " kana_suffix="、" />
     <option id="recently" kana="さいきん、" weight="1" translation="Ostatnio " />
+    <option id="day_before_yesterday" weight="1" dictionary="adverbs" word="ototoi" translation_suffix=" " kana_suffix="、" />
+    <option id="two_weeks_ago" weight="1" dictionary="adverbs" word="sensenshuu" translation_suffix=" " kana_suffix="、" />
   </context>
   <context id="future" label="future">
-    <option id="tomorrow" kana="あした、" weight="2" translation="Jutro " />
-    <option id="next_week" kana="らいしゅう、" weight="1" translation="W przyszłym tygodniu " />
+    <option id="tomorrow" weight="2" dictionary="nouns" word="ashita" translation_suffix=" " kana_suffix="、" />
+    <option id="next_week" weight="1" dictionary="adverbs" word="raishuu" translation_suffix=" " kana_suffix="、" />
     <option id="soon" kana="もうすぐ、" weight="1" translation="Wkrótce " />
+    <option id="day_after_tomorrow" weight="1" dictionary="adverbs" word="asatte" translation_suffix=" " kana_suffix="、" />
+    <option id="in_two_weeks" weight="1" dictionary="adverbs" word="saraishuu" translation_suffix=" " kana_suffix="、" />
   </context>
 </contexts>

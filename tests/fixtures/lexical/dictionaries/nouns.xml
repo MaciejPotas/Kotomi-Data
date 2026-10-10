@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" id="nouns" schema="noun" target_language_id="ja" label="Nouns" instruction_language_id="pl">
+  <words>
+    <word id="tatemono" kana="たてもの" kanji="建物" type="noun" category="place" translation="budynek">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="budynki" />
+          <form profile="few" cases="genitive" value="budynków" />
+          <form profile="few" cases="dative" value="budynkom" />
+          <form profile="few" cases="accusative" value="budynki" />
+          <form profile="few" cases="instrumental" value="budynkami" />
+          <form profile="few" cases="locative" value="budynkach" />
+          <form profile="few" cases="vocative" value="budynki" />
+          <form profile="many" cases="nominative" value="budynków" />
+          <form profile="many" cases="genitive" value="budynków" />
+          <form profile="many" cases="dative" value="budynkom" />
+          <form profile="many" cases="accusative" value="budynków" />
+          <form profile="many" cases="instrumental" value="budynkami" />
+          <form profile="many" cases="locative" value="budynkach" />
+          <form profile="many" cases="vocative" value="budynków" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
+      <cases language="pl" nominative="budynek" genitive="budynku" dative="budynkowi" accusative="budynek" instrumental="budynkiem" locative="budynku" vocative="budynku" />
+    </word>
+    <word id="kikitori" kana="ききとり" kanji="聞き取り" type="noun" category="abstract" translation="rozumienie ze słuchu">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="rozumienie ze słuchu" genitive="rozumienia ze słuchu" dative="rozumieniu ze słuchu" accusative="rozumienie ze słuchu" instrumental="rozumieniem ze słuchu" locative="rozumieniu ze słuchu" vocative="rozumienie ze słuchu" />
+    </word>
+  </words>
+</dictionary>

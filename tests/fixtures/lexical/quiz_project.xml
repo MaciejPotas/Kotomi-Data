@@ -1,0 +1,8 @@
+<quiz_project schema_version="2" min_kotomi_version="1.7"><dictionaries>
+<dictionary id="adverbs" file="dictionaries/adverbs.xml" schema="adverb" />
+<dictionary id="verbs" file="dictionaries/verbs.xml" schema="verb" />
+<dictionary id="nouns" file="dictionaries/nouns.xml" schema="noun" />
+<dictionary id="adjectives" file="dictionaries/adjectives.xml" schema="adjective" />
+<dictionary id="demonstratives" file="dictionaries/demonstratives.xml" schema="demonstrative" />
+<dictionary id="expressions" file="dictionaries/expressions.xml" schema="expression" />
+</dictionaries></quiz_project>

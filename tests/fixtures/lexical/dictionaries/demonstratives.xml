@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dictionary schema_version="2" id="demonstratives" schema="demonstrative" target_language_id="ja" label="Demonstratives" instruction_language_id="pl">
+  <words>
+    <word id="kore" kana="これ" translation="to (blisko mówiącego)">
+      <polish_forms>
+        <common cases="nominative" value="to" />
+        <common cases="genitive" value="tego" />
+        <common cases="dative" value="temu" />
+        <common cases="accusative" value="to" />
+        <common cases="instrumental" value="tym" />
+        <common cases="locative" value="tym" />
+        <common cases="vocative" value="to" />
+      </polish_forms>
+    </word>
+    <word id="kono" kana="この" translation="ten (blisko mówiącego)">
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ten" />
+        <common cases="genitive" value="tego" />
+        <common cases="dative" value="temu" />
+        <common cases="instrumental locative" value="tym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="tego" />
+        <override classes="feminine" cases="nominative vocative" value="ta" />
+        <override classes="feminine" cases="genitive dative locative" value="tej" />
+        <override classes="feminine" cases="accusative" value="tę" />
+        <override classes="feminine" cases="instrumental" value="tą" />
+        <override classes="neuter" cases="nominative accusative vocative" value="to" />
+        <override classes="plural_non_masculine_personal" cases="nominative accusative vocative" value="te" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="tych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="tym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="tymi" />
+      </polish_forms>
+    </word>
+  </words>
+</dictionary>
