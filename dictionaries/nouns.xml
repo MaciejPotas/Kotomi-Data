@@ -899,5 +899,308 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="kartka papieru" genitive="kartki papieru" dative="kartce papieru" accusative="kartkę papieru" instrumental="kartką papieru" locative="kartce papieru" vocative="kartko papieru" />
     </word>
+    <word id="getsuyoubi" kana="げつようび" kanji="月曜日" type="noun" category="abstract" translation="poniedziałek">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="poniedziałek" genitive="poniedziałku" dative="poniedziałkowi" accusative="poniedziałek" instrumental="poniedziałkiem" locative="poniedziałku" vocative="poniedziałku" />
+    </word>
+    <word id="kayoubi" kana="かようび" kanji="火曜日" type="noun" category="abstract" translation="wtorek">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="wtorek" genitive="wtorku" dative="wtorkowi" accusative="wtorek" instrumental="wtorkiem" locative="wtorku" vocative="wtorku" />
+    </word>
+    <word id="suiyoubi" kana="すいようび" kanji="水曜日" type="noun" category="abstract" translation="środa">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="środa" genitive="środy" dative="środzie" accusative="środę" instrumental="środą" locative="środzie" vocative="środo" />
+    </word>
+    <word id="mokuyoubi" kana="もくようび" kanji="木曜日" type="noun" category="abstract" translation="czwartek">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="czwartek" genitive="czwartku" dative="czwartkowi" accusative="czwartek" instrumental="czwartkiem" locative="czwartku" vocative="czwartku" />
+    </word>
+    <word id="kinyoubi" kana="きんようび" kanji="金曜日" type="noun" category="abstract" translation="piątek">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="piątek" genitive="piątku" dative="piątkowi" accusative="piątek" instrumental="piątkiem" locative="piątku" vocative="piątku" />
+    </word>
+    <word id="doyoubi" kana="どようび" kanji="土曜日" type="noun" category="abstract" translation="sobota">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="sobota" genitive="soboty" dative="sobocie" accusative="sobotę" instrumental="sobotą" locative="sobocie" vocative="soboto" />
+    </word>
+    <word id="nichiyoubi" kana="にちようび" kanji="日曜日" type="noun" category="abstract" translation="niedziela">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="niedziela" genitive="niedzieli" dative="niedzieli" accusative="niedzielę" instrumental="niedzielą" locative="niedzieli" vocative="niedzielo" />
+    </word>
+    <word id="tatemono" kana="たてもの" kanji="建物" type="noun" category="place" translation="budynek">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="budynki" />
+          <form profile="few" cases="genitive" value="budynków" />
+          <form profile="few" cases="dative" value="budynkom" />
+          <form profile="few" cases="accusative" value="budynki" />
+          <form profile="few" cases="instrumental" value="budynkami" />
+          <form profile="few" cases="locative" value="budynkach" />
+          <form profile="few" cases="vocative" value="budynki" />
+          <form profile="many" cases="nominative" value="budynków" />
+          <form profile="many" cases="genitive" value="budynków" />
+          <form profile="many" cases="dative" value="budynkom" />
+          <form profile="many" cases="accusative" value="budynków" />
+          <form profile="many" cases="instrumental" value="budynkami" />
+          <form profile="many" cases="locative" value="budynkach" />
+          <form profile="many" cases="vocative" value="budynków" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
+      <cases language="pl" nominative="budynek" genitive="budynku" dative="budynkowi" accusative="budynek" instrumental="budynkiem" locative="budynku" vocative="budynku" />
+    </word>
+    <word id="yuubinkyoku" kana="ゆうびんきょく" kanji="郵便局" type="noun" category="place" translation="poczta">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="poczty" />
+          <form profile="few" cases="genitive" value="poczt" />
+          <form profile="few" cases="dative" value="pocztom" />
+          <form profile="few" cases="accusative" value="poczty" />
+          <form profile="few" cases="instrumental" value="pocztami" />
+          <form profile="few" cases="locative" value="pocztach" />
+          <form profile="few" cases="vocative" value="poczty" />
+          <form profile="many" cases="nominative" value="poczt" />
+          <form profile="many" cases="genitive" value="poczt" />
+          <form profile="many" cases="dative" value="pocztom" />
+          <form profile="many" cases="accusative" value="poczt" />
+          <form profile="many" cases="instrumental" value="pocztami" />
+          <form profile="many" cases="locative" value="pocztach" />
+          <form profile="many" cases="vocative" value="poczt" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <relations language="pl" profile="place_na_na" />
+      <cases language="pl" nominative="poczta" genitive="poczty" dative="poczcie" accusative="pocztę" instrumental="pocztą" locative="poczcie" vocative="poczto" />
+    </word>
+    <word id="byouin" kana="びょういん" kanji="病院" type="noun" category="place" translation="szpital">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="szpitale" />
+          <form profile="few" cases="genitive" value="szpitali" />
+          <form profile="few" cases="dative" value="szpitalom" />
+          <form profile="few" cases="accusative" value="szpitale" />
+          <form profile="few" cases="instrumental" value="szpitalami" />
+          <form profile="few" cases="locative" value="szpitalach" />
+          <form profile="few" cases="vocative" value="szpitale" />
+          <form profile="many" cases="nominative" value="szpitali" />
+          <form profile="many" cases="genitive" value="szpitali" />
+          <form profile="many" cases="dative" value="szpitalom" />
+          <form profile="many" cases="accusative" value="szpitali" />
+          <form profile="many" cases="instrumental" value="szpitalami" />
+          <form profile="many" cases="locative" value="szpitalach" />
+          <form profile="many" cases="vocative" value="szpitali" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
+      <cases language="pl" nominative="szpital" genitive="szpitala" dative="szpitalowi" accusative="szpital" instrumental="szpitalem" locative="szpitalu" vocative="szpitalu" />
+    </word>
+    <word id="biru" kana="ビル" kanji="ビル" type="noun" category="place" translation="biurowiec">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="biurowce" />
+          <form profile="few" cases="genitive" value="biurowców" />
+          <form profile="few" cases="dative" value="biurowcom" />
+          <form profile="few" cases="accusative" value="biurowce" />
+          <form profile="few" cases="instrumental" value="biurowcami" />
+          <form profile="few" cases="locative" value="biurowcach" />
+          <form profile="few" cases="vocative" value="biurowce" />
+          <form profile="many" cases="nominative" value="biurowców" />
+          <form profile="many" cases="genitive" value="biurowców" />
+          <form profile="many" cases="dative" value="biurowcom" />
+          <form profile="many" cases="accusative" value="biurowców" />
+          <form profile="many" cases="instrumental" value="biurowcami" />
+          <form profile="many" cases="locative" value="biurowcach" />
+          <form profile="many" cases="vocative" value="biurowców" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
+      <cases language="pl" nominative="biurowiec" genitive="biurowca" dative="biurowcowi" accusative="biurowiec" instrumental="biurowcem" locative="biurowcu" vocative="biurowcu" />
+    </word>
+    <word id="jimusitsu" kana="じむしつ" kanji="事務室" type="noun" category="place" translation="biuro">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="biura" />
+          <form profile="few" cases="genitive" value="biur" />
+          <form profile="few" cases="dative" value="biurom" />
+          <form profile="few" cases="accusative" value="biura" />
+          <form profile="few" cases="instrumental" value="biurami" />
+          <form profile="few" cases="locative" value="biurach" />
+          <form profile="few" cases="vocative" value="biura" />
+          <form profile="many" cases="nominative" value="biur" />
+          <form profile="many" cases="genitive" value="biur" />
+          <form profile="many" cases="dative" value="biurom" />
+          <form profile="many" cases="accusative" value="biur" />
+          <form profile="many" cases="instrumental" value="biurami" />
+          <form profile="many" cases="locative" value="biurach" />
+          <form profile="many" cases="vocative" value="biur" />
+        </source_forms>
+      </counting>
+      <agreement class="neuter" />
+      <relations language="pl" profile="place_w_do" />
+      <cases language="pl" nominative="biuro" genitive="biura" dative="biuru" accusative="biuro" instrumental="biurem" locative="biurze" vocative="biuro" />
+    </word>
+    <word id="eigakan" kana="えいがかん" kanji="映画館" type="noun" category="place" translation="kino">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="kina" />
+          <form profile="few" cases="genitive" value="kin" />
+          <form profile="few" cases="dative" value="kinom" />
+          <form profile="few" cases="accusative" value="kina" />
+          <form profile="few" cases="instrumental" value="kinami" />
+          <form profile="few" cases="locative" value="kinach" />
+          <form profile="few" cases="vocative" value="kina" />
+          <form profile="many" cases="nominative" value="kin" />
+          <form profile="many" cases="genitive" value="kin" />
+          <form profile="many" cases="dative" value="kinom" />
+          <form profile="many" cases="accusative" value="kin" />
+          <form profile="many" cases="instrumental" value="kinami" />
+          <form profile="many" cases="locative" value="kinach" />
+          <form profile="many" cases="vocative" value="kin" />
+        </source_forms>
+      </counting>
+      <agreement class="neuter" />
+      <relations language="pl" profile="place_w_do" />
+      <cases language="pl" nominative="kino" genitive="kina" dative="kinu" accusative="kino" instrumental="kinem" locative="kinie" vocative="kino" />
+    </word>
+    <word id="ginkou" kana="ぎんこう" kanji="銀行" type="noun" category="place" translation="bank">
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="banki" />
+          <form profile="few" cases="genitive" value="banków" />
+          <form profile="few" cases="dative" value="bankom" />
+          <form profile="few" cases="accusative" value="banki" />
+          <form profile="few" cases="instrumental" value="bankami" />
+          <form profile="few" cases="locative" value="bankach" />
+          <form profile="few" cases="vocative" value="banki" />
+          <form profile="many" cases="nominative" value="banków" />
+          <form profile="many" cases="genitive" value="banków" />
+          <form profile="many" cases="dative" value="bankom" />
+          <form profile="many" cases="accusative" value="banków" />
+          <form profile="many" cases="instrumental" value="bankami" />
+          <form profile="many" cases="locative" value="bankach" />
+          <form profile="many" cases="vocative" value="banków" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <relations language="pl" profile="place_w_do" />
+      <cases language="pl" nominative="bank" genitive="banku" dative="bankowi" accusative="bank" instrumental="bankiem" locative="banku" vocative="banku" />
+    </word>
+    <word id="aji" kana="あじ" kanji="味" type="noun" category="abstract" translation="smak">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="smaki" />
+          <form profile="few" cases="genitive" value="smaków" />
+          <form profile="few" cases="dative" value="smakom" />
+          <form profile="few" cases="accusative" value="smaki" />
+          <form profile="few" cases="instrumental" value="smakami" />
+          <form profile="few" cases="locative" value="smakach" />
+          <form profile="few" cases="vocative" value="smaki" />
+          <form profile="many" cases="nominative" value="smaków" />
+          <form profile="many" cases="genitive" value="smaków" />
+          <form profile="many" cases="dative" value="smakom" />
+          <form profile="many" cases="accusative" value="smaków" />
+          <form profile="many" cases="instrumental" value="smakami" />
+          <form profile="many" cases="locative" value="smakach" />
+          <form profile="many" cases="vocative" value="smaków" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="smak" genitive="smaku" dative="smakowi" accusative="smak" instrumental="smakiem" locative="smaku" vocative="smaku" />
+    </word>
+    <word id="programmer" kana="プログラマー" kanji="プログラマー" type="noun" category="person" translation="programista">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="programiści" />
+          <form profile="few" cases="genitive" value="programistów" />
+          <form profile="few" cases="dative" value="programistom" />
+          <form profile="few" cases="accusative" value="programistów" />
+          <form profile="few" cases="instrumental" value="programistami" />
+          <form profile="few" cases="locative" value="programistach" />
+          <form profile="few" cases="vocative" value="programiści" />
+          <form profile="many" cases="nominative" value="programistów" />
+          <form profile="many" cases="genitive" value="programistów" />
+          <form profile="many" cases="dative" value="programistom" />
+          <form profile="many" cases="accusative" value="programistów" />
+          <form profile="many" cases="instrumental" value="programistami" />
+          <form profile="many" cases="locative" value="programistach" />
+          <form profile="many" cases="vocative" value="programistów" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="programista" genitive="programisty" dative="programiście" accusative="programistę" instrumental="programistą" locative="programiście" vocative="programisto" />
+    </word>
+    <word id="kikitori" kana="ききとり" kanji="聞き取り" type="noun" category="abstract" translation="rozumienie ze słuchu">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="rozumienie ze słuchu" genitive="rozumienia ze słuchu" dative="rozumieniu ze słuchu" accusative="rozumienie ze słuchu" instrumental="rozumieniem ze słuchu" locative="rozumieniu ze słuchu" vocative="rozumienie ze słuchu" />
+    </word>
+    <word id="shuumatsu" kana="しゅうまつ" kanji="週末" type="noun" category="abstract" translation="weekend">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="weekendy" />
+          <form profile="few" cases="genitive" value="weekendów" />
+          <form profile="few" cases="dative" value="weekendom" />
+          <form profile="few" cases="accusative" value="weekendy" />
+          <form profile="few" cases="instrumental" value="weekendami" />
+          <form profile="few" cases="locative" value="weekendach" />
+          <form profile="few" cases="vocative" value="weekendy" />
+          <form profile="many" cases="nominative" value="weekendów" />
+          <form profile="many" cases="genitive" value="weekendów" />
+          <form profile="many" cases="dative" value="weekendom" />
+          <form profile="many" cases="accusative" value="weekendów" />
+          <form profile="many" cases="instrumental" value="weekendami" />
+          <form profile="many" cases="locative" value="weekendach" />
+          <form profile="many" cases="vocative" value="weekendów" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="weekend" genitive="weekendu" dative="weekendowi" accusative="weekend" instrumental="weekendem" locative="weekendzie" vocative="weekendzie" />
+    </word>
+    <word id="fukushuu" kana="ふくしゅう" kanji="復習" type="noun" category="abstract" translation="powtórka">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="powtórki" />
+          <form profile="few" cases="genitive" value="powtórek" />
+          <form profile="few" cases="dative" value="powtórkom" />
+          <form profile="few" cases="accusative" value="powtórki" />
+          <form profile="few" cases="instrumental" value="powtórkami" />
+          <form profile="few" cases="locative" value="powtórkach" />
+          <form profile="few" cases="vocative" value="powtórki" />
+          <form profile="many" cases="nominative" value="powtórek" />
+          <form profile="many" cases="genitive" value="powtórek" />
+          <form profile="many" cases="dative" value="powtórkom" />
+          <form profile="many" cases="accusative" value="powtórek" />
+          <form profile="many" cases="instrumental" value="powtórkami" />
+          <form profile="many" cases="locative" value="powtórkach" />
+          <form profile="many" cases="vocative" value="powtórek" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="powtórka" genitive="powtórki" dative="powtórce" accusative="powtórkę" instrumental="powtórką" locative="powtórce" vocative="powtórko" />
+    </word>
+    <word id="madogiwazoku" kana="まどぎわぞく" kanji="窓際族" type="noun" category="person" translation="pracownik odsunięty na boczny tor">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="pracownicy odsunięci na boczny tor" />
+          <form profile="few" cases="genitive" value="pracowników odsuniętych na boczny tor" />
+          <form profile="few" cases="dative" value="pracownikom odsuniętym na boczny tor" />
+          <form profile="few" cases="accusative" value="pracowników odsuniętych na boczny tor" />
+          <form profile="few" cases="instrumental" value="pracownikami odsuniętymi na boczny tor" />
+          <form profile="few" cases="locative" value="pracownikach odsuniętych na boczny tor" />
+          <form profile="few" cases="vocative" value="pracownicy odsunięci na boczny tor" />
+          <form profile="many" cases="nominative" value="pracowników odsuniętych na boczny tor" />
+          <form profile="many" cases="genitive" value="pracowników odsuniętych na boczny tor" />
+          <form profile="many" cases="dative" value="pracownikom odsuniętym na boczny tor" />
+          <form profile="many" cases="accusative" value="pracowników odsuniętych na boczny tor" />
+          <form profile="many" cases="instrumental" value="pracownikami odsuniętymi na boczny tor" />
+          <form profile="many" cases="locative" value="pracownikach odsuniętych na boczny tor" />
+          <form profile="many" cases="vocative" value="pracowników odsuniętych na boczny tor" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="pracownik odsunięty na boczny tor" genitive="pracownika odsuniętego na boczny tor" dative="pracownikowi odsuniętemu na boczny tor" accusative="pracownika odsuniętego na boczny tor" instrumental="pracownikiem odsuniętym na boczny tor" locative="pracowniku odsuniętym na boczny tor" vocative="pracowniku odsunięty na boczny tor" />
+    </word>
   </words>
 </dictionary>
