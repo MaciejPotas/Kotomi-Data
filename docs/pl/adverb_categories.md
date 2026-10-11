@@ -87,6 +87,7 @@ Przykłady niepoprawnego użycia:
 | `{adverb[id:saikin, category:frequency]}` | Brak kandydatów dla powyższych danych |
 | `{adverb[category:time, category:frequency]}` | Parser odrzuca powtórzoną właściwość |
 | `{adverb[categories:time]}` | Parser odrzuca nieznaną właściwość |
+| `{adverb[occurrence:left]}` | Parser odrzuca nieobsługiwany kontekst gramatyczny |
 | `{adverb[category:time, form:dictionary]}` | Parser odrzuca odmianę przysłówka |
 
 Enumeracja zwraca pusty zbiór przy sprzecznych lub niespełnionych ograniczeniach.
@@ -95,13 +96,11 @@ ograniczenia kategorii, więc niezgodne lub nieaktualne przypisanie kończy się
 `ProjectError`. Wybór słowa odbywa się raz, we wspólnym solverze, bez wyjątków
 dla konkretnych ID.
 
-`occurrence` zachowuje dotychczasowe znaczenie kontekstu gramatycznego: jawne
-adresy należą do realizacji źródłowych i muszą wskazywać kompletny zadeklarowany
-kontekst i być częścią obsługiwanej konstrukcji gramatycznej. Przysłówki nie pełnią
-w niej takiej roli, więc jawne `occurrence` nadal kończy się błędem analizy, choć
-wspólny parser rozpoznaje tę właściwość. W zwykłych parach zdań wystarczy
-alias. Skompilowane wystąpienia tokenów i powtórzone wyjścia nadal współdzielą
-wybór słowa.
+Jawne `occurrence:...` nie jest obsługiwane przez przysłówki: parser je odrzuca,
+a IntelliSense go nie proponuje. Ta właściwość dotyczy kontekstów gramatycznych
+innych obsługiwanych konstrukcji. Powtórzone tokeny przysłówków współdzielą
+wybrane słowo przez alias `@name`; wewnętrzne wystąpienia skompilowanych tokenów
+nie wymagają jawnego `occurrence`.
 
 Kategorie nie sprawdzają zgodności z czasem zdania, rekcji, przeczenia,
 naturalnego szyku ani sensowności każdej pary przysłówek/czasownik. Pattern trzeba
@@ -112,8 +111,8 @@ dodaje polskiej odmiany przysłówków ani nowych reguł polskiej gramatyki.
 
 Pola korzystające z `placeholder_completions` współdzielą kontrakt możliwości:
 pytania i odpowiedzi patternów, edycja konstrukcji oraz istniejący asystent przy
-polu tekstowym. `{adverb[` proponuje `id`, `category` i `occurrence`, bez form,
-ról i cech. `{adverb[category:` czyta aktywny katalog, także własne i jeszcze
+polu tekstowym. `{adverb[` proponuje `id` i `category`, bez `occurrence`, odmiany,
+ról ani cech. `{adverb[category:` czyta aktywny katalog, także własne i jeszcze
 nieużywane kategorie. Wpisany fragment zawęża podpowiedzi. Użyta właściwość nie
 pojawia się ponownie; działają kolejności `id, category` oraz `category, id`.
 Wstawiony tekst jest zgodny z parserem. Okno wstawiania placeholdera również

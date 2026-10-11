@@ -86,6 +86,7 @@ Invalid examples and their outcomes:
 | `{adverb[id:saikin, category:frequency]}` | No candidates with the example data |
 | `{adverb[category:time, category:frequency]}` | Parser rejects repeated property |
 | `{adverb[categories:time]}` | Parser rejects unknown property |
+| `{adverb[occurrence:left]}` | Parser rejects unsupported grammar context |
 | `{adverb[category:time, form:dictionary]}` | Parser rejects inflection on a formless word |
 
 Enumeration returns an empty set for contradictory or unsatisfied constraints;
@@ -94,13 +95,11 @@ preview generation raises `NoCompatibleChoices`. Bound rendering also checks
 bindings with `ProjectError`. Words are selected once, without another solver or
 special handling for particular IDs.
 
-`occurrence` keeps its existing grammatical-context semantics: explicit context
-addresses belong to source realizations and must refer to a complete declared
-context and participate in a supported grammatical construction. Adverbs do not
-provide such a construction member, so an explicit `occurrence` remains rejected
-at analysis even though the common parser recognizes the property. Aliases suffice for normal
-bilingual examples. Compiled token occurrences and repeated outputs still share
-the lexical selection.
+Explicit `occurrence:...` is not supported by adverb tokens: the parser rejects
+it and IntelliSense does not offer it. That property addresses grammatical
+contexts in other supported constructions. Repeated adverb tokens share their
+selection through the `@name` alias; compiled token occurrences do not require
+an explicit `occurrence` property.
 
 Categories do not enforce tense compatibility, verb valency, negation, natural
 word order or the suitability of every adverb/verb pairing. Use an appropriate
@@ -111,7 +110,7 @@ inflection were added.
 
 All text surfaces using `placeholder_completions` share the capability contract:
 pattern questions and answers, composite authoring and the existing inline
-assistant. `{adverb[` offers `id`, `category` and `occurrence`, but no forms,
+assistant. `{adverb[` offers `id` and `category`, but not `occurrence`, forms,
 roles or features. `{adverb[category:` reads the active dictionary catalog,
 including unused custom categories. Typing a prefix filters the list. Used
 properties are not offered again; both `id, category` and `category, id` work.
