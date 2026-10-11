@@ -147,8 +147,8 @@
     },
     {
       "path": "apps/lessons/mobile.py",
-      "sha256": "2dbaa3ff86d2b0792111010d28adc2d36566c3f5a0241270f515f386cc5b4b8a",
-      "url": "quizzes/lessons/mobile.py?kotomi_sha256=2dbaa3ff86d2b0792111010d28adc2d36566c3f5a0241270f515f386cc5b4b8a"
+      "sha256": "a1ff128a8d82fa985a8a532ec7c4e3d899ed08aaf6ea4492331d554fda50f466",
+      "url": "quizzes/lessons/mobile.py?kotomi_sha256=a1ff128a8d82fa985a8a532ec7c4e3d899ed08aaf6ea4492331d554fda50f466"
     },
     {
       "path": "apps/verbs/Kotomi_verbs.py",
