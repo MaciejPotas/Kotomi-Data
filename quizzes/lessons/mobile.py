@@ -1260,12 +1260,12 @@ def create_app_class():
         def refresh_picker_labels(self) -> None:
             selected, available = self.pattern_selection.counts()
             self.pattern_picker.text = (
-                f"{ui_text('quiz.patterns', 'Patterns')}: "
+                f"{ui_text('quiz.patterns')}: "
                 f"{selected}/{available}  ›"
             )
             selected, available = self.form_selection.counts()
             self.form_picker.text = (
-                f"{ui_text('quiz.forms', 'Forms')}: "
+                f"{ui_text('quiz.forms')}: "
                 f"{selected}/{available}  ›"
             )
 
@@ -1442,7 +1442,7 @@ def create_app_class():
             def update_header() -> None:
                 selected, _total = selection.counts()
                 done.text = (
-                    f"{ui_text('mobile.picker_done', 'Done')} ({selected})"
+                    f"{ui_text('mobile.picker_done')} ({selected})"
                 )
                 self.refresh_picker_labels()
 
