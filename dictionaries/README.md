@@ -100,3 +100,5 @@ and `te_form=住んで`. Patterns construct `住んでいます`; it is not anot
 Its `target` role accepts places for `に`, not activity-location `で`.
 The dated [lesson import record](../lessons/szymon_pierwsza_audit.pl.md) documents
 an editorial change, not a test contract or a fixed vocabulary inventory.
+
+Adverb catalogs and multi-value `categories` memberships: [English](../docs/eng/adverb_categories.md) / [Polski](../docs/pl/adverb_categories.md). Values are declared in dictionary XML and validated; noun categories keep their existing semantics.
