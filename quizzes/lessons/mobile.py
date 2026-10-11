@@ -1261,12 +1261,12 @@ def create_app_class():
             selected, available = self.pattern_selection.counts()
             self.pattern_picker.text = (
                 f"{ui_text('quiz.patterns')}: "
-                f"{selected}/{available}  ›"
+                f"{selected}/{available}  >"
             )
             selected, available = self.form_selection.counts()
             self.form_picker.text = (
                 f"{ui_text('quiz.forms')}: "
-                f"{selected}/{available}  ›"
+                f"{selected}/{available}  >"
             )
 
         def set_all_patterns(self, active: bool) -> None:
@@ -1340,7 +1340,7 @@ def create_app_class():
                 size_hint_y=None, height=dp(54), spacing=dp(3),
             )
             back = AppButton(
-                text="‹", size_hint_x=None, width=dp(40), height=dp(48),
+                text="<", size_hint_x=None, width=dp(40), height=dp(48),
                 font_size="27sp", color=PICKER_TEXT,
                 background_color=(1, 1, 1, 1),
             )
@@ -1378,11 +1378,6 @@ def create_app_class():
                 search_bg.size = search_panel.size
             search_panel.bind(pos=fit_search, size=fit_search)
             fit_search()
-            search_panel.add_widget(AppLabel(
-                text="⌕", font_size="25sp", color=PICKER_MUTED,
-                fixed_height=42, single_line=True,
-                size_hint_x=None, width=dp(24),
-            ))
             search = TextInput(
                 hint_text=ui_text(search_key, ""),
                 font_name=POLISH_FONT,
@@ -1476,7 +1471,7 @@ def create_app_class():
                 for category, section_label, entries in matching_groups():
                     closed = category in collapsed
                     section_header = AppButton(
-                        text=("▸  " if closed else "▾  ") + section_label
+                        text=("[+]  " if closed else "[-]  ") + section_label
                              + f"  ({len(entries)})",
                         font_size="16sp",
                         halign="left", color=PICKER_TEXT,
