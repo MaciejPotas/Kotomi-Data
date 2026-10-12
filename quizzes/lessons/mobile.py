@@ -1355,13 +1355,12 @@ def create_app_class():
                 halign="center", fixed_height=48, single_line=True,
             )
             header.add_widget(heading)
-            done = AppButton(
-                size_hint_x=None, width=dp(112), height=dp(48),
+            selection_count = AppLabel(
+                size_hint_x=None, width=dp(112), fixed_height=48,
                 font_size="15sp", color=PICKER_BLUE,
-                background_color=(1, 1, 1, 1),
+                single_line=True,
             )
-            done.bind(on_release=lambda *_: modal.dismiss())
-            header.add_widget(done)
+            header.add_widget(selection_count)
             root.add_widget(header)
             root.add_widget(AppLabel(
                 text=ui_text(hint_key, ""),
@@ -1418,18 +1417,18 @@ def create_app_class():
                 orientation="horizontal",
                 size_hint_y=None, height=dp(47), spacing=dp(8),
             )
-            select_all = AppButton(
-                text=ui_text("action.select_all"),
-                height=dp(47), font_size="14sp",
-                color=PICKER_BLUE, background_color=PICKER_SELECTED,
-            )
             clear = AppButton(
                 text=ui_text("action.clear_selection"),
                 height=dp(47), font_size="14sp",
                 color=PICKER_MUTED, background_color=PICKER_BACKGROUND,
             )
-            actions.add_widget(select_all)
+            confirm = AppButton(
+                text=ui_text("action.ok"),
+                height=dp(47), font_size="16sp",
+                color=(1, 1, 1, 1), background_color=PICKER_BLUE,
+            )
             actions.add_widget(clear)
+            actions.add_widget(confirm)
             root.add_widget(actions)
             modal.add_widget(root)
 
@@ -1439,10 +1438,8 @@ def create_app_class():
             filter_buttons: Dict[str, AppButton] = {}
 
             def update_header() -> None:
-                selected, _total = selection.counts()
-                done.text = (
-                    f"{ui_text('mobile.picker_done')} ({selected})"
-                )
+                selected, total = selection.counts()
+                selection_count.text = f"{selected}/{total}"
                 self.refresh_picker_labels()
 
             def matching_groups():
@@ -1539,20 +1536,19 @@ def create_app_class():
                 chips.add_widget(chip)
                 filter_buttons[key] = chip
 
-            def select_matching(active: bool) -> None:
-                # Bulk actions operate on the current search/filter result,
-                # including rows hidden in collapsed sections.
-                visible_ids = [
+            def clear_matching() -> None:
+                # Clear only matching options, including collapsed sections.
+                matching_ids = [
                     option_id
                     for _category, _heading, entries in matching_groups()
                     for option_id, _label, enabled in entries if enabled
                 ]
-                selection.select_many(visible_ids, active)
+                selection.select_many(matching_ids, False)
                 update_header()
                 render_rows(reset_scroll=False)
 
-            select_all.bind(on_release=lambda *_: select_matching(True))
-            clear.bind(on_release=lambda *_: select_matching(False))
+            clear.bind(on_release=lambda *_: clear_matching())
+            confirm.bind(on_release=lambda *_: modal.dismiss())
             search.bind(text=lambda *_: render_rows(reset_scroll=True))
             update_header()
             choose_filter("all")
