@@ -38,6 +38,7 @@ from platforms.mobile.presentation import (
     MOBILE_WRONG_BACKGROUND,
     MobileMultiSelection,
     filter_mobile_picker_groups,
+    mobile_picker_row_text,
     MobileReviewInputMixin,
     fitted_compact_text_layout,
     fitted_single_line_font_size,
@@ -446,23 +447,26 @@ def create_app_class():
                 text=label,
                 font_size="16sp",
                 color=PICKER_TEXT,
+                disabled_color=PICKER_TEXT,
                 size_hint_y=None,
             )
             subtitle = AppLabel(
                 text=detail,
                 font_size="12sp",
                 color=PICKER_MUTED,
+                disabled_color=PICKER_MUTED,
                 fixed_height=21,
                 single_line=True,
             )
             text_column.add_widget(title)
-            text_column.add_widget(subtitle)
+            if detail:
+                text_column.add_widget(subtitle)
             text_column.bind(minimum_height=text_column.setter("height"))
             text_column.bind(height=self._fit_height)
             self.add_widget(text_column)
             self.bind(pos=self._update_geometry, size=self._update_geometry)
             self.disabled = not enabled
-            self.opacity = 1 if enabled else 0.50
+            self.opacity = 1 if enabled else 0.75
             self.set_selected(selected)
             self._update_geometry()
             self._update_check_geometry()
@@ -1486,12 +1490,12 @@ def create_app_class():
                     if closed:
                         continue
                     for option_id, label, enabled in entries:
-                        detail = (
-                            ui_text("mobile.picker_unavailable")
-                            if not enabled else (option_id if option_id != label else "")
+                        title_text, detail = mobile_picker_row_text(
+                            group, option_id, label, enabled,
+                            ui_text("mobile.picker_unavailable"),
                         )
                         row = MobilePickerRow(
-                            label=label, detail=detail,
+                            label=title_text, detail=detail,
                             selected=selection.is_selected(option_id),
                             enabled=enabled,
                             on_toggle=lambda key=option_id: set_selected(key),
