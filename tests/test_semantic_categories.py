@@ -49,3 +49,14 @@ class SemanticCategoryTests(unittest.TestCase):
         self.dictionary.remove(self.dictionary.find('categories'))
         self.dictionary.find('./words/word').attrib.pop('categories')
         self.validate()
+
+    def test_text_and_tail_rejected_but_whitespace_allowed(self):
+        for path in ('categories', './categories/category'):
+            for field in ('text', 'tail'):
+                with self.subTest(path=path, field=field):
+                    node = self.dictionary.find(path)
+                    setattr(node, field, 'unexpected text')
+                    with self.assertRaisesRegex(AssertionError, 'Invalid semantic'):
+                        self.validate()
+                    setattr(node, field, '\n  \t')
+                    self.validate()

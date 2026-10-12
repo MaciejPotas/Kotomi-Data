@@ -154,3 +154,43 @@ Dla produkcyjnego Content, powyższego ogólnego patternu częstotliwości, form
 To dokładne wyniki, także z małą literą na początku. Zwykłe wyjście przysłówka
 nie dodaje reguły wielkiej litery. Identyczne pary mogą powtarzać się dla różnych
 istniejących opcji kontekstu, gdy pattern nie zawiera tokenu kontekstu.
+
+## Uwagi po review: walidacja i zgodność parsera
+
+Kotomi 1.8 zaostrza **kontrakt parsera** dla jawnego `occurrence` przysłówka.
+To osobna zmiana walidacji, a nie warunek działania kategorii semantycznych.
+Wcześniej parser akceptował tę właściwość, lecz pełna analiza patternu ją odrzucała:
+niezadeklarowany kontekst źródłowy był nieznany lub niekompletny, w poprawnym kontekście
+liczenia przysłówek pozostawał nierozwiązany, a adres kontekstu po stronie japońskiej
+był niedozwolony. Nowy kontrakt zgłasza błąd wcześniej i usuwa z IntelliSense
+właściwość, z którą nie dało się wygenerować zdania. Do współdzielenia słowa służy
+`@when`; jawny kontekst nie jest potrzebny. Audyt dostarczanych plików XML Content
+nie wykazał zależności od `occurrence` przysłówka. Nie obejmuje on samodzielnie
+zmienianych projektów użytkowników.
+
+Katalog XML dopuszcza wyłącznie białe znaki służące formatowaniu. Niepusty tekst
+`text` lub `tail` elementu `<categories>` albo jego dzieci `<category>` jest odrzucany.
+Zapis nie może więc po cichu usunąć tekstu zaakceptowanego przy odczycie. Regułę
+sprawdzają silnik i walidator Content.
+
+## Gotowy pattern częstotliwości
+
+W `patterns/sentence_maps.xml` znajduje się teraz **Częstotliwość czynności**.
+Studio i Lesson Sentence Quiz odnajdują go w zwykłym katalogu patternów:
+
+```text
+{adverb@frequency[category:frequency].translation} {verb[form, polarity:affirmative].translation}.
+{adverb@frequency[category:frequency]} {verb[form, polarity:affirmative]}。
+```
+
+Przysłówek jest wybierany przez kategorię, a twierdzącą formę czasownika można wybrać.
+Na przykład `polite_nonpast` daje pokazane wyżej zdania o obecnych zwyczajach.
+Nie trzeba wskazywać ID przysłówka, tworzyć słownika ani osobnego quizu. Sama kategoria
+nie kontroluje sensu zdania ani nie dostarcza brakującego dopełnienia czasownika.
+
+Testy LessonSentenceQuiz na syntetycznych danych obejmują lekcję z czasownikiem
+i przysłówkiem w obu kolejnościach, niezgodne przysłówki czasu, preferowanie słów
+pomocniczych z lekcji, dobieranie ich spoza lekcji, statystyki zgodności, generowanie
+i spójność obu języków. Korzystają z czterech przysłówków fixture'u i dwóch jawnie
+utworzonych czasowników, bez produkcyjnych lekcji. Quiz nadal usuwa powtórzone
+pary zdań zgodnie z istniejącą logiką.

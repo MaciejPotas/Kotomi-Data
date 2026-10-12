@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sentence_maps schema_version="2" instruction_language_id="pl">
   <sentence_patterns>
+    <sentence_pattern id="Częstotliwość czynności" category="basic">
+      <question>{adverb@frequency[category:frequency].translation} {verb[form, polarity:affirmative].translation}.</question>
+      <answer>{adverb@frequency[category:frequency]} {verb[form, polarity:affirmative]}。</answer>
+    </sentence_pattern>
     <sentence_pattern id="Sam czasownik" category="basic">
       <question>{context.translation}{verb[form].translation}.</question>
       <answer>{context.kana}{verb[form]}</answer>

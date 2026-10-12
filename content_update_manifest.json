@@ -80,8 +80,8 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "fc02060f4d7869fdeb9951b7877a0d42da30bc4e6300a107fd5886a751416bee",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=fc02060f4d7869fdeb9951b7877a0d42da30bc4e6300a107fd5886a751416bee"
+      "sha256": "3002f882800044e20972e61e3aadf96ceff0cd5c51acb5cd65f2ba3da40b575f",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=3002f882800044e20972e61e3aadf96ceff0cd5c51acb5cd65f2ba3da40b575f"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",

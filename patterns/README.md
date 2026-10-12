@@ -140,3 +140,16 @@ A symbolic question uses `{interrogative@amount[asks_for:count]}` as the quantit
 Current Content revision 58 requires Kotomi 1.8, including lexical context references and semantic adverb categories. See [grammar contexts](grammar_contexts.md) and [Polish documentation](grammar_contexts.pl.md) for the canonical two-context pattern, source agreement and release order.
 
 Semantic adverb selection uses `{adverb@when[category:time]}` with a shared alias in both languages. See [English](../docs/eng/adverb_categories.md) / [Polski](../docs/pl/adverb_categories.md) for valid/invalid examples and empty-domain behavior.
+
+## Semantic frequency / Częstotliwość semantyczna
+
+The shipped **Częstotliwość czynności** pattern selects `adverb@frequency` by
+`category:frequency`, paired with an affirmative dynamic verb form. It is available
+in Studio and lesson sentence quizzes without choosing an adverb ID.
+
+Gotowy pattern **Częstotliwość czynności** wybiera `adverb@frequency` przez
+`category:frequency` i łączy go z wybraną twierdzącą formą czasownika. Jest dostępny
+w Studio i quizach zdań z lekcji bez wskazywania ID przysłówka.
+
+See [English](../docs/eng/adverb_categories.md) /
+[polski](../docs/pl/adverb_categories.md) for the syntax and limitations.

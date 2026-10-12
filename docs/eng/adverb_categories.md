@@ -153,3 +153,41 @@ With production Content, the generic frequency pattern above, form
 These are exact outputs, including their lower-case source initial. A plain
 adverb output does not introduce a new sentence-capitalization rule. Identical
 pairs can recur across existing context options when the pattern omits context.
+
+## Review notes: validation and parser compatibility
+
+Kotomi 1.8 tightens the **parser contract** for explicit adverb `occurrence`.
+This is a separate validation change, not a prerequisite of semantic categories.
+Previously the parser accepted the property, but complete pattern analysis rejected
+it: an undeclared source context was unknown/incomplete, a declared counted context
+left the adverb unresolved, and a target context address was unsupported. The new
+contract reports the error earlier and avoids offering a non-renderable property
+in IntelliSense. Use `@when` to share a word; no explicit context is needed.
+The shipped Content XML was audited and contains no adverb `occurrence` dependency.
+This audit does not cover independently edited user projects.
+
+Catalog XML permits indentation whitespace only. Non-whitespace `text` or `tail`
+on `<categories>` or its `<category>` children is rejected, so save cannot silently
+remove text accepted at load time. Both the engine and Content validator enforce
+this rule.
+
+## Shipped frequency pattern
+
+`patterns/sentence_maps.xml` now includes **Częstotliwość czynności**. Studio and
+Lesson Sentence Quiz discover it through the normal pattern catalog:
+
+```text
+{adverb@frequency[category:frequency].translation} {verb[form, polarity:affirmative].translation}.
+{adverb@frequency[category:frequency]} {verb[form, polarity:affirmative]}。
+```
+
+It selects the adverb by category and keeps affirmative verb forms selectable.
+For example, choose `polite_nonpast` for the present habit examples above. It does
+not require an adverb ID, a new dictionary, or a dedicated quiz. The category itself
+does not enforce sentence meaning or supply a missing verb complement.
+
+Synthetic LessonSentenceQuiz tests cover mixed verb/adverb lessons in both orders,
+incompatible time adverbs, lesson support preference, global support fallback,
+compatibility statistics, generation and bilingual word identity. They use the
+four-word adverb fixture plus two explicitly constructed verbs, never production
+lessons. Generated identical pairs remain deduplicated by the existing quiz logic.

@@ -294,8 +294,11 @@ def validate_semantic_categories(root: Path | None = None) -> None:
         schema = dictionary.get("schema") or entry.get("schema")
         catalogs = dictionary.findall("categories")
         for catalog in catalogs:
-            if catalog.attrib or any(node.tag != "category" or set(node.attrib) != {"id"}
-                                     or len(node) for node in catalog):
+            if (catalog.attrib or (catalog.text or "").strip()
+                    or (catalog.tail or "").strip()
+                    or any(node.tag != "category" or set(node.attrib) != {"id"}
+                           or len(node) or (node.text or "").strip()
+                           or (node.tail or "").strip() for node in catalog)):
                 raise AssertionError("Invalid semantic category catalog entry")
         categories = [node.get("id", "") for node in dictionary.findall("./categories/category")]
         if catalogs and schema != "adverb":
