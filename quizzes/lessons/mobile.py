@@ -1427,8 +1427,8 @@ def create_app_class():
                 height=dp(47), font_size="16sp",
                 color=(1, 1, 1, 1), background_color=PICKER_BLUE,
             )
-            actions.add_widget(clear)
             actions.add_widget(confirm)
+            actions.add_widget(clear)
             root.add_widget(actions)
             modal.add_widget(root)
 
