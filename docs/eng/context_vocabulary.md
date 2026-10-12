@@ -1,6 +1,6 @@
 # Dictionaries, context references and lexical tokens
 
-Kotomi 1.7 reads one canonical Content project. A dictionary owns each lexical
+Since Kotomi 1.7, one canonical Content project is loaded. A dictionary owns each lexical
 entry; lessons and context pools refer to it. `kinou` belongs to `adverbs`.
 `ashita` remains in `nouns` and can be referenced by any context. A word may be
 used by any number of lessons and pools without copying its translation or kana.
@@ -10,15 +10,16 @@ The retired `time_expressions` dictionary is not a separate source of words.
 
 | Dictionary ID | Schema | Token | Selection | Realization |
 |---|---|---|---|---|
-| `adverbs` | `adverb` | `adverb` | `id`, alias | direct outputs |
+| `adverbs` | `adverb` | `adverb` | `id`, `category`, alias | direct outputs |
 | `demonstratives` | `demonstrative` | `demonstrative` | `id`, alias | direct outputs; `agree`, `case` for source translation |
 | `expressions` | `expression` | `expression` | `id`, alias | direct outputs |
 
-All three support `occurrence` and the outputs `id`, `translation`, `kana`,
-`kanji`, `romaji`. A bare token returns kana. They do not support `form`,
-`polarity`, `role`, `feature` or `category` selectors. An explicit output requesting an empty optional field fails with a diagnostic;
-it does not invent text. An alias shares the selection, while `occurrence` identifies
-one local grammatical use of that selection.
+All three provide `id`, `translation`, `kana`, `kanji` and `romaji` outputs.
+A bare token returns kana. They do not support `form`, `polarity`, `role` or
+`feature`; only adverbs additionally support `category`. Explicit `occurrence`
+is not supported for adverbs and is not suggested by their IntelliSense.
+An alias shares the selected word across repeated uses. Requesting an empty
+optional output fails with a diagnostic rather than inventing text.
 
 The manifest registers the file and schema. The file declares the same ID and
 schema. Authoring capabilities come from `dictionary_config_for_language()`;
@@ -36,7 +37,8 @@ Add these registrations inside the existing `<dictionaries>` element:
 
 Older projects may omit all three dictionaries. A pattern using an absent
 dictionary cannot generate a sentence. Existing inline context options remain
-supported. Referenced context Content declares `min_kotomi_version="1.7"` so
+supported. Context references were introduced in Kotomi 1.7; Content with semantic
+adverb categories requires `min_kotomi_version="1.8"` so
 older applications cannot silently render an empty context.
 
 ## Complete dictionary examples
@@ -232,3 +234,5 @@ Dictionary editing blocks deletion or ID changes when a context or a Schema 4
 lesson references the word. A malformed lesson file prevents this safety check
 and blocks the destructive edit until it can be read. Editing lexical values
 under the same ID remains allowed and updates subsequent context resolutions.
+
+[Semantic categories: XML, selection, IntelliSense and Studio](adverb_categories.md).

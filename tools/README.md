@@ -19,3 +19,5 @@ python tools/validate_repository.py
 ```
 
 The validator is also executed by GitHub Actions. Keep repository-layout and cross-reference rules in this validator so accidental flat files, broken lesson references, or missing documentation are caught before merge.
+
+`validate_repository.py` validates dictionary semantic catalogs and memberships independently of lesson membership and vocabulary size. `tests/test_semantic_categories.py` uses temporary XML mutation fixtures.

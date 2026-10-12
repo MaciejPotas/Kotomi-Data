@@ -1,6 +1,6 @@
 # Słowniki, referencje kontekstów i tokeny leksykalne
 
-Kotomi 1.7 wczytuje jeden projekt Content. Słownik przechowuje słowo, a lekcje
+Od Kotomi 1.7 używamy jednego projektu Content. Słownik przechowuje słowo, a lekcje
 i pule kontekstów wskazują ten wpis. `kinou` należy do `adverbs`. `ashita` zostaje
 w `nouns` i może być używane przez dowolny kontekst. Jedno słowo może należeć do
 wielu lekcji i pul bez kopiowania tłumaczenia lub kany. Wycofany słownik
@@ -10,15 +10,17 @@ wielu lekcji i pul bez kopiowania tłumaczenia lub kany. Wycofany słownik
 
 | ID słownika | Schemat | Token | Wybór | Realizacja |
 |---|---|---|---|---|
-| `adverbs` | `adverb` | `adverb` | `id`, alias | wyjścia bezpośrednie |
+| `adverbs` | `adverb` | `adverb` | `id`, `category`, alias | wyjścia bezpośrednie |
 | `demonstratives` | `demonstrative` | `demonstrative` | `id`, alias | wyjścia bezpośrednie; `agree`, `case` dla tłumaczenia |
 | `expressions` | `expression` | `expression` | `id`, alias | wyjścia bezpośrednie |
 
-Wszystkie trzy obsługują `occurrence` oraz wyjścia `id`, `translation`, `kana`,
-`kanji`, `romaji`. Token bez końcówki zwraca kanę. Nie obsługują selektorów
-`form`, `polarity`, `role`, `feature` ani `category`. Jawne żądanie pustego pola opcjonalnego kończy się komunikatem błędu;
-silnik nie wymyśla brakującego tekstu. Alias współdzieli wybór słowa, a `occurrence` wskazuje
-jedno lokalne użycie gramatyczne tego wyboru.
+Wszystkie trzy udostępniają wyjścia `id`, `translation`, `kana`, `kanji`
+i `romaji`. Token bez końcówki zwraca kanę. Nie obsługują selektorów
+`form`, `polarity`, `role` ani `feature`; tylko przysłówki dodatkowo obsługują
+`category`. Jawne `occurrence` nie jest obsługiwane dla przysłówków i nie
+pojawia się w ich IntelliSense. Alias współdzieli wybrane słowo, nawet gdy
+występuje ono kilka razy. Jawne żądanie pustego pola opcjonalnego kończy się
+błędem; silnik nie wymyśla brakującego tekstu.
 
 Manifest rejestruje plik i schemat. Plik deklaruje takie samo ID i schemat.
 Możliwości edytora określa `dictionary_config_for_language()`. Content nie może
@@ -36,7 +38,8 @@ Do istniejącej sekcji `<dictionaries>` dodaj rejestracje:
 
 Starszy projekt może nie mieć tych trzech słowników. Pattern używający brakującego
 słownika nie wygeneruje zdania. Konteksty z tekstem wpisanym bezpośrednio nadal
-działają. Content z referencjami kontekstów deklaruje `min_kotomi_version="1.7"`,
+działają. Referencje kontekstów wprowadzono w Kotomi 1.7; Content z kategoriami
+przysłówków wymaga `min_kotomi_version="1.8"`,
 żeby starsza aplikacja nie potraktowała referencji jako pustego kontekstu.
 
 ## Kompletne przykłady słowników
@@ -236,3 +239,5 @@ Edytor słowników blokuje usunięcie lub zmianę ID słowa używanego przez kon
 albo lekcję w Schema 4. Jeśli plik lekcji jest uszkodzony i nie można sprawdzić
 referencji, operacja również jest blokowana. Zmiana wartości słowa pod tym samym
 ID pozostaje dozwolona i zmienia kolejne rozwiązania referencji kontekstów.
+
+[Kategorie semantyczne: XML, wybór, IntelliSense i Studio](adverb_categories.md).

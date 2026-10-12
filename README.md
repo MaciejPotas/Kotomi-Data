@@ -133,3 +133,5 @@ for complete XML, token results, suffixes, retirement and test architecture.
 The validator checks every lesson/context/quiz reference without fixed lesson
 counts or group names. Mutation tests use versioned fixtures. Published lexical
 quality remains a separate, explicitly scoped check in the combined Kotomi suite.
+
+Adverb semantic categories (Kotomi 1.8.0+): [English](docs/eng/adverb_categories.md) / [Polski](docs/pl/adverb_categories.md).

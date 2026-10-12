@@ -1,16 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="2" id="adverbs" schema="adverb" target_language_id="ja" label="Adverbs" instruction_language_id="pl">
+  <categories>
+    <category id="frequency" />
+    <category id="time" />
+    <category id="manner" />
+    <category id="degree" />
+    <category id="focus" />
+  </categories>
   <words>
-    <word id="tokuni" kana="とくに" kanji="特に" translation="szczególnie" />
-    <word id="mainichi" kana="まいにち" kanji="毎日" translation="codziennie" />
-    <word id="asatte" kana="あさって" kanji="明後日" translation="pojutrze" />
-    <word id="kinou" kana="きのう" kanji="昨日" translation="wczoraj" />
-    <word id="kyou" kana="きょう" kanji="今日" translation="dzisiaj" />
-    <word id="ototoi" kana="おととい" kanji="一昨日" translation="przedwczoraj" />
-    <word id="sensenshuu" kana="せんせんしゅう" kanji="先々週" translation="dwa tygodnie temu" />
-    <word id="senshuu" kana="せんしゅう" kanji="先週" translation="w ubiegłym tygodniu" />
-    <word id="konshuu" kana="こんしゅう" kanji="今週" translation="w tym tygodniu" />
-    <word id="raishuu" kana="らいしゅう" kanji="来週" translation="w przyszłym tygodniu" />
-    <word id="saraishuu" kana="さらいしゅう" kanji="再来週" translation="za dwa tygodnie" />
+    <word id="tokuni" kana="とくに" kanji="特に" translation="szczególnie" categories="focus" />
+    <word id="mainichi" kana="まいにち" kanji="毎日" translation="codziennie" categories="frequency" />
+    <word id="asatte" kana="あさって" kanji="明後日" translation="pojutrze" categories="time" />
+    <word id="kinou" kana="きのう" kanji="昨日" translation="wczoraj" categories="time" />
+    <word id="kyou" kana="きょう" kanji="今日" translation="dzisiaj" categories="time" />
+    <word id="ototoi" kana="おととい" kanji="一昨日" translation="przedwczoraj" categories="time" />
+    <word id="sensenshuu" kana="せんせんしゅう" kanji="先々週" translation="dwa tygodnie temu" categories="time" />
+    <word id="senshuu" kana="せんしゅう" kanji="先週" translation="w ubiegłym tygodniu" categories="time" />
+    <word id="konshuu" kana="こんしゅう" kanji="今週" translation="w tym tygodniu" categories="time" />
+    <word id="raishuu" kana="らいしゅう" kanji="来週" translation="w przyszłym tygodniu" categories="time" />
+    <word id="saraishuu" kana="さらいしゅう" kanji="再来週" translation="za dwa tygodnie" categories="time" />
+    <word id="saikin" kana="さいきん" kanji="最近" translation="ostatnio" categories="time" />
+    <word id="tokidoki" kana="ときどき" kanji="時々" translation="czasami" categories="frequency" />
+    <word id="yoku" kana="よく" translation="często" categories="frequency" />
+    <word id="yukkuri" kana="ゆっくり" translation="powoli" categories="manner" />
+    <word id="totemo" kana="とても" translation="bardzo" categories="degree" />
   </words>
 </dictionary>
