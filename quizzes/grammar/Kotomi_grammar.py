@@ -47,14 +47,19 @@ def configure_quiz_profile(quiz_id: str, *, project=None) -> None:
     """Configure the live Grammar policy and refresh compatibility exports."""
     _logic.configure_quiz_profile(quiz_id, project=project)
     _sync_profile_exports()
+    global _policy, QUIZ_SETTINGS_CLASS, QUIZ_ENGINE_CLASS, SETTINGS_STORE_CLASS
+    _policy = _logic.snapshot_quiz_policy()
+    QUIZ_SETTINGS_CLASS = _policy.QUIZ_SETTINGS_CLASS
+    QUIZ_ENGINE_CLASS = _policy.QUIZ_ENGINE_CLASS
+    SETTINGS_STORE_CLASS = _policy.SETTINGS_STORE_CLASS
 
 
 def create_app_class():
-    return _mobile.create_app_class()
+    return _mobile.create_app_class(_policy)
 
 
 def create_embedded_controller():
-    return _mobile.create_embedded_controller()
+    return _mobile.create_embedded_controller(_policy)
 
 
 def main() -> int:
@@ -70,6 +75,7 @@ def __getattr__(name: str):
 
 
 _sync_profile_exports()
+_policy = _logic.snapshot_quiz_policy()
 
 __all__ = [
     *getattr(_logic, "__all__", ()),

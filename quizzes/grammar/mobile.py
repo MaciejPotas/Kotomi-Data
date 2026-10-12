@@ -22,14 +22,14 @@ from apps.availability.mobile import (
 )
 
 
-def create_app_class():
+def create_app_class(policy=None):
     """Return the shared mobile sentence UI configured by Grammar logic."""
-    return _create_mobile_sentence_app_class(_logic)
+    return _create_mobile_sentence_app_class(policy or _logic)
 
 
-def create_embedded_controller():
+def create_embedded_controller(policy=None):
     """Create a Grammar controller for the main Kotomi mobile launcher."""
-    app_class = create_app_class()
+    app_class = create_app_class(policy)
     controller = app_class()
     controller.embedded_mode = True
     return controller
