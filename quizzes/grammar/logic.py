@@ -14,6 +14,7 @@ import random
 import re
 import sys
 from typing import Callable, Dict, Iterable, List, Mapping, Optional, Sequence, Set
+from types import SimpleNamespace
 
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -23,6 +24,7 @@ if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
 from kotomi.core.project import Entity, ProjectError, Word
+from kotomi.core.project.errors import NoCompatibleChoices
 from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.application.quiz_project import QuizProject
 from kotomi.core.generation import (
@@ -139,9 +141,7 @@ class GrammarQuizSettings:
     polite_output: bool = True
     plain_output: bool = True
     enabled_forms: List[str] = field(default_factory=lambda: list(FORM_GROUPS))
-    enabled_patterns: List[str] = field(
-        default_factory=lambda: list(SUPPORTED_PATTERNS)
-    )
+    enabled_patterns: List[str] | None = None
     word_filter: str = ""
     quantity_range_enabled: bool = False
     quantity_range_min: int = 1
@@ -152,6 +152,12 @@ class GrammarQuizSettings:
     auto_advance_seconds: float = 100.0
     font_scale: float = 1.0
     mobile_button_scale: float = DEFAULT_MOBILE_BUTTON_SCALE
+
+    def __post_init__(self) -> None:
+        supported = getattr(type(self), "supported_patterns", SUPPORTED_PATTERNS)
+        if self.enabled_patterns is None:
+            self.enabled_patterns = list(supported)
+        self._pattern_labels = dict(getattr(type(self), "pattern_labels", PATTERN_LABELS))
 
     @classmethod
     def from_dict(cls, values: Mapping[str, object]) -> "GrammarQuizSettings":
@@ -168,7 +174,7 @@ class GrammarQuizSettings:
             enabled_patterns=[
                 str(value)
                 for value in values.get("enabled_patterns", defaults.enabled_patterns)
-                if str(value) in SUPPORTED_PATTERNS
+                if str(value) in defaults.enabled_patterns
             ],
             word_filter=str(values.get("word_filter", defaults.word_filter)),
             quantity_range_enabled=bool(
@@ -238,7 +244,7 @@ class GrammarQuizSettings:
 
     def summary(self) -> str:
         forms = ", ".join(FORM_GROUPS[name]["label"] for name in self.enabled_forms)
-        patterns = ", ".join(PATTERN_LABELS[name] for name in self.enabled_patterns)
+        patterns = ", ".join(self._pattern_labels.get(name, name) for name in self.enabled_patterns)
         summary = (
             f"{MODE_LABELS[self.mode]}\n"
             f"Pytania: {self.question_count}\n"
@@ -426,10 +432,17 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
     quiz = project.sentence_quizzes.get(quiz_id)
     if quiz is None:
         raise GrammarQuizError(f"Nie znaleziono quizu zdań '{quiz_id}'.")
-    effective_ids = project.sentence_quiz_pattern_ids(quiz)
-    selection_ids = project.sentence_quiz_selection_ids(quiz)
     expansions = project.sentence_quiz_pattern_expansions(quiz)
+    selection_ids = list(expansions)
+    effective_ids = list(dict.fromkeys(value for values in expansions.values() for value in values))
     if not effective_ids or not selection_ids:
+        if quiz.pattern_ids:
+            details = "; ".join(project.composite_diagnostics.values())
+            raise GrammarQuizError(
+                f"Quiz '{quiz.label}' has pattern definitions but no supported "
+                f"expansions for instruction language '{project.instruction_language.id}'. "
+                + details
+            )
         raise GrammarQuizError(f"Quiz '{quiz.label}' nie zawiera wzorców.")
 
     global ACTIVE_QUIZ_ID
@@ -497,16 +510,18 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
 
 
 class SettingsStore:
+    settings_class = GrammarQuizSettings
+
     def __init__(self, path: Path) -> None:
         self.path = path
 
     def load(self) -> GrammarQuizSettings:
         if not self.path.exists():
-            return GrammarQuizSettings()
+            return self.settings_class()
         try:
-            return GrammarQuizSettings.from_dict(load_settings(self.path))
+            return self.settings_class.from_dict(load_settings(self.path))
         except (OSError, ValueError):
-            return GrammarQuizSettings()
+            return self.settings_class()
 
     def save(self, settings: GrammarQuizSettings) -> None:
         settings.validate()
@@ -538,6 +553,7 @@ class GrammarQuizEngine:
             self._validate_project()
         self.language_context = self.project.language_context
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
+        self.pattern_expansions = dict(getattr(type(self), "profile_expansions", PATTERN_EXPANSIONS))
 
     def _validate_project(self) -> None:
         issues = [issue for issue in self.project.validate()
@@ -580,7 +596,7 @@ class GrammarQuizEngine:
     ) -> List[GenerationCombination]:
         combinations: List[GenerationCombination] = []
         for selected_id in settings.enabled_patterns:
-            for pattern_id in PATTERN_EXPANSIONS.get(
+            for pattern_id in self.pattern_expansions.get(
                 selected_id,
                 (selected_id,),
             ):
@@ -589,8 +605,8 @@ class GrammarQuizEngine:
                     continue
                 try:
                     analysis = self.shared_engine.analyze_pattern(pattern)
-                except ProjectError:
-                    continue
+                except ProjectError as error:
+                    raise GrammarQuizError(f"Pattern '{pattern_id}': {error}") from error
                 if not analysis.focus_slot:
                     continue
                 if not analysis.dynamic_slots:
@@ -669,16 +685,15 @@ class GrammarQuizEngine:
                 ):
                     return None
                 continue
-            try:
-                compatible = self.shared_engine.compatible(
-                    pattern_id,
-                    form_name=form_name,
-                    word_choices=word_choices,
-                    entity_choices=entity_choices,
-                    choice_scope=choice_scope,
-                )
-            except ProjectError:
-                return None
+            compatible = self.shared_engine.compatible(
+                pattern_id,
+                form_name=form_name,
+                word_choices=word_choices,
+                entity_choices=entity_choices,
+                choice_scope=choice_scope,
+            )
+            if not compatible.form_names and not word_choices and not entity_choices:
+                raise NoCompatibleChoices(f"Pattern '{pattern_id}' has no compatible words for form '{form_name}'.")
             candidate_values = compatible.words.get(slot, [])
             candidates = (
                 [
@@ -708,16 +723,13 @@ class GrammarQuizEngine:
             word_choices[slot] = selected.id
 
         for slot in analysis.entity_slots:
-            try:
-                compatible = self.shared_engine.compatible(
-                    pattern_id,
-                    form_name=form_name,
-                    word_choices=word_choices,
-                    entity_choices=entity_choices,
-                    choice_scope=choice_scope,
-                )
-            except ProjectError:
-                return None
+            compatible = self.shared_engine.compatible(
+                pattern_id,
+                form_name=form_name,
+                word_choices=word_choices,
+                entity_choices=entity_choices,
+                choice_scope=choice_scope,
+            )
             candidates = [
                 entity
                 for entity in compatible.entities.get(slot, [])
@@ -747,21 +759,27 @@ class GrammarQuizEngine:
                 value for value in combinations if value != preferred
             ]
         seen_keys = seen_keys or set()
+        rejected = []
         for attempt in range(128):
+            if not combinations:
+                break
             combination = (
                 preferred
                 if preferred is not None and attempt == 0
                 else self.rng.choice(combinations)
             )
-            question = self._question_for_combination(
-                settings,
-                combination,
-                rules,
-                word_usage or {},
-                recent_word_ids or (),
-            )
+            try:
+                question = self._question_for_combination(
+                    settings, combination, rules, word_usage or {}, recent_word_ids or (),
+                )
+            except NoCompatibleChoices as error:
+                rejected.append(str(error))
+                combinations = [value for value in combinations if value != combination]
+                continue
             if question is not None and question.key not in seen_keys:
                 return question
+        if not combinations and rejected:
+            raise GrammarQuizError("Brak zgodnych słów lub form. " + "; ".join(rejected))
         raise GrammarQuizError(
             "Nie udało się znaleźć kolejnego unikalnego pytania dla "
             "bieżących ustawień i filtrów."
@@ -789,24 +807,21 @@ class GrammarQuizEngine:
         )
         if selected is None:
             return None
-        try:
-            completed = self.shared_engine.complete(
-                combination.pattern_id,
-                form_name=combination.rule.target_form,
-                word_choices=selected[0],
-                entity_choices=selected[1],
-                choice_scope=choice_scope,
-                rng=self.rng,
-            )
-            preview = self.shared_engine.preview(
-                combination.pattern_id,
-                form_name=completed.form_name,
-                word_choices=completed.words,
-                entity_choices=completed.entities,
-                rng=self.rng,
-            )
-        except ProjectError:
-            return None
+        completed = self.shared_engine.complete(
+            combination.pattern_id,
+            form_name=combination.rule.target_form,
+            word_choices=selected[0],
+            entity_choices=selected[1],
+            choice_scope=choice_scope,
+            rng=self.rng,
+        )
+        preview = self.shared_engine.preview(
+            combination.pattern_id,
+            form_name=completed.form_name,
+            word_choices=completed.words,
+            entity_choices=completed.entities,
+            rng=self.rng,
+        )
 
         analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
         main_slot = analysis.focus_slot
@@ -967,7 +982,10 @@ class GrammarQuizEngine:
 
         rules = parse_slot_filter(settings.word_filter)
         combinations = self.build_combinations(settings)
+        rejected = []
         for attempt in range(128):
+            if not combinations:
+                break
             combination = combinations[attempt % len(combinations)]
             question = self._question_for_combination(
                 settings,
@@ -987,6 +1005,30 @@ QUIZ_ENGINE_CLASS = GrammarQuizEngine
 QUIZ_SESSION_CLASS = GrammarQuizSession
 SETTINGS_STORE_CLASS = SettingsStore
 QUIZ_ERROR_CLASS = GrammarQuizError
+
+
+def snapshot_quiz_policy():
+    """Freeze this profile for one host without retaining mutable module state."""
+    policy = SimpleNamespace(**{name: globals()[name] for name in __all__})
+    policy.PATTERN_LABELS = dict(PATTERN_LABELS)
+    policy.PATTERN_EXPANSIONS = dict(PATTERN_EXPANSIONS)
+
+    class ProfileSettings(GrammarQuizSettings):
+        supported_patterns = tuple(SUPPORTED_PATTERNS)
+        pattern_labels = dict(PATTERN_LABELS)
+
+    class ProfileEngine(GrammarQuizEngine):
+        profile_expansions = dict(PATTERN_EXPANSIONS)
+
+    class ProfileStore(SettingsStore):
+        settings_class = ProfileSettings
+
+    policy.QUIZ_SETTINGS_CLASS = ProfileSettings
+    policy.QUIZ_ENGINE_CLASS = ProfileEngine
+    policy.SETTINGS_STORE_CLASS = ProfileStore
+    filename = SETTINGS_FILENAME
+    policy.quiz_settings_path = lambda: settings_path(INSTALL_ROOT, filename)
+    return policy
 
 
 __all__ = [
