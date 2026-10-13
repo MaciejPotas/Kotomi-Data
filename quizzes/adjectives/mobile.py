@@ -52,6 +52,8 @@ from platforms.mobile.identity import (
     configure_windows_app_id,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
+from platforms.mobile.calculation_progress import run_calculation
+from platforms.mobile.quiz_preflight import check_quiz_grammar
 from kotomi.application.update_transport import QuizUpdater, UpdateError, load_update_url
 
 
@@ -2101,6 +2103,12 @@ def create_app_class():
                 callback(None, self.engine_error)
                 return
 
+            if not check_quiz_grammar(
+                self, selected_engine, settings,
+                lambda message: callback(None, message), font_name=MOBILE_FONT,
+            ):
+                return
+
             def worker() -> None:
                 try:
                     result = quiz_is_feasible(selected_engine, settings)
@@ -2161,28 +2169,20 @@ def create_app_class():
                 callback(None, self.engine_error)
                 return
 
-            def worker() -> None:
-                try:
-                    result = calculate_quiz_statistics(
-                        selected_engine,
-                        settings,
-                    )
-                    Clock.schedule_once(
-                        lambda _dt: callback(result, ""),
-                        0,
-                    )
-                except Exception as exception:
-                    message = mobile_error_text(
-                        self,
-                        exception,
-                        key="mobile.update_failed",
-                    )
-                    Clock.schedule_once(
-                        lambda _dt: callback(None, message),
-                        0,
-                    )
+            if not check_quiz_grammar(
+                self, selected_engine, settings,
+                lambda message: callback(None, message), font_name=MOBILE_FONT,
+            ):
+                return
 
-            threading.Thread(target=worker, daemon=True).start()
+            owner = self.manager.get_screen(self.manager.current)
+            run_calculation(
+                owner, tr("specialized.calculate_options"), tr("quiz.calculating"),
+                lambda: calculate_quiz_statistics(selected_engine, settings),
+                lambda result: callback(result, ""),
+                lambda error: callback(None, mobile_error_text(self, error)),
+                font_name=MOBILE_FONT,
+            )
 
         def _on_keyboard(self, _window, key, *_args):
             if key in (282, 290) and self.manager.current == "quiz":

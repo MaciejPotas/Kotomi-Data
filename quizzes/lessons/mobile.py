@@ -48,6 +48,8 @@ from platforms.mobile.presentation import (
     scaled_button_height,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
+from platforms.mobile.calculation_progress import run_calculation
+from kotomi.application.calculation import prepare_sentence_setup
 
 
 MOBILE_FONT = mobile_font_path(FONTS_DIR)
@@ -1201,13 +1203,28 @@ def create_app_class():
             self.add_widget(root)
 
         def on_pre_enter(self, *_args):
-            report = self.kotomi.sentence_engine.compatibility(
-                self.kotomi.catalog,
-                self.kotomi.current_lesson(),
+            controller = self.kotomi
+            engine, catalog = controller.sentence_engine, controller.catalog
+            lesson = controller.current_lesson()
+            self.report.text = ui_text("quiz.finding_patterns")
+            run_calculation(
+                self, ui_text("quiz.sentence_title"), ui_text("quiz.finding_patterns"),
+                lambda: prepare_sentence_setup(engine, catalog, lesson),
+                self._setup_ready, self._setup_failed, font_name=MOBILE_FONT,
             )
+
+        def _setup_failed(self, error):
+            self.manager.current = "lesson"
+            self.show_error(mobile_error_text(self, error))
+
+        def _setup_ready(self, prepared):
+            report, options, available_groups = prepared
+            if not report.matched_count or not report.supported_patterns:
+                self.manager.current = "lesson"
+                self.show_error(ui_text("quiz.no_sentence_words"))
+                return
             self.report.text = compatibility_text(report)
             supported = set(report.supported_patterns)
-            options = list(self.kotomi.sentence_engine.pattern_options())
             self.pattern_options = []
             self.composite_pattern_ids = {option.id for option in options if option.composite}
             for option in options:
@@ -1230,7 +1247,6 @@ def create_app_class():
                 enabled=supported,
             )
 
-            available_groups = self.kotomi.sentence_engine.available_form_groups()
             self.form_groups = []
             for name, heading in (
                 ("verb", ui_text("quiz.verb_forms", "")),
@@ -1630,22 +1646,18 @@ def create_app_class():
                     color=MUTED_COLOR,
                 )
             )
-            request = getattr(self.kotomi, "sentence_statistics_request", ([], []))
-
-            def calculate() -> None:
-                try:
-                    report = self.kotomi.sentence_engine.count_possibilities(
-                        self.kotomi.catalog,
-                        self.kotomi.current_lesson(),
-                        request[0],
-                        request[1],
-                    )
-                    content = possibilities_text(report)
-                except (TypeError, ValueError) as exception:
-                    content = mobile_error_text(self, exception)
-                Clock.schedule_once(lambda _dt: self.show_content(content), 0)
-
-            threading.Thread(target=calculate, daemon=True).start()
+            controller = self.kotomi
+            patterns, forms = getattr(controller, "sentence_statistics_request", ([], []))
+            patterns, forms = list(patterns), list(forms)
+            engine, catalog = controller.sentence_engine, controller.catalog
+            lesson = controller.current_lesson()
+            run_calculation(
+                self, ui_text("quiz.possibilities_title"), ui_text("quiz.calculating"),
+                lambda: engine.count_possibilities(catalog, lesson, patterns, forms),
+                lambda report: self.show_content(possibilities_text(report)),
+                lambda error: self.show_content(mobile_error_text(self, error)),
+                font_name=MOBILE_FONT,
+            )
 
         def show_content(self, content: str) -> None:
             self.stack.clear_widgets()

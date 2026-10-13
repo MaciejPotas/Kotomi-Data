@@ -7,6 +7,8 @@ models from here.
 
 from __future__ import annotations
 
+from kotomi.core.generation.progress import progress_step
+
 from dataclasses import asdict, dataclass, field
 import os
 from pathlib import Path
@@ -24,6 +26,7 @@ if str(INSTALL_ROOT) not in sys.path:
 
 from kotomi.core.project import ProjectError, Word
 from kotomi.application.generation_engine import SharedQuizEngine
+from kotomi.application.quiz_preflight import iter_quiz_previews
 from kotomi.application.quiz_project import QuizProject
 from kotomi.core.generation import balanced_choice, normalize_answer
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
@@ -676,20 +679,22 @@ class AvailabilityQuizEngine:
         combinations = self.build_combinations(settings)
         possible = 0
         enabled_patterns: Set[str] = set()
-        for combination in combinations:
-            enabled_patterns.add(combination.pattern_id)
-            for preview in self.shared_engine.iter_previews(
-                combination.pattern_id,
-                form_name=combination.rule.target_form,
-            ):
-                analysis = self.shared_engine.analyze_pattern(
-                    combination.pattern_id
-                )
-                word = self.project.words["verbs"][
-                    preview.words[analysis.focus_slot]
-                ]
-                if word_matches_filter(word, filter_rules):
-                    possible += 1
+        for combination_index, combination in enumerate(combinations):
+            with progress_step(combination_index, len(combinations)):
+                enabled_patterns.add(combination.pattern_id)
+                for preview in iter_quiz_previews(
+                    self.shared_engine,
+                    combination.pattern_id,
+                    form_name=combination.rule.target_form,
+                ):
+                    analysis = self.shared_engine.analyze_pattern(
+                        combination.pattern_id
+                    )
+                    word = self.project.words["verbs"][
+                        preview.words[analysis.focus_slot]
+                    ]
+                    if word_matches_filter(word, filter_rules):
+                        possible += 1
         return {
             "words": sum(
                 len(dictionary)

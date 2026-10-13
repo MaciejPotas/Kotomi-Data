@@ -7,6 +7,8 @@ result models from here.
 
 from __future__ import annotations
 
+from kotomi.core.generation.progress import progress_step
+
 from dataclasses import asdict, dataclass, field
 import os
 from pathlib import Path
@@ -26,6 +28,7 @@ from kotomi.core.project import (
     Word,
 )
 from kotomi.application.generation_engine import SharedQuizEngine
+from kotomi.application.quiz_preflight import iter_quiz_previews
 from kotomi.application.quiz_project import QuizProject
 from kotomi.core.generation import balanced_choice, normalize_answer
 from kotomi.application.settings_xml import load_settings, save_settings
@@ -730,26 +733,28 @@ class VerbQuizEngine:
         combinations = self.build_combinations(settings)
         possible = 0
         enabled_patterns: Set[str] = set()
-        for combination in combinations:
-            analysis = self.shared_engine.analyze_pattern(
-                combination.pattern_id
-            )
-            enabled_patterns.add(combination.pattern_id)
-            for preview in self.shared_engine.iter_previews(
-                combination.pattern_id,
-                form_name=combination.rule.target_form,
-            ):
-                word = self.project.words["verbs"][
-                    preview.words[analysis.focus_slot]
-                ]
-                if (
-                    word_matches_filter(word, filter_rules)
-                    and self._has_compatible_source_form(
-                        word,
-                        combination.rule,
-                    )
+        for combination_index, combination in enumerate(combinations):
+            with progress_step(combination_index, len(combinations)):
+                analysis = self.shared_engine.analyze_pattern(
+                    combination.pattern_id
+                )
+                enabled_patterns.add(combination.pattern_id)
+                for preview in iter_quiz_previews(
+                    self.shared_engine,
+                    combination.pattern_id,
+                    form_name=combination.rule.target_form,
                 ):
-                    possible += 1
+                    word = self.project.words["verbs"][
+                        preview.words[analysis.focus_slot]
+                    ]
+                    if (
+                        word_matches_filter(word, filter_rules)
+                        and self._has_compatible_source_form(
+                            word,
+                            combination.rule,
+                        )
+                    ):
+                        possible += 1
         return {
             "words": sum(
                 len(dictionary)
