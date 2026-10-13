@@ -7,6 +7,8 @@ question models from here.
 
 from __future__ import annotations
 
+from kotomi.core.generation.progress import progress_step
+
 from dataclasses import asdict, dataclass, field, replace
 import os
 from pathlib import Path
@@ -26,6 +28,7 @@ if str(INSTALL_ROOT) not in sys.path:
 from kotomi.core.project import Entity, ProjectError, Word
 from kotomi.core.project.errors import NoCompatibleChoices
 from kotomi.application.generation_engine import SharedQuizEngine
+from kotomi.application.quiz_preflight import iter_quiz_previews
 from kotomi.application.quiz_project import QuizProject
 from kotomi.core.generation import (
     balanced_choice,
@@ -922,51 +925,53 @@ class GrammarQuizEngine:
         eligible_verbs: Set[str] = set()
         active_patterns: Set[str] = set()
         scopes = {}
-        for combination in combinations:
-            active_patterns.add(combination.pattern_id)
-            analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
-            if combination.pattern_id not in scopes:
-                scopes[combination.pattern_id] = self._statistics_choice_scope(
-                    settings, combination.pattern_id, analysis, rules,
-                )
-            choice_scope = scopes[combination.pattern_id]
-            for preview in self.shared_engine.iter_previews(
-                combination.pattern_id,
-                form_name=combination.rule.target_form,
-                choice_scope=choice_scope,
-            ):
-                matches = True
-                for slot in analysis.word_slots:
-                    dictionary = analysis.slots[slot].dictionary
-                    word = compatibility_solver.resolve_word_selection(
-                        self.project,
-                        dictionary,
-                        preview.words[slot],
+        for combination_index, combination in enumerate(combinations):
+            with progress_step(combination_index, len(combinations)):
+                active_patterns.add(combination.pattern_id)
+                analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
+                if combination.pattern_id not in scopes:
+                    scopes[combination.pattern_id] = self._statistics_choice_scope(
+                        settings, combination.pattern_id, analysis, rules,
                     )
-                    if word is None:
-                        matches = False
-                        break
-                    if not _item_matches(
-                        word,
-                        _rules_for_engine_slot(rules, analysis, slot),
-                        self.project.effective_entity_categories,
-                    ):
-                        matches = False
-                        break
-                if not matches:
-                    continue
-                for slot in analysis.entity_slots:
-                    entity = self.project.entities[preview.entities[slot]]
-                    if not _item_matches(
-                        entity,
-                        _rules_for_engine_slot(rules, analysis, slot),
-                        self.project.effective_entity_categories,
-                    ):
-                        matches = False
-                        break
-                if matches:
-                    possible += 1
-                    eligible_verbs.add(preview.words[analysis.focus_slot])
+                choice_scope = scopes[combination.pattern_id]
+                for preview in iter_quiz_previews(
+                    self.shared_engine,
+                    combination.pattern_id,
+                    form_name=combination.rule.target_form,
+                    choice_scope=choice_scope,
+                ):
+                    matches = True
+                    for slot in analysis.word_slots:
+                        dictionary = analysis.slots[slot].dictionary
+                        word = compatibility_solver.resolve_word_selection(
+                            self.project,
+                            dictionary,
+                            preview.words[slot],
+                        )
+                        if word is None:
+                            matches = False
+                            break
+                        if not _item_matches(
+                            word,
+                            _rules_for_engine_slot(rules, analysis, slot),
+                            self.project.effective_entity_categories,
+                        ):
+                            matches = False
+                            break
+                    if not matches:
+                        continue
+                    for slot in analysis.entity_slots:
+                        entity = self.project.entities[preview.entities[slot]]
+                        if not _item_matches(
+                            entity,
+                            _rules_for_engine_slot(rules, analysis, slot),
+                            self.project.effective_entity_categories,
+                        ):
+                            matches = False
+                            break
+                    if matches:
+                        possible += 1
+                        eligible_verbs.add(preview.words[analysis.focus_slot])
         return {
             "possible": possible,
             "active_patterns": len(active_patterns),

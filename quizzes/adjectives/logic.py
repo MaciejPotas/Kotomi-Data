@@ -7,6 +7,8 @@ result models from here.
 
 from __future__ import annotations
 
+from kotomi.core.generation.progress import progress_leaves, progress_step
+
 from dataclasses import asdict, dataclass, field
 import os
 from pathlib import Path
@@ -513,116 +515,128 @@ class AdjectiveQuizEngine:
             for pattern_id in self.project.pattern_ids_for_reference(reference)
         }
 
-        if "Przymiotnik po temacie" in enabled_patterns:
-            pattern = self.project.patterns["Przymiotnik po temacie"]
-            for rule in rules:
-                source_form, target_form = self._finite_forms(rule)
-                for subject in self.project.entities.values():
-                    prefix_base = self._prefix_candidates(settings, filters, subject)
-                    for final in adjectives:
-                        if not self._adjective_eligible(final, settings, filters):
-                            continue
-                        if not self._entity_matches_adjective(subject, final):
-                            continue
-                        if source_form not in final.forms or target_form not in final.forms:
-                            continue
-                        pool = self._context_pool(
-                            final.forms[source_form], final.forms[target_form]
-                        )
-                        if pool is None:
-                            continue
-                        self._append_space(
-                            spaces,
-                            QuestionSpace(
-                                pattern=pattern,
-                                rule=rule,
-                                final_adjective=final,
-                                prefix_candidates=[word for word in prefix_base if word.id != final.id],
-                                source_form=source_form,
-                                target_form=target_form,
-                                context_pool=pool,
-                                subject=subject,
-                            ),
-                            prefix_count,
-                        )
+        with progress_step(0, 3):
+            if "Przymiotnik po temacie" in enabled_patterns:
+                pattern = self.project.patterns["Przymiotnik po temacie"]
+                for rule_index, rule in enumerate(rules):
+                    with progress_step(rule_index, len(rules)):
+                        source_form, target_form = self._finite_forms(rule)
+                        subjects = self.project.entities.values()
+                        for subject_index, subject in enumerate(subjects):
+                            with progress_step(subject_index, len(subjects)):
+                                prefix_base = self._prefix_candidates(settings, filters, subject)
+                                for final in adjectives:
+                                    if not self._adjective_eligible(final, settings, filters):
+                                        continue
+                                    if not self._entity_matches_adjective(subject, final):
+                                        continue
+                                    if source_form not in final.forms or target_form not in final.forms:
+                                        continue
+                                    pool = self._context_pool(
+                                        final.forms[source_form], final.forms[target_form]
+                                    )
+                                    if pool is None:
+                                        continue
+                                    self._append_space(
+                                        spaces,
+                                        QuestionSpace(
+                                            pattern=pattern,
+                                            rule=rule,
+                                            final_adjective=final,
+                                            prefix_candidates=[word for word in prefix_base if word.id != final.id],
+                                            source_form=source_form,
+                                            target_form=target_form,
+                                            context_pool=pool,
+                                            subject=subject,
+                                        ),
+                                        prefix_count,
+                                    )
 
-        if "Sam przymiotnik" in enabled_patterns:
-            pattern = self.project.patterns["Sam przymiotnik"]
-            prefix_base = self._prefix_candidates(settings, filters, None)
-            for rule in rules:
-                source_form, target_form = self._finite_forms(rule)
-                for final in adjectives:
-                    if not self._adjective_eligible(final, settings, filters):
-                        continue
-                    if source_form not in final.forms or target_form not in final.forms:
-                        continue
-                    pool = self._context_pool(
-                        final.forms[source_form], final.forms[target_form]
-                    )
-                    if pool is None:
-                        continue
-                    self._append_space(
-                        spaces,
-                        QuestionSpace(
-                            pattern=pattern,
-                            rule=rule,
-                            final_adjective=final,
-                            prefix_candidates=[word for word in prefix_base if word.id != final.id],
-                            source_form=source_form,
-                            target_form=target_form,
-                            context_pool=pool,
-                        ),
-                        prefix_count,
-                    )
-
-        if "Przymiotnik przed rzeczownikiem" in enabled_patterns:
-            pattern = self.project.patterns["Przymiotnik przed rzeczownikiem"]
-            for rule in rules:
-                source_copula, target_copula = self._copula_forms(rule)
-                for copula in self.project.words["copulas"].values():
-                    if source_copula not in copula.forms or target_copula not in copula.forms:
-                        continue
-                    for subject in self.project.entities.values():
-                        prefix_base = self._prefix_candidates(settings, filters, subject)
-                        for final in adjectives:
+        with progress_step(1, 3):
+            if "Sam przymiotnik" in enabled_patterns:
+                pattern = self.project.patterns["Sam przymiotnik"]
+                prefix_base = self._prefix_candidates(settings, filters, None)
+                for rule_index, rule in enumerate(rules):
+                    with progress_step(rule_index, len(rules)):
+                        source_form, target_form = self._finite_forms(rule)
+                        for final in progress_leaves(adjectives):
                             if not self._adjective_eligible(final, settings, filters):
                                 continue
-                            if not self._entity_matches_adjective(subject, final):
-                                continue
-                            if "attributive_nonpast" not in final.forms:
+                            if source_form not in final.forms or target_form not in final.forms:
                                 continue
                             pool = self._context_pool(
-                                final.forms["attributive_nonpast"],
-                                final.forms["attributive_nonpast"],
-                                copula.forms[source_copula],
-                                copula.forms[target_copula],
+                                final.forms[source_form], final.forms[target_form]
                             )
                             if pool is None:
                                 continue
-                            before_noun_rule = GenerationRule(
-                                category=rule.category,
-                                source_polite=rule.source_polite,
-                                target_polite=rule.target_polite,
-                                has_source_form=rule.has_source_form,
-                                target_label=rule.target_label + ", przymiotnik przed rzeczownikiem",
-                            )
                             self._append_space(
                                 spaces,
                                 QuestionSpace(
                                     pattern=pattern,
-                                    rule=before_noun_rule,
+                                    rule=rule,
                                     final_adjective=final,
                                     prefix_candidates=[word for word in prefix_base if word.id != final.id],
-                                    source_form="attributive_nonpast",
-                                    target_form="attributive_nonpast",
+                                    source_form=source_form,
+                                    target_form=target_form,
                                     context_pool=pool,
-                                    subject=subject,
-                                    copula=copula,
-                                    source_copula_form=source_copula,
-                                    target_copula_form=target_copula,
                                 ),
                                 prefix_count,
                             )
+
+        with progress_step(2, 3):
+            if "Przymiotnik przed rzeczownikiem" in enabled_patterns:
+                pattern = self.project.patterns["Przymiotnik przed rzeczownikiem"]
+                for rule_index, rule in enumerate(rules):
+                    with progress_step(rule_index, len(rules)):
+                        source_copula, target_copula = self._copula_forms(rule)
+                        copulas = self.project.words["copulas"].values()
+                        for copula_index, copula in enumerate(copulas):
+                            with progress_step(copula_index, len(copulas)):
+                                if source_copula not in copula.forms or target_copula not in copula.forms:
+                                    continue
+                                subjects = self.project.entities.values()
+                                for subject_index, subject in enumerate(subjects):
+                                    with progress_step(subject_index, len(subjects)):
+                                        prefix_base = self._prefix_candidates(settings, filters, subject)
+                                        for final in adjectives:
+                                            if not self._adjective_eligible(final, settings, filters):
+                                                continue
+                                            if not self._entity_matches_adjective(subject, final):
+                                                continue
+                                            if "attributive_nonpast" not in final.forms:
+                                                continue
+                                            pool = self._context_pool(
+                                                final.forms["attributive_nonpast"],
+                                                final.forms["attributive_nonpast"],
+                                                copula.forms[source_copula],
+                                                copula.forms[target_copula],
+                                            )
+                                            if pool is None:
+                                                continue
+                                            before_noun_rule = GenerationRule(
+                                                category=rule.category,
+                                                source_polite=rule.source_polite,
+                                                target_polite=rule.target_polite,
+                                                has_source_form=rule.has_source_form,
+                                                target_label=rule.target_label + ", przymiotnik przed rzeczownikiem",
+                                            )
+                                            self._append_space(
+                                                spaces,
+                                                QuestionSpace(
+                                                    pattern=pattern,
+                                                    rule=before_noun_rule,
+                                                    final_adjective=final,
+                                                    prefix_candidates=[word for word in prefix_base if word.id != final.id],
+                                                    source_form="attributive_nonpast",
+                                                    target_form="attributive_nonpast",
+                                                    context_pool=pool,
+                                                    subject=subject,
+                                                    copula=copula,
+                                                    source_copula_form=source_copula,
+                                                    target_copula_form=target_copula,
+                                                ),
+                                                prefix_count,
+                                            )
         return spaces
 
     @staticmethod
