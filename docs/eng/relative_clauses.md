@@ -33,9 +33,12 @@ forms inside the relative clause are excluded. The final `です` stays fixed.
 Use existing filters to practice selected vocabulary, for example
 `verb.id=yomu;noun.id=book`. Without filters the existing dictionary categories
 and explicit compatibility lists apply. They do not guarantee naturalness of
-every semantic combination. For example, the broad `abstract` category admits
-`sukuu` with `fukushuu` (rescuing a revision exercise). No exceptions or curated
-sentence dictionary were added to the engine.
+every semantic combination. Revision 59 corrects two demonstrated problems:
+`sukuu` accepts people, animals and explicit `inochi` (life); `ireru` no longer
+accepts all `abstract` nouns but explicitly retains `okane` (money).
+This rejects rescuing a revision exercise and inserting time in every pattern.
+The narrower `sukuu` scope also excludes abstract objects such as work and plans.
+No exceptions or curated sentence dictionary were added to the engine.
 
 The scope remains singular object relatives. `okane` has a plural agreement
 class and is correctly rejected; `harau`, restricted to `okane`, therefore

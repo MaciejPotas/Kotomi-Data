@@ -33,9 +33,12 @@ czasownika wewnątrz przydawki są wykluczone. Końcowe `です` pozostaje stał
 Do ćwiczenia wybranego słownictwa służą istniejące filtry, np.
 `verb.id=yomu;noun.id=book`. Bez filtrów obowiązują dotychczasowe kategorie
 i jawne listy kompatybilności słowników, które nie gwarantują naturalności
-każdego połączenia znaczeń. Przykładowo szeroka kategoria `abstract` dopuszcza
-`sukuu` z `fukushuu` (ratować powtórkę). Nie dodano wyjątków ani słownika
-dobrych zdań do silnika.
+każdego połączenia znaczeń. Rewizja 59 koryguje dwa wykazane problemy:
+`sukuu` dopuszcza ludzi, zwierzęta i jawnie `inochi` (życie), a `ireru`
+nie dopuszcza ogólnego `abstract`, zachowując jawnie `okane` (pieniądze).
+Odrzuca to „ratować powtórkę” i „wkładać czas” we wszystkich wzorcach.
+Zawężenie `sukuu` wyklucza również abstrakcyjne dopełnienia takie jak praca
+i plan. Nie dodano wyjątków ani słownika dobrych zdań do silnika.
 
 Zakres pozostaje pojedynczy i dopełnieniowy. `okane` ma klasę liczby mnogiej,
 więc jest poprawnie odrzucane; `harau`, ograniczone do `okane`, nie daje tu

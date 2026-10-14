@@ -622,7 +622,7 @@
     </word>
     <word id="ireru" kana="いれる" kanji="入れる" type="ichidan" ending="ru" translation="wkładać">
       <usage>
-        <role ref="object" accepts="person animal food drink text media vehicle thing abstract" government="direct_object" />
+        <role ref="object" accepts="person animal food drink text media vehicle thing" nouns="okane" government="direct_object" />
         <role ref="target" nouns="bag box room" />
       </usage>
       <forms>
@@ -2710,7 +2710,7 @@
     </word>
     <word id="sukuu" kana="すくう" kanji="救う" type="godan" ending="u" translation="ratować">
       <usage>
-        <role ref="object" accepts="person animal abstract" government="direct_object" />
+        <role ref="object" accepts="person animal" nouns="inochi" government="direct_object" />
         <role ref="location" />
       </usage>
       <forms>
