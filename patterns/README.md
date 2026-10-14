@@ -1,5 +1,10 @@
 # Patterns
 
+Content revision 59 adds **Zdania przydawkowe** in category `przydawki`, with a
+shared Windows/Mobile quiz profile and four plain forms. See
+[Polski](../docs/pl/relative_clauses.md) / [English](../docs/eng/relative_clauses.md)
+for government prepositions, filters and scope.
+
 This directory contains sentence-generation and sentence-quiz definitions.
 
 - `sentence_maps.xml` owns sentence patterns and constructions used by the generator.
