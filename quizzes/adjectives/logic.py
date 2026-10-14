@@ -847,12 +847,14 @@ class AdjectiveQuizEngine:
             permutation_rank,
         )
         chain = prefixes + [selected.final_adjective]
+        analysis = self.shared_engine.analyze_pattern(selected.pattern)
         target_question, target_answer = self._render_pattern(
             selected,
             chain,
             selected.target_form,
             selected.target_copula_form,
             context_option,
+            analysis=analysis,
         )
         source_answer = ""
         if settings.mode == MODE_TRANSFORMATION:
@@ -862,6 +864,7 @@ class AdjectiveQuizEngine:
                 selected.source_form,
                 selected.source_copula_form,
                 context_option,
+                analysis=analysis,
             )
             if normalize_japanese(source_answer) == normalize_japanese(target_answer):
                 return None
@@ -896,6 +899,7 @@ class AdjectiveQuizEngine:
         )
         context_translation, context_kana = pattern_context_hint(
             self.project, selected.pattern.id, selected.context_pool.id, context_option.id,
+            analysis=analysis,
         )
         return AdjectiveQuestion(
             key=key,
@@ -945,8 +949,10 @@ class AdjectiveQuizEngine:
         final_form: str,
         copula_form: str,
         context_option: ContextOption,
+        *, analysis=None,
     ) -> tuple[str, str]:
-        analysis = self.shared_engine.analyze_pattern(space.pattern)
+        if analysis is None:
+            analysis = self.shared_engine.analyze_pattern(space.pattern)
         adjective_slot = next(
             slot for slot in analysis.word_slots
             if analysis.slots[slot].dictionary == "adjectives"

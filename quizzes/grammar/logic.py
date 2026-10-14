@@ -856,8 +856,9 @@ class GrammarQuizEngine:
         context_translation, context_kana = selected_context_hint(
             self.project,
             preview,
+            analysis=analysis,
         )
-        vocabulary_hints = selected_vocabulary_hints(self.project, preview)
+        vocabulary_hints = selected_vocabulary_hints(self.project, preview, analysis=analysis)
         return GrammarQuestion(
             key=key,
             source_sentence=preview.source,

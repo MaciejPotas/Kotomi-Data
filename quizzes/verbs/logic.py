@@ -645,7 +645,7 @@ class VerbQuizEngine:
                 for slot_id, entity_id in preview.entities.items()
             ),
         ]
-        context_translation, context_kana = selected_context_hint(self.project, preview)
+        context_translation, context_kana = selected_context_hint(self.project, preview, analysis=analysis)
         key = "|".join(
             (
                 combination.pattern_id,

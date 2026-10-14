@@ -602,6 +602,7 @@ class AvailabilityQuizEngine:
         context_translation, context_kana = selected_context_hint(
             self.project,
             preview,
+            analysis=analysis,
         )
         key = "|".join(
             (
@@ -612,7 +613,7 @@ class AvailabilityQuizEngine:
                 preview.answer,
             )
         )
-        vocabulary_hints = selected_vocabulary_hints(self.project, preview)
+        vocabulary_hints = selected_vocabulary_hints(self.project, preview, analysis=analysis)
         return AvailabilityQuestion(
             key=key,
             source_sentence=source_sentence,
