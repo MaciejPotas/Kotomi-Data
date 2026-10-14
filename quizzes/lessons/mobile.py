@@ -7,6 +7,8 @@ interaction, embedded launcher integration, and lesson editor presentation.
 
 from __future__ import annotations
 
+from kotomi.application.quiz_hints import show_vocabulary_hint_initially
+
 import copy
 from pathlib import Path
 import sys
@@ -1980,6 +1982,8 @@ def create_app_class():
                 self.render_review(question)
             else:
                 self.configure_actions()
+                if show_vocabulary_hint_initially(question):
+                    self.toggle_hint()
             self.content_layout.add_widget(Widget())
             self.keep_keyboard_visible()
 

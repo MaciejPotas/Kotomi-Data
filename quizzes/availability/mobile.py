@@ -18,6 +18,7 @@ except ImportError:  # Direct execution from the quiz package directory.
     from logic import *
     from logic import _safe_float, _safe_int
 
+from kotomi.application.quiz_hints import show_vocabulary_hint_initially
 from kotomi.core.project import ProjectError
 from platforms.mobile.presentation import (
     DEFAULT_MOBILE_BUTTON_SCALE,
@@ -124,6 +125,10 @@ def mobile_sentence_hint_entries(
         if formatted:
             entries.append(formatted)
         seen.add(("context", "\0".join(context_entry)))
+    prepared = getattr(question, "vocabulary_hints", None)
+    if prepared is not None:
+        entries.extend(filter(None, (format_grammatical_hint_entry(item) for item in prepared)))
+        return entries
     slots = {}
     try:
         slots = project.analyze_pattern(question.pattern_id).slots
@@ -1702,6 +1707,8 @@ def create_app_class(policy: object = None):
             self.hint.opacity = 0
             self.hint_visible = False
             self.configure_actions()
+            if show_vocabulary_hint_initially(question):
+                self.show_hint()
             if self.screen_active:
                 self.keep_keyboard_visible()
 

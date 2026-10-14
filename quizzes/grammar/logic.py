@@ -7,6 +7,8 @@ question models from here.
 
 from __future__ import annotations
 
+from kotomi.application.quiz_hints import QuizVocabularyHint, selected_vocabulary_hints
+
 from kotomi.core.generation.progress import progress_step
 
 from dataclasses import asdict, dataclass, field, replace
@@ -304,6 +306,7 @@ class GrammarQuestion:
     bindings: str
     context_translation: str = ""
     context_kana: str = ""
+    vocabulary_hints: tuple[QuizVocabularyHint, ...] | None = None
 
 
 def _safe_int(value: object, default: int) -> int:
@@ -854,6 +857,7 @@ class GrammarQuizEngine:
             self.project,
             preview,
         )
+        vocabulary_hints = selected_vocabulary_hints(self.project, preview)
         return GrammarQuestion(
             key=key,
             source_sentence=preview.source,
@@ -867,29 +871,16 @@ class GrammarQuizEngine:
             word_meaning=self.project.instruction_language.translation(main_word),
             word_kana=main_word.kana,
             word_kanji=main_word.kanji,
-            hint_pairs=self._hint_pairs(combination.pattern_id, preview),
+            hint_pairs=[(hint.translation, hint.kana) for hint in vocabulary_hints],
+            vocabulary_hints=vocabulary_hints,
             bindings=bindings,
             context_translation=context_translation,
             context_kana=context_kana,
         )
 
     def _hint_pairs(self, pattern_id: str, preview: object) -> List[tuple[str, str]]:
-        analysis = self.shared_engine.analyze_pattern(pattern_id)
-        result: List[tuple[str, str]] = []
-        for slot in analysis.word_slots:
-            dictionary = analysis.slots[slot].dictionary
-            word = compatibility_solver.resolve_word_selection(
-                self.project,
-                dictionary,
-                preview.words[slot],
-            )
-            if word is None:
-                continue
-            result.append((self.project.instruction_language.translation(word), word.kana))
-        for slot in analysis.entity_slots:
-            entity = self.project.entities[preview.entities[slot]]
-            result.append((self.project.instruction_language.translation(entity), entity.kana))
-        return result
+        return [(hint.translation, hint.kana)
+                for hint in selected_vocabulary_hints(self.project, preview)]
 
     def _statistics_choice_scope(self, settings, pattern_id, analysis, rules):
         """Push lexical filters into the solver before rendering possibilities.

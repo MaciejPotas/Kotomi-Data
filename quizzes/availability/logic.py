@@ -7,6 +7,10 @@ models from here.
 
 from __future__ import annotations
 
+from kotomi.application.quiz_hints import (
+    QuizVocabularyHint, selected_context_hint, selected_vocabulary_hints,
+)
+
 from kotomi.core.generation.progress import progress_step
 
 from dataclasses import asdict, dataclass, field
@@ -262,6 +266,7 @@ class AvailabilityQuestion:
     bindings: str
     context_translation: str = ""
     context_kana: str = ""
+    vocabulary_hints: tuple[QuizVocabularyHint, ...] | None = None
 
 
 @dataclass
@@ -288,29 +293,6 @@ def _safe_float(value: object, default: float) -> float:
 def normalize_japanese(text: str) -> str:
     """Normalize harmless punctuation and spacing for answer comparison."""
     return normalize_answer(text)
-
-
-def selected_context_hint(
-    project: object,
-    preview: object,
-) -> tuple[str, str]:
-    """Return Hint metadata for the exact context selected by generation."""
-    pool = getattr(project, "contexts", {}).get(
-        getattr(preview, "context_pool", "")
-    )
-    option = (
-        getattr(pool, "options", {}).get(
-            getattr(preview, "context_option", "")
-        )
-        if pool is not None
-        else None
-    )
-    if option is None:
-        return "", ""
-    return (
-        str(project.instruction_language.translation(option) or "").strip(),
-        str(getattr(option, "kana", "") or "").strip(),
-    )
 
 
 def parse_word_filter(text: str) -> List[WordFilterRule]:
@@ -630,6 +612,7 @@ class AvailabilityQuizEngine:
                 preview.answer,
             )
         )
+        vocabulary_hints = selected_vocabulary_hints(self.project, preview)
         return AvailabilityQuestion(
             key=key,
             source_sentence=source_sentence,
@@ -643,7 +626,8 @@ class AvailabilityQuizEngine:
             word_meaning=self.project.instruction_language.translation(selected_word),
             word_kana=selected_word.kana,
             word_kanji=selected_word.kanji,
-            hint_pairs=self._build_hint_pairs(preview),
+            hint_pairs=[(hint.translation, hint.kana) for hint in vocabulary_hints],
+            vocabulary_hints=vocabulary_hints,
             bindings=", ".join(binding_parts),
             context_translation=context_translation,
             context_kana=context_kana,
@@ -651,16 +635,8 @@ class AvailabilityQuizEngine:
 
     def _build_hint_pairs(self, preview: object) -> List[tuple[str, str]]:
         """Return every selected base word without exposing the answer form."""
-        analysis = self.shared_engine.analyze_pattern(preview.pattern_id)
-        result: List[tuple[str, str]] = []
-        for slot in analysis.word_slots:
-            dictionary_id = analysis.slots[slot].dictionary
-            word = self.project.words[dictionary_id][preview.words[slot]]
-            result.append((self.project.instruction_language.translation(word), word.kana))
-        for slot in analysis.entity_slots:
-            entity = self.project.entities[preview.entities[slot]]
-            result.append((self.project.instruction_language.translation(entity), entity.kana))
-        return result
+        return [(hint.translation, hint.kana)
+                for hint in selected_vocabulary_hints(self.project, preview)]
 
     def has_possible_question(self, settings: AvailabilityQuizSettings) -> bool:
         """Check feasibility by generating one question without consuming RNG."""
