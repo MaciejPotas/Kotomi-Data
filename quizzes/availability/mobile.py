@@ -18,7 +18,6 @@ except ImportError:  # Direct execution from the quiz package directory.
     from logic import *
     from logic import _safe_float, _safe_int
 
-from kotomi.application.quiz_hints import show_vocabulary_hint_initially
 from kotomi.core.project import ProjectError
 from platforms.mobile.presentation import (
     DEFAULT_MOBILE_BUTTON_SCALE,
@@ -1707,8 +1706,6 @@ def create_app_class(policy: object = None):
             self.hint.opacity = 0
             self.hint_visible = False
             self.configure_actions()
-            if show_vocabulary_hint_initially(question):
-                self.show_hint()
             if self.screen_active:
                 self.keep_keyboard_visible()
 
