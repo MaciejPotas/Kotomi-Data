@@ -102,8 +102,8 @@
     },
     {
       "path": "apps/availability/logic.py",
-      "sha256": "92541d345aef596e0f58baa8abaf4560977cf6f33485aeaef0e073dfad4d27b4",
-      "url": "quizzes/availability/logic.py?kotomi_sha256=92541d345aef596e0f58baa8abaf4560977cf6f33485aeaef0e073dfad4d27b4"
+      "sha256": "fc0a7f69158406cf890f2ee706f4de7aca3e00e15e032793ffce41c53de96e95",
+      "url": "quizzes/availability/logic.py?kotomi_sha256=fc0a7f69158406cf890f2ee706f4de7aca3e00e15e032793ffce41c53de96e95"
     },
     {
       "path": "apps/availability/mobile.py",
@@ -122,8 +122,8 @@
     },
     {
       "path": "apps/grammar/logic.py",
-      "sha256": "273b93d277d45aff5a5a6081ab0e52de4f5ba7b666409dbed67f5ef8de4c89ff",
-      "url": "quizzes/grammar/logic.py?kotomi_sha256=273b93d277d45aff5a5a6081ab0e52de4f5ba7b666409dbed67f5ef8de4c89ff"
+      "sha256": "0c0927c18cff3c15a856f2a66d6df667b443b273159133a79b2909b051ec69c3",
+      "url": "quizzes/grammar/logic.py?kotomi_sha256=0c0927c18cff3c15a856f2a66d6df667b443b273159133a79b2909b051ec69c3"
     },
     {
       "path": "apps/grammar/mobile.py",
