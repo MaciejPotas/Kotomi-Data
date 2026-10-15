@@ -102,3 +102,11 @@ The dated [lesson import record](../lessons/szymon_pierwsza_audit.pl.md) documen
 an editorial change, not a test contract or a fixed vocabulary inventory.
 
 Adverb catalogs and multi-value `categories` memberships: [English](../docs/eng/adverb_categories.md) / [Polski](../docs/pl/adverb_categories.md). Values are declared in dictionary XML and validated; noun categories keep their existing semantics.
+
+
+Content 60 adds explicit `agreement_translations` for four plain forms of
+`hataraku`, `neru` and `aku`. Their ordinary translations remain unchanged.
+New subject roles use exact noun lists; missing agreement classes mean an
+unsupported realization. See the curated B3 inventory and editor instructions:
+[Polski](../docs/pl/relative_clauses.md#b3-przydawki-podmiotowe) /
+[English](../docs/eng/relative_clauses.md#b3-subject-relative-clauses).

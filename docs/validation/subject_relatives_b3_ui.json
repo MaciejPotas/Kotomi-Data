@@ -1,0 +1,51 @@
+{
+  "mobile_headless": [
+    {
+      "restart": 0,
+      "patterns": [
+        "Zdania przydawkowe"
+      ],
+      "generated": 8
+    },
+    {
+      "restart": 0,
+      "patterns": [
+        "Zdania przydawkowe podmiotowe"
+      ],
+      "generated": 8
+    },
+    {
+      "restart": 0,
+      "patterns": [
+        "Zdania przydawkowe",
+        "Zdania przydawkowe podmiotowe"
+      ],
+      "generated": 8
+    },
+    {
+      "restart": 1,
+      "patterns": [
+        "Zdania przydawkowe"
+      ],
+      "generated": 8
+    },
+    {
+      "restart": 1,
+      "patterns": [
+        "Zdania przydawkowe podmiotowe"
+      ],
+      "generated": 8
+    },
+    {
+      "restart": 1,
+      "patterns": [
+        "Zdania przydawkowe",
+        "Zdania przydawkowe podmiotowe"
+      ],
+      "generated": 8
+    }
+  ],
+  "simulator_bound_examples": 12,
+  "preloaded_project_reused": true,
+  "limits": "Real production callbacks with fake Kivy/Tk controls. No native Windows/Android device operation."
+}
