@@ -71,3 +71,18 @@ python tools/validate_subject_relative_ui.py --kotomi ../Kotomi \
 ```
 
 This is not native device testing and is not part of unit-test discovery.
+
+## Opt-in C1 audit completeness
+
+```sh
+python tools/validate_verb_dictionary_audit.py --kotomi ../Kotomi
+```
+
+This read-only check compares the complete C1 verb/form inventory and additive
+proposals against `dictionaries/verbs.xml` and `dictionaries/nouns.xml`. It reads
+production vocabulary to establish completeness of this particular audit,
+which synthetic fixtures cannot establish. Cost is linear in forms and
+proposals. It is not imported by unit tests, applies no proposals and creates
+no production fixtures. See the [C1 report](../docs/validation/verb_dictionary_audit_c1.md)
+and equivalent [Polish](../docs/pl/verb_dictionary_audit_c1.md) /
+[English](../docs/eng/verb_dictionary_audit_c1.md) entry points.

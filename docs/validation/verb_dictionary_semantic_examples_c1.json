@@ -1,0 +1,48 @@
+[
+  {
+    "verb": "aru_possessive",
+    "noun": "box",
+    "hypothetical_value": "ma",
+    "question": "To jest pudełko, które ma.",
+    "answer": "これはあるはこです。",
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+  },
+  {
+    "verb": "wakaru",
+    "noun": "book",
+    "hypothetical_value": "rozumie",
+    "question": "To jest książka, która rozumie.",
+    "answer": "これはわかるほんです。",
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+  },
+  {
+    "verb": "mieru",
+    "noun": "music",
+    "hypothetical_value": "jest widoczna",
+    "question": "To jest muzyka, która jest widoczna.",
+    "answer": "これはみえるおんがくです。",
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+  },
+  {
+    "verb": "naku",
+    "noun": "tori",
+    "hypothetical_value": "płacze",
+    "question": "To jest ptak, który płacze.",
+    "answer": "これはなくとりです。",
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+  },
+  {
+    "verb": "okiru",
+    "noun": "hitori",
+    "hypothetical_value": "budzi się",
+    "question": "To jest jedna osoba, która budzi się.",
+    "answer": "これはおきるひとりです。",
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+  },
+  {
+    "pattern": "Czynność w toku 〜ている / Sam czasownik",
+    "question": "W tym tygodniu czytam.",
+    "answer": "こんしゅう、よんでいる",
+    "status": "existing_baseline_construction_example"
+  }
+]
