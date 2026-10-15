@@ -7,6 +7,8 @@ question models from here.
 
 from __future__ import annotations
 
+from kotomi.application.quiz_hints import QuizVocabularyHint, selected_vocabulary_hints
+
 from kotomi.core.generation.progress import progress_step
 
 from dataclasses import asdict, dataclass, field, replace
@@ -52,6 +54,7 @@ PROJECT_ENVIRONMENT_VARIABLE = "JAPANESE_QUIZ_PROJECT"
 SETTINGS_FILENAME = "grammar_quiz_settings.xml"
 ACTIVE_QUIZ_ID = "grammar"
 RECENT_MAIN_VERB_WINDOW = 4
+_HistoryKey = str | tuple[str, str]
 
 
 def quiz_settings_path() -> Path:
@@ -304,6 +307,8 @@ class GrammarQuestion:
     bindings: str
     context_translation: str = ""
     context_kana: str = ""
+    vocabulary_hints: tuple[QuizVocabularyHint, ...] | None = None
+    _history_key: tuple[str, str] | None = field(default=None, repr=False, compare=False)
 
 
 def _safe_int(value: object, default: int) -> int:
@@ -610,7 +615,7 @@ class GrammarQuizEngine:
                     analysis = self.shared_engine.analyze_pattern(pattern)
                 except ProjectError as error:
                     raise GrammarQuizError(f"Pattern '{pattern_id}': {error}") from error
-                if not analysis.focus_slot:
+                if not analysis.focus_slot and not analysis.entity_slots:
                     continue
                 if not analysis.dynamic_slots:
                     combinations.append(
@@ -663,16 +668,34 @@ class GrammarQuizEngine:
             }
         )
 
+    def _balanced_main_choice(self, candidates, dictionary, word_usage, recent_word_ids):
+        """Scope session history without changing balanced_choice or public IDs.
+
+        Bare IDs remain supported for callers supplying legacy per-pattern
+        history. Sessions record dictionary-qualified keys instead.
+        """
+        usage = {
+            item.id: word_usage.get((dictionary, item.id), word_usage.get(item.id, 0))
+            for item in candidates
+        } if word_usage else {}
+        recent = [
+            key[1] if isinstance(key, tuple) else key
+            for key in recent_word_ids
+            if not isinstance(key, tuple) or key[0] == dictionary
+        ]
+        return balanced_choice(candidates, usage, recent, self.rng)
+
     def _select_bindings(
         self,
         pattern_id: str,
         form_name: str,
         rules: Sequence[SlotFilterRule],
-        word_usage: Mapping[str, int],
-        recent_word_ids: Sequence[str],
+        word_usage: Mapping[_HistoryKey, int],
+        recent_word_ids: Sequence[_HistoryKey],
         choice_scope: ChoiceScope,
     ) -> Optional[tuple[Dict[str, str], Dict[str, str]]]:
         analysis = self.shared_engine.analyze_pattern(pattern_id)
+        main_slot = analysis.focus_slot or analysis.entity_slots[0]
         word_choices: Dict[str, str] = {}
         entity_choices: Dict[str, str] = {}
 
@@ -715,11 +738,11 @@ class GrammarQuizEngine:
             if isinstance(candidates, NumericRangeCandidates):
                 selected = self.rng.choice(candidates)
             elif slot == analysis.focus_slot:
-                selected = balanced_choice(
+                selected = self._balanced_main_choice(
                     candidates,
+                    analysis.slots[slot].dictionary,
                     word_usage,
                     recent_word_ids,
-                    self.rng,
                 )
             else:
                 selected = self.rng.choice(candidates)
@@ -744,7 +767,14 @@ class GrammarQuizEngine:
             ]
             if not candidates:
                 return None
-            entity_choices[slot] = self.rng.choice(candidates).id
+            selected = (
+                self._balanced_main_choice(
+                    candidates, analysis.slots[slot].dictionary,
+                    word_usage, recent_word_ids,
+                )
+                if slot == main_slot else self.rng.choice(candidates)
+            )
+            entity_choices[slot] = selected.id
         return word_choices, entity_choices
 
     def generate_question(
@@ -752,8 +782,8 @@ class GrammarQuizEngine:
         settings: GrammarQuizSettings,
         seen_keys: Optional[Set[str]] = None,
         preferred: Optional[GenerationCombination] = None,
-        word_usage: Optional[Mapping[str, int]] = None,
-        recent_word_ids: Optional[Sequence[str]] = None,
+        word_usage: Optional[Mapping[_HistoryKey, int]] = None,
+        recent_word_ids: Optional[Sequence[_HistoryKey]] = None,
     ) -> GrammarQuestion:
         rules = parse_slot_filter(settings.word_filter)
         combinations = self.build_combinations(settings)
@@ -793,8 +823,8 @@ class GrammarQuizEngine:
         settings: GrammarQuizSettings,
         combination: GenerationCombination,
         rules: Sequence[SlotFilterRule],
-        word_usage: Mapping[str, int],
-        recent_word_ids: Sequence[str],
+        word_usage: Mapping[_HistoryKey, int],
+        recent_word_ids: Sequence[_HistoryKey],
     ) -> Optional[GrammarQuestion]:
         choice_scope = self.choice_scope(
             settings,
@@ -827,13 +857,16 @@ class GrammarQuizEngine:
         )
 
         analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
-        main_slot = analysis.focus_slot
+        main_slot = analysis.focus_slot or analysis.entity_slots[0]
         main_dictionary = analysis.slots[main_slot].dictionary
-        main_word = compatibility_solver.resolve_word_selection(
-            self.project,
-            main_dictionary,
-            preview.words[main_slot],
-        )
+        if analysis.focus_slot:
+            main_word = compatibility_solver.resolve_word_selection(
+                self.project,
+                main_dictionary,
+                preview.words[main_slot],
+            )
+        else:
+            main_word = self.project.entities[preview.entities[main_slot]]
         if main_word is None:
             return None
         bindings = ", ".join(
@@ -853,7 +886,9 @@ class GrammarQuizEngine:
         context_translation, context_kana = selected_context_hint(
             self.project,
             preview,
+            analysis=analysis,
         )
+        vocabulary_hints = selected_vocabulary_hints(self.project, preview, analysis=analysis)
         return GrammarQuestion(
             key=key,
             source_sentence=preview.source,
@@ -864,32 +899,20 @@ class GrammarQuizEngine:
             target_form=combination.rule.target_form,
             source_form="",
             word_id=main_word.id,
+            _history_key=(main_dictionary, main_word.id),
             word_meaning=self.project.instruction_language.translation(main_word),
             word_kana=main_word.kana,
             word_kanji=main_word.kanji,
-            hint_pairs=self._hint_pairs(combination.pattern_id, preview),
+            hint_pairs=[(hint.translation, hint.kana) for hint in vocabulary_hints],
+            vocabulary_hints=vocabulary_hints,
             bindings=bindings,
             context_translation=context_translation,
             context_kana=context_kana,
         )
 
     def _hint_pairs(self, pattern_id: str, preview: object) -> List[tuple[str, str]]:
-        analysis = self.shared_engine.analyze_pattern(pattern_id)
-        result: List[tuple[str, str]] = []
-        for slot in analysis.word_slots:
-            dictionary = analysis.slots[slot].dictionary
-            word = compatibility_solver.resolve_word_selection(
-                self.project,
-                dictionary,
-                preview.words[slot],
-            )
-            if word is None:
-                continue
-            result.append((self.project.instruction_language.translation(word), word.kana))
-        for slot in analysis.entity_slots:
-            entity = self.project.entities[preview.entities[slot]]
-            result.append((self.project.instruction_language.translation(entity), entity.kana))
-        return result
+        return [(hint.translation, hint.kana)
+                for hint in selected_vocabulary_hints(self.project, preview)]
 
     def _statistics_choice_scope(self, settings, pattern_id, analysis, rules):
         """Push lexical filters into the solver before rendering possibilities.
@@ -922,13 +945,15 @@ class GrammarQuizEngine:
         rules = parse_slot_filter(settings.word_filter)
         combinations = self.build_combinations(settings)
         possible = 0
-        eligible_verbs: Set[str] = set()
+        eligible_words: Set[tuple[str, str]] = set()
         active_patterns: Set[str] = set()
         scopes = {}
         for combination_index, combination in enumerate(combinations):
             with progress_step(combination_index, len(combinations)):
                 active_patterns.add(combination.pattern_id)
                 analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
+                main_slot = analysis.focus_slot or analysis.entity_slots[0]
+                main_dictionary = analysis.slots[main_slot].dictionary
                 if combination.pattern_id not in scopes:
                     scopes[combination.pattern_id] = self._statistics_choice_scope(
                         settings, combination.pattern_id, analysis, rules,
@@ -971,14 +996,15 @@ class GrammarQuizEngine:
                             break
                     if matches:
                         possible += 1
-                        eligible_verbs.add(preview.words[analysis.focus_slot])
+                        selections = preview.words if analysis.focus_slot else preview.entities
+                        eligible_words.add((main_dictionary, selections[main_slot]))
         return {
             "possible": possible,
             "active_patterns": len(active_patterns),
-            "eligible": len(eligible_verbs),
+            "eligible": len(eligible_words),
             "categories": len(self.project.noun_categories),
             "patterns": len(active_patterns),
-            "words": len(eligible_verbs),
+            "words": len(eligible_words),
             "entities": len(self.project.entities),
         }
 

@@ -124,6 +124,10 @@ def mobile_sentence_hint_entries(
         if formatted:
             entries.append(formatted)
         seen.add(("context", "\0".join(context_entry)))
+    prepared = getattr(question, "vocabulary_hints", None)
+    if prepared is not None:
+        entries.extend(filter(None, (format_grammatical_hint_entry(item) for item in prepared)))
+        return entries
     slots = {}
     try:
         slots = project.analyze_pattern(question.pattern_id).slots

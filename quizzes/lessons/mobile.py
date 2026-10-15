@@ -7,6 +7,7 @@ interaction, embedded launcher integration, and lesson editor presentation.
 
 from __future__ import annotations
 
+
 import copy
 from pathlib import Path
 import sys

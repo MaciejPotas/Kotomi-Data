@@ -46,6 +46,7 @@ from platforms.mobile.presentation import (
     fitted_single_line_font_size,
     format_grammatical_hint_entry,
     format_mobile_hint_entries,
+    format_mobile_hint_entry,
 )
 
 
@@ -80,12 +81,22 @@ def fitted_choice_text_layout(
 def sentence_lexical_items(question: Question, project: object) -> List[str]:
     """Return readable lexical items selected for a mobile sentence card.
 
-    Sentence questions already carry the completed engine bindings in their
-    metadata.  Resolve those IDs against the loaded project here so the mobile
-    Hint can show useful vocabulary without revealing the generated answer.
-    This adapter is deliberately local to the mobile lessons application and
-    therefore does not change the desktop question or hint policy.
+    New sentence cards carry shared prepared vocabulary. Older cards retain
+    the binding-based fallback. Neither path reveals the generated answer.
     """
+
+    prepared = getattr(question, "vocabulary_hints", None)
+    if prepared is not None:
+        entries = []
+        context = format_mobile_hint_entry((
+            question.metadata.get("context_translation", ""),
+            question.metadata.get("context_kana", "").rstrip(" 、。"),
+            "",
+        ))
+        if context:
+            entries.append(context)
+        entries.extend(filter(None, (format_grammatical_hint_entry(item) for item in prepared)))
+        return entries
 
     bindings: List[tuple[str, str]] = []
     for binding in question.metadata.get("bindings", "").split(","):

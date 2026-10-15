@@ -1,8 +1,8 @@
 {
   "id": "lessons",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "quiz_api": 1,
-  "min_app_version": "1.1.1",
+  "min_app_version": "1.1.2",
   "kind": "python",
   "title": "Lesson quizzes",
   "description": "Lekcje i powtórki",

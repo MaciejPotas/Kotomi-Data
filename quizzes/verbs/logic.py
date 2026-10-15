@@ -30,6 +30,7 @@ from kotomi.core.project import (
 from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.application.quiz_preflight import iter_quiz_previews
 from kotomi.application.quiz_project import QuizProject
+from kotomi.application.quiz_hints import selected_context_hint
 from kotomi.core.generation import balanced_choice, normalize_answer
 from kotomi.application.settings_xml import load_settings, save_settings
 from kotomi.application.settings import validate_mobile_button_scale
@@ -644,19 +645,7 @@ class VerbQuizEngine:
                 for slot_id, entity_id in preview.entities.items()
             ),
         ]
-        context_translation = ""
-        context_kana = ""
-        context_pool = self.project.contexts.get(preview.context_pool)
-        context_option = (
-            context_pool.options.get(preview.context_option)
-            if context_pool is not None
-            else None
-        )
-        if context_option is not None:
-            context_translation = str(
-                self.project.instruction_language.translation(context_option) or ""
-            ).strip()
-            context_kana = str(context_option.kana or "").strip()
+        context_translation, context_kana = selected_context_hint(self.project, preview, analysis=analysis)
         key = "|".join(
             (
                 combination.pattern_id,

@@ -36,6 +36,7 @@ from kotomi.core.project import (
 from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.application.quiz_project import load_quiz_project
 from kotomi.application import quiz_project
+from kotomi.application.quiz_hints import pattern_context_hint
 from kotomi.core.generation import normalize_answer
 from kotomi.application.settings_xml import load_settings, save_settings
 from platforms.mobile.presentation import (
@@ -846,12 +847,14 @@ class AdjectiveQuizEngine:
             permutation_rank,
         )
         chain = prefixes + [selected.final_adjective]
+        analysis = self.shared_engine.analyze_pattern(selected.pattern)
         target_question, target_answer = self._render_pattern(
             selected,
             chain,
             selected.target_form,
             selected.target_copula_form,
             context_option,
+            analysis=analysis,
         )
         source_answer = ""
         if settings.mode == MODE_TRANSFORMATION:
@@ -861,6 +864,7 @@ class AdjectiveQuizEngine:
                 selected.source_form,
                 selected.source_copula_form,
                 context_option,
+                analysis=analysis,
             )
             if normalize_japanese(source_answer) == normalize_japanese(target_answer):
                 return None
@@ -893,6 +897,10 @@ class AdjectiveQuizEngine:
             f"{ids}:{context_option.id}:{source_name}->{target_name}:"
             f"{selected.copula.id if selected.copula else 'no_copula'}"
         )
+        context_translation, context_kana = pattern_context_hint(
+            self.project, selected.pattern.id, selected.context_pool.id, context_option.id,
+            analysis=analysis,
+        )
         return AdjectiveQuestion(
             key=key,
             source_sentence=source_sentence,
@@ -910,10 +918,8 @@ class AdjectiveQuizEngine:
             word_kanji=" + ".join(word.kanji for word in chain),
             adjective_count=len(chain),
             bindings="; ".join(bindings),
-            context_translation=str(
-                self.project.instruction_language.translation(context_option) or ""
-            ).strip(),
-            context_kana=str(context_option.kana or "").strip(),
+            context_translation=context_translation,
+            context_kana=context_kana,
         )
 
     @classmethod
@@ -943,8 +949,10 @@ class AdjectiveQuizEngine:
         final_form: str,
         copula_form: str,
         context_option: ContextOption,
+        *, analysis=None,
     ) -> tuple[str, str]:
-        analysis = self.shared_engine.analyze_pattern(space.pattern)
+        if analysis is None:
+            analysis = self.shared_engine.analyze_pattern(space.pattern)
         adjective_slot = next(
             slot for slot in analysis.word_slots
             if analysis.slots[slot].dictionary == "adjectives"
