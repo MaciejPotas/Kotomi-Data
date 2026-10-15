@@ -5,6 +5,10 @@
       <question>To jest {noun@item[case:nominative]}, {relative[agree:@item, government:@action].phrase} {verb@action[role:object, form].translation}.</question>
       <answer>これはわたしが{verb@action[role:object, form]}{noun@item}です。</answer>
     </sentence_pattern>
+    <sentence_pattern id="Zdania przydawkowe podmiotowe" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>To jest {noun@item[case:nominative]}, {relative[agree:@item, case:nominative].translation} {verb@action[role:subject, form, agree:@item].translation}.</question>
+      <answer>これは{verb@action[role:subject, form]}{noun@item}です。</answer>
+    </sentence_pattern>
     <sentence_pattern id="Częstotliwość czynności" category="basic">
       <question>{adverb@frequency[category:frequency].translation} {verb[form, polarity:affirmative].translation}.</question>
       <answer>{adverb@frequency[category:frequency]} {verb[form, polarity:affirmative]}。</answer>
