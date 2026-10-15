@@ -699,8 +699,8 @@ class AvailabilityQuizSession:
         if settings.random_order:
             engine.rng.shuffle(self.combinations)
         self.seen_keys: Set[str] = set()
-        self.word_usage: Dict[str, int] = {}
-        self.recent_word_ids: List[str] = []
+        self.word_usage: Dict[str | tuple[str, str], int] = {}
+        self.recent_word_ids: List[str | tuple[str, str]] = []
         self.current_question: Optional[AvailabilityQuestion] = None
         self.current_index = -1
         self.current_try = 0
@@ -732,10 +732,11 @@ class AvailabilityQuizSession:
             recent_word_ids=self.recent_word_ids,
         )
         self.seen_keys.add(question.key)
-        self.word_usage[question.word_id] = (
-            self.word_usage.get(question.word_id, 0) + 1
+        history_key = getattr(question, "_history_key", None) or question.word_id
+        self.word_usage[history_key] = (
+            self.word_usage.get(history_key, 0) + 1
         )
-        self.recent_word_ids.append(question.word_id)
+        self.recent_word_ids.append(history_key)
         if len(self.recent_word_ids) > RECENT_MAIN_VERB_WINDOW:
             self.recent_word_ids = self.recent_word_ids[-RECENT_MAIN_VERB_WINDOW:]
         self.current_question = question
