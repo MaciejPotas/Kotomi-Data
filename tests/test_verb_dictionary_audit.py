@@ -1,7 +1,9 @@
 """C1 validator mutations on a versioned synthetic fixture, never Content."""
 from copy import deepcopy
+import csv
 from dataclasses import asdict
 import importlib.util
+import io
 import json
 import os
 from pathlib import Path
@@ -33,6 +35,136 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(self.validate(), 9)
         self.assertEqual(before, self.report)
         self.assertEqual(source, [ET.tostring(w) for w in self.words + self.nouns])
+
+    def test_changed_basic_verb_properties(self):
+        word = self.words[0]
+        for attribute, field in [('translation', 'meaning'), ('kana', 'kana'),
+                                 ('kanji', 'kanji'), ('type', 'type'), ('ending', 'ending')]:
+            before = word.get(attribute)
+            for value in ('changed', '', None):
+                with self.subTest(attribute=attribute, value=value):
+                    if value is None:
+                        word.attrib.pop(attribute, None)
+                    else:
+                        word.set(attribute, value)
+                    with self.assertRaisesRegex(ValueError, f'fixture_new/{field}'):
+                        self.validate()
+            word.set(attribute, before)
+
+    def test_added_removed_or_changed_features(self):
+        original = self.words[0].find('features')
+        for action in ('add', 'remove', 'change', 'remove_section'):
+            with self.subTest(action=action):
+                word = deepcopy(self.words[0])
+                features = word.find('features')
+                if action == 'add':
+                    ET.SubElement(features, 'feature', ref='fixture_extra')
+                elif action == 'remove':
+                    features.remove(features[0])
+                elif action == 'change':
+                    features[0].set('ref', 'fixture_changed')
+                else:
+                    word.remove(features)
+                with self.assertRaisesRegex(ValueError, 'fixture_new/features'):
+                    validator.validate_static(self.report, [word, self.words[1]], self.nouns, self.forms)
+        self.assertEqual(len(original), 2)
+
+    def test_features_added_to_previously_empty_word(self):
+        features = ET.SubElement(self.words[1], 'features')
+        ET.SubElement(features, 'feature', ref='fixture_added')
+        with self.assertRaisesRegex(ValueError, 'fixture_existing/features'):
+            self.validate()
+
+    def test_loader_normalization_and_feature_order(self):
+        for attribute in ('translation', 'kana', 'kanji', 'type', 'ending'):
+            self.words[0].set(attribute, '  ' + self.words[0].get(attribute) + '  ')
+        features = self.words[0].find('features')
+        features[:] = list(reversed(features))
+        features[0].set('ref', '  ' + features[0].get('ref') + '  ')
+        ET.SubElement(features, 'feature')
+        ET.SubElement(features, 'feature', ref=' ')
+        self.assertEqual(self.validate(), 9)
+
+    def test_optional_empty_kanji_and_empty_features(self):
+        # Missing/empty kanji and absent/empty feature sections are equivalent
+        # in the inspected loader contract for verbs.
+        self.assertNotIn('kanji', self.words[1].attrib)
+        self.assertEqual(self.validate(), 9)
+        self.words[1].set('kanji', '')
+        ET.SubElement(self.words[1], 'features')
+        self.assertEqual(self.validate(), 9)
+
+    def test_known_but_incorrect_form_policies(self):
+        for row in self.forms:
+            before = row['policy']
+            with self.subTest(form=row['form']):
+                row['policy'] = 'potential' if before == 'priority' else 'priority'
+                with self.assertRaisesRegex(ValueError, f'Incorrect form policy: {row["verb_id"]}/{row["form"]}'):
+                    self.validate()
+                row['policy'] = before
+
+    def test_unknown_or_empty_morphology(self):
+        for value in ('invented_status', ''):
+            with self.subTest(value=value):
+                self.forms[0]['morphology'] = value
+                with self.assertRaisesRegex(ValueError, 'Unknown morphology: fixture_new/dictionary'):
+                    self.validate()
+
+    def test_existing_morphology_statuses_remain_supported(self):
+        for status in ('regular_or_known_exception', 'confirmed_kure_exception',
+                       'lexical_duplicate_not_inflection_error',
+                       'mechanical_pattern_only_not_confirmed_lexical_form'):
+            with self.subTest(status=status):
+                self.forms[0]['morphology'] = status
+                self.assertEqual(self.validate(), 9)
+
+    def test_missing_required_csv_columns(self):
+        for field in ('verb_id', 'form', 'kana', 'kanji', 'translation',
+                      'morphology', 'policy', 'specific_finding'):
+            with self.subTest(field=field):
+                rows = deepcopy(self.forms)
+                del rows[0][field]
+                with self.assertRaisesRegex(ValueError, 'Missing required CSV columns'):
+                    validator.validate_static(self.report, self.words, self.nouns, rows)
+                # Check headers even for an otherwise empty file.
+                header = ','.join(k for k in self.forms[0] if k != field)
+                with self.assertRaisesRegex(ValueError, 'Missing required CSV columns'):
+                    validator.read_form_audit(io.StringIO(header + '\n'))
+
+    def test_csv_duplicate_header(self):
+        header = ','.join(self.forms[0]) + ',specific_finding\n'
+        with self.assertRaisesRegex(ValueError, 'Duplicate CSV column'):
+            validator.read_form_audit(io.StringIO(header))
+
+    def test_csv_non_text_and_malformed_rows(self):
+        for field in self.forms[0]:
+            for value in (None, 1, []):
+                with self.subTest(field=field, value=value):
+                    rows = deepcopy(self.forms)
+                    rows[0][field] = value
+                    with self.assertRaisesRegex(ValueError, 'Invalid CSV structure or non-text value'):
+                        validator.validate_static(self.report, self.words, self.nouns, rows)
+        # DictReader represents a short row with None and surplus cells at key None.
+        header = ','.join(self.forms[0])
+        valid = ','.join(self.forms[0].values())
+        for line in ('fixture_new,dictionary', valid + ',extra'):
+            with self.subTest(line=line):
+                rows = validator.read_form_audit(io.StringIO(header + '\n' + line + '\n'))
+                with self.assertRaisesRegex(ValueError, 'Invalid CSV structure or non-text value'):
+                    validator.validate_static(self.report, self.words, self.nouns, rows)
+
+    def test_valid_csv_round_trip_with_empty_fields_and_free_text(self):
+        self.forms[0]['specific_finding'] = 'Free text, including punctuation.\nNo linguistic inference.'
+        stream = io.StringIO()
+        writer = csv.DictWriter(stream, fieldnames=list(self.forms[0]))
+        writer.writeheader()
+        writer.writerows(self.forms)
+        stream.seek(0)
+        rows = validator.read_form_audit(stream)
+        self.assertEqual(rows, self.forms)
+        self.assertEqual(rows[1]['kanji'], '')
+        self.assertEqual(rows[1]['specific_finding'], '')
+        self.assertEqual(validator.validate_static(self.report, self.words, self.nouns, rows), 9)
 
     def test_missing_translation_even_with_adjusted_stats(self):
         self.report['changes'].pop()

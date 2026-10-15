@@ -31,7 +31,17 @@ statystyki, lokalne definicje ról i klasy podmiotów. Kontrole dopasowań OR,
 dziedziczenia, wartości domyślnych ról i dostępności wykonuje oryginalny silnik
 przy `--kotomi`; pominięte kontrole są jawnie wypisane.
 
-Po review ponowiono eksperyment A i testy: 295 par, 1180 widocznych przykładów,
+W poprzedniej rundzie review ponowiono eksperyment A i testy: 295 par, 1180 widocznych przykładów,
 30940 niezmienionych realizacji dopełnieniowych, 57 testów Kotomi-Data
 (z `KOTOMI_PATH`, w tym 23 nowe) oraz 162 testy Kotomi. Pomiary wydajności
 zachowano jako historyczne; nie uruchomiono ich ponownie dla zmienionej propozycji.
+
+Końcowe poprawki P2/P3: tryb samodzielny porównuje także główne znaczenie, kana,
+kanji, type, ending i cechy zagnieżdżone w XML. Sprawdza osiem wymaganych kolumn
+CSV, tekstowy typ komórek, przypisanie formy do właściwej polityki i cztery
+istniejące statusy morfologii. Puste kanji i `specific_finding` pozostają poprawne;
+uwagi językowe nie podlegają automatycznej ocenie. Dodano 12 testów syntetycznych.
+Aktualny zestaw Kotomi-Data z `KOTOMI_PATH` obejmuje 69 przechodzących testów
+(w tym 35 testów walidatora); bez niego cztery testy kontraktu są pomijane.
+Oba tryby walidatora C1 przechodzą. Zakres A/B/C/D i 340 operacji C2 bez zmian.
+W tej rundzie nie powtarzano eksperymentu generowania ani pomiarów wydajności.

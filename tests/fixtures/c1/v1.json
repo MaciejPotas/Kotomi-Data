@@ -1,6 +1,6 @@
 {
   "fixture_version": 1,
-  "verbs_xml": "<dictionary><words><word id=\"fixture_new\"><usage><role ref=\"object\" accepts=\"living\" nouns=\"prop\" government=\"direct_object\" /></usage><forms><form ref=\"dictionary\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"plain_negative\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_plain\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_negative_plain\" kana=\"てすと\" translation=\"synthetic\" /></forms></word><word id=\"fixture_existing\"><usage><role ref=\"object\" accepts=\"living\" nouns=\"prop\" government=\"direct_object\" /><role ref=\"subject\" nouns=\"helper\" /></usage><forms><form ref=\"dictionary\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"plain_negative\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_plain\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_negative_plain\" kana=\"てすと\" translation=\"synthetic\" /></forms></word></words></dictionary>",
+  "verbs_xml": "<dictionary><words><word id=\"fixture_new\" translation=\"synthetic action\" kana=\"てすとする\" kanji=\"試験する\" type=\"irregular\" ending=\"suru\"><usage><role ref=\"object\" accepts=\"living\" nouns=\"prop\" government=\"direct_object\" /></usage><forms><form ref=\"dictionary\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"plain_negative\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_plain\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_negative_plain\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"polite_nonpast\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"polite_negative\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_polite\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_negative_polite\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"te_form\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"potential\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"passive\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"causative\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"tara\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"volitional\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"imperative\" kana=\"てすと\" translation=\"synthetic\" /></forms><features><feature ref=\"fixture_alpha\" /><feature ref=\"fixture_beta\" /></features></word><word id=\"fixture_existing\" translation=\"synthetic counting\" kana=\"てすと\" type=\"godan\" ending=\"u\"><usage><role ref=\"object\" accepts=\"living\" nouns=\"prop\" government=\"direct_object\" /><role ref=\"subject\" nouns=\"helper\" /></usage><forms><form ref=\"dictionary\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"plain_negative\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_plain\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_negative_plain\" kana=\"てすと\" translation=\"synthetic\" /></forms></word></words></dictionary>",
   "nouns_xml": "<dictionary><words><word id=\"actor\" category=\"child\"><agreement class=\"feminine\" /></word><word id=\"helper\" category=\"living\"><agreement class=\"masculine_personal\" /></word><word id=\"prop\" category=\"object\"><agreement class=\"neuter\" /></word></words></dictionary>",
   "forms": [
     {
@@ -9,7 +9,9 @@
       "kana": "てすと",
       "kanji": "",
       "translation": "synthetic",
-      "policy": "priority"
+      "policy": "priority",
+      "morphology": "regular_or_known_exception",
+      "specific_finding": ""
     },
     {
       "verb_id": "fixture_new",
@@ -17,7 +19,9 @@
       "kana": "てすと",
       "kanji": "",
       "translation": "synthetic",
-      "policy": "priority"
+      "policy": "priority",
+      "morphology": "regular_or_known_exception",
+      "specific_finding": ""
     },
     {
       "verb_id": "fixture_new",
@@ -25,7 +29,9 @@
       "kana": "てすと",
       "kanji": "",
       "translation": "synthetic",
-      "policy": "priority"
+      "policy": "priority",
+      "morphology": "regular_or_known_exception",
+      "specific_finding": ""
     },
     {
       "verb_id": "fixture_new",
@@ -33,7 +39,9 @@
       "kana": "てすと",
       "kanji": "",
       "translation": "synthetic",
-      "policy": "priority"
+      "policy": "priority",
+      "morphology": "regular_or_known_exception",
+      "specific_finding": ""
     },
     {
       "verb_id": "fixture_existing",
@@ -41,7 +49,9 @@
       "kana": "てすと",
       "kanji": "",
       "translation": "synthetic",
-      "policy": "priority"
+      "policy": "priority",
+      "morphology": "regular_or_known_exception",
+      "specific_finding": ""
     },
     {
       "verb_id": "fixture_existing",
@@ -49,7 +59,9 @@
       "kana": "てすと",
       "kanji": "",
       "translation": "synthetic",
-      "policy": "priority"
+      "policy": "priority",
+      "morphology": "regular_or_known_exception",
+      "specific_finding": ""
     },
     {
       "verb_id": "fixture_existing",
@@ -57,7 +69,9 @@
       "kana": "てすと",
       "kanji": "",
       "translation": "synthetic",
-      "policy": "priority"
+      "policy": "priority",
+      "morphology": "regular_or_known_exception",
+      "specific_finding": ""
     },
     {
       "verb_id": "fixture_existing",
@@ -65,7 +79,119 @@
       "kana": "てすと",
       "kanji": "",
       "translation": "synthetic",
-      "policy": "priority"
+      "policy": "priority",
+      "morphology": "regular_or_known_exception",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "polite_nonpast",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "polite",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "polite_negative",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "polite",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "past_polite",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "polite",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "past_negative_polite",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "polite",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "te_form",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "te",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "potential",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "potential",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "passive",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "passive",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "causative",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "causative",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "tara",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "tara",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "volitional",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "volitional",
+      "specific_finding": ""
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "imperative",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "morphology": "regular_or_known_exception",
+      "policy": "imperative",
+      "specific_finding": ""
     }
   ],
   "report": {
@@ -77,7 +203,15 @@
       "neuter"
     ],
     "form_policies": {
-      "priority": {}
+      "priority": {},
+      "polite": {},
+      "te": {},
+      "potential": {},
+      "passive": {},
+      "causative": {},
+      "tara": {},
+      "volitional": {},
+      "imperative": {}
     },
     "verbs": [
       {
@@ -88,7 +222,18 @@
           "dictionary",
           "plain_negative",
           "past_plain",
-          "past_negative_plain"
+          "past_negative_plain",
+          "polite_nonpast",
+          "polite_negative",
+          "past_polite",
+          "past_negative_polite",
+          "te_form",
+          "potential",
+          "passive",
+          "causative",
+          "tara",
+          "volitional",
+          "imperative"
         ],
         "missing_priority_forms": [],
         "current_roles": [
@@ -148,7 +293,16 @@
           "plain_negative": false,
           "past_plain": false,
           "past_negative_plain": false
-        }
+        },
+        "meaning": "synthetic action",
+        "kana": "てすとする",
+        "kanji": "試験する",
+        "type": "irregular",
+        "ending": "suru",
+        "features": [
+          "fixture_alpha",
+          "fixture_beta"
+        ]
       },
       {
         "id": "fixture_existing",
@@ -228,7 +382,13 @@
           "plain_negative": false,
           "past_plain": false,
           "past_negative_plain": false
-        }
+        },
+        "meaning": "synthetic counting",
+        "kana": "てすと",
+        "kanji": "",
+        "type": "godan",
+        "ending": "u",
+        "features": []
       }
     ],
     "changes": [
@@ -354,7 +514,7 @@
       "verbs": 2,
       "nouns": 3,
       "patterns": 0,
-      "forms": 8,
+      "forms": 19,
       "usage_declarations": 3,
       "by_category": {
         "A": 2

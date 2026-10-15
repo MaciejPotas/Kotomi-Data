@@ -32,7 +32,17 @@ statistics, local role definitions and subject classes. With `--kotomi`, the ori
 engine checks OR matching, inheritance, role defaults and availability. Skipped
 engine checks are explicitly reported in standalone mode.
 
-The A experiment and tests were rerun after review: 295 pairs, 1180 visible examples,
+The A experiment and tests were rerun in the previous review round: 295 pairs, 1180 visible examples,
 30940 unchanged object-relative realizations, 57 Kotomi-Data tests
 (with `KOTOMI_PATH`, including 23 new tests) and 162 Kotomi tests. Performance
 measurements are retained as historical; they were not rerun for the revised proposal.
+
+Final P2/P3 corrections: standalone mode also compares the main meaning, kana,
+kanji, type, ending and nested XML features. It checks all eight required CSV
+columns, text cell types, the designated policy for each form and the four
+existing morphology statuses. Empty kanji and `specific_finding` remain valid;
+linguistic findings are not assessed automatically. Twelve synthetic tests were added.
+The current Kotomi-Data suite with `KOTOMI_PATH` has 69 passing tests
+(including 35 validator tests); without it, four contract tests are skipped.
+Both C1 validator modes pass. A/B/C/D and the 340 C2 operations are unchanged.
+The generation experiment and performance measurements were not rerun in this round.

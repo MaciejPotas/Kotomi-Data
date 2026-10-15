@@ -18,6 +18,21 @@ import sys
 from xml.etree import ElementTree as ET
 
 PRIORITY_FORMS = ('dictionary', 'plain_negative', 'past_plain', 'past_negative_plain')
+FORM_POLICIES = {
+    **dict.fromkeys(PRIORITY_FORMS, 'priority'),
+    **dict.fromkeys(('polite_nonpast', 'polite_negative', 'past_polite',
+                     'past_negative_polite'), 'polite'),
+    'te_form': 'te', 'potential': 'potential', 'passive': 'passive',
+    'causative': 'causative', 'tara': 'tara', 'volitional': 'volitional',
+    'imperative': 'imperative',
+}
+FORM_COLUMNS = frozenset(('verb_id', 'form', 'kana', 'kanji', 'translation',
+                          'morphology', 'policy', 'specific_finding'))
+MORPHOLOGY_STATUSES = frozenset((
+    'regular_or_known_exception', 'confirmed_kure_exception',
+    'lexical_duplicate_not_inflection_error',
+    'mechanical_pattern_only_not_confirmed_lexical_form',
+))
 # Versioned C1 contract; --kotomi compares this with the live language capability.
 C1_CLASSES = frozenset(('masculine_personal', 'masculine_animate',
                         'masculine_inanimate', 'feminine', 'neuter'))
@@ -34,6 +49,14 @@ def unique(values, label):
     values = list(values)
     require(len(values) == len(set(values)), f'Duplicate {label}')
     return set(values)
+
+
+def read_form_audit(stream):
+    reader = csv.DictReader(stream)
+    columns = unique(reader.fieldnames or [], 'CSV column')
+    require(FORM_COLUMNS <= columns,
+            f'Missing required CSV columns: {sorted(FORM_COLUMNS - columns)}')
+    return list(reader)
 
 
 def agreement_values(word):
@@ -94,15 +117,39 @@ def validate_static(report, words, nouns, audited):
     form_items = [((key, f.get('ref')), f) for key, w in actual.items() for f in w.findall('forms/form')]
     unique((key for key, _ in form_items), 'dictionary form')
     forms = dict(form_items)
+    for index, row in enumerate(audited, 2):
+        require(FORM_COLUMNS <= set(row), f'Missing required CSV columns at row {index}')
+        require(all(isinstance(k, str) and isinstance(v, str) for k, v in row.items()),
+                f'Invalid CSV structure or non-text value at row {index}')
     require(Counter((r['verb_id'], r['form']) for r in audited) == Counter(forms.keys()), 'Missing/duplicate form audits')
     for row in audited:
         form = forms[row['verb_id'], row['form']]
         for field in ('kana', 'kanji', 'translation'):
             require(row[field] == form.get(field, ''), f'Stale {field}: {row["verb_id"]}/{row["form"]}')
         require(row['policy'] in report['form_policies'], 'Unknown form review policy')
+        require(row['form'] in FORM_POLICIES and row['policy'] == FORM_POLICIES[row['form']],
+                f'Incorrect form policy: {row["verb_id"]}/{row["form"]}')
+        require(row['morphology'] in MORPHOLOGY_STATUSES,
+                f'Unknown morphology: {row["verb_id"]}/{row["form"]}')
     expected = []
     for row in records:
         key, word = row['id'], actual[row['id']]
+        # C1 records the main translation, not the loader's noun-case fallback.
+        # The other verb attributes normalize absent/empty values to '' and
+        # strip whitespace in xml_loader.
+        for field, attribute in (('meaning', 'translation'), ('kana', 'kana'),
+                                 ('kanji', 'kanji'), ('type', 'type'), ('ending', 'ending')):
+            require(field in row and row[field] == (word.get(attribute) or '').strip(),
+                    f'Verb property drift: {key}/{field} (XML {attribute})')
+        # Features are child elements, not a space-separated word attribute.
+        # The loader ignores blank refs; the audit sorts the remaining list.
+        features = sorted((f.get('ref') or '').strip()
+                          for f in word.findall('features/feature')
+                          if (f.get('ref') or '').strip())
+        require(isinstance(row.get('features'), list)
+                and all(isinstance(f, str) for f in row['features'])
+                and sorted(row['features']) == features,
+                f'Verb property drift: {key}/features')
         require(row['category'] in ('A', 'B', 'C', 'D'), f'Unknown category: {key}')
         require(row['candidate_status'] == ('A' if row['category'] == 'A' else 'existing' if row['category'] == 'D' else 'discussion_only'), 'Candidate status mismatch')
         require(Counter(row['forms']) == Counter(f.get('ref') for f in word.findall('forms/form')), 'Record form inventory drift')
@@ -202,7 +249,7 @@ def main():
     words = ET.parse(root / 'dictionaries/verbs.xml').findall('words/word')
     nouns = ET.parse(root / 'dictionaries/nouns.xml').findall('words/word')
     with (folder / 'verb_dictionary_forms_c1.csv').open(encoding='utf-8', newline='') as stream:
-        audited = list(csv.DictReader(stream))
+        audited = read_form_audit(stream)
     count = validate_static(report, words, nouns, audited)
     print(f'C1 static completeness OK: {len(words)} verbs, {len(audited)} forms, {count} proposals; no files modified.')
     if not args.kotomi:
