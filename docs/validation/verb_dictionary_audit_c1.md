@@ -9,21 +9,21 @@ Przeanalizowano **122 czasowniki, wszystkie 1817 zapisanych form, wszystkie 221 
 
 | Wynik | Liczba |
 |---|---:|
-| A: bezpieczny, konkretny zakres uzupełnień | 34 |
-| B: wymagana decyzja językowa lub doprecyzowanie argumentów | 78 |
+| A: bezpieczny, konkretny zakres uzupełnień | 33 |
+| B: wymagana decyzja językowa lub doprecyzowanie argumentów | 79 |
 | C: potrzebna odpowiednia konstrukcja zamiast zwykłego subject agreement | 7 |
 | D: bez zmian w czterech formach priorytetowych | 3 |
 | Obecnie gotowe zwykłe przydawki podmiotowe | 3 czasowniki |
 | Istniejące mapy uzgodnienia | 12 form, 28 wpisów klas |
-| Propozycje A do C2 | 136 form, **316 nowych wpisów klas** |
+| Propozycje A do C2 | 132 form, **308 nowych wpisów klas** |
 | Wymagające tylko tłumaczeń w A | 1: `shimaru` |
 | Wymagające tylko nowej roli w A | 0 |
-| Wymagające tłumaczeń i nowej roli w A | 33 |
+| Wymagające tłumaczeń i nowej roli w A | 32 |
 | Brakujące japońskie formy priorytetowe | 0 |
 
-**Klasyfikacja dotyczy czterech form i zwykłej przydawki podmiotowej, nie wszystkich możliwych znaczeń czasownika.** A nie oznacza, że wszystkie istniejące dopełnienia, strona bierna czy konstrukcje ciągłe danego słowa są bezbłędne. D nie oznacza certyfikacji pozostałych jedenastu form. Ich oceny są odrębne. B nie oznacza 78 błędnych czasowników: obejmuje również poprawne czasowniki wymagające dopełnienia lub kontekstu.
+**Klasyfikacja dotyczy czterech form i zwykłej przydawki podmiotowej, nie wszystkich możliwych znaczeń czasownika.** A nie oznacza, że wszystkie istniejące dopełnienia, strona bierna czy konstrukcje ciągłe danego słowa są bezbłędne. D nie oznacza certyfikacji pozostałych jedenastu form. Ich oceny są odrębne. B nie oznacza 79 błędnych czasowników: obejmuje również poprawne czasowniki wymagające dopełnienia lub kontekstu.
 
-Liczba 316 oznacza brakujące, zatwierdzalne pozycje w wybranym zakresie A. Nie jest liczbą wszystkich hipotetycznych pustych pól w słowniku. Nie istnieje sensowny cel 122 × 4 × 5, ponieważ klasy i zastosowania zależą od podmiotów. Przydawki podmiotowe po eksperymencie A obsługują 37 czasowników, czyli 3 dotychczasowe i 34 rozszerzone.
+Liczba 308 oznacza brakujące, zatwierdzalne pozycje w wybranym zakresie A. Nie jest liczbą wszystkich hipotetycznych pustych pól w słowniku. Nie istnieje sensowny cel 122 × 4 × 5, ponieważ klasy i zastosowania zależą od podmiotów. Przydawki podmiotowe po eksperymencie A obsługują 36 czasowników, czyli 3 dotychczasowe i 33 rozszerzone.
 
 ## 2. Rewizje i źródła techniczne
 
@@ -31,7 +31,7 @@ Stan `main` odczytany 15 października 2026:
 
 - Kotomi: [`9c01404465837f55d32ce1b4056fbb6e99817440`](https://github.com/MaciejPotas/Kotomi/commit/9c01404465837f55d32ce1b4056fbb6e99817440).
 - Kotomi-Data: [`236bf6af22e897d103099a1166fb9a941d3ee1fd`](https://github.com/MaciejPotas/Kotomi-Data/commit/236bf6af22e897d103099a1166fb9a941d3ee1fd), Content 60.
-- Drzewo Kotomi-Data: `6e6e2bb98ad6002a377e5239905b76a03686644b`. Lokalna kopia odtwarza dokładnie to drzewo. Pliki obu kopii porównano z SHA blobów wskazanych przez przypięte drzewa GitHub.
+- Drzewo Kotomi-Data: `6e6e2bb98ad6002a377e5239905b76a03686644b`. Lokalna baza audytu odtwarza to drzewo; zmiany C1 dotyczą wyłącznie dokumentacji, narzędzia i testów. Pliki obu kopii porównano z SHA blobów wskazanych przez przypięte drzewa GitHub.
 
 Przeczytane kontrakty:
 
@@ -62,12 +62,12 @@ Wyniki parsera, liczby, dopasowania i wyrenderowane zdania są **potwierdzone ek
 ## 4. Jak czytać komplet materiałów
 
 - [Pełne zestawienie 122 czasowników i kandydaci tłumaczeń](verb_dictionary_inventory_c1.md): jedna pozycja zbiorcza na czasownik, następnie szczegóły czterech form według klas.
-- [Ustrukturyzowane rekordy i propozycje](verb_dictionary_proposals_c1.json): aktualne role i rzeczywiste dopasowania rzeczowników, znaczenia, kandydaci, decyzje, dostępność istniejących przydawek i 349 addytywnych operacji A.
+- [Ustrukturyzowane rekordy i propozycje](verb_dictionary_proposals_c1.json): aktualne role i rzeczywiste dopasowania rzeczowników, znaczenia, kandydaci, decyzje, dostępność istniejących przydawek i 340 addytywnych operacji A.
 - [Rejestr wszystkich 1817 form](verb_dictionary_forms_c1.csv): `verb_id`, `form`, oba zapisy, aktualne tłumaczenie, ocena morfologii, polityka konstrukcji i szczególne ustalenie. Znaczenie każdej polityki jest w JSON oraz poniżej.
-- [Dokładne fragmenty XML dla wszystkich 34 czasowników A](verb_dictionary_xml_c1.md).
-- [Dowody walidacji i 1228 widocznych par pytanie–odpowiedź](verb_dictionary_validation_c1.json).
-- [Hipotetyczne kontrprzykłady semantyczne](verb_dictionary_semantic_examples_c1.json).
-- [Pomiary i wszystkie próbki czasu](verb_dictionary_performance_c1.json).
+- [Dokładne fragmenty XML dla wszystkich 33 czasowników A](verb_dictionary_xml_c1.md).
+- [Dowody walidacji i 1180 widocznych par pytanie–odpowiedź](verb_dictionary_validation_c1.json).
+- [Hipotetyczne kontrprzykłady semantyczne](verb_dictionary_semantic_examples_c1.json), zachowane z pierwotnego audytu i nieuruchomione ponownie po review.
+- [Pomiary i wszystkie próbki czasu](verb_dictionary_performance_c1.json), wyłącznie historyczne, sprzed korekt review.
 
 W JSON tylko `changes` jest zestawem operacji proponowanych do C2. `verbs[].proposed_priority_values` zawiera także **warianty dyskusyjne B/C**, wyraźnie oznaczone `candidate_status`. Nie stosować ich automatycznie. `depends_on` wiąże tłumaczenia z potrzebną nową rolą. Ścieżki wskazują istniejącego rodzica; wpisy mają `expected_absent=true` i nie nadpisują danych.
 
@@ -111,7 +111,14 @@ Braki są obecnie uzasadnione lub co najmniej nie są automatyczną usterką:
 Przegląd zapisów nie wykazał potwierdzonego błędu kana/kanji do mechanicznej poprawy. Dwa odstępstwa od regularnego oczekiwania wymagają rozróżnienia:
 
 1. `kureru/imperative = くれ` jest poprawnym wyjątkiem. Nie zmieniać na `くれろ`.
-2. `wakaru/potential = わかる / 分かる` powtarza formę podstawową. Jest to decyzja o sposobie reprezentacji znaczenia, nie polecenie zastąpienia przez `分かれる`, które może być innym leksemem. Ekspozycja tej pozycji w quizie potencjalnym pozostaje do decyzji.
+2. `wakaru/potential = わかる / 分かる` powtarza formę podstawową, a nie osobną produktywną odmianę potencjalną. Etykieta i ekspozycja w quizie wymagają decyzji. Nie zastępować automatycznie przez `分かれる`, które może być innym leksemem.
+
+Oceny form należy czytać rozdzielnie: `morphology` mówi o zapisie/kształcie, `specific_finding` o znaczeniu i zastrzeżeniach, a `policy` (z definicją w JSON) o zastosowaniu i potrzebnej konstrukcji. `regular_or_known_exception` nie jest deklaracją gotowości quizowej ani zatwierdzeniem każdego polskiego znaczenia.
+
+| Pozycja | Morfologia | Znaczenie | Gotowość quizowa | Konstrukcja/decyzja |
+|---|---|---|---|---|
+| `chigau/potential` | `ちがえる/違える` pasuje tylko do mechanicznego wzoru u→eru; nie potwierdzono go jako neutralnej potencjalnej odmiany 違う. | „Mogę się różnić” nie jest zatwierdzone; 違える może należeć do odrębnego przechodniego leksemu. | Nie zatwierdzać jako ćwiczenia potencjalnej odmiany. | Najpierw rozstrzygnąć leksem i kontekst możliwości; sama mapa B2 lub nowy wzorzec nie naprawi etykiety. |
+| `wakaru/potential` | `わかる/分かる` to poprawna forma podstawowa, lecz nie osobna produktywna odmiana potencjalna. | Rozumienie/możność zrozumienia nie uzasadnia automatycznie etykiety `potential`. | Nie zatwierdzać jako zadania odmiany. | Decyzja o ekspozycji tej pozycji oraz osobie rozumiejącej i treści; nie zastępować przez 分かれる. |
 
 `持ってくる` prawidłowo zmienia końcowe kana na `きます`, `こない`, `きた`. Zapis mieszany nie jest niespójnością kanji. Typy `帰る`, `入る`, `走る`, `知る` pozostają godan mimo zakończenia る. `着る` pozostaje ichidan. Czasowniki pogodowe i mimowolne mogą mieć formalnie poprawne, ale pragmatycznie nacechowane rozkazy i formy potencjalne; nie oznaczyłem ich jako gotowych do dowolnego quizu.
 
@@ -140,7 +147,7 @@ Istotny kontrakt `role_matches()`:
 | `vehicle` | `noru`: pojazdy; problem wsiadania/jazdy pozostaje językowy. |
 | `reaction_target` | `odoroku`: polski narzędnik i reakcja nie wyznaczają automatycznie jej wykonawcy. |
 
-33 nowe role A używają wyłącznie **dokładnych istniejących ID**. Zwykła lista ludzi to `friend mother sister teacher roujin hito programmer madogiwazoku`. Tam, gdzie uzasadnione, dodano `inu/tori`, a dla `oyogu` tylko `inu`. `aruku` pozostaje przy ludziach, ponieważ polskie „pies idzie pieszo” jest nienaturalne. `utau` nie dostaje ogólnego ptaka. `shimaru` zachowuje `bag box`.
+32 nowe role A używają wyłącznie **dokładnych istniejących ID**. Zwykła lista ludzi to `friend mother sister teacher roujin hito programmer madogiwazoku`. Tam, gdzie uzasadnione, dodano `inu/tori`, a dla `oyogu` tylko `inu`. `aruku` pozostaje przy ludziach, ponieważ polskie „pies idzie pieszo” jest nienaturalne. `utau` nie dostaje ogólnego ptaka. `shimaru` zachowuje `bag box`.
 
 `person` zawiera `hitori` (jedna osoba, 一人). Z tego powodu nie proponuję szerokiego `accepts="person"` dla nowych ról. Stare role oparte na tej kategorii pozostają do odrębnej decyzji, aby nie zwężać po cichu istniejących quizów. Dopisanie `nouns` obok istniejącego szerokiego `accepts` nie naprawiłoby zakresu z uwagi na OR.
 
@@ -190,6 +197,78 @@ Do decyzji pozostają przede wszystkim `suwaru` (siadać/siedzieć), `tatsu` (st
 | `hanashiau` | Partner rozmowy w liczbie pojedynczej lub odrębne mnogie uzgodnienie. Sprawdzić istniejące `companion` przed projektowaniem DSL. |
 | `naru` | Jawny wynik/orzecznik. „Osoba, która staje się” nie jest skończonym zdaniem dydaktycznym. |
 
+### 8.5. Ponowna ocena wszystkich 34 pierwotnych A
+
+Przejrzano cztery formy, negację, aspekt przeszłości, znaczenie i pełne przydawki dla wszystkich pierwotnych A. Poniższe decyzje są oceną językową audytu, nie certyfikacją native speakera. Pozostaje ograniczenie do wybranego znaczenia i zwykłej przydawki. Nie rozszerzono zakresu na potential, bierną ani nowe konstrukcje.
+
+Dla ruchu brak sposobu przemieszczania w japońskim zdaniu nie gwarantuje chodzenia po ziemi. Ptak może chodzić, ale taki kontekst nie jest podany. Wniosek audytu: zawęzić `iku`, `kuru`, `deru`, `hairu` do ludzi i `inu`, bez zmiany tłumaczeń. Warianty osób także reprezentują wybrane znaczenie ruchu lądowego, nie każde możliwe przybycie samolotem.
+
+Poniższe pełne zdania to **historyczne realizacje odrzuconych teraz propozycji**, nie bieżące dopuszczenia. Pokazują również, dlaczego problem pozostaje w negacji i przeszłości.
+
+| Pozycja | Forma | Zdanie japońskie | Zdanie polskie |
+|---|---|---|---|
+| `iku` | `dictionary` | これはいくとりです。 | To jest ptak, który idzie. |
+| `kuru` | `dictionary` | これはくるとりです。 | To jest ptak, który przychodzi. |
+| `deru` | `dictionary` | これはでるとりです。 | To jest ptak, który wychodzi. |
+| `hairu` | `dictionary` | これははいるとりです。 | To jest ptak, który wchodzi. |
+| `nonbiri_suru` | `dictionary` | これはのんびりするひとです。 | To jest osoba, która leniuchuje. |
+| `iku` | `plain_negative` | これはいかないとりです。 | To jest ptak, który nie idzie. |
+| `kuru` | `plain_negative` | これはこないとりです。 | To jest ptak, który nie przychodzi. |
+| `deru` | `plain_negative` | これはでないとりです。 | To jest ptak, który nie wychodzi. |
+| `hairu` | `plain_negative` | これははいらないとりです。 | To jest ptak, który nie wchodzi. |
+| `nonbiri_suru` | `plain_negative` | これはのんびりしないひとです。 | To jest osoba, która nie leniuchuje. |
+| `iku` | `past_plain` | これはいったとりです。 | To jest ptak, który poszedł. |
+| `kuru` | `past_plain` | これはきたとりです。 | To jest ptak, który przyszedł. |
+| `deru` | `past_plain` | これはでたとりです。 | To jest ptak, który wyszedł. |
+| `hairu` | `past_plain` | これははいったとりです。 | To jest ptak, który wszedł. |
+| `nonbiri_suru` | `past_plain` | これはのんびりしたひとです。 | To jest osoba, która leniuchowała. |
+| `iku` | `past_negative_plain` | これはいかなかったとりです。 | To jest ptak, który nie poszedł. |
+| `kuru` | `past_negative_plain` | これはこなかったとりです。 | To jest ptak, który nie przyszedł. |
+| `deru` | `past_negative_plain` | これはでなかったとりです。 | To jest ptak, który nie wyszedł. |
+| `hairu` | `past_negative_plain` | これははいらなかったとりです。 | To jest ptak, który nie wszedł. |
+| `nonbiri_suru` | `past_negative_plain` | これはのんびりしなかったひとです。 | To jest osoba, która nie leniuchowała. |
+
+`nonbiri_suru` przechodzi do B: neutralny odpoczynek/relaks nie musi oznaczać leniuchowania. NINJAL opisuje zarówno spokojne korzystanie z czasu, jak i niekiedy negatywną ocenę powolności. To uzasadnia decyzję o znaczeniu przed uzupełnieniem map, także dla „nie leniuchuje” i „leniuchował”. Obecne wartości pozostają wyłącznie dyskusyjne.
+
+| Pierwotne A | Wynik ponownej oceny |
+|---|---|
+| `aruku` | A: Samodzielny ruch pieszy ma naturalnego wykonawcę; do C2 tylko ludzie, bo pies idzie pieszo jest stylistycznie nienaturalne. |
+| `asobu` | A: Zabawa ludzi i zwierząt może wystąpić bez wskazania towarzysza. Zachować istniejącą rekcję towarzysza. Tori pozostaje: japońska i polska czynność nie zakładają ludzkiego wykonawcy ani konkretnego sposobu lokomocji. |
+| `ayamaru` | A: Osoba może przepraszać bez jawnego adresata; target pozostaje niezależną rolą, bez poszerzania jej obecnej listy. |
+| `deru` | A: Zawęzić propozycję do ludzi i inu. 出た鳥 może oznaczać ptaka, który wyleciał; polskie wyszedł zakłada ruch po ziemi. Wybrana przydawka nie podaje tego kontekstu. Zachować route i dotychczasowe tłumaczenia; bez publikacji ani pojazdów. |
+| `hairu` | A: Zawęzić propozycję do ludzi i inu. 入った鳥 może oznaczać ptaka, który wleciał; polskie wszedł wymaga dodatkowego kontekstu. Zachować target=place i wszystkie tłumaczenia. Nie rozszerzać tej propozycji na inne znaczenia 入る. |
+| `hanasu` | A: Rozmawia może opisywać osobę bez jawnego partnera. Nie rozszerzać na zwierzęta ani zastępować tego automatycznie znaczeniem opowiadać o czymś. |
+| `harau` | A: Samodzielne płaci/zapłacił jest naturalne; zachować object=okane. Nie zmieniać znaczenia na usuwać/strzepywać. |
+| `hashiru` | A: Bieg ludzi i zwierząt jest samodzielną czynnością. Pojazdy i programy pominięte, bo wymagałyby innego polskiego znaczenia. Pozostawić tori: 走る określa właśnie bieg, więc polskie biegnie/biegł nie dodaje sposobu ruchu nieobecnego w japońskim. Nie jest to twierdzenie, że każdy ptak w każdej sytuacji biegnie. |
+| `iku` | A: Zawęzić propozycję do ludzi i inu. 行く określa kierunek, nie sposób ruchu; zdanie z ogólnym tori nie gwarantuje polskiego idzie/poszedł zamiast leci/poleciał. Nie zmieniać tłumaczeń ani nieregularnych いった/いかない. A obejmuje wybrane znaczenie ruchu lądowego, nie każdy sposób podróży ludzi. |
+| `isogu` | A: Samodzielna czynność osoby; zachować zaakceptowaną pisownię śpieszyć, bez kosmetycznej zmiany na spieszyć. |
+| `kaeru` | A: Powrót żywego wykonawcy można opisać bez jawnego celu. Nie zmieniać na ogólne zmieniać, które jest innym czasownikiem. Wraca/wrócił nie wybiera chodu ani lotu, więc tori pozostaje. |
+| `kaku` | A: Pisanie jest naturalne bez jawnego tekstu, np. osoba, która pisze. Zachować object=text i direct_object. |
+| `kangaeru` | A: Zastanawia się jest samodzielne; przy dopełnieniu pozostaje nad_instrumental. Pojazd jako przedmiot namysłu nie oznacza podmiotu. |
+| `kau` | A: Kupuje może być użyte absolutnie dla kupującej osoby; precyzyjny zakup wymaga object. Zachować istniejące role. |
+| `kikokusuru` | A: 帰国する zawiera powrót do własnego kraju; podmiot ludzki, argument celu zawarty w tłumaczeniu. Nie poszerzać na zwierzęta. |
+| `kotaeru` | A: Odpowiada może wystąpić bez jawnego pytania. Existing target=abstract pozostaje osobną kwestią precyzji dopełnienia. |
+| `kuru` | A: Zawęzić propozycję do ludzi i inu. 来る nie określa sposobu ruchu, więc 来た鳥 może oznaczać ptaka, który przyleciał. Przyszedł wymaga dodatkowego kontekstu ruchu po ziemi. Zachować wszystkie polskie wartości i nieregularne きた/こない; A nie certyfikuje każdego sposobu przybycia. |
+| `matsu` | A: Czekanie ludzi i zwierząt jest naturalne bez jawnego obiektu; na_accusative pozostaje dla dopełnienia. Tori pozostaje: japońska i polska czynność nie zakładają ludzkiego wykonawcy ani konkretnego sposobu lokomocji. |
+| `nomu` | A: Picie ma naturalnego żywego wykonawcę i może nie mieć jawnego napoju; pozostawić object=drink. Tori pozostaje: japońska i polska czynność nie zakładają ludzkiego wykonawcy ani konkretnego sposobu lokomocji. |
+| `nonbiri_suru` | B: B po ponownej ocenie: のんびりする obejmuje spokojny odpoczynek i relaks, nie tylko leniuchowanie. Obecne polskie znaczenie zawęża sens i może dodawać ocenę; dotyczy też negacji i przeszłości. Najpierw zatwierdzić znaczenie lub kontekst lekcji. Zachować produkcyjne tłumaczenie; warianty leniuchuje/leniuchował pozostają dyskusyjne, bez operacji C2-A. |
+| `okoru` | A: 怒る w wybranym znaczeniu emocji osoby jest samodzielne. Nie rozszerzać na homofoniczne 起こる ani bezpośrednio na karcenie kogoś. |
+| `omou` | A: Myśli/pomyślał można użyć absolutnie. Zachować reporting i istniejący wybór aspektu; nie dodawać posiadania opinii o dowolnym przedmiocie. |
+| `oyogu` | A: Ludzie i pies mogą pływać. Nie dopuszczać ogólnego ptaka, bo nie wszystkie ptaki pływają, ani łodzi, która wymaga innego japońskiego orzeczenia. |
+| `renshuusuru` | A: Ćwiczy w znaczeniu doskonalenia umiejętności jest samodzielne. Object=music/song zostaje bez zmian i wymaga osobnej oceny idiomatyczności ćwiczyć muzykę. |
+| `sentakusuru` | A: Prać można bez jawnego ubrania; object=clothes pozostaje poprawnym zakresem. Nie dopuszczać przypadkowych rzeczy jako wykonawców. |
+| `shimaru` | A: Nieprzechodnie zamykanie torby/pudełka; istniejąca precyzyjna rola wystarcza. Dodać tylko feminine/neuter w czterech formach. |
+| `soujisuru` | A: Sprzątanie jest samodzielną czynnością osoby; nie zmieniać object ani location. Dodatkowe dane nie naprawiają wszystkich obecnych dopełnień thing. |
+| `taberu` | A: Jeść można bez jawnego jedzenia; żywy podmiot i object=food są rozdzielnymi rolami. Nie dopuszczać żywności jako wykonawcy. Tori pozostaje: japońska i polska czynność nie zakładają ludzkiego wykonawcy ani konkretnego sposobu lokomocji. |
+| `undousuru` | A: Samodzielna aktywność fizyczna osoby; bez dodawania narzędzi i bez utożsamienia z ćwiczeniem utworu. |
+| `usowotsuku` | A: Kłamać można bez jawnego adresata; うそをつく jest całym zapisanym leksemem. Nie tworzyć drugiego slotu dla うそ. |
+| `utau` | A: Śpiew osoby jest samodzielny. Ptaki zwykle 鳴く/さえずる; nie dodawać ich do A. Object=media odrębnie wymaga wykluczenia np. głosu. |
+| `warau` | A: Śmiech osoby może być samodzielny. Zachować z_genitive dla wyśmiewanej osoby/zwierzęcia; podmiot nie jest tym samym argumentem co object. |
+| `yomu` | A: Czytanie ma naturalne użycie bez jawnego tekstu. Precyzyjna lista ludzi, zachować object=text; nie dodawać zwierząt ani rzeczy. |
+| `shinjiru` | A: Wierzy może opisywać osobę bez jawnego obiektu wiary. Zachować w_accusative; wiara w osobę i ufanie osobie nie są automatycznie tą samą rekcją. |
+
+Dla pozostałych A zachowano wszystkie przejrzane polskie wartości czterech form. Przeszłe pary dokonane (np. zapłacił, kupił, odpowiedział) i niedokonane (np. czytał, pływał) są wybranymi odczytaniami, nie automatycznym odwzorowaniem aspektu japońskiego. Negacja zachowuje ten wybór. Przydawki bez dopełnienia korzystają z kontekstowego pominięcia argumentu, bez twierdzenia, że wszystkie istniejące dopełnienia są poprawne. Nie dodano innych rzeczowników.
+
 ## 9. Obecne i przyszłe quizy
 
 Dla każdego słowa w JSON znajdują się **zmierzone** booleany dostępności obu istniejących przydawek w czterech formach. To dostępność silnika, nie automatyczna aprobata językowa wszystkich zdań. `future_use` oddziela ją od przewidywanej przydatności.
@@ -203,17 +282,19 @@ Dla każdego słowa w JSON znajdują się **zmierzone** booleany dostępności o
 
 ## 10. Eksperyment A, regresja i weryfikacja
 
+Wyniki poniżej uruchomiono ponownie 15 października 2026 dla wersji audytu 2, po zmianach review. Historyczne pomiary czasu mają osobny status w sekcjach 11 i 17.
+
 | Metryka | Przed | Po zastosowaniu A na kopii |
 |---|---:|---:|
-| Czasowniki w zwykłych przydawkach podmiotowych | 3 | 37 |
-| Pary czasownik/rzeczownik | 20 | 307 |
-| Realizacje podmiotowe na jedną formę | 100 | 1535 |
-| Widoczne unikalne pary pytanie/odpowiedź na formę | 20 | 307 |
-| Widoczne pary dla czterech form | 80 | 1228 |
+| Czasowniki w zwykłych przydawkach podmiotowych | 3 | 36 |
+| Pary czasownik/rzeczownik | 20 | 295 |
+| Realizacje podmiotowe na jedną formę | 100 | 1475 |
+| Widoczne unikalne pary pytanie/odpowiedź na formę | 20 | 295 |
+| Widoczne pary dla czterech form | 80 | 1180 |
 | Realizacje dopełnieniowe na formę | 7735 | 7735 |
 | Realizacje dopełnieniowe dla czterech form | 30940 | 30940 |
 
-Pięć kontekstów może dawać ten sam widoczny tekst przydawki. Nie należy przedstawiać 6140 realizacji podmiotowych jako 6140 unikalnych pytań.
+Pięć kontekstów może dawać ten sam widoczny tekst przydawki. Nie należy przedstawiać 5900 realizacji podmiotowych jako 5900 unikalnych pytań.
 
 Potwierdzono:
 
@@ -223,18 +304,18 @@ Potwierdzono:
 - Wszystkie 30940 realizacji dopełnieniowych porównano z pełną sygnaturą: teksty, słowa, rzeczowniki, formy i konteksty są identyczne.
 - Dla wszystkich 92 istniejących wzorców i czterech form: identyczna dostępność przed/po; listy ID kandydatów identyczne poza oczekiwanym rozszerzeniem przydawek podmiotowych. Sama dostępność tego wzorca też pozostaje true.
 - Niezmienność wszystkich dotychczasowych ról, rekcji, bazowych tłumaczeń, zapisów japońskich, rzeczowników i wzorców.
-- 560 negatywnych sprawdzeń wykluczenia niepasujących par lub niebezpiecznych katalogów.
+- 564 negatywnych sprawdzeń wykluczenia niepasujących par lub niebezpiecznych katalogów.
 - 100 pytań z kanonicznego generatora, seed 173, poprawne rozpoznanie oczekiwanej odpowiedzi.
-- Istniejące izolowane testy Kotomi: **162 passed**, 2,95 s (`test_subject_relative_catalog_boundary.py`, `test_verb_form_agreement.py`, `test_relative_explicit_case.py`). Nie dodano produkcyjnych fixture'ów ani wyjątków do testów.
-- Oba walidatory Kotomi-Data przechodzą; istniejący zestaw unittest: **34 testy OK**.
+- Istniejące izolowane testy Kotomi: **162 passed** (uruchomione ponownie po review) (`test_subject_relative_catalog_boundary.py`, `test_verb_form_agreement.py`, `test_relative_explicit_case.py`). Nie dodano produkcyjnych fixture'ów ani wyjątków do testów.
+- Oba walidatory Kotomi-Data przechodzą; zestaw unittest z `KOTOMI_PATH`: **57 testów OK** (34 istniejące i 23 nowe, w tym 4 z rzeczywistym kontraktem silnika na obiektach syntetycznych).
 
 Nie enumerowano wszystkich możliwych kombinacji pozostałych quizów. Dla nich dowodem jest kontrola niezmienionych danych, dostępności i list kandydatów, nie twierdzenie o pełnej równoważności dowolnej przyszłej konfiguracji. Publiczna lista pytań zależy też od aktualnych ustawień użytkownika.
 
 ## 11. Wydajność
 
-Pomiary obejmują ładowanie, kompatybilność, `exists`, dokładne liczenie i pierwsze pytanie dla obu przydawek. Zastosowano siedem naprzemiennych par przed/po, przypięcie do jednego dostępnego CPU i osobne tryby świeżego projektu oraz rozgrzanego wywołania. „Cold” nie oznacza opróżnienia cache systemu plików. Wszystkie próbki zachowano; wynik dotyczy środowiska współdzielonego, nie telefonu użytkownika.
+**Pomiary historyczne, nieuruchomione ponownie po review.** Plik performance zachowuje siedem pierwotnych naprzemiennych par oraz jedną serię kontrolną 21 par. Dotyczą wcześniejszego zakresu: 34 A, 316 wpisów, 33 role i 307 par podmiotowych. Nie są pomiarem obecnych 33 A, 308 wpisów, 32 ról i 295 par. Nie wnioskujemy z nich o aktualnym czasie generowania.
 
-Wzrost liczby podmiotowych kombinacji jest oczekiwany i należy odróżnić go od regresji algorytmu. Eksperyment dodaje 33 rzeczywiste role, bez zmiany solvera i limitów. Dokładne wyniki i interpretacja są w tabeli pomiarów na końcu raportu oraz w JSON.
+Zachowano oryginalne próbki, definicje cold/warm i ograniczenia współdzielonego środowiska. Bieżąca ponowna kontrola obejmuje poprawność i regresję wyników, bez benchmarku. C2 powinno ponowić pomiary dla zatwierdzonego zakresu i docelowego urządzenia.
 
 ## 12. Przykładowy zakres XML
 
@@ -268,7 +349,7 @@ Mechanicznie można sprawdzić ID, ścieżki, klasy, brak nadpisania, zgodność
 
 ## 14. Decyzje do zatwierdzenia
 
-1. Przyjąć 34 zakresy A i 316 wartości, z dokładnymi listami podmiotów, bez automatycznego uzupełniania wszystkich pięciu klas?
+1. Przyjąć 33 zakresy A i 308 wartości, z dokładnymi listami podmiotów, bez automatycznego uzupełniania wszystkich pięciu klas?
 2. Zachować konserwatywne wyłączenie z prostych przydawek słów wymagających jawnego dopełnienia, czy przygotować później wzorzec podmiot + dopełnienie, korzystając z istniejących ról?
 3. Zatwierdzić osobny przegląd aspektu `suwaru/tatsu/noru/tsukareru/damaru/odoroku/sumu` i przeczeń `shiru` przed zmianą ich istniejących glossów?
 4. Dla `kesu/kiku/suu` wybrać jedno znaczenie na obecne ID, czy zaprojektować osobne leksykalne zastosowania? Nie zmieniam ID ani nie tworzę duplikatów w C1.
@@ -280,13 +361,20 @@ Mechanicznie można sprawdzić ID, ścieżki, klasy, brak nadpisania, zgodność
 Z katalogu repozytorium:
 
 ```sh
+python tools/validate_verb_dictionary_audit.py
 python tools/validate_verb_dictionary_audit.py --kotomi ../Kotomi
 python tools/validate_repository.py
 python tools/validate_question_patterns.py
-python -m unittest discover -s tests -q
+KOTOMI_PATH=/absolute/path/to/Kotomi python -m unittest discover -s tests -q
 ```
 
-Walidator C1 nie stosuje propozycji i niczego nie zapisuje. Czyta rzeczywiste `verbs.xml`, `nouns.xml` oraz artefakty audytu, ponieważ fixture nie może potwierdzić kompletności konkretnego publikowanego słownika. Koszt jest liniowy względem słów, form i propozycji. Nie jest importowany przez unit testy. Sprawdza dokładnie jedną pozycję na czasownik, każdą istniejącą formę, zgodność aktualnych glossów/zapisów, ID rzeczowników, klasy kontraktu, ścieżki, zależności, unikalność operacji i zakaz nadpisania.
+Walidator C1 nie stosuje propozycji i niczego nie zapisuje. Oczekiwany zestaw operacji wyznacza z rekordów A, czterech przejrzanych map, istniejących map i istniejących ról, niezależnie od `changes` i statystyk. Wymaga dokładnej zgodności operacji, wartości, ścieżek i zależności. Brak, nadmiar, duplikat, zależność cykliczna albo od innej roli i próba nadpisania kończą się błędem. Kontroluje także liczbę zmodyfikowanych form oraz wszystkie pozostałe statystyki.
+
+Bez `--kotomi` sprawdza kompletność JSON/CSV względem `verbs.xml` i `nouns.xml`, pełne atrybuty lokalnych deklaracji ról (w tym `government`), istniejące mapy i przypisanie klas do każdego zaakceptowanego podmiotu A/D. Nie odtwarza samodzielnie semantyki dopasowania. Wypisuje `SKIPPED` dla kontroli wymagających silnika. Statyczna liczba gotowych czasowników pochodzi ze sprawdzonych strukturalnie snapshotów dostępności; rzeczywista dostępność oraz liczba rozwiniętych wzorców wymagają silnika.
+
+Z `--kotomi` ładuje deklarowany graf XML projektu przez `QuizProject`, wykonuje pełną walidację, porównuje katalog definicji ról (w tym wartości domyślne), klasy kontraktu języka, klasy rzeczowników, liczbę wzorców i dostępność obu przydawek dla wszystkich czasowników i czterech form. Porównuje wszystkie rzeczywiste `matched_nouns` przez oryginalne `role_matches`, zachowując OR, wildcard, domyślne role i dziedziczenie kategorii. Nie ma drugiej implementacji tych reguł.
+
+Samodzielne sprawdzanie ma koszt liniowy względem form, rekordów i propozycji. Wariant silnikowy dodatkowo ładuje i waliduje projekt, porównuje każdą rolę z rzeczownikami (R × N) oraz wykonuje osiem zapytań o dostępność na czasownik. Czytanie produkcji jest osobną kontrolą pokrycia konkretnego audytu, której fixture nie zastąpi. Testy jednostkowe importują czyste funkcje walidatora, lecz czytają wyłącznie wersjonowany syntetyczny `tests/fixtures/c1/v1.json`. Opcjonalne cztery testy kontraktu używają `KOTOMI_PATH` i syntetycznych obiektów modeli, bez ładowania projektu lub słowników.
 
 Eksperyment parsera/generatora można odtworzyć z `changes`: skopiować przypięty Content do katalogu tymczasowego; wykonać wyłącznie addytywne operacje w tej kopii; załadować przez `QuizProject.load`; porównać wyniki czterech form i oba wzorce wskazane w JSON. Nie używać Save All na produkcyjnym projekcie. Manifest tymczasowej kopii nie jest manifestem do wydania; C1 nie generuje nowych manifestów.
 
@@ -294,6 +382,10 @@ Eksperyment parsera/generatora można odtworzyć z `changes`: skopiować przypi�
 
 Ocena konkretnych par pochodzi z przeglądu danych, a nie z deklaracji, że słownik internetowy zatwierdził każdą z nich. Pomocniczo sprawdzono:
 
+- [NINJAL, のんびり](https://www2.ninjal.ac.jp/Onomatope/50_on/nonbiri.html): spokojny odpoczynek i relaks oraz kontekstowe oceny powolności.
+- [NINJAL, 来る](https://www2.ninjal.ac.jp/verbhandbook/headwords/来る.html): kierunek ruchu ludzi, zwierząt i pojazdów, w tym ptaków wędrownych; brak ograniczenia do chodu.
+- [Japan Foundation, 可能形](https://www.kyozai.jpf.go.jp/kyozai/material/BTS00063/ja/render.do): nie każdy czasownik ma produktywną formę potencjalną; wymieniono m.in. わかる.
+- [TUFS, 可能形](https://www.coelang.tufs.ac.jp/mt/ja/gmod/contents/explanation/074.html): reguły kształtu form potencjalnych, które nie rozstrzygają znaczenia konkretnego leksemu.
 - [Tae Kim, Negative Verbs](https://guidetojapanese.org/learn/grammar/negativeverbs): koniugacja przeczeń, wyjątek ある oraz rozróżnienie istnienia istot żywych.
 - [Tae Kim, Other uses of the te-form](https://guidetojapanese.org/learn/grammar/teform): stan wynikowy, wiedza, różnica względem samej czynności i czasowniki ruchu.
 - [Tae Kim, Potential Form](https://guidetojapanese.org/learn/grammar/potential): formy potencjalne i ich konstrukcja.
@@ -304,7 +396,9 @@ Ocena konkretnych par pochodzi z przeglądu danych, a nie z deklaracji, że sło
 
 Źródła wspierają zasady i wymienione rozróżnienia. Nie zastępują decyzji o docelowym znaczeniu słowa w Kotomi. W szczególności audyt nie proponuje automatycznej poprawy japońskich form ani polskiej odmiany na podstawie samego paradygmatu.
 
-## 17. Wyniki pomiarów czasu
+## 17. Historyczne wyniki pomiarów czasu
+
+**Wyniki sprzed review, nieuruchomione ponownie.** Wszystkie liczby w tej sekcji dotyczą starego zestawu 34 A / 316 wpisów / 33 role / 307 par, nie aktualnego zakresu. Zachowano je jako materiał historyczny, bez deklaracji bieżącej wydajności.
 
 | Wzorzec | Tryb | Operacja | Przed, mediana ms | Po, mediana ms | Mediana zmiany w parach |
 |---|---|---|---:|---:|---:|

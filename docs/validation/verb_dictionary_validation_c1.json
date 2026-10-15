@@ -4,6 +4,9 @@
     "Kotomi-Data": "236bf6af22e897d103099a1166fb9a941d3ee1fd"
   },
   "scope": "Temporary Content experiment; no production files modified",
+  "evidence_status": "rerun_after_C1_review",
+  "audit_version": 2,
+  "review_date": "2026-10-15",
   "validation": {
     "before": [],
     "after": []
@@ -40,10 +43,10 @@
       },
       "after": {
         "pattern_id": "Zdania przydawkowe podmiotowe",
-        "vocabulary_combinations": 307,
-        "generated_sentences": 1535,
-        "unique_questions": 307,
-        "unique_answers": 307,
+        "vocabulary_combinations": 295,
+        "generated_sentences": 1475,
+        "unique_questions": 295,
+        "unique_answers": 295,
         "form_names": [
           "dictionary"
         ],
@@ -55,18 +58,18 @@
           "present/today"
         ],
         "word_counts": {
-          "verb@action": 37
+          "verb@action": 36
         },
         "entity_counts": {
           "noun@item": 12
         },
         "connection_counts": {
-          "verb@action → noun@item": 307,
-          "noun@item → verb@action": 307
+          "verb@action → noun@item": 295,
+          "noun@item → verb@action": 295
         }
       },
-      "verb_noun_pairs": 307,
-      "unique_visible_pairs": 307
+      "verb_noun_pairs": 295,
+      "unique_visible_pairs": 295
     },
     "plain_negative": {
       "before": {
@@ -98,10 +101,10 @@
       },
       "after": {
         "pattern_id": "Zdania przydawkowe podmiotowe",
-        "vocabulary_combinations": 307,
-        "generated_sentences": 1535,
-        "unique_questions": 307,
-        "unique_answers": 307,
+        "vocabulary_combinations": 295,
+        "generated_sentences": 1475,
+        "unique_questions": 295,
+        "unique_answers": 295,
         "form_names": [
           "plain_negative"
         ],
@@ -113,18 +116,18 @@
           "present/today"
         ],
         "word_counts": {
-          "verb@action": 37
+          "verb@action": 36
         },
         "entity_counts": {
           "noun@item": 12
         },
         "connection_counts": {
-          "verb@action → noun@item": 307,
-          "noun@item → verb@action": 307
+          "verb@action → noun@item": 295,
+          "noun@item → verb@action": 295
         }
       },
-      "verb_noun_pairs": 307,
-      "unique_visible_pairs": 307
+      "verb_noun_pairs": 295,
+      "unique_visible_pairs": 295
     },
     "past_plain": {
       "before": {
@@ -156,10 +159,10 @@
       },
       "after": {
         "pattern_id": "Zdania przydawkowe podmiotowe",
-        "vocabulary_combinations": 307,
-        "generated_sentences": 1535,
-        "unique_questions": 307,
-        "unique_answers": 307,
+        "vocabulary_combinations": 295,
+        "generated_sentences": 1475,
+        "unique_questions": 295,
+        "unique_answers": 295,
         "form_names": [
           "past_plain"
         ],
@@ -171,18 +174,18 @@
           "past/yesterday"
         ],
         "word_counts": {
-          "verb@action": 37
+          "verb@action": 36
         },
         "entity_counts": {
           "noun@item": 12
         },
         "connection_counts": {
-          "verb@action → noun@item": 307,
-          "noun@item → verb@action": 307
+          "verb@action → noun@item": 295,
+          "noun@item → verb@action": 295
         }
       },
-      "verb_noun_pairs": 307,
-      "unique_visible_pairs": 307
+      "verb_noun_pairs": 295,
+      "unique_visible_pairs": 295
     },
     "past_negative_plain": {
       "before": {
@@ -214,10 +217,10 @@
       },
       "after": {
         "pattern_id": "Zdania przydawkowe podmiotowe",
-        "vocabulary_combinations": 307,
-        "generated_sentences": 1535,
-        "unique_questions": 307,
-        "unique_answers": 307,
+        "vocabulary_combinations": 295,
+        "generated_sentences": 1475,
+        "unique_questions": 295,
+        "unique_answers": 295,
         "form_names": [
           "past_negative_plain"
         ],
@@ -229,18 +232,18 @@
           "past/yesterday"
         ],
         "word_counts": {
-          "verb@action": 37
+          "verb@action": 36
         },
         "entity_counts": {
           "noun@item": 12
         },
         "connection_counts": {
-          "verb@action → noun@item": 307,
-          "noun@item → verb@action": 307
+          "verb@action → noun@item": 295,
+          "noun@item → verb@action": 295
         }
       },
-      "verb_noun_pairs": 307,
-      "unique_visible_pairs": 307
+      "verb_noun_pairs": 295,
+      "unique_visible_pairs": 295
     }
   },
   "object_regression": {
@@ -640,13 +643,13 @@
     {"verb": "aruku","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "asobu","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
     {"verb": "ayamaru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
-    {"verb": "deru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
-    {"verb": "hairu","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
+    {"verb": "deru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
+    {"verb": "hairu","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "hanasu","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "harau","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "hashiru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
     {"verb": "hataraku","before_subject_nouns": ["friend","mother","sister","teacher","roujin","hito","programmer","madogiwazoku"],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
-    {"verb": "iku","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
+    {"verb": "iku","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "isogu","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "kaeru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
     {"verb": "kaku","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
@@ -654,11 +657,10 @@
     {"verb": "kau","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "kikokusuru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "kotaeru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
-    {"verb": "kuru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
+    {"verb": "kuru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "matsu","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
     {"verb": "neru","before_subject_nouns": ["friend","inu","mother","sister","teacher","tori","roujin","hito","programmer","madogiwazoku"],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
     {"verb": "nomu","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher","tori"]},
-    {"verb": "nonbiri_suru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "okoru","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "omou","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
     {"verb": "oyogu","before_subject_nouns": [],"after_subject_nouns": ["friend","hito","inu","madogiwazoku","mother","programmer","roujin","sister","teacher"]},
@@ -700,7 +702,6 @@
     ["dictionary","deru","sister","To jest siostra, która wychodzi.","これはでるあねです。"],
     ["dictionary","neru","sister","To jest siostra, która śpi.","これはねるあねです。"],
     ["dictionary","nomu","sister","To jest siostra, która pije.","これはのむあねです。"],
-    ["dictionary","nonbiri_suru","sister","To jest siostra, która leniuchuje.","これはのんびりするあねです。"],
     ["dictionary","hairu","sister","To jest siostra, która wchodzi.","これははいるあねです。"],
     ["dictionary","hashiru","sister","To jest siostra, która biegnie.","これははしるあねです。"],
     ["dictionary","hataraku","sister","To jest siostra, która pracuje.","これははたらくあねです。"],
@@ -747,7 +748,6 @@
     ["dictionary","deru","mother","To jest mama, która wychodzi.","これはでるおかあさんです。"],
     ["dictionary","neru","mother","To jest mama, która śpi.","これはねるおかあさんです。"],
     ["dictionary","nomu","mother","To jest mama, która pije.","これはのむおかあさんです。"],
-    ["dictionary","nonbiri_suru","mother","To jest mama, która leniuchuje.","これはのんびりするおかあさんです。"],
     ["dictionary","hairu","mother","To jest mama, która wchodzi.","これははいるおかあさんです。"],
     ["dictionary","hashiru","mother","To jest mama, która biegnie.","これははしるおかあさんです。"],
     ["dictionary","hataraku","mother","To jest mama, która pracuje.","これははたらくおかあさんです。"],
@@ -784,7 +784,6 @@
     ["dictionary","deru","teacher","To jest nauczyciel, który wychodzi.","これはでるせんせいです。"],
     ["dictionary","neru","teacher","To jest nauczyciel, który śpi.","これはねるせんせいです。"],
     ["dictionary","nomu","teacher","To jest nauczyciel, który pije.","これはのむせんせいです。"],
-    ["dictionary","nonbiri_suru","teacher","To jest nauczyciel, który leniuchuje.","これはのんびりするせんせいです。"],
     ["dictionary","hairu","teacher","To jest nauczyciel, który wchodzi.","これははいるせんせいです。"],
     ["dictionary","hashiru","teacher","To jest nauczyciel, który biegnie.","これははしるせんせいです。"],
     ["dictionary","hataraku","teacher","To jest nauczyciel, który pracuje.","これははたらくせんせいです。"],
@@ -819,7 +818,6 @@
     ["dictionary","deru","friend","To jest przyjaciel, który wychodzi.","これはでるともだちです。"],
     ["dictionary","neru","friend","To jest przyjaciel, który śpi.","これはねるともだちです。"],
     ["dictionary","nomu","friend","To jest przyjaciel, który pije.","これはのむともだちです。"],
-    ["dictionary","nonbiri_suru","friend","To jest przyjaciel, który leniuchuje.","これはのんびりするともだちです。"],
     ["dictionary","hairu","friend","To jest przyjaciel, który wchodzi.","これははいるともだちです。"],
     ["dictionary","hashiru","friend","To jest przyjaciel, który biegnie.","これははしるともだちです。"],
     ["dictionary","hataraku","friend","To jest przyjaciel, który pracuje.","これははたらくともだちです。"],
@@ -830,14 +828,10 @@
     ["dictionary","renshuusuru","friend","To jest przyjaciel, który ćwiczy.","これはれんしゅうするともだちです。"],
     ["dictionary","warau","friend","To jest przyjaciel, który śmieje się.","これはわらうともだちです。"],
     ["dictionary","asobu","tori","To jest ptak, który bawi się.","これはあそぶとりです。"],
-    ["dictionary","iku","tori","To jest ptak, który idzie.","これはいくとりです。"],
     ["dictionary","kaeru","tori","To jest ptak, który wraca.","これはかえるとりです。"],
-    ["dictionary","kuru","tori","To jest ptak, który przychodzi.","これはくるとりです。"],
     ["dictionary","taberu","tori","To jest ptak, który je.","これはたべるとりです。"],
-    ["dictionary","deru","tori","To jest ptak, który wychodzi.","これはでるとりです。"],
     ["dictionary","neru","tori","To jest ptak, który śpi.","これはねるとりです。"],
     ["dictionary","nomu","tori","To jest ptak, który pije.","これはのむとりです。"],
-    ["dictionary","hairu","tori","To jest ptak, który wchodzi.","これははいるとりです。"],
     ["dictionary","hashiru","tori","To jest ptak, który biegnie.","これははしるとりです。"],
     ["dictionary","matsu","tori","To jest ptak, który czeka.","これはまつとりです。"],
     ["dictionary","aku","box","To jest pudełko, które otwiera się.","これはあくはこです。"],
@@ -867,7 +861,6 @@
     ["dictionary","deru","hito","To jest osoba, która wychodzi.","これはでるひとです。"],
     ["dictionary","neru","hito","To jest osoba, która śpi.","これはねるひとです。"],
     ["dictionary","nomu","hito","To jest osoba, która pije.","これはのむひとです。"],
-    ["dictionary","nonbiri_suru","hito","To jest osoba, która leniuchuje.","これはのんびりするひとです。"],
     ["dictionary","hairu","hito","To jest osoba, która wchodzi.","これははいるひとです。"],
     ["dictionary","hashiru","hito","To jest osoba, która biegnie.","これははしるひとです。"],
     ["dictionary","hataraku","hito","To jest osoba, która pracuje.","これははたらくひとです。"],
@@ -902,7 +895,6 @@
     ["dictionary","deru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który wychodzi.","これはでるまどぎわぞくです。"],
     ["dictionary","neru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który śpi.","これはねるまどぎわぞくです。"],
     ["dictionary","nomu","madogiwazoku","To jest pracownik odsunięty na boczny tor, który pije.","これはのむまどぎわぞくです。"],
-    ["dictionary","nonbiri_suru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który leniuchuje.","これはのんびりするまどぎわぞくです。"],
     ["dictionary","hairu","madogiwazoku","To jest pracownik odsunięty na boczny tor, który wchodzi.","これははいるまどぎわぞくです。"],
     ["dictionary","hashiru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który biegnie.","これははしるまどぎわぞくです。"],
     ["dictionary","hataraku","madogiwazoku","To jest pracownik odsunięty na boczny tor, który pracuje.","これははたらくまどぎわぞくです。"],
@@ -937,7 +929,6 @@
     ["dictionary","deru","roujin","To jest starzec, który wychodzi.","これはでるろうじんです。"],
     ["dictionary","neru","roujin","To jest starzec, który śpi.","これはねるろうじんです。"],
     ["dictionary","nomu","roujin","To jest starzec, który pije.","これはのむろうじんです。"],
-    ["dictionary","nonbiri_suru","roujin","To jest starzec, który leniuchuje.","これはのんびりするろうじんです。"],
     ["dictionary","hairu","roujin","To jest starzec, który wchodzi.","これははいるろうじんです。"],
     ["dictionary","hashiru","roujin","To jest starzec, który biegnie.","これははしるろうじんです。"],
     ["dictionary","hataraku","roujin","To jest starzec, który pracuje.","これははたらくろうじんです。"],
@@ -972,7 +963,6 @@
     ["dictionary","deru","programmer","To jest programista, który wychodzi.","これはでるプログラマーです。"],
     ["dictionary","neru","programmer","To jest programista, który śpi.","これはねるプログラマーです。"],
     ["dictionary","nomu","programmer","To jest programista, który pije.","これはのむプログラマーです。"],
-    ["dictionary","nonbiri_suru","programmer","To jest programista, który leniuchuje.","これはのんびりするプログラマーです。"],
     ["dictionary","hairu","programmer","To jest programista, który wchodzi.","これははいるプログラマーです。"],
     ["dictionary","hashiru","programmer","To jest programista, który biegnie.","これははしるプログラマーです。"],
     ["dictionary","hataraku","programmer","To jest programista, który pracuje.","これははたらくプログラマーです。"],
@@ -1007,7 +997,6 @@
     ["plain_negative","deru","sister","To jest siostra, która nie wychodzi.","これはでないあねです。"],
     ["plain_negative","neru","sister","To jest siostra, która nie śpi.","これはねないあねです。"],
     ["plain_negative","nomu","sister","To jest siostra, która nie pije.","これはのまないあねです。"],
-    ["plain_negative","nonbiri_suru","sister","To jest siostra, która nie leniuchuje.","これはのんびりしないあねです。"],
     ["plain_negative","hairu","sister","To jest siostra, która nie wchodzi.","これははいらないあねです。"],
     ["plain_negative","hashiru","sister","To jest siostra, która nie biegnie.","これははしらないあねです。"],
     ["plain_negative","hataraku","sister","To jest siostra, która nie pracuje.","これははたらかないあねです。"],
@@ -1054,7 +1043,6 @@
     ["plain_negative","deru","mother","To jest mama, która nie wychodzi.","これはでないおかあさんです。"],
     ["plain_negative","neru","mother","To jest mama, która nie śpi.","これはねないおかあさんです。"],
     ["plain_negative","nomu","mother","To jest mama, która nie pije.","これはのまないおかあさんです。"],
-    ["plain_negative","nonbiri_suru","mother","To jest mama, która nie leniuchuje.","これはのんびりしないおかあさんです。"],
     ["plain_negative","hairu","mother","To jest mama, która nie wchodzi.","これははいらないおかあさんです。"],
     ["plain_negative","hashiru","mother","To jest mama, która nie biegnie.","これははしらないおかあさんです。"],
     ["plain_negative","hataraku","mother","To jest mama, która nie pracuje.","これははたらかないおかあさんです。"],
@@ -1091,7 +1079,6 @@
     ["plain_negative","deru","teacher","To jest nauczyciel, który nie wychodzi.","これはでないせんせいです。"],
     ["plain_negative","neru","teacher","To jest nauczyciel, który nie śpi.","これはねないせんせいです。"],
     ["plain_negative","nomu","teacher","To jest nauczyciel, który nie pije.","これはのまないせんせいです。"],
-    ["plain_negative","nonbiri_suru","teacher","To jest nauczyciel, który nie leniuchuje.","これはのんびりしないせんせいです。"],
     ["plain_negative","hairu","teacher","To jest nauczyciel, który nie wchodzi.","これははいらないせんせいです。"],
     ["plain_negative","hashiru","teacher","To jest nauczyciel, który nie biegnie.","これははしらないせんせいです。"],
     ["plain_negative","hataraku","teacher","To jest nauczyciel, który nie pracuje.","これははたらかないせんせいです。"],
@@ -1126,7 +1113,6 @@
     ["plain_negative","deru","friend","To jest przyjaciel, który nie wychodzi.","これはでないともだちです。"],
     ["plain_negative","neru","friend","To jest przyjaciel, który nie śpi.","これはねないともだちです。"],
     ["plain_negative","nomu","friend","To jest przyjaciel, który nie pije.","これはのまないともだちです。"],
-    ["plain_negative","nonbiri_suru","friend","To jest przyjaciel, który nie leniuchuje.","これはのんびりしないともだちです。"],
     ["plain_negative","hairu","friend","To jest przyjaciel, który nie wchodzi.","これははいらないともだちです。"],
     ["plain_negative","hashiru","friend","To jest przyjaciel, który nie biegnie.","これははしらないともだちです。"],
     ["plain_negative","hataraku","friend","To jest przyjaciel, który nie pracuje.","これははたらかないともだちです。"],
@@ -1137,14 +1123,10 @@
     ["plain_negative","renshuusuru","friend","To jest przyjaciel, który nie ćwiczy.","これはれんしゅうしないともだちです。"],
     ["plain_negative","warau","friend","To jest przyjaciel, który nie śmieje się.","これはわらわないともだちです。"],
     ["plain_negative","asobu","tori","To jest ptak, który nie bawi się.","これはあそばないとりです。"],
-    ["plain_negative","iku","tori","To jest ptak, który nie idzie.","これはいかないとりです。"],
     ["plain_negative","kaeru","tori","To jest ptak, który nie wraca.","これはかえらないとりです。"],
-    ["plain_negative","kuru","tori","To jest ptak, który nie przychodzi.","これはこないとりです。"],
     ["plain_negative","taberu","tori","To jest ptak, który nie je.","これはたべないとりです。"],
-    ["plain_negative","deru","tori","To jest ptak, który nie wychodzi.","これはでないとりです。"],
     ["plain_negative","neru","tori","To jest ptak, który nie śpi.","これはねないとりです。"],
     ["plain_negative","nomu","tori","To jest ptak, który nie pije.","これはのまないとりです。"],
-    ["plain_negative","hairu","tori","To jest ptak, który nie wchodzi.","これははいらないとりです。"],
     ["plain_negative","hashiru","tori","To jest ptak, który nie biegnie.","これははしらないとりです。"],
     ["plain_negative","matsu","tori","To jest ptak, który nie czeka.","これはまたないとりです。"],
     ["plain_negative","aku","box","To jest pudełko, które nie otwiera się.","これはあかないはこです。"],
@@ -1174,7 +1156,6 @@
     ["plain_negative","deru","hito","To jest osoba, która nie wychodzi.","これはでないひとです。"],
     ["plain_negative","neru","hito","To jest osoba, która nie śpi.","これはねないひとです。"],
     ["plain_negative","nomu","hito","To jest osoba, która nie pije.","これはのまないひとです。"],
-    ["plain_negative","nonbiri_suru","hito","To jest osoba, która nie leniuchuje.","これはのんびりしないひとです。"],
     ["plain_negative","hairu","hito","To jest osoba, która nie wchodzi.","これははいらないひとです。"],
     ["plain_negative","hashiru","hito","To jest osoba, która nie biegnie.","これははしらないひとです。"],
     ["plain_negative","hataraku","hito","To jest osoba, która nie pracuje.","これははたらかないひとです。"],
@@ -1209,7 +1190,6 @@
     ["plain_negative","deru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie wychodzi.","これはでないまどぎわぞくです。"],
     ["plain_negative","neru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie śpi.","これはねないまどぎわぞくです。"],
     ["plain_negative","nomu","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie pije.","これはのまないまどぎわぞくです。"],
-    ["plain_negative","nonbiri_suru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie leniuchuje.","これはのんびりしないまどぎわぞくです。"],
     ["plain_negative","hairu","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie wchodzi.","これははいらないまどぎわぞくです。"],
     ["plain_negative","hashiru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie biegnie.","これははしらないまどぎわぞくです。"],
     ["plain_negative","hataraku","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie pracuje.","これははたらかないまどぎわぞくです。"],
@@ -1244,7 +1224,6 @@
     ["plain_negative","deru","roujin","To jest starzec, który nie wychodzi.","これはでないろうじんです。"],
     ["plain_negative","neru","roujin","To jest starzec, który nie śpi.","これはねないろうじんです。"],
     ["plain_negative","nomu","roujin","To jest starzec, który nie pije.","これはのまないろうじんです。"],
-    ["plain_negative","nonbiri_suru","roujin","To jest starzec, który nie leniuchuje.","これはのんびりしないろうじんです。"],
     ["plain_negative","hairu","roujin","To jest starzec, który nie wchodzi.","これははいらないろうじんです。"],
     ["plain_negative","hashiru","roujin","To jest starzec, który nie biegnie.","これははしらないろうじんです。"],
     ["plain_negative","hataraku","roujin","To jest starzec, który nie pracuje.","これははたらかないろうじんです。"],
@@ -1279,7 +1258,6 @@
     ["plain_negative","deru","programmer","To jest programista, który nie wychodzi.","これはでないプログラマーです。"],
     ["plain_negative","neru","programmer","To jest programista, który nie śpi.","これはねないプログラマーです。"],
     ["plain_negative","nomu","programmer","To jest programista, który nie pije.","これはのまないプログラマーです。"],
-    ["plain_negative","nonbiri_suru","programmer","To jest programista, który nie leniuchuje.","これはのんびりしないプログラマーです。"],
     ["plain_negative","hairu","programmer","To jest programista, który nie wchodzi.","これははいらないプログラマーです。"],
     ["plain_negative","hashiru","programmer","To jest programista, który nie biegnie.","これははしらないプログラマーです。"],
     ["plain_negative","hataraku","programmer","To jest programista, który nie pracuje.","これははたらかないプログラマーです。"],
@@ -1314,7 +1292,6 @@
     ["past_plain","deru","sister","To jest siostra, która wyszła.","これはでたあねです。"],
     ["past_plain","neru","sister","To jest siostra, która spała.","これはねたあねです。"],
     ["past_plain","nomu","sister","To jest siostra, która piła.","これはのんだあねです。"],
-    ["past_plain","nonbiri_suru","sister","To jest siostra, która leniuchowała.","これはのんびりしたあねです。"],
     ["past_plain","hairu","sister","To jest siostra, która weszła.","これははいったあねです。"],
     ["past_plain","hashiru","sister","To jest siostra, która biegła.","これははしったあねです。"],
     ["past_plain","hataraku","sister","To jest siostra, która pracowała.","これははたらいたあねです。"],
@@ -1361,7 +1338,6 @@
     ["past_plain","deru","mother","To jest mama, która wyszła.","これはでたおかあさんです。"],
     ["past_plain","neru","mother","To jest mama, która spała.","これはねたおかあさんです。"],
     ["past_plain","nomu","mother","To jest mama, która piła.","これはのんだおかあさんです。"],
-    ["past_plain","nonbiri_suru","mother","To jest mama, która leniuchowała.","これはのんびりしたおかあさんです。"],
     ["past_plain","hairu","mother","To jest mama, która weszła.","これははいったおかあさんです。"],
     ["past_plain","hashiru","mother","To jest mama, która biegła.","これははしったおかあさんです。"],
     ["past_plain","hataraku","mother","To jest mama, która pracowała.","これははたらいたおかあさんです。"],
@@ -1398,7 +1374,6 @@
     ["past_plain","deru","teacher","To jest nauczyciel, który wyszedł.","これはでたせんせいです。"],
     ["past_plain","neru","teacher","To jest nauczyciel, który spał.","これはねたせんせいです。"],
     ["past_plain","nomu","teacher","To jest nauczyciel, który pił.","これはのんだせんせいです。"],
-    ["past_plain","nonbiri_suru","teacher","To jest nauczyciel, który leniuchował.","これはのんびりしたせんせいです。"],
     ["past_plain","hairu","teacher","To jest nauczyciel, który wszedł.","これははいったせんせいです。"],
     ["past_plain","hashiru","teacher","To jest nauczyciel, który biegł.","これははしったせんせいです。"],
     ["past_plain","hataraku","teacher","To jest nauczyciel, który pracował.","これははたらいたせんせいです。"],
@@ -1433,7 +1408,6 @@
     ["past_plain","deru","friend","To jest przyjaciel, który wyszedł.","これはでたともだちです。"],
     ["past_plain","neru","friend","To jest przyjaciel, który spał.","これはねたともだちです。"],
     ["past_plain","nomu","friend","To jest przyjaciel, który pił.","これはのんだともだちです。"],
-    ["past_plain","nonbiri_suru","friend","To jest przyjaciel, który leniuchował.","これはのんびりしたともだちです。"],
     ["past_plain","hairu","friend","To jest przyjaciel, który wszedł.","これははいったともだちです。"],
     ["past_plain","hashiru","friend","To jest przyjaciel, który biegł.","これははしったともだちです。"],
     ["past_plain","hataraku","friend","To jest przyjaciel, który pracował.","これははたらいたともだちです。"],
@@ -1444,14 +1418,10 @@
     ["past_plain","renshuusuru","friend","To jest przyjaciel, który ćwiczył.","これはれんしゅうしたともだちです。"],
     ["past_plain","warau","friend","To jest przyjaciel, który śmiał się.","これはわらったともだちです。"],
     ["past_plain","asobu","tori","To jest ptak, który bawił się.","これはあそんだとりです。"],
-    ["past_plain","iku","tori","To jest ptak, który poszedł.","これはいったとりです。"],
     ["past_plain","kaeru","tori","To jest ptak, który wrócił.","これはかえったとりです。"],
-    ["past_plain","kuru","tori","To jest ptak, który przyszedł.","これはきたとりです。"],
     ["past_plain","taberu","tori","To jest ptak, który jadł.","これはたべたとりです。"],
-    ["past_plain","deru","tori","To jest ptak, który wyszedł.","これはでたとりです。"],
     ["past_plain","neru","tori","To jest ptak, który spał.","これはねたとりです。"],
     ["past_plain","nomu","tori","To jest ptak, który pił.","これはのんだとりです。"],
-    ["past_plain","hairu","tori","To jest ptak, który wszedł.","これははいったとりです。"],
     ["past_plain","hashiru","tori","To jest ptak, który biegł.","これははしったとりです。"],
     ["past_plain","matsu","tori","To jest ptak, który czekał.","これはまったとりです。"],
     ["past_plain","aku","box","To jest pudełko, które otworzyło się.","これはあいたはこです。"],
@@ -1481,7 +1451,6 @@
     ["past_plain","deru","hito","To jest osoba, która wyszła.","これはでたひとです。"],
     ["past_plain","neru","hito","To jest osoba, która spała.","これはねたひとです。"],
     ["past_plain","nomu","hito","To jest osoba, która piła.","これはのんだひとです。"],
-    ["past_plain","nonbiri_suru","hito","To jest osoba, która leniuchowała.","これはのんびりしたひとです。"],
     ["past_plain","hairu","hito","To jest osoba, która weszła.","これははいったひとです。"],
     ["past_plain","hashiru","hito","To jest osoba, która biegła.","これははしったひとです。"],
     ["past_plain","hataraku","hito","To jest osoba, która pracowała.","これははたらいたひとです。"],
@@ -1516,7 +1485,6 @@
     ["past_plain","deru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który wyszedł.","これはでたまどぎわぞくです。"],
     ["past_plain","neru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który spał.","これはねたまどぎわぞくです。"],
     ["past_plain","nomu","madogiwazoku","To jest pracownik odsunięty na boczny tor, który pił.","これはのんだまどぎわぞくです。"],
-    ["past_plain","nonbiri_suru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który leniuchował.","これはのんびりしたまどぎわぞくです。"],
     ["past_plain","hairu","madogiwazoku","To jest pracownik odsunięty na boczny tor, który wszedł.","これははいったまどぎわぞくです。"],
     ["past_plain","hashiru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który biegł.","これははしったまどぎわぞくです。"],
     ["past_plain","hataraku","madogiwazoku","To jest pracownik odsunięty na boczny tor, który pracował.","これははたらいたまどぎわぞくです。"],
@@ -1551,7 +1519,6 @@
     ["past_plain","deru","roujin","To jest starzec, który wyszedł.","これはでたろうじんです。"],
     ["past_plain","neru","roujin","To jest starzec, który spał.","これはねたろうじんです。"],
     ["past_plain","nomu","roujin","To jest starzec, który pił.","これはのんだろうじんです。"],
-    ["past_plain","nonbiri_suru","roujin","To jest starzec, który leniuchował.","これはのんびりしたろうじんです。"],
     ["past_plain","hairu","roujin","To jest starzec, który wszedł.","これははいったろうじんです。"],
     ["past_plain","hashiru","roujin","To jest starzec, który biegł.","これははしったろうじんです。"],
     ["past_plain","hataraku","roujin","To jest starzec, który pracował.","これははたらいたろうじんです。"],
@@ -1586,7 +1553,6 @@
     ["past_plain","deru","programmer","To jest programista, który wyszedł.","これはでたプログラマーです。"],
     ["past_plain","neru","programmer","To jest programista, który spał.","これはねたプログラマーです。"],
     ["past_plain","nomu","programmer","To jest programista, który pił.","これはのんだプログラマーです。"],
-    ["past_plain","nonbiri_suru","programmer","To jest programista, który leniuchował.","これはのんびりしたプログラマーです。"],
     ["past_plain","hairu","programmer","To jest programista, który wszedł.","これははいったプログラマーです。"],
     ["past_plain","hashiru","programmer","To jest programista, który biegł.","これははしったプログラマーです。"],
     ["past_plain","hataraku","programmer","To jest programista, który pracował.","これははたらいたプログラマーです。"],
@@ -1621,7 +1587,6 @@
     ["past_negative_plain","deru","sister","To jest siostra, która nie wyszła.","これはでなかったあねです。"],
     ["past_negative_plain","neru","sister","To jest siostra, która nie spała.","これはねなかったあねです。"],
     ["past_negative_plain","nomu","sister","To jest siostra, która nie piła.","これはのまなかったあねです。"],
-    ["past_negative_plain","nonbiri_suru","sister","To jest siostra, która nie leniuchowała.","これはのんびりしなかったあねです。"],
     ["past_negative_plain","hairu","sister","To jest siostra, która nie weszła.","これははいらなかったあねです。"],
     ["past_negative_plain","hashiru","sister","To jest siostra, która nie biegła.","これははしらなかったあねです。"],
     ["past_negative_plain","hataraku","sister","To jest siostra, która nie pracowała.","これははたらかなかったあねです。"],
@@ -1668,7 +1633,6 @@
     ["past_negative_plain","deru","mother","To jest mama, która nie wyszła.","これはでなかったおかあさんです。"],
     ["past_negative_plain","neru","mother","To jest mama, która nie spała.","これはねなかったおかあさんです。"],
     ["past_negative_plain","nomu","mother","To jest mama, która nie piła.","これはのまなかったおかあさんです。"],
-    ["past_negative_plain","nonbiri_suru","mother","To jest mama, która nie leniuchowała.","これはのんびりしなかったおかあさんです。"],
     ["past_negative_plain","hairu","mother","To jest mama, która nie weszła.","これははいらなかったおかあさんです。"],
     ["past_negative_plain","hashiru","mother","To jest mama, która nie biegła.","これははしらなかったおかあさんです。"],
     ["past_negative_plain","hataraku","mother","To jest mama, która nie pracowała.","これははたらかなかったおかあさんです。"],
@@ -1705,7 +1669,6 @@
     ["past_negative_plain","deru","teacher","To jest nauczyciel, który nie wyszedł.","これはでなかったせんせいです。"],
     ["past_negative_plain","neru","teacher","To jest nauczyciel, który nie spał.","これはねなかったせんせいです。"],
     ["past_negative_plain","nomu","teacher","To jest nauczyciel, który nie pił.","これはのまなかったせんせいです。"],
-    ["past_negative_plain","nonbiri_suru","teacher","To jest nauczyciel, który nie leniuchował.","これはのんびりしなかったせんせいです。"],
     ["past_negative_plain","hairu","teacher","To jest nauczyciel, który nie wszedł.","これははいらなかったせんせいです。"],
     ["past_negative_plain","hashiru","teacher","To jest nauczyciel, który nie biegł.","これははしらなかったせんせいです。"],
     ["past_negative_plain","hataraku","teacher","To jest nauczyciel, który nie pracował.","これははたらかなかったせんせいです。"],
@@ -1740,7 +1703,6 @@
     ["past_negative_plain","deru","friend","To jest przyjaciel, który nie wyszedł.","これはでなかったともだちです。"],
     ["past_negative_plain","neru","friend","To jest przyjaciel, który nie spał.","これはねなかったともだちです。"],
     ["past_negative_plain","nomu","friend","To jest przyjaciel, który nie pił.","これはのまなかったともだちです。"],
-    ["past_negative_plain","nonbiri_suru","friend","To jest przyjaciel, który nie leniuchował.","これはのんびりしなかったともだちです。"],
     ["past_negative_plain","hairu","friend","To jest przyjaciel, który nie wszedł.","これははいらなかったともだちです。"],
     ["past_negative_plain","hashiru","friend","To jest przyjaciel, który nie biegł.","これははしらなかったともだちです。"],
     ["past_negative_plain","hataraku","friend","To jest przyjaciel, który nie pracował.","これははたらかなかったともだちです。"],
@@ -1751,14 +1713,10 @@
     ["past_negative_plain","renshuusuru","friend","To jest przyjaciel, który nie ćwiczył.","これはれんしゅうしなかったともだちです。"],
     ["past_negative_plain","warau","friend","To jest przyjaciel, który nie śmiał się.","これはわらわなかったともだちです。"],
     ["past_negative_plain","asobu","tori","To jest ptak, który nie bawił się.","これはあそばなかったとりです。"],
-    ["past_negative_plain","iku","tori","To jest ptak, który nie poszedł.","これはいかなかったとりです。"],
     ["past_negative_plain","kaeru","tori","To jest ptak, który nie wrócił.","これはかえらなかったとりです。"],
-    ["past_negative_plain","kuru","tori","To jest ptak, który nie przyszedł.","これはこなかったとりです。"],
     ["past_negative_plain","taberu","tori","To jest ptak, który nie jadł.","これはたべなかったとりです。"],
-    ["past_negative_plain","deru","tori","To jest ptak, który nie wyszedł.","これはでなかったとりです。"],
     ["past_negative_plain","neru","tori","To jest ptak, który nie spał.","これはねなかったとりです。"],
     ["past_negative_plain","nomu","tori","To jest ptak, który nie pił.","これはのまなかったとりです。"],
-    ["past_negative_plain","hairu","tori","To jest ptak, który nie wszedł.","これははいらなかったとりです。"],
     ["past_negative_plain","hashiru","tori","To jest ptak, który nie biegł.","これははしらなかったとりです。"],
     ["past_negative_plain","matsu","tori","To jest ptak, który nie czekał.","これはまたなかったとりです。"],
     ["past_negative_plain","aku","box","To jest pudełko, które nie otworzyło się.","これはあかなかったはこです。"],
@@ -1788,7 +1746,6 @@
     ["past_negative_plain","deru","hito","To jest osoba, która nie wyszła.","これはでなかったひとです。"],
     ["past_negative_plain","neru","hito","To jest osoba, która nie spała.","これはねなかったひとです。"],
     ["past_negative_plain","nomu","hito","To jest osoba, która nie piła.","これはのまなかったひとです。"],
-    ["past_negative_plain","nonbiri_suru","hito","To jest osoba, która nie leniuchowała.","これはのんびりしなかったひとです。"],
     ["past_negative_plain","hairu","hito","To jest osoba, która nie weszła.","これははいらなかったひとです。"],
     ["past_negative_plain","hashiru","hito","To jest osoba, która nie biegła.","これははしらなかったひとです。"],
     ["past_negative_plain","hataraku","hito","To jest osoba, która nie pracowała.","これははたらかなかったひとです。"],
@@ -1823,7 +1780,6 @@
     ["past_negative_plain","deru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie wyszedł.","これはでなかったまどぎわぞくです。"],
     ["past_negative_plain","neru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie spał.","これはねなかったまどぎわぞくです。"],
     ["past_negative_plain","nomu","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie pił.","これはのまなかったまどぎわぞくです。"],
-    ["past_negative_plain","nonbiri_suru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie leniuchował.","これはのんびりしなかったまどぎわぞくです。"],
     ["past_negative_plain","hairu","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie wszedł.","これははいらなかったまどぎわぞくです。"],
     ["past_negative_plain","hashiru","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie biegł.","これははしらなかったまどぎわぞくです。"],
     ["past_negative_plain","hataraku","madogiwazoku","To jest pracownik odsunięty na boczny tor, który nie pracował.","これははたらかなかったまどぎわぞくです。"],
@@ -1858,7 +1814,6 @@
     ["past_negative_plain","deru","roujin","To jest starzec, który nie wyszedł.","これはでなかったろうじんです。"],
     ["past_negative_plain","neru","roujin","To jest starzec, który nie spał.","これはねなかったろうじんです。"],
     ["past_negative_plain","nomu","roujin","To jest starzec, który nie pił.","これはのまなかったろうじんです。"],
-    ["past_negative_plain","nonbiri_suru","roujin","To jest starzec, który nie leniuchował.","これはのんびりしなかったろうじんです。"],
     ["past_negative_plain","hairu","roujin","To jest starzec, który nie wszedł.","これははいらなかったろうじんです。"],
     ["past_negative_plain","hashiru","roujin","To jest starzec, który nie biegł.","これははしらなかったろうじんです。"],
     ["past_negative_plain","hataraku","roujin","To jest starzec, który nie pracował.","これははたらかなかったろうじんです。"],
@@ -1893,7 +1848,6 @@
     ["past_negative_plain","deru","programmer","To jest programista, który nie wyszedł.","これはでなかったプログラマーです。"],
     ["past_negative_plain","neru","programmer","To jest programista, który nie spał.","これはねなかったプログラマーです。"],
     ["past_negative_plain","nomu","programmer","To jest programista, który nie pił.","これはのまなかったプログラマーです。"],
-    ["past_negative_plain","nonbiri_suru","programmer","To jest programista, który nie leniuchował.","これはのんびりしなかったプログラマーです。"],
     ["past_negative_plain","hairu","programmer","To jest programista, który nie wszedł.","これははいらなかったプログラマーです。"],
     ["past_negative_plain","hashiru","programmer","To jest programista, który nie biegł.","これははしらなかったプログラマーです。"],
     ["past_negative_plain","hataraku","programmer","To jest programista, który nie pracował.","これははたらかなかったプログラマーです。"],
@@ -1906,7 +1860,7 @@
   ],
   "all_pattern_candidates_equal_except_subject": true,
   "negative_checks": {
-    "count": 560,
+    "count": 564,
     "combinations": [
       ["aruku", "book", "dictionary"],
       ["aruku", "book", "plain_negative"],
@@ -2212,22 +2166,6 @@
       ["nomu", "okane", "plain_negative"],
       ["nomu", "okane", "past_plain"],
       ["nomu", "okane", "past_negative_plain"],
-      ["nonbiri_suru", "book", "dictionary"],
-      ["nonbiri_suru", "book", "plain_negative"],
-      ["nonbiri_suru", "book", "past_plain"],
-      ["nonbiri_suru", "book", "past_negative_plain"],
-      ["nonbiri_suru", "jikan", "dictionary"],
-      ["nonbiri_suru", "jikan", "plain_negative"],
-      ["nonbiri_suru", "jikan", "past_plain"],
-      ["nonbiri_suru", "jikan", "past_negative_plain"],
-      ["nonbiri_suru", "hitori", "dictionary"],
-      ["nonbiri_suru", "hitori", "plain_negative"],
-      ["nonbiri_suru", "hitori", "past_plain"],
-      ["nonbiri_suru", "hitori", "past_negative_plain"],
-      ["nonbiri_suru", "okane", "dictionary"],
-      ["nonbiri_suru", "okane", "plain_negative"],
-      ["nonbiri_suru", "okane", "past_plain"],
-      ["nonbiri_suru", "okane", "past_negative_plain"],
       ["okoru", "book", "dictionary"],
       ["okoru", "book", "plain_negative"],
       ["okoru", "book", "past_plain"],
@@ -2452,6 +2390,26 @@
       ["shinjiru", "okane", "plain_negative"],
       ["shinjiru", "okane", "past_plain"],
       ["shinjiru", "okane", "past_negative_plain"],
+      ["iku", "tori", "dictionary"],
+      ["iku", "tori", "plain_negative"],
+      ["iku", "tori", "past_plain"],
+      ["iku", "tori", "past_negative_plain"],
+      ["kuru", "tori", "dictionary"],
+      ["kuru", "tori", "plain_negative"],
+      ["kuru", "tori", "past_plain"],
+      ["kuru", "tori", "past_negative_plain"],
+      ["deru", "tori", "dictionary"],
+      ["deru", "tori", "plain_negative"],
+      ["deru", "tori", "past_plain"],
+      ["deru", "tori", "past_negative_plain"],
+      ["hairu", "tori", "dictionary"],
+      ["hairu", "tori", "plain_negative"],
+      ["hairu", "tori", "past_plain"],
+      ["hairu", "tori", "past_negative_plain"],
+      ["nonbiri_suru", "hito", "dictionary"],
+      ["nonbiri_suru", "hito", "plain_negative"],
+      ["nonbiri_suru", "hito", "past_plain"],
+      ["nonbiri_suru", "hito", "past_negative_plain"],
       ["iru", "hito", "dictionary"],
       ["iru", "hito", "plain_negative"],
       ["iru", "hito", "past_plain"],

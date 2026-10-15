@@ -5,7 +5,8 @@
     "hypothetical_value": "ma",
     "question": "To jest pudełko, które ma.",
     "answer": "これはあるはこです。",
-    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal",
+    "evidence_status": "historical_pre_review_not_rerun"
   },
   {
     "verb": "wakaru",
@@ -13,7 +14,8 @@
     "hypothetical_value": "rozumie",
     "question": "To jest książka, która rozumie.",
     "answer": "これはわかるほんです。",
-    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal",
+    "evidence_status": "historical_pre_review_not_rerun"
   },
   {
     "verb": "mieru",
@@ -21,7 +23,8 @@
     "hypothetical_value": "jest widoczna",
     "question": "To jest muzyka, która jest widoczna.",
     "answer": "これはみえるおんがくです。",
-    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal",
+    "evidence_status": "historical_pre_review_not_rerun"
   },
   {
     "verb": "naku",
@@ -29,7 +32,8 @@
     "hypothetical_value": "płacze",
     "question": "To jest ptak, który płacze.",
     "answer": "これはなくとりです。",
-    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal",
+    "evidence_status": "historical_pre_review_not_rerun"
   },
   {
     "verb": "okiru",
@@ -37,12 +41,14 @@
     "hypothetical_value": "budzi się",
     "question": "To jest jedna osoba, która budzi się.",
     "answer": "これはおきるひとりです。",
-    "status": "deliberately_unsafe_diagnostic_not_a_proposal"
+    "status": "deliberately_unsafe_diagnostic_not_a_proposal",
+    "evidence_status": "historical_pre_review_not_rerun"
   },
   {
     "pattern": "Czynność w toku 〜ている / Sam czasownik",
     "question": "W tym tygodniu czytam.",
     "answer": "こんしゅう、よんでいる",
-    "status": "existing_baseline_construction_example"
+    "status": "existing_baseline_construction_example",
+    "evidence_status": "historical_pre_review_not_rerun"
   }
 ]

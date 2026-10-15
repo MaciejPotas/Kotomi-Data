@@ -1,6 +1,6 @@
 # C1: dokładne fragmenty propozycji A
 
-Nie jest to plik słownika ani polecenie wykonania C2. Fragmenty dodaje się do istniejących węzłów wskazanych ścieżką. Nie zastępują całego word/form ani istniejących atrybutów.
+33 czasowniki A: 308 nowych wpisów w 132 formach i 32 nowe role. Nie jest to plik słownika ani polecenie wykonania C2. Fragmenty dopisuje się do wskazanych istniejących rodziców; nie zastępują word/form ani istniejących atrybutów.
 
 ### aruku
 
@@ -95,11 +95,11 @@ Osoba może przepraszać bez jawnego adresata; target pozostaje niezależną rol
 
 ### deru
 
-Ludzie i zwierzęta mogą wychodzić bez jawnego miejsca wyjścia. Zachować route; nie rozszerzać na publikacje i pojazdy w tym znaczeniu.
+Zawęzić propozycję do ludzi i inu. 出た鳥 może oznaczać ptaka, który wyleciał; polskie wyszedł zakłada ruch po ziemi. Wybrana przydawka nie podaje tego kontekstu. Zachować route i dotychczasowe tłumaczenia; bez publikacji ani pojazdów.
 
 ```xml
 <!-- deru: append only to the indicated existing word/form. -->
-<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku inu tori" />
+<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku inu" />
 <!-- /dictionary/words/word[@id='deru']/forms/form[@ref="dictionary"] -->
 <agreement_translations>
   <translation class="masculine_personal" value="wychodzi" />
@@ -128,11 +128,11 @@ Ludzie i zwierzęta mogą wychodzić bez jawnego miejsca wyjścia. Zachować rou
 
 ### hairu
 
-Wchodzenie ludzi i zwierząt jest naturalne bez jawnego celu w krótkiej przydawce. Zachować target=place.
+Zawęzić propozycję do ludzi i inu. 入った鳥 może oznaczać ptaka, który wleciał; polskie wszedł wymaga dodatkowego kontekstu. Zachować target=place i wszystkie tłumaczenia. Nie rozszerzać tej propozycji na inne znaczenia 入る.
 
 ```xml
 <!-- hairu: append only to the indicated existing word/form. -->
-<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku inu tori" />
+<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku inu" />
 <!-- /dictionary/words/word[@id='hairu']/forms/form[@ref="dictionary"] -->
 <agreement_translations>
   <translation class="masculine_personal" value="wchodzi" />
@@ -252,11 +252,11 @@ Bieg ludzi i zwierząt jest samodzielną czynnością. Pojazdy i programy pomini
 
 ### iku
 
-Idzie/poszedł z żywym wykonawcą jest naturalne. いって/いった są wyjątkami; ている oznacza często stan po odejściu, nie po prostu idzie.
+Zawęzić propozycję do ludzi i inu. 行く określa kierunek, nie sposób ruchu; zdanie z ogólnym tori nie gwarantuje polskiego idzie/poszedł zamiast leci/poleciał. Nie zmieniać tłumaczeń ani nieregularnych いった/いかない. A obejmuje wybrane znaczenie ruchu lądowego, nie każdy sposób podróży ludzi.
 
 ```xml
 <!-- iku: append only to the indicated existing word/form. -->
-<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku inu tori" />
+<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku inu" />
 <!-- /dictionary/words/word[@id='iku']/forms/form[@ref="dictionary"] -->
 <agreement_translations>
   <translation class="masculine_personal" value="idzie" />
@@ -492,11 +492,11 @@ Odpowiada może wystąpić bez jawnego pytania. Existing target=abstract pozosta
 
 ### kuru
 
-Przychodzi żywa osoba/zwierzę. Jawnie uwzględnić nieregularne きた/こない; nie traktować 来ている jako zawsze czynności trwającej.
+Zawęzić propozycję do ludzi i inu. 来る nie określa sposobu ruchu, więc 来た鳥 może oznaczać ptaka, który przyleciał. Przyszedł wymaga dodatkowego kontekstu ruchu po ziemi. Zachować wszystkie polskie wartości i nieregularne きた/こない; A nie certyfikuje każdego sposobu przybycia.
 
 ```xml
 <!-- kuru: append only to the indicated existing word/form. -->
-<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku inu tori" />
+<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku inu" />
 <!-- /dictionary/words/word[@id='kuru']/forms/form[@ref="dictionary"] -->
 <agreement_translations>
   <translation class="masculine_personal" value="przychodzi" />
@@ -586,35 +586,6 @@ Picie ma naturalnego żywego wykonawcę i może nie mieć jawnego napoju; pozost
   <translation class="masculine_personal" value="nie pił" />
   <translation class="masculine_animate" value="nie pił" />
   <translation class="feminine" value="nie piła" />
-</agreement_translations>
-```
-
-### nonbiri_suru
-
-Lenistwo/odpoczynek osoby jest samodzielny; zachować obecne potoczne tłumaczenie, nie rozszerzać na przedmioty.
-
-```xml
-<!-- nonbiri_suru: append only to the indicated existing word/form. -->
-<role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku" />
-<!-- /dictionary/words/word[@id='nonbiri_suru']/forms/form[@ref="dictionary"] -->
-<agreement_translations>
-  <translation class="masculine_personal" value="leniuchuje" />
-  <translation class="feminine" value="leniuchuje" />
-</agreement_translations>
-<!-- /dictionary/words/word[@id='nonbiri_suru']/forms/form[@ref="plain_negative"] -->
-<agreement_translations>
-  <translation class="masculine_personal" value="nie leniuchuje" />
-  <translation class="feminine" value="nie leniuchuje" />
-</agreement_translations>
-<!-- /dictionary/words/word[@id='nonbiri_suru']/forms/form[@ref="past_plain"] -->
-<agreement_translations>
-  <translation class="masculine_personal" value="leniuchował" />
-  <translation class="feminine" value="leniuchowała" />
-</agreement_translations>
-<!-- /dictionary/words/word[@id='nonbiri_suru']/forms/form[@ref="past_negative_plain"] -->
-<agreement_translations>
-  <translation class="masculine_personal" value="nie leniuchował" />
-  <translation class="feminine" value="nie leniuchowała" />
 </agreement_translations>
 ```
 

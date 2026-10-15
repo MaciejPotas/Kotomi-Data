@@ -21,10 +21,10 @@ Skróty podmiotów: **P** = friend, mother, sister, teacher, roujin, hito, progr
 | chigau | różnić się | godan | brak | do decyzji | 0 | decyzja przed mapami | keikaku, yotei, aji, book | medium | B | Wymaga rozstrzygnięcia różnić się od czegoś versus być innym/błędnym; brak wspólnego kontekstu porównania. ちがえる nie oznacza zwykle zdolności różnienia się. |
 | dasu | wyjmować | godan | object, location | do decyzji | 0 | decyzja przed mapami | P | medium | B | Bez wyjmowanego przedmiotu zdanie niepełne; abstract/media w object wymagają przeglądu wybranego znaczenia 出す. |
 | dekiru | móc | ichidan | brak | osobna konstrukcja | 0 | decyzja przed mapami | P | high | C | Modalne móc wymaga dopełnienia bezokolicznikowego. Istnieje konstrukcja ことができる; nie potrzeba nowego DSL, ale zwykła podmiotowa przydawka sama nie wystarcza. |
-| deru | wychodzić | ichidan | route | zalecane | 0 | 4 mapy | P+Z | low | A | Ludzie i zwierzęta mogą wychodzić bez jawnego miejsca wyjścia. Zachować route; nie rozszerzać na publikacje i pojazdy w tym znaczeniu. |
+| deru | wychodzić | ichidan | route | zalecane | 0 | 4 mapy | P+pies | low | A | Zawęzić propozycję do ludzi i inu. 出た鳥 może oznaczać ptaka, który wyleciał; polskie wyszedł zakłada ruch po ziemi. Wybrana przydawka nie podaje tego kontekstu. Zachować route i dotychczasowe tłumaczenia; bez publikacji ani pojazdów. |
 | fuku | wiać | godan | location | do decyzji | 0 | decyzja przed mapami | brak bezpiecznych obecnie | medium | B | Meteorologiczne 吹く wymaga wiatru jako nazwanego podmiotu, którego brak w rzeczownikach. Obecna bezosobowa forma wiało jest poprawna w konstrukcji pogodowej. |
 | furu | padać | godan | location | do decyzji | 0 | decyzja przed mapami | brak bezpiecznych obecnie | medium | B | Brak rzeczowników deszcz/śnieg. Nie uzgadniać z dowolną rzeczą; potencjalność pogody nie jest automatycznie zdolnością działania. |
-| hairu | wchodzić | godan | target | zalecane | 0 | 4 mapy | P+Z | low | A | Wchodzenie ludzi i zwierząt jest naturalne bez jawnego celu w krótkiej przydawce. Zachować target=place. |
+| hairu | wchodzić | godan | target | zalecane | 0 | 4 mapy | P+pies | low | A | Zawęzić propozycję do ludzi i inu. 入った鳥 może oznaczać ptaka, który wleciał; polskie wszedł wymaga dodatkowego kontekstu. Zachować target=place i wszystkie tłumaczenia. Nie rozszerzać tej propozycji na inne znaczenia 入る. |
 | hajimeru | zaczynać | ichidan | object, location | do decyzji | 0 | decyzja przed mapami | P | medium | B | Przechodnie zaczynać coś; nie zamieniać na zaczyna się. Subject dopiero z treścią rozpoczynanej czynności lub kontekstem. |
 | hanashiau | rozmawiać ze sobą | godan | companion, location | osobna konstrukcja | 0 | decyzja przed mapami | P | high | C | Obecne rozmawiamy ze sobą jest mnogie. Potrzebny partner przy liczbie pojedynczej, np. rozmawia z mamą; istniejąca rola companion może go reprezentować po sprawdzeniu rekcji. |
 | hanasu | rozmawiać, mówić | godan | companion, location | zalecane | 0 | 4 mapy | P | low | A | Rozmawia może opisywać osobę bez jawnego partnera. Nie rozszerzać na zwierzęta ani zastępować tego automatycznie znaczeniem opowiadać o czymś. |
@@ -33,7 +33,7 @@ Skróty podmiotów: **P** = friend, mother, sister, teacher, roujin, hito, progr
 | hashiru | biec | godan | destination, location | zalecane | 0 | 4 mapy | P+Z | low | A | Bieg ludzi i zwierząt jest samodzielną czynnością. Pojazdy i programy pominięte, bo wymagałyby innego polskiego znaczenia. |
 | hataraku | pracować | godan | subject, location | istnieje | 4 | brak w zakresie | P | low | D | Obecna dokładna lista ośmiu osób oraz dwie klasy w czterech formach wystarczają. Inne formy nie otrzymują B2 w C1. |
 | hiraku | otwierać | godan | object, location | do decyzji | 0 | decyzja przed mapami | P | medium | B | 開く ma zastosowania przechodnie i nieprzechodnie. Obecny wpis jest przechodni; book/school to różne ramy semantyczne, nie dodawać samoczynnie otwiera się. |
-| iku | iść | godan | destination | zalecane | 0 | 4 mapy | P+Z | low | A | Idzie/poszedł z żywym wykonawcą jest naturalne. いって/いった są wyjątkami; ている oznacza często stan po odejściu, nie po prostu idzie. |
+| iku | iść | godan | destination | zalecane | 0 | 4 mapy | P+pies | low | A | Zawęzić propozycję do ludzi i inu. 行く określa kierunek, nie sposób ruchu; zdanie z ogólnym tori nie gwarantuje polskiego idzie/poszedł zamiast leci/poleciał. Nie zmieniać tłumaczeń ani nieregularnych いった/いかない. A obejmuje wybrane znaczenie ruchu lądowego, nie każdy sposób podróży ludzi. |
 | ireru | wkładać | ichidan | object, target | do decyzji | 0 | decyzja przed mapami | P | medium | B | Potrzebny wkładany przedmiot, często też cel. accepts i nouns są alternatywami OR; okane dopisuje pieniądze, nie zawęża kategorii. |
 | iru | być | ichidan | subject | istnieje | 0 | decyzja przed mapami | brak bezpiecznych obecnie | high | C | Zachować katalog existential i governed noun. Nie kopiować osobowych form jestem/nie ma mnie do przydawek; potrzebna osobna realizacja negacji i miejsca. |
 | isogu | śpieszyć się | godan | destination, location | zalecane | 0 | 4 mapy | P | low | A | Samodzielna czynność osoby; zachować zaakceptowaną pisownię śpieszyć, bez kosmetycznej zmiany na spieszyć. |
@@ -51,7 +51,7 @@ Skróty podmiotów: **P** = friend, mother, sister, teacher, roujin, hito, progr
 | kiru | nosić | ichidan | object, location | do decyzji | 0 | decyzja przed mapami | P | medium | B | 着る to zakładać ubranie, 着ている to nosić/mieć na sobie. Base nosić i potential mogę nosić wymagają wyrównania znaczenia; nie mieszać z 切る. |
 | kotaeru | odpowiadać | ichidan | target, location | zalecane | 0 | 4 mapy | P | low | A | Odpowiada może wystąpić bez jawnego pytania. Existing target=abstract pozostaje osobną kwestią precyzji dopełnienia. |
 | kumoru | chmurzyć się | godan | location | do decyzji | 0 | decyzja przed mapami | brak bezpiecznych obecnie | medium | B | Pogodowe bezosobowe zachmurzyło się nie ma obecnie właściwego rzeczownika. Zaproponowane osobowe formy wyłącznie dla przyszłego konkretnego podmiotu, nie do XML. |
-| kuru | przychodzić | irregular | destination | zalecane | 0 | 4 mapy | P+Z | low | A | Przychodzi żywa osoba/zwierzę. Jawnie uwzględnić nieregularne きた/こない; nie traktować 来ている jako zawsze czynności trwającej. |
+| kuru | przychodzić | irregular | destination | zalecane | 0 | 4 mapy | P+pies | low | A | Zawęzić propozycję do ludzi i inu. 来る nie określa sposobu ruchu, więc 来た鳥 może oznaczać ptaka, który przyleciał. Przyszedł wymaga dodatkowego kontekstu ruchu po ziemi. Zachować wszystkie polskie wartości i nieregularne きた/こない; A nie certyfikuje każdego sposobu przybycia. |
 | matsu | czekać | godan | object, location | zalecane | 0 | 4 mapy | P+Z | low | A | Czekanie ludzi i zwierząt jest naturalne bez jawnego obiektu; na_accusative pozostaje dla dopełnienia. |
 | mieru | być widocznym | ichidan | subject | istnieje | 0 | decyzja przed mapami | dokładna lista w JSON (51) | medium | B | Uzgodnienie dotyczy także przymiotnika w teraźniejszości. concrete obejmuje media, np. głos/muzykę, więc potrzebna kontrola widzialności i precyzyjna lista. |
 | migaku | szorować | godan | object, location | do decyzji | 0 | decyzja przed mapami | P | medium | B | Szorować/polerować zależy od przedmiotu. Nie dodawać podmiotu bez dopełnienia i kontroli rzeczy dopuszczonych przez thing. |
@@ -66,7 +66,7 @@ Skróty podmiotów: **P** = friend, mother, sister, teacher, roujin, hito, progr
 | naru | stawać się | godan | target | osobna konstrukcja | 0 | decyzja przed mapami | P | high | C | Stawać się wymaga orzecznika; samo osoba, która staje się jest niekompletne. Potrzebny jawny argument wyniku, nie fikcyjna rola subject. |
 | neru | spać | ichidan | subject, location | istnieje | 4 | brak w zakresie | P+Z | low | D | Cztery formy i trzy klasy są gotowe dla ośmiu osób oraz inu/tori. Zachować odczyt zwyczajowy/przyszły; ている wymaga osobnej interpretacji stanu. |
 | nomu | pić | godan | object, location | zalecane | 0 | 4 mapy | P+Z | low | A | Picie ma naturalnego żywego wykonawcę i może nie mieć jawnego napoju; pozostawić object=drink. |
-| nonbiri_suru | leniuchować | irregular | location | zalecane | 0 | 4 mapy | P | low | A | Lenistwo/odpoczynek osoby jest samodzielny; zachować obecne potoczne tłumaczenie, nie rozszerzać na przedmioty. |
+| nonbiri_suru | leniuchować | irregular | location | do decyzji | 0 | decyzja przed mapami | P | medium | B | B po ponownej ocenie: のんびりする obejmuje spokojny odpoczynek i relaks, nie tylko leniuchowanie. Obecne polskie znaczenie zawęża sens i może dodawać ocenę; dotyczy też negacji i przeszłości. Najpierw zatwierdzić znaczenie lub kontekst lekcji. Zachować produkcyjne tłumaczenie; warianty leniuchuje/leniuchował pozostają dyskusyjne, bez operacji C2-A. |
 | noru | jechać | godan | vehicle, location | do decyzji | 0 | decyzja przed mapami | P | medium | B | 乗る może oznaczać wsiadać, a 乗っている jechać/być na pokładzie. Obecne jadę/jechałem wymaga decyzji aspektowej przed uzgodnieniem. |
 | nugu | zdejmować | godan | object, location | do decyzji | 0 | decyzja przed mapami | P | medium | B | 脱ぐ dotyczy odzieży; zdejmowanie torby zwykle wymaga innego czasownika. Sprawdzić bag i dopełnienie przed rolą podmiotu. |
 | oboeru | zapamiętywać | ichidan | object | do decyzji | 0 | decyzja przed mapami | P | medium | B | Zapamiętuje wymaga treści lub kontekstu. object=* zbyt szerokie dla części znaczeń; 覚えている bywa pamięta, nie właśnie zapamiętuje. |
@@ -295,7 +295,7 @@ Nie dodawać B2 do obecnej roli. Użyć lub opracować konstrukcję wskazaną w 
 
 ### deru (A)
 
-Ludzie i zwierzęta mogą wychodzić bez jawnego miejsca wyjścia. Zachować route; nie rozszerzać na publikacje i pojazdy w tym znaczeniu.
+Zawęzić propozycję do ludzi i inu. 出た鳥 może oznaczać ptaka, który wyleciał; polskie wyszedł zakłada ruch po ziemi. Wybrana przydawka nie podaje tego kontekstu. Zachować route i dotychczasowe tłumaczenia; bez publikacji ani pojazdów.
 
 Przyjąć wyłącznie wymienione propozycje; inne formy pozostają poza C2-A.
 
@@ -323,7 +323,7 @@ Nie proponuję map do XML. Osobowe kandydaty do ewentualnej innej ramy: pada; pa
 
 ### hairu (A)
 
-Wchodzenie ludzi i zwierząt jest naturalne bez jawnego celu w krótkiej przydawce. Zachować target=place.
+Zawęzić propozycję do ludzi i inu. 入った鳥 może oznaczać ptaka, który wleciał; polskie wszedł wymaga dodatkowego kontekstu. Zachować target=place i wszystkie tłumaczenia. Nie rozszerzać tej propozycji na inne znaczenia 入る.
 
 Przyjąć wyłącznie wymienione propozycje; inne formy pozostają poza C2-A.
 
@@ -421,7 +421,7 @@ Zatwierdzić znaczenie/argumenty opisane w uwadze. Wariant 1: zachować wyklucze
 
 ### iku (A)
 
-Idzie/poszedł z żywym wykonawcą jest naturalne. いって/いった są wyjątkami; ている oznacza często stan po odejściu, nie po prostu idzie.
+Zawęzić propozycję do ludzi i inu. 行く określa kierunek, nie sposób ruchu; zdanie z ogólnym tori nie gwarantuje polskiego idzie/poszedł zamiast leci/poleciał. Nie zmieniać tłumaczeń ani nieregularnych いった/いかない. A obejmuje wybrane znaczenie ruchu lądowego, nie każdy sposób podróży ludzi.
 
 Przyjąć wyłącznie wymienione propozycje; inne formy pozostają poza C2-A.
 
@@ -615,7 +615,7 @@ Nie proponuję map do XML. Osobowe kandydaty do ewentualnej innej ramy: chmurzy 
 
 ### kuru (A)
 
-Przychodzi żywa osoba/zwierzę. Jawnie uwzględnić nieregularne きた/こない; nie traktować 来ている jako zawsze czynności trwającej.
+Zawęzić propozycję do ludzi i inu. 来る nie określa sposobu ruchu, więc 来た鳥 może oznaczać ptaka, który przyleciał. Przyszedł wymaga dodatkowego kontekstu ruchu po ziemi. Zachować wszystkie polskie wartości i nieregularne きた/こない; A nie certyfikuje każdego sposobu przybycia.
 
 Przyjąć wyłącznie wymienione propozycje; inne formy pozostają poza C2-A.
 
@@ -785,11 +785,11 @@ Przyjąć wyłącznie wymienione propozycje; inne formy pozostają poza C2-A.
 | męskożywotna | pije | nie pije | pił | nie pił |
 | żeńska | pije | nie pije | piła | nie piła |
 
-### nonbiri_suru (A)
+### nonbiri_suru (B)
 
-Lenistwo/odpoczynek osoby jest samodzielny; zachować obecne potoczne tłumaczenie, nie rozszerzać na przedmioty.
+B po ponownej ocenie: のんびりする obejmuje spokojny odpoczynek i relaks, nie tylko leniuchowanie. Obecne polskie znaczenie zawęża sens i może dodawać ocenę; dotyczy też negacji i przeszłości. Najpierw zatwierdzić znaczenie lub kontekst lekcji. Zachować produkcyjne tłumaczenie; warianty leniuchuje/leniuchował pozostają dyskusyjne, bez operacji C2-A.
 
-Przyjąć wyłącznie wymienione propozycje; inne formy pozostają poza C2-A.
+Nie wdrażać map ani subject w C2-A. Zatwierdzić neutralny sens odpoczynku/relaksu albo jawnie ograniczony kontekst leniuchowania; ewentualną korektę istniejącego tłumaczenia rozpatrzyć osobno.
 
 | Klasa | dictionary | plain_negative | past_plain | past_negative_plain |
 |---|---|---|---|---|

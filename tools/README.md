@@ -75,14 +75,44 @@ This is not native device testing and is not part of unit-test discovery.
 ## Opt-in C1 audit completeness
 
 ```sh
+python tools/validate_verb_dictionary_audit.py
 python tools/validate_verb_dictionary_audit.py --kotomi ../Kotomi
 ```
 
-This read-only check compares the complete C1 verb/form inventory and additive
-proposals against `dictionaries/verbs.xml` and `dictionaries/nouns.xml`. It reads
-production vocabulary to establish completeness of this particular audit,
-which synthetic fixtures cannot establish. Cost is linear in forms and
-proposals. It is not imported by unit tests, applies no proposals and creates
-no production fixtures. See the [C1 report](../docs/validation/verb_dictionary_audit_c1.md)
-and equivalent [Polish](../docs/pl/verb_dictionary_audit_c1.md) /
-[English](../docs/eng/verb_dictionary_audit_c1.md) entry points.
+The standalone check reads `dictionaries/verbs.xml`, `dictionaries/nouns.xml`
+and the JSON/CSV audit artifacts. It derives every expected operation from reviewed
+A records independently of `changes` and statistics, then requires exact equality.
+It checks missing/extra/duplicate operations, dependencies (including required
+subject-role additions), paths, values, existing maps, all local role attributes,
+per-noun A/D agreement-class snapshots, and all static statistics including touched
+forms. Pattern count and actual availability require the engine; standalone mode
+prints these and other deferred checks explicitly as `SKIPPED`.
+
+With `--kotomi`, it loads the declared project XML graph via `QuizProject`, validates
+the project and compares all role matches through the engine's `role_matches`.
+This preserves OR between `accepts` and `nouns`, inherited noun categories,
+wildcards and role defaults without a second matcher implementation. It also checks
+the role-definition catalog, language class contract, noun classes, expanded pattern
+count and both relative patterns' observed availability for every priority form.
+
+Production access establishes completeness and freshness of this particular audit,
+which a synthetic fixture cannot establish. The standalone cost is linear in forms,
+records and proposals. Engine mode additionally incurs project loading/validation,
+role-by-noun comparisons (R × N) and eight availability probes per verb. It applies
+no proposals and writes no files. No production-dependent unit test is introduced.
+
+Validator tests import its pure functions with the bounded, independent fixture
+`tests/fixtures/c1/v1.json`. Run:
+
+```sh
+python -m unittest discover -s tests -p test_verb_dictionary_audit.py -v
+KOTOMI_PATH=/absolute/path/to/Kotomi python -m unittest discover -s tests -v
+```
+
+Without `KOTOMI_PATH`, 19 validator tests run and four real-engine contract tests
+are explicitly skipped. With it, all 23 run; the four extra tests construct only
+synthetic model objects and never load Content. Existing repository tests are unchanged.
+See the [C1 report](../docs/validation/verb_dictionary_audit_c1.md) and equivalent
+[Polish](../docs/pl/verb_dictionary_audit_c1.md) / [English](../docs/eng/verb_dictionary_audit_c1.md)
+entry points. Historical performance measurements predate the review corrections
+and are labelled accordingly.

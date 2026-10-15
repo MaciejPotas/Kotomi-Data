@@ -182,7 +182,7 @@ chigau,past_polite,ちがいました,違いました,różniłem się,regular_o
 chigau,past_negative_plain,ちがわなかった,違わなかった,nie różniłem się,regular_or_known_exception,priority,
 chigau,past_negative_polite,ちがいませんでした,違いませんでした,nie różniłem się,regular_or_known_exception,polite,
 chigau,te_form,ちがって,違って,różniąc się,regular_or_known_exception,te,
-chigau,potential,ちがえる,違える,mogę się różnić,regular_or_known_exception,potential,Zdarzenie/stany bez typowej kontroli woli: formalna odmiana nie dowodzi neutralnego użycia; pozostawić do oceny językowej.
+chigau,potential,ちがえる,違える,mogę się różnić,mechanical_pattern_only_not_confirmed_lexical_form,potential,"ちがえる/違える zgadza się z mechanicznym wzorem godan u→eru, ale nie potwierdza neutralnej formy potencjalnej 違う. 違える może być odrębnym przechodnim leksemem; glosa mogę się różnić nie jest zatwierdzona. Nie gotowe do quizu; najpierw decyzja leksykalna i kontekst możliwości, dopiero potem ocena konstrukcji. Bez propozycji zmiany XML w C1."
 chigau,causative,ちがわせる,違わせる,"sprawiam, że coś się różni",regular_or_known_exception,causative,Zdarzenie/stany bez typowej kontroli woli: formalna odmiana nie dowodzi neutralnego użycia; pozostawić do oceny językowej.
 chigau,tara,ちがったら,違ったら,jeśli różnię się,regular_or_known_exception,tara,
 chigau,volitional,ちがおう,違おう,różnijmy się,regular_or_known_exception,volitional,Zdarzenie/stany bez typowej kontroli woli: formalna odmiana nie dowodzi neutralnego użycia; pozostawić do oceny językowej.
@@ -886,13 +886,13 @@ nomu,causative,のませる,飲ませる,każę komuś pić,regular_or_known_exc
 nomu,tara,のんだら,飲んだら,jeśli piję,regular_or_known_exception,tara,
 nomu,volitional,のもう,飲もう,pijmy,regular_or_known_exception,volitional,
 nomu,imperative,のめ,飲め,pij!,regular_or_known_exception,imperative,
-nonbiri_suru,dictionary,のんびりする,のんびりする,leniuchuję,regular_or_known_exception,priority,
+nonbiri_suru,dictionary,のんびりする,のんびりする,leniuchuję,regular_or_known_exception,priority,"B: neutralny odpoczynek/relaks versus ocenne lub węższe leniuchowanie; decyzja dotyczy twierdzenia, negacji i przeszłości. Bez propozycji A."
 nonbiri_suru,polite_nonpast,のんびりします,のんびりします,leniuchuję,regular_or_known_exception,polite,
-nonbiri_suru,plain_negative,のんびりしない,のんびりしない,nie leniuchuję,regular_or_known_exception,priority,
+nonbiri_suru,plain_negative,のんびりしない,のんびりしない,nie leniuchuję,regular_or_known_exception,priority,"B: neutralny odpoczynek/relaks versus ocenne lub węższe leniuchowanie; decyzja dotyczy twierdzenia, negacji i przeszłości. Bez propozycji A."
 nonbiri_suru,polite_negative,のんびりしません,のんびりしません,nie leniuchuję,regular_or_known_exception,polite,
-nonbiri_suru,past_plain,のんびりした,のんびりした,leniuchowałem,regular_or_known_exception,priority,
+nonbiri_suru,past_plain,のんびりした,のんびりした,leniuchowałem,regular_or_known_exception,priority,"B: neutralny odpoczynek/relaks versus ocenne lub węższe leniuchowanie; decyzja dotyczy twierdzenia, negacji i przeszłości. Bez propozycji A."
 nonbiri_suru,past_polite,のんびりしました,のんびりしました,leniuchowałem,regular_or_known_exception,polite,
-nonbiri_suru,past_negative_plain,のんびりしなかった,のんびりしなかった,nie leniuchowałem,regular_or_known_exception,priority,
+nonbiri_suru,past_negative_plain,のんびりしなかった,のんびりしなかった,nie leniuchowałem,regular_or_known_exception,priority,"B: neutralny odpoczynek/relaks versus ocenne lub węższe leniuchowanie; decyzja dotyczy twierdzenia, negacji i przeszłości. Bez propozycji A."
 nonbiri_suru,past_negative_polite,のんびりしませんでした,のんびりしませんでした,nie leniuchowałem,regular_or_known_exception,polite,
 nonbiri_suru,te_form,のんびりして,のんびりして,leniuchując,regular_or_known_exception,te,
 nonbiri_suru,potential,のんびりできる,のんびりできる,mogę leniuchować,regular_or_known_exception,potential,
@@ -1600,7 +1600,7 @@ wakaru,past_polite,わかりました,分かりました,zrozumiałem,regular_or
 wakaru,past_negative_plain,わからなかった,分からなかった,nie zrozumiałem,regular_or_known_exception,priority,
 wakaru,past_negative_polite,わかりませんでした,分かりませんでした,nie zrozumiałem,regular_or_known_exception,polite,
 wakaru,te_form,わかって,分かって,rozumiejąc,regular_or_known_exception,te,
-wakaru,potential,わかる,分かる,mogę rozumieć,lexical_duplicate_not_inflection_error,potential,"わかる powtarza dictionary; nie poprawiać na 分かれる. Sam czasownik ma znaczenie rozumienia/możności zrozumienia, wymaga decyzji o ekspozycji formy; Zdarzenie/stany bez typowej kontroli woli: formalna odmiana nie dowodzi neutralnego użycia; pozostawić do oceny językowej."
+wakaru,potential,わかる,分かる,mogę rozumieć,lexical_duplicate_not_inflection_error,potential,"わかる/分かる jest poprawną formą podstawową, nie odrębną produktywną odmianą potencjalną. Znaczenie rozumieć/być w stanie zrozumieć nie dowodzi poprawności etykiety potential. Nie gotowe jako zadanie odmiany; decyzja o ekspozycji i ramie osoby/treści. Nie zastępować mechanicznie 分かれる i nie dodawać B2."
 wakaru,passive,わかられる,分かられる,jest rozumiane,regular_or_known_exception,passive,
 wakaru,causative,わからせる,分からせる,"sprawiam, że ktoś rozumie",regular_or_known_exception,causative,Zdarzenie/stany bez typowej kontroli woli: formalna odmiana nie dowodzi neutralnego użycia; pozostawić do oceny językowej.
 wakaru,tara,わかったら,分かったら,jeśli rozumiem,regular_or_known_exception,tara,

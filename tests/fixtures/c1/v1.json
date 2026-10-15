@@ -1,0 +1,376 @@
+{
+  "fixture_version": 1,
+  "verbs_xml": "<dictionary><words><word id=\"fixture_new\"><usage><role ref=\"object\" accepts=\"living\" nouns=\"prop\" government=\"direct_object\" /></usage><forms><form ref=\"dictionary\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"plain_negative\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_plain\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_negative_plain\" kana=\"てすと\" translation=\"synthetic\" /></forms></word><word id=\"fixture_existing\"><usage><role ref=\"object\" accepts=\"living\" nouns=\"prop\" government=\"direct_object\" /><role ref=\"subject\" nouns=\"helper\" /></usage><forms><form ref=\"dictionary\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"plain_negative\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_plain\" kana=\"てすと\" translation=\"synthetic\" /><form ref=\"past_negative_plain\" kana=\"てすと\" translation=\"synthetic\" /></forms></word></words></dictionary>",
+  "nouns_xml": "<dictionary><words><word id=\"actor\" category=\"child\"><agreement class=\"feminine\" /></word><word id=\"helper\" category=\"living\"><agreement class=\"masculine_personal\" /></word><word id=\"prop\" category=\"object\"><agreement class=\"neuter\" /></word></words></dictionary>",
+  "forms": [
+    {
+      "verb_id": "fixture_new",
+      "form": "dictionary",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "policy": "priority"
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "plain_negative",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "policy": "priority"
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "past_plain",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "policy": "priority"
+    },
+    {
+      "verb_id": "fixture_new",
+      "form": "past_negative_plain",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "policy": "priority"
+    },
+    {
+      "verb_id": "fixture_existing",
+      "form": "dictionary",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "policy": "priority"
+    },
+    {
+      "verb_id": "fixture_existing",
+      "form": "plain_negative",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "policy": "priority"
+    },
+    {
+      "verb_id": "fixture_existing",
+      "form": "past_plain",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "policy": "priority"
+    },
+    {
+      "verb_id": "fixture_existing",
+      "form": "past_negative_plain",
+      "kana": "てすと",
+      "kanji": "",
+      "translation": "synthetic",
+      "policy": "priority"
+    }
+  ],
+  "report": {
+    "allowed_classes": [
+      "masculine_personal",
+      "masculine_animate",
+      "masculine_inanimate",
+      "feminine",
+      "neuter"
+    ],
+    "form_policies": {
+      "priority": {}
+    },
+    "verbs": [
+      {
+        "id": "fixture_new",
+        "category": "A",
+        "candidate_status": "A",
+        "forms": [
+          "dictionary",
+          "plain_negative",
+          "past_plain",
+          "past_negative_plain"
+        ],
+        "missing_priority_forms": [],
+        "current_roles": [
+          {
+            "ref": "object",
+            "accepts": "living",
+            "nouns": "prop",
+            "government": "direct_object",
+            "matched_nouns": [
+              "actor",
+              "helper",
+              "prop"
+            ],
+            "review": "Synthetic OR fixture."
+          }
+        ],
+        "current_subject_nouns": [],
+        "subject_candidate_nouns": [
+          "actor"
+        ],
+        "subject_candidate_agreement_classes": {
+          "actor": "feminine"
+        },
+        "required_classes": [
+          "feminine"
+        ],
+        "existing_agreement": {},
+        "proposed_priority_values": {
+          "dictionary": {
+            "feminine": "testuje"
+          },
+          "plain_negative": {
+            "feminine": "nie testuje"
+          },
+          "past_plain": {
+            "feminine": "testowała"
+          },
+          "past_negative_plain": {
+            "feminine": "nie testowała"
+          }
+        },
+        "subject_role_change": "fixture_new:subject",
+        "lexical_change_ids": [
+          "fixture_new:dictionary:feminine",
+          "fixture_new:plain_negative:feminine",
+          "fixture_new:past_plain:feminine",
+          "fixture_new:past_negative_plain:feminine"
+        ],
+        "observed_subject_availability": {
+          "dictionary": false,
+          "plain_negative": false,
+          "past_plain": false,
+          "past_negative_plain": false
+        },
+        "observed_object_relative_availability": {
+          "dictionary": false,
+          "plain_negative": false,
+          "past_plain": false,
+          "past_negative_plain": false
+        }
+      },
+      {
+        "id": "fixture_existing",
+        "category": "A",
+        "candidate_status": "A",
+        "forms": [
+          "dictionary",
+          "plain_negative",
+          "past_plain",
+          "past_negative_plain"
+        ],
+        "missing_priority_forms": [],
+        "current_roles": [
+          {
+            "ref": "object",
+            "accepts": "living",
+            "nouns": "prop",
+            "government": "direct_object",
+            "matched_nouns": [
+              "actor",
+              "helper",
+              "prop"
+            ],
+            "review": "Synthetic OR fixture."
+          },
+          {
+            "ref": "subject",
+            "nouns": "helper",
+            "matched_nouns": [
+              "helper"
+            ],
+            "review": "Synthetic exact noun fixture."
+          }
+        ],
+        "current_subject_nouns": [
+          "helper"
+        ],
+        "subject_candidate_nouns": [
+          "helper"
+        ],
+        "subject_candidate_agreement_classes": {
+          "helper": "masculine_personal"
+        },
+        "required_classes": [
+          "masculine_personal"
+        ],
+        "existing_agreement": {},
+        "proposed_priority_values": {
+          "dictionary": {
+            "masculine_personal": "liczy"
+          },
+          "plain_negative": {
+            "masculine_personal": "nie liczy"
+          },
+          "past_plain": {
+            "masculine_personal": "liczył"
+          },
+          "past_negative_plain": {
+            "masculine_personal": "nie liczył"
+          }
+        },
+        "subject_role_change": null,
+        "lexical_change_ids": [
+          "fixture_existing:dictionary:masculine_personal",
+          "fixture_existing:plain_negative:masculine_personal",
+          "fixture_existing:past_plain:masculine_personal",
+          "fixture_existing:past_negative_plain:masculine_personal"
+        ],
+        "observed_subject_availability": {
+          "dictionary": false,
+          "plain_negative": false,
+          "past_plain": false,
+          "past_negative_plain": false
+        },
+        "observed_object_relative_availability": {
+          "dictionary": false,
+          "plain_negative": false,
+          "past_plain": false,
+          "past_negative_plain": false
+        }
+      }
+    ],
+    "changes": [
+      {
+        "id": "fixture_new:subject",
+        "verb_id": "fixture_new",
+        "status": "A",
+        "operation": "add_role",
+        "path": "/dictionary/words/word[@id='fixture_new']/usage",
+        "role": {
+          "ref": "subject",
+          "nouns": "actor"
+        },
+        "expected_absent": true
+      },
+      {
+        "id": "fixture_new:dictionary:feminine",
+        "verb_id": "fixture_new",
+        "status": "A",
+        "operation": "add_agreement_translation",
+        "path": "/dictionary/words/word[@id='fixture_new']/forms/form[@ref='dictionary']/agreement_translations",
+        "form": "dictionary",
+        "class": "feminine",
+        "value": "testuje",
+        "expected_absent": true,
+        "depends_on": [
+          "fixture_new:subject"
+        ]
+      },
+      {
+        "id": "fixture_new:plain_negative:feminine",
+        "verb_id": "fixture_new",
+        "status": "A",
+        "operation": "add_agreement_translation",
+        "path": "/dictionary/words/word[@id='fixture_new']/forms/form[@ref='plain_negative']/agreement_translations",
+        "form": "plain_negative",
+        "class": "feminine",
+        "value": "nie testuje",
+        "expected_absent": true,
+        "depends_on": [
+          "fixture_new:subject"
+        ]
+      },
+      {
+        "id": "fixture_new:past_plain:feminine",
+        "verb_id": "fixture_new",
+        "status": "A",
+        "operation": "add_agreement_translation",
+        "path": "/dictionary/words/word[@id='fixture_new']/forms/form[@ref='past_plain']/agreement_translations",
+        "form": "past_plain",
+        "class": "feminine",
+        "value": "testowała",
+        "expected_absent": true,
+        "depends_on": [
+          "fixture_new:subject"
+        ]
+      },
+      {
+        "id": "fixture_new:past_negative_plain:feminine",
+        "verb_id": "fixture_new",
+        "status": "A",
+        "operation": "add_agreement_translation",
+        "path": "/dictionary/words/word[@id='fixture_new']/forms/form[@ref='past_negative_plain']/agreement_translations",
+        "form": "past_negative_plain",
+        "class": "feminine",
+        "value": "nie testowała",
+        "expected_absent": true,
+        "depends_on": [
+          "fixture_new:subject"
+        ]
+      },
+      {
+        "id": "fixture_existing:dictionary:masculine_personal",
+        "verb_id": "fixture_existing",
+        "status": "A",
+        "operation": "add_agreement_translation",
+        "path": "/dictionary/words/word[@id='fixture_existing']/forms/form[@ref='dictionary']/agreement_translations",
+        "form": "dictionary",
+        "class": "masculine_personal",
+        "value": "liczy",
+        "expected_absent": true,
+        "depends_on": []
+      },
+      {
+        "id": "fixture_existing:plain_negative:masculine_personal",
+        "verb_id": "fixture_existing",
+        "status": "A",
+        "operation": "add_agreement_translation",
+        "path": "/dictionary/words/word[@id='fixture_existing']/forms/form[@ref='plain_negative']/agreement_translations",
+        "form": "plain_negative",
+        "class": "masculine_personal",
+        "value": "nie liczy",
+        "expected_absent": true,
+        "depends_on": []
+      },
+      {
+        "id": "fixture_existing:past_plain:masculine_personal",
+        "verb_id": "fixture_existing",
+        "status": "A",
+        "operation": "add_agreement_translation",
+        "path": "/dictionary/words/word[@id='fixture_existing']/forms/form[@ref='past_plain']/agreement_translations",
+        "form": "past_plain",
+        "class": "masculine_personal",
+        "value": "liczył",
+        "expected_absent": true,
+        "depends_on": []
+      },
+      {
+        "id": "fixture_existing:past_negative_plain:masculine_personal",
+        "verb_id": "fixture_existing",
+        "status": "A",
+        "operation": "add_agreement_translation",
+        "path": "/dictionary/words/word[@id='fixture_existing']/forms/form[@ref='past_negative_plain']/agreement_translations",
+        "form": "past_negative_plain",
+        "class": "masculine_personal",
+        "value": "nie liczył",
+        "expected_absent": true,
+        "depends_on": []
+      }
+    ],
+    "engine_role_definitions": {},
+    "stats": {
+      "verbs": 2,
+      "nouns": 3,
+      "patterns": 0,
+      "forms": 8,
+      "usage_declarations": 3,
+      "by_category": {
+        "A": 2
+      },
+      "existing_agreement_verbs": 0,
+      "existing_agreement_forms": 0,
+      "existing_agreement_entries": 0,
+      "ready_current_subject_verbs": 0,
+      "A_verbs": 2,
+      "A_role_additions": 1,
+      "A_agreement_entries": 8,
+      "A_agreement_forms": 8,
+      "A_translation_only": 1,
+      "A_role_only": 0,
+      "A_both": 1,
+      "missing_priority_forms": 0
+    }
+  }
+}

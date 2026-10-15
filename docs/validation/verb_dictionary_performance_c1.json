@@ -1,4 +1,12 @@
 {
+  "evidence_status": "historical_pre_review_not_rerun",
+  "measured_scope": {
+    "A_verbs": 34,
+    "A_agreement_entries": 316,
+    "A_role_additions": 33,
+    "subject_pairs": 307
+  },
+  "limitation": "Measurements predate C1 review corrections. Not measurements of the current 33-verb / 295-pair proposal set.",
   "rounds": 7,
   "mode_definition": "cold=fresh project, not OS cache eviction; warm=one priming call; load timed separately",
   "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
