@@ -1,9 +1,10 @@
 # Patterns
 
-Content revision 59 adds **Zdania przydawkowe** in category `przydawki`, with a
-shared Windows/Mobile quiz profile and four plain forms. See
+Content revision 60 includes **Zdania przydawkowe** and **Zdania przydawkowe
+podmiotowe** in category `przydawki`, with one shared Windows/Mobile quiz profile
+and four plain forms per pattern. Deploy only after Kotomi #213. See
 [Polski](../docs/pl/relative_clauses.md) / [English](../docs/eng/relative_clauses.md)
-for government prepositions, filters and scope.
+for government prepositions, subject agreement, filters, validation and scope.
 
 This directory contains sentence-generation and sentence-quiz definitions.
 

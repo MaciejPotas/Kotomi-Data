@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sentence_quizzes schema_version="2" instruction_language_id="pl">
-  <quiz id="relative_clauses" label="Zdania przydawkowe" description="Przydawki dopełnieniowe w czterech formach prostych" selection="references">
+  <quiz id="relative_clauses" label="Zdania przydawkowe" description="Przydawki dopełnieniowe i podmiotowe w czterech formach prostych" selection="references">
     <patterns>
       <pattern ref="Zdania przydawkowe" />
+      <pattern ref="Zdania przydawkowe podmiotowe" />
     </patterns>
   </quiz>
   <quiz id="grammar" label="Gramatyka" description="Możliwość ことができる">

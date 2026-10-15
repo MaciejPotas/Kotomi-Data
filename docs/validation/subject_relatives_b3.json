@@ -1,0 +1,783 @@
+{
+  "forms": {
+    "dictionary": {
+      "pattern_id": "Zdania przydawkowe podmiotowe",
+      "vocabulary_combinations": 20,
+      "generated_sentences": 100,
+      "unique_questions": 20,
+      "unique_answers": 20,
+      "form_names": [
+        "dictionary"
+      ],
+      "context_options": [
+        "present/every_day",
+        "present/neutral",
+        "present/now",
+        "present/this_week",
+        "present/today"
+      ],
+      "word_counts": {
+        "verb@action": 3
+      },
+      "entity_counts": {
+        "noun@item": 12
+      },
+      "connection_counts": {
+        "verb@action → noun@item": 20,
+        "noun@item → verb@action": 20
+      },
+      "unique_pairs": 20,
+      "by_verb": {
+        "neru": 10,
+        "hataraku": 8,
+        "aku": 2
+      }
+    },
+    "plain_negative": {
+      "pattern_id": "Zdania przydawkowe podmiotowe",
+      "vocabulary_combinations": 20,
+      "generated_sentences": 100,
+      "unique_questions": 20,
+      "unique_answers": 20,
+      "form_names": [
+        "plain_negative"
+      ],
+      "context_options": [
+        "present/every_day",
+        "present/neutral",
+        "present/now",
+        "present/this_week",
+        "present/today"
+      ],
+      "word_counts": {
+        "verb@action": 3
+      },
+      "entity_counts": {
+        "noun@item": 12
+      },
+      "connection_counts": {
+        "verb@action → noun@item": 20,
+        "noun@item → verb@action": 20
+      },
+      "unique_pairs": 20,
+      "by_verb": {
+        "neru": 10,
+        "hataraku": 8,
+        "aku": 2
+      }
+    },
+    "past_plain": {
+      "pattern_id": "Zdania przydawkowe podmiotowe",
+      "vocabulary_combinations": 20,
+      "generated_sentences": 100,
+      "unique_questions": 20,
+      "unique_answers": 20,
+      "form_names": [
+        "past_plain"
+      ],
+      "context_options": [
+        "past/day_before_yesterday",
+        "past/last_week",
+        "past/recently",
+        "past/two_weeks_ago",
+        "past/yesterday"
+      ],
+      "word_counts": {
+        "verb@action": 3
+      },
+      "entity_counts": {
+        "noun@item": 12
+      },
+      "connection_counts": {
+        "verb@action → noun@item": 20,
+        "noun@item → verb@action": 20
+      },
+      "unique_pairs": 20,
+      "by_verb": {
+        "neru": 10,
+        "hataraku": 8,
+        "aku": 2
+      }
+    },
+    "past_negative_plain": {
+      "pattern_id": "Zdania przydawkowe podmiotowe",
+      "vocabulary_combinations": 20,
+      "generated_sentences": 100,
+      "unique_questions": 20,
+      "unique_answers": 20,
+      "form_names": [
+        "past_negative_plain"
+      ],
+      "context_options": [
+        "past/day_before_yesterday",
+        "past/last_week",
+        "past/recently",
+        "past/two_weeks_ago",
+        "past/yesterday"
+      ],
+      "word_counts": {
+        "verb@action": 3
+      },
+      "entity_counts": {
+        "noun@item": 12
+      },
+      "connection_counts": {
+        "verb@action → noun@item": 20,
+        "noun@item → verb@action": 20
+      },
+      "unique_pairs": 20,
+      "by_verb": {
+        "neru": 10,
+        "hataraku": 8,
+        "aku": 2
+      }
+    }
+  },
+  "object_regression": {
+    "dictionary": {
+      "realizations": 7735,
+      "sha256": "b90e3878ab76dc8c2a3972e14c170c8621cafdad63d645555f296a4b1d81e103"
+    },
+    "plain_negative": {
+      "realizations": 7735,
+      "sha256": "71f7c3ea427804041cc7ddcde3d1c2dedd6ee8ab6a10791189b744e7cb31dd2c"
+    },
+    "past_plain": {
+      "realizations": 7735,
+      "sha256": "7af7718943cc9b0c035181fcb6022da10f74339dddec8816cf54197e7d450294"
+    },
+    "past_negative_plain": {
+      "realizations": 7735,
+      "sha256": "105841eaaea5d2d70deca100a9e5d7c08a21e8ba185a9f70044e3ef6dab03521"
+    }
+  },
+  "examples": [
+    {
+      "form": "dictionary",
+      "question": "To jest mama, która pracuje.",
+      "answer": "これははたらくおかあさんです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest mama, która śpi.",
+      "answer": "これはねるおかあさんです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest nauczyciel, który pracuje.",
+      "answer": "これははたらくせんせいです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest nauczyciel, który śpi.",
+      "answer": "これはねるせんせいです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest osoba, która pracuje.",
+      "answer": "これははたらくひとです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest osoba, która śpi.",
+      "answer": "これはねるひとです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest pies, który śpi.",
+      "answer": "これはねるいぬです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest pracownik odsunięty na boczny tor, który pracuje.",
+      "answer": "これははたらくまどぎわぞくです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest pracownik odsunięty na boczny tor, który śpi.",
+      "answer": "これはねるまどぎわぞくです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest programista, który pracuje.",
+      "answer": "これははたらくプログラマーです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest programista, który śpi.",
+      "answer": "これはねるプログラマーです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest przyjaciel, który pracuje.",
+      "answer": "これははたらくともだちです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest przyjaciel, który śpi.",
+      "answer": "これはねるともだちです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest ptak, który śpi.",
+      "answer": "これはねるとりです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest pudełko, które otwiera się.",
+      "answer": "これはあくはこです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest siostra, która pracuje.",
+      "answer": "これははたらくあねです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest siostra, która śpi.",
+      "answer": "これはねるあねです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest starzec, który pracuje.",
+      "answer": "これははたらくろうじんです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest starzec, który śpi.",
+      "answer": "これはねるろうじんです。"
+    },
+    {
+      "form": "dictionary",
+      "question": "To jest torba, która otwiera się.",
+      "answer": "これはあくかばんです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest mama, która nie pracuje.",
+      "answer": "これははたらかないおかあさんです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest mama, która nie śpi.",
+      "answer": "これはねないおかあさんです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest nauczyciel, który nie pracuje.",
+      "answer": "これははたらかないせんせいです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest nauczyciel, który nie śpi.",
+      "answer": "これはねないせんせいです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest osoba, która nie pracuje.",
+      "answer": "これははたらかないひとです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest osoba, która nie śpi.",
+      "answer": "これはねないひとです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest pies, który nie śpi.",
+      "answer": "これはねないいぬです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie pracuje.",
+      "answer": "これははたらかないまどぎわぞくです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie śpi.",
+      "answer": "これはねないまどぎわぞくです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest programista, który nie pracuje.",
+      "answer": "これははたらかないプログラマーです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest programista, który nie śpi.",
+      "answer": "これはねないプログラマーです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest przyjaciel, który nie pracuje.",
+      "answer": "これははたらかないともだちです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest przyjaciel, który nie śpi.",
+      "answer": "これはねないともだちです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest ptak, który nie śpi.",
+      "answer": "これはねないとりです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest pudełko, które nie otwiera się.",
+      "answer": "これはあかないはこです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest siostra, która nie pracuje.",
+      "answer": "これははたらかないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest siostra, która nie śpi.",
+      "answer": "これはねないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest starzec, który nie pracuje.",
+      "answer": "これははたらかないろうじんです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest starzec, który nie śpi.",
+      "answer": "これはねないろうじんです。"
+    },
+    {
+      "form": "plain_negative",
+      "question": "To jest torba, która nie otwiera się.",
+      "answer": "これはあかないかばんです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest mama, która pracowała.",
+      "answer": "これははたらいたおかあさんです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest mama, która spała.",
+      "answer": "これはねたおかあさんです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest nauczyciel, który pracował.",
+      "answer": "これははたらいたせんせいです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest nauczyciel, który spał.",
+      "answer": "これはねたせんせいです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest osoba, która pracowała.",
+      "answer": "これははたらいたひとです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest osoba, która spała.",
+      "answer": "これはねたひとです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest pies, który spał.",
+      "answer": "これはねたいぬです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest pracownik odsunięty na boczny tor, który pracował.",
+      "answer": "これははたらいたまどぎわぞくです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest pracownik odsunięty na boczny tor, który spał.",
+      "answer": "これはねたまどぎわぞくです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest programista, który pracował.",
+      "answer": "これははたらいたプログラマーです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest programista, który spał.",
+      "answer": "これはねたプログラマーです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest przyjaciel, który pracował.",
+      "answer": "これははたらいたともだちです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest przyjaciel, który spał.",
+      "answer": "これはねたともだちです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest ptak, który spał.",
+      "answer": "これはねたとりです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest pudełko, które otworzyło się.",
+      "answer": "これはあいたはこです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest siostra, która pracowała.",
+      "answer": "これははたらいたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest siostra, która spała.",
+      "answer": "これはねたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest starzec, który pracował.",
+      "answer": "これははたらいたろうじんです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest starzec, który spał.",
+      "answer": "これはねたろうじんです。"
+    },
+    {
+      "form": "past_plain",
+      "question": "To jest torba, która otworzyła się.",
+      "answer": "これはあいたかばんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest mama, która nie pracowała.",
+      "answer": "これははたらかなかったおかあさんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest mama, która nie spała.",
+      "answer": "これはねなかったおかあさんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest nauczyciel, który nie pracował.",
+      "answer": "これははたらかなかったせんせいです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest nauczyciel, który nie spał.",
+      "answer": "これはねなかったせんせいです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest osoba, która nie pracowała.",
+      "answer": "これははたらかなかったひとです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest osoba, która nie spała.",
+      "answer": "これはねなかったひとです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest pies, który nie spał.",
+      "answer": "これはねなかったいぬです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie pracował.",
+      "answer": "これははたらかなかったまどぎわぞくです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie spał.",
+      "answer": "これはねなかったまどぎわぞくです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest programista, który nie pracował.",
+      "answer": "これははたらかなかったプログラマーです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest programista, który nie spał.",
+      "answer": "これはねなかったプログラマーです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest przyjaciel, który nie pracował.",
+      "answer": "これははたらかなかったともだちです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest przyjaciel, który nie spał.",
+      "answer": "これはねなかったともだちです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest ptak, który nie spał.",
+      "answer": "これはねなかったとりです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest pudełko, które nie otworzyło się.",
+      "answer": "これはあかなかったはこです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest siostra, która nie pracowała.",
+      "answer": "これははたらかなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest siostra, która nie spała.",
+      "answer": "これはねなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest starzec, który nie pracował.",
+      "answer": "これははたらかなかったろうじんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest starzec, który nie spał.",
+      "answer": "これはねなかったろうじんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "question": "To jest torba, która nie otworzyła się.",
+      "answer": "これはあかなかったかばんです。"
+    }
+  ],
+  "rejected": [
+    [
+      "dictionary",
+      "hataraku",
+      "book"
+    ],
+    [
+      "dictionary",
+      "hataraku",
+      "inu"
+    ],
+    [
+      "dictionary",
+      "hataraku",
+      "hitori"
+    ],
+    [
+      "dictionary",
+      "neru",
+      "car"
+    ],
+    [
+      "dictionary",
+      "neru",
+      "hitori"
+    ],
+    [
+      "dictionary",
+      "aku",
+      "hito"
+    ],
+    [
+      "dictionary",
+      "aku",
+      "book"
+    ],
+    [
+      "dictionary",
+      "iru",
+      "hito"
+    ],
+    [
+      "dictionary",
+      "aru_existential",
+      "book"
+    ],
+    [
+      "plain_negative",
+      "hataraku",
+      "book"
+    ],
+    [
+      "plain_negative",
+      "hataraku",
+      "inu"
+    ],
+    [
+      "plain_negative",
+      "hataraku",
+      "hitori"
+    ],
+    [
+      "plain_negative",
+      "neru",
+      "car"
+    ],
+    [
+      "plain_negative",
+      "neru",
+      "hitori"
+    ],
+    [
+      "plain_negative",
+      "aku",
+      "hito"
+    ],
+    [
+      "plain_negative",
+      "aku",
+      "book"
+    ],
+    [
+      "plain_negative",
+      "iru",
+      "hito"
+    ],
+    [
+      "plain_negative",
+      "aru_existential",
+      "book"
+    ],
+    [
+      "past_plain",
+      "hataraku",
+      "book"
+    ],
+    [
+      "past_plain",
+      "hataraku",
+      "inu"
+    ],
+    [
+      "past_plain",
+      "hataraku",
+      "hitori"
+    ],
+    [
+      "past_plain",
+      "neru",
+      "car"
+    ],
+    [
+      "past_plain",
+      "neru",
+      "hitori"
+    ],
+    [
+      "past_plain",
+      "aku",
+      "hito"
+    ],
+    [
+      "past_plain",
+      "aku",
+      "book"
+    ],
+    [
+      "past_plain",
+      "iru",
+      "hito"
+    ],
+    [
+      "past_plain",
+      "aru_existential",
+      "book"
+    ],
+    [
+      "past_negative_plain",
+      "hataraku",
+      "book"
+    ],
+    [
+      "past_negative_plain",
+      "hataraku",
+      "inu"
+    ],
+    [
+      "past_negative_plain",
+      "hataraku",
+      "hitori"
+    ],
+    [
+      "past_negative_plain",
+      "neru",
+      "car"
+    ],
+    [
+      "past_negative_plain",
+      "neru",
+      "hitori"
+    ],
+    [
+      "past_negative_plain",
+      "aku",
+      "hito"
+    ],
+    [
+      "past_negative_plain",
+      "aku",
+      "book"
+    ],
+    [
+      "past_negative_plain",
+      "iru",
+      "hito"
+    ],
+    [
+      "past_negative_plain",
+      "aru_existential",
+      "book"
+    ]
+  ],
+  "validation": [],
+  "scope": "production release audit, not a unit test",
+  "random": {
+    "seed": 173,
+    "questions": 100,
+    "sha256": "f4d3ae3959d3d61cf7722a2816f9e7766716b9aa51b2f57e83465628c39d7112"
+  },
+  "unique_pairs_all_forms": 80,
+  "quiz_selections": {
+    "Zdania przydawkowe": {
+      "possible": 30940,
+      "active_patterns": 1,
+      "eligible": 61,
+      "categories": 14,
+      "patterns": 1,
+      "words": 61,
+      "entities": 81
+    },
+    "Zdania przydawkowe podmiotowe": {
+      "possible": 400,
+      "active_patterns": 1,
+      "eligible": 3,
+      "categories": 14,
+      "patterns": 1,
+      "words": 3,
+      "entities": 81
+    },
+    "Zdania przydawkowe + Zdania przydawkowe podmiotowe": {
+      "possible": 31340,
+      "active_patterns": 2,
+      "eligible": 64,
+      "categories": 14,
+      "patterns": 2,
+      "words": 64,
+      "entities": 81
+    }
+  },
+  "authoring": "picker, alias completion, preview, no-op Save All, one-file edit and reload passed",
+  "device_limit": "Headless shared logic; no physical Windows/Android GUI operated.",
+  "provenance": {
+    "kotomi_base": "7e72245a3e4636c53109ffb58c00176f648f6ce2",
+    "kotomi_fix": "55b3c53dabbdecf7c431593c809ee8d034bb3c2f",
+    "content_base": "817cdef693ee004b20fd032dcc4a95b5c214e576",
+    "content_revision": 60
+  }
+}

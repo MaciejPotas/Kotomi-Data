@@ -1,11 +1,11 @@
 {
   "format": 1,
-  "revision": 59,
+  "revision": 60,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "593fb009d4e1f7e6cea9bb224f4aaa61a3e8026d2208d99cf283be060209299a",
-      "url": "content_revision.json?kotomi_sha256=593fb009d4e1f7e6cea9bb224f4aaa61a3e8026d2208d99cf283be060209299a"
+      "sha256": "b800b32ceaff83a45a567e5dbf529e93ee7aa295c6744e29d67e6e79661c0998",
+      "url": "content_revision.json?kotomi_sha256=b800b32ceaff83a45a567e5dbf529e93ee7aa295c6744e29d67e6e79661c0998"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -59,8 +59,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "65bacc1a1dcc6443c11f539bef7783b769da2d34677d0ed0d5821c3aa3b6c5cb",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=65bacc1a1dcc6443c11f539bef7783b769da2d34677d0ed0d5821c3aa3b6c5cb"
+      "sha256": "9510836201063a0e02d0edea80ced0c631a4203c68ed6062bb22516f459f44a3",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=9510836201063a0e02d0edea80ced0c631a4203c68ed6062bb22516f459f44a3"
     },
     {
       "path": "data/grammar/contexts.xml",
@@ -79,13 +79,13 @@
     },
     {
       "path": "data/patterns/sentence_maps.xml",
-      "sha256": "25a48a4fa3ec5ec50b745ee111531263c3b60d5b527749edf32d823cfc172290",
-      "url": "patterns/sentence_maps.xml?kotomi_sha256=25a48a4fa3ec5ec50b745ee111531263c3b60d5b527749edf32d823cfc172290"
+      "sha256": "58895d1ae5cbff3807dda66933a0f1f6dc572aeaa3d90e9077c44f2a76b5fb36",
+      "url": "patterns/sentence_maps.xml?kotomi_sha256=58895d1ae5cbff3807dda66933a0f1f6dc572aeaa3d90e9077c44f2a76b5fb36"
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
-      "sha256": "fa8aa5e86166ee52ee3f15bc798158e7d7bc3ae76cdf7223b5ce2e7abf99e3e4",
-      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=fa8aa5e86166ee52ee3f15bc798158e7d7bc3ae76cdf7223b5ce2e7abf99e3e4"
+      "sha256": "1e341adb0fb856b1856c453613ab240c83ac3d7bc3a61608d95f676605984123",
+      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=1e341adb0fb856b1856c453613ab240c83ac3d7bc3a61608d95f676605984123"
     },
     {
       "path": "data/quiz_project.xml",
