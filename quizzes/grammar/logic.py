@@ -613,7 +613,7 @@ class GrammarQuizEngine:
                     analysis = self.shared_engine.analyze_pattern(pattern)
                 except ProjectError as error:
                     raise GrammarQuizError(f"Pattern '{pattern_id}': {error}") from error
-                if not analysis.focus_slot:
+                if not analysis.focus_slot and not analysis.entity_slots:
                     continue
                 if not analysis.dynamic_slots:
                     combinations.append(
@@ -830,13 +830,17 @@ class GrammarQuizEngine:
         )
 
         analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
-        main_slot = analysis.focus_slot
-        main_dictionary = analysis.slots[main_slot].dictionary
-        main_word = compatibility_solver.resolve_word_selection(
-            self.project,
-            main_dictionary,
-            preview.words[main_slot],
-        )
+        if analysis.focus_slot:
+            main_slot = analysis.focus_slot
+            main_dictionary = analysis.slots[main_slot].dictionary
+            main_word = compatibility_solver.resolve_word_selection(
+                self.project,
+                main_dictionary,
+                preview.words[main_slot],
+            )
+        else:
+            main_slot = analysis.entity_slots[0]
+            main_word = self.project.entities[preview.entities[main_slot]]
         if main_word is None:
             return None
         bindings = ", ".join(
@@ -914,7 +918,7 @@ class GrammarQuizEngine:
         rules = parse_slot_filter(settings.word_filter)
         combinations = self.build_combinations(settings)
         possible = 0
-        eligible_verbs: Set[str] = set()
+        eligible_words: Set[str] = set()
         active_patterns: Set[str] = set()
         scopes = {}
         for combination_index, combination in enumerate(combinations):
@@ -963,14 +967,17 @@ class GrammarQuizEngine:
                             break
                     if matches:
                         possible += 1
-                        eligible_verbs.add(preview.words[analysis.focus_slot])
+                        if analysis.focus_slot:
+                            eligible_words.add(preview.words[analysis.focus_slot])
+                        else:
+                            eligible_words.add(preview.entities[analysis.entity_slots[0]])
         return {
             "possible": possible,
             "active_patterns": len(active_patterns),
-            "eligible": len(eligible_verbs),
+            "eligible": len(eligible_words),
             "categories": len(self.project.noun_categories),
             "patterns": len(active_patterns),
-            "words": len(eligible_verbs),
+            "words": len(eligible_words),
             "entities": len(self.project.entities),
         }
 
