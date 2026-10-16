@@ -509,7 +509,7 @@
     </word>
     <word id="hairu" kana="はいる" kanji="入る" type="godan" ending="ru" translation="wchodzić">
       <usage>
-        <role ref="target" government="do_genitive" accepts="enclosed_space" />
+        <role ref="target" government="do_genitive" accepts="building" />
         <role ref="subject" accepts="person animal" />
       </usage>
       <forms>
@@ -1193,7 +1193,7 @@
     </word>
     <word id="kayou" kana="かよう" kanji="通う" type="godan" ending="u" translation="uczęszczać">
       <usage>
-        <role ref="target" government="do_genitive" accepts="education_facility sports_facility" />
+        <role ref="target" government="do_genitive" accepts="attendance_facility" />
       </usage>
       <forms>
         <form ref="dictionary" kana="かよう" translation="uczęszczam" kanji="通う" />

@@ -383,5 +383,559 @@
     "candidate_seconds": 0.00038176599991857074,
     "change_percent": 2.341078984250311
   },
-  "decision": "Pass 10% threshold after fresh-process recheck of target/1/warm/statistics (initial +15.00%, confirmed +2.34%). All other repeated scaling medians <= +6.93%; lesson cold/warm <= +6.67%."
+  "decision": "Pass 10% threshold after fresh-process recheck of target/1/warm/statistics (initial +15.00%, confirmed +2.34%). All other repeated scaling medians <= +6.93%; lesson cold/warm <= +6.67%.",
+  "review_fixes": {
+    "baseline": "28b122969062cf3b397118a0c42e13c77fbd9a2b",
+    "candidate": "C3.2 final review fixes working tree",
+    "scope": "Same host; independent C3.1 fixtures; sequential baseline/candidate runs, no concurrent test workload; compatibility/forms/start/statistics/enumeration/Studio engine preview; sizes 1/10/50/200",
+    "initial_rounds": 31,
+    "initial_comparisons": {
+      "target/1/cold/compatibility": {
+        "baseline_seconds": 0.00026335700022173114,
+        "candidate_seconds": 0.0002678339988051448,
+        "change_percent": 1.699973260495935
+      },
+      "target/1/cold/forms": {
+        "baseline_seconds": 0.00013512399891624227,
+        "candidate_seconds": 0.00013943100202595815,
+        "change_percent": 3.1874449722181453
+      },
+      "target/1/cold/start": {
+        "baseline_seconds": 0.0004730849977931939,
+        "candidate_seconds": 0.0005046219994255807,
+        "change_percent": 6.6662442858044235
+      },
+      "target/1/cold/statistics": {
+        "baseline_seconds": 0.00039285299862967804,
+        "candidate_seconds": 0.00041269299981649965,
+        "change_percent": 5.050235394925351
+      },
+      "target/1/cold/enumeration": {
+        "baseline_seconds": 0.0002599220024421811,
+        "candidate_seconds": 0.00028539100094349124,
+        "change_percent": 9.79870817476316
+      },
+      "target/1/cold/preview": {
+        "baseline_seconds": 0.00027551600214792415,
+        "candidate_seconds": 0.0002969779998238664,
+        "change_percent": 7.789746333651926
+      },
+      "target/1/warm/compatibility": {
+        "baseline_seconds": 0.00018709300275077112,
+        "candidate_seconds": 0.00018775399803416803,
+        "change_percent": 0.35329770417840134
+      },
+      "target/1/warm/forms": {
+        "baseline_seconds": 0.00010854400170501322,
+        "candidate_seconds": 0.00012533900007838383,
+        "change_percent": 15.472986171095737
+      },
+      "target/1/warm/start": {
+        "baseline_seconds": 0.00044066600094083697,
+        "candidate_seconds": 0.00048584400065010414,
+        "change_percent": 10.25220906827633
+      },
+      "target/1/warm/statistics": {
+        "baseline_seconds": 0.0003581909986678511,
+        "candidate_seconds": 0.00039097099943319336,
+        "change_percent": 9.151542302083083
+      },
+      "target/1/warm/enumeration": {
+        "baseline_seconds": 0.0002571280019765254,
+        "candidate_seconds": 0.0002691469999263063,
+        "change_percent": 4.674324794418228
+      },
+      "target/1/warm/preview": {
+        "baseline_seconds": 0.00025567600096110255,
+        "candidate_seconds": 0.0002682550002646167,
+        "change_percent": 4.9198983307893185
+      },
+      "lesson/1/False/1/compatibility": {
+        "baseline_seconds": 0.0010174769995501265,
+        "candidate_seconds": 0.0010002710005210247,
+        "change_percent": -1.6910455014422343
+      },
+      "lesson/1/False/4/compatibility": {
+        "baseline_seconds": 0.0035519960001693107,
+        "candidate_seconds": 0.0033519339995109476,
+        "change_percent": -5.632382487165721
+      },
+      "lesson/1/True/1/compatibility": {
+        "baseline_seconds": 0.0010712379989854526,
+        "candidate_seconds": 0.0010011119993578177,
+        "change_percent": -6.546257665808142
+      },
+      "lesson/1/True/4/compatibility": {
+        "baseline_seconds": 0.003565606999472948,
+        "candidate_seconds": 0.0033194440002262127,
+        "change_percent": -6.9038174785701845
+      },
+      "target/10/cold/compatibility": {
+        "baseline_seconds": 0.0004671949973271694,
+        "candidate_seconds": 0.00042861800102400593,
+        "change_percent": -8.257150980610483
+      },
+      "target/10/cold/forms": {
+        "baseline_seconds": 0.00014668199946754612,
+        "candidate_seconds": 0.000146190999657847,
+        "change_percent": -0.33473760344244763
+      },
+      "target/10/cold/start": {
+        "baseline_seconds": 0.0007467680006811861,
+        "candidate_seconds": 0.0006862370028102305,
+        "change_percent": -8.105730001250787
+      },
+      "target/10/cold/statistics": {
+        "baseline_seconds": 0.0013673649991687853,
+        "candidate_seconds": 0.001235938001627801,
+        "change_percent": -9.611698238647193
+      },
+      "target/10/cold/enumeration": {
+        "baseline_seconds": 0.0014224179976736195,
+        "candidate_seconds": 0.0012422869986039586,
+        "change_percent": -12.663717652916873
+      },
+      "target/10/cold/preview": {
+        "baseline_seconds": 0.00047908299893606454,
+        "candidate_seconds": 0.000459344002592843,
+        "change_percent": -4.120162140392658
+      },
+      "target/10/warm/compatibility": {
+        "baseline_seconds": 0.0003399130000616424,
+        "candidate_seconds": 0.0003469140028755646,
+        "change_percent": 2.0596455012466874
+      },
+      "target/10/warm/forms": {
+        "baseline_seconds": 0.0001231460009876173,
+        "candidate_seconds": 0.00013619500168715604,
+        "change_percent": 10.596365773055716
+      },
+      "target/10/warm/start": {
+        "baseline_seconds": 0.0006202269978530239,
+        "candidate_seconds": 0.0006675880031252746,
+        "change_percent": 7.636076055411212
+      },
+      "target/10/warm/statistics": {
+        "baseline_seconds": 0.0013357179996091872,
+        "candidate_seconds": 0.0012473850001697429,
+        "change_percent": -6.61314734586862
+      },
+      "target/10/warm/enumeration": {
+        "baseline_seconds": 0.0011748739998438396,
+        "candidate_seconds": 0.0012152859999332577,
+        "change_percent": 3.439688008653663
+      },
+      "target/10/warm/preview": {
+        "baseline_seconds": 0.0004477459988265764,
+        "candidate_seconds": 0.0004635209988919087,
+        "change_percent": 3.523202911176071
+      },
+      "lesson/10/False/1/compatibility": {
+        "baseline_seconds": 0.0015094599984877277,
+        "candidate_seconds": 0.001459954997699242,
+        "change_percent": -3.279649731565115
+      },
+      "lesson/10/False/4/compatibility": {
+        "baseline_seconds": 0.0049898770012077875,
+        "candidate_seconds": 0.005151000998012023,
+        "change_percent": 3.229017403940726
+      },
+      "lesson/10/True/1/compatibility": {
+        "baseline_seconds": 0.0011733519968402106,
+        "candidate_seconds": 0.0013730440005019773,
+        "change_percent": 17.01893414759843
+      },
+      "lesson/10/True/4/compatibility": {
+        "baseline_seconds": 0.003904648001480382,
+        "candidate_seconds": 0.004342308999184752,
+        "change_percent": 11.208718366890903
+      },
+      "target/50/cold/compatibility": {
+        "baseline_seconds": 0.0011256899997533765,
+        "candidate_seconds": 0.00115644699690165,
+        "change_percent": 2.7322795045715997
+      },
+      "target/50/cold/forms": {
+        "baseline_seconds": 0.000172159998328425,
+        "candidate_seconds": 0.00017494500207249075,
+        "change_percent": 1.6176834172319632
+      },
+      "target/50/cold/start": {
+        "baseline_seconds": 0.0015304099979402963,
+        "candidate_seconds": 0.0015133960005186964,
+        "change_percent": -1.1117280627085724
+      },
+      "target/50/cold/statistics": {
+        "baseline_seconds": 0.005146421000972623,
+        "candidate_seconds": 0.005039193001721287,
+        "change_percent": -2.083545035104417
+      },
+      "target/50/cold/enumeration": {
+        "baseline_seconds": 0.004648169000574853,
+        "candidate_seconds": 0.004671597002015915,
+        "change_percent": 0.5040264551087636
+      },
+      "target/50/cold/preview": {
+        "baseline_seconds": 0.0012077729988959618,
+        "candidate_seconds": 0.0012188509972475003,
+        "change_percent": 0.9172252038806228
+      },
+      "target/50/warm/compatibility": {
+        "baseline_seconds": 0.0010726389991759788,
+        "candidate_seconds": 0.0009957939982996322,
+        "change_percent": -7.164106557320804
+      },
+      "target/50/warm/forms": {
+        "baseline_seconds": 0.00016909499754547141,
+        "candidate_seconds": 0.00016504899758729152,
+        "change_percent": -2.392737820107238
+      },
+      "target/50/warm/start": {
+        "baseline_seconds": 0.0015300800005206838,
+        "candidate_seconds": 0.0014929249991837423,
+        "change_percent": -2.4283044889350736
+      },
+      "target/50/warm/statistics": {
+        "baseline_seconds": 0.005234113003098173,
+        "candidate_seconds": 0.004940714003168978,
+        "change_percent": -5.60551519914696
+      },
+      "target/50/warm/enumeration": {
+        "baseline_seconds": 0.004892307002592133,
+        "candidate_seconds": 0.004470233001484303,
+        "change_percent": -8.627299981055959
+      },
+      "target/50/warm/preview": {
+        "baseline_seconds": 0.0012426760004018433,
+        "candidate_seconds": 0.0011948549981752876,
+        "change_percent": -3.848227712701613
+      },
+      "lesson/50/False/1/compatibility": {
+        "baseline_seconds": 0.003006160000950331,
+        "candidate_seconds": 0.0029344229988055304,
+        "change_percent": -2.386333466020518
+      },
+      "lesson/50/False/4/compatibility": {
+        "baseline_seconds": 0.009400098999321926,
+        "candidate_seconds": 0.010063912999612512,
+        "change_percent": 7.061776693399402
+      },
+      "lesson/50/True/1/compatibility": {
+        "baseline_seconds": 0.001757213998644147,
+        "candidate_seconds": 0.0020389400015119463,
+        "change_percent": 16.032538045177013
+      },
+      "lesson/50/True/4/compatibility": {
+        "baseline_seconds": 0.0067723100000876,
+        "candidate_seconds": 0.005631867999909446,
+        "change_percent": -16.839778453192533
+      },
+      "target/200/cold/compatibility": {
+        "baseline_seconds": 0.003643454001576174,
+        "candidate_seconds": 0.003532575999997789,
+        "change_percent": -3.0432112366567177
+      },
+      "target/200/cold/forms": {
+        "baseline_seconds": 0.0002480850016581826,
+        "candidate_seconds": 0.00026273700132151134,
+        "change_percent": 5.906040093272802
+      },
+      "target/200/cold/start": {
+        "baseline_seconds": 0.004576503000862431,
+        "candidate_seconds": 0.004299233998608543,
+        "change_percent": -6.05853426080214
+      },
+      "target/200/cold/statistics": {
+        "baseline_seconds": 0.018828290998499142,
+        "candidate_seconds": 0.01703986099892063,
+        "change_percent": -9.49863160560389
+      },
+      "target/200/cold/enumeration": {
+        "baseline_seconds": 0.01828633299737703,
+        "candidate_seconds": 0.016652825997880427,
+        "change_percent": -8.932939150407638
+      },
+      "target/200/cold/preview": {
+        "baseline_seconds": 0.003863285997795174,
+        "candidate_seconds": 0.003736765000212472,
+        "change_percent": -3.274958096680114
+      },
+      "target/200/warm/compatibility": {
+        "baseline_seconds": 0.003790835999097908,
+        "candidate_seconds": 0.003587218998291064,
+        "change_percent": -5.371295430751899
+      },
+      "target/200/warm/forms": {
+        "baseline_seconds": 0.00025381399973412044,
+        "candidate_seconds": 0.0002537930013204459,
+        "change_percent": -0.008273150297666287
+      },
+      "target/200/warm/start": {
+        "baseline_seconds": 0.004550714998913463,
+        "candidate_seconds": 0.004582473000482423,
+        "change_percent": 0.6978683915943362
+      },
+      "target/200/warm/statistics": {
+        "baseline_seconds": 0.019814301002043067,
+        "candidate_seconds": 0.01773704299921519,
+        "change_percent": -10.483629993375432
+      },
+      "target/200/warm/enumeration": {
+        "baseline_seconds": 0.01814193400059594,
+        "candidate_seconds": 0.017404641999746673,
+        "change_percent": -4.0640209628424735
+      },
+      "target/200/warm/preview": {
+        "baseline_seconds": 0.003923045998817543,
+        "candidate_seconds": 0.003983397997217253,
+        "change_percent": 1.5383963995808658
+      },
+      "lesson/200/False/1/compatibility": {
+        "baseline_seconds": 0.007521000999986427,
+        "candidate_seconds": 0.008852234997902997,
+        "change_percent": 17.700223652662352
+      },
+      "lesson/200/False/4/compatibility": {
+        "baseline_seconds": 0.025745531002030475,
+        "candidate_seconds": 0.029199666001659352,
+        "change_percent": 13.41644497196992
+      },
+      "lesson/200/True/1/compatibility": {
+        "baseline_seconds": 0.004238974001054885,
+        "candidate_seconds": 0.004272023998055374,
+        "change_percent": 0.7796697265013863
+      },
+      "lesson/200/True/4/compatibility": {
+        "baseline_seconds": 0.013702498999919044,
+        "candidate_seconds": 0.01444410899784998,
+        "change_percent": 5.412224426619683
+      }
+    },
+    "outlier_recheck": {
+      "reason": "Recheck all >10% outliers from the initial 31-round measurement, alternating fresh processes to control timing drift",
+      "pairs": 7,
+      "target_samples": 301,
+      "lesson_samples": 101,
+      "samples": [
+        {
+          "baseline": {
+            "target/1/warm/forms": 0.00011885899948538281,
+            "target/1/warm/start": 0.0005034210007579532,
+            "target/10/warm/forms": 0.0001289450010517612,
+            "target/10/warm/start": 0.0007205779984360561,
+            "lesson/200/False/1/compatibility": 0.00788650300091831,
+            "lesson/10/True/1/compatibility": 0.0012512600005720742,
+            "lesson/50/True/1/compatibility": 0.001863674999185605,
+            "lesson/200/False/4/compatibility": 0.029051145000266843,
+            "lesson/10/True/4/compatibility": 0.003991960998973809
+          },
+          "candidate": {
+            "target/1/warm/forms": 0.00012543000048026443,
+            "target/1/warm/start": 0.0005177120001462754,
+            "target/10/warm/forms": 0.00013322100130608305,
+            "target/10/warm/start": 0.0007337189999816474,
+            "lesson/200/False/1/compatibility": 0.008247939000284532,
+            "lesson/10/True/1/compatibility": 0.0011571979994187132,
+            "lesson/50/True/1/compatibility": 0.0018678109991014935,
+            "lesson/200/False/4/compatibility": 0.027846936998685123,
+            "lesson/10/True/4/compatibility": 0.0037240550009300932
+          }
+        },
+        {
+          "candidate": {
+            "target/1/warm/forms": 0.00010899499829974957,
+            "target/1/warm/start": 0.0004302300003473647,
+            "target/10/warm/forms": 0.00011894899944309145,
+            "target/10/warm/start": 0.0006392649993358646,
+            "lesson/200/False/1/compatibility": 0.008046454000577796,
+            "lesson/10/True/1/compatibility": 0.0011114890003227629,
+            "lesson/50/True/1/compatibility": 0.001860820997535484,
+            "lesson/200/False/4/compatibility": 0.027080866999313002,
+            "lesson/10/True/4/compatibility": 0.0037424629990709946
+          },
+          "baseline": {
+            "target/1/warm/forms": 0.00011207999705220573,
+            "target/1/warm/start": 0.0004563490001601167,
+            "target/10/warm/forms": 0.00011900000026798807,
+            "target/10/warm/start": 0.000640697999187978,
+            "lesson/200/False/1/compatibility": 0.007552709001174662,
+            "lesson/10/True/1/compatibility": 0.0010984799992002081,
+            "lesson/50/True/1/compatibility": 0.0017945710023923311,
+            "lesson/200/False/4/compatibility": 0.02982465699824388,
+            "lesson/10/True/4/compatibility": 0.0038315679994411767
+          }
+        },
+        {
+          "baseline": {
+            "target/1/warm/forms": 0.00011121799980173819,
+            "target/1/warm/start": 0.00045561800288851373,
+            "target/10/warm/forms": 0.00012487899948609993,
+            "target/10/warm/start": 0.0006692310016660485,
+            "lesson/200/False/1/compatibility": 0.007810818002326414,
+            "lesson/10/True/1/compatibility": 0.0011373870001989417,
+            "lesson/50/True/1/compatibility": 0.001932039001985686,
+            "lesson/200/False/4/compatibility": 0.027335792998201214,
+            "lesson/10/True/4/compatibility": 0.0035829320004268084
+          },
+          "candidate": {
+            "target/1/warm/forms": 0.00011435199849074706,
+            "target/1/warm/start": 0.00045126199984224513,
+            "target/10/warm/forms": 0.00012370699914754368,
+            "target/10/warm/start": 0.0006459159994847141,
+            "lesson/200/False/1/compatibility": 0.007439662000251701,
+            "lesson/10/True/1/compatibility": 0.0011100869996880647,
+            "lesson/50/True/1/compatibility": 0.0018964140035677701,
+            "lesson/200/False/4/compatibility": 0.027828406000480754,
+            "lesson/10/True/4/compatibility": 0.003939685000659665
+          }
+        },
+        {
+          "candidate": {
+            "target/1/warm/forms": 0.00010969499999191612,
+            "target/1/warm/start": 0.00043399399874033406,
+            "target/10/warm/forms": 0.00011789700147346593,
+            "target/10/warm/start": 0.0006191430002218112,
+            "lesson/200/False/1/compatibility": 0.007528931000706507,
+            "lesson/10/True/1/compatibility": 0.0011025329986296128,
+            "lesson/50/True/1/compatibility": 0.0018201550010417122,
+            "lesson/200/False/4/compatibility": 0.027422144001320703,
+            "lesson/10/True/4/compatibility": 0.0037272389999998268
+          },
+          "baseline": {
+            "target/1/warm/forms": 0.00011583499872358516,
+            "target/1/warm/start": 0.0005010160020901822,
+            "target/10/warm/forms": 0.00013090699940221384,
+            "target/10/warm/start": 0.0007645539990335237,
+            "lesson/200/False/1/compatibility": 0.007750010001473129,
+            "lesson/10/True/1/compatibility": 0.0011945520018343814,
+            "lesson/50/True/1/compatibility": 0.001852994999353541,
+            "lesson/200/False/4/compatibility": 0.02801855500001693,
+            "lesson/10/True/4/compatibility": 0.003990465000242693
+          }
+        },
+        {
+          "baseline": {
+            "target/1/warm/forms": 0.0001054700005624909,
+            "target/1/warm/start": 0.00041184200017596595,
+            "target/10/warm/forms": 0.00012503900143201463,
+            "target/10/warm/start": 0.0006615290003537666,
+            "lesson/200/False/1/compatibility": 0.007709514000453055,
+            "lesson/10/True/1/compatibility": 0.0012488560023484752,
+            "lesson/50/True/1/compatibility": 0.001897224999993341,
+            "lesson/200/False/4/compatibility": 0.029130339000403183,
+            "lesson/10/True/4/compatibility": 0.003602349999709986
+          },
+          "candidate": {
+            "target/1/warm/forms": 0.0001076219996321015,
+            "target/1/warm/start": 0.00042787699931068346,
+            "target/10/warm/forms": 0.00011902000187546946,
+            "target/10/warm/start": 0.000630743001238443,
+            "lesson/200/False/1/compatibility": 0.007739558001048863,
+            "lesson/10/True/1/compatibility": 0.0012268919999769423,
+            "lesson/50/True/1/compatibility": 0.001896424000733532,
+            "lesson/200/False/4/compatibility": 0.027084260000265203,
+            "lesson/10/True/4/compatibility": 0.0037524669969570823
+          }
+        },
+        {
+          "candidate": {
+            "target/1/warm/forms": 0.00012091200187569484,
+            "target/1/warm/start": 0.0005016069990233518,
+            "target/10/warm/forms": 0.0001354650012217462,
+            "target/10/warm/start": 0.000744594002753729,
+            "lesson/200/False/1/compatibility": 0.007939669998449972,
+            "lesson/10/True/1/compatibility": 0.0011359159980202094,
+            "lesson/50/True/1/compatibility": 0.0017371939975419082,
+            "lesson/200/False/4/compatibility": 0.026069749001180753,
+            "lesson/10/True/4/compatibility": 0.003855882998323068
+          },
+          "baseline": {
+            "target/1/warm/forms": 0.00010862400085898116,
+            "target/1/warm/start": 0.00044060499931219965,
+            "target/10/warm/forms": 0.00011772799916798249,
+            "target/10/warm/start": 0.0006281780006247573,
+            "lesson/200/False/1/compatibility": 0.00796595000429079,
+            "lesson/10/True/1/compatibility": 0.0011502670022309758,
+            "lesson/50/True/1/compatibility": 0.0018480910002836026,
+            "lesson/200/False/4/compatibility": 0.02775532800296787,
+            "lesson/10/True/4/compatibility": 0.003948874997149687
+          }
+        },
+        {
+          "baseline": {
+            "target/1/warm/forms": 0.00011863899999298155,
+            "target/1/warm/start": 0.0004971110029146075,
+            "target/10/warm/forms": 0.00012619000335689634,
+            "target/10/warm/start": 0.0006826300013926812,
+            "lesson/200/False/1/compatibility": 0.007897540002886672,
+            "lesson/10/True/1/compatibility": 0.0011269629976595752,
+            "lesson/50/True/1/compatibility": 0.0016894310028874315,
+            "lesson/200/False/4/compatibility": 0.024547774002712686,
+            "lesson/10/True/4/compatibility": 0.003408466996916104
+          },
+          "candidate": {
+            "target/1/warm/forms": 0.00011233999975956976,
+            "target/1/warm/start": 0.00045302499347599223,
+            "target/10/warm/forms": 0.00012079199950676411,
+            "target/10/warm/start": 0.0006410679998225532,
+            "lesson/200/False/1/compatibility": 0.007888441999966744,
+            "lesson/10/True/1/compatibility": 0.00119964199984679,
+            "lesson/50/True/1/compatibility": 0.001940630994795356,
+            "lesson/200/False/4/compatibility": 0.02831558600155404,
+            "lesson/10/True/4/compatibility": 0.0037646970013156533
+          }
+        }
+      ],
+      "comparisons": {
+        "target/1/warm/forms": {
+          "baseline_seconds": 0.00011207999705220573,
+          "candidate_seconds": 0.00011233999975956976,
+          "change_percent": 0.23197958083718273
+        },
+        "target/1/warm/start": {
+          "baseline_seconds": 0.0004563490001601167,
+          "candidate_seconds": 0.00045126199984224513,
+          "change_percent": -1.1147170950493446
+        },
+        "target/10/warm/forms": {
+          "baseline_seconds": 0.00012503900143201463,
+          "candidate_seconds": 0.00012079199950676411,
+          "change_percent": -3.3965417802537923
+        },
+        "target/10/warm/start": {
+          "baseline_seconds": 0.0006692310016660485,
+          "candidate_seconds": 0.0006410679998225532,
+          "change_percent": -4.2082631816792055
+        },
+        "lesson/200/False/1/compatibility": {
+          "baseline_seconds": 0.007810818002326414,
+          "candidate_seconds": 0.007888441999966744,
+          "change_percent": 0.993801130908567
+        },
+        "lesson/10/True/1/compatibility": {
+          "baseline_seconds": 0.0011502670022309758,
+          "candidate_seconds": 0.0011359159980202094,
+          "change_percent": -1.2476237415254166
+        },
+        "lesson/50/True/1/compatibility": {
+          "baseline_seconds": 0.001852994999353541,
+          "candidate_seconds": 0.0018678109991014935,
+          "change_percent": 0.7995704118533231
+        },
+        "lesson/200/False/4/compatibility": {
+          "baseline_seconds": 0.02801855500001693,
+          "candidate_seconds": 0.027422144001320703,
+          "change_percent": -2.1286286844409696
+        },
+        "lesson/10/True/4/compatibility": {
+          "baseline_seconds": 0.0038315679994411767,
+          "candidate_seconds": 0.0037524669969570823,
+          "change_percent": -2.064455139400656
+        }
+      }
+    },
+    "max_change_outside_recheck_percent": 9.79870817476316,
+    "max_rechecked_change_percent": 0.993801130908567,
+    "confirmed_regression_above_10_percent": false
+  }
 }

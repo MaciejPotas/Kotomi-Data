@@ -66,6 +66,24 @@
       "japanese": "がっこうにはいる。"
     },
     {
+      "verb": "hairu",
+      "noun": "room",
+      "polish": "wchodzę do pokoju.",
+      "japanese": "へやにはいる。"
+    },
+    {
+      "verb": "hairu",
+      "noun": "daidokoro",
+      "polish": "wchodzę do kuchni.",
+      "japanese": "だいどころにはいる。"
+    },
+    {
+      "verb": "hairu",
+      "noun": "jimusitsu",
+      "polish": "wchodzę do biura.",
+      "japanese": "じむしつにはいる。"
+    },
+    {
       "verb": "kariru",
       "noun": "sister",
       "polish": "pożyczam od siostry.",
@@ -95,7 +113,7 @@
     },
     "hairu": {
       "accepts": [
-        "enclosed_space"
+        "building"
       ],
       "nouns": [],
       "government": "do_genitive"
@@ -118,8 +136,7 @@
     },
     "kayou": {
       "accepts": [
-        "education_facility",
-        "sports_facility"
+        "attendance_facility"
       ],
       "nouns": [],
       "government": "do_genitive"
@@ -244,5 +261,22 @@
       "nouns": [],
       "government": ""
     }
-  }
+  },
+  "tateru_object_examples": [
+    {
+      "noun": "room",
+      "polish": "buduję pokój.",
+      "japanese": "へやをたてる"
+    },
+    {
+      "noun": "daidokoro",
+      "polish": "buduję kuchnię.",
+      "japanese": "だいどころをたてる"
+    },
+    {
+      "noun": "jimusitsu",
+      "polish": "buduję biuro.",
+      "japanese": "じむしつをたてる"
+    }
+  ]
 }

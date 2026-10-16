@@ -56,6 +56,9 @@ def main():
         ('kayou','school','uczęszczam do szkoły.','がっこうにかよう。'),
         ('kayou','taiikukan','uczęszczam do sali gimnastycznej.','たいいくかんにかよう。'),
         ('hairu','school','wchodzę do szkoły.','がっこうにはいる。'),
+        ('hairu','room','wchodzę do pokoju.','へやにはいる。'),
+        ('hairu','daidokoro','wchodzę do kuchni.','だいどころにはいる。'),
+        ('hairu','jimusitsu','wchodzę do biura.','じむしつにはいる。'),
         ('kariru','sister','pożyczam od siostry.','あねにかりる。'),
         ('kasu','sister','pożyczam siostrze.','あねにかす。'),
         ('ageru_give','sister','daję siostrze.','あねにあげる。')]:
@@ -65,6 +68,14 @@ def main():
     probe = CompatibilityProbe(p,p.analyze_pattern(identifier),'dictionary')
     for verb,noun in [('kayou','biru'),('kariru','inu'),('sumu','school'),('kureru','sister')]:
         assert not probe.exists(word_choices={'verb@action':verb},entity_choices={'noun@target':noun})
+    # The broader building category also changes existing object constructions.
+    results['tateru_object_examples'] = []
+    for noun in ('room','daidokoro','jimusitsu'):
+        source, answer = p.render_bound_pattern('Czasownik z dopełnieniem',
+            form_overrides={'verb[role:object]':'dictionary'},
+            word_choices={'verb[role:object]':'tateru'}, entity_choices={'noun':noun},
+            context_pool='present', context_option='neutral')
+        results['tateru_object_examples'].append({'noun':noun,'polish':source,'japanese':answer})
     result = json.dumps(results,ensure_ascii=False,indent=2)+'\n'
     if args.output:
         args.output.parent.mkdir(parents=True,exist_ok=True);args.output.write_text(result)
