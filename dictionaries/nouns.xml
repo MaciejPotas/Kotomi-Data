@@ -103,7 +103,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="kawa" genitive="kawy" accusative="kawę" instrumental="kawą" locative="kawie" dative="kawie" vocative="kawo" />
     </word>
-    <word id="daidokoro" kana="だいどころ" kanji="台所" type="noun" category="place" translation="kuchnia">
+    <word id="daidokoro" kana="だいどころ" kanji="台所" type="noun" category="enclosed_space" translation="kuchnia">
       <counting classes="general_item">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="kuchnie" />
@@ -429,7 +429,7 @@
       <agreement class="neuter" />
       <cases language="pl" nominative="jabłko" genitive="jabłka" accusative="jabłko" instrumental="jabłkiem" locative="jabłku" dative="jabłku" vocative="jabłko" />
     </word>
-    <word id="room" kana="へや" kanji="部屋" type="noun" category="place" translation="pokój">
+    <word id="room" kana="へや" kanji="部屋" type="noun" category="enclosed_space" translation="pokój">
       <counting classes="general_item">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="pokoje" />
@@ -1015,7 +1015,7 @@
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="biurowiec" genitive="biurowca" dative="biurowcowi" accusative="biurowiec" instrumental="biurowcem" locative="biurowcu" vocative="biurowcu" />
     </word>
-    <word id="jimusitsu" kana="じむしつ" kanji="事務室" type="noun" category="place" translation="biuro">
+    <word id="jimusitsu" kana="じむしつ" kanji="事務室" type="noun" category="enclosed_space" translation="biuro">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative" value="biura" />

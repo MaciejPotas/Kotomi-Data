@@ -1,5 +1,7 @@
 # Kategorie rzeczowników i role czasowników (C3)
 
+> Raport historyczny C3/C3.1. Content 64 używa formatu 3; aktualne zasady i zmiany kategorii opisuje [C3.2](target_government_c32.md).
+
 Dodanie zwykłego rzeczownika polega na wybraniu najwęższej poprawnej kategorii.
 Wszystkie czasowniki akceptujące tę kategorię lub jej przodka zaczynają go obsługiwać
 bez edycji `verbs.xml`. Nie oznacza to, że każdy czasownik przyjmie każdy nowy rzeczownik.

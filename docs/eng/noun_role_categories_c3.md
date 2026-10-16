@@ -1,5 +1,7 @@
 # Noun categories and verb roles (C3)
 
+> Historical C3/C3.1 report. Content 64 uses format 3; see [C3.2](target_government_c32.md) for current compatibility and category changes.
+
 Add an ordinary noun by choosing its narrowest correct category. Verbs accepting
 that category or an ancestor then accept the noun without changes to `verbs.xml`.
 This is not a promise that every verb accepts every future noun: meaning and the

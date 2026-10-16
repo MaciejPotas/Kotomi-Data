@@ -1,0 +1,248 @@
+{
+  "scope": "Opt-in production acceptance, not unit tests",
+  "baseline_application": "a61c1002270696fe94f9dc81103b0e86735f1f9e",
+  "baseline_data": "eaefaa8b287a0ea2778a44aa2bb2ced6d75f3e91",
+  "revision": 64,
+  "validation_errors": [],
+  "counts": {
+    "dictionary": {
+      "generated": 480,
+      "questions": 96,
+      "answers": 96
+    },
+    "polite_nonpast": {
+      "generated": 480,
+      "questions": 96,
+      "answers": 96
+    },
+    "plain_negative": {
+      "generated": 480,
+      "questions": 96,
+      "answers": 96
+    },
+    "polite_negative": {
+      "generated": 480,
+      "questions": 96,
+      "answers": 96
+    },
+    "past_plain": {
+      "generated": 480,
+      "questions": 96,
+      "answers": 96
+    },
+    "past_polite": {
+      "generated": 480,
+      "questions": 96,
+      "answers": 96
+    },
+    "past_negative_plain": {
+      "generated": 480,
+      "questions": 96,
+      "answers": 96
+    },
+    "past_negative_polite": {
+      "generated": 480,
+      "questions": 96,
+      "answers": 96
+    }
+  },
+  "examples": [
+    {
+      "verb": "kayou",
+      "noun": "school",
+      "polish": "uczęszczam do szkoły.",
+      "japanese": "がっこうにかよう。"
+    },
+    {
+      "verb": "kayou",
+      "noun": "taiikukan",
+      "polish": "uczęszczam do sali gimnastycznej.",
+      "japanese": "たいいくかんにかよう。"
+    },
+    {
+      "verb": "hairu",
+      "noun": "school",
+      "polish": "wchodzę do szkoły.",
+      "japanese": "がっこうにはいる。"
+    },
+    {
+      "verb": "kariru",
+      "noun": "sister",
+      "polish": "pożyczam od siostry.",
+      "japanese": "あねにかりる。"
+    },
+    {
+      "verb": "kasu",
+      "noun": "sister",
+      "polish": "pożyczam siostrze.",
+      "japanese": "あねにかす。"
+    },
+    {
+      "verb": "ageru_give",
+      "noun": "sister",
+      "polish": "daję siostrze.",
+      "japanese": "あねにあげる。"
+    }
+  ],
+  "target_audit": {
+    "ayamaru": {
+      "accepts": [
+        "person",
+        "animal"
+      ],
+      "nouns": [],
+      "government": "direct_object"
+    },
+    "hairu": {
+      "accepts": [
+        "enclosed_space"
+      ],
+      "nouns": [],
+      "government": "do_genitive"
+    },
+    "ireru": {
+      "accepts": [
+        "container"
+      ],
+      "nouns": [
+        "room"
+      ],
+      "government": ""
+    },
+    "kariru": {
+      "accepts": [
+        "person"
+      ],
+      "nouns": [],
+      "government": "od_genitive"
+    },
+    "kayou": {
+      "accepts": [
+        "education_facility",
+        "sports_facility"
+      ],
+      "nouns": [],
+      "government": "do_genitive"
+    },
+    "kotaeru": {
+      "accepts": [
+        "person"
+      ],
+      "nouns": [
+        "email",
+        "letter"
+      ],
+      "government": ""
+    },
+    "nareru": {
+      "accepts": [
+        "*"
+      ],
+      "nouns": [],
+      "government": ""
+    },
+    "naru": {
+      "accepts": [
+        "*"
+      ],
+      "nouns": [],
+      "government": ""
+    },
+    "okoru": {
+      "accepts": [
+        "person",
+        "animal"
+      ],
+      "nouns": [],
+      "government": "na_accusative"
+    },
+    "oshieru": {
+      "accepts": [
+        "person",
+        "animal"
+      ],
+      "nouns": [],
+      "government": ""
+    },
+    "sawaru": {
+      "accepts": [
+        "concrete"
+      ],
+      "nouns": [],
+      "government": ""
+    },
+    "teishutsusuru": {
+      "accepts": [],
+      "nouns": [
+        "teacher",
+        "school"
+      ],
+      "government": ""
+    },
+    "tomaru": {
+      "accepts": [
+        "place"
+      ],
+      "nouns": [],
+      "government": ""
+    },
+    "usowotsuku": {
+      "accepts": [
+        "person"
+      ],
+      "nouns": [],
+      "government": "dative"
+    },
+    "ageru_give": {
+      "accepts": [
+        "person",
+        "animal"
+      ],
+      "nouns": [],
+      "government": "dative"
+    },
+    "kaesu": {
+      "accepts": [
+        "person",
+        "animal"
+      ],
+      "nouns": [],
+      "government": "dative"
+    },
+    "kasu": {
+      "accepts": [
+        "person"
+      ],
+      "nouns": [],
+      "government": "dative"
+    },
+    "kureru": {
+      "accepts": [
+        "person"
+      ],
+      "nouns": [],
+      "government": ""
+    },
+    "morau": {
+      "accepts": [
+        "person"
+      ],
+      "nouns": [],
+      "government": "od_genitive"
+    },
+    "watasu": {
+      "accepts": [
+        "person"
+      ],
+      "nouns": [],
+      "government": "dative"
+    },
+    "sumu": {
+      "accepts": [
+        "place"
+      ],
+      "nouns": [],
+      "government": ""
+    }
+  }
+}

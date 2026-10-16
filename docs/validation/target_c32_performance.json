@@ -1,0 +1,387 @@
+{
+  "baseline": "a61c1002270696fe94f9dc81103b0e86735f1f9e",
+  "candidate": "C3.2 working tree",
+  "scope": "Same-host synthetic fixtures only; no production vocabulary. Times in seconds. No solver/enumeration changes.",
+  "lesson_rounds": 15,
+  "lesson": {
+    "cold": {
+      "configuration_setup": {
+        "baseline": 0.023922,
+        "candidate": 0.021892,
+        "change_percent": -8.48591254911797
+      },
+      "compatibility": {
+        "baseline": 0.001238,
+        "candidate": 0.001105,
+        "change_percent": -10.743134087237472
+      },
+      "forms": {
+        "baseline": 0.000695,
+        "candidate": 0.000694,
+        "change_percent": -0.14388489208633226
+      },
+      "start": {
+        "baseline": 0.000661,
+        "candidate": 0.000575,
+        "change_percent": -13.010590015128598
+      },
+      "statistics": {
+        "baseline": 0.001332,
+        "candidate": 0.001243,
+        "change_percent": -6.681681681681684
+      }
+    },
+    "warm": {
+      "compatibility": {
+        "baseline": 0.000949,
+        "candidate": 0.000915,
+        "change_percent": -3.5827186512118026
+      },
+      "forms": {
+        "baseline": 0.000635,
+        "candidate": 0.000654,
+        "change_percent": 2.9921259842519587
+      },
+      "start": {
+        "baseline": 0.000589,
+        "candidate": 0.000571,
+        "change_percent": -3.056027164685904
+      },
+      "statistics": {
+        "baseline": 0.001186,
+        "candidate": 0.001265,
+        "change_percent": 6.661045531197307
+      }
+    }
+  },
+  "scaling_rounds": 21,
+  "scaling": {
+    "target/1/cold": {
+      "compatibility": {
+        "baseline": 0.0002496069973858539,
+        "candidate": 0.00024328699873876758,
+        "change_percent": -2.5319797574891667
+      },
+      "forms": {
+        "baseline": 0.00013489400225807913,
+        "candidate": 0.0001352949984720908,
+        "change_percent": 0.2972676377742012
+      },
+      "start": {
+        "baseline": 0.0004893090008408763,
+        "candidate": 0.0004816770015168004,
+        "change_percent": -1.559750446233421
+      },
+      "statistics": {
+        "baseline": 0.0003818559998762794,
+        "candidate": 0.0003988520002167206,
+        "change_percent": 4.450892573626675
+      }
+    },
+    "target/1/warm": {
+      "compatibility": {
+        "baseline": 0.0001953249993675854,
+        "candidate": 0.0001870520027296152,
+        "change_percent": -4.235503220149061
+      },
+      "forms": {
+        "baseline": 0.0001113479993364308,
+        "candidate": 0.00010985600238200277,
+        "change_percent": -1.3399405138120657
+      },
+      "start": {
+        "baseline": 0.00047998499940149486,
+        "candidate": 0.0004957689998263959,
+        "change_percent": 3.2884361895856085
+      },
+      "statistics": {
+        "baseline": 0.00037203099782345816,
+        "candidate": 0.00042783599928952754,
+        "change_percent": 15.000094560010503
+      }
+    },
+    "lesson/1/False/1": {
+      "compatibility": {
+        "baseline": 0.0010463299986440688,
+        "candidate": 0.0009747619988047518,
+        "change_percent": -6.8399070973843346
+      }
+    },
+    "lesson/1/False/4": {
+      "compatibility": {
+        "baseline": 0.0032780789988464676,
+        "candidate": 0.002934930002084002,
+        "change_percent": -10.46799045670398
+      }
+    },
+    "lesson/1/True/1": {
+      "compatibility": {
+        "baseline": 0.0009809010007302277,
+        "candidate": 0.0009455170002183877,
+        "change_percent": -3.607295790859477
+      }
+    },
+    "lesson/1/True/4": {
+      "compatibility": {
+        "baseline": 0.003042071999516338,
+        "candidate": 0.002984265000122832,
+        "change_percent": -1.9002508620011849
+      }
+    },
+    "target/10/cold": {
+      "compatibility": {
+        "baseline": 0.0004734050016850233,
+        "candidate": 0.00041809100002865307,
+        "change_percent": -11.684287546495554
+      },
+      "forms": {
+        "baseline": 0.00015022699881228618,
+        "candidate": 0.0001398010026605334,
+        "change_percent": -6.940161378568455
+      },
+      "start": {
+        "baseline": 0.0006987749984546099,
+        "candidate": 0.0006497809990833048,
+        "change_percent": -7.011412755129875
+      },
+      "statistics": {
+        "baseline": 0.0011553540025488473,
+        "candidate": 0.001141834000009112,
+        "change_percent": -1.1702043278431162
+      }
+    },
+    "target/10/warm": {
+      "compatibility": {
+        "baseline": 0.00033828099913080223,
+        "candidate": 0.0003361970011610538,
+        "change_percent": -0.6160552839512667
+      },
+      "forms": {
+        "baseline": 0.0001241669997398276,
+        "candidate": 0.00012231499931658618,
+        "change_percent": -1.4915399640177962
+      },
+      "start": {
+        "baseline": 0.0006310120006673969,
+        "candidate": 0.0006746789986209478,
+        "change_percent": 6.920153326302203
+      },
+      "statistics": {
+        "baseline": 0.0012295259984966833,
+        "candidate": 0.001173371998447692,
+        "change_percent": -4.567125877586131
+      }
+    },
+    "lesson/10/False/1": {
+      "compatibility": {
+        "baseline": 0.001457590999052627,
+        "candidate": 0.0013612959992315155,
+        "change_percent": -6.606448577392376
+      }
+    },
+    "lesson/10/False/4": {
+      "compatibility": {
+        "baseline": 0.00448052299907431,
+        "candidate": 0.004534755000349833,
+        "change_percent": 1.2103944402634959
+      }
+    },
+    "lesson/10/True/1": {
+      "compatibility": {
+        "baseline": 0.0012413240001478698,
+        "candidate": 0.0010693439980968833,
+        "change_percent": -13.854561905715169
+      }
+    },
+    "lesson/10/True/4": {
+      "compatibility": {
+        "baseline": 0.004069453003467061,
+        "candidate": 0.0033106779992522206,
+        "change_percent": -18.64562641633617
+      }
+    },
+    "target/50/cold": {
+      "compatibility": {
+        "baseline": 0.0011227039976802189,
+        "candidate": 0.0010448169996379875,
+        "change_percent": -6.937447288258081
+      },
+      "forms": {
+        "baseline": 0.0001802020015020389,
+        "candidate": 0.00016064300143625587,
+        "change_percent": -10.853930535040002
+      },
+      "start": {
+        "baseline": 0.0015183320028882008,
+        "candidate": 0.0013688559993170202,
+        "change_percent": -9.844750903415356
+      },
+      "statistics": {
+        "baseline": 0.005196554000576725,
+        "candidate": 0.004310255997552304,
+        "change_percent": -17.055494909242896
+      }
+    },
+    "target/50/warm": {
+      "compatibility": {
+        "baseline": 0.0010288129997206852,
+        "candidate": 0.0009903350000968203,
+        "change_percent": -3.740038241576593
+      },
+      "forms": {
+        "baseline": 0.00016164399858098477,
+        "candidate": 0.0001504969986854121,
+        "change_percent": -6.8960184067631385
+      },
+      "start": {
+        "baseline": 0.0014663830006611533,
+        "candidate": 0.0013400230018305592,
+        "change_percent": -8.617121091394386
+      },
+      "statistics": {
+        "baseline": 0.004811454000446247,
+        "candidate": 0.00424275499972282,
+        "change_percent": -11.81969110939608
+      }
+    },
+    "lesson/50/False/1": {
+      "compatibility": {
+        "baseline": 0.002793998002744047,
+        "candidate": 0.002436837999994168,
+        "change_percent": -12.78311589339377
+      }
+    },
+    "lesson/50/False/4": {
+      "compatibility": {
+        "baseline": 0.009122552000917494,
+        "candidate": 0.008396014000027208,
+        "change_percent": -7.964196869661199
+      }
+    },
+    "lesson/50/True/1": {
+      "compatibility": {
+        "baseline": 0.0017549399999552406,
+        "candidate": 0.0017213880018971395,
+        "change_percent": -1.9118601239334065
+      }
+    },
+    "lesson/50/True/4": {
+      "compatibility": {
+        "baseline": 0.005689118002919713,
+        "candidate": 0.0052359729997988325,
+        "change_percent": -7.9651187211852825
+      }
+    },
+    "target/200/cold": {
+      "compatibility": {
+        "baseline": 0.0037390750003396533,
+        "candidate": 0.003436606999457581,
+        "change_percent": -8.089380417739589
+      },
+      "forms": {
+        "baseline": 0.0002559870008553844,
+        "candidate": 0.00023475399939343333,
+        "change_percent": -8.294562376605318
+      },
+      "start": {
+        "baseline": 0.004502777999732643,
+        "candidate": 0.00409198700072011,
+        "change_percent": -9.123056900360726
+      },
+      "statistics": {
+        "baseline": 0.017217772001458798,
+        "candidate": 0.015572919000987895,
+        "change_percent": -9.553227910855943
+      }
+    },
+    "target/200/warm": {
+      "compatibility": {
+        "baseline": 0.0036459250004554633,
+        "candidate": 0.003421765999519266,
+        "change_percent": -6.148206584287785
+      },
+      "forms": {
+        "baseline": 0.00027164000130142085,
+        "candidate": 0.00023841900110710412,
+        "change_percent": -12.22978944012506
+      },
+      "start": {
+        "baseline": 0.004389726000226801,
+        "candidate": 0.004103844999917783,
+        "change_percent": -6.512502153761945
+      },
+      "statistics": {
+        "baseline": 0.017982676999963587,
+        "candidate": 0.015506507999816677,
+        "change_percent": -13.769746296126684
+      }
+    },
+    "lesson/200/False/1": {
+      "compatibility": {
+        "baseline": 0.007796640002197819,
+        "candidate": 0.007066987996950047,
+        "change_percent": -9.358544258066138
+      }
+    },
+    "lesson/200/False/4": {
+      "compatibility": {
+        "baseline": 0.027553044001251692,
+        "candidate": 0.02448120600092807,
+        "change_percent": -11.14881535479011
+      }
+    },
+    "lesson/200/True/1": {
+      "compatibility": {
+        "baseline": 0.004077364999830024,
+        "candidate": 0.0038023200031602755,
+        "change_percent": -6.745655507446957
+      }
+    },
+    "lesson/200/True/4": {
+      "compatibility": {
+        "baseline": 0.012720954000542406,
+        "candidate": 0.012096520000341116,
+        "change_percent": -4.908704175604006
+      }
+    }
+  },
+  "recheck": {
+    "reason": "21-round scaling detected a 15% warm statistics outlier at size 1; recheck identical workload in alternating fresh processes",
+    "rounds": 7,
+    "samples_per_process": 301,
+    "samples": [
+      {
+        "baseline": 0.00035874099921784364,
+        "candidate": 0.00043333500070730224
+      },
+      {
+        "candidate": 0.00038176599991857074,
+        "baseline": 0.0003949170022679027
+      },
+      {
+        "baseline": 0.00038562199915759265,
+        "candidate": 0.00038632300129393116
+      },
+      {
+        "candidate": 0.00034480999966035597,
+        "baseline": 0.00034924699866678566
+      },
+      {
+        "baseline": 0.00038724499972886406,
+        "candidate": 0.00035963299887953326
+      },
+      {
+        "candidate": 0.00032578199898125604,
+        "baseline": 0.00036513200029730797
+      },
+      {
+        "baseline": 0.00037303300268831663,
+        "candidate": 0.00038347800000337884
+      }
+    ],
+    "baseline_seconds": 0.00037303300268831663,
+    "candidate_seconds": 0.00038176599991857074,
+    "change_percent": 2.341078984250311
+  },
+  "decision": "Pass 10% threshold after fresh-process recheck of target/1/warm/statistics (initial +15.00%, confirmed +2.34%). All other repeated scaling medians <= +6.93%; lesson cold/warm <= +6.67%."
+}
