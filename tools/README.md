@@ -128,3 +128,25 @@ See the [C1 report](../docs/validation/verb_dictionary_audit_c1.md) and equivale
 [Polish](../docs/pl/verb_dictionary_audit_c1.md) / [English](../docs/eng/verb_dictionary_audit_c1.md)
 entry points. Historical performance measurements predate the review corrections
 and are labelled accordingly.
+
+## C2.1 deployment and historical C1
+
+Content 61 applies seven approved category-A verbs. `validate_repository.py`
+reuses its parsed verbs XML for the small deployment check in
+`validate_verb_subject_c21.py`, comparing it with the selected C1 `changes`.
+This release invariant cannot be established with fixtures: it concerns the
+published XML and approved JSON. Additional work is linear in proposal count
+with bounded XML searches; no project loading, solver or quiz generation occurs.
+New unit tests use only the existing independent C1 fixture v1.
+
+The historical C1 audit and validator are unchanged. Its absence preconditions
+apply to the pre-C2.1 snapshot, not current Content. Run C1 in a baseline worktree
+at `9227fd02c3c315c3d49ea9357a652a0a4d9c36bc`.
+
+Use `validate_verb_subject_c21_integration.py` only for opt-in acceptance, never
+unit-test discovery or mandatory CI. It compares both relative constructions
+against that baseline and probes other patterns without enumerating quizzes.
+`benchmark_subject_relatives.py --operations load compatibility exists count
+first_question` selects the C2.1 measurement scope while preserving default B3
+behavior. See equivalent [PL](../docs/pl/verb_subject_agreement_c21.md) and
+[ENG](../docs/eng/verb_subject_agreement_c21.md) guides for commands and results.

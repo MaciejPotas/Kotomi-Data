@@ -168,6 +168,11 @@ def validate_xml_and_schemas() -> None:
         except ET.ParseError as exc:
             raise AssertionError(f"Malformed XML in {relative}: {exc}") from exc
 
+        if relative == "dictionaries/verbs.xml":
+            from validate_verb_subject_c21 import validate_deployment
+            validate_deployment(root, load_json(
+                ROOT / "docs/validation/verb_dictionary_proposals_c1.json"))
+
         if relative in PROJECT_SCHEMA_FILES:
             if root.get("schema_version") != "2":
                 raise AssertionError(f"{relative} must use project/pattern Schema 2")

@@ -487,15 +487,36 @@
       <usage>
         <role ref="companion" government="z_instrumental" />
         <role ref="location" />
+        <role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="はなす" translation="rozmawiam" kanji="話す" />
+        <form ref="dictionary" kana="はなす" translation="rozmawiam" kanji="話す">
+          <agreement_translations>
+            <translation class="masculine_personal" value="rozmawia" />
+            <translation class="feminine" value="rozmawia" />
+          </agreement_translations>
+        </form>
         <form ref="polite_nonpast" kana="はなします" translation="rozmawiam" kanji="話します" />
-        <form ref="plain_negative" kana="はなさない" translation="nie rozmawiam" kanji="話さない" />
+        <form ref="plain_negative" kana="はなさない" translation="nie rozmawiam" kanji="話さない">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie rozmawia" />
+            <translation class="feminine" value="nie rozmawia" />
+          </agreement_translations>
+        </form>
         <form ref="polite_negative" kana="はなしません" translation="nie rozmawiam" kanji="話しません" />
-        <form ref="past_plain" kana="はなした" translation="rozmawiałem" kanji="話した" />
+        <form ref="past_plain" kana="はなした" translation="rozmawiałem" kanji="話した">
+          <agreement_translations>
+            <translation class="masculine_personal" value="rozmawiał" />
+            <translation class="feminine" value="rozmawiała" />
+          </agreement_translations>
+        </form>
         <form ref="past_polite" kana="はなしました" translation="rozmawiałem" kanji="話しました" />
-        <form ref="past_negative_plain" kana="はなさなかった" translation="nie rozmawiałem" kanji="話さなかった" />
+        <form ref="past_negative_plain" kana="はなさなかった" translation="nie rozmawiałem" kanji="話さなかった">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie rozmawiał" />
+            <translation class="feminine" value="nie rozmawiała" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_polite" kana="はなしませんでした" translation="nie rozmawiałem" kanji="話しませんでした" />
         <form ref="te_form" kana="はなして" kanji="話して" translation="rozmawiając" />
         <form ref="potential" kana="はなせる" kanji="話せる" translation="mogę rozmawiać" />
@@ -784,15 +805,36 @@
       <usage>
         <role ref="object" accepts="text" government="direct_object" />
         <role ref="location" />
+        <role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="かく" translation="piszę" kanji="書く" />
+        <form ref="dictionary" kana="かく" translation="piszę" kanji="書く">
+          <agreement_translations>
+            <translation class="masculine_personal" value="pisze" />
+            <translation class="feminine" value="pisze" />
+          </agreement_translations>
+        </form>
         <form ref="polite_nonpast" kana="かきます" translation="piszę" kanji="書きます" />
-        <form ref="plain_negative" kana="かかない" translation="nie piszę" kanji="書かない" />
+        <form ref="plain_negative" kana="かかない" translation="nie piszę" kanji="書かない">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie pisze" />
+            <translation class="feminine" value="nie pisze" />
+          </agreement_translations>
+        </form>
         <form ref="polite_negative" kana="かきません" translation="nie piszę" kanji="書きません" />
-        <form ref="past_plain" kana="かいた" translation="pisałem" kanji="書いた" />
+        <form ref="past_plain" kana="かいた" translation="pisałem" kanji="書いた">
+          <agreement_translations>
+            <translation class="masculine_personal" value="pisał" />
+            <translation class="feminine" value="pisała" />
+          </agreement_translations>
+        </form>
         <form ref="past_polite" kana="かきました" translation="pisałem" kanji="書きました" />
-        <form ref="past_negative_plain" kana="かかなかった" translation="nie pisałem" kanji="書かなかった" />
+        <form ref="past_negative_plain" kana="かかなかった" translation="nie pisałem" kanji="書かなかった">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie pisał" />
+            <translation class="feminine" value="nie pisała" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_polite" kana="かきませんでした" translation="nie pisałem" kanji="書きませんでした" />
         <form ref="te_form" kana="かいて" kanji="書いて" translation="pisząc" />
         <form ref="potential" kana="かける" kanji="書ける" translation="mogę pisać" />
@@ -807,15 +849,36 @@
       <usage>
         <role ref="object" accepts="abstract text vehicle" government="nad_instrumental" />
         <role ref="location" />
+        <role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="かんがえる" translation="zastanawiam się" kanji="考える" />
+        <form ref="dictionary" kana="かんがえる" translation="zastanawiam się" kanji="考える">
+          <agreement_translations>
+            <translation class="masculine_personal" value="zastanawia się" />
+            <translation class="feminine" value="zastanawia się" />
+          </agreement_translations>
+        </form>
         <form ref="polite_nonpast" kana="かんがえます" translation="zastanawiam się" kanji="考えます" />
-        <form ref="plain_negative" kana="かんがえない" translation="nie zastanawiam się" kanji="考えない" />
+        <form ref="plain_negative" kana="かんがえない" translation="nie zastanawiam się" kanji="考えない">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie zastanawia się" />
+            <translation class="feminine" value="nie zastanawia się" />
+          </agreement_translations>
+        </form>
         <form ref="polite_negative" kana="かんがえません" translation="nie zastanawiam się" kanji="考えません" />
-        <form ref="past_plain" kana="かんがえた" translation="zastanawiałem się" kanji="考えた" />
+        <form ref="past_plain" kana="かんがえた" translation="zastanawiałem się" kanji="考えた">
+          <agreement_translations>
+            <translation class="masculine_personal" value="zastanawiał się" />
+            <translation class="feminine" value="zastanawiała się" />
+          </agreement_translations>
+        </form>
         <form ref="past_polite" kana="かんがえました" translation="zastanawiałem się" kanji="考えました" />
-        <form ref="past_negative_plain" kana="かんがえなかった" translation="nie zastanawiałem się" kanji="考えなかった" />
+        <form ref="past_negative_plain" kana="かんがえなかった" translation="nie zastanawiałem się" kanji="考えなかった">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie zastanawiał się" />
+            <translation class="feminine" value="nie zastanawiała się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_polite" kana="かんがえませんでした" translation="nie zastanawiałem się" kanji="考えませんでした" />
         <form ref="te_form" kana="かんがえて" kanji="考えて" translation="zastanawiając się" />
         <form ref="potential" kana="かんがえられる" kanji="考えられる" translation="mogę się zastanawiać" />
@@ -1786,15 +1849,36 @@
       <usage>
         <role ref="object" nouns="clothes" government="direct_object" />
         <role ref="location" />
+        <role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="せんたくする" translation="piorę" kanji="洗濯する" />
+        <form ref="dictionary" kana="せんたくする" translation="piorę" kanji="洗濯する">
+          <agreement_translations>
+            <translation class="masculine_personal" value="pierze" />
+            <translation class="feminine" value="pierze" />
+          </agreement_translations>
+        </form>
         <form ref="polite_nonpast" kana="せんたくします" translation="piorę" kanji="洗濯します" />
-        <form ref="plain_negative" kana="せんたくしない" translation="nie piorę" kanji="洗濯しない" />
+        <form ref="plain_negative" kana="せんたくしない" translation="nie piorę" kanji="洗濯しない">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie pierze" />
+            <translation class="feminine" value="nie pierze" />
+          </agreement_translations>
+        </form>
         <form ref="polite_negative" kana="せんたくしません" translation="nie piorę" kanji="洗濯しません" />
-        <form ref="past_plain" kana="せんたくした" translation="prałem" kanji="洗濯した" />
+        <form ref="past_plain" kana="せんたくした" translation="prałem" kanji="洗濯した">
+          <agreement_translations>
+            <translation class="masculine_personal" value="prał" />
+            <translation class="feminine" value="prała" />
+          </agreement_translations>
+        </form>
         <form ref="past_polite" kana="せんたくしました" translation="prałem" kanji="洗濯しました" />
-        <form ref="past_negative_plain" kana="せんたくしなかった" translation="nie prałem" kanji="洗濯しなかった" />
+        <form ref="past_negative_plain" kana="せんたくしなかった" translation="nie prałem" kanji="洗濯しなかった">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie prał" />
+            <translation class="feminine" value="nie prała" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_polite" kana="せんたくしませんでした" translation="nie prałem" kanji="洗濯しませんでした" />
         <form ref="te_form" kana="せんたくして" kanji="洗濯して" translation="piorąc" />
         <form ref="potential" kana="せんたくできる" kanji="洗濯できる" translation="mogę prać" />
@@ -1811,13 +1895,33 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="しまる" translation="zamyka się" kanji="閉まる" />
+        <form ref="dictionary" kana="しまる" translation="zamyka się" kanji="閉まる">
+          <agreement_translations>
+            <translation class="feminine" value="zamyka się" />
+            <translation class="neuter" value="zamyka się" />
+          </agreement_translations>
+        </form>
         <form ref="polite_nonpast" kana="しまります" translation="zamyka się" kanji="閉まります" />
-        <form ref="plain_negative" kana="しまらない" translation="nie zamyka się" kanji="閉まらない" />
+        <form ref="plain_negative" kana="しまらない" translation="nie zamyka się" kanji="閉まらない">
+          <agreement_translations>
+            <translation class="feminine" value="nie zamyka się" />
+            <translation class="neuter" value="nie zamyka się" />
+          </agreement_translations>
+        </form>
         <form ref="polite_negative" kana="しまりません" translation="nie zamyka się" kanji="閉まりません" />
-        <form ref="past_plain" kana="しまった" translation="zamknęło się" kanji="閉まった" />
+        <form ref="past_plain" kana="しまった" translation="zamknęło się" kanji="閉まった">
+          <agreement_translations>
+            <translation class="feminine" value="zamknęła się" />
+            <translation class="neuter" value="zamknęło się" />
+          </agreement_translations>
+        </form>
         <form ref="past_polite" kana="しまりました" translation="zamknęło się" kanji="閉まりました" />
-        <form ref="past_negative_plain" kana="しまらなかった" translation="nie zamknęło się" kanji="閉まらなかった" />
+        <form ref="past_negative_plain" kana="しまらなかった" translation="nie zamknęło się" kanji="閉まらなかった">
+          <agreement_translations>
+            <translation class="feminine" value="nie zamknęła się" />
+            <translation class="neuter" value="nie zamknęło się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_polite" kana="しまりませんでした" translation="nie zamknęło się" kanji="閉まりませんでした" />
         <form ref="te_form" kana="しまって" kanji="閉まって" translation="zamykając się" />
         <form ref="potential" kana="しまれる" kanji="閉まれる" translation="może się zamknąć" />
@@ -1901,15 +2005,36 @@
       <usage>
         <role ref="object" accepts="place thing" government="direct_object" />
         <role ref="location" />
+        <role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="そうじする" translation="sprzątam" kanji="掃除する" />
+        <form ref="dictionary" kana="そうじする" translation="sprzątam" kanji="掃除する">
+          <agreement_translations>
+            <translation class="masculine_personal" value="sprząta" />
+            <translation class="feminine" value="sprząta" />
+          </agreement_translations>
+        </form>
         <form ref="polite_nonpast" kana="そうじします" translation="sprzątam" kanji="掃除します" />
-        <form ref="plain_negative" kana="そうじしない" translation="nie sprzątam" kanji="掃除しない" />
+        <form ref="plain_negative" kana="そうじしない" translation="nie sprzątam" kanji="掃除しない">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie sprząta" />
+            <translation class="feminine" value="nie sprząta" />
+          </agreement_translations>
+        </form>
         <form ref="polite_negative" kana="そうじしません" translation="nie sprzątam" kanji="掃除しません" />
-        <form ref="past_plain" kana="そうじした" translation="posprzątałem" kanji="掃除した" />
+        <form ref="past_plain" kana="そうじした" translation="posprzątałem" kanji="掃除した">
+          <agreement_translations>
+            <translation class="masculine_personal" value="posprzątał" />
+            <translation class="feminine" value="posprzątała" />
+          </agreement_translations>
+        </form>
         <form ref="past_polite" kana="そうじしました" translation="posprzątałem" kanji="掃除しました" />
-        <form ref="past_negative_plain" kana="そうじしなかった" translation="nie posprzątałem" kanji="掃除しなかった" />
+        <form ref="past_negative_plain" kana="そうじしなかった" translation="nie posprzątałem" kanji="掃除しなかった">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie posprzątał" />
+            <translation class="feminine" value="nie posprzątała" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_polite" kana="そうじしませんでした" translation="nie posprzątałem" kanji="掃除しませんでした" />
         <form ref="te_form" kana="そうじして" kanji="掃除して" translation="sprzątając" />
         <form ref="potential" kana="そうじできる" kanji="掃除できる" translation="mogę sprzątać" />
@@ -2565,15 +2690,36 @@
       <usage>
         <role ref="object" accepts="text" government="direct_object" />
         <role ref="location" />
+        <role ref="subject" nouns="friend mother sister teacher roujin hito programmer madogiwazoku" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="よむ" translation="czytam" kanji="読む" />
+        <form ref="dictionary" kana="よむ" translation="czytam" kanji="読む">
+          <agreement_translations>
+            <translation class="masculine_personal" value="czyta" />
+            <translation class="feminine" value="czyta" />
+          </agreement_translations>
+        </form>
         <form ref="polite_nonpast" kana="よみます" translation="czytam" kanji="読みます" />
-        <form ref="plain_negative" kana="よまない" translation="nie czytam" kanji="読まない" />
+        <form ref="plain_negative" kana="よまない" translation="nie czytam" kanji="読まない">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie czyta" />
+            <translation class="feminine" value="nie czyta" />
+          </agreement_translations>
+        </form>
         <form ref="polite_negative" kana="よみません" translation="nie czytam" kanji="読みません" />
-        <form ref="past_plain" kana="よんだ" translation="czytałem" kanji="読んだ" />
+        <form ref="past_plain" kana="よんだ" translation="czytałem" kanji="読んだ">
+          <agreement_translations>
+            <translation class="masculine_personal" value="czytał" />
+            <translation class="feminine" value="czytała" />
+          </agreement_translations>
+        </form>
         <form ref="past_polite" kana="よみました" translation="czytałem" kanji="読みました" />
-        <form ref="past_negative_plain" kana="よまなかった" translation="nie czytałem" kanji="読まなかった" />
+        <form ref="past_negative_plain" kana="よまなかった" translation="nie czytałem" kanji="読まなかった">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie czytał" />
+            <translation class="feminine" value="nie czytała" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_polite" kana="よみませんでした" translation="nie czytałem" kanji="読みませんでした" />
         <form ref="te_form" kana="よんで" kanji="読んで" translation="czytając" />
         <form ref="potential" kana="よめる" kanji="読める" translation="mogę czytać" />
