@@ -53,6 +53,8 @@ def validate_category_a_deployment(root, report):
             {'add_role': 32, 'add_agreement_translation': 308}, 'incorrect category A totals')
     role_overrides = {row['id']: category_subject_role(row, report)
         for row in report['verbs'] if row['id'] in selected - {'shimaru'}}
+    # C3 replaces the exact bag/box subject list with the inherited container category.
+    role_overrides['shimaru'] = {'ref': 'subject', 'accepts': 'closable_container'}
     count = validate_deployment(root, report, selected, role_overrides=role_overrides)
     for vid, accepts in (('hataraku', 'person'), ('neru', 'person animal')):
         role = one(root, f"words/word[@id='{vid}']/usage/role[@ref='subject']")

@@ -15,8 +15,10 @@ features, government, noun relations and clitics. Its Japanese grammar also owns
 number composition and counter composition profiles. The selected source grammar
 owns count profiles and quantity-to-profile mappings, including Polish one/few/many.
 
-Content references those IDs, and its `min_kotomi_version` declares which Kotomi
-contract is required. It cannot redefine the grammar or the Studio schema.
+Content references those IDs but cannot redefine grammar or the Studio schema.
+Historical `min_kotomi_version` metadata is not an enforced gate. Content 63+ uses
+update manifest format 2 to reject legacy clients; new clients validate the full
+snapshot before installation. See the [C3 guide](../docs/eng/noun_role_categories_c3.md).
 
 Number sets such as `one_to_ten`, `two_to_four` and `two_or_more` select vocabulary
 for study. Pattern numeric ranges retain their existing semantics and bounds.

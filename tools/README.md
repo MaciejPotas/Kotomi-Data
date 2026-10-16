@@ -178,3 +178,111 @@ Cold means a fresh project, not an OS cold start. Four representative patterns
 cover load, compatibility, exists, count and first-question latency, cold and warm.
 See the equivalent [PL](../docs/pl/verb_subject_agreement_c22.md) and
 [EN](../docs/eng/verb_subject_agreement_c22.md) release notes.
+
+## C3 noun-role categories and opt-in migration audit
+
+Read [PL](../docs/pl/noun_role_categories_c3.md),
+[EN](../docs/eng/noun_role_categories_c3.md) and the
+[complete grouped inventory](../docs/validation/noun_role_audit_c3.md).
+Use application main `9d6d662228301dfb9d94524736e09dcc763b28cc` plus the C3
+category catalog and review corrections, and a detached Data baseline at
+`ef338045ed383763db2cbf04aceea5b1b7ad1d69`. Export that application's original
+`kotomi/core/grammar/japanese/grammar.xml` as `baseline-grammar.xml`.
+
+```sh
+python tools/audit_noun_roles.py --kotomi ../Kotomi --baseline-data ../data-before \
+  --baseline-grammar ../baseline-grammar.xml \
+  --decisions docs/validation/noun_role_decisions_c3.json \
+  --output docs/validation/noun_role_audit_c3.json
+python tools/validate_noun_role_integration.py --kotomi ../Kotomi --data . \
+  --baseline-data ../data-before --audit docs/validation/noun_role_audit_c3.json \
+  --output docs/validation/noun_role_integration_c3.json
+```
+
+These are explicit production-content acceptance commands, never mandatory unit
+CI. Fixtures cannot certify every actual published list, the role/noun migration
+matrix or the retained rendered sentences. Reads cover the project-declared XML
+and audit JSON only. The inventory cost is O(roles * nouns + adjectives * nouns);
+integration enumerates two relative patterns and probes other patterns with
+`exists`. XML writers operate only on a disposable copy. The audit rejects any
+change to government, forms, translation, roles or other unrelated XML content.
+
+Unit tests (`test_noun_role_audit.py` and the application's
+`test_noun_role_categories.py`) use independent bounded fixtures, not audit JSON
+or production dictionaries. No production access exemption is added.
+
+The existing paired benchmark accepts optional `--baseline-kotomi` and
+`--baseline-engine-revision` for a distinct old application. Omitting them retains
+C2.2 behavior. For the reviewed C3 release run with both pinned checkouts, seven alternating rounds and
+21 samples, without concurrent tests:
+
+```sh
+python tools/benchmark_verb_subject_c22.py --kotomi ../Kotomi \
+  --baseline-kotomi ../app-before --data . --baseline-data ../data-before \
+  --engine-revision 'C3 category catalog' \
+  --baseline-engine-revision 9d6d662228301dfb9d94524736e09dcc763b28cc \
+  --baseline-revision ef338045ed383763db2cbf04aceea5b1b7ad1d69 \
+  --rounds 7 --samples 21 --output docs/validation/noun_role_performance_c3.json
+```
+
+Current release validation deliberately accepts `shimaru/subject` using
+`closable_container`. The C1 proposals and historical `validate_deployment`
+behavior are not rewritten. C2.2 integration evidence remains historical.
+
+
+### C3 review enforcement and publication gate
+
+The existing decision JSON owns exact `target` role attributes and approved
+`added`/`removed` noun IDs. Both audit and integration commands enforce those
+expectations before writing evidence. Roles without decisions retain their baseline
+attributes and matches. Duplicate decision keys fail. Regenerating a report cannot
+approve a broadened `accepts`, lost exception or altered pair. No matcher is duplicated.
+
+Content 63 requires manifest **format 2**, enforced by the release validator and
+Kotomi manifest builder. Legacy format-1 clients reject it before payload download.
+Never publish C3 through a format-1 mirror. Revision metadata remains format 1.
+See the PL/EN C3 guides for the compatibility matrix, snapshot validation, rollback
+and the limited C4 recommendation.
+
+Reproduce the protocol matrix using actual updater implementations and the bounded
+engine fixture (no production vocabulary):
+
+```sh
+python ../Kotomi/tools/updates/validate_content_compatibility_c3.py --kotomi ../app-before --legacy
+python ../Kotomi/tools/updates/validate_content_compatibility_c3.py --kotomi ../Kotomi
+```
+
+The legacy checkout is `9d6d662228301dfb9d94524736e09dcc763b28cc`.
+Run Data unit tests with `KOTOMI_PATH` as above to enable the three additional
+synthetic C3 engine contracts. The pure decision-mutation tests always run in CI.
+
+The review performance evidence also retains the initial 5 × 5 run and its
+7 × 21 precision recheck before the small set-intersection optimization. After
+that correction, the 7 × 21 full run had one borderline sub-millisecond check.
+One predeclared confirmation used the same driver with `--patterns 'Sam czasownik'
+--operations exists --rounds 9 --samples 101`. The final 10% gate uses the median
+of all 16 same-code paired round ratios for those measured operations, retaining
+the original seven rounds; other operations use the seven-round full run.
+The JSON separates original `median_paired_ratios`, `verified_paired_ratios`,
+`same_code_confirmation` and pre-correction diagnostics. No sample is discarded.
+
+
+### C3.1 target review
+
+Five category-only roles have explicit decisions in the same C3 JSON, with
+`scope: C3.1_target`, pinned `before`, full `target`, reasons and exact pair deltas.
+Original nouns-role coverage is still mandatory; an additional decision must refer
+to an existing target role and match its baseline. Removing such an approval does
+not allow changed XML. The audit records these under `reviewed_target_roles`.
+Run the same audit/integration commands above; no second matcher or audit system.
+
+`tests/test_target_roles.py` in Kotomi adds independent transfer/attendance fixtures:
+automatic and explicit governor binding, two arguments, Polish case direction and
+negation, literal に, questions/counts, ambiguous overlapping roles, missing frames
+and Studio XML roundtrip. Data adds four independent decision-mutation tests.
+
+For C3.1 performance use the same paired benchmark, `--kotomi ../Kotomi`,
+`--baseline-data ../data-c3-before` pinned to `e51fcbb1d7a5cd3dc5d5918e3648d9d3ac6cdf1c`,
+`--rounds 7 --samples 21`; the runtime is unchanged from `baa4b1d` on both sides.
+Record this follow-up in `noun_role_performance_c3.json` without replacing the
+historical main-versus-C3 measurements. The threshold stays 10%.

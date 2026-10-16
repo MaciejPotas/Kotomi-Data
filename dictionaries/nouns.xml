@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <dictionary schema_version="2" id="nouns" schema="noun" target_language_id="ja" label="Nouns" instruction_language_id="pl">
   <words>
-    <word id="bag" kana="かばん" kanji="鞄" type="noun" category="thing" translation="torba">
+    <word id="bag" kana="かばん" kanji="鞄" type="noun" category="closable_container" translation="torba">
       <counting classes="small_object">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="torby" />
@@ -35,7 +35,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="książka" genitive="książki" accusative="książkę" instrumental="książką" locative="książce" dative="książce" vocative="książko" />
     </word>
-    <word id="box" kana="はこ" kanji="箱" type="noun" category="thing" translation="pudełko">
+    <word id="box" kana="はこ" kanji="箱" type="noun" category="closable_container" translation="pudełko">
       <counting classes="small_object">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="pudełka" />
@@ -69,7 +69,7 @@
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="samochód" genitive="samochodu" accusative="samochód" instrumental="samochodem" locative="samochodzie" dative="samochodowi" vocative="samochodzie" />
     </word>
-    <word id="clothes" kana="ふく" kanji="服" type="noun" category="thing" translation="ubranie">
+    <word id="clothes" kana="ふく" kanji="服" type="noun" category="clothing" translation="ubranie">
       <counting classes="garment">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="ubrania" />
@@ -176,7 +176,7 @@
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="ryż" genitive="ryżu" accusative="ryż" instrumental="ryżem" locative="ryżu" dative="ryżowi" vocative="ryżu" />
     </word>
-    <word id="home" kana="うち" kanji="家" type="noun" category="place" translation="dom">
+    <word id="home" kana="うち" kanji="家" type="noun" category="building" translation="dom">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="domy" />
@@ -211,7 +211,7 @@
       <agreement class="masculine_animate" />
       <cases language="pl" nominative="pies" genitive="psa" dative="psu" accusative="psa" instrumental="psem" locative="psie" vocative="psie" />
     </word>
-    <word id="jikan" kana="じかん" kanji="時間" type="noun" category="availability_reason" translation="czas">
+    <word id="jikan" kana="じかん" kanji="時間" type="noun" category="duration" translation="czas">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="czas" genitive="czasu" dative="czasowi" accusative="czas" instrumental="czasem" locative="czasie" vocative="czasie" />
     </word>
@@ -335,7 +335,7 @@
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="motocykl" genitive="motocykla" accusative="motocykl" instrumental="motocyklem" locative="motocyklu" dative="motocyklowi" vocative="motocyklu" />
     </word>
-    <word id="music" kana="おんがく" kanji="音楽" type="noun" category="media" translation="muzyka">
+    <word id="music" kana="おんがく" kanji="音楽" type="noun" category="music" translation="muzyka">
       <agreement class="feminine" />
       <cases language="pl" nominative="muzyka" genitive="muzyki" accusative="muzykę" instrumental="muzyką" locative="muzyce" dative="muzyce" vocative="muzyko" />
     </word>
@@ -373,7 +373,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="notatka" genitive="notatki" accusative="notatkę" instrumental="notatką" locative="notatce" dative="notatce" vocative="notatko" />
     </word>
-    <word id="okane" kana="おかね" kanji="お金" type="noun" category="availability_reason" translation="pieniądze">
+    <word id="okane" kana="おかね" kanji="お金" type="noun" category="money" translation="pieniądze">
       <agreement class="plural_non_masculine_personal" />
       <cases language="pl" nominative="pieniądze" genitive="pieniędzy" accusative="pieniądze" instrumental="pieniędzmi" locative="pieniądzach" dative="pieniądzom" vocative="pieniądze" />
     </word>
@@ -447,7 +447,7 @@
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="pokój" genitive="pokoju" accusative="pokój" instrumental="pokojem" locative="pokoju" dative="pokojowi" vocative="pokoju" />
     </word>
-    <word id="school" kana="がっこう" kanji="学校" type="noun" category="place" translation="szkoła">
+    <word id="school" kana="がっこう" kanji="学校" type="noun" category="education_facility" translation="szkoła">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="szkoły" />
@@ -499,7 +499,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="siostra" genitive="siostry" accusative="siostrę" instrumental="siostrą" locative="siostrze" dative="siostrze" vocative="siostro" />
     </word>
-    <word id="song" kana="うた" kanji="歌" type="noun" category="media" translation="piosenka">
+    <word id="song" kana="うた" kanji="歌" type="noun" category="music" translation="piosenka">
       <counting classes="song">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="piosenki" />
@@ -516,7 +516,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="piosenka" genitive="piosenki" accusative="piosenkę" instrumental="piosenką" locative="piosence" dative="piosence" vocative="piosenko" />
     </word>
-    <word id="station" kana="えき" kanji="駅" type="noun" category="place" translation="stacja">
+    <word id="station" kana="えき" kanji="駅" type="noun" category="building" translation="stacja">
       <counting classes="location">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="stacje" />
@@ -544,7 +544,7 @@
       <agreement class="neuter" />
       <cases language="pl" nominative="sushi" genitive="sushi" accusative="sushi" instrumental="sushi" locative="sushi" dative="sushi" vocative="sushi" />
     </word>
-    <word id="taiikukan" kana="たいいくかん" kanji="体育館" type="noun" category="place" translation="sala gimnastyczna">
+    <word id="taiikukan" kana="たいいくかん" kanji="体育館" type="noun" category="sports_facility" translation="sala gimnastyczna">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="sale gimnastyczne" />
@@ -720,7 +720,7 @@
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="starzec" genitive="starca" dative="starcowi" accusative="starca" instrumental="starcem" locative="starcu" vocative="starcze" />
     </word>
-    <word id="mise" kana="みせ" kanji="店" type="noun" category="place" translation="sklep">
+    <word id="mise" kana="みせ" kanji="店" type="noun" category="building" translation="sklep">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="sklepy" />
@@ -923,7 +923,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="niedziela" genitive="niedzieli" dative="niedzieli" accusative="niedzielę" instrumental="niedzielą" locative="niedzieli" vocative="niedzielo" />
     </word>
-    <word id="tatemono" kana="たてもの" kanji="建物" type="noun" category="place" translation="budynek">
+    <word id="tatemono" kana="たてもの" kanji="建物" type="noun" category="building" translation="budynek">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative" value="budynki" />
@@ -946,7 +946,7 @@
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="budynek" genitive="budynku" dative="budynkowi" accusative="budynek" instrumental="budynkiem" locative="budynku" vocative="budynku" />
     </word>
-    <word id="yuubinkyoku" kana="ゆうびんきょく" kanji="郵便局" type="noun" category="place" translation="poczta">
+    <word id="yuubinkyoku" kana="ゆうびんきょく" kanji="郵便局" type="noun" category="building" translation="poczta">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative" value="poczty" />
@@ -969,7 +969,7 @@
       <relations language="pl" profile="place_na_na" />
       <cases language="pl" nominative="poczta" genitive="poczty" dative="poczcie" accusative="pocztę" instrumental="pocztą" locative="poczcie" vocative="poczto" />
     </word>
-    <word id="byouin" kana="びょういん" kanji="病院" type="noun" category="place" translation="szpital">
+    <word id="byouin" kana="びょういん" kanji="病院" type="noun" category="building" translation="szpital">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative" value="szpitale" />
@@ -992,7 +992,7 @@
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="szpital" genitive="szpitala" dative="szpitalowi" accusative="szpital" instrumental="szpitalem" locative="szpitalu" vocative="szpitalu" />
     </word>
-    <word id="biru" kana="ビル" kanji="ビル" type="noun" category="place" translation="biurowiec">
+    <word id="biru" kana="ビル" kanji="ビル" type="noun" category="building" translation="biurowiec">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative" value="biurowce" />
@@ -1038,7 +1038,7 @@
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="biuro" genitive="biura" dative="biuru" accusative="biuro" instrumental="biurem" locative="biurze" vocative="biuro" />
     </word>
-    <word id="eigakan" kana="えいがかん" kanji="映画館" type="noun" category="place" translation="kino">
+    <word id="eigakan" kana="えいがかん" kanji="映画館" type="noun" category="building" translation="kino">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative" value="kina" />
@@ -1061,7 +1061,7 @@
       <relations language="pl" profile="place_w_do" />
       <cases language="pl" nominative="kino" genitive="kina" dative="kinu" accusative="kino" instrumental="kinem" locative="kinie" vocative="kino" />
     </word>
-    <word id="ginkou" kana="ぎんこう" kanji="銀行" type="noun" category="place" translation="bank">
+    <word id="ginkou" kana="ぎんこう" kanji="銀行" type="noun" category="building" translation="bank">
       <counting classes="building">
         <source_forms language="pl">
           <form profile="few" cases="nominative" value="banki" />

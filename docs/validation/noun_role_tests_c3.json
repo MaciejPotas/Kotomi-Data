@@ -1,0 +1,841 @@
+{
+  "platform": "Linux",
+  "python": "3.12.14",
+  "combined_suite": {
+    "passed": 3824,
+    "skipped": 0,
+    "subtests_passed": 6376,
+    "seconds": 125.58,
+    "engine_contracts": "KOTOMI_PATH enabled; independent fixtures only"
+  },
+  "data_suite_with_engine": {
+    "tests": 110,
+    "skipped": 0,
+    "status": "passed"
+  },
+  "unit_call_gate": {
+    "limit_seconds": 8,
+    "checked": 3824,
+    "above_limit": 0,
+    "slowest": {
+      "nodeid": "tests/test_adjectives_package_separation.py::AdjectivesPackageSeparationTests::test_compatibility_entrypoint_generates_with_logic_engine",
+      "setup": 0.000603481999860378,
+      "call": 1.6602501119996305,
+      "teardown": 0.0001664320006966591
+    }
+  },
+  "validation": {
+    "repository": "passed",
+    "question_patterns": "passed",
+    "full_project_before_after": "passed",
+    "catalog": "passed",
+    "all_role_pairs": "253 roles × 80 nouns",
+    "approved_added": 19,
+    "approved_removed": 35,
+    "adjective_pair_changes": 0,
+    "pattern_availability_probes": 368,
+    "changed_availability": 0,
+    "noun_verb_actual_temporary_serialization": "passed",
+    "all_four_relative_forms": "passed",
+    "decision_mutation_tests": "passed",
+    "baseline_category_definitions": "unchanged"
+  },
+  "compatibility": {
+    "legacy_application": "9d6d662228301dfb9d94524736e09dcc763b28cc",
+    "legacy_fixture_matrix": {
+      "legacy": true,
+      "results": {
+        "62": "installed; unrelated files unchanged",
+        "63": "rejected before payload download; all bytes unchanged",
+        "format_1_diagnostic": "baseline rejects unknown category at snapshot validation; all bytes unchanged"
+      }
+    },
+    "current_fixture_matrix": {
+      "legacy": false,
+      "results": {
+        "62": "installed; unrelated files unchanged",
+        "63": "installed; unrelated files unchanged"
+      }
+    },
+    "incompatible_snapshot_and_corrupt_download": "all installed and unrelated files unchanged",
+    "release_requirement": "Content 63+ manifest format 2; both PR CI and C3 gates must pass; never publish format 1",
+    "historical_min_kotomi_version": "not enforced; not used as protection"
+  },
+  "new_tests": "C3.1 adds 24 application cases and 4 Data audit cases, all with independent fixtures; earlier C3 tests retained.",
+  "limitations": [
+    "Native Windows/Android GUI was not manually clicked; Studio services and controller tests ran.",
+    "Five role lists still need sense decisions; optional functional noun properties are proposed only for C4.",
+    "Production target roles lack Polish government frames and direction-specific translation variants; fixtures show engine support, not production pattern readiness.",
+    "Overlapping argument domains require disambiguation; government:@alias selects the verb, not a specific role.",
+    "Kureru viewpoint and Naru result plausibility require contextual authoring; category membership alone cannot enforce them."
+  ],
+  "target_review_c31": {
+    "baseline_data": "e51fcbb1d7a5cd3dc5d5918e3648d9d3ac6cdf1c",
+    "changed_role_pairs": [
+      {
+        "key": "kariru/target",
+        "before": [
+          "friend",
+          "hito",
+          "inu",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher",
+          "tori"
+        ],
+        "after": [
+          "friend",
+          "hito",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher"
+        ],
+        "added": [],
+        "removed": [
+          "inu",
+          "tori"
+        ]
+      },
+      {
+        "key": "kotaeru/target",
+        "before": [
+          "aji",
+          "ashita",
+          "detarame",
+          "doyoubi",
+          "fukushuu",
+          "getsuyoubi",
+          "hanashi",
+          "inochi",
+          "jikan",
+          "kayoubi",
+          "keikaku",
+          "kikitori",
+          "kinyoubi",
+          "mokuyoubi",
+          "nichiyoubi",
+          "okane",
+          "riyuu",
+          "saisho",
+          "shigoto",
+          "shuumatsu",
+          "suiyoubi",
+          "yakusoku",
+          "yotei",
+          "youji"
+        ],
+        "after": [
+          "email",
+          "friend",
+          "hito",
+          "letter",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher"
+        ],
+        "added": [
+          "email",
+          "friend",
+          "hito",
+          "letter",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher"
+        ],
+        "removed": [
+          "aji",
+          "ashita",
+          "detarame",
+          "doyoubi",
+          "fukushuu",
+          "getsuyoubi",
+          "hanashi",
+          "inochi",
+          "jikan",
+          "kayoubi",
+          "keikaku",
+          "kikitori",
+          "kinyoubi",
+          "mokuyoubi",
+          "nichiyoubi",
+          "okane",
+          "riyuu",
+          "saisho",
+          "shigoto",
+          "shuumatsu",
+          "suiyoubi",
+          "yakusoku",
+          "yotei",
+          "youji"
+        ]
+      },
+      {
+        "key": "usowotsuku/target",
+        "before": [
+          "friend",
+          "hito",
+          "inu",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher",
+          "tori"
+        ],
+        "after": [
+          "friend",
+          "hito",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher"
+        ],
+        "added": [],
+        "removed": [
+          "inu",
+          "tori"
+        ]
+      },
+      {
+        "key": "kasu/target",
+        "before": [
+          "friend",
+          "hito",
+          "inu",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher",
+          "tori"
+        ],
+        "after": [
+          "friend",
+          "hito",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher"
+        ],
+        "added": [],
+        "removed": [
+          "inu",
+          "tori"
+        ]
+      },
+      {
+        "key": "morau/target",
+        "before": [
+          "friend",
+          "hito",
+          "inu",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher",
+          "tori"
+        ],
+        "after": [
+          "friend",
+          "hito",
+          "madogiwazoku",
+          "mother",
+          "programmer",
+          "roujin",
+          "sister",
+          "teacher"
+        ],
+        "added": [],
+        "removed": [
+          "inu",
+          "tori"
+        ]
+      }
+    ],
+    "target_roles": {
+      "ayamaru": [
+        "person",
+        "animal"
+      ],
+      "hairu": [
+        "place"
+      ],
+      "ireru": [
+        "container"
+      ],
+      "kariru": [
+        "person"
+      ],
+      "kayou": [
+        "education_facility",
+        "sports_facility"
+      ],
+      "kotaeru": [
+        "person"
+      ],
+      "nareru": [
+        "*"
+      ],
+      "naru": [
+        "*"
+      ],
+      "okoru": [
+        "person",
+        "animal"
+      ],
+      "oshieru": [
+        "person",
+        "animal"
+      ],
+      "sawaru": [
+        "concrete"
+      ],
+      "teishutsusuru": [],
+      "tomaru": [
+        "place"
+      ],
+      "usowotsuku": [
+        "person"
+      ],
+      "ageru_give": [
+        "person",
+        "animal"
+      ],
+      "kaesu": [
+        "person",
+        "animal"
+      ],
+      "kasu": [
+        "person"
+      ],
+      "kureru": [
+        "person"
+      ],
+      "morau": [
+        "person"
+      ],
+      "watasu": [
+        "person"
+      ],
+      "sumu": [
+        "place"
+      ]
+    },
+    "production_patterns_selecting_target": [],
+    "unchanged_pattern_definitions": 92,
+    "unchanged_quiz_definitions": 6,
+    "statistics": [
+      {
+        "pattern": "Sam czasownik",
+        "form": "dictionary",
+        "unchanged_statistics": {
+          "pattern_id": "Sam czasownik",
+          "vocabulary_combinations": 122,
+          "generated_sentences": 610,
+          "unique_questions": 590,
+          "unique_answers": 600,
+          "form_names": [
+            "dictionary"
+          ],
+          "context_options": [
+            "present/every_day",
+            "present/neutral",
+            "present/now",
+            "present/this_week",
+            "present/today"
+          ],
+          "word_counts": {
+            "verb": 122
+          },
+          "entity_counts": {},
+          "connection_counts": {}
+        }
+      },
+      {
+        "pattern": "Sam czasownik",
+        "form": "plain_negative",
+        "unchanged_statistics": {
+          "pattern_id": "Sam czasownik",
+          "vocabulary_combinations": 122,
+          "generated_sentences": 610,
+          "unique_questions": 590,
+          "unique_answers": 600,
+          "form_names": [
+            "plain_negative"
+          ],
+          "context_options": [
+            "present/every_day",
+            "present/neutral",
+            "present/now",
+            "present/this_week",
+            "present/today"
+          ],
+          "word_counts": {
+            "verb": 122
+          },
+          "entity_counts": {},
+          "connection_counts": {}
+        }
+      },
+      {
+        "pattern": "Sam czasownik",
+        "form": "past_plain",
+        "unchanged_statistics": {
+          "pattern_id": "Sam czasownik",
+          "vocabulary_combinations": 122,
+          "generated_sentences": 610,
+          "unique_questions": 595,
+          "unique_answers": 585,
+          "form_names": [
+            "past_plain"
+          ],
+          "context_options": [
+            "past/day_before_yesterday",
+            "past/last_week",
+            "past/recently",
+            "past/two_weeks_ago",
+            "past/yesterday"
+          ],
+          "word_counts": {
+            "verb": 122
+          },
+          "entity_counts": {},
+          "connection_counts": {}
+        }
+      },
+      {
+        "pattern": "Sam czasownik",
+        "form": "past_negative_plain",
+        "unchanged_statistics": {
+          "pattern_id": "Sam czasownik",
+          "vocabulary_combinations": 122,
+          "generated_sentences": 610,
+          "unique_questions": 595,
+          "unique_answers": 600,
+          "form_names": [
+            "past_negative_plain"
+          ],
+          "context_options": [
+            "past/day_before_yesterday",
+            "past/last_week",
+            "past/recently",
+            "past/two_weeks_ago",
+            "past/yesterday"
+          ],
+          "word_counts": {
+            "verb": 122
+          },
+          "entity_counts": {},
+          "connection_counts": {}
+        }
+      },
+      {
+        "pattern": "Czasownik z dopełnieniem",
+        "form": "dictionary",
+        "unchanged_statistics": {
+          "pattern_id": "Czasownik z dopełnieniem",
+          "vocabulary_combinations": 1562,
+          "generated_sentences": 7810,
+          "unique_questions": 7590,
+          "unique_answers": 7675,
+          "form_names": [
+            "dictionary"
+          ],
+          "context_options": [
+            "present/every_day",
+            "present/neutral",
+            "present/now",
+            "present/this_week",
+            "present/today"
+          ],
+          "word_counts": {
+            "verb[role:object]": 62
+          },
+          "entity_counts": {
+            "noun": 80
+          },
+          "connection_counts": {
+            "verb[role:object] → noun": 1562
+          }
+        }
+      },
+      {
+        "pattern": "Czasownik z dopełnieniem",
+        "form": "plain_negative",
+        "unchanged_statistics": {
+          "pattern_id": "Czasownik z dopełnieniem",
+          "vocabulary_combinations": 1562,
+          "generated_sentences": 7810,
+          "unique_questions": 7590,
+          "unique_answers": 7675,
+          "form_names": [
+            "plain_negative"
+          ],
+          "context_options": [
+            "present/every_day",
+            "present/neutral",
+            "present/now",
+            "present/this_week",
+            "present/today"
+          ],
+          "word_counts": {
+            "verb[role:object]": 62
+          },
+          "entity_counts": {
+            "noun": 80
+          },
+          "connection_counts": {
+            "verb[role:object] → noun": 1562
+          }
+        }
+      },
+      {
+        "pattern": "Czasownik z dopełnieniem",
+        "form": "past_plain",
+        "unchanged_statistics": {
+          "pattern_id": "Czasownik z dopełnieniem",
+          "vocabulary_combinations": 1562,
+          "generated_sentences": 7810,
+          "unique_questions": 7615,
+          "unique_answers": 7675,
+          "form_names": [
+            "past_plain"
+          ],
+          "context_options": [
+            "past/day_before_yesterday",
+            "past/last_week",
+            "past/recently",
+            "past/two_weeks_ago",
+            "past/yesterday"
+          ],
+          "word_counts": {
+            "verb[role:object]": 62
+          },
+          "entity_counts": {
+            "noun": 80
+          },
+          "connection_counts": {
+            "verb[role:object] → noun": 1562
+          }
+        }
+      },
+      {
+        "pattern": "Czasownik z dopełnieniem",
+        "form": "past_negative_plain",
+        "unchanged_statistics": {
+          "pattern_id": "Czasownik z dopełnieniem",
+          "vocabulary_combinations": 1562,
+          "generated_sentences": 7810,
+          "unique_questions": 7615,
+          "unique_answers": 7675,
+          "form_names": [
+            "past_negative_plain"
+          ],
+          "context_options": [
+            "past/day_before_yesterday",
+            "past/last_week",
+            "past/recently",
+            "past/two_weeks_ago",
+            "past/yesterday"
+          ],
+          "word_counts": {
+            "verb[role:object]": 62
+          },
+          "entity_counts": {
+            "noun": 80
+          },
+          "connection_counts": {
+            "verb[role:object] → noun": 1562
+          }
+        }
+      },
+      {
+        "pattern": "Zdania przydawkowe",
+        "form": "dictionary",
+        "unchanged_statistics": {
+          "pattern_id": "Zdania przydawkowe",
+          "vocabulary_combinations": 1535,
+          "generated_sentences": 7675,
+          "unique_questions": 1491,
+          "unique_answers": 1508,
+          "form_names": [
+            "dictionary"
+          ],
+          "context_options": [
+            "present/every_day",
+            "present/neutral",
+            "present/now",
+            "present/this_week",
+            "present/today"
+          ],
+          "word_counts": {
+            "verb@action": 61
+          },
+          "entity_counts": {
+            "noun@item": 79
+          },
+          "connection_counts": {
+            "verb@action → noun@item": 1535
+          }
+        }
+      },
+      {
+        "pattern": "Zdania przydawkowe",
+        "form": "plain_negative",
+        "unchanged_statistics": {
+          "pattern_id": "Zdania przydawkowe",
+          "vocabulary_combinations": 1535,
+          "generated_sentences": 7675,
+          "unique_questions": 1491,
+          "unique_answers": 1508,
+          "form_names": [
+            "plain_negative"
+          ],
+          "context_options": [
+            "present/every_day",
+            "present/neutral",
+            "present/now",
+            "present/this_week",
+            "present/today"
+          ],
+          "word_counts": {
+            "verb@action": 61
+          },
+          "entity_counts": {
+            "noun@item": 79
+          },
+          "connection_counts": {
+            "verb@action → noun@item": 1535
+          }
+        }
+      },
+      {
+        "pattern": "Zdania przydawkowe",
+        "form": "past_plain",
+        "unchanged_statistics": {
+          "pattern_id": "Zdania przydawkowe",
+          "vocabulary_combinations": 1535,
+          "generated_sentences": 7675,
+          "unique_questions": 1496,
+          "unique_answers": 1508,
+          "form_names": [
+            "past_plain"
+          ],
+          "context_options": [
+            "past/day_before_yesterday",
+            "past/last_week",
+            "past/recently",
+            "past/two_weeks_ago",
+            "past/yesterday"
+          ],
+          "word_counts": {
+            "verb@action": 61
+          },
+          "entity_counts": {
+            "noun@item": 79
+          },
+          "connection_counts": {
+            "verb@action → noun@item": 1535
+          }
+        }
+      },
+      {
+        "pattern": "Zdania przydawkowe",
+        "form": "past_negative_plain",
+        "unchanged_statistics": {
+          "pattern_id": "Zdania przydawkowe",
+          "vocabulary_combinations": 1535,
+          "generated_sentences": 7675,
+          "unique_questions": 1496,
+          "unique_answers": 1508,
+          "form_names": [
+            "past_negative_plain"
+          ],
+          "context_options": [
+            "past/day_before_yesterday",
+            "past/last_week",
+            "past/recently",
+            "past/two_weeks_ago",
+            "past/yesterday"
+          ],
+          "word_counts": {
+            "verb@action": 61
+          },
+          "entity_counts": {
+            "noun@item": 79
+          },
+          "connection_counts": {
+            "verb@action → noun@item": 1535
+          }
+        }
+      },
+      {
+        "pattern": "Zdania przydawkowe podmiotowe",
+        "form": "dictionary",
+        "unchanged_statistics": {
+          "pattern_id": "Zdania przydawkowe podmiotowe",
+          "vocabulary_combinations": 300,
+          "generated_sentences": 1500,
+          "unique_questions": 300,
+          "unique_answers": 300,
+          "form_names": [
+            "dictionary"
+          ],
+          "context_options": [
+            "present/every_day",
+            "present/neutral",
+            "present/now",
+            "present/this_week",
+            "present/today"
+          ],
+          "word_counts": {
+            "verb@action": 36
+          },
+          "entity_counts": {
+            "noun@item": 12
+          },
+          "connection_counts": {
+            "verb@action → noun@item": 300,
+            "noun@item → verb@action": 300
+          }
+        }
+      },
+      {
+        "pattern": "Zdania przydawkowe podmiotowe",
+        "form": "plain_negative",
+        "unchanged_statistics": {
+          "pattern_id": "Zdania przydawkowe podmiotowe",
+          "vocabulary_combinations": 300,
+          "generated_sentences": 1500,
+          "unique_questions": 300,
+          "unique_answers": 300,
+          "form_names": [
+            "plain_negative"
+          ],
+          "context_options": [
+            "present/every_day",
+            "present/neutral",
+            "present/now",
+            "present/this_week",
+            "present/today"
+          ],
+          "word_counts": {
+            "verb@action": 36
+          },
+          "entity_counts": {
+            "noun@item": 12
+          },
+          "connection_counts": {
+            "verb@action → noun@item": 300,
+            "noun@item → verb@action": 300
+          }
+        }
+      },
+      {
+        "pattern": "Zdania przydawkowe podmiotowe",
+        "form": "past_plain",
+        "unchanged_statistics": {
+          "pattern_id": "Zdania przydawkowe podmiotowe",
+          "vocabulary_combinations": 300,
+          "generated_sentences": 1500,
+          "unique_questions": 300,
+          "unique_answers": 300,
+          "form_names": [
+            "past_plain"
+          ],
+          "context_options": [
+            "past/day_before_yesterday",
+            "past/last_week",
+            "past/recently",
+            "past/two_weeks_ago",
+            "past/yesterday"
+          ],
+          "word_counts": {
+            "verb@action": 36
+          },
+          "entity_counts": {
+            "noun@item": 12
+          },
+          "connection_counts": {
+            "verb@action → noun@item": 300,
+            "noun@item → verb@action": 300
+          }
+        }
+      },
+      {
+        "pattern": "Zdania przydawkowe podmiotowe",
+        "form": "past_negative_plain",
+        "unchanged_statistics": {
+          "pattern_id": "Zdania przydawkowe podmiotowe",
+          "vocabulary_combinations": 300,
+          "generated_sentences": 1500,
+          "unique_questions": 300,
+          "unique_answers": 300,
+          "form_names": [
+            "past_negative_plain"
+          ],
+          "context_options": [
+            "past/day_before_yesterday",
+            "past/last_week",
+            "past/recently",
+            "past/two_weeks_ago",
+            "past/yesterday"
+          ],
+          "word_counts": {
+            "verb@action": 36
+          },
+          "entity_counts": {
+            "noun@item": 12
+          },
+          "connection_counts": {
+            "verb@action → noun@item": 300,
+            "noun@item → verb@action": 300
+          }
+        }
+      }
+    ],
+    "scope": "Explicit release acceptance; unit tests use independent fixtures. Target is not selected by any production pattern; all other role matching, words, patterns and quizzes retain C3 outcomes."
+  },
+  "performance_c3_review": {
+    "paired_rounds": 7,
+    "samples": 21,
+    "comparisons": 40,
+    "minimum_paired_ratio": 0.8793782158207771,
+    "maximum_paired_ratio": 1.0893177867666588,
+    "above_ten_percent": 0,
+    "pre_optimization_evidence_retained": true,
+    "confirmation_rounds": 9,
+    "confirmation_samples": 101,
+    "primary_maximum_ratio": 1.1054992961349372
+  },
+  "performance": {
+    "threshold": 1.1,
+    "comparisons": 40,
+    "above_threshold": 0,
+    "maximum_ratio": 1.0679005299357491,
+    "minimum_ratio": 0.9005740695760746,
+    "paired_rounds": 7,
+    "samples": 21,
+    "runtime": "Unchanged from baa4b1d; C3.1 Data versus e51fcbb"
+  }
+}

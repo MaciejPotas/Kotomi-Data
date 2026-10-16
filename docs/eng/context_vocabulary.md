@@ -37,9 +37,10 @@ Add these registrations inside the existing `<dictionaries>` element:
 
 Older projects may omit all three dictionaries. A pattern using an absent
 dictionary cannot generate a sentence. Existing inline context options remain
-supported. Context references were introduced in Kotomi 1.7; Content with semantic
-adverb categories requires `min_kotomi_version="1.8"` so
-older applications cannot silently render an empty context.
+supported. Historical `min_kotomi_version="1.8.0"` metadata is not an enforced
+compatibility gate. Content 63 requires manifest format 2, rejected by legacy clients
+before payload download. The new updater validates the complete snapshot before writes.
+See the [C3 publication requirements](noun_role_categories_c3.md).
 
 ## Complete dictionary examples
 
