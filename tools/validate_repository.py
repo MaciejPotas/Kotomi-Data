@@ -70,6 +70,7 @@ ROOT_XML_FILES = {"quiz_project.xml"}
 WORD_FORM_ATTRIBUTES = {
     "ref",
     "translation",
+    "target_translation",
     "kana",
     "kanji",
     "romaji",
@@ -79,6 +80,14 @@ def unexpected_word_form_attributes(attributes: object) -> set[str]:
     """Return attributes that do not belong in a word-local form value."""
 
     return set(attributes) - WORD_FORM_ATTRIBUTES
+
+
+def validate_target_translation(schema: str, form: ET.Element) -> None:
+    """Validate the optional form-local contextual gloss without lexical ID rules."""
+    if "target_translation" in form.attrib and (
+        schema != "verb" or not form.get("target_translation", "").strip()
+    ):
+        raise AssertionError("target_translation requires a verb and a nonempty value")
 
 
 def load_json(path: Path) -> dict[str, object]:
@@ -217,6 +226,7 @@ def validate_content_grammar_boundary() -> None:
                 if not all(word.get(key) for key in ("id", "translation", "kana")):
                     raise AssertionError(f"{path}: words must contain complete lexical data")
                 for form in word.findall("./forms/form"):
+                    validate_target_translation(root.get("schema", ""), form)
                     if not form.get("ref") or unexpected_word_form_attributes(form.attrib):
                         raise AssertionError(f"{path}: forms must reference a Kotomi grammar ID")
         if root.tag == "quiz_project":
@@ -575,9 +585,9 @@ def validate_content_manifest() -> None:
             "Content manifest revision must match content_revision.json"
         )
 
-    expected_format = 2 if revision_number >= 63 else 1
+    expected_format = 3 if revision_number >= 64 else (2 if revision_number >= 63 else 1)
     if type(manifest.get("format")) is not int or manifest["format"] != expected_format:
-        raise AssertionError("Content 63+ requires manifest format 2 to reject legacy clients")
+        raise AssertionError("Content 63 requires format 2; Content 64+ requires format 3 to reject legacy clients")
 
     entries = manifest.get("files")
     if not isinstance(entries, list):

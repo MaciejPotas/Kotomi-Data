@@ -286,3 +286,7 @@ For C3.1 performance use the same paired benchmark, `--kotomi ../Kotomi`,
 `--rounds 7 --samples 21`; the runtime is unchanged from `baa4b1d` on both sides.
 Record this follow-up in `noun_role_performance_c3.json` without replacing the
 historical main-versus-C3 measurements. The threshold stays 10%.
+
+## C3.2 target acceptance
+
+Run `python tools/validate_target_c32.py --kotomi ../Kotomi --output docs/validation/target_c32_acceptance.json`. This opt-in production check loads the declared project once, renders only the eight finite forms of the target pattern, compares counts and bound/quiz outputs, and checks six examples and four rejections. It is not part of unit-test CI. The historical C3 matrix describes Content 63; the C3.2 guide documents the five removed hairu pairs.

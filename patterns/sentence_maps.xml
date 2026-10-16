@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sentence_maps schema_version="2" instruction_language_id="pl">
   <sentence_patterns>
+    <sentence_pattern id="Czasownik z target" category="basic" forms="dictionary polite_nonpast plain_negative polite_negative past_plain past_polite past_negative_plain past_negative_polite">
+      <question>{verb@action[role:target, form].translation} {noun@target[government:@action].phrase}.</question>
+      <answer>{noun@target}に{verb@action[form]}。</answer>
+    </sentence_pattern>
     <sentence_pattern id="Zdania przydawkowe" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
       <question>To jest {noun@item[case:nominative]}, {relative[agree:@item, government:@action].phrase} {verb@action[role:object, form].translation}.</question>
       <answer>これはわたしが{verb@action[role:object, form]}{noun@item}です。</answer>

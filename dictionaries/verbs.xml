@@ -316,7 +316,7 @@
     </word>
     <word id="ayamaru" kana="あやまる" kanji="謝る" type="godan" ending="ru" translation="przepraszać">
       <usage>
-        <role ref="target" accepts="person animal" />
+        <role ref="target" government="direct_object" accepts="person animal" />
         <role ref="location" />
         <role ref="subject" accepts="person" />
       </usage>
@@ -509,7 +509,7 @@
     </word>
     <word id="hairu" kana="はいる" kanji="入る" type="godan" ending="ru" translation="wchodzić">
       <usage>
-        <role ref="target" accepts="place" />
+        <role ref="target" government="do_genitive" accepts="building" />
         <role ref="subject" accepts="person animal" />
       </usage>
       <forms>
@@ -1126,18 +1126,18 @@
     <word id="kariru" kana="かりる" kanji="借りる" type="ichidan" ending="ru" translation="pożyczać od kogoś">
       <usage>
         <role ref="object" accepts="text vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person" />
+        <role ref="target" government="od_genitive" accepts="person" />
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="かりる" translation="pożyczam od kogoś" kanji="借りる" />
-        <form ref="polite_nonpast" kana="かります" translation="pożyczam od kogoś" kanji="借ります" />
-        <form ref="plain_negative" kana="かりない" translation="nie pożyczam od kogoś" kanji="借りない" />
-        <form ref="polite_negative" kana="かりません" translation="nie pożyczam od kogoś" kanji="借りません" />
-        <form ref="past_plain" kana="かりた" translation="pożyczyłem od kogoś" kanji="借りた" />
-        <form ref="past_polite" kana="かりました" translation="pożyczyłem od kogoś" kanji="借りました" />
-        <form ref="past_negative_plain" kana="かりなかった" translation="nie pożyczyłem od kogoś" kanji="借りなかった" />
-        <form ref="past_negative_polite" kana="かりませんでした" translation="nie pożyczyłem od kogoś" kanji="借りませんでした" />
+        <form ref="dictionary" kana="かりる" target_translation="pożyczam" translation="pożyczam od kogoś" kanji="借りる" />
+        <form ref="polite_nonpast" kana="かります" target_translation="pożyczam" translation="pożyczam od kogoś" kanji="借ります" />
+        <form ref="plain_negative" kana="かりない" target_translation="nie pożyczam" translation="nie pożyczam od kogoś" kanji="借りない" />
+        <form ref="polite_negative" kana="かりません" target_translation="nie pożyczam" translation="nie pożyczam od kogoś" kanji="借りません" />
+        <form ref="past_plain" kana="かりた" target_translation="pożyczyłem" translation="pożyczyłem od kogoś" kanji="借りた" />
+        <form ref="past_polite" kana="かりました" target_translation="pożyczyłem" translation="pożyczyłem od kogoś" kanji="借りました" />
+        <form ref="past_negative_plain" kana="かりなかった" target_translation="nie pożyczyłem" translation="nie pożyczyłem od kogoś" kanji="借りなかった" />
+        <form ref="past_negative_polite" kana="かりませんでした" target_translation="nie pożyczyłem" translation="nie pożyczyłem od kogoś" kanji="借りませんでした" />
         <form ref="te_form" kana="かりて" kanji="借りて" translation="pożyczając od kogoś" />
         <form ref="potential" kana="かりられる" kanji="借りられる" translation="mogę pożyczać od kogoś" />
         <form ref="passive" kana="かりられる" kanji="借りられる" translation="ktoś ode mnie pożycza" />
@@ -1193,7 +1193,7 @@
     </word>
     <word id="kayou" kana="かよう" kanji="通う" type="godan" ending="u" translation="uczęszczać">
       <usage>
-        <role ref="target" accepts="education_facility sports_facility" />
+        <role ref="target" government="do_genitive" accepts="attendance_facility" />
       </usage>
       <forms>
         <form ref="dictionary" kana="かよう" translation="uczęszczam" kanji="通う" />
@@ -1991,7 +1991,7 @@
     </word>
     <word id="okoru" kana="おこる" kanji="怒る" type="godan" ending="ru" translation="rozgniewać się">
       <usage>
-        <role ref="target" accepts="person animal" />
+        <role ref="target" government="na_accusative" accepts="person animal" />
         <role ref="location" />
         <role ref="subject" accepts="person" />
       </usage>
@@ -3081,7 +3081,7 @@
     </word>
     <word id="usowotsuku" kana="うそをつく" kanji="嘘をつく" type="godan" ending="ku" translation="kłamać">
       <usage>
-        <role ref="target" accepts="person" />
+        <role ref="target" government="dative" accepts="person" />
         <role ref="location" />
         <role ref="subject" accepts="person" />
       </usage>
@@ -3304,18 +3304,18 @@
     <word id="ageru_give" kana="あげる" type="ichidan" ending="ru" translation="dawać komuś">
       <usage>
         <role ref="object" accepts="food drink text media vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person animal" />
+        <role ref="target" government="dative" accepts="person animal" />
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="あげる" translation="daję komuś" kanji="あげる" />
-        <form ref="polite_nonpast" kana="あげます" translation="daję komuś" kanji="あげます" />
-        <form ref="plain_negative" kana="あげない" translation="nie daję komuś" kanji="あげない" />
-        <form ref="polite_negative" kana="あげません" translation="nie daję komuś" kanji="あげません" />
-        <form ref="past_plain" kana="あげた" translation="dałem komuś" kanji="あげた" />
-        <form ref="past_polite" kana="あげました" translation="dałem komuś" kanji="あげました" />
-        <form ref="past_negative_plain" kana="あげなかった" translation="nie dałem komuś" kanji="あげなかった" />
-        <form ref="past_negative_polite" kana="あげませんでした" translation="nie dałem komuś" kanji="あげませんでした" />
+        <form ref="dictionary" kana="あげる" target_translation="daję" translation="daję komuś" kanji="あげる" />
+        <form ref="polite_nonpast" kana="あげます" target_translation="daję" translation="daję komuś" kanji="あげます" />
+        <form ref="plain_negative" kana="あげない" target_translation="nie daję" translation="nie daję komuś" kanji="あげない" />
+        <form ref="polite_negative" kana="あげません" target_translation="nie daję" translation="nie daję komuś" kanji="あげません" />
+        <form ref="past_plain" kana="あげた" target_translation="dałem" translation="dałem komuś" kanji="あげた" />
+        <form ref="past_polite" kana="あげました" target_translation="dałem" translation="dałem komuś" kanji="あげました" />
+        <form ref="past_negative_plain" kana="あげなかった" target_translation="nie dałem" translation="nie dałem komuś" kanji="あげなかった" />
+        <form ref="past_negative_polite" kana="あげませんでした" target_translation="nie dałem" translation="nie dałem komuś" kanji="あげませんでした" />
         <form ref="te_form" kana="あげて" kanji="あげて" translation="dając komuś" />
         <form ref="potential" kana="あげられる" kanji="あげられる" translation="mogę dawać komuś" />
         <form ref="passive" kana="あげられる" kanji="あげられる" translation="jest dawane komuś" />
@@ -3328,7 +3328,7 @@
     <word id="kaesu" kana="かえす" kanji="返す" type="godan" ending="su" translation="oddawać, zwracać">
       <usage>
         <role ref="object" accepts="text vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person animal" />
+        <role ref="target" government="dative" accepts="person animal" />
         <role ref="location" />
       </usage>
       <forms>
@@ -3352,18 +3352,18 @@
     <word id="kasu" kana="かす" kanji="貸す" type="godan" ending="su" translation="pożyczać komuś">
       <usage>
         <role ref="object" accepts="text vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person" />
+        <role ref="target" government="dative" accepts="person" />
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="かす" translation="pożyczam komuś" kanji="貸す" />
-        <form ref="polite_nonpast" kana="かします" translation="pożyczam komuś" kanji="貸します" />
-        <form ref="plain_negative" kana="かさない" translation="nie pożyczam komuś" kanji="貸さない" />
-        <form ref="polite_negative" kana="かしません" translation="nie pożyczam komuś" kanji="貸しません" />
-        <form ref="past_plain" kana="かした" translation="pożyczyłem komuś" kanji="貸した" />
-        <form ref="past_polite" kana="かしました" translation="pożyczyłem komuś" kanji="貸しました" />
-        <form ref="past_negative_plain" kana="かさなかった" translation="nie pożyczyłem komuś" kanji="貸さなかった" />
-        <form ref="past_negative_polite" kana="かしませんでした" translation="nie pożyczyłem komuś" kanji="貸しませんでした" />
+        <form ref="dictionary" kana="かす" target_translation="pożyczam" translation="pożyczam komuś" kanji="貸す" />
+        <form ref="polite_nonpast" kana="かします" target_translation="pożyczam" translation="pożyczam komuś" kanji="貸します" />
+        <form ref="plain_negative" kana="かさない" target_translation="nie pożyczam" translation="nie pożyczam komuś" kanji="貸さない" />
+        <form ref="polite_negative" kana="かしません" target_translation="nie pożyczam" translation="nie pożyczam komuś" kanji="貸しません" />
+        <form ref="past_plain" kana="かした" target_translation="pożyczyłem" translation="pożyczyłem komuś" kanji="貸した" />
+        <form ref="past_polite" kana="かしました" target_translation="pożyczyłem" translation="pożyczyłem komuś" kanji="貸しました" />
+        <form ref="past_negative_plain" kana="かさなかった" target_translation="nie pożyczyłem" translation="nie pożyczyłem komuś" kanji="貸さなかった" />
+        <form ref="past_negative_polite" kana="かしませんでした" target_translation="nie pożyczyłem" translation="nie pożyczyłem komuś" kanji="貸しませんでした" />
         <form ref="te_form" kana="かして" kanji="貸して" translation="pożyczając komuś" />
         <form ref="potential" kana="かせる" kanji="貸せる" translation="mogę pożyczać komuś" />
         <form ref="passive" kana="かされる" kanji="貸される" translation="jest pożyczane komuś" />
@@ -3400,7 +3400,7 @@
     <word id="morau" kana="もらう" type="godan" ending="u" translation="otrzymywać">
       <usage>
         <role ref="object" accepts="food drink text media vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person" />
+        <role ref="target" government="od_genitive" accepts="person" />
         <role ref="location" />
       </usage>
       <forms>
@@ -3470,7 +3470,7 @@
     <word id="watasu" kana="わたす" kanji="渡す" type="godan" ending="su" translation="podawać, przekazywać">
       <usage>
         <role ref="object" accepts="food drink text media vehicle thing abstract" government="direct_object" />
-        <role ref="target" accepts="person" />
+        <role ref="target" government="dative" accepts="person" />
         <role ref="location" />
       </usage>
       <forms>
