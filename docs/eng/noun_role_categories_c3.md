@@ -97,7 +97,7 @@ retain their baseline attributes and every match. The audit independently compar
 these decisions, XML and observations from the existing `role_matches`. Regenerating
 the report does not approve changes. Duplicate JSON keys fail; decision status must
 agree with retained exceptions. Government, role/form order and unrelated XML remain
-protected. The exact nine additions and three removals are unchanged. Existing category
+protected. The original nine additions and three removals are retained; C3.1 adds the explicit target corrections below. Existing category
 definitions are also compared against the baseline catalog, so loading both projects
 with the current engine cannot hide the same category drift on both sides.
 
@@ -200,3 +200,112 @@ and a wholesale vocabulary migration.
 
 
 [Content audit](../validation/noun_role_audit_c3.md).
+
+## C3.1: `target` and relationship direction
+
+`target` is the verb argument marked here with **に**, not a synonym for recipient.
+`object` takes **を**; `destination` expresses movement direction with **へ**.
+Japanese に/へ can sometimes alternate, but the DSL roles remain distinct.
+The `target` identifier and compatibility with earlier Content are preserved.
+
+A `<usage>` declaration does not insert an argument into a sentence. A pattern
+selects it with `verb[role:target]` and writes に in its answer. Catalog `particle`
+is authoring metadata, not automatic text insertion. None of the current 92
+production patterns selects `target`; `reaction_target` is a different role.
+No production pattern is added by C3.1.
+
+`accepts` matches categories and ancestors; exact `nouns` IDs are alternatives (OR).
+`government` specifies the Polish case/preposition **for that verb role**, not a
+noun category or Japanese particle. `target` does not imply dative. Production
+`target` declarations currently have no `government`. A pattern using `[government]`
+needs a suitable frame; without it there are no compatible possibilities. Add the
+frames and appropriate Polish form translations before publishing such a pattern;
+never implicitly reuse the `object` frame.
+
+### All 21 declarations
+
+These are Content's teaching-sense decisions, not claims that other arguments
+are impossible in metaphor, fiction or special contexts. Every role is compatible
+with に. Categories do not validate whole-situation plausibility or relationships
+between two selected nouns.
+
+| Verb | Meaning of `target` and restriction review |
+|---|---|
+| `ayamaru` | Addressee of an apology; retain `person animal`: apologizing to a pet is possible. |
+| `hairu` | Place entered; retain `place`. Entry need not mean joining an institution. |
+| `ireru` | Place of insertion; retain `container` OR exact `room`. This does not check object/container dimensions. |
+| `kariru` | Person borrowed **from**; `person animal → person`. An ordinary animal is not a lender. |
+| `kayou` | Facility attended regularly; retain `education_facility sports_facility`. |
+| `kotaeru` | Person answered or message replied to; `abstract → person` OR `nouns="email letter"`. Remove weekdays, duration, money, etc.; do not accept every book/text. A future “question” noun needs an explicit scope extension. |
+| `nareru` | Object/person/situation one gets used to; retain intentionally broad `*`. |
+| `naru` | Result of becoming/change; retain `*` for roles, states and transformations. Arbitrary subject/result pairs are not guaranteed: a future pattern must constrain context rather than produce everyday sentences about any transformation. |
+| `okoru` | Person/animal one gets angry with; retain `person animal`. |
+| `oshieru` | Learner; retain `person animal`, including teaching commands to a dog. The subject taught and learner still need a coherent context. |
+| `sawaru` | Touched object; retain `concrete`, not just people/recipients. |
+| `teishutsusuru` | Person/institution receiving a submission; retain exact `teacher school`. |
+| `tomaru` | Stopping point; retain `place`. Current 止まる is not staying overnight 泊まる. |
+| `usowotsuku` | Interlocutor being lied to; `person animal → person` for the ordinary verbal communication sense. Deceiving an animal through behavior does not justify the whole category. |
+| `ageru_give` | Gift recipient; retain `person animal`, e.g. feeding a dog. The separate `ageru` with 上げる means “raise”. |
+| `kaesu` | Recipient of a returned object; retain `person animal`, e.g. returning a toy to a dog. |
+| `kasu` | Person lent **to**; `person animal → person`, temporary transfer with an expectation of return, not simply giving something to an animal. |
+| `kureru` | Recipient on the speaker's side; retain `person`, but the category does not encode viewpoint. A future pattern must identify the speaker/in-group. |
+| `morau` | Person received **from**; `person animal → person` for ordinary interpersonal giving. An animal donor needs a separate context. |
+| `watasu` | Recipient of a handover; retain `person`. |
+| `sumu` | Residence; retain `place`. Habitability depends on context, not just hierarchy. |
+
+### Two arguments and translations
+
+The existing DSL supports both roles of one slot. Repeated declarations for the
+same alias collect roles: use `verb@action[role:target, form].translation` in the
+question and `{noun@partner}に{noun@item}を{verb@action[role:object, form]}` in the
+answer. Nouns can use `category:person` and `category:text`; automatic binding uses
+the actual `role_matches`. If role domains overlap, `government:@action` alone
+cannot choose **which role** the noun has: it identifies a verb, not a role.
+Disambiguate with existing domain filters; if that is impossible, the future
+pattern needs a separate task. C3.1 adds no workaround or noun-role selector DSL.
+
+- せんせいにほんをかりる — “Pożyczam książkę **od nauczyciela**” (borrow from the teacher): target needs `od` + genitive.
+- ともだちにほんをかす — “Pożyczam książkę **przyjacielowi**” (lend to a friend): target needs dative.
+- ともだちにほんをあげる — “Daję książkę **przyjacielowi**” (give to a friend): `ageru_give`, dative.
+- がっこうにはいる — “Wchodzę **do szkoły**” (enter school): target, `do` + genitive.
+- がっこうにかよう — “Uczęszczam **do szkoły**” (attend school): target, `do` + genitive.
+
+Independent fixtures exercise the first three sentences, affirmative/negative
+forms, counting, binding, OR, separate argument frames, particle and XML roundtrip.
+They do not claim production translations are ready for a new universal pattern:
+`kariru` already says “pożyczam od kogoś”, `kasu` “pożyczam komuś”, `ageru_give`
+“daję komuś”. Appending an argument mechanically would duplicate “od kogoś/komuś”;
+a suitable translation variant is needed. `kureru` additionally needs viewpoint
+and subject person; `kotaeru` needs different Polish government for a person
+(“komuś”) and a message (“na list”). This is a small separate authoring task before
+publishing patterns, not a reason to rewrite the solver.
+
+### Facilities versus `building`
+
+Schools/universities are `education_facility`; a gym/training facility is
+`sports_facility`. A mere training room does not thereby become a building and
+needs its own lexical decision. Correctly classified future facilities work with
+`kayou` without editing the verb. Banks, office buildings and hospitals do not
+become education/sports facilities just because they are buildings. Japanese
+病院に通う is valid (“regularly visit hospital”), as can be regular visits/commuting
+to a bank/office. The current Polish gloss “uczęszczać” does not automatically
+cover these readings. Retain the two subtypes and narrow scope; `building` would
+be an unjustified expansion. No categories or properties are added.
+
+### C3.1 acceptance scope and evidence
+
+Five `target` roles change; the other 248 roles retain the approved C3 outcomes.
+Relative to the C3 baseline, the complete matrix now has **19 additions and 35
+removals** (previously 9/3), and **15** roles retain explicit `nouns` (previously 14).
+The new `kotaeru` exception is deliberate, not hidden behind a broad category.
+The existing decision JSON holds five `scope: C3.1_target` entries, exact `before`
+and `target` attributes, reasons and approved added/removed sets. Missing approval,
+XML drift or changed observations still fail. Regeneration never approves decisions.
+Content remains unpublished revision 63 with update manifest format **2**.
+
+Language references (accessed 2026-10-16; Content scope policy is our decision):
+[TUFS: に and transfer direction](https://www.coelang.tufs.ac.jp/mt/ja/gmod/courses/c01/lesson08/step3/explanation/028.html),
+[TUFS: あげる/くれる/もらう, including animals](https://www.coelang.tufs.ac.jp/mt/ja/gmod/courses/c01/lesson22/step1/explanation/085.html),
+[Daijisen: 通う](https://kotobank.jp/word/通う-467110),
+[Daijisen: 答える](https://kotobank.jp/word/答える-502121),
+[Daijisen: 嘘](https://kotobank.jp/word/嘘-440021).

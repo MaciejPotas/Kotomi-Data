@@ -100,7 +100,7 @@ zachować atrybuty i wszystkie dopasowania z bazowej rewizji. Audyt porównuje o
 te decyzje, XML i wyniki istniejącego `role_matches`. Ponowne wygenerowanie raportu
 nie zatwierdza zmian. Duplikaty kluczy JSON są błędem; status decyzji musi zgadzać się
 z obecnością wyjątków. `government`, kolejność ról i form oraz pozostałe XML są chronione.
-Dokładnie 9 dodanych i 3 usunięte kombinacje pozostają bez zmian. Definicje
+Pierwotne 9 dodatków i 3 usunięcia zachowano; C3.1 dodaje jawne korekty target opisane poniżej. Definicje
 istniejących kategorii są porównywane z bazowym katalogiem, aby obecny silnik
 nie ukrył takiego samego błędu po obu stronach porównania.
 
@@ -203,3 +203,113 @@ solverów, wielodziedziczenia drzewa ani masowej migracji słownika.
 
 
 [Raport zawartości](../validation/noun_role_audit_c3.md).
+
+## C3.1: rola `target` i kierunek relacji
+
+`target` to argument czasownika oznaczany tutaj partykułą **に**, nie synonim
+odbiorcy. `object` oznacza dopełnienie z **を**, a `destination` kierunek ruchu
+z **へ**. W japońskim に i へ czasem są wymienne, ale deklaracje DSL pozostają
+odrębne. `target` zachowuje identyfikator i zgodność wcześniejszego Content.
+
+Sam wpis w `<usage>` nie dodaje argumentu do zdania. Wzorzec wybiera rolę przez
+`verb[role:target]`, a autor zapisuje に w odpowiedzi. `particle` jest metadanymi
+katalogu i pomocą autora, nie automatycznym wstawianiem tekstu. Żaden z obecnych
+92 wzorców produkcyjnych nie wybiera `target`; `reaction_target` jest inną rolą.
+Żaden nowy wzorzec produkcyjny nie został dodany.
+
+`accepts` filtruje kategorię wraz z przodkami; `nouns` dodaje dokładne ID przez OR.
+`government` opisuje polski przypadek/przyimek **dla konkretnej roli czasownika**,
+nie kategorię rzeczownika ani japońską partykułę. `target` nie oznacza automatycznie
+celownika. Obecne deklaracje produkcyjne `target` nie mają `government`.
+Wzorzec z `[government]` wymaga odpowiedniej ramki; przy jej braku nie powstaną
+zgodne możliwości. Przed dodaniem takiego wzorca trzeba uzupełnić ramki i teksty
+polskich form, a nie domyślnie używać rekcji `object`.
+
+### Przegląd wszystkich 21 deklaracji
+
+Poniższe zakresy są decyzjami dla znaczeń dydaktycznych Content, nie twierdzeniem,
+że w metaforze, bajce lub szczególnym kontekście inne argumenty są niemożliwe.
+Każda rola jest zgodna z に. Kategorie nie sprawdzają prawdopodobieństwa całej
+sytuacji ani relacji między dwoma wybranymi rzeczownikami.
+
+| Czasownik | Znaczenie `target` i ocena ograniczenia |
+|---|---|
+| `ayamaru` | Adresat przeprosin; `person animal` pozostaje: można przeprosić zwierzę. |
+| `hairu` | Miejsce, do którego się wchodzi; `place` pozostaje. Nie każdy kontekst wejścia jest instytucjonalny. |
+| `ireru` | Miejsce umieszczenia; `container` OR dokładne `room` pozostaje. Ograniczenie nie sprawdza rozmiarów przedmiotu i pojemnika. |
+| `kariru` | Osoba, **od której** pożyczamy; `person animal → person`. Zwykłe zwierzę nie jest pożyczkodawcą. |
+| `kayou` | Placówka regularnego uczęszczania; pozostaje `education_facility sports_facility`. |
+| `kotaeru` | Osoba, której odpowiadamy, lub wiadomość; `abstract → person` OR `nouns="email letter"`. Usunięto m.in. dni tygodnia, czas i pieniądze. Nie rozszerzamy na każdą książkę/tekst. Nowe „pytanie” wymaga świadomego rozszerzenia zakresu. |
+| `nareru` | Obiekt/osoba/sytuacja, do której się przyzwyczajamy; `*` pozostaje jako celowo szerokie znaczenie. |
+| `naru` | Wynik zmiany/stawania się; `*` pozostaje dla ról, stanów i przekształceń. Dowolne pary podmiot–wynik nie są gwarantowane; przyszły wzorzec musi ograniczyć kontekst (nie generator codziennych zdań o dowolnej przemianie). |
+| `okoru` | Osoba/zwierzę, na które się gniewamy; `person animal` pozostaje. |
+| `oshieru` | Uczeń/odbiorca nauki; `person animal` pozostaje, bo można uczyć psa komend. Przedmiot nauki i uczeń wymagają spójnego kontekstu. |
+| `sawaru` | Dotykany obiekt; `concrete` pozostaje, bez ograniczenia do odbiorców/osób. |
+| `teishutsusuru` | Osoba/instytucja przyjmująca dokument; dokładne `teacher school` pozostaje. |
+| `tomaru` | Punkt zatrzymania; `place` pozostaje. Obecne 止まる nie jest nocowaniem 泊まる. |
+| `usowotsuku` | Rozmówca, którego okłamujemy; `person animal → person` dla podstawowej komunikacji językowej. Zwodzenie zwierzęcia zachowaniem nie uzasadnia całej kategorii. |
+| `ageru_give` | Odbiorca daru; `person animal` pozostaje (np. jedzenie dla psa). `ageru` z kanji 上げる oznacza tu osobne „podnosić”. |
+| `kaesu` | Odbiorca zwracanego przedmiotu; `person animal` pozostaje (np. zwrot zabawki psu). |
+| `kasu` | Osoba, **której** pożyczamy; `person animal → person`: udostępnienie z oczekiwaniem zwrotu, nie samo danie zwierzęciu. |
+| `kureru` | Odbiorca po stronie mówiącego; `person` pozostaje, ale sama kategoria nie koduje perspektywy. Przyszły wzorzec musi określić mówiącego/jego bliskich. |
+| `morau` | Osoba, **od której** otrzymujemy; `person animal → person` w zwykłym interpersonalnym znaczeniu. Zwierzę jako dawca wymaga osobnego kontekstu. |
+| `watasu` | Odbiorca przekazywanego przedmiotu; `person` pozostaje. |
+| `sumu` | Miejsce zamieszkania; `place` pozostaje. Kontekst określa możliwość zamieszkania, nie sama hierarchia. |
+
+### Dwa argumenty i tłumaczenia
+
+Istniejący DSL obsługuje obie role jednego slotu. Deklaracje powtarzane dla tego
+samego aliasu łączą role, np. w pytaniu `verb@action[role:target, form].translation`,
+a w odpowiedzi `{noun@partner}に{noun@item}を{verb@action[role:object, form]}`.
+Rzeczowniki można ograniczyć przez `category:person` i `category:text`; automatyczne
+wiązanie używa rzeczywistego `role_matches`. Przy nakładających się domenach ról
+samo `government:@action` nie rozstrzyga, **którą rolą** jest rzeczownik: wskazuje
+czasownik, a nie rolę. Wtedy potrzebne są rozłączne domeny istniejącymi filtrami;
+gdy nie da się ich uzyskać, przyszły wzorzec wymaga osobnego zadania. Nie dodajemy
+obejścia ani składni selektora roli rzeczownika w C3.1.
+
+- せんせいにほんをかりる — „Pożyczam książkę **od nauczyciela**”: target wymaga `od` + dopełniacz.
+- ともだちにほんをかす — „Pożyczam książkę **przyjacielowi**”: target wymaga celownika.
+- ともだちにほんをあげる — „Daję książkę **przyjacielowi**”: `ageru_give`, celownik.
+- がっこうにはいる — „Wchodzę **do szkoły**”: target, `do` + dopełniacz.
+- がっこうにかよう — „Uczęszczam **do szkoły**”: target, `do` + dopełniacz.
+
+Fixture sprawdza trzy pierwsze zdania, dodatnie i przeczące formy, liczenie,
+wiązanie, OR, odmienne ramki obu argumentów, partykułę i zapis/odczyt XML.
+Jest napisane niezależnie od Content. Nie twierdzi, że produkcyjne tłumaczenia
+są już gotowe do nowego uniwersalnego wzorca: `kariru` ma „pożyczam od kogoś”,
+`kasu` „pożyczam komuś”, `ageru_give` „daję komuś”. Mechaniczne dopisanie argumentu
+dublowałoby „od kogoś/komuś”; potrzebny jest wariant tłumaczenia dla takiego wzorca.
+`kureru` dodatkowo wymaga perspektywy i osoby podmiotu; `kotaeru` różnej polskiej
+rekcji osoby („komuś”) i wiadomości („na list”). To małe osobne zadanie autorskie
+przed publikacją wzorców, nie powód do przebudowy solvera.
+
+### Placówki a `building`
+
+Szkoła i uczelnia należą do `education_facility`; sala gimnastyczna/treningowa
+rozumiana jako obiekt zajęć do `sports_facility`. Zwykły pokój treningowy nie staje
+się przez to budynkiem: potrzebna jest osobna decyzja leksykalna. Nowe poprawnie
+sklasyfikowane placówki działają z `kayou` bez edycji czasownika. Bank, biurowiec
+lub szpital nie są placówkami edukacyjnymi/sportowymi tylko dlatego, że są budynkami.
+Japońskie 病院に通う jest poprawne („regularnie chodzić do szpitala”), podobnie
+regularne wizyty/dojazdy mogą dotyczyć banku/biura. Obecne polskie „uczęszczać”
+nie pokrywa automatycznie tych znaczeń. Zachowujemy oba podtypy i wąski zakres;
+`building` byłoby nieuzasadnionym poszerzeniem. Nie dodajemy kategorii ani cech.
+
+### Dowody i zakres akceptacji C3.1
+
+Zmieniono pięć ról `target`; pozostałe 248 ról zachowują wyniki zatwierdzonego C3.
+Łączna macierz względem bazy C3 ma **19 dodanych i 35 usuniętych** kombinacji
+(wcześniej 9/3); jawne `nouns` pozostają w **15** rolach (wcześniej 14).
+Nowy wyjątek `kotaeru` jest celowy, nie ukryty za szeroką kategorią.
+Istniejący JSON decyzji zawiera pięć wpisów `scope: C3.1_target`, dokładny `before`,
+`target`, uzasadnienie i zbiory `added/removed`. Brak wpisu, dryf XML albo wyników
+nadal blokuje audyt. Regeneracja raportu nie zatwierdza nowych decyzji.
+Content pozostaje nieopublikowaną rewizją 63 z manifestem formatu **2**.
+
+Źródła językowe (odczyt 2026-10-16; polityka zakresu Content jest naszą decyzją):
+[TUFS: に i kierunek przekazywania](https://www.coelang.tufs.ac.jp/mt/ja/gmod/courses/c01/lesson08/step3/explanation/028.html),
+[TUFS: あげる/くれる/もらう, także zwierzęta](https://www.coelang.tufs.ac.jp/mt/ja/gmod/courses/c01/lesson22/step1/explanation/085.html),
+[Daijisen: 通う](https://kotobank.jp/word/通う-467110),
+[Daijisen: 答える](https://kotobank.jp/word/答える-502121),
+[Daijisen: 嘘](https://kotobank.jp/word/嘘-440021).

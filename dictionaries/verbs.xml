@@ -1126,7 +1126,7 @@
     <word id="kariru" kana="かりる" kanji="借りる" type="ichidan" ending="ru" translation="pożyczać od kogoś">
       <usage>
         <role ref="object" accepts="text vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person animal" />
+        <role ref="target" accepts="person" />
         <role ref="location" />
       </usage>
       <forms>
@@ -1349,7 +1349,7 @@
     </word>
     <word id="kotaeru" kana="こたえる" kanji="答える" type="ichidan" ending="ru" translation="odpowiadać">
       <usage>
-        <role ref="target" accepts="abstract" />
+        <role ref="target" accepts="person" nouns="email letter" />
         <role ref="location" />
         <role ref="subject" accepts="person" />
       </usage>
@@ -3081,7 +3081,7 @@
     </word>
     <word id="usowotsuku" kana="うそをつく" kanji="嘘をつく" type="godan" ending="ku" translation="kłamać">
       <usage>
-        <role ref="target" accepts="person animal" />
+        <role ref="target" accepts="person" />
         <role ref="location" />
         <role ref="subject" accepts="person" />
       </usage>
@@ -3352,7 +3352,7 @@
     <word id="kasu" kana="かす" kanji="貸す" type="godan" ending="su" translation="pożyczać komuś">
       <usage>
         <role ref="object" accepts="text vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person animal" />
+        <role ref="target" accepts="person" />
         <role ref="location" />
       </usage>
       <forms>
@@ -3400,7 +3400,7 @@
     <word id="morau" kana="もらう" type="godan" ending="u" translation="otrzymywać">
       <usage>
         <role ref="object" accepts="food drink text media vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person animal" />
+        <role ref="target" accepts="person" />
         <role ref="location" />
       </usage>
       <forms>

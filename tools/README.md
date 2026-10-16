@@ -265,3 +265,24 @@ of all 16 same-code paired round ratios for those measured operations, retaining
 the original seven rounds; other operations use the seven-round full run.
 The JSON separates original `median_paired_ratios`, `verified_paired_ratios`,
 `same_code_confirmation` and pre-correction diagnostics. No sample is discarded.
+
+
+### C3.1 target review
+
+Five category-only roles have explicit decisions in the same C3 JSON, with
+`scope: C3.1_target`, pinned `before`, full `target`, reasons and exact pair deltas.
+Original nouns-role coverage is still mandatory; an additional decision must refer
+to an existing target role and match its baseline. Removing such an approval does
+not allow changed XML. The audit records these under `reviewed_target_roles`.
+Run the same audit/integration commands above; no second matcher or audit system.
+
+`tests/test_target_roles.py` in Kotomi adds independent transfer/attendance fixtures:
+automatic and explicit governor binding, two arguments, Polish case direction and
+negation, literal に, questions/counts, ambiguous overlapping roles, missing frames
+and Studio XML roundtrip. Data adds four independent decision-mutation tests.
+
+For C3.1 performance use the same paired benchmark, `--kotomi ../Kotomi`,
+`--baseline-data ../data-c3-before` pinned to `e51fcbb1d7a5cd3dc5d5918e3648d9d3ac6cdf1c`,
+`--rounds 7 --samples 21`; the runtime is unchanged from `baa4b1d` on both sides.
+Record this follow-up in `noun_role_performance_c3.json` without replacing the
+historical main-versus-C3 measurements. The threshold stays 10%.

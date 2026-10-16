@@ -180,3 +180,39 @@ class DecisionEngineTests(unittest.TestCase):
     def test_lost_approved_pair_from_category_drift(self):
         self.after.entities['tower'].category = 'place'
         with self.assertRaisesRegex(ValueError, 'unapproved'): self.validate()
+
+
+class TargetReviewDecisionTests(unittest.TestCase):
+    """Independent explicit approval for a previously category-only role."""
+    def setUp(self):
+        self.before={'transfer':ET.fromstring('<word id="transfer"><usage>'
+            '<role ref="target" accepts="person animal"/></usage></word>')}
+        self.after=deepcopy(self.before)
+        self.after['transfer'].find('usage/role').set('accepts','person')
+        self.decisions={'transfer/target':{
+            'scope':'C3.1_target','before':{'ref':'target','accepts':'person animal'},
+            'target':{'ref':'target','accepts':'person'},'status':'semantic_review',
+            'reason_pl':'Osoba w zwykłej relacji interpersonalnej.', 'added':[], 'removed':['pet']}}
+        self.pairs=[{'key':'transfer/target','added':[],'removed':['pet']}]
+
+    def validate(self):
+        from audit_noun_roles import validate_decisions
+        validate_decisions(self.before,self.after,self.decisions,self.pairs)
+
+    def test_explicit_category_only_review(self):
+        self.validate()
+
+    def test_removing_review_does_not_approve_changed_xml(self):
+        self.decisions.clear()
+        with self.assertRaisesRegex(ValueError,'approved role attributes'): self.validate()
+
+    def test_review_requires_pinned_baseline_and_scope(self):
+        for field in ('before','scope','status'):
+            with self.subTest(field=field):
+                value=self.decisions['transfer/target'].pop(field)
+                with self.assertRaisesRegex(ValueError,'pinned target review'): self.validate()
+                self.decisions['transfer/target'][field]=value
+
+    def test_review_still_enforces_exact_pairs(self):
+        self.pairs[0]['removed']=[]
+        with self.assertRaisesRegex(ValueError,'unapproved'): self.validate()

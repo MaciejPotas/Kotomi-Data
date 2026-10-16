@@ -2,7 +2,7 @@
 
 Baza danych: `ef338045ed383763db2cbf04aceea5b1b7ad1d69`. Baza Kotomi: `9d6d662228301dfb9d94524736e09dcc763b28cc`. Stan po: powiązane branche C3, Content 63.
 
-Zbadano cały słownik: 122 czasowniki, 253 role i wszystkie 80 rzeczowników. Wystąpienia `nouns` obejmują także OR z `accepts`. Nie przywrócono `hitori`; person i animal pozostają bez zmian.
+Zbadano cały słownik: 122 czasowniki, 253 role i wszystkie 80 rzeczowników. Wystąpienia `nouns` obejmują także OR z `accepts`. Nie przywrócono `hitori`; Kategorie person i animal pozostają bez zmian; C3.1 zawęża cztery role target do person.
 
 ## Metryki
 
@@ -10,22 +10,43 @@ Zbadano cały słownik: 122 czasowniki, 253 role i wszystkie 80 rzeczowników. W
 |---|---:|---:|
 | Czasowniki | 122 | 122 |
 | Wszystkie role | 253 | 253 |
-| Role z nouns | 36 | 14 |
+| Role z nouns | 36 | 15 |
 | Role z accepts | 108 | 122 |
 | Kategorie zadeklarowane | 14 | 23 |
 | Kategorie wybieralne | 12 | 21 |
 | Kategorie użyte w rzeczownikach | 11 | 19 |
 | Nowe kategorie | 0 | 9 |
 | Zmienione rzeczowniki | 0 | 18 |
-| Jawne listy pozostawione | 36 | 14 |
-| Udokumentowane wyjątki w pozostawionych listach | nieklasyfikowane | 9 |
+| Jawne listy pozostawione | 36 | 15 |
+| Udokumentowane wyjątki w pozostawionych listach | nieklasyfikowane | 10 |
 | Listy wymagające decyzji o sensach | nieklasyfikowane | 5 |
-| Nowe kombinacje verb/role/noun | 0 | 9 |
-| Usunięte kombinacje verb/role/noun | 0 | 3 |
+| Nowe kombinacje verb/role/noun | 0 | 19 |
+| Usunięte kombinacje verb/role/noun | 0 | 35 |
 
-Kategoria oznacza w metrykach osobno katalog, elementy wybieralne i rzeczywiście użyte. Kombinacja nie oznacza pytania: konteksty i formy mnożą realizacje. 22 z 36 list znika całkowicie; 25 ról jest zmodyfikowanych. Żadnego `government`, tekstu tłumaczenia, formy, roli ani wzorca nie zmieniono.
+Kategoria oznacza w metrykach osobno katalog, elementy wybieralne i rzeczywiście użyte. Kombinacja nie oznacza pytania: konteksty i formy mnożą realizacje. 22 z 36 pierwotnych list znika całkowicie; C3.1 dodaje ograniczony wyjątek kotaeru/target. Łącznie 30 ról jest zmodyfikowanych. Żadnego `government`, tekstu tłumaczenia, formy, identyfikatora/kolejności ról ani wzorca nie zmieniono.
 
-## Poprawki po review C3
+## Końcowy przegląd target (C3.1)
+
+Sprawdzono wszystkie 21 ról target. Pięć korekt jest jawnie zatwierdzonych w
+istniejącym pliku decyzji i macierzy; pozostałe 248 ról zachowuje wyniki C3.
+`kariru`, `kasu`, `morau`, `usowotsuku`: target `person animal → person`.
+`kotaeru`: target `abstract → person` OR dokładne `email letter`.
+Szczegółowe uzasadnienie każdej decyzji oraz ograniczenia perspektywy i tłumaczeń:
+[PL](../pl/noun_role_categories_c3.md#c31-rola-target-i-kierunek-relacji),
+[EN](../eng/noun_role_categories_c3.md#c31-target-and-relationship-direction).
+
+Dodatkowe zmiany C3.1 względem poprzedniego C3:
+
+- Usunięto `inu` i `tori` dla target każdego z czterech czasowników interpersonalnych (8 par).
+- `kotaeru/target`: usunięto 24 abstrakty; dodano 8 osób oraz `email`, `letter` (10 par).
+- Dokładne ID wszystkich zmian są w `reviewed_target_roles` oraz `all_role_pairs` w JSON.
+- Razem z zachowaną migracją C3: **19 dodatków / 35 usunięć**, nie historyczne 9/3.
+- Kategorie placówek, DSL, solver, government, tłumaczenia i produkcyjne wzorce pozostają bez zmian.
+- Produkcyjne wzorce nie wybierają target; fixture dowodzi obsługi dwóch argumentów,
+  ale publikacja takiego wzorca wymaga polskich ramek/tekstów i określenia perspektywy.
+- Manifest Content nadal ma format 2 i rewizję 63; odświeżono hash zmienionego verbs.xml.
+
+## Poprawki po review C3 (poprzedni etap)
 
 - P1: Content 63 wymaga manifestu aktualizacji formatu 2. Starszy klient odrzuca go
   przed pobraniem plików; nowy nadal obsługuje format 1 i Content 62. Zachowano
@@ -294,7 +315,7 @@ ręcznie; wykonano testy usług edycji i istniejące testy kontrolerów.
 
 Wyniki końcowe testów i pomiarów znajdują się poniżej.
 
-### Wyniki testów po review
+### Wyniki testów po review C3 (historyczne, przed C3.1)
 
 - Linux / Python 3.12.14: **3796 passed, 0 skipped, 6373 subtests passed**, 126.84 s.
 - Osobny zestaw Data z `KOTOMI_PATH`: **106 testów, bez pominięć**.
@@ -309,7 +330,7 @@ Wyniki końcowe testów i pomiarów znajdują się poniżej.
 
 [Podsumowanie maszynowe](noun_role_tests_c3.json).
 
-### Wydajność po review
+### Wydajność po review C3 (historyczna baza C3.1)
 
 Końcowy pomiar: 7 naprzemiennych rund przed/po, 21 próbek na operację,
 osobne procesy, stałe ziarno i przypięty CPU, bez równoległych testów. Baseline:
@@ -377,3 +398,20 @@ podaje wynik łączny. Najwyższy pierwotny iloraz po korekcie: 1.105499.
 
 Czasy są medianami median rund; iloraz jest medianą ilorazów parowanych.
 [Surowe pomiary i diagnostyka](noun_role_performance_c3.json).
+
+
+## Wyniki końcowe C3.1
+
+- Linux / Python 3.12.14: **3824 passed, 0 skipped, 6376 subtests passed**, 125.58 s.
+- Osobno Kotomi-Data: **110 testów**, bez pominięć, z niezależnymi kontraktami silnika.
+- Nowe testy: 24 przypadki aplikacji i 4 audytu Data; żadnego dostępu do produkcyjnego słownika.
+- Bramka 8 s: 3824 wywołania, 0 przekroczeń. Walidatory repozytorium, pytań i manifestów: PASS.
+- Wszystkie 122 czasowniki / 253 role / 80 rzeczowników: dokładnie **19 dodatków i 35 usunięć** wobec bazy C3.
+- Cztery formy obu przydawek, 368 prób dostępności oraz tymczasowy zapis/odczyt: PASS.
+- Wobec poprzedniego C3 (Data e51fcbb): 16 pełnych porównań statystyk (4 wzorce × 4 formy) identycznych,
+  wszystkie 92 definicje wzorców i definicje quizów identyczne. Żaden wzorzec nie wybiera target;
+  pozostałe 248 ról zachowuje dopasowania. Nie dodano produkcyjnego wzorca.
+- Macierz aktualizatorów 62/63 wykonana ponownie: stary odrzuca format 2 przed pobraniem,
+  nowy przyjmuje 62 i 63; istniejące dane i niezwiązane pliki pozostają bezpieczne.
+- Wydajność C3.1 wobec C3: 7 naprzemiennych rund × 21 próbek, 40 porównań, maksimum **1.067901** (+6.79%), minimum 0.900574; **0 przekroczeń 10%**. Kod runtime jest identyczny. Wszystkie próbki zapisano w `target_review_c31` istniejącego JSON; starsze pomiary zachowano.
+- Dokładne statystyki i zakres ograniczeń są w `target_review_c31` pliku wyników testów. CI weryfikowane na commitach PR; nie wykonano merge ani publikacji.

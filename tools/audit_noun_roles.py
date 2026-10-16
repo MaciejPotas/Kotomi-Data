@@ -117,8 +117,14 @@ def validate_decisions(before, after, decisions, pairs):
     check_local_scope(before, after)
     old, new = role_attributes(before), role_attributes(after)
     required = {key for key, attrs in old.items() if attrs.get('nouns')}
-    if set(decisions) != required:
-        raise ValueError('Decisions must cover exactly every original nouns role')
+    if not required <= set(decisions) or not set(decisions) <= set(old):
+        raise ValueError('Decisions must cover exactly the original nouns roles and explicit reviewed roles')
+    for key in set(decisions) - required:
+        decision = decisions[key]
+        if (decision.get('scope') != 'C3.1_target' or old[key].get('ref') != 'target'
+                or decision.get('before') != old[key]
+                or decision.get('status') != 'semantic_review'):
+            raise ValueError(f'{key}: additional decision requires a pinned target review')
     observed = {row['key']: row for row in pairs}
     if len(observed) != len(pairs) or set(observed) != set(old):
         raise ValueError('Engine results must cover exactly every role')
@@ -130,9 +136,11 @@ def validate_decisions(before, after, decisions, pairs):
         if decision is not None:
             remaining = target.get('nouns', '').split()
             status = decision.get('status')
-            if status not in {'category', 'retained_exception', 'deferred_sense_review'}:
+            if key in required and status == 'semantic_review':
+                raise ValueError(f'{key}: original nouns role requires a migration status')
+            if status not in {'category', 'retained_exception', 'deferred_sense_review', 'semantic_review'}:
                 raise ValueError(f'{key}: invalid decision status')
-            if bool(remaining) != (status != 'category') or not decision.get('reason_pl'):
+            if (status != 'semantic_review' and bool(remaining) != (status != 'category')) or not decision.get('reason_pl'):
                 raise ValueError(f'{key}: decision documentation contradicts target')
         for field in ('added', 'removed'):
             expected = decision[field] if decision is not None else []
@@ -200,6 +208,8 @@ def main():
         'all_nouns': {i: {'translation': old_n[i].get('translation'), 'before': old_n[i].get('category'),
                         'after': new_n[i].get('category')} for i in old_n},
         'reclassified_nouns': reclassified, 'original_nouns_roles': rows, 'repeated_lists': repeated,
+        'reviewed_target_roles': {key: value for key, value in decisions.items()
+                                 if value.get('scope') == 'C3.1_target'},
         'all_role_pairs': pairs, 'adjective_changes': adjective_changes,
         'added_combinations': sum(len(r['added']) for r in pairs),
         'removed_combinations': sum(len(r['removed']) for r in pairs), 'structural_errors': errors}

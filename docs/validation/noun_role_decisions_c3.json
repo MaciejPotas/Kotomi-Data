@@ -526,5 +526,129 @@
     },
     "added": [],
     "removed": []
+  },
+  "kariru/target": {
+    "scope": "C3.1_target",
+    "before": {
+      "ref": "target",
+      "accepts": "person animal"
+    },
+    "target": {
+      "ref": "target",
+      "accepts": "person"
+    },
+    "added": [],
+    "removed": [
+      "inu",
+      "tori"
+    ],
+    "status": "semantic_review",
+    "reason_pl": "Pożyczanie od osoby: źródło udostępniające przedmiot; zwykłe zwierzę nie jest pożyczkodawcą."
+  },
+  "kasu/target": {
+    "scope": "C3.1_target",
+    "before": {
+      "ref": "target",
+      "accepts": "person animal"
+    },
+    "target": {
+      "ref": "target",
+      "accepts": "person"
+    },
+    "added": [],
+    "removed": [
+      "inu",
+      "tori"
+    ],
+    "status": "semantic_review",
+    "reason_pl": "Pożyczanie osobie z oczekiwaniem zwrotu; nie samo dawanie zwierzęciu przedmiotu."
+  },
+  "morau/target": {
+    "scope": "C3.1_target",
+    "before": {
+      "ref": "target",
+      "accepts": "person animal"
+    },
+    "target": {
+      "ref": "target",
+      "accepts": "person"
+    },
+    "added": [],
+    "removed": [
+      "inu",
+      "tori"
+    ],
+    "status": "semantic_review",
+    "reason_pl": "Otrzymywanie od dawcy w podstawowym znaczeniu interpersonalnym; nie antropomorficzne zwierzę."
+  },
+  "usowotsuku/target": {
+    "scope": "C3.1_target",
+    "before": {
+      "ref": "target",
+      "accepts": "person animal"
+    },
+    "target": {
+      "ref": "target",
+      "accepts": "person"
+    },
+    "added": [],
+    "removed": [
+      "inu",
+      "tori"
+    ],
+    "status": "semantic_review",
+    "reason_pl": "Kłamstwo kierowane do rozmówcy w podstawowym znaczeniu komunikacyjnym; oszukiwanie zwierzęcia zachowaniem nie uzasadnia całej kategorii."
+  },
+  "kotaeru/target": {
+    "scope": "C3.1_target",
+    "before": {
+      "ref": "target",
+      "accepts": "abstract"
+    },
+    "target": {
+      "ref": "target",
+      "accepts": "person",
+      "nouns": "email letter"
+    },
+    "added": [
+      "email",
+      "friend",
+      "hito",
+      "letter",
+      "madogiwazoku",
+      "mother",
+      "programmer",
+      "roujin",
+      "sister",
+      "teacher"
+    ],
+    "removed": [
+      "aji",
+      "ashita",
+      "detarame",
+      "doyoubi",
+      "fukushuu",
+      "getsuyoubi",
+      "hanashi",
+      "inochi",
+      "jikan",
+      "kayoubi",
+      "keikaku",
+      "kikitori",
+      "kinyoubi",
+      "mokuyoubi",
+      "nichiyoubi",
+      "okane",
+      "riyuu",
+      "saisho",
+      "shigoto",
+      "shuumatsu",
+      "suiyoubi",
+      "yakusoku",
+      "yotei",
+      "youji"
+    ],
+    "status": "semantic_review",
+    "reason_pl": "Odpowiadanie osobie albo na list/mail. Całe abstract dopuszczało dni tygodnia, pieniądze i czas, które nie są pytaniami. Pytanie nie ma obecnie osobnego rzeczownika; przyszłe rozszerzenie wymaga przeglądu treści, nie całego abstract."
   }
 }
