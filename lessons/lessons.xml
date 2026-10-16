@@ -1012,9 +1012,7 @@
       <word id="ola_l24_dokkai_nouns_004">
         <dictionary_ref dictionary="nouns" word="naka" />
       </word>
-      <word id="ola_l24_dokkai_nouns_005">
-        <dictionary_ref dictionary="nouns" word="hitori" />
-      </word>
+      <local_word id="ola_l24_dokkai_nouns_005" translation="jedna osoba" kana="ひとり" kanji="一人" romaji="hitori" example="" />
       <word id="ola_l24_dokkai_nouns_006">
         <dictionary_ref dictionary="nouns" word="koe" />
       </word>

@@ -169,8 +169,8 @@ def validate_xml_and_schemas() -> None:
             raise AssertionError(f"Malformed XML in {relative}: {exc}") from exc
 
         if relative == "dictionaries/verbs.xml":
-            from validate_verb_subject_c21 import validate_deployment
-            validate_deployment(root, load_json(
+            from validate_verb_subject_c21 import validate_category_a_deployment
+            validate_category_a_deployment(root, load_json(
                 ROOT / "docs/validation/verb_dictionary_proposals_c1.json"))
 
         if relative in PROJECT_SCHEMA_FILES:
@@ -352,6 +352,8 @@ def validate_counting_data() -> None:
     numbers = ET.parse(ROOT / "dictionaries" / "numbers.xml").getroot()
     counters = ET.parse(ROOT / "dictionaries" / "counters.xml").getroot()
     nouns = ET.parse(ROOT / "dictionaries" / "nouns.xml").getroot()
+    from validate_verb_subject_c21 import validate_hitori_retirement
+    validate_hitori_retirement(nouns, counters)
     interrogatives = ET.parse(
         ROOT / "dictionaries" / "interrogatives.xml"
     ).getroot()

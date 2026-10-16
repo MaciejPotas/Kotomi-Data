@@ -150,3 +150,31 @@ against that baseline and probes other patterns without enumerating quizzes.
 first_question` selects the C2.1 measurement scope while preserving default B3
 behavior. See equivalent [PL](../docs/pl/verb_subject_agreement_c21.md) and
 [ENG](../docs/eng/verb_subject_agreement_c21.md) guides for commands and results.
+
+
+## C2.2 category-based release
+
+Content 62 deploys all category-A proposals. Required CI calls
+`validate_category_a_deployment` and `validate_hitori_retirement`, reusing the
+existing parsed XML. This is structural validation of the released XML against
+historical C1, with no engine import or generation. C2.1's original
+`validate_deployment` mode remains available for historical snapshots; current
+release validation explicitly applies the reviewed C2.2 role overrides.
+
+Unit tests use only synthetic fixtures. Run `python -m unittest discover -s tests -v`
+and both existing validators. Set `KOTOMI_PATH` to enable the synthetic engine contracts.
+
+Full acceptance and paired measurements are manual, outside mandatory CI:
+
+```sh
+python tools/validate_verb_subject_c22_integration.py --kotomi ../Kotomi --data . --baseline-data ../content61 --engine-revision 2656c5a270489141661561701d0a064c8a1dcbd4 --baseline-revision 83c36863ee56f606a00a1f02f38d8d75d0595193 --output docs/validation/verb_subject_c22_validation.json
+python tools/benchmark_verb_subject_c22.py --kotomi ../Kotomi --data . --baseline-data ../content61 --engine-revision 2656c5a270489141661561701d0a064c8a1dcbd4 --baseline-revision 83c36863ee56f606a00a1f02f38d8d75d0595193 --output docs/validation/verb_subject_c22_performance.json
+```
+
+Use a detached Content 61 worktree at the stated baseline. Run benchmarks without
+concurrent tests. The paired driver alternates fresh before/after processes,
+fixes the hash seed, pins the same CPU where available and retains all samples.
+Cold means a fresh project, not an OS cold start. Four representative patterns
+cover load, compatibility, exists, count and first-question latency, cold and warm.
+See the equivalent [PL](../docs/pl/verb_subject_agreement_c22.md) and
+[EN](../docs/eng/verb_subject_agreement_c22.md) release notes.

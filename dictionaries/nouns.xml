@@ -743,10 +743,6 @@
       <relations language="pl" profile="place_we_do" />
       <cases language="pl" nominative="wnętrze" genitive="wnętrza" dative="wnętrzu" accusative="wnętrze" instrumental="wnętrzem" locative="wnętrzu" vocative="wnętrze" />
     </word>
-    <word id="hitori" kana="ひとり" kanji="一人" type="noun" category="person" translation="jedna osoba">
-      <agreement class="feminine" />
-      <cases language="pl" nominative="jedna osoba" genitive="jednej osoby" dative="jednej osobie" accusative="jedną osobę" instrumental="jedną osobą" locative="jednej osobie" vocative="jedna osobo" />
-    </word>
     <word id="koe" kana="こえ" kanji="声" type="noun" category="media" translation="głos">
       <counting classes="general_item">
         <source_forms language="pl">

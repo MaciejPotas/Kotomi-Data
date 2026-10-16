@@ -1,0 +1,6842 @@
+{
+  "scope": "Opt-in real Content acceptance, outside mandatory CI",
+  "engine_revision": "2656c5a270489141661561701d0a064c8a1dcbd4",
+  "baseline_data_revision": "83c36863ee56f606a00a1f02f38d8d75d0595193",
+  "xml": {
+    "new_verbs": 26,
+    "new_translations": 252,
+    "new_roles": 26,
+    "all_a_verbs": 33,
+    "all_a_translations": 308,
+    "all_a_roles": 32,
+    "existing_roles_migrated": 8,
+    "unrelated_xml_and_history_unchanged": true
+  },
+  "project_errors": [],
+  "lesson_errors": [],
+  "subject": {
+    "dictionary": {
+      "before_pairs": 70,
+      "after_pairs": 300,
+      "before": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 70,
+        "generated_sentences": 350,
+        "unique_questions": 70,
+        "unique_answers": 70,
+        "form_names": [
+          "dictionary"
+        ],
+        "context_options": [
+          "present/every_day",
+          "present/neutral",
+          "present/now",
+          "present/this_week",
+          "present/today"
+        ],
+        "word_counts": {
+          "verb@action": 10
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 70,
+          "noun@item → verb@action": 70
+        }
+      },
+      "after": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 300,
+        "generated_sentences": 1500,
+        "unique_questions": 300,
+        "unique_answers": 300,
+        "form_names": [
+          "dictionary"
+        ],
+        "context_options": [
+          "present/every_day",
+          "present/neutral",
+          "present/now",
+          "present/this_week",
+          "present/today"
+        ],
+        "word_counts": {
+          "verb@action": 36
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 300,
+          "noun@item → verb@action": 300
+        }
+      },
+      "new_pairs": [
+        [
+          "aruku",
+          "friend"
+        ],
+        [
+          "aruku",
+          "hito"
+        ],
+        [
+          "aruku",
+          "madogiwazoku"
+        ],
+        [
+          "aruku",
+          "mother"
+        ],
+        [
+          "aruku",
+          "programmer"
+        ],
+        [
+          "aruku",
+          "roujin"
+        ],
+        [
+          "aruku",
+          "sister"
+        ],
+        [
+          "aruku",
+          "teacher"
+        ],
+        [
+          "asobu",
+          "friend"
+        ],
+        [
+          "asobu",
+          "hito"
+        ],
+        [
+          "asobu",
+          "inu"
+        ],
+        [
+          "asobu",
+          "madogiwazoku"
+        ],
+        [
+          "asobu",
+          "mother"
+        ],
+        [
+          "asobu",
+          "programmer"
+        ],
+        [
+          "asobu",
+          "roujin"
+        ],
+        [
+          "asobu",
+          "sister"
+        ],
+        [
+          "asobu",
+          "teacher"
+        ],
+        [
+          "asobu",
+          "tori"
+        ],
+        [
+          "ayamaru",
+          "friend"
+        ],
+        [
+          "ayamaru",
+          "hito"
+        ],
+        [
+          "ayamaru",
+          "madogiwazoku"
+        ],
+        [
+          "ayamaru",
+          "mother"
+        ],
+        [
+          "ayamaru",
+          "programmer"
+        ],
+        [
+          "ayamaru",
+          "roujin"
+        ],
+        [
+          "ayamaru",
+          "sister"
+        ],
+        [
+          "ayamaru",
+          "teacher"
+        ],
+        [
+          "deru",
+          "friend"
+        ],
+        [
+          "deru",
+          "hito"
+        ],
+        [
+          "deru",
+          "inu"
+        ],
+        [
+          "deru",
+          "madogiwazoku"
+        ],
+        [
+          "deru",
+          "mother"
+        ],
+        [
+          "deru",
+          "programmer"
+        ],
+        [
+          "deru",
+          "roujin"
+        ],
+        [
+          "deru",
+          "sister"
+        ],
+        [
+          "deru",
+          "teacher"
+        ],
+        [
+          "deru",
+          "tori"
+        ],
+        [
+          "hairu",
+          "friend"
+        ],
+        [
+          "hairu",
+          "hito"
+        ],
+        [
+          "hairu",
+          "inu"
+        ],
+        [
+          "hairu",
+          "madogiwazoku"
+        ],
+        [
+          "hairu",
+          "mother"
+        ],
+        [
+          "hairu",
+          "programmer"
+        ],
+        [
+          "hairu",
+          "roujin"
+        ],
+        [
+          "hairu",
+          "sister"
+        ],
+        [
+          "hairu",
+          "teacher"
+        ],
+        [
+          "hairu",
+          "tori"
+        ],
+        [
+          "harau",
+          "friend"
+        ],
+        [
+          "harau",
+          "hito"
+        ],
+        [
+          "harau",
+          "madogiwazoku"
+        ],
+        [
+          "harau",
+          "mother"
+        ],
+        [
+          "harau",
+          "programmer"
+        ],
+        [
+          "harau",
+          "roujin"
+        ],
+        [
+          "harau",
+          "sister"
+        ],
+        [
+          "harau",
+          "teacher"
+        ],
+        [
+          "hashiru",
+          "friend"
+        ],
+        [
+          "hashiru",
+          "hito"
+        ],
+        [
+          "hashiru",
+          "inu"
+        ],
+        [
+          "hashiru",
+          "madogiwazoku"
+        ],
+        [
+          "hashiru",
+          "mother"
+        ],
+        [
+          "hashiru",
+          "programmer"
+        ],
+        [
+          "hashiru",
+          "roujin"
+        ],
+        [
+          "hashiru",
+          "sister"
+        ],
+        [
+          "hashiru",
+          "teacher"
+        ],
+        [
+          "hashiru",
+          "tori"
+        ],
+        [
+          "iku",
+          "friend"
+        ],
+        [
+          "iku",
+          "hito"
+        ],
+        [
+          "iku",
+          "inu"
+        ],
+        [
+          "iku",
+          "madogiwazoku"
+        ],
+        [
+          "iku",
+          "mother"
+        ],
+        [
+          "iku",
+          "programmer"
+        ],
+        [
+          "iku",
+          "roujin"
+        ],
+        [
+          "iku",
+          "sister"
+        ],
+        [
+          "iku",
+          "teacher"
+        ],
+        [
+          "iku",
+          "tori"
+        ],
+        [
+          "isogu",
+          "friend"
+        ],
+        [
+          "isogu",
+          "hito"
+        ],
+        [
+          "isogu",
+          "madogiwazoku"
+        ],
+        [
+          "isogu",
+          "mother"
+        ],
+        [
+          "isogu",
+          "programmer"
+        ],
+        [
+          "isogu",
+          "roujin"
+        ],
+        [
+          "isogu",
+          "sister"
+        ],
+        [
+          "isogu",
+          "teacher"
+        ],
+        [
+          "kaeru",
+          "friend"
+        ],
+        [
+          "kaeru",
+          "hito"
+        ],
+        [
+          "kaeru",
+          "inu"
+        ],
+        [
+          "kaeru",
+          "madogiwazoku"
+        ],
+        [
+          "kaeru",
+          "mother"
+        ],
+        [
+          "kaeru",
+          "programmer"
+        ],
+        [
+          "kaeru",
+          "roujin"
+        ],
+        [
+          "kaeru",
+          "sister"
+        ],
+        [
+          "kaeru",
+          "teacher"
+        ],
+        [
+          "kaeru",
+          "tori"
+        ],
+        [
+          "kau",
+          "friend"
+        ],
+        [
+          "kau",
+          "hito"
+        ],
+        [
+          "kau",
+          "madogiwazoku"
+        ],
+        [
+          "kau",
+          "mother"
+        ],
+        [
+          "kau",
+          "programmer"
+        ],
+        [
+          "kau",
+          "roujin"
+        ],
+        [
+          "kau",
+          "sister"
+        ],
+        [
+          "kau",
+          "teacher"
+        ],
+        [
+          "kikokusuru",
+          "friend"
+        ],
+        [
+          "kikokusuru",
+          "hito"
+        ],
+        [
+          "kikokusuru",
+          "madogiwazoku"
+        ],
+        [
+          "kikokusuru",
+          "mother"
+        ],
+        [
+          "kikokusuru",
+          "programmer"
+        ],
+        [
+          "kikokusuru",
+          "roujin"
+        ],
+        [
+          "kikokusuru",
+          "sister"
+        ],
+        [
+          "kikokusuru",
+          "teacher"
+        ],
+        [
+          "kotaeru",
+          "friend"
+        ],
+        [
+          "kotaeru",
+          "hito"
+        ],
+        [
+          "kotaeru",
+          "madogiwazoku"
+        ],
+        [
+          "kotaeru",
+          "mother"
+        ],
+        [
+          "kotaeru",
+          "programmer"
+        ],
+        [
+          "kotaeru",
+          "roujin"
+        ],
+        [
+          "kotaeru",
+          "sister"
+        ],
+        [
+          "kotaeru",
+          "teacher"
+        ],
+        [
+          "kuru",
+          "friend"
+        ],
+        [
+          "kuru",
+          "hito"
+        ],
+        [
+          "kuru",
+          "inu"
+        ],
+        [
+          "kuru",
+          "madogiwazoku"
+        ],
+        [
+          "kuru",
+          "mother"
+        ],
+        [
+          "kuru",
+          "programmer"
+        ],
+        [
+          "kuru",
+          "roujin"
+        ],
+        [
+          "kuru",
+          "sister"
+        ],
+        [
+          "kuru",
+          "teacher"
+        ],
+        [
+          "kuru",
+          "tori"
+        ],
+        [
+          "matsu",
+          "friend"
+        ],
+        [
+          "matsu",
+          "hito"
+        ],
+        [
+          "matsu",
+          "inu"
+        ],
+        [
+          "matsu",
+          "madogiwazoku"
+        ],
+        [
+          "matsu",
+          "mother"
+        ],
+        [
+          "matsu",
+          "programmer"
+        ],
+        [
+          "matsu",
+          "roujin"
+        ],
+        [
+          "matsu",
+          "sister"
+        ],
+        [
+          "matsu",
+          "teacher"
+        ],
+        [
+          "matsu",
+          "tori"
+        ],
+        [
+          "nomu",
+          "friend"
+        ],
+        [
+          "nomu",
+          "hito"
+        ],
+        [
+          "nomu",
+          "inu"
+        ],
+        [
+          "nomu",
+          "madogiwazoku"
+        ],
+        [
+          "nomu",
+          "mother"
+        ],
+        [
+          "nomu",
+          "programmer"
+        ],
+        [
+          "nomu",
+          "roujin"
+        ],
+        [
+          "nomu",
+          "sister"
+        ],
+        [
+          "nomu",
+          "teacher"
+        ],
+        [
+          "nomu",
+          "tori"
+        ],
+        [
+          "okoru",
+          "friend"
+        ],
+        [
+          "okoru",
+          "hito"
+        ],
+        [
+          "okoru",
+          "madogiwazoku"
+        ],
+        [
+          "okoru",
+          "mother"
+        ],
+        [
+          "okoru",
+          "programmer"
+        ],
+        [
+          "okoru",
+          "roujin"
+        ],
+        [
+          "okoru",
+          "sister"
+        ],
+        [
+          "okoru",
+          "teacher"
+        ],
+        [
+          "omou",
+          "friend"
+        ],
+        [
+          "omou",
+          "hito"
+        ],
+        [
+          "omou",
+          "madogiwazoku"
+        ],
+        [
+          "omou",
+          "mother"
+        ],
+        [
+          "omou",
+          "programmer"
+        ],
+        [
+          "omou",
+          "roujin"
+        ],
+        [
+          "omou",
+          "sister"
+        ],
+        [
+          "omou",
+          "teacher"
+        ],
+        [
+          "oyogu",
+          "friend"
+        ],
+        [
+          "oyogu",
+          "hito"
+        ],
+        [
+          "oyogu",
+          "inu"
+        ],
+        [
+          "oyogu",
+          "madogiwazoku"
+        ],
+        [
+          "oyogu",
+          "mother"
+        ],
+        [
+          "oyogu",
+          "programmer"
+        ],
+        [
+          "oyogu",
+          "roujin"
+        ],
+        [
+          "oyogu",
+          "sister"
+        ],
+        [
+          "oyogu",
+          "teacher"
+        ],
+        [
+          "oyogu",
+          "tori"
+        ],
+        [
+          "renshuusuru",
+          "friend"
+        ],
+        [
+          "renshuusuru",
+          "hito"
+        ],
+        [
+          "renshuusuru",
+          "madogiwazoku"
+        ],
+        [
+          "renshuusuru",
+          "mother"
+        ],
+        [
+          "renshuusuru",
+          "programmer"
+        ],
+        [
+          "renshuusuru",
+          "roujin"
+        ],
+        [
+          "renshuusuru",
+          "sister"
+        ],
+        [
+          "renshuusuru",
+          "teacher"
+        ],
+        [
+          "shinjiru",
+          "friend"
+        ],
+        [
+          "shinjiru",
+          "hito"
+        ],
+        [
+          "shinjiru",
+          "madogiwazoku"
+        ],
+        [
+          "shinjiru",
+          "mother"
+        ],
+        [
+          "shinjiru",
+          "programmer"
+        ],
+        [
+          "shinjiru",
+          "roujin"
+        ],
+        [
+          "shinjiru",
+          "sister"
+        ],
+        [
+          "shinjiru",
+          "teacher"
+        ],
+        [
+          "taberu",
+          "friend"
+        ],
+        [
+          "taberu",
+          "hito"
+        ],
+        [
+          "taberu",
+          "inu"
+        ],
+        [
+          "taberu",
+          "madogiwazoku"
+        ],
+        [
+          "taberu",
+          "mother"
+        ],
+        [
+          "taberu",
+          "programmer"
+        ],
+        [
+          "taberu",
+          "roujin"
+        ],
+        [
+          "taberu",
+          "sister"
+        ],
+        [
+          "taberu",
+          "teacher"
+        ],
+        [
+          "taberu",
+          "tori"
+        ],
+        [
+          "undousuru",
+          "friend"
+        ],
+        [
+          "undousuru",
+          "hito"
+        ],
+        [
+          "undousuru",
+          "madogiwazoku"
+        ],
+        [
+          "undousuru",
+          "mother"
+        ],
+        [
+          "undousuru",
+          "programmer"
+        ],
+        [
+          "undousuru",
+          "roujin"
+        ],
+        [
+          "undousuru",
+          "sister"
+        ],
+        [
+          "undousuru",
+          "teacher"
+        ],
+        [
+          "usowotsuku",
+          "friend"
+        ],
+        [
+          "usowotsuku",
+          "hito"
+        ],
+        [
+          "usowotsuku",
+          "madogiwazoku"
+        ],
+        [
+          "usowotsuku",
+          "mother"
+        ],
+        [
+          "usowotsuku",
+          "programmer"
+        ],
+        [
+          "usowotsuku",
+          "roujin"
+        ],
+        [
+          "usowotsuku",
+          "sister"
+        ],
+        [
+          "usowotsuku",
+          "teacher"
+        ],
+        [
+          "utau",
+          "friend"
+        ],
+        [
+          "utau",
+          "hito"
+        ],
+        [
+          "utau",
+          "madogiwazoku"
+        ],
+        [
+          "utau",
+          "mother"
+        ],
+        [
+          "utau",
+          "programmer"
+        ],
+        [
+          "utau",
+          "roujin"
+        ],
+        [
+          "utau",
+          "sister"
+        ],
+        [
+          "utau",
+          "teacher"
+        ],
+        [
+          "warau",
+          "friend"
+        ],
+        [
+          "warau",
+          "hito"
+        ],
+        [
+          "warau",
+          "madogiwazoku"
+        ],
+        [
+          "warau",
+          "mother"
+        ],
+        [
+          "warau",
+          "programmer"
+        ],
+        [
+          "warau",
+          "roujin"
+        ],
+        [
+          "warau",
+          "sister"
+        ],
+        [
+          "warau",
+          "teacher"
+        ]
+      ]
+    },
+    "plain_negative": {
+      "before_pairs": 70,
+      "after_pairs": 300,
+      "before": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 70,
+        "generated_sentences": 350,
+        "unique_questions": 70,
+        "unique_answers": 70,
+        "form_names": [
+          "plain_negative"
+        ],
+        "context_options": [
+          "present/every_day",
+          "present/neutral",
+          "present/now",
+          "present/this_week",
+          "present/today"
+        ],
+        "word_counts": {
+          "verb@action": 10
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 70,
+          "noun@item → verb@action": 70
+        }
+      },
+      "after": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 300,
+        "generated_sentences": 1500,
+        "unique_questions": 300,
+        "unique_answers": 300,
+        "form_names": [
+          "plain_negative"
+        ],
+        "context_options": [
+          "present/every_day",
+          "present/neutral",
+          "present/now",
+          "present/this_week",
+          "present/today"
+        ],
+        "word_counts": {
+          "verb@action": 36
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 300,
+          "noun@item → verb@action": 300
+        }
+      },
+      "new_pairs": [
+        [
+          "aruku",
+          "friend"
+        ],
+        [
+          "aruku",
+          "hito"
+        ],
+        [
+          "aruku",
+          "madogiwazoku"
+        ],
+        [
+          "aruku",
+          "mother"
+        ],
+        [
+          "aruku",
+          "programmer"
+        ],
+        [
+          "aruku",
+          "roujin"
+        ],
+        [
+          "aruku",
+          "sister"
+        ],
+        [
+          "aruku",
+          "teacher"
+        ],
+        [
+          "asobu",
+          "friend"
+        ],
+        [
+          "asobu",
+          "hito"
+        ],
+        [
+          "asobu",
+          "inu"
+        ],
+        [
+          "asobu",
+          "madogiwazoku"
+        ],
+        [
+          "asobu",
+          "mother"
+        ],
+        [
+          "asobu",
+          "programmer"
+        ],
+        [
+          "asobu",
+          "roujin"
+        ],
+        [
+          "asobu",
+          "sister"
+        ],
+        [
+          "asobu",
+          "teacher"
+        ],
+        [
+          "asobu",
+          "tori"
+        ],
+        [
+          "ayamaru",
+          "friend"
+        ],
+        [
+          "ayamaru",
+          "hito"
+        ],
+        [
+          "ayamaru",
+          "madogiwazoku"
+        ],
+        [
+          "ayamaru",
+          "mother"
+        ],
+        [
+          "ayamaru",
+          "programmer"
+        ],
+        [
+          "ayamaru",
+          "roujin"
+        ],
+        [
+          "ayamaru",
+          "sister"
+        ],
+        [
+          "ayamaru",
+          "teacher"
+        ],
+        [
+          "deru",
+          "friend"
+        ],
+        [
+          "deru",
+          "hito"
+        ],
+        [
+          "deru",
+          "inu"
+        ],
+        [
+          "deru",
+          "madogiwazoku"
+        ],
+        [
+          "deru",
+          "mother"
+        ],
+        [
+          "deru",
+          "programmer"
+        ],
+        [
+          "deru",
+          "roujin"
+        ],
+        [
+          "deru",
+          "sister"
+        ],
+        [
+          "deru",
+          "teacher"
+        ],
+        [
+          "deru",
+          "tori"
+        ],
+        [
+          "hairu",
+          "friend"
+        ],
+        [
+          "hairu",
+          "hito"
+        ],
+        [
+          "hairu",
+          "inu"
+        ],
+        [
+          "hairu",
+          "madogiwazoku"
+        ],
+        [
+          "hairu",
+          "mother"
+        ],
+        [
+          "hairu",
+          "programmer"
+        ],
+        [
+          "hairu",
+          "roujin"
+        ],
+        [
+          "hairu",
+          "sister"
+        ],
+        [
+          "hairu",
+          "teacher"
+        ],
+        [
+          "hairu",
+          "tori"
+        ],
+        [
+          "harau",
+          "friend"
+        ],
+        [
+          "harau",
+          "hito"
+        ],
+        [
+          "harau",
+          "madogiwazoku"
+        ],
+        [
+          "harau",
+          "mother"
+        ],
+        [
+          "harau",
+          "programmer"
+        ],
+        [
+          "harau",
+          "roujin"
+        ],
+        [
+          "harau",
+          "sister"
+        ],
+        [
+          "harau",
+          "teacher"
+        ],
+        [
+          "hashiru",
+          "friend"
+        ],
+        [
+          "hashiru",
+          "hito"
+        ],
+        [
+          "hashiru",
+          "inu"
+        ],
+        [
+          "hashiru",
+          "madogiwazoku"
+        ],
+        [
+          "hashiru",
+          "mother"
+        ],
+        [
+          "hashiru",
+          "programmer"
+        ],
+        [
+          "hashiru",
+          "roujin"
+        ],
+        [
+          "hashiru",
+          "sister"
+        ],
+        [
+          "hashiru",
+          "teacher"
+        ],
+        [
+          "hashiru",
+          "tori"
+        ],
+        [
+          "iku",
+          "friend"
+        ],
+        [
+          "iku",
+          "hito"
+        ],
+        [
+          "iku",
+          "inu"
+        ],
+        [
+          "iku",
+          "madogiwazoku"
+        ],
+        [
+          "iku",
+          "mother"
+        ],
+        [
+          "iku",
+          "programmer"
+        ],
+        [
+          "iku",
+          "roujin"
+        ],
+        [
+          "iku",
+          "sister"
+        ],
+        [
+          "iku",
+          "teacher"
+        ],
+        [
+          "iku",
+          "tori"
+        ],
+        [
+          "isogu",
+          "friend"
+        ],
+        [
+          "isogu",
+          "hito"
+        ],
+        [
+          "isogu",
+          "madogiwazoku"
+        ],
+        [
+          "isogu",
+          "mother"
+        ],
+        [
+          "isogu",
+          "programmer"
+        ],
+        [
+          "isogu",
+          "roujin"
+        ],
+        [
+          "isogu",
+          "sister"
+        ],
+        [
+          "isogu",
+          "teacher"
+        ],
+        [
+          "kaeru",
+          "friend"
+        ],
+        [
+          "kaeru",
+          "hito"
+        ],
+        [
+          "kaeru",
+          "inu"
+        ],
+        [
+          "kaeru",
+          "madogiwazoku"
+        ],
+        [
+          "kaeru",
+          "mother"
+        ],
+        [
+          "kaeru",
+          "programmer"
+        ],
+        [
+          "kaeru",
+          "roujin"
+        ],
+        [
+          "kaeru",
+          "sister"
+        ],
+        [
+          "kaeru",
+          "teacher"
+        ],
+        [
+          "kaeru",
+          "tori"
+        ],
+        [
+          "kau",
+          "friend"
+        ],
+        [
+          "kau",
+          "hito"
+        ],
+        [
+          "kau",
+          "madogiwazoku"
+        ],
+        [
+          "kau",
+          "mother"
+        ],
+        [
+          "kau",
+          "programmer"
+        ],
+        [
+          "kau",
+          "roujin"
+        ],
+        [
+          "kau",
+          "sister"
+        ],
+        [
+          "kau",
+          "teacher"
+        ],
+        [
+          "kikokusuru",
+          "friend"
+        ],
+        [
+          "kikokusuru",
+          "hito"
+        ],
+        [
+          "kikokusuru",
+          "madogiwazoku"
+        ],
+        [
+          "kikokusuru",
+          "mother"
+        ],
+        [
+          "kikokusuru",
+          "programmer"
+        ],
+        [
+          "kikokusuru",
+          "roujin"
+        ],
+        [
+          "kikokusuru",
+          "sister"
+        ],
+        [
+          "kikokusuru",
+          "teacher"
+        ],
+        [
+          "kotaeru",
+          "friend"
+        ],
+        [
+          "kotaeru",
+          "hito"
+        ],
+        [
+          "kotaeru",
+          "madogiwazoku"
+        ],
+        [
+          "kotaeru",
+          "mother"
+        ],
+        [
+          "kotaeru",
+          "programmer"
+        ],
+        [
+          "kotaeru",
+          "roujin"
+        ],
+        [
+          "kotaeru",
+          "sister"
+        ],
+        [
+          "kotaeru",
+          "teacher"
+        ],
+        [
+          "kuru",
+          "friend"
+        ],
+        [
+          "kuru",
+          "hito"
+        ],
+        [
+          "kuru",
+          "inu"
+        ],
+        [
+          "kuru",
+          "madogiwazoku"
+        ],
+        [
+          "kuru",
+          "mother"
+        ],
+        [
+          "kuru",
+          "programmer"
+        ],
+        [
+          "kuru",
+          "roujin"
+        ],
+        [
+          "kuru",
+          "sister"
+        ],
+        [
+          "kuru",
+          "teacher"
+        ],
+        [
+          "kuru",
+          "tori"
+        ],
+        [
+          "matsu",
+          "friend"
+        ],
+        [
+          "matsu",
+          "hito"
+        ],
+        [
+          "matsu",
+          "inu"
+        ],
+        [
+          "matsu",
+          "madogiwazoku"
+        ],
+        [
+          "matsu",
+          "mother"
+        ],
+        [
+          "matsu",
+          "programmer"
+        ],
+        [
+          "matsu",
+          "roujin"
+        ],
+        [
+          "matsu",
+          "sister"
+        ],
+        [
+          "matsu",
+          "teacher"
+        ],
+        [
+          "matsu",
+          "tori"
+        ],
+        [
+          "nomu",
+          "friend"
+        ],
+        [
+          "nomu",
+          "hito"
+        ],
+        [
+          "nomu",
+          "inu"
+        ],
+        [
+          "nomu",
+          "madogiwazoku"
+        ],
+        [
+          "nomu",
+          "mother"
+        ],
+        [
+          "nomu",
+          "programmer"
+        ],
+        [
+          "nomu",
+          "roujin"
+        ],
+        [
+          "nomu",
+          "sister"
+        ],
+        [
+          "nomu",
+          "teacher"
+        ],
+        [
+          "nomu",
+          "tori"
+        ],
+        [
+          "okoru",
+          "friend"
+        ],
+        [
+          "okoru",
+          "hito"
+        ],
+        [
+          "okoru",
+          "madogiwazoku"
+        ],
+        [
+          "okoru",
+          "mother"
+        ],
+        [
+          "okoru",
+          "programmer"
+        ],
+        [
+          "okoru",
+          "roujin"
+        ],
+        [
+          "okoru",
+          "sister"
+        ],
+        [
+          "okoru",
+          "teacher"
+        ],
+        [
+          "omou",
+          "friend"
+        ],
+        [
+          "omou",
+          "hito"
+        ],
+        [
+          "omou",
+          "madogiwazoku"
+        ],
+        [
+          "omou",
+          "mother"
+        ],
+        [
+          "omou",
+          "programmer"
+        ],
+        [
+          "omou",
+          "roujin"
+        ],
+        [
+          "omou",
+          "sister"
+        ],
+        [
+          "omou",
+          "teacher"
+        ],
+        [
+          "oyogu",
+          "friend"
+        ],
+        [
+          "oyogu",
+          "hito"
+        ],
+        [
+          "oyogu",
+          "inu"
+        ],
+        [
+          "oyogu",
+          "madogiwazoku"
+        ],
+        [
+          "oyogu",
+          "mother"
+        ],
+        [
+          "oyogu",
+          "programmer"
+        ],
+        [
+          "oyogu",
+          "roujin"
+        ],
+        [
+          "oyogu",
+          "sister"
+        ],
+        [
+          "oyogu",
+          "teacher"
+        ],
+        [
+          "oyogu",
+          "tori"
+        ],
+        [
+          "renshuusuru",
+          "friend"
+        ],
+        [
+          "renshuusuru",
+          "hito"
+        ],
+        [
+          "renshuusuru",
+          "madogiwazoku"
+        ],
+        [
+          "renshuusuru",
+          "mother"
+        ],
+        [
+          "renshuusuru",
+          "programmer"
+        ],
+        [
+          "renshuusuru",
+          "roujin"
+        ],
+        [
+          "renshuusuru",
+          "sister"
+        ],
+        [
+          "renshuusuru",
+          "teacher"
+        ],
+        [
+          "shinjiru",
+          "friend"
+        ],
+        [
+          "shinjiru",
+          "hito"
+        ],
+        [
+          "shinjiru",
+          "madogiwazoku"
+        ],
+        [
+          "shinjiru",
+          "mother"
+        ],
+        [
+          "shinjiru",
+          "programmer"
+        ],
+        [
+          "shinjiru",
+          "roujin"
+        ],
+        [
+          "shinjiru",
+          "sister"
+        ],
+        [
+          "shinjiru",
+          "teacher"
+        ],
+        [
+          "taberu",
+          "friend"
+        ],
+        [
+          "taberu",
+          "hito"
+        ],
+        [
+          "taberu",
+          "inu"
+        ],
+        [
+          "taberu",
+          "madogiwazoku"
+        ],
+        [
+          "taberu",
+          "mother"
+        ],
+        [
+          "taberu",
+          "programmer"
+        ],
+        [
+          "taberu",
+          "roujin"
+        ],
+        [
+          "taberu",
+          "sister"
+        ],
+        [
+          "taberu",
+          "teacher"
+        ],
+        [
+          "taberu",
+          "tori"
+        ],
+        [
+          "undousuru",
+          "friend"
+        ],
+        [
+          "undousuru",
+          "hito"
+        ],
+        [
+          "undousuru",
+          "madogiwazoku"
+        ],
+        [
+          "undousuru",
+          "mother"
+        ],
+        [
+          "undousuru",
+          "programmer"
+        ],
+        [
+          "undousuru",
+          "roujin"
+        ],
+        [
+          "undousuru",
+          "sister"
+        ],
+        [
+          "undousuru",
+          "teacher"
+        ],
+        [
+          "usowotsuku",
+          "friend"
+        ],
+        [
+          "usowotsuku",
+          "hito"
+        ],
+        [
+          "usowotsuku",
+          "madogiwazoku"
+        ],
+        [
+          "usowotsuku",
+          "mother"
+        ],
+        [
+          "usowotsuku",
+          "programmer"
+        ],
+        [
+          "usowotsuku",
+          "roujin"
+        ],
+        [
+          "usowotsuku",
+          "sister"
+        ],
+        [
+          "usowotsuku",
+          "teacher"
+        ],
+        [
+          "utau",
+          "friend"
+        ],
+        [
+          "utau",
+          "hito"
+        ],
+        [
+          "utau",
+          "madogiwazoku"
+        ],
+        [
+          "utau",
+          "mother"
+        ],
+        [
+          "utau",
+          "programmer"
+        ],
+        [
+          "utau",
+          "roujin"
+        ],
+        [
+          "utau",
+          "sister"
+        ],
+        [
+          "utau",
+          "teacher"
+        ],
+        [
+          "warau",
+          "friend"
+        ],
+        [
+          "warau",
+          "hito"
+        ],
+        [
+          "warau",
+          "madogiwazoku"
+        ],
+        [
+          "warau",
+          "mother"
+        ],
+        [
+          "warau",
+          "programmer"
+        ],
+        [
+          "warau",
+          "roujin"
+        ],
+        [
+          "warau",
+          "sister"
+        ],
+        [
+          "warau",
+          "teacher"
+        ]
+      ]
+    },
+    "past_plain": {
+      "before_pairs": 70,
+      "after_pairs": 300,
+      "before": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 70,
+        "generated_sentences": 350,
+        "unique_questions": 70,
+        "unique_answers": 70,
+        "form_names": [
+          "past_plain"
+        ],
+        "context_options": [
+          "past/day_before_yesterday",
+          "past/last_week",
+          "past/recently",
+          "past/two_weeks_ago",
+          "past/yesterday"
+        ],
+        "word_counts": {
+          "verb@action": 10
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 70,
+          "noun@item → verb@action": 70
+        }
+      },
+      "after": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 300,
+        "generated_sentences": 1500,
+        "unique_questions": 300,
+        "unique_answers": 300,
+        "form_names": [
+          "past_plain"
+        ],
+        "context_options": [
+          "past/day_before_yesterday",
+          "past/last_week",
+          "past/recently",
+          "past/two_weeks_ago",
+          "past/yesterday"
+        ],
+        "word_counts": {
+          "verb@action": 36
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 300,
+          "noun@item → verb@action": 300
+        }
+      },
+      "new_pairs": [
+        [
+          "aruku",
+          "friend"
+        ],
+        [
+          "aruku",
+          "hito"
+        ],
+        [
+          "aruku",
+          "madogiwazoku"
+        ],
+        [
+          "aruku",
+          "mother"
+        ],
+        [
+          "aruku",
+          "programmer"
+        ],
+        [
+          "aruku",
+          "roujin"
+        ],
+        [
+          "aruku",
+          "sister"
+        ],
+        [
+          "aruku",
+          "teacher"
+        ],
+        [
+          "asobu",
+          "friend"
+        ],
+        [
+          "asobu",
+          "hito"
+        ],
+        [
+          "asobu",
+          "inu"
+        ],
+        [
+          "asobu",
+          "madogiwazoku"
+        ],
+        [
+          "asobu",
+          "mother"
+        ],
+        [
+          "asobu",
+          "programmer"
+        ],
+        [
+          "asobu",
+          "roujin"
+        ],
+        [
+          "asobu",
+          "sister"
+        ],
+        [
+          "asobu",
+          "teacher"
+        ],
+        [
+          "asobu",
+          "tori"
+        ],
+        [
+          "ayamaru",
+          "friend"
+        ],
+        [
+          "ayamaru",
+          "hito"
+        ],
+        [
+          "ayamaru",
+          "madogiwazoku"
+        ],
+        [
+          "ayamaru",
+          "mother"
+        ],
+        [
+          "ayamaru",
+          "programmer"
+        ],
+        [
+          "ayamaru",
+          "roujin"
+        ],
+        [
+          "ayamaru",
+          "sister"
+        ],
+        [
+          "ayamaru",
+          "teacher"
+        ],
+        [
+          "deru",
+          "friend"
+        ],
+        [
+          "deru",
+          "hito"
+        ],
+        [
+          "deru",
+          "inu"
+        ],
+        [
+          "deru",
+          "madogiwazoku"
+        ],
+        [
+          "deru",
+          "mother"
+        ],
+        [
+          "deru",
+          "programmer"
+        ],
+        [
+          "deru",
+          "roujin"
+        ],
+        [
+          "deru",
+          "sister"
+        ],
+        [
+          "deru",
+          "teacher"
+        ],
+        [
+          "deru",
+          "tori"
+        ],
+        [
+          "hairu",
+          "friend"
+        ],
+        [
+          "hairu",
+          "hito"
+        ],
+        [
+          "hairu",
+          "inu"
+        ],
+        [
+          "hairu",
+          "madogiwazoku"
+        ],
+        [
+          "hairu",
+          "mother"
+        ],
+        [
+          "hairu",
+          "programmer"
+        ],
+        [
+          "hairu",
+          "roujin"
+        ],
+        [
+          "hairu",
+          "sister"
+        ],
+        [
+          "hairu",
+          "teacher"
+        ],
+        [
+          "hairu",
+          "tori"
+        ],
+        [
+          "harau",
+          "friend"
+        ],
+        [
+          "harau",
+          "hito"
+        ],
+        [
+          "harau",
+          "madogiwazoku"
+        ],
+        [
+          "harau",
+          "mother"
+        ],
+        [
+          "harau",
+          "programmer"
+        ],
+        [
+          "harau",
+          "roujin"
+        ],
+        [
+          "harau",
+          "sister"
+        ],
+        [
+          "harau",
+          "teacher"
+        ],
+        [
+          "hashiru",
+          "friend"
+        ],
+        [
+          "hashiru",
+          "hito"
+        ],
+        [
+          "hashiru",
+          "inu"
+        ],
+        [
+          "hashiru",
+          "madogiwazoku"
+        ],
+        [
+          "hashiru",
+          "mother"
+        ],
+        [
+          "hashiru",
+          "programmer"
+        ],
+        [
+          "hashiru",
+          "roujin"
+        ],
+        [
+          "hashiru",
+          "sister"
+        ],
+        [
+          "hashiru",
+          "teacher"
+        ],
+        [
+          "hashiru",
+          "tori"
+        ],
+        [
+          "iku",
+          "friend"
+        ],
+        [
+          "iku",
+          "hito"
+        ],
+        [
+          "iku",
+          "inu"
+        ],
+        [
+          "iku",
+          "madogiwazoku"
+        ],
+        [
+          "iku",
+          "mother"
+        ],
+        [
+          "iku",
+          "programmer"
+        ],
+        [
+          "iku",
+          "roujin"
+        ],
+        [
+          "iku",
+          "sister"
+        ],
+        [
+          "iku",
+          "teacher"
+        ],
+        [
+          "iku",
+          "tori"
+        ],
+        [
+          "isogu",
+          "friend"
+        ],
+        [
+          "isogu",
+          "hito"
+        ],
+        [
+          "isogu",
+          "madogiwazoku"
+        ],
+        [
+          "isogu",
+          "mother"
+        ],
+        [
+          "isogu",
+          "programmer"
+        ],
+        [
+          "isogu",
+          "roujin"
+        ],
+        [
+          "isogu",
+          "sister"
+        ],
+        [
+          "isogu",
+          "teacher"
+        ],
+        [
+          "kaeru",
+          "friend"
+        ],
+        [
+          "kaeru",
+          "hito"
+        ],
+        [
+          "kaeru",
+          "inu"
+        ],
+        [
+          "kaeru",
+          "madogiwazoku"
+        ],
+        [
+          "kaeru",
+          "mother"
+        ],
+        [
+          "kaeru",
+          "programmer"
+        ],
+        [
+          "kaeru",
+          "roujin"
+        ],
+        [
+          "kaeru",
+          "sister"
+        ],
+        [
+          "kaeru",
+          "teacher"
+        ],
+        [
+          "kaeru",
+          "tori"
+        ],
+        [
+          "kau",
+          "friend"
+        ],
+        [
+          "kau",
+          "hito"
+        ],
+        [
+          "kau",
+          "madogiwazoku"
+        ],
+        [
+          "kau",
+          "mother"
+        ],
+        [
+          "kau",
+          "programmer"
+        ],
+        [
+          "kau",
+          "roujin"
+        ],
+        [
+          "kau",
+          "sister"
+        ],
+        [
+          "kau",
+          "teacher"
+        ],
+        [
+          "kikokusuru",
+          "friend"
+        ],
+        [
+          "kikokusuru",
+          "hito"
+        ],
+        [
+          "kikokusuru",
+          "madogiwazoku"
+        ],
+        [
+          "kikokusuru",
+          "mother"
+        ],
+        [
+          "kikokusuru",
+          "programmer"
+        ],
+        [
+          "kikokusuru",
+          "roujin"
+        ],
+        [
+          "kikokusuru",
+          "sister"
+        ],
+        [
+          "kikokusuru",
+          "teacher"
+        ],
+        [
+          "kotaeru",
+          "friend"
+        ],
+        [
+          "kotaeru",
+          "hito"
+        ],
+        [
+          "kotaeru",
+          "madogiwazoku"
+        ],
+        [
+          "kotaeru",
+          "mother"
+        ],
+        [
+          "kotaeru",
+          "programmer"
+        ],
+        [
+          "kotaeru",
+          "roujin"
+        ],
+        [
+          "kotaeru",
+          "sister"
+        ],
+        [
+          "kotaeru",
+          "teacher"
+        ],
+        [
+          "kuru",
+          "friend"
+        ],
+        [
+          "kuru",
+          "hito"
+        ],
+        [
+          "kuru",
+          "inu"
+        ],
+        [
+          "kuru",
+          "madogiwazoku"
+        ],
+        [
+          "kuru",
+          "mother"
+        ],
+        [
+          "kuru",
+          "programmer"
+        ],
+        [
+          "kuru",
+          "roujin"
+        ],
+        [
+          "kuru",
+          "sister"
+        ],
+        [
+          "kuru",
+          "teacher"
+        ],
+        [
+          "kuru",
+          "tori"
+        ],
+        [
+          "matsu",
+          "friend"
+        ],
+        [
+          "matsu",
+          "hito"
+        ],
+        [
+          "matsu",
+          "inu"
+        ],
+        [
+          "matsu",
+          "madogiwazoku"
+        ],
+        [
+          "matsu",
+          "mother"
+        ],
+        [
+          "matsu",
+          "programmer"
+        ],
+        [
+          "matsu",
+          "roujin"
+        ],
+        [
+          "matsu",
+          "sister"
+        ],
+        [
+          "matsu",
+          "teacher"
+        ],
+        [
+          "matsu",
+          "tori"
+        ],
+        [
+          "nomu",
+          "friend"
+        ],
+        [
+          "nomu",
+          "hito"
+        ],
+        [
+          "nomu",
+          "inu"
+        ],
+        [
+          "nomu",
+          "madogiwazoku"
+        ],
+        [
+          "nomu",
+          "mother"
+        ],
+        [
+          "nomu",
+          "programmer"
+        ],
+        [
+          "nomu",
+          "roujin"
+        ],
+        [
+          "nomu",
+          "sister"
+        ],
+        [
+          "nomu",
+          "teacher"
+        ],
+        [
+          "nomu",
+          "tori"
+        ],
+        [
+          "okoru",
+          "friend"
+        ],
+        [
+          "okoru",
+          "hito"
+        ],
+        [
+          "okoru",
+          "madogiwazoku"
+        ],
+        [
+          "okoru",
+          "mother"
+        ],
+        [
+          "okoru",
+          "programmer"
+        ],
+        [
+          "okoru",
+          "roujin"
+        ],
+        [
+          "okoru",
+          "sister"
+        ],
+        [
+          "okoru",
+          "teacher"
+        ],
+        [
+          "omou",
+          "friend"
+        ],
+        [
+          "omou",
+          "hito"
+        ],
+        [
+          "omou",
+          "madogiwazoku"
+        ],
+        [
+          "omou",
+          "mother"
+        ],
+        [
+          "omou",
+          "programmer"
+        ],
+        [
+          "omou",
+          "roujin"
+        ],
+        [
+          "omou",
+          "sister"
+        ],
+        [
+          "omou",
+          "teacher"
+        ],
+        [
+          "oyogu",
+          "friend"
+        ],
+        [
+          "oyogu",
+          "hito"
+        ],
+        [
+          "oyogu",
+          "inu"
+        ],
+        [
+          "oyogu",
+          "madogiwazoku"
+        ],
+        [
+          "oyogu",
+          "mother"
+        ],
+        [
+          "oyogu",
+          "programmer"
+        ],
+        [
+          "oyogu",
+          "roujin"
+        ],
+        [
+          "oyogu",
+          "sister"
+        ],
+        [
+          "oyogu",
+          "teacher"
+        ],
+        [
+          "oyogu",
+          "tori"
+        ],
+        [
+          "renshuusuru",
+          "friend"
+        ],
+        [
+          "renshuusuru",
+          "hito"
+        ],
+        [
+          "renshuusuru",
+          "madogiwazoku"
+        ],
+        [
+          "renshuusuru",
+          "mother"
+        ],
+        [
+          "renshuusuru",
+          "programmer"
+        ],
+        [
+          "renshuusuru",
+          "roujin"
+        ],
+        [
+          "renshuusuru",
+          "sister"
+        ],
+        [
+          "renshuusuru",
+          "teacher"
+        ],
+        [
+          "shinjiru",
+          "friend"
+        ],
+        [
+          "shinjiru",
+          "hito"
+        ],
+        [
+          "shinjiru",
+          "madogiwazoku"
+        ],
+        [
+          "shinjiru",
+          "mother"
+        ],
+        [
+          "shinjiru",
+          "programmer"
+        ],
+        [
+          "shinjiru",
+          "roujin"
+        ],
+        [
+          "shinjiru",
+          "sister"
+        ],
+        [
+          "shinjiru",
+          "teacher"
+        ],
+        [
+          "taberu",
+          "friend"
+        ],
+        [
+          "taberu",
+          "hito"
+        ],
+        [
+          "taberu",
+          "inu"
+        ],
+        [
+          "taberu",
+          "madogiwazoku"
+        ],
+        [
+          "taberu",
+          "mother"
+        ],
+        [
+          "taberu",
+          "programmer"
+        ],
+        [
+          "taberu",
+          "roujin"
+        ],
+        [
+          "taberu",
+          "sister"
+        ],
+        [
+          "taberu",
+          "teacher"
+        ],
+        [
+          "taberu",
+          "tori"
+        ],
+        [
+          "undousuru",
+          "friend"
+        ],
+        [
+          "undousuru",
+          "hito"
+        ],
+        [
+          "undousuru",
+          "madogiwazoku"
+        ],
+        [
+          "undousuru",
+          "mother"
+        ],
+        [
+          "undousuru",
+          "programmer"
+        ],
+        [
+          "undousuru",
+          "roujin"
+        ],
+        [
+          "undousuru",
+          "sister"
+        ],
+        [
+          "undousuru",
+          "teacher"
+        ],
+        [
+          "usowotsuku",
+          "friend"
+        ],
+        [
+          "usowotsuku",
+          "hito"
+        ],
+        [
+          "usowotsuku",
+          "madogiwazoku"
+        ],
+        [
+          "usowotsuku",
+          "mother"
+        ],
+        [
+          "usowotsuku",
+          "programmer"
+        ],
+        [
+          "usowotsuku",
+          "roujin"
+        ],
+        [
+          "usowotsuku",
+          "sister"
+        ],
+        [
+          "usowotsuku",
+          "teacher"
+        ],
+        [
+          "utau",
+          "friend"
+        ],
+        [
+          "utau",
+          "hito"
+        ],
+        [
+          "utau",
+          "madogiwazoku"
+        ],
+        [
+          "utau",
+          "mother"
+        ],
+        [
+          "utau",
+          "programmer"
+        ],
+        [
+          "utau",
+          "roujin"
+        ],
+        [
+          "utau",
+          "sister"
+        ],
+        [
+          "utau",
+          "teacher"
+        ],
+        [
+          "warau",
+          "friend"
+        ],
+        [
+          "warau",
+          "hito"
+        ],
+        [
+          "warau",
+          "madogiwazoku"
+        ],
+        [
+          "warau",
+          "mother"
+        ],
+        [
+          "warau",
+          "programmer"
+        ],
+        [
+          "warau",
+          "roujin"
+        ],
+        [
+          "warau",
+          "sister"
+        ],
+        [
+          "warau",
+          "teacher"
+        ]
+      ]
+    },
+    "past_negative_plain": {
+      "before_pairs": 70,
+      "after_pairs": 300,
+      "before": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 70,
+        "generated_sentences": 350,
+        "unique_questions": 70,
+        "unique_answers": 70,
+        "form_names": [
+          "past_negative_plain"
+        ],
+        "context_options": [
+          "past/day_before_yesterday",
+          "past/last_week",
+          "past/recently",
+          "past/two_weeks_ago",
+          "past/yesterday"
+        ],
+        "word_counts": {
+          "verb@action": 10
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 70,
+          "noun@item → verb@action": 70
+        }
+      },
+      "after": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 300,
+        "generated_sentences": 1500,
+        "unique_questions": 300,
+        "unique_answers": 300,
+        "form_names": [
+          "past_negative_plain"
+        ],
+        "context_options": [
+          "past/day_before_yesterday",
+          "past/last_week",
+          "past/recently",
+          "past/two_weeks_ago",
+          "past/yesterday"
+        ],
+        "word_counts": {
+          "verb@action": 36
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 300,
+          "noun@item → verb@action": 300
+        }
+      },
+      "new_pairs": [
+        [
+          "aruku",
+          "friend"
+        ],
+        [
+          "aruku",
+          "hito"
+        ],
+        [
+          "aruku",
+          "madogiwazoku"
+        ],
+        [
+          "aruku",
+          "mother"
+        ],
+        [
+          "aruku",
+          "programmer"
+        ],
+        [
+          "aruku",
+          "roujin"
+        ],
+        [
+          "aruku",
+          "sister"
+        ],
+        [
+          "aruku",
+          "teacher"
+        ],
+        [
+          "asobu",
+          "friend"
+        ],
+        [
+          "asobu",
+          "hito"
+        ],
+        [
+          "asobu",
+          "inu"
+        ],
+        [
+          "asobu",
+          "madogiwazoku"
+        ],
+        [
+          "asobu",
+          "mother"
+        ],
+        [
+          "asobu",
+          "programmer"
+        ],
+        [
+          "asobu",
+          "roujin"
+        ],
+        [
+          "asobu",
+          "sister"
+        ],
+        [
+          "asobu",
+          "teacher"
+        ],
+        [
+          "asobu",
+          "tori"
+        ],
+        [
+          "ayamaru",
+          "friend"
+        ],
+        [
+          "ayamaru",
+          "hito"
+        ],
+        [
+          "ayamaru",
+          "madogiwazoku"
+        ],
+        [
+          "ayamaru",
+          "mother"
+        ],
+        [
+          "ayamaru",
+          "programmer"
+        ],
+        [
+          "ayamaru",
+          "roujin"
+        ],
+        [
+          "ayamaru",
+          "sister"
+        ],
+        [
+          "ayamaru",
+          "teacher"
+        ],
+        [
+          "deru",
+          "friend"
+        ],
+        [
+          "deru",
+          "hito"
+        ],
+        [
+          "deru",
+          "inu"
+        ],
+        [
+          "deru",
+          "madogiwazoku"
+        ],
+        [
+          "deru",
+          "mother"
+        ],
+        [
+          "deru",
+          "programmer"
+        ],
+        [
+          "deru",
+          "roujin"
+        ],
+        [
+          "deru",
+          "sister"
+        ],
+        [
+          "deru",
+          "teacher"
+        ],
+        [
+          "deru",
+          "tori"
+        ],
+        [
+          "hairu",
+          "friend"
+        ],
+        [
+          "hairu",
+          "hito"
+        ],
+        [
+          "hairu",
+          "inu"
+        ],
+        [
+          "hairu",
+          "madogiwazoku"
+        ],
+        [
+          "hairu",
+          "mother"
+        ],
+        [
+          "hairu",
+          "programmer"
+        ],
+        [
+          "hairu",
+          "roujin"
+        ],
+        [
+          "hairu",
+          "sister"
+        ],
+        [
+          "hairu",
+          "teacher"
+        ],
+        [
+          "hairu",
+          "tori"
+        ],
+        [
+          "harau",
+          "friend"
+        ],
+        [
+          "harau",
+          "hito"
+        ],
+        [
+          "harau",
+          "madogiwazoku"
+        ],
+        [
+          "harau",
+          "mother"
+        ],
+        [
+          "harau",
+          "programmer"
+        ],
+        [
+          "harau",
+          "roujin"
+        ],
+        [
+          "harau",
+          "sister"
+        ],
+        [
+          "harau",
+          "teacher"
+        ],
+        [
+          "hashiru",
+          "friend"
+        ],
+        [
+          "hashiru",
+          "hito"
+        ],
+        [
+          "hashiru",
+          "inu"
+        ],
+        [
+          "hashiru",
+          "madogiwazoku"
+        ],
+        [
+          "hashiru",
+          "mother"
+        ],
+        [
+          "hashiru",
+          "programmer"
+        ],
+        [
+          "hashiru",
+          "roujin"
+        ],
+        [
+          "hashiru",
+          "sister"
+        ],
+        [
+          "hashiru",
+          "teacher"
+        ],
+        [
+          "hashiru",
+          "tori"
+        ],
+        [
+          "iku",
+          "friend"
+        ],
+        [
+          "iku",
+          "hito"
+        ],
+        [
+          "iku",
+          "inu"
+        ],
+        [
+          "iku",
+          "madogiwazoku"
+        ],
+        [
+          "iku",
+          "mother"
+        ],
+        [
+          "iku",
+          "programmer"
+        ],
+        [
+          "iku",
+          "roujin"
+        ],
+        [
+          "iku",
+          "sister"
+        ],
+        [
+          "iku",
+          "teacher"
+        ],
+        [
+          "iku",
+          "tori"
+        ],
+        [
+          "isogu",
+          "friend"
+        ],
+        [
+          "isogu",
+          "hito"
+        ],
+        [
+          "isogu",
+          "madogiwazoku"
+        ],
+        [
+          "isogu",
+          "mother"
+        ],
+        [
+          "isogu",
+          "programmer"
+        ],
+        [
+          "isogu",
+          "roujin"
+        ],
+        [
+          "isogu",
+          "sister"
+        ],
+        [
+          "isogu",
+          "teacher"
+        ],
+        [
+          "kaeru",
+          "friend"
+        ],
+        [
+          "kaeru",
+          "hito"
+        ],
+        [
+          "kaeru",
+          "inu"
+        ],
+        [
+          "kaeru",
+          "madogiwazoku"
+        ],
+        [
+          "kaeru",
+          "mother"
+        ],
+        [
+          "kaeru",
+          "programmer"
+        ],
+        [
+          "kaeru",
+          "roujin"
+        ],
+        [
+          "kaeru",
+          "sister"
+        ],
+        [
+          "kaeru",
+          "teacher"
+        ],
+        [
+          "kaeru",
+          "tori"
+        ],
+        [
+          "kau",
+          "friend"
+        ],
+        [
+          "kau",
+          "hito"
+        ],
+        [
+          "kau",
+          "madogiwazoku"
+        ],
+        [
+          "kau",
+          "mother"
+        ],
+        [
+          "kau",
+          "programmer"
+        ],
+        [
+          "kau",
+          "roujin"
+        ],
+        [
+          "kau",
+          "sister"
+        ],
+        [
+          "kau",
+          "teacher"
+        ],
+        [
+          "kikokusuru",
+          "friend"
+        ],
+        [
+          "kikokusuru",
+          "hito"
+        ],
+        [
+          "kikokusuru",
+          "madogiwazoku"
+        ],
+        [
+          "kikokusuru",
+          "mother"
+        ],
+        [
+          "kikokusuru",
+          "programmer"
+        ],
+        [
+          "kikokusuru",
+          "roujin"
+        ],
+        [
+          "kikokusuru",
+          "sister"
+        ],
+        [
+          "kikokusuru",
+          "teacher"
+        ],
+        [
+          "kotaeru",
+          "friend"
+        ],
+        [
+          "kotaeru",
+          "hito"
+        ],
+        [
+          "kotaeru",
+          "madogiwazoku"
+        ],
+        [
+          "kotaeru",
+          "mother"
+        ],
+        [
+          "kotaeru",
+          "programmer"
+        ],
+        [
+          "kotaeru",
+          "roujin"
+        ],
+        [
+          "kotaeru",
+          "sister"
+        ],
+        [
+          "kotaeru",
+          "teacher"
+        ],
+        [
+          "kuru",
+          "friend"
+        ],
+        [
+          "kuru",
+          "hito"
+        ],
+        [
+          "kuru",
+          "inu"
+        ],
+        [
+          "kuru",
+          "madogiwazoku"
+        ],
+        [
+          "kuru",
+          "mother"
+        ],
+        [
+          "kuru",
+          "programmer"
+        ],
+        [
+          "kuru",
+          "roujin"
+        ],
+        [
+          "kuru",
+          "sister"
+        ],
+        [
+          "kuru",
+          "teacher"
+        ],
+        [
+          "kuru",
+          "tori"
+        ],
+        [
+          "matsu",
+          "friend"
+        ],
+        [
+          "matsu",
+          "hito"
+        ],
+        [
+          "matsu",
+          "inu"
+        ],
+        [
+          "matsu",
+          "madogiwazoku"
+        ],
+        [
+          "matsu",
+          "mother"
+        ],
+        [
+          "matsu",
+          "programmer"
+        ],
+        [
+          "matsu",
+          "roujin"
+        ],
+        [
+          "matsu",
+          "sister"
+        ],
+        [
+          "matsu",
+          "teacher"
+        ],
+        [
+          "matsu",
+          "tori"
+        ],
+        [
+          "nomu",
+          "friend"
+        ],
+        [
+          "nomu",
+          "hito"
+        ],
+        [
+          "nomu",
+          "inu"
+        ],
+        [
+          "nomu",
+          "madogiwazoku"
+        ],
+        [
+          "nomu",
+          "mother"
+        ],
+        [
+          "nomu",
+          "programmer"
+        ],
+        [
+          "nomu",
+          "roujin"
+        ],
+        [
+          "nomu",
+          "sister"
+        ],
+        [
+          "nomu",
+          "teacher"
+        ],
+        [
+          "nomu",
+          "tori"
+        ],
+        [
+          "okoru",
+          "friend"
+        ],
+        [
+          "okoru",
+          "hito"
+        ],
+        [
+          "okoru",
+          "madogiwazoku"
+        ],
+        [
+          "okoru",
+          "mother"
+        ],
+        [
+          "okoru",
+          "programmer"
+        ],
+        [
+          "okoru",
+          "roujin"
+        ],
+        [
+          "okoru",
+          "sister"
+        ],
+        [
+          "okoru",
+          "teacher"
+        ],
+        [
+          "omou",
+          "friend"
+        ],
+        [
+          "omou",
+          "hito"
+        ],
+        [
+          "omou",
+          "madogiwazoku"
+        ],
+        [
+          "omou",
+          "mother"
+        ],
+        [
+          "omou",
+          "programmer"
+        ],
+        [
+          "omou",
+          "roujin"
+        ],
+        [
+          "omou",
+          "sister"
+        ],
+        [
+          "omou",
+          "teacher"
+        ],
+        [
+          "oyogu",
+          "friend"
+        ],
+        [
+          "oyogu",
+          "hito"
+        ],
+        [
+          "oyogu",
+          "inu"
+        ],
+        [
+          "oyogu",
+          "madogiwazoku"
+        ],
+        [
+          "oyogu",
+          "mother"
+        ],
+        [
+          "oyogu",
+          "programmer"
+        ],
+        [
+          "oyogu",
+          "roujin"
+        ],
+        [
+          "oyogu",
+          "sister"
+        ],
+        [
+          "oyogu",
+          "teacher"
+        ],
+        [
+          "oyogu",
+          "tori"
+        ],
+        [
+          "renshuusuru",
+          "friend"
+        ],
+        [
+          "renshuusuru",
+          "hito"
+        ],
+        [
+          "renshuusuru",
+          "madogiwazoku"
+        ],
+        [
+          "renshuusuru",
+          "mother"
+        ],
+        [
+          "renshuusuru",
+          "programmer"
+        ],
+        [
+          "renshuusuru",
+          "roujin"
+        ],
+        [
+          "renshuusuru",
+          "sister"
+        ],
+        [
+          "renshuusuru",
+          "teacher"
+        ],
+        [
+          "shinjiru",
+          "friend"
+        ],
+        [
+          "shinjiru",
+          "hito"
+        ],
+        [
+          "shinjiru",
+          "madogiwazoku"
+        ],
+        [
+          "shinjiru",
+          "mother"
+        ],
+        [
+          "shinjiru",
+          "programmer"
+        ],
+        [
+          "shinjiru",
+          "roujin"
+        ],
+        [
+          "shinjiru",
+          "sister"
+        ],
+        [
+          "shinjiru",
+          "teacher"
+        ],
+        [
+          "taberu",
+          "friend"
+        ],
+        [
+          "taberu",
+          "hito"
+        ],
+        [
+          "taberu",
+          "inu"
+        ],
+        [
+          "taberu",
+          "madogiwazoku"
+        ],
+        [
+          "taberu",
+          "mother"
+        ],
+        [
+          "taberu",
+          "programmer"
+        ],
+        [
+          "taberu",
+          "roujin"
+        ],
+        [
+          "taberu",
+          "sister"
+        ],
+        [
+          "taberu",
+          "teacher"
+        ],
+        [
+          "taberu",
+          "tori"
+        ],
+        [
+          "undousuru",
+          "friend"
+        ],
+        [
+          "undousuru",
+          "hito"
+        ],
+        [
+          "undousuru",
+          "madogiwazoku"
+        ],
+        [
+          "undousuru",
+          "mother"
+        ],
+        [
+          "undousuru",
+          "programmer"
+        ],
+        [
+          "undousuru",
+          "roujin"
+        ],
+        [
+          "undousuru",
+          "sister"
+        ],
+        [
+          "undousuru",
+          "teacher"
+        ],
+        [
+          "usowotsuku",
+          "friend"
+        ],
+        [
+          "usowotsuku",
+          "hito"
+        ],
+        [
+          "usowotsuku",
+          "madogiwazoku"
+        ],
+        [
+          "usowotsuku",
+          "mother"
+        ],
+        [
+          "usowotsuku",
+          "programmer"
+        ],
+        [
+          "usowotsuku",
+          "roujin"
+        ],
+        [
+          "usowotsuku",
+          "sister"
+        ],
+        [
+          "usowotsuku",
+          "teacher"
+        ],
+        [
+          "utau",
+          "friend"
+        ],
+        [
+          "utau",
+          "hito"
+        ],
+        [
+          "utau",
+          "madogiwazoku"
+        ],
+        [
+          "utau",
+          "mother"
+        ],
+        [
+          "utau",
+          "programmer"
+        ],
+        [
+          "utau",
+          "roujin"
+        ],
+        [
+          "utau",
+          "sister"
+        ],
+        [
+          "utau",
+          "teacher"
+        ],
+        [
+          "warau",
+          "friend"
+        ],
+        [
+          "warau",
+          "hito"
+        ],
+        [
+          "warau",
+          "madogiwazoku"
+        ],
+        [
+          "warau",
+          "mother"
+        ],
+        [
+          "warau",
+          "programmer"
+        ],
+        [
+          "warau",
+          "roujin"
+        ],
+        [
+          "warau",
+          "sister"
+        ],
+        [
+          "warau",
+          "teacher"
+        ]
+      ]
+    }
+  },
+  "object": {
+    "dictionary": {
+      "before": 7735,
+      "after": 7645,
+      "removed_hitori": 90,
+      "other_realizations_identical": true,
+      "sha256": "9f3efa31a0435a30d800e30910373b5877d1176987624428b608259ecfa7b61b"
+    },
+    "plain_negative": {
+      "before": 7735,
+      "after": 7645,
+      "removed_hitori": 90,
+      "other_realizations_identical": true,
+      "sha256": "7cda05a07847225e5868ac6d4e48676105360bffaf43df5583ca00b152e41685"
+    },
+    "past_plain": {
+      "before": 7735,
+      "after": 7645,
+      "removed_hitori": 90,
+      "other_realizations_identical": true,
+      "sha256": "6e807efa5366b77d402b89d2b6b9003bf52d9bd7d5645d0bd73c635b5dc8b590"
+    },
+    "past_negative_plain": {
+      "before": 7735,
+      "after": 7645,
+      "removed_hitori": 90,
+      "other_realizations_identical": true,
+      "sha256": "423f345b883bb5753abe93f8030049166fa354fa40aeac1f289fad045353e333"
+    }
+  },
+  "examples": [
+    {
+      "form": "dictionary",
+      "verb": "aruku",
+      "question": "To jest pracownik odsunięty na boczny tor, który idzie pieszo.",
+      "answer": "これはあるくまどぎわぞくです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "asobu",
+      "question": "To jest siostra, która bawi się.",
+      "answer": "これはあそぶあねです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "ayamaru",
+      "question": "To jest programista, który przeprasza.",
+      "answer": "これはあやまるプログラマーです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "deru",
+      "question": "To jest nauczyciel, który wychodzi.",
+      "answer": "これはでるせんせいです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "hairu",
+      "question": "To jest mama, która wchodzi.",
+      "answer": "これははいるおかあさんです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "harau",
+      "question": "To jest starzec, który płaci.",
+      "answer": "これははらうろうじんです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "hashiru",
+      "question": "To jest osoba, która biegnie.",
+      "answer": "これははしるひとです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "iku",
+      "question": "To jest starzec, który idzie.",
+      "answer": "これはいくろうじんです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "isogu",
+      "question": "To jest mama, która śpieszy się.",
+      "answer": "これはいそぐおかあさんです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "kaeru",
+      "question": "To jest programista, który wraca.",
+      "answer": "これはかえるプログラマーです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "kau",
+      "question": "To jest pracownik odsunięty na boczny tor, który kupuje.",
+      "answer": "これはかうまどぎわぞくです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "kikokusuru",
+      "question": "To jest mama, która wraca do kraju.",
+      "answer": "これはきこくするおかあさんです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "kotaeru",
+      "question": "To jest pracownik odsunięty na boczny tor, który odpowiada.",
+      "answer": "これはこたえるまどぎわぞくです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "kuru",
+      "question": "To jest przyjaciel, który przychodzi.",
+      "answer": "これはくるともだちです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "matsu",
+      "question": "To jest przyjaciel, który czeka.",
+      "answer": "これはまつともだちです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "nomu",
+      "question": "To jest przyjaciel, który pije.",
+      "answer": "これはのむともだちです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "okoru",
+      "question": "To jest nauczyciel, który złości się.",
+      "answer": "これはおこるせんせいです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "omou",
+      "question": "To jest osoba, która myśli.",
+      "answer": "これはおもうひとです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "oyogu",
+      "question": "To jest starzec, który pływa.",
+      "answer": "これはおよぐろうじんです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "renshuusuru",
+      "question": "To jest siostra, która ćwiczy.",
+      "answer": "これはれんしゅうするあねです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "shinjiru",
+      "question": "To jest programista, który wierzy.",
+      "answer": "これはしんじるプログラマーです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "taberu",
+      "question": "To jest nauczyciel, który je.",
+      "answer": "これはたべるせんせいです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "undousuru",
+      "question": "To jest mama, która ćwiczy fizycznie.",
+      "answer": "これはうんどうするおかあさんです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "usowotsuku",
+      "question": "To jest osoba, która kłamie.",
+      "answer": "これはうそをつくひとです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "utau",
+      "question": "To jest siostra, która śpiewa.",
+      "answer": "これはうたうあねです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "warau",
+      "question": "To jest przyjaciel, który śmieje się.",
+      "answer": "これはわらうともだちです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "aruku",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie idzie pieszo.",
+      "answer": "これはあるかないまどぎわぞくです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "asobu",
+      "question": "To jest mama, która nie bawi się.",
+      "answer": "これはあそばないおかあさんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "ayamaru",
+      "question": "To jest mama, która nie przeprasza.",
+      "answer": "これはあやまらないおかあさんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "deru",
+      "question": "To jest pies, który nie wychodzi.",
+      "answer": "これはでないいぬです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "hairu",
+      "question": "To jest przyjaciel, który nie wchodzi.",
+      "answer": "これははいらないともだちです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "harau",
+      "question": "To jest siostra, która nie płaci.",
+      "answer": "これははらわないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "hashiru",
+      "question": "To jest ptak, który nie biegnie.",
+      "answer": "これははしらないとりです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "iku",
+      "question": "To jest przyjaciel, który nie idzie.",
+      "answer": "これはいかないともだちです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "isogu",
+      "question": "To jest starzec, który nie śpieszy się.",
+      "answer": "これはいそがないろうじんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "kaeru",
+      "question": "To jest programista, który nie wraca.",
+      "answer": "これはかえらないプログラマーです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "kau",
+      "question": "To jest nauczyciel, który nie kupuje.",
+      "answer": "これはかわないせんせいです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "kikokusuru",
+      "question": "To jest mama, która nie wraca do kraju.",
+      "answer": "これはきこくしないおかあさんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "kotaeru",
+      "question": "To jest osoba, która nie odpowiada.",
+      "answer": "これはこたえないひとです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "kuru",
+      "question": "To jest starzec, który nie przychodzi.",
+      "answer": "これはこないろうじんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "matsu",
+      "question": "To jest mama, która nie czeka.",
+      "answer": "これはまたないおかあさんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "nomu",
+      "question": "To jest pies, który nie pije.",
+      "answer": "これはのまないいぬです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "okoru",
+      "question": "To jest przyjaciel, który nie złości się.",
+      "answer": "これはおこらないともだちです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "omou",
+      "question": "To jest starzec, który nie myśli.",
+      "answer": "これはおもわないろうじんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "oyogu",
+      "question": "To jest mama, która nie pływa.",
+      "answer": "これはおよがないおかあさんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "renshuusuru",
+      "question": "To jest siostra, która nie ćwiczy.",
+      "answer": "これはれんしゅうしないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "shinjiru",
+      "question": "To jest programista, który nie wierzy.",
+      "answer": "これはしんじないプログラマーです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "taberu",
+      "question": "To jest siostra, która nie je.",
+      "answer": "これはたべないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "undousuru",
+      "question": "To jest siostra, która nie ćwiczy fizycznie.",
+      "answer": "これはうんどうしないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "usowotsuku",
+      "question": "To jest przyjaciel, który nie kłamie.",
+      "answer": "これはうそをつかないともだちです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "utau",
+      "question": "To jest programista, który nie śpiewa.",
+      "answer": "これはうたわないプログラマーです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "warau",
+      "question": "To jest przyjaciel, który nie śmieje się.",
+      "answer": "これはわらわないともだちです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "aruku",
+      "question": "To jest siostra, która szła pieszo.",
+      "answer": "これはあるいたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "asobu",
+      "question": "To jest nauczyciel, który bawił się.",
+      "answer": "これはあそんだせんせいです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "ayamaru",
+      "question": "To jest siostra, która przeprosiła.",
+      "answer": "これはあやまったあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "deru",
+      "question": "To jest osoba, która wyszła.",
+      "answer": "これはでたひとです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "hairu",
+      "question": "To jest starzec, który wszedł.",
+      "answer": "これははいったろうじんです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "harau",
+      "question": "To jest przyjaciel, który zapłacił.",
+      "answer": "これははらったともだちです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "hashiru",
+      "question": "To jest programista, który biegł.",
+      "answer": "これははしったプログラマーです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "iku",
+      "question": "To jest starzec, który poszedł.",
+      "answer": "これはいったろうじんです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "isogu",
+      "question": "To jest mama, która śpieszyła się.",
+      "answer": "これはいそいだおかあさんです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "kaeru",
+      "question": "To jest siostra, która wróciła.",
+      "answer": "これはかえったあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "kau",
+      "question": "To jest przyjaciel, który kupił.",
+      "answer": "これはかったともだちです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "kikokusuru",
+      "question": "To jest programista, który wrócił do kraju.",
+      "answer": "これはきこくしたプログラマーです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "kotaeru",
+      "question": "To jest osoba, która odpowiedziała.",
+      "answer": "これはこたえたひとです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "kuru",
+      "question": "To jest nauczyciel, który przyszedł.",
+      "answer": "これはきたせんせいです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "matsu",
+      "question": "To jest osoba, która czekała.",
+      "answer": "これはまったひとです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "nomu",
+      "question": "To jest programista, który pił.",
+      "answer": "これはのんだプログラマーです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "okoru",
+      "question": "To jest programista, który zezłościł się.",
+      "answer": "これはおこったプログラマーです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "omou",
+      "question": "To jest nauczyciel, który pomyślał.",
+      "answer": "これはおもったせんせいです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "oyogu",
+      "question": "To jest pracownik odsunięty na boczny tor, który pływał.",
+      "answer": "これはおよいだまどぎわぞくです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "renshuusuru",
+      "question": "To jest osoba, która ćwiczyła.",
+      "answer": "これはれんしゅうしたひとです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "shinjiru",
+      "question": "To jest starzec, który wierzył.",
+      "answer": "これはしんじたろうじんです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "taberu",
+      "question": "To jest siostra, która jadła.",
+      "answer": "これはたべたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "undousuru",
+      "question": "To jest siostra, która ćwiczyła fizycznie.",
+      "answer": "これはうんどうしたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "usowotsuku",
+      "question": "To jest starzec, który skłamał.",
+      "answer": "これはうそをついたろうじんです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "utau",
+      "question": "To jest pracownik odsunięty na boczny tor, który śpiewał.",
+      "answer": "これはうたったまどぎわぞくです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "warau",
+      "question": "To jest mama, która śmiała się.",
+      "answer": "これはわらったおかあさんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "aruku",
+      "question": "To jest przyjaciel, który nie szedł pieszo.",
+      "answer": "これはあるかなかったともだちです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "asobu",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie bawił się.",
+      "answer": "これはあそばなかったまどぎわぞくです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "ayamaru",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie przeprosił.",
+      "answer": "これはあやまらなかったまどぎわぞくです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "deru",
+      "question": "To jest programista, który nie wyszedł.",
+      "answer": "これはでなかったプログラマーです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "hairu",
+      "question": "To jest siostra, która nie weszła.",
+      "answer": "これははいらなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "harau",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie zapłacił.",
+      "answer": "これははらわなかったまどぎわぞくです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "hashiru",
+      "question": "To jest siostra, która nie biegła.",
+      "answer": "これははしらなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "iku",
+      "question": "To jest programista, który nie poszedł.",
+      "answer": "これはいかなかったプログラマーです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "isogu",
+      "question": "To jest przyjaciel, który nie śpieszył się.",
+      "answer": "これはいそがなかったともだちです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "kaeru",
+      "question": "To jest siostra, która nie wróciła.",
+      "answer": "これはかえらなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "kau",
+      "question": "To jest mama, która nie kupiła.",
+      "answer": "これはかわなかったおかあさんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "kikokusuru",
+      "question": "To jest przyjaciel, który nie wrócił do kraju.",
+      "answer": "これはきこくしなかったともだちです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "kotaeru",
+      "question": "To jest starzec, który nie odpowiedział.",
+      "answer": "これはこたえなかったろうじんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "kuru",
+      "question": "To jest starzec, który nie przyszedł.",
+      "answer": "これはこなかったろうじんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "matsu",
+      "question": "To jest przyjaciel, który nie czekał.",
+      "answer": "これはまたなかったともだちです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "nomu",
+      "question": "To jest osoba, która nie piła.",
+      "answer": "これはのまなかったひとです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "okoru",
+      "question": "To jest mama, która nie zezłościła się.",
+      "answer": "これはおこらなかったおかあさんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "omou",
+      "question": "To jest mama, która nie pomyślała.",
+      "answer": "これはおもわなかったおかあさんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "oyogu",
+      "question": "To jest nauczyciel, który nie pływał.",
+      "answer": "これはおよがなかったせんせいです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "renshuusuru",
+      "question": "To jest osoba, która nie ćwiczyła.",
+      "answer": "これはれんしゅうしなかったひとです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "shinjiru",
+      "question": "To jest mama, która nie wierzyła.",
+      "answer": "これはしんじなかったおかあさんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "taberu",
+      "question": "To jest pies, który nie jadł.",
+      "answer": "これはたべなかったいぬです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "undousuru",
+      "question": "To jest przyjaciel, który nie ćwiczył fizycznie.",
+      "answer": "これはうんどうしなかったともだちです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "usowotsuku",
+      "question": "To jest przyjaciel, który nie skłamał.",
+      "answer": "これはうそをつかなかったともだちです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "utau",
+      "question": "To jest pracownik odsunięty na boczny tor, który nie śpiewał.",
+      "answer": "これはうたわなかったまどぎわぞくです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "warau",
+      "question": "To jest starzec, który nie śmiał się.",
+      "answer": "これはわらわなかったろうじんです。"
+    }
+  ],
+  "pattern_availability": [
+    [
+      "Zdania przydawkowe",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Zdania przydawkowe",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Zdania przydawkowe",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Zdania przydawkowe",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Zdania przydawkowe podmiotowe",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Zdania przydawkowe podmiotowe",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Zdania przydawkowe podmiotowe",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Zdania przydawkowe podmiotowe",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Częstotliwość czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Częstotliwość czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Częstotliwość czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Częstotliwość czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Sam czasownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Sam czasownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Sam czasownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Sam czasownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Czasownik z dopełnieniem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Czasownik z dopełnieniem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Czasownik z dopełnieniem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Czasownik z dopełnieniem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Opisane dopełnienie",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Opisane dopełnienie",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Opisane dopełnienie",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Opisane dopełnienie",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Cel ruchu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Cel ruchu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Cel ruchu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Cel ruchu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Towarzysz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Towarzysz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Towarzysz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Towarzysz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Miejsce czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Miejsce czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Miejsce czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Miejsce czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Środek transportu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Środek transportu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Środek transportu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Środek transportu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Przymiotnik po temacie",
+      "dictionary",
+      false,
+      false
+    ],
+    [
+      "Przymiotnik po temacie",
+      "plain_negative",
+      false,
+      false
+    ],
+    [
+      "Przymiotnik po temacie",
+      "past_plain",
+      false,
+      false
+    ],
+    [
+      "Przymiotnik po temacie",
+      "past_negative_plain",
+      false,
+      false
+    ],
+    [
+      "Sam przymiotnik",
+      "dictionary",
+      false,
+      false
+    ],
+    [
+      "Sam przymiotnik",
+      "plain_negative",
+      false,
+      false
+    ],
+    [
+      "Sam przymiotnik",
+      "past_plain",
+      false,
+      false
+    ],
+    [
+      "Sam przymiotnik",
+      "past_negative_plain",
+      false,
+      false
+    ],
+    [
+      "Przymiotnik przed rzeczownikiem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Przymiotnik przed rzeczownikiem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Przymiotnik przed rzeczownikiem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Przymiotnik przed rzeczownikiem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Cytowana opinia",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Cytowana opinia",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Cytowana opinia",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Cytowana opinia",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Przed inną czynnością",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Przed inną czynnością",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Przed inną czynnością",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Przed inną czynnością",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Trzy lubiane rzeczy",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Trzy lubiane rzeczy",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Trzy lubiane rzeczy",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Trzy lubiane rzeczy",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Reakcja na przyczynę",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Reakcja na przyczynę",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Reakcja na przyczynę",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Reakcja na przyczynę",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik だから",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Łącznik だから",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Łącznik だから",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik だから",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik それか",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Łącznik それか",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Łącznik それか",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik それか",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik だけど",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Łącznik だけど",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Łącznik だけど",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik だけど",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik それなら",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Łącznik それなら",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Łącznik それなら",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik それなら",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik それより",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Łącznik それより",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Łącznik それより",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik それより",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik しかも",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Łącznik しかも",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Łącznik しかも",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik しかも",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik でも",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Łącznik でも",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Łącznik でも",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Łącznik でも",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o miejsce",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o miejsce",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o miejsce",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o miejsce",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o cel",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o cel",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o cel",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o cel",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o towarzysza",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o towarzysza",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o towarzysza",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o towarzysza",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o rzecz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o rzecz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o rzecz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o rzecz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie który + rzeczownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie który + rzeczownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie który + rzeczownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie który + rzeczownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o rodzaj",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o rodzaj",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o rodzaj",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o rodzaj",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie czyj",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie czyj",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie czyj",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie czyj",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jak",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie jak",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie jak",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jak",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile kosztuje",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile kosztuje",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile kosztuje",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile kosztuje",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile osób",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile osób",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile osób",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile osób",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile lat",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile lat",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile lat",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie ile lat",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Istnienie policzonych rzeczowników",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Istnienie policzonych rzeczowników",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Istnienie policzonych rzeczowników",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Istnienie policzonych rzeczowników",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Istnienie policzonych opisanych rzeczowników",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Istnienie policzonych opisanych rzeczowników",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Istnienie policzonych opisanych rzeczowników",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Istnienie policzonych opisanych rzeczowników",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Ile jest policzonych rzeczowników",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Ile jest policzonych rzeczowników",
+      "plain_negative",
+      false,
+      false
+    ],
+    [
+      "Ile jest policzonych rzeczowników",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Ile jest policzonych rzeczowników",
+      "past_negative_plain",
+      false,
+      false
+    ],
+    [
+      "Ile jest opisanych policzonych rzeczowników",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Ile jest opisanych policzonych rzeczowników",
+      "plain_negative",
+      false,
+      false
+    ],
+    [
+      "Ile jest opisanych policzonych rzeczowników",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Ile jest opisanych policzonych rzeczowników",
+      "past_negative_plain",
+      false,
+      false
+    ],
+    [
+      "Godzina zegarowa",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Godzina zegarowa",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Godzina zegarowa",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Godzina zegarowa",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Wiek",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Wiek",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Wiek",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Wiek",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Ile razy w miesiącu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Ile razy w miesiącu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Ile razy w miesiącu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Ile razy w miesiącu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Liczba razy w miesiącu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Liczba razy w miesiącu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Liczba razy w miesiącu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Liczba razy w miesiącu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Numer piętra",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Numer piętra",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Numer piętra",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Numer piętra",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Dwie policzone grupy opisanych rzeczowników",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Dwie policzone grupy opisanych rzeczowników",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Dwie policzone grupy opisanych rzeczowników",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Dwie policzone grupy opisanych rzeczowników",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Sam czasownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Sam czasownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Sam czasownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Sam czasownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Czasownik z dopełnieniem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Czasownik z dopełnieniem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Czasownik z dopełnieniem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Czasownik z dopełnieniem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Opisane dopełnienie",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Opisane dopełnienie",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Opisane dopełnienie",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Opisane dopełnienie",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Cel ruchu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Cel ruchu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Cel ruchu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Cel ruchu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Towarzysz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Towarzysz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Towarzysz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Towarzysz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Miejsce czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Miejsce czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Miejsce czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Miejsce czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Środek transportu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Środek transportu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Środek transportu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Dostępność 〜がある / Środek transportu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Sam czasownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Sam czasownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Sam czasownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Sam czasownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Czasownik z dopełnieniem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Czasownik z dopełnieniem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Czasownik z dopełnieniem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Czasownik z dopełnieniem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Opisane dopełnienie",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Opisane dopełnienie",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Opisane dopełnienie",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Opisane dopełnienie",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Cel ruchu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Cel ruchu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Cel ruchu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Cel ruchu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Towarzysz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Towarzysz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Towarzysz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Towarzysz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Miejsce czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Miejsce czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Miejsce czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Miejsce czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Środek transportu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Środek transportu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Środek transportu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Możliwość ことができる / Środek transportu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Sam czasownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Sam czasownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Sam czasownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Sam czasownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Czasownik z dopełnieniem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Czasownik z dopełnieniem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Czasownik z dopełnieniem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Czasownik z dopełnieniem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Cel ruchu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Cel ruchu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Cel ruchu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Cel ruchu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Towarzysz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Towarzysz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Towarzysz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Towarzysz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Miejsce czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Miejsce czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Miejsce czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Czynność w toku 〜ている / Miejsce czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Sam czasownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Sam czasownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Sam czasownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Sam czasownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Czasownik z dopełnieniem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Czasownik z dopełnieniem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Czasownik z dopełnieniem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Czasownik z dopełnieniem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Opisane dopełnienie",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Opisane dopełnienie",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Opisane dopełnienie",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Opisane dopełnienie",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Cel ruchu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Cel ruchu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Cel ruchu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Cel ruchu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Towarzysz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Towarzysz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Towarzysz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Towarzysz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Miejsce czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Miejsce czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Miejsce czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Miejsce czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Środek transportu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Środek transportu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Środek transportu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie kiedy / Środek transportu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Sam czasownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Sam czasownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Sam czasownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Sam czasownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Czasownik z dopełnieniem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Czasownik z dopełnieniem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Czasownik z dopełnieniem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Czasownik z dopełnieniem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Opisane dopełnienie",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Opisane dopełnienie",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Opisane dopełnienie",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Opisane dopełnienie",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Cel ruchu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Cel ruchu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Cel ruchu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Cel ruchu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Towarzysz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Towarzysz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Towarzysz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Towarzysz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Miejsce czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Miejsce czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Miejsce czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Miejsce czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Środek transportu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Środek transportu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Środek transportu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie o godzinę / Środek transportu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Sam czasownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Sam czasownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Sam czasownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Sam czasownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Czasownik z dopełnieniem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Czasownik z dopełnieniem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Czasownik z dopełnieniem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Czasownik z dopełnieniem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Opisane dopełnienie",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Opisane dopełnienie",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Opisane dopełnienie",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Opisane dopełnienie",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Cel ruchu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Cel ruchu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Cel ruchu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Cel ruchu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Towarzysz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Towarzysz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Towarzysz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Towarzysz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Miejsce czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Miejsce czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Miejsce czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Miejsce czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Środek transportu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Środek transportu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Środek transportu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie dlaczego / Środek transportu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Sam czasownik",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Sam czasownik",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Sam czasownik",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Sam czasownik",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Czasownik z dopełnieniem",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Czasownik z dopełnieniem",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Czasownik z dopełnieniem",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Czasownik z dopełnieniem",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Opisane dopełnienie",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Opisane dopełnienie",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Opisane dopełnienie",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Opisane dopełnienie",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Cel ruchu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Cel ruchu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Cel ruchu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Cel ruchu",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Towarzysz",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Towarzysz",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Towarzysz",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Towarzysz",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Miejsce czynności",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Miejsce czynności",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Miejsce czynności",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Miejsce czynności",
+      "past_negative_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Środek transportu",
+      "dictionary",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Środek transportu",
+      "plain_negative",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Środek transportu",
+      "past_plain",
+      true,
+      true
+    ],
+    [
+      "Pytanie jakim sposobem / Środek transportu",
+      "past_negative_plain",
+      true,
+      true
+    ]
+  ],
+  "explicit_and_implicit_agree": "Exact outputs and bound rendering match for every form and pair",
+  "counting": [
+    {
+      "form": "dictionary",
+      "one_person_question": "Jest jedna osoba.",
+      "one_person_answer": "ひとがひとりいる。",
+      "one_person_output": "ひとり",
+      "unchanged": true,
+      "question": "Ile jest osób?",
+      "answer": "ひとがなんにんいるの？"
+    },
+    {
+      "form": "plain_negative",
+      "one_person_question": "Nie ma jednej osoby.",
+      "one_person_answer": "ひとがひとりいない。",
+      "one_person_output": "ひとり",
+      "unchanged": true,
+      "count_question": "Negative form remains unsupported by the existing grammar policy"
+    },
+    {
+      "form": "past_plain",
+      "one_person_question": "Była jedna osoba.",
+      "one_person_answer": "ひとがひとりいた。",
+      "one_person_output": "ひとり",
+      "unchanged": true,
+      "question": "Ile było osób?",
+      "answer": "ひとがなんにんいたの？"
+    },
+    {
+      "form": "past_negative_plain",
+      "one_person_question": "Nie było jednej osoby.",
+      "one_person_answer": "ひとがひとりいなかった。",
+      "one_person_output": "ひとり",
+      "unchanged": true,
+      "count_question": "Negative form remains unsupported by the existing grammar policy"
+    }
+  ]
+}
