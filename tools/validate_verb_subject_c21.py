@@ -1,4 +1,4 @@
-"""Small, read-only C2.1 deployment check. C1 remains a historical baseline.
+"""Small, read-only C2 deployment checks. C1 remains a historical baseline.
 
 Called with the already parsed verbs XML by the repository integrity gate.
 No engine import, project loading or possibility enumeration is permitted here.
@@ -8,11 +8,14 @@ from collections import Counter
 VERBS = frozenset({'shimaru', 'yomu', 'kaku', 'hanasu', 'kangaeru',
                    'sentakusuru', 'soujisuru'})
 FORMS = frozenset({'dictionary', 'plain_negative', 'past_plain', 'past_negative_plain'})
+C22_VERBS = frozenset('aruku asobu ayamaru deru hairu harau hashiru iku isogu kaeru '
+    'kau kikokusuru kotaeru kuru matsu nomu okoru omou oyogu renshuusuru taberu '
+    'undousuru usowotsuku utau warau shinjiru'.split())
 
 
 def require(condition, message):
     if not condition:
-        raise ValueError(f'C2.1: {message}')
+        raise ValueError(f'C2: {message}')
 
 
 def one(parent, path):
@@ -21,12 +24,53 @@ def one(parent, path):
     return nodes[0]
 
 
-def validate_deployment(root, report, selected=VERBS):
+def category_subject_role(row, report):
+    """Translate the reviewed C1 noun groups to the C2.2 category decision."""
+    nouns = set(row['subject_candidate_nouns'])
+    groups = report['noun_groups']
+    for group, accepts in (('people', 'person'), ('people_animals', 'person animal'),
+                           ('people_dog', 'person animal')):
+        if nouns and nouns == set(groups[group]):
+            return {'ref': 'subject', 'accepts': accepts}
+    require(False, f'{row["id"]}: unreviewed category migration')
+
+
+def validate_hitori_retirement(nouns, counters):
+    """C2.2 structural invariant; no engine or lesson inventory is needed."""
+    require(not nouns.findall("words/word[@id='hitori']"), 'hitori must not be an ordinary noun')
+    value = one(counters, "words/word[@id='nin']/quantity_realizations/realization[@number='1']")
+    require(value.attrib == {'number': '1', 'kana': 'ひとり', 'kanji': '一人', 'romaji': 'hitori'},
+            'nin: changed realization for one person')
+
+
+def validate_category_a_deployment(root, report):
+    """Current release gate: all A translations and the reviewed role migration."""
+    selected = VERBS | C22_VERBS
+    require({r['id'] for r in report['verbs'] if r['category'] == 'A'} == selected,
+            'incorrect category A selection')
+    changes = [c for c in report['changes'] if c['verb_id'] in selected]
+    require(Counter(c['operation'] for c in changes) ==
+            {'add_role': 32, 'add_agreement_translation': 308}, 'incorrect category A totals')
+    role_overrides = {row['id']: category_subject_role(row, report)
+        for row in report['verbs'] if row['id'] in selected - {'shimaru'}}
+    count = validate_deployment(root, report, selected, role_overrides=role_overrides)
+    for vid, accepts in (('hataraku', 'person'), ('neru', 'person animal')):
+        role = one(root, f"words/word[@id='{vid}']/usage/role[@ref='subject']")
+        require(role.attrib == {'ref': 'subject', 'accepts': accepts},
+                f'{vid}: incorrect migrated subject role')
+    return count
+
+
+def validate_deployment(root, report, selected=VERBS, *, role_overrides=None):
     """Check selected approved operations and their complete target XML maps.
 
     The selection argument supports bounded synthetic fixtures. Only the default
     production selection requires the release totals of 56 translations / 6 roles.
+    Explicit role_overrides apply the reviewed C2.2 policy while keeping the
+    historical C2.1 acceptance tool usable on its original snapshots.
     """
+    role_overrides = {} if role_overrides is None else role_overrides
+    require(set(role_overrides) <= set(selected), 'unselected role override')
     records = {}
     for row in report['verbs']:
         if row['id'] in selected:
@@ -73,7 +117,8 @@ def validate_deployment(root, report, selected=VERBS):
             require(vid not in roles, f'{vid}: duplicate role operation')
             roles[vid] = change['role']
             role = one(one(word, 'usage'), "role[@ref='subject']")
-            require(role.attrib == change['role'], f'{vid}: changed subject role')
+            require(role.attrib == role_overrides.get(vid, change['role']),
+                    f'{vid}: changed subject role')
         else:
             require(change['operation'] == 'add_agreement_translation', 'unknown operation')
             form, cls = change['form'], change['class']
@@ -88,9 +133,12 @@ def validate_deployment(root, report, selected=VERBS):
     for vid, row in records.items():
         word = one(root, f"words/word[@id='{vid}']")
         role = one(one(word, 'usage'), "role[@ref='subject']")
-        require(set(role.get('nouns', '').split()) == set(row['subject_candidate_nouns']),
-                f'{vid}: changed exact subject list')
-        require(set(role.attrib) == {'ref', 'nouns'}, f'{vid}: broad or changed subject role')
+        if vid in role_overrides:
+            require(role.attrib == role_overrides[vid], f'{vid}: incorrect category subject role')
+        else:
+            require(set(role.get('nouns', '').split()) == set(row['subject_candidate_nouns']),
+                    f'{vid}: changed exact subject list')
+            require(set(role.attrib) == {'ref', 'nouns'}, f'{vid}: broad or changed subject role')
         for form in FORMS:
             node = one(one(word, 'forms'), f"form[@ref='{form}']")
             section = one(node, 'agreement_translations')
