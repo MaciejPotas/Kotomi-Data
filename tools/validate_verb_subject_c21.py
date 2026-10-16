@@ -40,13 +40,32 @@ def validate_deployment(root, report, selected=VERBS):
     if selected == VERBS:
         require(Counter(c['operation'] for c in changes) ==
                 {'add_role': 6, 'add_agreement_translation': 56}, 'incorrect release totals')
+    subject_roles = {}
+    for change in changes:
+        if change['operation'] == 'add_role':
+            vid = change['verb_id']
+            require(vid not in subject_roles and change['role'].get('ref') == 'subject',
+                    f'{vid}: invalid subject role operation')
+            subject_roles[vid] = change['id']
+    for vid, row in records.items():
+        require(row['subject_role_change'] == subject_roles.get(vid),
+                f'{vid}: subject_role_change does not match approved role operation')
     expected_maps = {}
     roles = {}
     for change in changes:
         vid = change['verb_id']
         require(change['status'] == 'A' and change['expected_absent'] is True,
                 f'{vid}: operation is not an approved addition')
-        require(set(change.get('depends_on', [])) <= set(ids), f'{vid}: missing dependency')
+        dependencies = change.get('depends_on', [])
+        require(isinstance(dependencies, list) and
+                all(isinstance(dependency, str) for dependency in dependencies),
+                f'{change["id"]}: invalid dependencies')
+        require(len(dependencies) == len(set(dependencies)),
+                f'{change["id"]}: duplicate dependencies')
+        expected_dependencies = ({subject_roles[vid]}
+            if change['operation'] == 'add_agreement_translation' and vid in subject_roles else set())
+        require(set(dependencies) == expected_dependencies,
+                f'{change["id"]}: incorrect dependencies; expected {sorted(expected_dependencies)}')
         word = one(root, f"words/word[@id='{vid}']")
         base = f"/dictionary/words/word[@id='{vid}']"
         if change['operation'] == 'add_role':

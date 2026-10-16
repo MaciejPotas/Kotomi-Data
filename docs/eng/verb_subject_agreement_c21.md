@@ -37,11 +37,15 @@ Additional cost is linear in proposals with a bounded number of XML searches.
 A fixture cannot prove deployment in the published file, so this is a release
 check in the existing integrity gate, separate from unit tests.
 
-Eight new mutation tests use only independent, versioned
+Fifteen mutation tests use only independent, versioned
 `tests/fixtures/c1/v1.json`. Map loading, class selection, negation, past tense,
 missing-class rejection, legacy translations and persistence are already tested
 in Kotomi (`test_verb_form_agreement.py`, `test_verb_agreement_persistence.py`,
 `test_subject_relative_catalog_boundary.py`); Data does not duplicate the engine.
+
+Dependency validation derives the complete expected set from role-addition
+operations and `subject_role_change`. Missing, extra, duplicate and malformed
+`depends_on` entries fail, including references to existing but incorrect operations.
 
 ## Integration acceptance outside CI
 

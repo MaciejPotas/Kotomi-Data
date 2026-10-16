@@ -37,11 +37,15 @@ Koszt dodatkowy to liniowe przejście po propozycjach oraz stała liczba wyszuka
 w XML. Fixture nie potwierdzi wdrożenia danych w publikowanym pliku, dlatego
 jest to kontrola wydania w istniejącym gate, poza testami jednostkowymi.
 
-Osiem nowych testów mutacyjnych korzysta wyłącznie z niezależnego,
+Piętnaście testów mutacyjnych korzysta wyłącznie z niezależnego,
 wersjonowanego `tests/fixtures/c1/v1.json`. Testy odczytu map, wyboru klas,
 negacji, przeszłości, braku fallbacku, zachowania tłumaczeń i zapisu już istnieją
 w Kotomi (`test_verb_form_agreement.py`, `test_verb_agreement_persistence.py`,
 `test_subject_relative_catalog_boundary.py`); nie duplikujemy silnika w Data.
+
+Kontrola zależności wyznacza pełny oczekiwany zestaw z operacji dodania roli i
+`subject_role_change`. Odrzuca brakujące, nadmiarowe, zduplikowane i nieprawidłowe
+`depends_on`, także odwołanie do istniejącej, ale niewłaściwej operacji.
 
 ## Akceptacja integracyjna poza CI
 

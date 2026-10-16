@@ -101,3 +101,63 @@ class DeploymentTests(unittest.TestCase):
         before = ET.tostring(self.root)
         self.validate()
         self.assertEqual(before, ET.tostring(self.root))
+
+
+    def test_required_dependency_cannot_be_removed(self):
+        change = self.report['changes'][1]
+        for missing in ([], None):
+            with self.subTest(missing=missing):
+                if missing is None:
+                    change.pop('depends_on', None)
+                else:
+                    change['depends_on'] = missing
+                with self.assertRaisesRegex(ValueError, 'incorrect dependencies'):
+                    self.validate()
+
+    def test_dependency_must_reference_the_required_role_operation(self):
+        change = self.report['changes'][1]
+        wrong = self.report['changes'][2]['id']
+        required = self.report['changes'][0]['id']
+        for dependencies in ([wrong], [required, wrong], ['absent'], [change['id']]):
+            with self.subTest(dependencies=dependencies):
+                change['depends_on'] = dependencies
+                with self.assertRaisesRegex(ValueError, 'incorrect dependencies'):
+                    self.validate()
+
+    def test_duplicate_or_malformed_dependencies_are_rejected(self):
+        change = self.report['changes'][1]
+        required = self.report['changes'][0]['id']
+        for dependencies in ([required, required], required, None, [None], [[]]):
+            with self.subTest(dependencies=dependencies):
+                change['depends_on'] = dependencies
+                with self.assertRaisesRegex(ValueError, 'dependencies'):
+                    self.validate()
+
+    def test_valid_dependency_is_independent_of_operation_order(self):
+        self.report['changes'].reverse()
+        self.assertEqual(self.validate(), 9)
+
+    def test_subject_role_change_must_name_the_same_verbs_role_operation(self):
+        row = next(r for r in self.report['verbs'] if r['id'] == 'fixture_new')
+        for role_change in (None, 'absent', self.report['changes'][1]['id']):
+            with self.subTest(role_change=role_change):
+                row['subject_role_change'] = role_change
+                with self.assertRaisesRegex(ValueError, 'subject_role_change'):
+                    self.validate()
+
+    def test_existing_subject_requires_no_dependency(self):
+        # Keep the synthetic deployed XML, but model a previously existing role.
+        self.report['changes'].pop(0)
+        row = next(r for r in self.report['verbs'] if r['id'] == 'fixture_new')
+        row['subject_role_change'] = None
+        for change in self.report['changes']:
+            change.pop('depends_on', None)
+        self.assertEqual(self.validate(), 8)
+        self.report['changes'][0]['depends_on'] = [self.report['changes'][1]['id']]
+        with self.assertRaisesRegex(ValueError, 'incorrect dependencies'):
+            self.validate()
+
+    def test_role_addition_cannot_depend_on_a_translation(self):
+        self.report['changes'][0]['depends_on'] = [self.report['changes'][1]['id']]
+        with self.assertRaisesRegex(ValueError, 'incorrect dependencies'):
+            self.validate()
