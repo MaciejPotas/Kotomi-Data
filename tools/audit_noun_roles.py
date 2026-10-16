@@ -74,6 +74,73 @@ def compare_roles(before, after, matcher):
     return rows
 
 
+def load_decisions(text):
+    """Reject duplicate JSON keys instead of silently replacing an approval."""
+    def unique(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f'Duplicate decision/property: {key}')
+            result[key] = value
+        return result
+    result = json.loads(text, object_pairs_hook=unique)
+    if not isinstance(result, dict):
+        raise ValueError('Decisions must be an object')
+    return result
+
+
+def role_attributes(verbs):
+    result = {}
+    for vid, verb in verbs.items():
+        for role in verb.findall('usage/role'):
+            key = f'{vid}/{role.get("ref")}'
+            if key in result:
+                raise ValueError(f'Duplicate role: {key}')
+            result[key] = dict(role.attrib)
+    return result
+
+
+def validate_catalog_extension(before, after):
+    # The baseline project is loaded by the current engine. Its categories must
+    # retain their definitions, otherwise both sides could hide the same drift.
+    for key, definition in before.items():
+        if after.get(key) != definition:
+            raise ValueError(f'{key}: existing category definition changed')
+
+
+def validate_decisions(before, after, decisions, pairs):
+    """Approved expectations, XML and engine observations are separate inputs.
+
+    Roles without a decision must retain both their XML and their matches.
+    The baseline supplies unchanged pairs; only reviewed deltas are stored.
+    """
+    check_local_scope(before, after)
+    old, new = role_attributes(before), role_attributes(after)
+    required = {key for key, attrs in old.items() if attrs.get('nouns')}
+    if set(decisions) != required:
+        raise ValueError('Decisions must cover exactly every original nouns role')
+    observed = {row['key']: row for row in pairs}
+    if len(observed) != len(pairs) or set(observed) != set(old):
+        raise ValueError('Engine results must cover exactly every role')
+    for key, attrs in old.items():
+        decision = decisions.get(key)
+        target = decision['target'] if decision is not None else attrs
+        if new[key] != target:
+            raise ValueError(f'{key}: approved role attributes differ: expected {target}, actual {new[key]}')
+        if decision is not None:
+            remaining = target.get('nouns', '').split()
+            status = decision.get('status')
+            if status not in {'category', 'retained_exception', 'deferred_sense_review'}:
+                raise ValueError(f'{key}: invalid decision status')
+            if bool(remaining) != (status != 'category') or not decision.get('reason_pl'):
+                raise ValueError(f'{key}: decision documentation contradicts target')
+        for field in ('added', 'removed'):
+            expected = decision[field] if decision is not None else []
+            if (not isinstance(expected, list) or len(expected) != len(set(expected))
+                    or sorted(expected) != observed[key][field]):
+                raise ValueError(f'{key}: unapproved {field} combinations: expected {expected}, actual {observed[key][field]}')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--kotomi', type=Path, required=True)
@@ -92,18 +159,19 @@ def main():
     check_local_scope(old_v, new_v)
     check_local_scope(old_n, new_n, noun=True)
     rows, repeated = inventory(old_v, old_n)
-    decisions = json.loads(args.decisions.read_text(encoding='utf-8'))
-    if set(decisions) != {r['key'] for r in rows}:
-        raise ValueError('Decisions must cover exactly every original nouns role')
+    decisions = load_decisions(args.decisions.read_text(encoding='utf-8'))
     pairs = compare_roles(b, a, role_matches)
+    validate_decisions(old_v, new_v, decisions, pairs)
     pair_by_key = {r['key']: r for r in pairs}
     for row in rows:
         vid, role = row['key'].split('/')
         row['after'] = dict(new_v[vid].find(f"usage/role[@ref='{role}']").attrib)
         row.update(decisions[row['key']])
+        row['remaining_nouns'] = row['target'].get('nouns', '').split()
         row['pairs'] = pair_by_key[row['key']]
     old_catalog = {x.get('id'): dict(x.attrib) for x in ET.parse(args.baseline_grammar).findall('noun_categories/category')}
     new_catalog = {x.get('id'): dict(x.attrib) for x in ET.parse(args.kotomi / 'kotomi/core/grammar/japanese/grammar.xml').findall('noun_categories/category')}
+    validate_catalog_extension(old_catalog, new_catalog)
     reclassified = {i: {'before': old_n[i].get('category'), 'after': n.get('category')}
                     for i, n in new_n.items() if n.get('category') != old_n[i].get('category')}
     for i in new_n:

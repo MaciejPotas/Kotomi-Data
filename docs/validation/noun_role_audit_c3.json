@@ -578,8 +578,15 @@
       "new_categories_needed": [
         "closable_container"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "closable_container",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "akeru/object",
         "before": [
@@ -614,8 +621,14 @@
       "new_categories_needed": [
         "closable_container"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "subject",
+        "accepts": "closable_container"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "aku/subject",
         "before": [
@@ -652,13 +665,20 @@
       "group": "Czynności wymagające rozróżnienia sensu",
       "reason_pl": "shigoto/meal to działania, keikaku/yotei to plany i ich realizacja. Nie istnieje jedna wąska kategoria w aktualnej jednoosiowej klasyfikacji. Lista pozostaje ograniczeniem zakresu sensu, nie modelem wszystkich przyszłych czynności. Wymaga dalszej decyzji przed bezpiecznym uogólnieniem.",
       "new_categories_needed": [],
+      "status": "deferred_sense_review",
+      "target": {
+        "ref": "object",
+        "nouns": "shigoto keikaku yotei meal",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "shigoto",
         "keikaku",
         "yotei",
         "meal"
       ],
-      "status": "deferred_sense_review",
       "pairs": {
         "key": "hajimeru/object",
         "before": [
@@ -698,8 +718,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "harau/object",
         "before": [
@@ -738,11 +765,21 @@
       "group": "Teksty i wieloznaczność",
       "reason_pl": "Wszystkie 6 tekstów pasuje do otwierania/rozkładania tekstu lub dokumentu, w tym nowy letter. box jest fizycznym otwieraniem, school uruchamianiem placówki. Nie uogólniamy tych dodatkowych znaczeń na każdy pojemnik i budynek.",
       "new_categories_needed": [],
+      "status": "retained_exception",
+      "target": {
+        "ref": "object",
+        "accepts": "text",
+        "nouns": "box school",
+        "government": "direct_object"
+      },
+      "added": [
+        "letter"
+      ],
+      "removed": [],
       "remaining_nouns": [
         "box",
         "school"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "hiraku/object",
         "before": [
@@ -792,8 +829,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "person animal food drink text media vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "ireru/object",
         "before": [
@@ -902,10 +946,17 @@
       "new_categories_needed": [
         "container"
       ],
+      "status": "retained_exception",
+      "target": {
+        "ref": "target",
+        "accepts": "container",
+        "nouns": "room"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "room"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "ireru/target",
         "before": [
@@ -944,8 +995,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "text vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "kariru/object",
         "before": [
@@ -1011,8 +1069,14 @@
         "education_facility",
         "sports_facility"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "target",
+        "accepts": "education_facility sports_facility"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "kayou/target",
         "before": [
@@ -1049,8 +1113,15 @@
       "new_categories_needed": [
         "music"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "music",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "keikosuru/object",
         "before": [
@@ -1086,10 +1157,20 @@
       "group": "Rozbieżne znaczenia",
       "reason_pl": "消す z email/note znaczy usuwać/kasować, nie wyłączać. Usunięto obie pary zamiast zmieniać wszystkie tłumaczenia. Zostaje television w istniejącym znaczeniu telewizji/odbiornika; nie klasyfikujemy całego medium jako urządzenia.",
       "new_categories_needed": [],
+      "status": "retained_exception",
+      "target": {
+        "ref": "object",
+        "nouns": "television",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [
+        "email",
+        "note"
+      ],
       "remaining_nouns": [
         "television"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "kesu/object",
         "before": [
@@ -1126,10 +1207,17 @@
       "group": "Wyjątki leksykalne",
       "reason_pl": "clothing obejmuje także przyszłe spodnie; japońskie kiru nie zastępuje haku ani kaburu. Zachowano ogólne clothes. Docelowo potrzeba rozróżnienia sposobu noszenia lub sensów; nie przypisujemy ogólnemu clothes fałszywej cechy górnej części ciała.",
       "new_categories_needed": [],
+      "status": "retained_exception",
+      "target": {
+        "ref": "object",
+        "nouns": "clothes",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "clothes"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "kiru/object",
         "before": [
@@ -1164,8 +1252,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "food drink text media vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "motteiku/object",
         "before": [
@@ -1254,8 +1349,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "food drink text media vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "mottekuru/object",
         "before": [
@@ -1344,8 +1446,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "text vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "nakusu/object",
         "before": [
@@ -1412,8 +1521,17 @@
       "new_categories_needed": [
         "clothing"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "clothing",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [
+        "bag"
+      ],
+      "remaining_nouns": [],
       "pairs": {
         "key": "nugu/object",
         "before": [
@@ -1448,12 +1566,18 @@
       "group": "Czynności wymagające rozróżnienia sensu",
       "reason_pl": "Kończy się praca/posiłek, a yotei wymaga znaczenia zaplanowanych zajęć. food dopuściłoby jabłko, availability_reason pieniądze. Zachowano listę do rozdzielenia zdarzeń i planów.",
       "new_categories_needed": [],
+      "status": "deferred_sense_review",
+      "target": {
+        "ref": "subject",
+        "nouns": "shigoto meal yotei"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "shigoto",
         "meal",
         "yotei"
       ],
-      "status": "deferred_sense_review",
       "pairs": {
         "key": "owaru/subject",
         "before": [
@@ -1492,8 +1616,15 @@
       "new_categories_needed": [
         "music"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "music",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "renshuusuru/object",
         "before": [
@@ -1529,8 +1660,15 @@
       "new_categories_needed": [
         "clothing"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "clothing",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "sentakusuru/object",
         "before": [
@@ -1563,8 +1701,14 @@
       "new_categories_needed": [
         "closable_container"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "subject",
+        "accepts": "closable_container"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "shimaru/subject",
         "before": [
@@ -1601,8 +1745,15 @@
       "new_categories_needed": [
         "closable_container"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "closable_container",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "shimeru/object",
         "before": [
@@ -1638,8 +1789,15 @@
       "new_categories_needed": [
         "duration"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "duration",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "sugosu/object",
         "before": [
@@ -1675,6 +1833,14 @@
       "group": "Czynności wymagające rozróżnienia sensu",
       "reason_pl": "Suru z pracą, obietnicą, planem i sprawą jest zależne od konstrukcji. Wspólne abstract jest za szerokie (życie, smak, jutro), a jedna nowa kategoria wymagałaby przecięcia obecnych gałęzi. Pozostaje jawny zakres, z jawnym długiem semantycznym.",
       "new_categories_needed": [],
+      "status": "deferred_sense_review",
+      "target": {
+        "ref": "object",
+        "nouns": "shigoto yakusoku keikaku yotei youji",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "shigoto",
         "yakusoku",
@@ -1682,7 +1848,6 @@
         "yotei",
         "youji"
       ],
-      "status": "deferred_sense_review",
       "pairs": {
         "key": "suru/object",
         "before": [
@@ -1726,8 +1891,24 @@
       "new_categories_needed": [
         "building"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "building",
+        "government": "direct_object"
+      },
+      "added": [
+        "biru",
+        "byouin",
+        "eigakan",
+        "ginkou",
+        "mise",
+        "station",
+        "tatemono",
+        "yuubinkyoku"
+      ],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "tateru/object",
         "before": [
@@ -1782,12 +1963,19 @@
       "group": "Wyjątki kontekstowe",
       "reason_pl": "Przedmiotem złożenia jest dokument/praca do przedłożenia, nie każdy tekst (np. gazeta). Odbiorca musi pełnić odpowiednią funkcję: nie każda osoba i nie każda placówka. Nie ma obecnie kategorii funkcjonalnej opisującej oba konteksty; zachowano listy zamiast fałszywej klasyfikacji nauczyciela lub wszystkich tekstów.",
       "new_categories_needed": [],
+      "status": "retained_exception",
+      "target": {
+        "ref": "object",
+        "nouns": "book note keikaku",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "book",
         "note",
         "keikaku"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "teishutsusuru/object",
         "before": [
@@ -1822,11 +2010,17 @@
       "group": "Wyjątki kontekstowe",
       "reason_pl": "Przedmiotem złożenia jest dokument/praca do przedłożenia, nie każdy tekst (np. gazeta). Odbiorca musi pełnić odpowiednią funkcję: nie każda osoba i nie każda placówka. Nie ma obecnie kategorii funkcjonalnej opisującej oba konteksty; zachowano listy zamiast fałszywej klasyfikacji nauczyciela lub wszystkich tekstów.",
       "new_categories_needed": [],
+      "status": "retained_exception",
+      "target": {
+        "ref": "target",
+        "nouns": "teacher school"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "teacher",
         "school"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "teishutsusuru/target",
         "before": [
@@ -1863,13 +2057,20 @@
       "group": "Wyjątki leksykalne",
       "reason_pl": "Obecne book/manga/newspaper to zamykane/składane teksty, box to inny fizyczny obiekt. Sam text dodałby letter/email/note, a container także otwarte naczynia. Nowa kategoria tworzona tylko z tych ID nie rozwiązałaby kwestii sensów. Zachowano listę.",
       "new_categories_needed": [],
+      "status": "retained_exception",
+      "target": {
+        "ref": "object",
+        "nouns": "book manga newspaper box",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "book",
         "manga",
         "newspaper",
         "box"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "tojiru/object",
         "before": [
@@ -1907,10 +2108,17 @@
       "group": "Wyjątki leksykalne",
       "reason_pl": "W znaczeniu włączać obecny television jest jedynym nazwanym przypadkiem. thing byłoby błędne, a klasyfikacja telewizji jako urządzenia usunęłaby rozróżnienie medium/odbiornik. Zostaje wyjątek do audytu sensu hasła.",
       "new_categories_needed": [],
+      "status": "retained_exception",
+      "target": {
+        "ref": "object",
+        "nouns": "television",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "television"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "tsukeru/object",
         "before": [
@@ -1946,6 +2154,14 @@
       "group": "Czynności wymagające rozróżnienia sensu",
       "reason_pl": "Kontynuować pracę/realizację planu/wykonanie muzyki. To różne odczytania zdarzeniowe, nie dowolne abstrakty lub media. Wymaga doprecyzowania sensów; nie rozszerzamy automatycznie na głos ani przyszłe gatunki muzyczne.",
       "new_categories_needed": [],
+      "status": "deferred_sense_review",
+      "target": {
+        "ref": "object",
+        "nouns": "shigoto keikaku yotei music song",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "shigoto",
         "keikaku",
@@ -1953,7 +2169,6 @@
         "music",
         "song"
       ],
-      "status": "deferred_sense_review",
       "pairs": {
         "key": "tsuzukeru/object",
         "before": [
@@ -1993,10 +2208,17 @@
       "group": "Rozbieżne znaczenia",
       "reason_pl": "shigoto wo ukeru to przyjąć pracę/zlecenie. Obecne odbierać jest nieprecyzyjne. Nie poszerzamy na całą pracę/czynności bez uzgodnienia tłumaczeń; pozostawiono jawny zakres i wskazano dług.",
       "new_categories_needed": [],
+      "status": "deferred_sense_review",
+      "target": {
+        "ref": "object",
+        "nouns": "shigoto",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "shigoto"
       ],
-      "status": "deferred_sense_review",
       "pairs": {
         "key": "ukeru/object",
         "before": [
@@ -2031,8 +2253,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "food drink text media vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "ageru_give/object",
         "before": [
@@ -2121,8 +2350,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "text vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "kaesu/object",
         "before": [
@@ -2189,8 +2425,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "text vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "kasu/object",
         "before": [
@@ -2257,8 +2500,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "food drink text media vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "kureru/object",
         "before": [
@@ -2347,8 +2597,15 @@
       "new_categories_needed": [
         "money"
       ],
-      "remaining_nouns": [],
       "status": "category",
+      "target": {
+        "ref": "object",
+        "accepts": "food drink text media vehicle thing money",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
+      "remaining_nouns": [],
       "pairs": {
         "key": "morau/object",
         "before": [
@@ -2436,10 +2693,18 @@
       "group": "Wyjątki leksykalne",
       "reason_pl": "Ratować życie to rzeczywiste połączenie leksykalne poza person/animal. abstract dodałoby nonsens, smak i jutro. Pozostawiono inochi w alternatywie OR.",
       "new_categories_needed": [],
+      "status": "retained_exception",
+      "target": {
+        "ref": "object",
+        "accepts": "person animal",
+        "nouns": "inochi",
+        "government": "direct_object"
+      },
+      "added": [],
+      "removed": [],
       "remaining_nouns": [
         "inochi"
       ],
-      "status": "retained_exception",
       "pairs": {
         "key": "sukuu/object",
         "before": [

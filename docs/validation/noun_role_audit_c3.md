@@ -25,6 +25,34 @@ Zbadano cały słownik: 122 czasowniki, 253 role i wszystkie 80 rzeczowników. W
 
 Kategoria oznacza w metrykach osobno katalog, elementy wybieralne i rzeczywiście użyte. Kombinacja nie oznacza pytania: konteksty i formy mnożą realizacje. 22 z 36 list znika całkowicie; 25 ról jest zmodyfikowanych. Żadnego `government`, tekstu tłumaczenia, formy, roli ani wzorca nie zmieniono.
 
+## Poprawki po review C3
+
+- P1: Content 63 wymaga manifestu aktualizacji formatu 2. Starszy klient odrzuca go
+  przed pobraniem plików; nowy nadal obsługuje format 1 i Content 62. Zachowano
+  istniejącą walidację izolowanego snapshotu i rollback. Macierz uruchamia rzeczywiste
+  aktualizatory obu checkoutów na niezależnym fixture. Nie podniesiono historycznego,
+  ignorowanego `min_kotomi_version`; poprawiono błędne zapewnienia w dokumentacji.
+- P2: istniejący plik decyzji przechowuje dokładny `target` oraz jawne `added`/`removed`.
+  Walidator oddziela decyzje, XML i wyniki silnika; odrzuca duplikaty, dryf atrybutów,
+  zmianę government/kolejności i niezaplanowane pary także w pozostałych rolach.
+  Definicje wcześniejszych kategorii muszą pozostać zgodne z bazą. Regeneracja raportu
+  nie aktualizuje decyzji. Słowniki i zatwierdzona migracja pozostają niezmienione.
+- P2/P3: fixture charakteryzuje obecne granice dla drzwi, okna, koszuli i spodni.
+  Nie wprowadzono wielokrotnej klasyfikacji. Przewodniki PL/EN opisują możliwość
+  użycia istniejącego OR oraz mały, opcjonalny etap C4 dla cech funkcjonalnych.
+- P3: rozszerzono test Studio o zachowanie wszystkich niezwiązanych plików przy
+  zapisie rzeczownika i czasownika; wykorzystano dotychczasowe testy uzgodnienia,
+  przydawek, serializacji i IntelliSense. Nie dodano wyjątków dostępu do Content.
+- Wydajność: profil wykazał koszt tymczasowych zbiorów. Jedno wyrażenie w istniejącym
+  `role_matches` używa teraz `isdisjoint`, zachowując OR i kontrolę całego łańcucha
+  przodków. Nie ma nowego matchera ani cache. Wszystkie pomiary, także wcześniejsze
+  przekroczenia, są zachowane w JSON wydajności.
+
+Bezpieczna publikacja wymaga formatu 2, zielonego CI obu PR-ów oraz zaliczonych
+bramek C3. Publikacja Content 63 w formacie 1 jest zabroniona. Nie wykonano merge
+ani publikacji wydania. Szczegóły architektury aktualizacji i zakresu C4:
+[PL](../pl/noun_role_categories_c3.md), [EN](../eng/noun_role_categories_c3.md).
+
 ## Kategorie i decyzja architektoniczna
 
 [Pełny przewodnik PL](../pl/noun_role_categories_c3.md), [English guide](../eng/noun_role_categories_c3.md). Dziedziczenie już istniało. Wprowadzono 9 semantycznych podkategorii bez zmiany algorytmu. 5 przypadków wieloznacznych pozostawiono jawnie do osobnej decyzji, bez maskowania ich jako rozwiązanych.
@@ -266,81 +294,86 @@ ręcznie; wykonano testy usług edycji i istniejące testy kontrolerów.
 
 Wyniki końcowe testów i pomiarów znajdują się poniżej.
 
-### Wyniki testów
+### Wyniki testów po review
 
-- Linux / Python 3.12.14, wspólny przebieg nowych wersji Kotomi i Data: **3766 passed,
-  4 skipped, 6360 subtests passed**, 123,58 s. Cztery pominięcia to istniejące
-  opcjonalne testy kontraktów silnika w Data; osobno uruchomione z `KOTOMI_PATH`
-  zakończyły się sukcesem wraz z całym zestawem **95 testów Data, bez pominięć**.
-- 27 nowych przypadków aplikacji oraz 4 testy walidatora używają niezależnych fixture.
-- Bramka 8 s: 3766 wywołań, **0 przekroczeń**.
-- `validate_repository.py`, `validate_question_patterns.py`, pełna walidacja obu
-  projektów, katalog lekcji, macierz ról, regresja przymiotników i zapis/odczyt: PASS.
-- W testach IntelliSense zakres wynika z katalogu kategorii zamiast zamrożonej
-  liczby 12. Historyczna lista tateru została usunięta z ogólnego testu struktury;
-  dokładne różnice sprawdza kompletny, uruchamiany osobno audyt wydanej zawartości.
-- Nie poszerzono wyjątków dostępu testów do produkcyjnego Content.
+- Linux / Python 3.12.14: **3796 passed, 0 skipped, 6373 subtests passed**, 126.84 s.
+- Osobny zestaw Data z `KOTOMI_PATH`: **106 testów, bez pominięć**.
+- C3 obejmuje 42 przypadki aplikacji i 15 przypadków audytu Data na niezależnych fixture.
+- Bramka 8 s: 3796 wywołań, **0 przekroczeń**; najdłuższe 1.722 s.
+- Walidatory repozytorium i pytań, pełne projekty, katalog, wszystkie role,
+  cztery formy obu przydawek, generowanie pytań, statystyki i zapis/odczyt: PASS.
+- Dokładny zatwierdzony zbiór 9 nowych i 3 usuniętych kombinacji: PASS.
+- Rzeczywisty stary aktualizator instaluje fixture Content 62, odrzuca Content 63
+  przed pobraniem danych. Nowy instaluje oba. Błędy i niepowiązane pliki: PASS.
+- Nie dodano testów zależnych od produkcyjnego słownika ani nowych wyjątków dostępu.
 
-[Podsumowanie maszynowe](noun_role_tests_c3.json). Pierwszy przebieg wykrył stare
-asercje katalogu/listy oraz problem lokalnego dowiązania katalogu testowego;
-końcowy wynik pochodzi z rzeczywistego katalogu danych po poprawie asercji i
-odświeżeniu manifestów aplikacji. Nie zmieniano ochrony testów przed Content.
+[Podsumowanie maszynowe](noun_role_tests_c3.json).
 
-### Wydajność
+### Wydajność po review
 
-Pięć naprzemiennych rund przed/po, po pięć próbek operacji, osobne procesy,
-ustalone ziarno i ten sam przypięty CPU. Baza aplikacji i danych to wskazane wyżej
-commity main; po migracji użyto nowego katalogu i Content 63. Cold oznacza świeży
-projekt, warm wywołanie po rozgrzaniu. Nie wykonywano równoległych testów.
+Końcowy pomiar: 7 naprzemiennych rund przed/po, 21 próbek na operację,
+osobne procesy, stałe ziarno i przypięty CPU, bez równoległych testów. Baseline:
+wskazane wyżej commity main. Cold to nowy projekt, warm to wywołanie po rozgrzaniu.
+Próg pozostaje **10%**. W 40 porównaniach zakres wynosi
+**-12.06% do +8.93%**;
+liczba przekroczeń: **0**.
 
-W 40 porównaniach median parowanych zakres zmiany wynosi **-9.91% do +9.22%**.
-Brak regresji powyżej 10% w badanych scenariuszach. Nie jest to gwarancja dla
-dowolnej przyszłej wielkości słownika. Zachowano wszystkie próbki, bez odrzucania.
+Pierwsze pomiary wykazały przekroczenia; dokładniejszy przebieg potwierdził +11.67%
+dla rozgrzanego pierwszego pytania z dopełnieniem. Profil uzasadnił zastąpienie
+alokacji zbiorów operacją `isdisjoint` w istniejącym matcherze. JSON zachowuje
+pierwsze pomiary, ich kontrolę, informację o profilu i wszystkie końcowe próbki.
+Nie odrzucono niewygodnych wyników ani nie podniesiono progu.
+
+Po poprawce główna seria pozostawiła przekroczenie w krótkiej operacji dostępności.
+Jedna dodatkowa seria 9 rund po 101 próbek
+potwierdza operacje, które przekroczyły próg. Dla zmierzonych ponownie operacji bramka
+używa mediany wszystkich parowanych ilorazów z obu serii tego samego kodu,
+z zachowaniem pierwszych siedmiu rund. Pozostałe operacje używają głównej serii.
+`median_paired_ratios` w JSON zachowuje pierwotne wyniki, `verified_paired_ratios`
+podaje wynik łączny. Najwyższy pierwotny iloraz po korekcie: 1.105499.
 
 | Wzorzec | Operacja | Przed [ms] | Po [ms] | Mediana ilorazu po/przed |
 |---|---|---:|---:|---:|
-| Sam czasownik | cold/load | 74.594 | 73.824 | 1.024 |
-| Sam czasownik | cold/compatibility | 1.394 | 1.402 | 1.005 |
-| Sam czasownik | cold/exists | 0.389 | 0.365 | 0.916 |
-| Sam czasownik | cold/count | 22.683 | 21.990 | 0.974 |
-| Sam czasownik | cold/first_question | 0.822 | 0.851 | 1.041 |
-| Sam czasownik | warm/load | 70.511 | 71.790 | 1.045 |
-| Sam czasownik | warm/compatibility | 0.226 | 0.315 | 1.033 |
-| Sam czasownik | warm/exists | 0.230 | 0.221 | 0.904 |
-| Sam czasownik | warm/count | 19.978 | 22.534 | 1.049 |
-| Sam czasownik | warm/first_question | 0.533 | 0.582 | 1.004 |
-| Czasownik z dopełnieniem | cold/load | 77.069 | 77.218 | 0.978 |
-| Czasownik z dopełnieniem | cold/compatibility | 5.389 | 5.319 | 1.036 |
-| Czasownik z dopełnieniem | cold/exists | 4.398 | 4.481 | 1.073 |
-| Czasownik z dopełnieniem | cold/count | 515.135 | 526.775 | 0.998 |
-| Czasownik z dopełnieniem | cold/first_question | 6.504 | 6.537 | 1.005 |
-| Czasownik z dopełnieniem | warm/load | 71.225 | 72.933 | 1.075 |
-| Czasownik z dopełnieniem | warm/compatibility | 4.110 | 4.485 | 1.051 |
-| Czasownik z dopełnieniem | warm/exists | 4.038 | 4.187 | 1.058 |
-| Czasownik z dopełnieniem | warm/count | 507.420 | 506.668 | 1.019 |
-| Czasownik z dopełnieniem | warm/first_question | 6.006 | 6.289 | 1.047 |
-| Zdania przydawkowe | cold/load | 72.589 | 73.458 | 1.012 |
-| Zdania przydawkowe | cold/compatibility | 11.927 | 11.233 | 0.935 |
-| Zdania przydawkowe | cold/exists | 8.653 | 8.618 | 0.993 |
-| Zdania przydawkowe | cold/count | 515.003 | 494.509 | 0.987 |
-| Zdania przydawkowe | cold/first_question | 11.046 | 11.104 | 0.989 |
-| Zdania przydawkowe | warm/load | 77.207 | 69.553 | 0.901 |
-| Zdania przydawkowe | warm/compatibility | 9.844 | 9.917 | 0.987 |
-| Zdania przydawkowe | warm/exists | 8.745 | 9.071 | 1.015 |
-| Zdania przydawkowe | warm/count | 525.992 | 483.259 | 0.919 |
-| Zdania przydawkowe | warm/first_question | 10.460 | 11.420 | 1.092 |
-| Zdania przydawkowe podmiotowe | cold/load | 74.520 | 75.119 | 0.940 |
-| Zdania przydawkowe podmiotowe | cold/compatibility | 16.959 | 19.024 | 1.025 |
-| Zdania przydawkowe podmiotowe | cold/exists | 16.658 | 18.445 | 1.082 |
-| Zdania przydawkowe podmiotowe | cold/count | 112.653 | 114.523 | 0.986 |
-| Zdania przydawkowe podmiotowe | cold/first_question | 22.844 | 19.697 | 0.956 |
-| Zdania przydawkowe podmiotowe | warm/load | 72.241 | 76.846 | 1.074 |
-| Zdania przydawkowe podmiotowe | warm/compatibility | 16.616 | 17.375 | 1.046 |
-| Zdania przydawkowe podmiotowe | warm/exists | 15.853 | 15.745 | 0.945 |
-| Zdania przydawkowe podmiotowe | warm/count | 111.654 | 113.074 | 0.999 |
-| Zdania przydawkowe podmiotowe | warm/first_question | 17.883 | 18.413 | 1.045 |
+| Sam czasownik | cold/load | 80.672 | 81.648 | 0.998 |
+| Sam czasownik | cold/compatibility | 1.630 | 1.717 | 1.003 |
+| Sam czasownik | cold/exists | 0.371 | 0.389 | 1.047 |
+| Sam czasownik | cold/count | 21.481 | 23.886 | 1.057 |
+| Sam czasownik | cold/first_question | 0.857 | 0.912 | 1.055 |
+| Sam czasownik | warm/load | 77.079 | 74.598 | 0.998 |
+| Sam czasownik | warm/compatibility | 0.239 | 0.203 | 1.062 |
+| Sam czasownik | warm/exists | 0.166 | 0.172 | 1.018 |
+| Sam czasownik | warm/count | 19.864 | 23.657 | 1.089 |
+| Sam czasownik | warm/first_question | 0.511 | 0.543 | 1.081 |
+| Czasownik z dopełnieniem | cold/load | 70.818 | 71.986 | 1.034 |
+| Czasownik z dopełnieniem | cold/compatibility | 5.494 | 5.015 | 0.937 |
+| Czasownik z dopełnieniem | cold/exists | 4.564 | 4.163 | 0.924 |
+| Czasownik z dopełnieniem | cold/count | 536.010 | 514.091 | 0.965 |
+| Czasownik z dopełnieniem | cold/first_question | 6.147 | 6.303 | 0.982 |
+| Czasownik z dopełnieniem | warm/load | 75.291 | 78.675 | 1.019 |
+| Czasownik z dopełnieniem | warm/compatibility | 4.096 | 4.013 | 0.980 |
+| Czasownik z dopełnieniem | warm/exists | 4.019 | 3.798 | 0.906 |
+| Czasownik z dopełnieniem | warm/count | 492.673 | 520.342 | 1.052 |
+| Czasownik z dopełnieniem | warm/first_question | 6.295 | 5.909 | 0.955 |
+| Zdania przydawkowe | cold/load | 78.812 | 74.982 | 0.936 |
+| Zdania przydawkowe | cold/compatibility | 11.512 | 11.337 | 0.979 |
+| Zdania przydawkowe | cold/exists | 8.847 | 8.221 | 0.960 |
+| Zdania przydawkowe | cold/count | 509.860 | 493.615 | 0.965 |
+| Zdania przydawkowe | cold/first_question | 10.882 | 10.678 | 0.999 |
+| Zdania przydawkowe | warm/load | 73.354 | 76.760 | 1.071 |
+| Zdania przydawkowe | warm/compatibility | 9.791 | 9.495 | 0.967 |
+| Zdania przydawkowe | warm/exists | 7.851 | 7.942 | 1.019 |
+| Zdania przydawkowe | warm/count | 513.391 | 496.220 | 0.989 |
+| Zdania przydawkowe | warm/first_question | 11.151 | 10.589 | 0.989 |
+| Zdania przydawkowe podmiotowe | cold/load | 74.015 | 72.450 | 0.961 |
+| Zdania przydawkowe podmiotowe | cold/compatibility | 16.671 | 17.083 | 1.004 |
+| Zdania przydawkowe podmiotowe | cold/exists | 15.566 | 15.276 | 0.982 |
+| Zdania przydawkowe podmiotowe | cold/count | 114.449 | 114.310 | 1.021 |
+| Zdania przydawkowe podmiotowe | cold/first_question | 20.338 | 17.677 | 0.879 |
+| Zdania przydawkowe podmiotowe | warm/load | 80.838 | 74.143 | 0.983 |
+| Zdania przydawkowe podmiotowe | warm/compatibility | 15.855 | 15.522 | 1.002 |
+| Zdania przydawkowe podmiotowe | warm/exists | 15.679 | 15.027 | 0.900 |
+| Zdania przydawkowe podmiotowe | warm/count | 111.427 | 113.571 | 1.016 |
+| Zdania przydawkowe podmiotowe | warm/first_question | 17.961 | 17.833 | 0.993 |
 
-Czasy są medianami median rund; ostatnia kolumna jest medianą ilorazów rund,
-dlatego nie musi być dokładnie ilorazem dwóch poprzednich kolumn.
-
-[Surowe pomiary](noun_role_performance_c3.json).
+Czasy są medianami median rund; iloraz jest medianą ilorazów parowanych.
+[Surowe pomiary i diagnostyka](noun_role_performance_c3.json).

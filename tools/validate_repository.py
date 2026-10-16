@@ -561,8 +561,8 @@ def validate_content_manifest() -> None:
     revision = load_json(ROOT / "content_revision.json")
     manifest = load_json(ROOT / "content_update_manifest.json")
 
-    if revision.get("format") != 1 or manifest.get("format") != 1:
-        raise AssertionError("Content revision and manifest must use format 1")
+    if revision.get("format") != 1:
+        raise AssertionError("Content revision metadata must use format 1")
     revision_number = revision.get("revision")
     if (
         not isinstance(revision_number, int)
@@ -574,6 +574,10 @@ def validate_content_manifest() -> None:
         raise AssertionError(
             "Content manifest revision must match content_revision.json"
         )
+
+    expected_format = 2 if revision_number >= 63 else 1
+    if type(manifest.get("format")) is not int or manifest["format"] != expected_format:
+        raise AssertionError("Content 63+ requires manifest format 2 to reject legacy clients")
 
     entries = manifest.get("files")
     if not isinstance(entries, list):

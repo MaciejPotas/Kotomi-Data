@@ -32,7 +32,7 @@ def main():
     from kotomi.application.storage import CatalogStore
     from kotomi.core.generation.compatibility import CompatibilityProbe
     from kotomi.core.generation.models import EngineRequest
-    from audit_noun_roles import compare_roles
+    from audit_noun_roles import compare_roles, words, load_decisions, validate_decisions
     from kotomi.core.generation.compatibility import role_matches
     before = QuizProject.load(args.baseline_data.resolve() / 'quiz_project.xml')
     after = QuizProject.load(args.data.resolve() / 'quiz_project.xml')
@@ -41,6 +41,10 @@ def main():
     assert CatalogStore(args.data.resolve()).load(language_context=after.language_context).validate() == []
     audit = json.loads(args.audit.read_text(encoding='utf-8'))
     actual_matrix = compare_roles(before, after, role_matches)
+    validate_decisions(words(args.baseline_data / 'dictionaries/verbs.xml'),
+                       words(args.data / 'dictionaries/verbs.xml'),
+                       load_decisions((args.data / 'docs/validation/noun_role_decisions_c3.json').read_text(encoding='utf-8')),
+                       actual_matrix)
     assert actual_matrix == audit['all_role_pairs'], 'stale audit matrix'
     deltas = {direction: {(r['key'].split('/')[0], r['key'].split('/')[1], noun)
               for r in actual_matrix for noun in r[direction]} for direction in ('added', 'removed')}

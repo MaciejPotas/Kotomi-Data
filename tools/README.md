@@ -185,7 +185,7 @@ Read [PL](../docs/pl/noun_role_categories_c3.md),
 [EN](../docs/eng/noun_role_categories_c3.md) and the
 [complete grouped inventory](../docs/validation/noun_role_audit_c3.md).
 Use application main `9d6d662228301dfb9d94524736e09dcc763b28cc` plus the C3
-category catalog, and a detached Data baseline at
+category catalog and review corrections, and a detached Data baseline at
 `ef338045ed383763db2cbf04aceea5b1b7ad1d69`. Export that application's original
 `kotomi/core/grammar/japanese/grammar.xml` as `baseline-grammar.xml`.
 
@@ -213,8 +213,8 @@ or production dictionaries. No production access exemption is added.
 
 The existing paired benchmark accepts optional `--baseline-kotomi` and
 `--baseline-engine-revision` for a distinct old application. Omitting them retains
-C2.2 behavior. For C3 run with both pinned checkouts, five alternating rounds and
-five samples, without concurrent tests:
+C2.2 behavior. For the reviewed C3 release run with both pinned checkouts, seven alternating rounds and
+21 samples, without concurrent tests:
 
 ```sh
 python tools/benchmark_verb_subject_c22.py --kotomi ../Kotomi \
@@ -222,9 +222,46 @@ python tools/benchmark_verb_subject_c22.py --kotomi ../Kotomi \
   --engine-revision 'C3 category catalog' \
   --baseline-engine-revision 9d6d662228301dfb9d94524736e09dcc763b28cc \
   --baseline-revision ef338045ed383763db2cbf04aceea5b1b7ad1d69 \
-  --rounds 5 --samples 5 --output docs/validation/noun_role_performance_c3.json
+  --rounds 7 --samples 21 --output docs/validation/noun_role_performance_c3.json
 ```
 
 Current release validation deliberately accepts `shimaru/subject` using
 `closable_container`. The C1 proposals and historical `validate_deployment`
 behavior are not rewritten. C2.2 integration evidence remains historical.
+
+
+### C3 review enforcement and publication gate
+
+The existing decision JSON owns exact `target` role attributes and approved
+`added`/`removed` noun IDs. Both audit and integration commands enforce those
+expectations before writing evidence. Roles without decisions retain their baseline
+attributes and matches. Duplicate decision keys fail. Regenerating a report cannot
+approve a broadened `accepts`, lost exception or altered pair. No matcher is duplicated.
+
+Content 63 requires manifest **format 2**, enforced by the release validator and
+Kotomi manifest builder. Legacy format-1 clients reject it before payload download.
+Never publish C3 through a format-1 mirror. Revision metadata remains format 1.
+See the PL/EN C3 guides for the compatibility matrix, snapshot validation, rollback
+and the limited C4 recommendation.
+
+Reproduce the protocol matrix using actual updater implementations and the bounded
+engine fixture (no production vocabulary):
+
+```sh
+python ../Kotomi/tools/updates/validate_content_compatibility_c3.py --kotomi ../app-before --legacy
+python ../Kotomi/tools/updates/validate_content_compatibility_c3.py --kotomi ../Kotomi
+```
+
+The legacy checkout is `9d6d662228301dfb9d94524736e09dcc763b28cc`.
+Run Data unit tests with `KOTOMI_PATH` as above to enable the three additional
+synthetic C3 engine contracts. The pure decision-mutation tests always run in CI.
+
+The review performance evidence also retains the initial 5 × 5 run and its
+7 × 21 precision recheck before the small set-intersection optimization. After
+that correction, the 7 × 21 full run had one borderline sub-millisecond check.
+One predeclared confirmation used the same driver with `--patterns 'Sam czasownik'
+--operations exists --rounds 9 --samples 101`. The final 10% gate uses the median
+of all 16 same-code paired round ratios for those measured operations, retaining
+the original seven rounds; other operations use the seven-round full run.
+The JSON separates original `median_paired_ratios`, `verified_paired_ratios`,
+`same_code_confirmation` and pre-correction diagnostics. No sample is discarded.

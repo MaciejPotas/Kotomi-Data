@@ -38,9 +38,10 @@ Do istniejącej sekcji `<dictionaries>` dodaj rejestracje:
 
 Starszy projekt może nie mieć tych trzech słowników. Pattern używający brakującego
 słownika nie wygeneruje zdania. Konteksty z tekstem wpisanym bezpośrednio nadal
-działają. Referencje kontekstów wprowadzono w Kotomi 1.7; Content z kategoriami
-przysłówków wymaga `min_kotomi_version="1.8"`,
-żeby starsza aplikacja nie potraktowała referencji jako pustego kontekstu.
+działają. Historyczne `min_kotomi_version="1.8.0"` nie jest egzekwowaną blokadą
+zgodności. Content 63 wymaga manifestu formatu 2, odrzucanego przez starszych klientów
+przed pobraniem danych. Nowy aktualizator waliduje kompletny snapshot przed zapisem.
+Zobacz [zasady publikacji C3](noun_role_categories_c3.md).
 
 ## Kompletne przykłady słowników
 

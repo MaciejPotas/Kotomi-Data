@@ -2,26 +2,26 @@
   "platform": "Linux",
   "python": "3.12.14",
   "combined_suite": {
-    "passed": 3766,
-    "skipped": 4,
-    "subtests_passed": 6360,
-    "seconds": 123.58,
-    "skip_scope": "Existing optional synthetic engine contracts; separately enabled in the 95-test Data run"
+    "passed": 3796,
+    "skipped": 0,
+    "subtests_passed": 6373,
+    "seconds": 126.84,
+    "engine_contracts": "KOTOMI_PATH enabled; independent fixtures only"
   },
   "data_suite_with_engine": {
-    "tests": 95,
+    "tests": 106,
     "skipped": 0,
     "status": "passed"
   },
   "unit_call_gate": {
     "limit_seconds": 8,
-    "checked": 3766,
+    "checked": 3796,
     "above_limit": 0,
     "slowest": {
-      "nodeid": "tests/test_single_content_grammar.py::test_default_project_save_keeps_source_values_and_reloads_polish",
-      "setup": 0.0029231699991214555,
-      "call": 1.8197428460007359,
-      "teardown": 0.00018212500071967952
+      "nodeid": "tests/test_project_validation_extended.py::ProjectValidationExtendedTests::test_governed_interrogative_filters_verb_without_government",
+      "setup": 0.0002602029999252409,
+      "call": 1.7219784459994116,
+      "teardown": 0.00019176999921910465
     }
   },
   "validation": {
@@ -30,23 +30,52 @@
     "full_project_before_after": "passed",
     "catalog": "passed",
     "all_role_pairs": "253 roles × 80 nouns",
+    "approved_added": 9,
+    "approved_removed": 3,
     "adjective_pair_changes": 0,
     "pattern_availability_probes": 368,
     "changed_availability": 0,
-    "noun_verb_actual_temporary_serialization": "passed"
+    "noun_verb_actual_temporary_serialization": "passed",
+    "all_four_relative_forms": "passed",
+    "decision_mutation_tests": "passed",
+    "baseline_category_definitions": "unchanged"
   },
-  "new_tests": "27 application cases plus 4 bounded XML audit tests",
+  "compatibility": {
+    "legacy_application": "9d6d662228301dfb9d94524736e09dcc763b28cc",
+    "legacy_fixture_matrix": {
+      "legacy": true,
+      "results": {
+        "62": "installed; unrelated files unchanged",
+        "63": "rejected before payload download; all bytes unchanged",
+        "format_1_diagnostic": "baseline rejects unknown category at snapshot validation; all bytes unchanged"
+      }
+    },
+    "current_fixture_matrix": {
+      "legacy": false,
+      "results": {
+        "62": "installed; unrelated files unchanged",
+        "63": "installed; unrelated files unchanged"
+      }
+    },
+    "incompatible_snapshot_and_corrupt_download": "all installed and unrelated files unchanged",
+    "release_requirement": "Content 63+ manifest format 2; both PR CI and C3 gates must pass; never publish format 1",
+    "historical_min_kotomi_version": "not enforced; not used as protection"
+  },
+  "new_tests": "C3 total: 42 application cases and 15 Data audit cases; all use independent fixtures",
   "limitations": [
-    "Native Windows/Android GUI was not manually clicked. Studio services and existing controller tests ran.",
-    "Five role lists need separate sense decisions; see audit decisions.",
-    "Content 63 must follow distribution of the updated application category catalog."
+    "Native Windows/Android GUI was not manually clicked; Studio services and controller tests ran.",
+    "Five role lists still need sense decisions; optional functional noun properties are proposed only for C4."
   ],
   "performance": {
-    "paired_rounds": 5,
-    "samples": 5,
+    "paired_rounds": 7,
+    "samples": 21,
     "comparisons": 40,
-    "minimum_paired_ratio": 0.9008645342396738,
-    "maximum_paired_ratio": 1.0922002021571349,
-    "above_ten_percent": 0
+    "minimum_paired_ratio": 0.8793782158207771,
+    "maximum_paired_ratio": 1.0893177867666588,
+    "above_ten_percent": 0,
+    "pre_optimization_evidence_retained": true,
+    "confirmation_rounds": 9,
+    "confirmation_samples": 101,
+    "primary_maximum_ratio": 1.1054992961349372
   }
 }

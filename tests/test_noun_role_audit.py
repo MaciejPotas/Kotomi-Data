@@ -51,3 +51,132 @@ class AuditTests(unittest.TestCase):
         check_local_scope(self.nouns, candidate, noun=True)
         candidate['sample'].set('translation', 'changed')
         with self.assertRaises(ValueError): check_local_scope(self.nouns, candidate, noun=True)
+
+    def test_existing_catalog_cannot_drift_on_both_sides_of_engine_comparison(self):
+        from audit_noun_roles import validate_catalog_extension
+        before = {'parent': {'id':'parent'}}
+        after = {**before, 'child': {'id':'child', 'parent':'parent'}}
+        validate_catalog_extension(before, after)
+        after['parent'] = {'id':'parent', 'parent':'child'}
+        with self.assertRaisesRegex(ValueError, 'existing category'):
+            validate_catalog_extension(before, after)
+
+
+class DecisionTests(unittest.TestCase):
+    """Independent C3 decision fixture v2; approved values are authored literals."""
+    def setUp(self):
+        from audit_noun_roles import validate_decisions
+        self.validate_decisions = validate_decisions
+        self.before = {'build': ET.fromstring('''<word id="build"><usage>
+          <role ref="object" nouns="house park exception" government="direct_object"/>
+          <role ref="subject" accepts="person"/>
+          </usage><forms><form ref="plain"/><form ref="negative"/></forms></word>''')}
+        self.after = deepcopy(self.before)
+        role = self.after['build'].find('usage/role')
+        role.attrib.update(accepts='building', nouns='exception')
+        self.decisions = {'build/object': {
+            'target': {'ref':'object', 'accepts':'building', 'nouns':'exception', 'government':'direct_object'},
+            'added':['tower'], 'removed':['park'], 'status':'retained_exception',
+            'reason_pl':'Budynki oraz zatwierdzony wyjątek.'}}
+        self.pairs = [dict(key='build/object', before=['exception','house','park'],
+                           after=['exception','house','tower'], added=['tower'], removed=['park']),
+                      dict(key='build/subject', before=['exception'], after=['exception'], added=[], removed=[])]
+
+    def validate(self):
+        self.validate_decisions(self.before, self.after, self.decisions, self.pairs)
+
+    def test_approved_migration(self):
+        self.validate()
+
+    def test_exact_role_attributes_not_just_observed_counts(self):
+        role = self.after['build'].find('usage/role')
+        original = dict(role.attrib)
+        for name, value in [('accepts','place'), ('accepts',None),
+                            ('nouns','exception park'), ('nouns',None),
+                            ('government','other')]:
+            with self.subTest(name=name, value=value):
+                role.attrib.clear(); role.attrib.update(original)
+                if value is None: role.attrib.pop(name)
+                else: role.set(name, value)
+                with self.assertRaises(ValueError): self.validate()
+
+    def test_unreviewed_role_cannot_change_even_if_matches_stay_equal(self):
+        self.after['build'].findall('usage/role')[1].set('accepts','living')
+        with self.assertRaisesRegex(ValueError, 'approved role attributes'): self.validate()
+
+    def test_exact_pairs_include_unreviewed_roles(self):
+        for index, field, ids in [(0,'added',['other']), (0,'added',[]),
+                                   (0,'removed',[]), (0,'removed',['other']),
+                                   (1,'added',['park']), (1,'removed',['exception'])]:
+            with self.subTest(index=index, field=field, ids=ids):
+                original = self.pairs[index][field]
+                self.pairs[index][field] = ids
+                with self.assertRaisesRegex(ValueError, 'unapproved'): self.validate()
+                self.pairs[index][field] = original
+
+    def test_role_and_form_order_are_preserved(self):
+        for section in ('usage','forms'):
+            with self.subTest(section=section):
+                parent = self.after['build'].find(section)
+                parent[:] = list(reversed(parent))
+                with self.assertRaisesRegex(ValueError, 'unrelated XML'): self.validate()
+                parent[:] = list(reversed(parent))
+
+    def test_missing_extra_and_duplicate_decisions(self):
+        import json
+        from audit_noun_roles import load_decisions
+        self.assertEqual(load_decisions(json.dumps(self.decisions)), self.decisions)
+        with self.assertRaisesRegex(ValueError, 'Duplicate'):
+            load_decisions('{"build/object":{},"build/object":{}}')
+        with self.assertRaisesRegex(ValueError, 'Duplicate'):
+            load_decisions('{"build/object":{"target":{},"target":{}}}')
+        self.decisions['extra/object'] = self.decisions['build/object']
+        with self.assertRaisesRegex(ValueError, 'exactly'): self.validate()
+        self.decisions.clear()
+        with self.assertRaisesRegex(ValueError, 'exactly'): self.validate()
+
+    def test_documentation_status_cannot_disagree_with_target(self):
+        self.decisions['build/object']['status'] = 'category'
+        with self.assertRaisesRegex(ValueError, 'documentation'): self.validate()
+
+
+import os
+from types import SimpleNamespace
+
+
+@unittest.skipUnless(os.environ.get('KOTOMI_PATH'), 'Set KOTOMI_PATH for synthetic engine contracts')
+class DecisionEngineTests(unittest.TestCase):
+    def setUp(self):
+        sys.path.insert(0, os.environ['KOTOMI_PATH'])
+        from kotomi.core.project.models import Word, Entity, NounCategory
+        from kotomi.core.generation.compatibility import role_matches
+        from audit_noun_roles import compare_roles
+        self.fixture = DecisionTests(); self.fixture.setUp()
+        entities = {i: Entity(i, i, category=c) for i,c in
+                    [('house','building'),('tower','building'),('park','place'),('exception','person')]}
+        cats = {i: NounCategory(i,i,parent=parent) for i,parent in
+                [('place',''),('building','place'),('person','')]}
+        old = Word('verbs','build','test','test', usage={'object':[], 'subject':['person']},
+                   usage_nouns={'object':['house','park','exception']})
+        self.before = SimpleNamespace(words={'verbs':{'build':old}}, entities=entities,
+                                      noun_categories=cats, roles={})
+        self.after = deepcopy(self.before)
+        self.after.words['verbs']['build'].usage['object'] = ['building']
+        self.after.words['verbs']['build'].usage_nouns['object'] = ['exception']
+        self.compare = lambda: compare_roles(self.before, self.after, role_matches)
+
+    def validate(self):
+        self.fixture.pairs = self.compare()
+        self.fixture.validate()
+
+    def test_real_engine_or_and_approved_delta(self):
+        self.validate()
+        self.assertEqual(self.fixture.pairs[0]['after'], ['exception','house','tower'])
+
+    def test_unapproved_pair_from_category_drift(self):
+        self.after.entities['park'].category = 'building'
+        with self.assertRaisesRegex(ValueError, 'unapproved'): self.validate()
+
+    def test_lost_approved_pair_from_category_drift(self):
+        self.after.entities['tower'].category = 'place'
+        with self.assertRaisesRegex(ValueError, 'unapproved'): self.validate()

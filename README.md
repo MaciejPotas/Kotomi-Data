@@ -114,10 +114,14 @@ Content references these IDs but does not define grammar or Studio field schemas
 `grammar/counting.xml` contains lexical counter bindings and learning number sets;
 contexts, patterns, quizzes and lessons also remain Content.
 
-`quiz_project.xml` declares `min_kotomi_version="1.7"`. The update manifest copies
-this requirement automatically. Compatible Kotomi versions have the same major
-and a minor at least as high; patch is ignored. Thus 1.1.3 and 2.0.0 cannot install
-Content requiring 1.2, while 1.2.0 and 1.3.0 can. Current Content requires 1.7. No separate grammar version is maintained.
+`quiz_project.xml` retains historical `min_kotomi_version="1.8.0"` metadata;
+it is not an enforced compatibility gate and is not copied into the update manifest.
+Application SemVer and Content revisions are independent. Content 63+ instead
+requires update manifest format 2, which format-1-only clients reject before payload
+download. New Kotomi accepts compatible older Content using format 1 and validates
+the complete isolated snapshot before installation. See the equivalent
+[English](docs/eng/noun_role_categories_c3.md) / [Polski](docs/pl/noun_role_categories_c3.md)
+publication requirements. No separate grammar version is maintained.
 
 Data CI validates lexical structure and local references. Kotomi's integration
 suite validates these references against the shipped grammar using its pinned
@@ -125,7 +129,7 @@ Data commit, so Data does not maintain a duplicate grammar registry.
 
 ## Lexical references and testing
 
-Current Content revision 57 requires Kotomi 1.7. The manifest registers
+The lexical-reference migration introduced in Content 57 registers
 `adverbs`, `demonstratives` and `expressions` and retires `time_expressions`.
 Contexts and lessons reference canonical words; `ashita` remains in `nouns`.
 See [English](docs/eng/context_vocabulary.md) / [Polski](docs/pl/context_vocabulary.md)

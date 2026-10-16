@@ -91,11 +91,115 @@ oraz wszystkie pary przymiotnik/rzeczownik. Integracja porównuje realizacje prz
 we wszystkich czterech formach, sprawdza automatyczne wiązanie, government, quizy,
 statystyki i dostępność pozostałych wzorców. Testy silnika czytają wyłącznie fixture.
 
-Najpierw należy wdrożyć PR Kotomi z katalogiem, a dopiero potem Content 63.
-Starsza aplikacja nie rozpoznaje nowych kategorii. Sam merge aplikacji na GitHub
-nie aktualizuje instalacji użytkowników. Nie podnosimy istniejącego, historycznego
-`min_kotomi_version`, ponieważ obecny nagłówek Content nie sprawdza go jako bramki
-wersji, a numer wersji aplikacji jest niezależny. Publikację Content trzeba skoordynować
-z dystrybucją aplikacji. Żaden PR nie wykonuje automatycznego merge.
+## Zatwierdzone decyzje i audyt po review
+
+`noun_role_decisions_c3.json` jest źródłem zatwierdzonych oczekiwań: `target`
+zawiera pełne, dokładne atrybuty roli, a `added` i `removed` jawne ID zmienionych
+kombinacji. Nie przechowujemy drugiej macierzy dopasowań. Pozostałe role muszą
+zachować atrybuty i wszystkie dopasowania z bazowej rewizji. Audyt porównuje osobno
+te decyzje, XML i wyniki istniejącego `role_matches`. Ponowne wygenerowanie raportu
+nie zatwierdza zmian. Duplikaty kluczy JSON są błędem; status decyzji musi zgadzać się
+z obecnością wyjątków. `government`, kolejność ról i form oraz pozostałe XML są chronione.
+Dokładnie 9 dodanych i 3 usunięte kombinacje pozostają bez zmian. Definicje
+istniejących kategorii są porównywane z bazowym katalogiem, aby obecny silnik
+nie ukrył takiego samego błędu po obu stronach porównania.
+
+## Kompatybilność i publikacja Content 63
+
+Samo wdrożenie aplikacji przed Content nie zabezpiecza starszych instalacji.
+`content_header.check_content_manifest` sprawdza nagłówek i schemat XML, lecz ignoruje
+historyczne `min_kotomi_version="1.8.0"`. Aplikacja ma niezależną wersję `1.1.2`;
+włączenie prostego porównania tych liczb odrzuciłoby także zgodny Content 62.
+
+Desktop i Mobile używają wspólnego `QuizUpdater` z `expected_channel="content"`
+i wybranym katalogiem danych. Kanał aplikacji ma osobne manifesty `version`,
+Content używa `revision`, a quizy własnego kontraktu API. Sprawdzanie aplikacji opiera
+się na hashach plików; rewizja Content ma istniejącą obsługę równości i potwierdzania
+obniżenia wersji. Nie łączymy tych kanałów ani ich numerów. Natywna aplikacja Android kieruje
+aktualizację samej aplikacji do niezależnego wydania APK; nie instaluje jej kanałem Content.
+
+Najmniejsza skuteczna blokada wykorzystuje istniejące odrzucanie nieznanego formatu:
+manifest aktualizacji Content 63 i nowszego ma `format: 2`. Dotychczasowe klienty
+formatu 1 odrzucają go w `_parse_manifest`, przed pobraniem pierwszego pliku.
+Nowy klient obsługuje formaty 1 i 2 wyłącznie na kanale Content; kanał aplikacji
+pozostaje przy formacie 1. Generator oraz walidator wydania wymagają formatu 2 od
+rewizji 63. `content_revision.json` i schematy XML nie zmieniają formatu.
+Bazowy klient ma już dodatkową ochronę: walidacja snapshotu odrzuca nieznane
+kategorie bez zmiany zainstalowanych danych, także przy manifeście formatu 1.
+Format 2 przesuwa blokadę przed pobranie i chroni klientów obsługujących tylko format 1
+bez polegania na obecności i szczegółach ich walidacji semantycznej.
+To rzeczywista bariera dla już zainstalowanego klienta, nie ignorowane nowe pole. Po aktualizacji
+aplikacji trzeba ją uruchomić ponownie, aby proces używał nowego aktualizatora.
+
+Po pobraniu i sprawdzeniu hashy aktualizator buduje izolowany kompletny snapshot,
+ładuje projekt i lekcje, sprawdza kategorie oraz referencje, dopiero potem rozpoczyna
+istniejącą transakcję z kopiami zapasowymi. Błąd pobrania lub walidacji nie zapisuje
+pliku na żywo. Błąd instalacji uruchamia istniejący rollback; znacznik rewizji jest
+zapisywany ostatni. Obsługa błędów systemu plików nadal zachowuje kopie odzyskiwania,
+jeśli sam rollback zawiedzie. Pliki spoza manifestu nie są nadpisywane; istniejąca
+reguła usuwania dotyczy wyłącznie zarejestrowanych, wycofanych słowników, nie plików użytkownika.
+
+| Aplikacja | Content 62, format 1 | Content 63, format 2 |
+|---|---|---|
+| Bazowa `9d6d662` | Instaluje | Odrzuca przed pobraniem danych |
+| C3 po review | Instaluje | Instaluje po walidacji snapshotu |
+
+Macierz sprawdzono rzeczywistym aktualizatorem obu checkoutów na niezależnym fixture,
+nie na produkcyjnym słowniku. Testy nowej aplikacji obejmują nieznaną kategorię,
+uszkodzone pobranie i zgodność wszystkich niepowiązanych plików. Istniejące testy
+rollback, potwierdzania downgrade i anulowania pozostają w użyciu.
+
+**Status: Content 63 można publikować przez manifest formatu 2 po przejściu CI obu PR-ów i bramek C3.**
+Nie wolno publikować go jako format 1, także przez lustro lub starszy generator.
+Dystrybucja nowego Kotomi umożliwia instalację; starszy klient pozostaje bezpiecznie
+przy swoim Content i może nadal zaktualizować aplikację niezależnym kanałem.
+Nie gwarantujemy zgodności ręcznego kopiowania XML z pominięciem aktualizatora.
+Nie wykonano publikacji ani merge. W razie pozostawienia formatu 1 publikacja jest zablokowana.
+
+## Korekta wydajności bez zmiany semantyki
+
+Pomiar po review wykazał przekroczenie progu 10% przy pierwszym pytaniu po rozgrzaniu.
+Profil wskazał częste tworzenie zbiorów w przecięciu kategorii. `role_matches`
+używa teraz `accepted.isdisjoint(...)` zamiast kopiowania gotowego zbioru i tworzenia
+zbioru przecięcia. Pozostaje ten sam matcher, OR, pełne obliczenie przodków i kontrola
+cykli; nie dodano cache ani nowego modelu. Raport zachowuje także pomiary przed korektą.
+
+## Niewielki zakres C4
+
+Jedno drzewo wystarcza dla relacji typu budynek/placówka oraz pojemnik/pojemnik
+zamykany, lecz nie dla niezależnych cech funkcjonalnych. `doa` i `mado` nie są
+pojemnikami. Fixture pokazuje, że jako `thing` nie pasują do czterech ról
+`closable_container`. To zamierzona obecna granica, nie uszkodzony test.
+Podobnie `clothing` obejmuje koszulę i spodnie, lecz nie określa sposobu zakładania;
+fixture zachowuje zakres `kiru` ograniczony do jawnego ID.
+
+Obecne OR w `accepts` pozwala jednorazowo dodać do czterech czasowników nową poprawną
+kategorię, np. elementów architektonicznych z zamknięciem. Kolejne rzeczowniki tej
+kategorii działają bez edycji czasowników. To najmniejsza opcja bez zmian modelu i DSL,
+jeśli rzeczywisty nowy słownik mieści się w takich rozłącznych grupach. Nie dodajemy
+jej teraz na podstawie dwóch przykładów. Przypisanie drzwi do pojemników byłoby błędne.
+
+Jeśli rzeczywisty słownik wykaże powtarzające się przecinanie grup, C4 powinno najpierw
+ustalić mały katalog cech funkcjonalnych (otwieralność, sposób noszenia) i zakresy
+czasowników. Następnie można ocenić opcjonalne dodatkowe członkostwa rzeczownika,
+bez zmiany składni wzorców i `accepts`, z domyślną pustą listą zachowującą stare dane.
+Wymaga to świadomej zmiany modelu, loadera/writera, walidacji, indeksów, Studio,
+IntelliSense i bramki dystrybucji. Obecne `semantic_categories` są tylko dla przysłówków;
+nie można ich dziś po prostu wpisać do rzeczownika. C4 nie obejmuje przebudowy
+solverów, wielodziedziczenia drzewa ani masowej migracji słownika.
+
+
+## Pokrycie testów po review
+
+| Zakres | Istniejące testy Kotomi i uzupełnienia |
+|---|---|
+| Dziedziczenie, OR, nowe rzeczowniki | `test_noun_role_categories.py`, bez dublowania matcherów |
+| Government, jawne/niejawne agree, cztery formy | `test_noun_role_categories.py`, `test_verb_form_agreement.py`, `test_subject_relative_catalog_boundary.py` |
+| Przydawki podmiotowe/dopełnieniowe | `test_relative_realization.py`, `test_relative_explicit_case.py`, opt-in integracja C3 |
+| XML i Studio | `test_xml_fragment_save.py`, `test_studio_change_aware_save.py`; rozszerzony test C3 sprawdza wszystkie niezwiązane pliki po zapisie rzeczownika i czasownika |
+| IntelliSense | `test_intellisense_capability_matrix.py`, istniejące testy edytora wzorców i przydawek |
+| Aktualizacja i rollback | `test_content_c3_compatibility.py`, istniejące `test_data_downgrade.py`, `test_update_progress.py` |
+| Decyzje C3 | Data: `test_noun_role_audit.py`, jawne mutacje fixture oraz opcjonalne kontrakty rzeczywistego silnika |
+
 
 [Raport zawartości](../validation/noun_role_audit_c3.md).
