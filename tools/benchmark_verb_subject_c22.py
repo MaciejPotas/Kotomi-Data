@@ -12,6 +12,10 @@ import tempfile
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--kotomi', type=Path, required=True)
+    parser.add_argument('--baseline-kotomi', type=Path,
+                        help='Optional baseline application checkout; defaults to --kotomi')
+    parser.add_argument('--baseline-engine-revision',
+                        help='Baseline application revision when using --baseline-kotomi')
     parser.add_argument('--data', type=Path, required=True)
     parser.add_argument('--baseline-data', type=Path, required=True)
     parser.add_argument('--engine-revision', required=True)
@@ -27,6 +31,7 @@ def main():
     if args.rounds < 1 or args.samples < 1:
         parser.error('rounds and samples must be positive')
     evidence = {'engine_revision': args.engine_revision, 'baseline_data_revision': args.baseline_revision,
+        'baseline_engine_revision': args.baseline_engine_revision or args.engine_revision,
         'method': 'Sequential paired fresh processes, alternating AB/BA order, fixed PYTHONHASHSEED=173; '
                   'same pinned CPU where supported; cold=fresh project, warm=one priming call; '
                   'no concurrent tests; all samples retained. Ratios are median paired after/before.',
@@ -43,7 +48,8 @@ def main():
                 if index % 2:
                     order.reverse()
                 for label, data in order:
-                    subprocess.run([sys.executable, str(driver), '--kotomi', str(args.kotomi),
+                    kotomi = (args.baseline_kotomi or args.kotomi) if label == 'before' else args.kotomi
+                    subprocess.run([sys.executable, str(driver), '--kotomi', str(kotomi),
                         '--data', str(data), '--pattern', pattern, '--samples', str(args.samples),
                         '--operations', *args.operations,
                         '--output', str(target)], check=True, env=env)

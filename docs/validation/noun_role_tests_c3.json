@@ -1,0 +1,52 @@
+{
+  "platform": "Linux",
+  "python": "3.12.14",
+  "combined_suite": {
+    "passed": 3766,
+    "skipped": 4,
+    "subtests_passed": 6360,
+    "seconds": 123.58,
+    "skip_scope": "Existing optional synthetic engine contracts; separately enabled in the 95-test Data run"
+  },
+  "data_suite_with_engine": {
+    "tests": 95,
+    "skipped": 0,
+    "status": "passed"
+  },
+  "unit_call_gate": {
+    "limit_seconds": 8,
+    "checked": 3766,
+    "above_limit": 0,
+    "slowest": {
+      "nodeid": "tests/test_single_content_grammar.py::test_default_project_save_keeps_source_values_and_reloads_polish",
+      "setup": 0.0029231699991214555,
+      "call": 1.8197428460007359,
+      "teardown": 0.00018212500071967952
+    }
+  },
+  "validation": {
+    "repository": "passed",
+    "question_patterns": "passed",
+    "full_project_before_after": "passed",
+    "catalog": "passed",
+    "all_role_pairs": "253 roles × 80 nouns",
+    "adjective_pair_changes": 0,
+    "pattern_availability_probes": 368,
+    "changed_availability": 0,
+    "noun_verb_actual_temporary_serialization": "passed"
+  },
+  "new_tests": "27 application cases plus 4 bounded XML audit tests",
+  "limitations": [
+    "Native Windows/Android GUI was not manually clicked. Studio services and existing controller tests ran.",
+    "Five role lists need separate sense decisions; see audit decisions.",
+    "Content 63 must follow distribution of the updated application category catalog."
+  ],
+  "performance": {
+    "paired_rounds": 5,
+    "samples": 5,
+    "comparisons": 40,
+    "minimum_paired_ratio": 0.9008645342396738,
+    "maximum_paired_ratio": 1.0922002021571349,
+    "above_ten_percent": 0
+  }
+}

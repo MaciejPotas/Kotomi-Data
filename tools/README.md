@@ -178,3 +178,53 @@ Cold means a fresh project, not an OS cold start. Four representative patterns
 cover load, compatibility, exists, count and first-question latency, cold and warm.
 See the equivalent [PL](../docs/pl/verb_subject_agreement_c22.md) and
 [EN](../docs/eng/verb_subject_agreement_c22.md) release notes.
+
+## C3 noun-role categories and opt-in migration audit
+
+Read [PL](../docs/pl/noun_role_categories_c3.md),
+[EN](../docs/eng/noun_role_categories_c3.md) and the
+[complete grouped inventory](../docs/validation/noun_role_audit_c3.md).
+Use application main `9d6d662228301dfb9d94524736e09dcc763b28cc` plus the C3
+category catalog, and a detached Data baseline at
+`ef338045ed383763db2cbf04aceea5b1b7ad1d69`. Export that application's original
+`kotomi/core/grammar/japanese/grammar.xml` as `baseline-grammar.xml`.
+
+```sh
+python tools/audit_noun_roles.py --kotomi ../Kotomi --baseline-data ../data-before \
+  --baseline-grammar ../baseline-grammar.xml \
+  --decisions docs/validation/noun_role_decisions_c3.json \
+  --output docs/validation/noun_role_audit_c3.json
+python tools/validate_noun_role_integration.py --kotomi ../Kotomi --data . \
+  --baseline-data ../data-before --audit docs/validation/noun_role_audit_c3.json \
+  --output docs/validation/noun_role_integration_c3.json
+```
+
+These are explicit production-content acceptance commands, never mandatory unit
+CI. Fixtures cannot certify every actual published list, the role/noun migration
+matrix or the retained rendered sentences. Reads cover the project-declared XML
+and audit JSON only. The inventory cost is O(roles * nouns + adjectives * nouns);
+integration enumerates two relative patterns and probes other patterns with
+`exists`. XML writers operate only on a disposable copy. The audit rejects any
+change to government, forms, translation, roles or other unrelated XML content.
+
+Unit tests (`test_noun_role_audit.py` and the application's
+`test_noun_role_categories.py`) use independent bounded fixtures, not audit JSON
+or production dictionaries. No production access exemption is added.
+
+The existing paired benchmark accepts optional `--baseline-kotomi` and
+`--baseline-engine-revision` for a distinct old application. Omitting them retains
+C2.2 behavior. For C3 run with both pinned checkouts, five alternating rounds and
+five samples, without concurrent tests:
+
+```sh
+python tools/benchmark_verb_subject_c22.py --kotomi ../Kotomi \
+  --baseline-kotomi ../app-before --data . --baseline-data ../data-before \
+  --engine-revision 'C3 category catalog' \
+  --baseline-engine-revision 9d6d662228301dfb9d94524736e09dcc763b28cc \
+  --baseline-revision ef338045ed383763db2cbf04aceea5b1b7ad1d69 \
+  --rounds 5 --samples 5 --output docs/validation/noun_role_performance_c3.json
+```
+
+Current release validation deliberately accepts `shimaru/subject` using
+`closable_container`. The C1 proposals and historical `validate_deployment`
+behavior are not rewritten. C2.2 integration evidence remains historical.
