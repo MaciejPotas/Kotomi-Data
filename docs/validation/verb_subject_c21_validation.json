@@ -1,0 +1,751 @@
+{
+  "scope": "Opt-in C2.1 real-Content acceptance; no unit-test production access",
+  "engine_revision": "9c01404465837f55d32ce1b4056fbb6e99817440",
+  "baseline_data_revision": "9227fd02c3c315c3d49ea9357a652a0a4d9c36bc",
+  "xml_additions": {
+    "verbs": 7,
+    "translations": 56,
+    "roles": 6
+  },
+  "unchanged_xml_and_c1": true,
+  "project_errors": [],
+  "subject": {
+    "dictionary": {
+      "before_pairs": 20,
+      "after_pairs": 70,
+      "before": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 20,
+        "generated_sentences": 100,
+        "unique_questions": 20,
+        "unique_answers": 20,
+        "form_names": ["dictionary"],
+        "context_options": ["present/every_day", "present/neutral", "present/now", "present/this_week", "present/today"],
+        "word_counts": {
+          "verb@action": 3
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 20,
+          "noun@item → verb@action": 20
+        }
+      },
+      "after": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 70,
+        "generated_sentences": 350,
+        "unique_questions": 70,
+        "unique_answers": 70,
+        "form_names": ["dictionary"],
+        "context_options": ["present/every_day", "present/neutral", "present/now", "present/this_week", "present/today"],
+        "word_counts": {
+          "verb@action": 10
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 70,
+          "noun@item → verb@action": 70
+        }
+      }
+    },
+    "plain_negative": {
+      "before_pairs": 20,
+      "after_pairs": 70,
+      "before": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 20,
+        "generated_sentences": 100,
+        "unique_questions": 20,
+        "unique_answers": 20,
+        "form_names": ["plain_negative"],
+        "context_options": ["present/every_day", "present/neutral", "present/now", "present/this_week", "present/today"],
+        "word_counts": {
+          "verb@action": 3
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 20,
+          "noun@item → verb@action": 20
+        }
+      },
+      "after": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 70,
+        "generated_sentences": 350,
+        "unique_questions": 70,
+        "unique_answers": 70,
+        "form_names": ["plain_negative"],
+        "context_options": ["present/every_day", "present/neutral", "present/now", "present/this_week", "present/today"],
+        "word_counts": {
+          "verb@action": 10
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 70,
+          "noun@item → verb@action": 70
+        }
+      }
+    },
+    "past_plain": {
+      "before_pairs": 20,
+      "after_pairs": 70,
+      "before": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 20,
+        "generated_sentences": 100,
+        "unique_questions": 20,
+        "unique_answers": 20,
+        "form_names": ["past_plain"],
+        "context_options": ["past/day_before_yesterday", "past/last_week", "past/recently", "past/two_weeks_ago", "past/yesterday"],
+        "word_counts": {
+          "verb@action": 3
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 20,
+          "noun@item → verb@action": 20
+        }
+      },
+      "after": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 70,
+        "generated_sentences": 350,
+        "unique_questions": 70,
+        "unique_answers": 70,
+        "form_names": ["past_plain"],
+        "context_options": ["past/day_before_yesterday", "past/last_week", "past/recently", "past/two_weeks_ago", "past/yesterday"],
+        "word_counts": {
+          "verb@action": 10
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 70,
+          "noun@item → verb@action": 70
+        }
+      }
+    },
+    "past_negative_plain": {
+      "before_pairs": 20,
+      "after_pairs": 70,
+      "before": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 20,
+        "generated_sentences": 100,
+        "unique_questions": 20,
+        "unique_answers": 20,
+        "form_names": ["past_negative_plain"],
+        "context_options": ["past/day_before_yesterday", "past/last_week", "past/recently", "past/two_weeks_ago", "past/yesterday"],
+        "word_counts": {
+          "verb@action": 3
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 20,
+          "noun@item → verb@action": 20
+        }
+      },
+      "after": {
+        "pattern_id": "Zdania przydawkowe podmiotowe",
+        "vocabulary_combinations": 70,
+        "generated_sentences": 350,
+        "unique_questions": 70,
+        "unique_answers": 70,
+        "form_names": ["past_negative_plain"],
+        "context_options": ["past/day_before_yesterday", "past/last_week", "past/recently", "past/two_weeks_ago", "past/yesterday"],
+        "word_counts": {
+          "verb@action": 10
+        },
+        "entity_counts": {
+          "noun@item": 12
+        },
+        "connection_counts": {
+          "verb@action → noun@item": 70,
+          "noun@item → verb@action": 70
+        }
+      }
+    }
+  },
+  "object_regression": {
+    "dictionary": {
+      "realizations": 7735,
+      "identical": true,
+      "sha256": "b90e3878ab76dc8c2a3972e14c170c8621cafdad63d645555f296a4b1d81e103"
+    },
+    "plain_negative": {
+      "realizations": 7735,
+      "identical": true,
+      "sha256": "71f7c3ea427804041cc7ddcde3d1c2dedd6ee8ab6a10791189b744e7cb31dd2c"
+    },
+    "past_plain": {
+      "realizations": 7735,
+      "identical": true,
+      "sha256": "7af7718943cc9b0c035181fcb6022da10f74339dddec8816cf54197e7d450294"
+    },
+    "past_negative_plain": {
+      "realizations": 7735,
+      "identical": true,
+      "sha256": "105841eaaea5d2d70deca100a9e5d7c08a21e8ba185a9f70044e3ef6dab03521"
+    }
+  },
+  "examples": [
+    {
+      "form": "dictionary",
+      "verb": "hanasu",
+      "question": "To jest siostra, która rozmawia.",
+      "answer": "これははなすあねです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "kaku",
+      "question": "To jest siostra, która pisze.",
+      "answer": "これはかくあねです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "kangaeru",
+      "question": "To jest siostra, która zastanawia się.",
+      "answer": "これはかんがえるあねです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "sentakusuru",
+      "question": "To jest siostra, która pierze.",
+      "answer": "これはせんたくするあねです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "shimaru",
+      "question": "To jest torba, która zamyka się.",
+      "answer": "これはしまるかばんです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "soujisuru",
+      "question": "To jest siostra, która sprząta.",
+      "answer": "これはそうじするあねです。"
+    },
+    {
+      "form": "dictionary",
+      "verb": "yomu",
+      "question": "To jest siostra, która czyta.",
+      "answer": "これはよむあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "hanasu",
+      "question": "To jest siostra, która nie rozmawia.",
+      "answer": "これははなさないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "kaku",
+      "question": "To jest siostra, która nie pisze.",
+      "answer": "これはかかないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "kangaeru",
+      "question": "To jest siostra, która nie zastanawia się.",
+      "answer": "これはかんがえないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "sentakusuru",
+      "question": "To jest siostra, która nie pierze.",
+      "answer": "これはせんたくしないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "shimaru",
+      "question": "To jest torba, która nie zamyka się.",
+      "answer": "これはしまらないかばんです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "soujisuru",
+      "question": "To jest siostra, która nie sprząta.",
+      "answer": "これはそうじしないあねです。"
+    },
+    {
+      "form": "plain_negative",
+      "verb": "yomu",
+      "question": "To jest siostra, która nie czyta.",
+      "answer": "これはよまないあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "hanasu",
+      "question": "To jest siostra, która rozmawiała.",
+      "answer": "これははなしたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "kaku",
+      "question": "To jest siostra, która pisała.",
+      "answer": "これはかいたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "kangaeru",
+      "question": "To jest siostra, która zastanawiała się.",
+      "answer": "これはかんがえたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "sentakusuru",
+      "question": "To jest siostra, która prała.",
+      "answer": "これはせんたくしたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "shimaru",
+      "question": "To jest torba, która zamknęła się.",
+      "answer": "これはしまったかばんです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "soujisuru",
+      "question": "To jest siostra, która posprzątała.",
+      "answer": "これはそうじしたあねです。"
+    },
+    {
+      "form": "past_plain",
+      "verb": "yomu",
+      "question": "To jest siostra, która czytała.",
+      "answer": "これはよんだあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "hanasu",
+      "question": "To jest siostra, która nie rozmawiała.",
+      "answer": "これははなさなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "kaku",
+      "question": "To jest siostra, która nie pisała.",
+      "answer": "これはかかなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "kangaeru",
+      "question": "To jest siostra, która nie zastanawiała się.",
+      "answer": "これはかんがえなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "sentakusuru",
+      "question": "To jest siostra, która nie prała.",
+      "answer": "これはせんたくしなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "shimaru",
+      "question": "To jest torba, która nie zamknęła się.",
+      "answer": "これはしまらなかったかばんです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "soujisuru",
+      "question": "To jest siostra, która nie posprzątała.",
+      "answer": "これはそうじしなかったあねです。"
+    },
+    {
+      "form": "past_negative_plain",
+      "verb": "yomu",
+      "question": "To jest siostra, która nie czytała.",
+      "answer": "これはよまなかったあねです。"
+    }
+  ],
+  "rejection_checks": 2068,
+  "pattern_availability": [
+    ["Zdania przydawkowe", "dictionary", true, true],
+    ["Zdania przydawkowe", "plain_negative", true, true],
+    ["Zdania przydawkowe", "past_plain", true, true],
+    ["Zdania przydawkowe", "past_negative_plain", true, true],
+    ["Zdania przydawkowe podmiotowe", "dictionary", true, true],
+    ["Zdania przydawkowe podmiotowe", "plain_negative", true, true],
+    ["Zdania przydawkowe podmiotowe", "past_plain", true, true],
+    ["Zdania przydawkowe podmiotowe", "past_negative_plain", true, true],
+    ["Częstotliwość czynności", "dictionary", true, true],
+    ["Częstotliwość czynności", "plain_negative", true, true],
+    ["Częstotliwość czynności", "past_plain", true, true],
+    ["Częstotliwość czynności", "past_negative_plain", true, true],
+    ["Sam czasownik", "dictionary", true, true],
+    ["Sam czasownik", "plain_negative", true, true],
+    ["Sam czasownik", "past_plain", true, true],
+    ["Sam czasownik", "past_negative_plain", true, true],
+    ["Czasownik z dopełnieniem", "dictionary", true, true],
+    ["Czasownik z dopełnieniem", "plain_negative", true, true],
+    ["Czasownik z dopełnieniem", "past_plain", true, true],
+    ["Czasownik z dopełnieniem", "past_negative_plain", true, true],
+    ["Opisane dopełnienie", "dictionary", true, true],
+    ["Opisane dopełnienie", "plain_negative", true, true],
+    ["Opisane dopełnienie", "past_plain", true, true],
+    ["Opisane dopełnienie", "past_negative_plain", true, true],
+    ["Cel ruchu", "dictionary", true, true],
+    ["Cel ruchu", "plain_negative", true, true],
+    ["Cel ruchu", "past_plain", true, true],
+    ["Cel ruchu", "past_negative_plain", true, true],
+    ["Towarzysz", "dictionary", true, true],
+    ["Towarzysz", "plain_negative", true, true],
+    ["Towarzysz", "past_plain", true, true],
+    ["Towarzysz", "past_negative_plain", true, true],
+    ["Miejsce czynności", "dictionary", true, true],
+    ["Miejsce czynności", "plain_negative", true, true],
+    ["Miejsce czynności", "past_plain", true, true],
+    ["Miejsce czynności", "past_negative_plain", true, true],
+    ["Środek transportu", "dictionary", true, true],
+    ["Środek transportu", "plain_negative", true, true],
+    ["Środek transportu", "past_plain", true, true],
+    ["Środek transportu", "past_negative_plain", true, true],
+    ["Przymiotnik po temacie", "dictionary", false, false],
+    ["Przymiotnik po temacie", "plain_negative", false, false],
+    ["Przymiotnik po temacie", "past_plain", false, false],
+    ["Przymiotnik po temacie", "past_negative_plain", false, false],
+    ["Sam przymiotnik", "dictionary", false, false],
+    ["Sam przymiotnik", "plain_negative", false, false],
+    ["Sam przymiotnik", "past_plain", false, false],
+    ["Sam przymiotnik", "past_negative_plain", false, false],
+    ["Przymiotnik przed rzeczownikiem", "dictionary", true, true],
+    ["Przymiotnik przed rzeczownikiem", "plain_negative", true, true],
+    ["Przymiotnik przed rzeczownikiem", "past_plain", true, true],
+    ["Przymiotnik przed rzeczownikiem", "past_negative_plain", true, true],
+    ["Cytowana opinia", "dictionary", true, true],
+    ["Cytowana opinia", "plain_negative", true, true],
+    ["Cytowana opinia", "past_plain", true, true],
+    ["Cytowana opinia", "past_negative_plain", true, true],
+    ["Przed inną czynnością", "dictionary", true, true],
+    ["Przed inną czynnością", "plain_negative", true, true],
+    ["Przed inną czynnością", "past_plain", true, true],
+    ["Przed inną czynnością", "past_negative_plain", true, true],
+    ["Trzy lubiane rzeczy", "dictionary", true, true],
+    ["Trzy lubiane rzeczy", "plain_negative", true, true],
+    ["Trzy lubiane rzeczy", "past_plain", true, true],
+    ["Trzy lubiane rzeczy", "past_negative_plain", true, true],
+    ["Reakcja na przyczynę", "dictionary", true, true],
+    ["Reakcja na przyczynę", "plain_negative", true, true],
+    ["Reakcja na przyczynę", "past_plain", true, true],
+    ["Reakcja na przyczynę", "past_negative_plain", true, true],
+    ["Łącznik だから", "dictionary", true, true],
+    ["Łącznik だから", "plain_negative", true, true],
+    ["Łącznik だから", "past_plain", true, true],
+    ["Łącznik だから", "past_negative_plain", true, true],
+    ["Łącznik それか", "dictionary", true, true],
+    ["Łącznik それか", "plain_negative", true, true],
+    ["Łącznik それか", "past_plain", true, true],
+    ["Łącznik それか", "past_negative_plain", true, true],
+    ["Łącznik だけど", "dictionary", true, true],
+    ["Łącznik だけど", "plain_negative", true, true],
+    ["Łącznik だけど", "past_plain", true, true],
+    ["Łącznik だけど", "past_negative_plain", true, true],
+    ["Łącznik それなら", "dictionary", true, true],
+    ["Łącznik それなら", "plain_negative", true, true],
+    ["Łącznik それなら", "past_plain", true, true],
+    ["Łącznik それなら", "past_negative_plain", true, true],
+    ["Łącznik それより", "dictionary", true, true],
+    ["Łącznik それより", "plain_negative", true, true],
+    ["Łącznik それより", "past_plain", true, true],
+    ["Łącznik それより", "past_negative_plain", true, true],
+    ["Łącznik しかも", "dictionary", true, true],
+    ["Łącznik しかも", "plain_negative", true, true],
+    ["Łącznik しかも", "past_plain", true, true],
+    ["Łącznik しかも", "past_negative_plain", true, true],
+    ["Łącznik でも", "dictionary", true, true],
+    ["Łącznik でも", "plain_negative", true, true],
+    ["Łącznik でも", "past_plain", true, true],
+    ["Łącznik でも", "past_negative_plain", true, true],
+    ["Pytanie o miejsce", "dictionary", true, true],
+    ["Pytanie o miejsce", "plain_negative", true, true],
+    ["Pytanie o miejsce", "past_plain", true, true],
+    ["Pytanie o miejsce", "past_negative_plain", true, true],
+    ["Pytanie o cel", "dictionary", true, true],
+    ["Pytanie o cel", "plain_negative", true, true],
+    ["Pytanie o cel", "past_plain", true, true],
+    ["Pytanie o cel", "past_negative_plain", true, true],
+    ["Pytanie o towarzysza", "dictionary", true, true],
+    ["Pytanie o towarzysza", "plain_negative", true, true],
+    ["Pytanie o towarzysza", "past_plain", true, true],
+    ["Pytanie o towarzysza", "past_negative_plain", true, true],
+    ["Pytanie o rzecz", "dictionary", true, true],
+    ["Pytanie o rzecz", "plain_negative", true, true],
+    ["Pytanie o rzecz", "past_plain", true, true],
+    ["Pytanie o rzecz", "past_negative_plain", true, true],
+    ["Pytanie który + rzeczownik", "dictionary", true, true],
+    ["Pytanie który + rzeczownik", "plain_negative", true, true],
+    ["Pytanie który + rzeczownik", "past_plain", true, true],
+    ["Pytanie który + rzeczownik", "past_negative_plain", true, true],
+    ["Pytanie o rodzaj", "dictionary", true, true],
+    ["Pytanie o rodzaj", "plain_negative", true, true],
+    ["Pytanie o rodzaj", "past_plain", true, true],
+    ["Pytanie o rodzaj", "past_negative_plain", true, true],
+    ["Pytanie czyj", "dictionary", true, true],
+    ["Pytanie czyj", "plain_negative", true, true],
+    ["Pytanie czyj", "past_plain", true, true],
+    ["Pytanie czyj", "past_negative_plain", true, true],
+    ["Pytanie jak", "dictionary", true, true],
+    ["Pytanie jak", "plain_negative", true, true],
+    ["Pytanie jak", "past_plain", true, true],
+    ["Pytanie jak", "past_negative_plain", true, true],
+    ["Pytanie ile kosztuje", "dictionary", true, true],
+    ["Pytanie ile kosztuje", "plain_negative", true, true],
+    ["Pytanie ile kosztuje", "past_plain", true, true],
+    ["Pytanie ile kosztuje", "past_negative_plain", true, true],
+    ["Pytanie ile osób", "dictionary", true, true],
+    ["Pytanie ile osób", "plain_negative", true, true],
+    ["Pytanie ile osób", "past_plain", true, true],
+    ["Pytanie ile osób", "past_negative_plain", true, true],
+    ["Pytanie ile lat", "dictionary", true, true],
+    ["Pytanie ile lat", "plain_negative", true, true],
+    ["Pytanie ile lat", "past_plain", true, true],
+    ["Pytanie ile lat", "past_negative_plain", true, true],
+    ["Istnienie policzonych rzeczowników", "dictionary", true, true],
+    ["Istnienie policzonych rzeczowników", "plain_negative", true, true],
+    ["Istnienie policzonych rzeczowników", "past_plain", true, true],
+    ["Istnienie policzonych rzeczowników", "past_negative_plain", true, true],
+    ["Istnienie policzonych opisanych rzeczowników", "dictionary", true, true],
+    ["Istnienie policzonych opisanych rzeczowników", "plain_negative", true, true],
+    ["Istnienie policzonych opisanych rzeczowników", "past_plain", true, true],
+    ["Istnienie policzonych opisanych rzeczowników", "past_negative_plain", true, true],
+    ["Ile jest policzonych rzeczowników", "dictionary", true, true],
+    ["Ile jest policzonych rzeczowników", "plain_negative", false, false],
+    ["Ile jest policzonych rzeczowników", "past_plain", true, true],
+    ["Ile jest policzonych rzeczowników", "past_negative_plain", false, false],
+    ["Ile jest opisanych policzonych rzeczowników", "dictionary", true, true],
+    ["Ile jest opisanych policzonych rzeczowników", "plain_negative", false, false],
+    ["Ile jest opisanych policzonych rzeczowników", "past_plain", true, true],
+    ["Ile jest opisanych policzonych rzeczowników", "past_negative_plain", false, false],
+    ["Godzina zegarowa", "dictionary", true, true],
+    ["Godzina zegarowa", "plain_negative", true, true],
+    ["Godzina zegarowa", "past_plain", true, true],
+    ["Godzina zegarowa", "past_negative_plain", true, true],
+    ["Wiek", "dictionary", true, true],
+    ["Wiek", "plain_negative", true, true],
+    ["Wiek", "past_plain", true, true],
+    ["Wiek", "past_negative_plain", true, true],
+    ["Ile razy w miesiącu", "dictionary", true, true],
+    ["Ile razy w miesiącu", "plain_negative", true, true],
+    ["Ile razy w miesiącu", "past_plain", true, true],
+    ["Ile razy w miesiącu", "past_negative_plain", true, true],
+    ["Liczba razy w miesiącu", "dictionary", true, true],
+    ["Liczba razy w miesiącu", "plain_negative", true, true],
+    ["Liczba razy w miesiącu", "past_plain", true, true],
+    ["Liczba razy w miesiącu", "past_negative_plain", true, true],
+    ["Numer piętra", "dictionary", true, true],
+    ["Numer piętra", "plain_negative", true, true],
+    ["Numer piętra", "past_plain", true, true],
+    ["Numer piętra", "past_negative_plain", true, true],
+    ["Dwie policzone grupy opisanych rzeczowników", "dictionary", true, true],
+    ["Dwie policzone grupy opisanych rzeczowników", "plain_negative", true, true],
+    ["Dwie policzone grupy opisanych rzeczowników", "past_plain", true, true],
+    ["Dwie policzone grupy opisanych rzeczowników", "past_negative_plain", true, true],
+    ["Dostępność 〜がある / Sam czasownik", "dictionary", true, true],
+    ["Dostępność 〜がある / Sam czasownik", "plain_negative", true, true],
+    ["Dostępność 〜がある / Sam czasownik", "past_plain", true, true],
+    ["Dostępność 〜がある / Sam czasownik", "past_negative_plain", true, true],
+    ["Dostępność 〜がある / Czasownik z dopełnieniem", "dictionary", true, true],
+    ["Dostępność 〜がある / Czasownik z dopełnieniem", "plain_negative", true, true],
+    ["Dostępność 〜がある / Czasownik z dopełnieniem", "past_plain", true, true],
+    ["Dostępność 〜がある / Czasownik z dopełnieniem", "past_negative_plain", true, true],
+    ["Dostępność 〜がある / Opisane dopełnienie", "dictionary", true, true],
+    ["Dostępność 〜がある / Opisane dopełnienie", "plain_negative", true, true],
+    ["Dostępność 〜がある / Opisane dopełnienie", "past_plain", true, true],
+    ["Dostępność 〜がある / Opisane dopełnienie", "past_negative_plain", true, true],
+    ["Dostępność 〜がある / Cel ruchu", "dictionary", true, true],
+    ["Dostępność 〜がある / Cel ruchu", "plain_negative", true, true],
+    ["Dostępność 〜がある / Cel ruchu", "past_plain", true, true],
+    ["Dostępność 〜がある / Cel ruchu", "past_negative_plain", true, true],
+    ["Dostępność 〜がある / Towarzysz", "dictionary", true, true],
+    ["Dostępność 〜がある / Towarzysz", "plain_negative", true, true],
+    ["Dostępność 〜がある / Towarzysz", "past_plain", true, true],
+    ["Dostępność 〜がある / Towarzysz", "past_negative_plain", true, true],
+    ["Dostępność 〜がある / Miejsce czynności", "dictionary", true, true],
+    ["Dostępność 〜がある / Miejsce czynności", "plain_negative", true, true],
+    ["Dostępność 〜がある / Miejsce czynności", "past_plain", true, true],
+    ["Dostępność 〜がある / Miejsce czynności", "past_negative_plain", true, true],
+    ["Dostępność 〜がある / Środek transportu", "dictionary", true, true],
+    ["Dostępność 〜がある / Środek transportu", "plain_negative", true, true],
+    ["Dostępność 〜がある / Środek transportu", "past_plain", true, true],
+    ["Dostępność 〜がある / Środek transportu", "past_negative_plain", true, true],
+    ["Możliwość ことができる / Sam czasownik", "dictionary", true, true],
+    ["Możliwość ことができる / Sam czasownik", "plain_negative", true, true],
+    ["Możliwość ことができる / Sam czasownik", "past_plain", true, true],
+    ["Możliwość ことができる / Sam czasownik", "past_negative_plain", true, true],
+    ["Możliwość ことができる / Czasownik z dopełnieniem", "dictionary", true, true],
+    ["Możliwość ことができる / Czasownik z dopełnieniem", "plain_negative", true, true],
+    ["Możliwość ことができる / Czasownik z dopełnieniem", "past_plain", true, true],
+    ["Możliwość ことができる / Czasownik z dopełnieniem", "past_negative_plain", true, true],
+    ["Możliwość ことができる / Opisane dopełnienie", "dictionary", true, true],
+    ["Możliwość ことができる / Opisane dopełnienie", "plain_negative", true, true],
+    ["Możliwość ことができる / Opisane dopełnienie", "past_plain", true, true],
+    ["Możliwość ことができる / Opisane dopełnienie", "past_negative_plain", true, true],
+    ["Możliwość ことができる / Cel ruchu", "dictionary", true, true],
+    ["Możliwość ことができる / Cel ruchu", "plain_negative", true, true],
+    ["Możliwość ことができる / Cel ruchu", "past_plain", true, true],
+    ["Możliwość ことができる / Cel ruchu", "past_negative_plain", true, true],
+    ["Możliwość ことができる / Towarzysz", "dictionary", true, true],
+    ["Możliwość ことができる / Towarzysz", "plain_negative", true, true],
+    ["Możliwość ことができる / Towarzysz", "past_plain", true, true],
+    ["Możliwość ことができる / Towarzysz", "past_negative_plain", true, true],
+    ["Możliwość ことができる / Miejsce czynności", "dictionary", true, true],
+    ["Możliwość ことができる / Miejsce czynności", "plain_negative", true, true],
+    ["Możliwość ことができる / Miejsce czynności", "past_plain", true, true],
+    ["Możliwość ことができる / Miejsce czynności", "past_negative_plain", true, true],
+    ["Możliwość ことができる / Środek transportu", "dictionary", true, true],
+    ["Możliwość ことができる / Środek transportu", "plain_negative", true, true],
+    ["Możliwość ことができる / Środek transportu", "past_plain", true, true],
+    ["Możliwość ことができる / Środek transportu", "past_negative_plain", true, true],
+    ["Czynność w toku 〜ている / Sam czasownik", "dictionary", true, true],
+    ["Czynność w toku 〜ている / Sam czasownik", "plain_negative", true, true],
+    ["Czynność w toku 〜ている / Sam czasownik", "past_plain", true, true],
+    ["Czynność w toku 〜ている / Sam czasownik", "past_negative_plain", true, true],
+    ["Czynność w toku 〜ている / Czasownik z dopełnieniem", "dictionary", true, true],
+    ["Czynność w toku 〜ている / Czasownik z dopełnieniem", "plain_negative", true, true],
+    ["Czynność w toku 〜ている / Czasownik z dopełnieniem", "past_plain", true, true],
+    ["Czynność w toku 〜ている / Czasownik z dopełnieniem", "past_negative_plain", true, true],
+    ["Czynność w toku 〜ている / Cel ruchu", "dictionary", true, true],
+    ["Czynność w toku 〜ている / Cel ruchu", "plain_negative", true, true],
+    ["Czynność w toku 〜ている / Cel ruchu", "past_plain", true, true],
+    ["Czynność w toku 〜ている / Cel ruchu", "past_negative_plain", true, true],
+    ["Czynność w toku 〜ている / Towarzysz", "dictionary", true, true],
+    ["Czynność w toku 〜ている / Towarzysz", "plain_negative", true, true],
+    ["Czynność w toku 〜ている / Towarzysz", "past_plain", true, true],
+    ["Czynność w toku 〜ている / Towarzysz", "past_negative_plain", true, true],
+    ["Czynność w toku 〜ている / Miejsce czynności", "dictionary", true, true],
+    ["Czynność w toku 〜ている / Miejsce czynności", "plain_negative", true, true],
+    ["Czynność w toku 〜ている / Miejsce czynności", "past_plain", true, true],
+    ["Czynność w toku 〜ている / Miejsce czynności", "past_negative_plain", true, true],
+    ["Pytanie kiedy / Sam czasownik", "dictionary", true, true],
+    ["Pytanie kiedy / Sam czasownik", "plain_negative", true, true],
+    ["Pytanie kiedy / Sam czasownik", "past_plain", true, true],
+    ["Pytanie kiedy / Sam czasownik", "past_negative_plain", true, true],
+    ["Pytanie kiedy / Czasownik z dopełnieniem", "dictionary", true, true],
+    ["Pytanie kiedy / Czasownik z dopełnieniem", "plain_negative", true, true],
+    ["Pytanie kiedy / Czasownik z dopełnieniem", "past_plain", true, true],
+    ["Pytanie kiedy / Czasownik z dopełnieniem", "past_negative_plain", true, true],
+    ["Pytanie kiedy / Opisane dopełnienie", "dictionary", true, true],
+    ["Pytanie kiedy / Opisane dopełnienie", "plain_negative", true, true],
+    ["Pytanie kiedy / Opisane dopełnienie", "past_plain", true, true],
+    ["Pytanie kiedy / Opisane dopełnienie", "past_negative_plain", true, true],
+    ["Pytanie kiedy / Cel ruchu", "dictionary", true, true],
+    ["Pytanie kiedy / Cel ruchu", "plain_negative", true, true],
+    ["Pytanie kiedy / Cel ruchu", "past_plain", true, true],
+    ["Pytanie kiedy / Cel ruchu", "past_negative_plain", true, true],
+    ["Pytanie kiedy / Towarzysz", "dictionary", true, true],
+    ["Pytanie kiedy / Towarzysz", "plain_negative", true, true],
+    ["Pytanie kiedy / Towarzysz", "past_plain", true, true],
+    ["Pytanie kiedy / Towarzysz", "past_negative_plain", true, true],
+    ["Pytanie kiedy / Miejsce czynności", "dictionary", true, true],
+    ["Pytanie kiedy / Miejsce czynności", "plain_negative", true, true],
+    ["Pytanie kiedy / Miejsce czynności", "past_plain", true, true],
+    ["Pytanie kiedy / Miejsce czynności", "past_negative_plain", true, true],
+    ["Pytanie kiedy / Środek transportu", "dictionary", true, true],
+    ["Pytanie kiedy / Środek transportu", "plain_negative", true, true],
+    ["Pytanie kiedy / Środek transportu", "past_plain", true, true],
+    ["Pytanie kiedy / Środek transportu", "past_negative_plain", true, true],
+    ["Pytanie o godzinę / Sam czasownik", "dictionary", true, true],
+    ["Pytanie o godzinę / Sam czasownik", "plain_negative", true, true],
+    ["Pytanie o godzinę / Sam czasownik", "past_plain", true, true],
+    ["Pytanie o godzinę / Sam czasownik", "past_negative_plain", true, true],
+    ["Pytanie o godzinę / Czasownik z dopełnieniem", "dictionary", true, true],
+    ["Pytanie o godzinę / Czasownik z dopełnieniem", "plain_negative", true, true],
+    ["Pytanie o godzinę / Czasownik z dopełnieniem", "past_plain", true, true],
+    ["Pytanie o godzinę / Czasownik z dopełnieniem", "past_negative_plain", true, true],
+    ["Pytanie o godzinę / Opisane dopełnienie", "dictionary", true, true],
+    ["Pytanie o godzinę / Opisane dopełnienie", "plain_negative", true, true],
+    ["Pytanie o godzinę / Opisane dopełnienie", "past_plain", true, true],
+    ["Pytanie o godzinę / Opisane dopełnienie", "past_negative_plain", true, true],
+    ["Pytanie o godzinę / Cel ruchu", "dictionary", true, true],
+    ["Pytanie o godzinę / Cel ruchu", "plain_negative", true, true],
+    ["Pytanie o godzinę / Cel ruchu", "past_plain", true, true],
+    ["Pytanie o godzinę / Cel ruchu", "past_negative_plain", true, true],
+    ["Pytanie o godzinę / Towarzysz", "dictionary", true, true],
+    ["Pytanie o godzinę / Towarzysz", "plain_negative", true, true],
+    ["Pytanie o godzinę / Towarzysz", "past_plain", true, true],
+    ["Pytanie o godzinę / Towarzysz", "past_negative_plain", true, true],
+    ["Pytanie o godzinę / Miejsce czynności", "dictionary", true, true],
+    ["Pytanie o godzinę / Miejsce czynności", "plain_negative", true, true],
+    ["Pytanie o godzinę / Miejsce czynności", "past_plain", true, true],
+    ["Pytanie o godzinę / Miejsce czynności", "past_negative_plain", true, true],
+    ["Pytanie o godzinę / Środek transportu", "dictionary", true, true],
+    ["Pytanie o godzinę / Środek transportu", "plain_negative", true, true],
+    ["Pytanie o godzinę / Środek transportu", "past_plain", true, true],
+    ["Pytanie o godzinę / Środek transportu", "past_negative_plain", true, true],
+    ["Pytanie dlaczego / Sam czasownik", "dictionary", true, true],
+    ["Pytanie dlaczego / Sam czasownik", "plain_negative", true, true],
+    ["Pytanie dlaczego / Sam czasownik", "past_plain", true, true],
+    ["Pytanie dlaczego / Sam czasownik", "past_negative_plain", true, true],
+    ["Pytanie dlaczego / Czasownik z dopełnieniem", "dictionary", true, true],
+    ["Pytanie dlaczego / Czasownik z dopełnieniem", "plain_negative", true, true],
+    ["Pytanie dlaczego / Czasownik z dopełnieniem", "past_plain", true, true],
+    ["Pytanie dlaczego / Czasownik z dopełnieniem", "past_negative_plain", true, true],
+    ["Pytanie dlaczego / Opisane dopełnienie", "dictionary", true, true],
+    ["Pytanie dlaczego / Opisane dopełnienie", "plain_negative", true, true],
+    ["Pytanie dlaczego / Opisane dopełnienie", "past_plain", true, true],
+    ["Pytanie dlaczego / Opisane dopełnienie", "past_negative_plain", true, true],
+    ["Pytanie dlaczego / Cel ruchu", "dictionary", true, true],
+    ["Pytanie dlaczego / Cel ruchu", "plain_negative", true, true],
+    ["Pytanie dlaczego / Cel ruchu", "past_plain", true, true],
+    ["Pytanie dlaczego / Cel ruchu", "past_negative_plain", true, true],
+    ["Pytanie dlaczego / Towarzysz", "dictionary", true, true],
+    ["Pytanie dlaczego / Towarzysz", "plain_negative", true, true],
+    ["Pytanie dlaczego / Towarzysz", "past_plain", true, true],
+    ["Pytanie dlaczego / Towarzysz", "past_negative_plain", true, true],
+    ["Pytanie dlaczego / Miejsce czynności", "dictionary", true, true],
+    ["Pytanie dlaczego / Miejsce czynności", "plain_negative", true, true],
+    ["Pytanie dlaczego / Miejsce czynności", "past_plain", true, true],
+    ["Pytanie dlaczego / Miejsce czynności", "past_negative_plain", true, true],
+    ["Pytanie dlaczego / Środek transportu", "dictionary", true, true],
+    ["Pytanie dlaczego / Środek transportu", "plain_negative", true, true],
+    ["Pytanie dlaczego / Środek transportu", "past_plain", true, true],
+    ["Pytanie dlaczego / Środek transportu", "past_negative_plain", true, true],
+    ["Pytanie jakim sposobem / Sam czasownik", "dictionary", true, true],
+    ["Pytanie jakim sposobem / Sam czasownik", "plain_negative", true, true],
+    ["Pytanie jakim sposobem / Sam czasownik", "past_plain", true, true],
+    ["Pytanie jakim sposobem / Sam czasownik", "past_negative_plain", true, true],
+    ["Pytanie jakim sposobem / Czasownik z dopełnieniem", "dictionary", true, true],
+    ["Pytanie jakim sposobem / Czasownik z dopełnieniem", "plain_negative", true, true],
+    ["Pytanie jakim sposobem / Czasownik z dopełnieniem", "past_plain", true, true],
+    ["Pytanie jakim sposobem / Czasownik z dopełnieniem", "past_negative_plain", true, true],
+    ["Pytanie jakim sposobem / Opisane dopełnienie", "dictionary", true, true],
+    ["Pytanie jakim sposobem / Opisane dopełnienie", "plain_negative", true, true],
+    ["Pytanie jakim sposobem / Opisane dopełnienie", "past_plain", true, true],
+    ["Pytanie jakim sposobem / Opisane dopełnienie", "past_negative_plain", true, true],
+    ["Pytanie jakim sposobem / Cel ruchu", "dictionary", true, true],
+    ["Pytanie jakim sposobem / Cel ruchu", "plain_negative", true, true],
+    ["Pytanie jakim sposobem / Cel ruchu", "past_plain", true, true],
+    ["Pytanie jakim sposobem / Cel ruchu", "past_negative_plain", true, true],
+    ["Pytanie jakim sposobem / Towarzysz", "dictionary", true, true],
+    ["Pytanie jakim sposobem / Towarzysz", "plain_negative", true, true],
+    ["Pytanie jakim sposobem / Towarzysz", "past_plain", true, true],
+    ["Pytanie jakim sposobem / Towarzysz", "past_negative_plain", true, true],
+    ["Pytanie jakim sposobem / Miejsce czynności", "dictionary", true, true],
+    ["Pytanie jakim sposobem / Miejsce czynności", "plain_negative", true, true],
+    ["Pytanie jakim sposobem / Miejsce czynności", "past_plain", true, true],
+    ["Pytanie jakim sposobem / Miejsce czynności", "past_negative_plain", true, true],
+    ["Pytanie jakim sposobem / Środek transportu", "dictionary", true, true],
+    ["Pytanie jakim sposobem / Środek transportu", "plain_negative", true, true],
+    ["Pytanie jakim sposobem / Środek transportu", "past_plain", true, true],
+    ["Pytanie jakim sposobem / Środek transportu", "past_negative_plain", true, true]
+  ],
+  "explicit_and_implicit_agree": "all four forms, every pair and bound rendering passed",
+  "random_questions": {
+    "seed": 173,
+    "count": 100,
+    "canonical_match": true
+  }
+}

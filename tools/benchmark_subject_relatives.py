@@ -21,6 +21,9 @@ def main():
     parser.add_argument('--pattern', default='Zdania przydawkowe')
     parser.add_argument('--samples', type=int, default=7)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--operations', nargs='+', choices=['load', 'validation',
+        'compatibility', 'exists', 'count', 'first_question', 'next_question', 'render_agreement'],
+        help='Optional focused measurement set; default retains the complete B3 benchmark.')
     args = parser.parse_args()
     if args.samples < 1:
         parser.error('--samples must be positive')
@@ -54,6 +57,7 @@ def main():
         raise AssertionError(name)
     names = ['load', 'validation', 'compatibility', 'exists', 'count', 'first_question', 'next_question']
     if key.endswith('podmiotowe'): names.append('render_agreement')
+    if args.operations: names = args.operations
     output = {'pattern': key, 'samples': args.samples, 'python': sys.version,
               'cpu': sorted(os.sched_getaffinity(0)) if hasattr(os, 'sched_getaffinity') else None,
               'timings': {}}
