@@ -1,11 +1,11 @@
 {
   "format": 1,
   "channel": "quizzes",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "packages": [
     {
       "id": "lessons",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "quiz_api": 1,
       "min_app_version": "1.1.2",
       "kind": "python",
@@ -137,8 +137,8 @@
     },
     {
       "path": "apps/lessons/app.json",
-      "sha256": "8d54bebf92cac05a3d42b30e99474f1b67a4e0209c2bd833bef11f2bf64752ce",
-      "url": "quizzes/lessons/app.json?kotomi_sha256=8d54bebf92cac05a3d42b30e99474f1b67a4e0209c2bd833bef11f2bf64752ce"
+      "sha256": "428dd67795fb660044ac099c241df0e533c70f4000827f31c075cb4c576a69a6",
+      "url": "quizzes/lessons/app.json?kotomi_sha256=428dd67795fb660044ac099c241df0e533c70f4000827f31c075cb4c576a69a6"
     },
     {
       "path": "apps/lessons/logic.py",
@@ -147,8 +147,8 @@
     },
     {
       "path": "apps/lessons/mobile.py",
-      "sha256": "4fea0c6cf65c1bbac4855b44414c861266467a01ac1c6a79a8625ce5b0b08948",
-      "url": "quizzes/lessons/mobile.py?kotomi_sha256=4fea0c6cf65c1bbac4855b44414c861266467a01ac1c6a79a8625ce5b0b08948"
+      "sha256": "f3c530bd52bd9de471114029b5257c1efead19231e93c8ba0b8d93f0dd3d88c1",
+      "url": "quizzes/lessons/mobile.py?kotomi_sha256=f3c530bd52bd9de471114029b5257c1efead19231e93c8ba0b8d93f0dd3d88c1"
     },
     {
       "path": "apps/verbs/Kotomi_verbs.py",

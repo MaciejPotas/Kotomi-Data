@@ -1,5 +1,7 @@
 # Noun categories and verb roles (C3)
 
+The current engine includes B3 and universal target C3.2. This document preserves a historical stage; check current references and completeness with the [audit tools](developer_tools.md).
+
 > Historical C3/C3.1 report. Content 64 uses format 3; see [C3.2](target_government_c32.md) for current compatibility and category changes.
 
 Add an ordinary noun by choosing its narrowest correct category. Verbs accepting

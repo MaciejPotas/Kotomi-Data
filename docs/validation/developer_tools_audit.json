@@ -1,0 +1,269 @@
+{
+  "words_scanned": 380,
+  "errors": 0,
+  "warnings": 24,
+  "dictionaries": {
+    "adjectives": {
+      "total": 90,
+      "complete": 87,
+      "incomplete": 3
+    },
+    "adverbs": {
+      "total": 16,
+      "complete": 16,
+      "incomplete": 0
+    },
+    "connectors": {
+      "total": 7,
+      "complete": 7,
+      "incomplete": 0
+    },
+    "copulas": {
+      "total": 1,
+      "complete": 1,
+      "incomplete": 0
+    },
+    "counters": {
+      "total": 23,
+      "complete": 23,
+      "incomplete": 0
+    },
+    "demonstratives": {
+      "total": 6,
+      "complete": 6,
+      "incomplete": 0
+    },
+    "expressions": {
+      "total": 2,
+      "complete": 2,
+      "incomplete": 0
+    },
+    "interrogatives": {
+      "total": 22,
+      "complete": 22,
+      "incomplete": 0
+    },
+    "nouns": {
+      "total": 80,
+      "complete": 80,
+      "incomplete": 0
+    },
+    "numbers": {
+      "total": 11,
+      "complete": 11,
+      "incomplete": 0
+    },
+    "verbs": {
+      "total": 122,
+      "complete": 108,
+      "incomplete": 14
+    }
+  },
+  "findings": [
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "fushigi",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_plain_past_negative: ふしぎじゃなかった (suggested ふしぎではなかった); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "fushigi",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_polite_negative: ふしぎじゃないです (suggested ふしぎではありません); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "fushigi",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_polite_past_negative: ふしぎじゃなかったです (suggested ふしぎではありませんでした); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "kirei",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_plain_past_negative: きれいじゃなかった (suggested きれいではなかった); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "kirei",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_polite_negative: きれいじゃありません (suggested きれいではありません); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "kirei",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_polite_past_negative: きれいじゃありませんでした (suggested きれいではありませんでした); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "shizuka",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_plain_past_negative: しずかじゃなかった (suggested しずかではなかった); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "shizuka",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_polite_negative: しずかじゃありません (suggested しずかではありません); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "adjectives",
+      "word": "shizuka",
+      "file": "dictionaries/adjectives.xml",
+      "message": "Conjugation differs from generator: predicate_polite_past_negative: しずかじゃありませんでした (suggested しずかではありませんでした); may be an intentional variant"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "hajimeru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: shigoto, keikaku, yotei, meal; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "hiraku",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: box, school; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "ireru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for target: room; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "kesu",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: television; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "kiru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: clothes; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "kotaeru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for target: email, letter; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "owaru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for subject: shigoto, meal, yotei; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "sukuu",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: inochi; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "suru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: shigoto, yakusoku, keikaku, yotei, youji; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "teishutsusuru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: book, note, keikaku; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "teishutsusuru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for target: teacher, school; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "tojiru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: book, manga, newspaper, box; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "tsukeru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: television; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "tsuzukeru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: shigoto, keikaku, yotei, music, song; review whether a category suffices"
+    },
+    {
+      "severity": "WARNING",
+      "dictionary": "verbs",
+      "word": "ukeru",
+      "file": "dictionaries/verbs.xml",
+      "message": "Explicit noun exceptions for object: shigoto; review whether a category suffices"
+    }
+  ],
+  "source_commit": "8c17d751657c9462edf16f15b4a1c77ff81883e5",
+  "coverage": {
+    "words_scanned": 380,
+    "covered": 358,
+    "uncovered": [
+      "adverbs/asatte",
+      "adverbs/raishuu",
+      "adverbs/saikin",
+      "adverbs/saraishuu",
+      "adverbs/tokuni",
+      "adverbs/totemo",
+      "adverbs/yukkuri",
+      "counters/fun",
+      "demonstratives/ano",
+      "demonstratives/are",
+      "demonstratives/kono",
+      "demonstratives/kore",
+      "demonstratives/sono",
+      "demonstratives/sore",
+      "expressions/shikata_ga_nai",
+      "expressions/shouganai",
+      "interrogatives/docchi",
+      "interrogatives/dochira",
+      "interrogatives/donata",
+      "interrogatives/dore",
+      "interrogatives/ikutsu",
+      "interrogatives/nan"
+    ],
+    "patterns_scanned": 93,
+    "patterns_without_completion": [],
+    "empty_noun_categories": [
+      "item"
+    ],
+    "reference_findings": [],
+    "verbs_scanned": 122,
+    "verbs_covered": 122
+  }
+}

@@ -1,5 +1,7 @@
 # C2.1: uzgodnienie czasowników z podmiotem
 
+Aktualny silnik obejmuje B3 oraz uniwersalny target C3.2. Ten dokument zachowuje opis konkretnego etapu; bieżące odwołania i kompletność sprawdzaj narzędziami opisanymi w [audycie](developer_tools.md).
+
 Content 61 wdraża dokładnie 62 operacje `changes` z
 [zatwierdzonych propozycji C1](../validation/verb_dictionary_proposals_c1.json):
 56 tłumaczeń uzgodnionych w 28 formach i sześć nowych ról `subject`.

@@ -1,5 +1,7 @@
 # C2.1: verb subject agreement
 
+The current engine includes B3 and universal target C3.2. This document preserves a historical stage; check current references and completeness with the [audit tools](developer_tools.md).
+
 Content 61 applies exactly 62 `changes` from the
 [approved C1 proposals](../validation/verb_dictionary_proposals_c1.json):
 56 agreed translations across 28 forms and six new `subject` roles.
