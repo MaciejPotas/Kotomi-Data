@@ -21,21 +21,38 @@ Domyślny raport: `audit-results/data-audit.txt`. JSON jest opcjonalny.
 
 Źródłem reguł są parser Kotomi, `QuizProject.validate`, walidacja pojedynczego
 słowa `DictionaryService.validate_word`, katalog aktywnego języka i istniejący
-generator japońskiej odmiany. Reguły nie są kopiowane do Data. ERROR oznacza
-niespójność strukturalną lub brak pola wymaganego przez kontrakt słownika.
-WARNING oznacza brak jawnego tłumaczenia formy, przypadku lub klasy agreement,
-jawny wyjątek nouns albo różnicę względem generatora. Różnica odmiany może być
-poprawnym wariantem językowym. „Incomplete” oznacza słowo wymagające przeglądu,
-nie automatycznie błędne słowo. Błędy i ostrzeżenia są grupowane po słowniku i ID.
+generator japońskiej odmiany. Reguły nie są kopiowane do Data.
 
-Nie każda forma z katalogu jest produktywna dla każdego słowa. Brakujące pozycje
-trafiają do `absent_catalog_forms` w inwentarzu i trybu verbose, bez fałszywego
-błędu. Formy wyliczane przez profile liczenia nie wymagają ręcznych wpisów.
-`target_translation` i mapy `agreement_translations` są opcjonalne; wymagania
-konkretnego wzorca weryfikuje solver w diagnostyce pokrycia Kotomi.
-Błąd parsera kończy audyt z kodem 1 i jawną informacją, że pozostałych słów nie
-przeskanowano. Po poprawieniu struktury uruchom audyt ponownie. Ostrzeżenia same
-nie zmieniają kodu 0. Nieznany filtr słownika jest błędem.
+ERROR oznacza naruszenie kontraktu lub brak wymaganego pola. WARNING oznacza
+prawdopodobny brak danych albo potrzebę weryfikacji. INFO obejmuje jawne wyjątki
+`nouns`, rozpoznane warianty odmiany i opcjonalne dane. Nieznana różnica względem
+generatora pozostaje WARNING, ale nie jest automatycznie brakiem danych.
+`affects_completeness` określa wpływ każdej uwagi na kompletność. `review_notes`
+liczy uwagi bez takiego wpływu, a nie niekompletne słowa. JSON oddziela `errors`,
+`warnings`, `info` i kompletność słowników. Kompletność dotyczy sprawdzonych
+kontraktów, nie wszystkich możliwych zastosowań gramatycznych.
+
+Inwentarz rozdziela formy zapisane, `generated_forms` (możliwe do wygenerowania
+przy edycji), `optional_forms_not_explicit` (bez wykazanego obowiązku zapisu),
+`unsupported_by_generator` i `missing_required_forms`. Brak obsługi generatora
+nie dowodzi, że forma jest językowo niemożliwa. Nie ma uniwersalnych metadanych
+obowiązkowości ani produktywności form dla każdego słowa; `requirements_status`
+raportuje tę niepewność. `absent_catalog_forms` pozostaje surową listą zgodną
+ze starszym formatem. `selectable_catalog_forms` pochodzi z aktualnego rejestru.
+
+Znany obowiązek wynika z konkretnego słowa i stałego selektora formy we wzorcu,
+przeanalizowanych przez engine. Generator nie uzupełnia form w runtime i nie
+potwierdza tłumaczeń. Dlatego brak wymaganej zapisanej formy pozostaje WARNING,
+nawet jeśli można wygenerować jej kana. Otwarte sloty, dynamiczne formy quizu,
+dziedziczenie form i pełną poprawność kontekstu sprawdza diagnostyka solvera.
+Lista Studio pokazuje także formy stałe; `eligible_form_names` ogranicza dynamiczne
+formy quizu, nie definiuje obowiązkowej listy form każdego czasownika.
+
+Brak ogólnej translacji przy dostępnych `target_translation` lub
+`agreement_translations` daje INFO o niezweryfikowanym pokryciu innych kontekstów.
+Bez żadnego tłumaczenia formy audyt zgłasza WARNING wpływające na kompletność.
+Audyt nie generuje tłumaczeń. Błąd parsera daje kod 1 i informację o przerwanym
+skanowaniu. Ostrzeżenia i informacje same nie zmieniają kodu 0.
 
 CI pozostaje przy `tools/validate_repository.py`, unittest i
 `tools/validate_question_patterns.py`. Testy audytora na małych fixture'ach są
@@ -49,4 +66,4 @@ Aktualne przykłady ról, rekcji i kategorii: [target](target_government_c32.md)
 nowym atrybutem XML słowa lub roli. C1/C2 są raportami konkretnego etapu;
 bieżącą kompletność sprawdza ten audyt na aktualnych danych.
 
-Wyniki audytu bieżącej rewizji: [raport JSON](../validation/developer_tools_audit.json). 380 słów, 0 błędów, 24 ostrzeżenia: 15 deklaracji wyjątków nouns oraz 9 wariantów odmiany przymiotników. 122/122 czasowników ma pokrycie; 22 słowa pozostają bez potwierdzonego użycia leksykalnego w patternach. Literały kana we wzorcach nie są referencjami do słownika. Audyt nie zmienił słów ani ich tłumaczeń.
+Wyniki audytu bieżącej rewizji: [raport JSON](../validation/developer_tools_audit.json). 380 słów, 0 błędów, 0 ostrzeżeń, 24 informacje: 15 deklaracji wyjątków nouns oraz 9 wariantów odmiany przymiotników. 122/122 czasowników ma pokrycie; 22 słowa pozostają bez potwierdzonego użycia leksykalnego w patternach. Literały kana we wzorcach nie są referencjami do słownika. Audyt nie zmienił słów ani ich tłumaczeń.

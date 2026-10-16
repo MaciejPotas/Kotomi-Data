@@ -21,20 +21,36 @@ The default report is `audit-results/data-audit.txt`; JSON is optional.
 
 Rules come from Kotomi's parser, `QuizProject.validate`,
 `DictionaryService.validate_word`, active-language catalogs and the existing
-Japanese conjugation generator. They are not copied into Data. ERROR identifies
-a structural inconsistency or missing field required by the dictionary contract.
-WARNING identifies absent explicit form translations, noun cases or agreement
-classes, explicit nouns exceptions, or differences from the generator. A conjugation
-difference may be a valid linguistic variant. “Incomplete” means review required,
-not automatically incorrect vocabulary. Findings are grouped by dictionary and ID.
+Japanese conjugation generator. They are not copied into Data. ERROR identifies a contract violation or a missing required field. WARNING
+identifies a probable data gap or an item requiring verification. INFO covers
+explicit `nouns` exceptions, recognized conjugation variants and optional data.
+An unrecognized generator difference remains WARNING without automatically
+becoming a data gap. `affects_completeness` records each finding's impact;
+`review_notes` counts findings without that impact, not incomplete words. JSON
+separates `errors`, `warnings`, `info` and dictionary completeness. Completeness
+covers checked contracts, not every possible grammatical use.
 
-Not every catalog form is productive for every word. Absent entries are listed in
-`absent_catalog_forms` and verbose output without false errors. Counting-profile
-generated forms do not require manual entries. `target_translation` and
-`agreement_translations` are optional; pattern-specific requirements are checked
-by the solver in Kotomi's coverage diagnostics. A parser failure exits with code 1
-and explicitly states that remaining words were not scanned. Fix the structure
-and rerun. Warnings alone retain exit code 0. An unknown dictionary filter is an error.
+Inventory separates stored forms, `generated_forms` (authoring suggestions),
+`optional_forms_not_explicit` (no established storage obligation),
+`unsupported_by_generator` and `missing_required_forms`. Generator limitations
+do not prove linguistic impossibility. Universal per-word obligation and
+productivity metadata is unavailable; `requirements_status` states that
+uncertainty. `absent_catalog_forms` retains the raw backward-compatible list.
+`selectable_catalog_forms` comes from the current registry.
+
+A known obligation comes from a fixed word and fixed form selector analyzed by
+the engine. The generator does not supply runtime forms or verify translations.
+A missing required stored form therefore remains WARNING even if its kana is
+generatable. Open slots, dynamic quiz forms, inherited forms and full contextual
+validity belong to solver diagnostics. Studio lists fixed forms too;
+`eligible_form_names` restricts dynamic quiz forms, not a mandatory inventory
+for every verb.
+
+When `target_translation` or `agreement_translations` exists without a general
+gloss, INFO states that other contexts remain unverified. A form with no
+translation gets a completeness-affecting WARNING. The auditor never generates
+translations. Parser failure exits 1 and explicitly reports an interrupted scan.
+Warnings and information alone retain exit code 0.
 
 CI retains `tools/validate_repository.py`, unittest and
 `tools/validate_question_patterns.py`. Bounded audit tests join the unit suite;
@@ -47,4 +63,4 @@ Current complete examples: [target](target_government_c32.md),
 `depends_on` belongs to operations in historical audit proposal JSON, not to word
 or role XML. C1/C2 are stage-specific reports; this tool audits the current data.
 
-Current revision results: [JSON report](../validation/developer_tools_audit.json). 380 words, 0 errors, 24 warnings: 15 explicit nouns exception declarations and 9 adjective conjugation variants. All 122 verbs have coverage; 22 words have no demonstrated lexical use in patterns. Literal kana in patterns is not a dictionary reference. The audit did not change vocabulary or translations.
+Current revision results: [JSON report](../validation/developer_tools_audit.json). 380 words, 0 errors, 0 warnings, 24 informational findings: 15 explicit nouns exception declarations and 9 adjective conjugation variants. All 122 verbs have coverage; 22 words have no demonstrated lexical use in patterns. Literal kana in patterns is not a dictionary reference. The audit did not change vocabulary or translations.

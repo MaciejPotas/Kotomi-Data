@@ -53,3 +53,108 @@ class AuditTests(unittest.TestCase):
         report = audit_project(project)
         self.assertEqual(report['errors'], 2)
         self.assertTrue(all(item['word'] == 'fixture' for item in report['findings']))
+
+
+class FormAuditTests(unittest.TestCase):
+    """Fixture v2: bounded fake engine catalog/generator, no production Content."""
+
+    def setUp(self):
+        from unittest.mock import patch
+        self.project = fixture()
+        self.word = self.project.words['sample']['fixture']
+        self.word.translation = 'fixture'
+        self.word.type = 'godan'
+        self.word.kana = 'かく'
+        self.project.dictionary_schemas['sample'] = 'verb'
+        self.project.form_definitions['verb'] = {
+            name: NS(is_selectable=name == 'past_plain')
+            for name in ('dictionary', 'past_plain', 'optional', 'unsupported')}
+        self.word.forms = {'dictionary': self.form('かく', 'piszę')}
+        generator = NS(generate_forms=lambda *_: {'dictionary': 'かく', 'past_plain': 'かいた'},
+                       FormGenerationError=ValueError)
+        self.patch = patch.dict('sys.modules', {'kotomi.core.dictionary.forms': generator})
+        self.patch.start()
+        self.addCleanup(self.patch.stop)
+
+    @staticmethod
+    def form(kana, translation, **kwargs):
+        return NS(kana=kana, translation=translation, target_translation=kwargs.get('target_translation', ''),
+                  agreement_translations=kwargs.get('agreement_translations', {}))
+
+    def test_complete_verb_with_noun_exception_is_still_complete(self):
+        self.word.usage_nouns = {'target': ['fixture_noun']}
+        report = audit_project(self.project)
+        self.assertEqual((report['errors'], report['warnings'], report['info']), (0, 0, 1))
+        self.assertEqual(report['dictionaries']['sample']['complete'], 1)
+        self.assertEqual(report['dictionaries']['sample']['review_notes'], 1)
+        self.assertIn('Info: 1', render_report(report))
+
+    def test_generated_and_optional_forms_are_not_missing_obligations(self):
+        report = audit_project(self.project)
+        row = report['inventory']['sample/fixture']
+        self.assertEqual(row['generated_forms'], ['past_plain'])
+        self.assertIn('optional', row['optional_forms_not_explicit'])
+        self.assertIn('unsupported', row['unsupported_by_generator'])
+        self.assertEqual(row['missing_required_forms'], [])
+        self.assertIn('no universal', row['requirements_status'])
+        self.assertIn('runtime uses stored', row['generation_scope'])
+        self.assertEqual(report['dictionaries']['sample']['incomplete'], 0)
+
+    def test_missing_required_form_even_when_generator_can_supply_it(self):
+        from unittest.mock import patch
+        with patch.object(_module, 'fixed_form_requirements', return_value={('sample', 'fixture'): {'past_plain': {'fixed_pattern'}}}):
+            report = audit_project(self.project)
+        row = report['inventory']['sample/fixture']
+        self.assertEqual(row['missing_required_forms'], ['past_plain'])
+        self.assertEqual(report['warnings'], 1)
+        self.assertEqual(report['dictionaries']['sample']['incomplete'], 1)
+
+    def test_missing_translation_is_a_data_gap(self):
+        self.word.forms['past_plain'] = self.form('かいた', '')
+        report = audit_project(self.project)
+        self.assertEqual(report['warnings'], 1)
+        self.assertEqual(report['dictionaries']['sample']['incomplete'], 1)
+
+    def test_contextual_translation_is_not_a_missing_data_error(self):
+        self.word.forms['past_plain'] = self.form('かいた', '', target_translation='napisałem')
+        report = audit_project(self.project)
+        self.assertEqual(report['warnings'], 0)
+        self.assertEqual(report['dictionaries']['sample']['complete'], 1)
+        self.assertIn('past_plain', report['inventory']['sample/fixture']['contextual_translations'])
+        self.assertIn('unverified', report['findings'][0]['message'])
+
+    def test_unknown_conjugation_difference_needs_review_not_missing_data(self):
+        self.word.forms['past_plain'] = self.form('ちがう', 'napisałem')
+        report = audit_project(self.project)
+        self.assertEqual(report['warnings'], 1)
+        self.assertFalse(report['findings'][0]['affects_completeness'])
+        self.assertEqual(report['dictionaries']['sample']['complete'], 1)
+        self.assertIn('needs review', report['findings'][0]['message'])
+
+    def test_only_known_na_contractions_are_recognized(self):
+        self.word.type = 'na_adjective'
+        self.word.kana = 'しずか'
+        self.assertTrue(_module.known_conjugation_variant(self.word, 'しずかじゃなかった', 'しずかではなかった'))
+        self.assertFalse(_module.known_conjugation_variant(self.word, 'べつじゃなかった', 'しずかではなかった'))
+        self.word.type = 'godan'
+        self.assertFalse(_module.known_conjugation_variant(self.word, 'しずかじゃなかった', 'しずかではなかった'))
+
+    def test_supported_variant_is_info_in_report(self):
+        from unittest.mock import patch
+        self.word.type = 'na_adjective'
+        self.word.kana = 'しずか'
+        self.project.dictionary_schemas['sample'] = 'adjective'
+        self.project.form_definitions['adjective'] = {'negative': NS(is_selectable=True)}
+        self.word.forms = {'negative': self.form('しずかじゃなかった', 'nie był spokojny')}
+        with patch.dict('sys.modules', {'kotomi.core.dictionary.forms': NS(
+                generate_forms=lambda *_: {'negative': 'しずかではなかった'}, FormGenerationError=ValueError)}):
+            report = audit_project(self.project)
+        self.assertEqual((report['errors'], report['warnings'], report['info']), (0, 0, 1))
+        self.assertEqual(report['dictionaries']['sample']['complete'], 1)
+
+    def test_redundant_optional_override_is_info(self):
+        report = audit_project(self.project, word_validator=lambda _: [NS(
+            severity='WARNING', message='Redundant source-language form overrides will be removed on save.')])
+        self.assertEqual(report['info'], 1)
+        self.assertEqual(report['warnings'], 0)
+        self.assertEqual(report['dictionaries']['sample']['complete'], 1)
