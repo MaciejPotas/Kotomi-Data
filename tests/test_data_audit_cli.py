@@ -89,6 +89,12 @@ class FormAuditTests(unittest.TestCase):
         self.assertEqual(report['dictionaries']['sample']['review_notes'], 1)
         self.assertIn('Info: 1', render_report(report))
 
+    def test_successful_execution_is_distinct_from_data_findings(self):
+        self.word.forms['past_plain'] = self.form('かいた', '')
+        report = audit_project(self.project)
+        self.assertTrue(report['execution_success'])
+        self.assertEqual(report['warnings'], 1)
+
     def test_generated_and_optional_forms_are_not_missing_obligations(self):
         report = audit_project(self.project)
         row = report['inventory']['sample/fixture']

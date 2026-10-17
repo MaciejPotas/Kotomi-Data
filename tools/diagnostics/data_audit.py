@@ -175,7 +175,7 @@ def audit_project(project, dictionary=None, *, word_validator=None):
         incomplete = {item['word'] for item in findings if item['dictionary'] == key and item['word'] in words and item['affects_completeness']}
         dictionaries[key] = dict(total=len(words), complete=len(words)-len(incomplete), incomplete=len(incomplete),
                                  review_notes=sum(item['dictionary'] == key and not item['affects_completeness'] for item in findings))
-    return dict(words_scanned=sum(len(words) for words in selected.values()),
+    return dict(execution_success=True, words_scanned=sum(len(words) for words in selected.values()),
                 errors=counts['ERROR'], warnings=counts['WARNING'], info=counts['INFO'],
                 dictionaries=dictionaries, findings=findings, inventory=inventories)
 
@@ -219,13 +219,13 @@ def main(argv=None):
         service = DictionaryService(project.manifest_path, project=project)
         report = audit_project(project, args.dictionary, word_validator=service.validate_word)
     except (ValueError, OSError) as error:
-        report = dict(words_scanned=0, errors=1, warnings=0, info=0, dictionaries={}, inventory={},
+        report = dict(execution_success=False, words_scanned=0, errors=1, warnings=0, info=0, dictionaries={}, inventory={},
                       findings=[dict(severity='ERROR', affects_completeness=True, dictionary='', word='', file=str(args.project), message=f'Project could not be audited: {error}')])
     except Exception as error:
         from kotomi.core.project.errors import ProjectError
         if not isinstance(error, ProjectError):
             raise
-        report = dict(words_scanned=0, errors=1, warnings=0, info=0, dictionaries={}, inventory={},
+        report = dict(execution_success=False, words_scanned=0, errors=1, warnings=0, info=0, dictionaries={}, inventory={},
                       findings=[dict(severity='ERROR', affects_completeness=True, dictionary='', word='', file=str(args.project), message=f'Parser rejected Content: {error}. Fix this error and rerun; remaining words were not scanned.')])
     text = render_report(report, args.verbose)
     print(text)

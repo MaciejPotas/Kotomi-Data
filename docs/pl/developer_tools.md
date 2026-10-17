@@ -67,3 +67,35 @@ nowym atrybutem XML słowa lub roli. C1/C2 są raportami konkretnego etapu;
 bieżącą kompletność sprawdza ten audyt na aktualnych danych.
 
 Wyniki audytu bieżącej rewizji: [raport JSON](../validation/developer_tools_audit.json). 380 słów, 0 błędów, 0 ostrzeżeń, 24 informacje: 15 deklaracji wyjątków nouns oraz 9 wariantów odmiany przymiotników. 122/122 czasowników ma pokrycie; 22 słowa pozostają bez potwierdzonego użycia leksykalnego w patternach. Literały kana we wzorcach nie są referencjami do słownika. Audyt nie zmienił słów ani ich tłumaczeń.
+
+## Pełna walidacja lokalna i pokrycie realizacji
+
+Kotomi zawiera teraz `tools/diagnostics/pattern_realization_audit.py`, ponieważ
+rzeczywiste wymagania słowo-pattern-forma potrzebują engine. Z nadrzędnego Kotomi:
+
+```bat
+tools\diagnostics\run_pattern_audit.bat --output audit.txt --json audit.json --strict
+tools\run_full_validation.bat
+tools\run_full_validation.bat --quick
+tools\run_full_validation.bat --diagnostics-only
+```
+
+`--full` jest trybem domyślnym. Pełny runner wykonuje sekwencyjnie testy Data,
+walidatory repozytorium/patternów i audyt Data, następnie testy Kotomi oraz
+diagnostyki Content. Czyta submoduł `data`, zapisuje logi i podsumowania w
+`validation-results/<UTC>`. Nie generuje manifestów ani nie zmienia słowników.
+Audyt z kodem 0 i błędami danych nadal daje FAIL; INFO nie powoduje błędu.
+Brakujące zależności są jawnie pomijane. Benchmarki pozostają osobne.
+
+Audyt realizacji rozróżnia odrzucenie semantyczne, potwierdzony brak danych,
+realizowalne powiązanie i niezweryfikowane pokrycie. Sprawdza osiągalne formy,
+wymagane przypadki, rekcję, agreement, tłumaczenia kontekstowe oraz ID powiązanych
+słów. Nie wymaga wszystkich przypadków i form katalogu od każdego słowa.
+TXT grupuje problemy po słowach; JSON zachowuje konteksty i indeksowane pozytywne
+powiązania. ERROR oznacza potwierdzony brak pola, WARNING wymaga przeglądu,
+INFO jest informacją, a UNVERIFIED nie oznacza poprawności ani błędu. Generowane
+zakresy liczb, ograniczenia języka i ograniczona enumeracja zależności pozostają
+jawnymi lukami. Przewodnik narzędzi developerskich Kotomi PL/ENG opisuje limity,
+odczyt tabel i opcje CLI. Te audyty produkcyjne nie trafiają do obowiązkowego CI.
+
+JSON zapisuje też `execution_success`: false oznacza przerwane parsowanie/ładowanie lub wykonanie audytu, niezależnie od liczby błędów danych.

@@ -64,3 +64,35 @@ Current complete examples: [target](target_government_c32.md),
 or role XML. C1/C2 are stage-specific reports; this tool audits the current data.
 
 Current revision results: [JSON report](../validation/developer_tools_audit.json). 380 words, 0 errors, 0 warnings, 24 informational findings: 15 explicit nouns exception declarations and 9 adjective conjugation variants. All 122 verbs have coverage; 22 words have no demonstrated lexical use in patterns. Literal kana in patterns is not a dictionary reference. The audit did not change vocabulary or translations.
+
+## Full local validation and realization coverage
+
+Kotomi now owns `tools/diagnostics/pattern_realization_audit.py`, since actual
+word-pattern-form requirements need the engine. From the parent Kotomi checkout:
+
+```bat
+tools\diagnostics\run_pattern_audit.bat --output audit.txt --json audit.json --strict
+tools\run_full_validation.bat
+tools\run_full_validation.bat --quick
+tools\run_full_validation.bat --diagnostics-only
+```
+
+`--full` is the default. The full runner sequentially includes Data tests,
+repository/pattern validators and this Data audit, followed by Kotomi tests and
+Content diagnostics. It reads the `data` submodule, stores per-step logs and
+structured summaries in `validation-results/<UTC>`, and never generates manifests
+or edits vocabulary. A code-0 audit with data errors still fails the runner;
+INFO does not. Missing dependencies are skipped explicitly. Benchmarks stay separate.
+
+The realization audit distinguishes semantic rejection, confirmed missing data,
+renderable relationships and UNVERIFIED coverage. It checks reachable forms,
+required cases, government, agreement, contextual translations and related word
+IDs without imposing every noun case or catalog form universally. TXT groups
+issues by word; JSON retains all contexts and indexed positive relationships.
+ERROR is a confirmed missing field, WARNING requests review, INFO is informational,
+and UNVERIFIED is neither correct nor erroneous. Generated numeric domains,
+provider limitations and bounded dependency enumeration remain explicit gaps.
+The PL/ENG Kotomi developer-tools guide documents budgets, table decoding and
+all CLI options. These production diagnostics remain outside mandatory CI.
+
+JSON also records `execution_success`: false means parsing/loading or audit execution was interrupted, independently of the number of data errors.
