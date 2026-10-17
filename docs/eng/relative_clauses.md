@@ -1,5 +1,7 @@
 # Relative clauses in Content
 
+The current engine includes B3 and universal target C3.2. This document preserves a historical stage; check current references and completeness with the [audit tools](developer_tools.md).
+
 Content revision 59 adds one `Zdania przydawkowe` pattern in category
 `przydawki` in `patterns/sentence_maps.xml`. The `relative_clauses` definition
 in `patterns/sentence_quizzes.xml` exposes a **Zdania przydawkowe** quiz
