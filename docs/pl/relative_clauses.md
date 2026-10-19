@@ -1,5 +1,7 @@
 # Zdania przydawkowe w Content
 
+Aktualny silnik obejmuje B3 oraz uniwersalny target C3.2. Ten dokument zachowuje opis konkretnego etapu; bieżące odwołania i kompletność sprawdzaj narzędziami opisanymi w [audycie](developer_tools.md).
+
 Rewizja Content 59 dodaje jeden wzorzec `Zdania przydawkowe` w kategorii
 `przydawki` w `patterns/sentence_maps.xml`. Definicja `relative_clauses` w
 `patterns/sentence_quizzes.xml` udostępnia go jako quiz **Zdania przydawkowe**

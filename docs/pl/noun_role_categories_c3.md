@@ -1,5 +1,7 @@
 # Kategorie rzeczowników i role czasowników (C3)
 
+Aktualny silnik obejmuje B3 oraz uniwersalny target C3.2. Ten dokument zachowuje opis konkretnego etapu; bieżące odwołania i kompletność sprawdzaj narzędziami opisanymi w [audycie](developer_tools.md).
+
 > Raport historyczny C3/C3.1. Content 64 używa formatu 3; aktualne zasady i zmiany kategorii opisuje [C3.2](target_government_c32.md).
 
 Dodanie zwykłego rzeczownika polega na wybraniu najwęższej poprawnej kategorii.

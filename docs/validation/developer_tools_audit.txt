@@ -1,0 +1,50 @@
+KOTOMI DATA AUDIT
+Words scanned: 380
+Errors: 0  Warnings: 0  Info: 24
+Completeness covers checked contracts only; per-word form obligations remain partially unverified (see inventory).
+
+ADJECTIVES: complete=90 incomplete=0 review_notes=9
+
+ADVERBS: complete=16 incomplete=0 review_notes=0
+
+CONNECTORS: complete=7 incomplete=0 review_notes=0
+
+COPULAS: complete=1 incomplete=0 review_notes=0
+
+COUNTERS: complete=23 incomplete=0 review_notes=0
+
+DEMONSTRATIVES: complete=6 incomplete=0 review_notes=0
+
+EXPRESSIONS: complete=2 incomplete=0 review_notes=0
+
+INTERROGATIVES: complete=22 incomplete=0 review_notes=0
+
+NOUNS: complete=80 incomplete=0 review_notes=0
+
+NUMBERS: complete=11 incomplete=0 review_notes=0
+
+VERBS: complete=122 incomplete=0 review_notes=15
+[INFO] adjectives/fushigi: Conjugation has a supported variant: predicate_plain_past_negative: ふしぎじゃなかった (generator ふしぎではなかった) (dictionaries/adjectives.xml)
+[INFO] adjectives/fushigi: Conjugation has a supported variant: predicate_polite_negative: ふしぎじゃないです (generator ふしぎではありません) (dictionaries/adjectives.xml)
+[INFO] adjectives/fushigi: Conjugation has a supported variant: predicate_polite_past_negative: ふしぎじゃなかったです (generator ふしぎではありませんでした) (dictionaries/adjectives.xml)
+[INFO] adjectives/kirei: Conjugation has a supported variant: predicate_plain_past_negative: きれいじゃなかった (generator きれいではなかった) (dictionaries/adjectives.xml)
+[INFO] adjectives/kirei: Conjugation has a supported variant: predicate_polite_negative: きれいじゃありません (generator きれいではありません) (dictionaries/adjectives.xml)
+[INFO] adjectives/kirei: Conjugation has a supported variant: predicate_polite_past_negative: きれいじゃありませんでした (generator きれいではありませんでした) (dictionaries/adjectives.xml)
+[INFO] adjectives/shizuka: Conjugation has a supported variant: predicate_plain_past_negative: しずかじゃなかった (generator しずかではなかった) (dictionaries/adjectives.xml)
+[INFO] adjectives/shizuka: Conjugation has a supported variant: predicate_polite_negative: しずかじゃありません (generator しずかではありません) (dictionaries/adjectives.xml)
+[INFO] adjectives/shizuka: Conjugation has a supported variant: predicate_polite_past_negative: しずかじゃありませんでした (generator しずかではありませんでした) (dictionaries/adjectives.xml)
+[INFO] verbs/hajimeru: Explicit noun exceptions for object: shigoto, keikaku, yotei, meal; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/hiraku: Explicit noun exceptions for object: box, school; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/ireru: Explicit noun exceptions for target: room; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/kesu: Explicit noun exceptions for object: television; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/kiru: Explicit noun exceptions for object: clothes; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/kotaeru: Explicit noun exceptions for target: email, letter; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/owaru: Explicit noun exceptions for subject: shigoto, meal, yotei; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/sukuu: Explicit noun exceptions for object: inochi; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/suru: Explicit noun exceptions for object: shigoto, yakusoku, keikaku, yotei, youji; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/teishutsusuru: Explicit noun exceptions for object: book, note, keikaku; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/teishutsusuru: Explicit noun exceptions for target: teacher, school; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/tojiru: Explicit noun exceptions for object: book, manga, newspaper, box; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/tsukeru: Explicit noun exceptions for object: television; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/tsuzukeru: Explicit noun exceptions for object: shigoto, keikaku, yotei, music, song; review whether a category suffices (dictionaries/verbs.xml)
+[INFO] verbs/ukeru: Explicit noun exceptions for object: shigoto; review whether a category suffices (dictionaries/verbs.xml)

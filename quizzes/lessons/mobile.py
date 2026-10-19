@@ -1227,6 +1227,7 @@ def create_app_class():
             self.report.text = compatibility_text(report)
             supported = set(report.supported_patterns)
             self.pattern_options = []
+            self.pattern_categories = {option.id: getattr(option, "category", "") for option in options}
             self.composite_pattern_ids = {option.id for option in options if option.composite}
             for option in options:
                 suffix = (
@@ -1303,22 +1304,16 @@ def create_app_class():
             if group == "patterns":
                 title = ui_text("mobile.picker_patterns_title")
                 selection = self.pattern_selection
-                groups = [
-                    (
-                        "single",
-                        ui_text("mobile.picker_single_patterns"),
-                        [(key, label, enabled)
-                         for key, label, enabled in self.pattern_options
-                         if key not in self.composite_pattern_ids],
-                    ),
-                    (
-                        "composite",
-                        ui_text("mobile.picker_composite_patterns"),
-                        [(key, label, enabled)
-                         for key, label, enabled in self.pattern_options
-                         if key in self.composite_pattern_ids],
-                    ),
-                ]
+                try:
+                    from kotomi.application.pattern_selection import PatternEntry, PatternSelection
+                    model = PatternSelection(PatternEntry(key, label, self.pattern_categories.get(key, ""), enabled)
+                                             for key, label, enabled in self.pattern_options)
+                    groups = [(category, category or ui_text("studio.patterns.uncategorized"),
+                               [(entry.id, entry.label, entry.enabled) for entry in entries])
+                              for category, entries, _expanded in model.groups()]
+                except ImportError:
+                    # Executable quiz packages can run on the previous host.
+                    groups = [("", ui_text("mobile.picker_single_patterns"), self.pattern_options)]
                 filters = ("all", "available", "selected")
                 hint_key = "mobile.picker_pattern_hint"
                 search_key = "mobile.picker_pattern_search"
@@ -1450,7 +1445,7 @@ def create_app_class():
             modal.add_widget(root)
 
             active_filter = ["all"]
-            collapsed: set[str] = set()
+            collapsed = self.__dict__.setdefault("picker_collapsed", {}).setdefault(group, set())
             rows_by_id: Dict[str, List[MobilePickerRow]] = {}
             filter_buttons: Dict[str, AppButton] = {}
 
@@ -1487,7 +1482,7 @@ def create_app_class():
                 stack.clear_widgets()
                 rows_by_id.clear()
                 for category, section_label, entries in matching_groups():
-                    closed = category in collapsed
+                    closed = category in collapsed and not search.text.strip()
                     section_header = AppButton(
                         text=("[+]  " if closed else "[-]  ") + section_label
                              + f"  ({len(entries)})",
