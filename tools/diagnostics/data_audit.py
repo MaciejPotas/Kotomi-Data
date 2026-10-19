@@ -85,14 +85,14 @@ def audit_project(project, dictionary=None, *, word_validator=None):
     if dictionary is not None and dictionary not in project.words:
         raise ValueError(f"Unknown dictionary: {dictionary}")
 
-    def add(level, key, word, message, *, affects_completeness=None):
+    def add(level, key, word, message, *, affects_completeness=None, category="validation"):
         if level == 'WARNING' and (message == 'Redundant source-language form overrides will be removed on save.'
                                    or ' repeats common case(s): ' in message):
             level = 'INFO'
         path = project.dictionary_paths.get(key, project.manifest_path)
         if path and project.manifest_path:
             path = path.relative_to(project.manifest_path.parent)
-        findings.append(dict(severity=level, dictionary=key, word=word,
+        findings.append(dict(severity=level, dictionary=key, word=word, category=category,
                              file=str(path or ''), message=message,
                              affects_completeness=(level != 'INFO' if affects_completeness is None else affects_completeness)))
 
@@ -148,11 +148,11 @@ def audit_project(project, dictionary=None, *, word_validator=None):
                             known = known_conjugation_variant(word, form.kana, generated[name])
                             add('INFO' if known else 'WARNING', key, identifier,
                                 f'Conjugation {"has a supported variant" if known else "needs review"}: {name}: {form.kana} (generator {generated[name]})',
-                                affects_completeness=False)
+                                affects_completeness=False, category='supported_adjective_variant' if known else 'conjugation_review')
             if schema == 'verb':
                 for role, noun_ids in sorted(word.usage_nouns.items()):
                     if noun_ids:
-                        add('INFO', key, identifier, f'Explicit noun exceptions for {role}: {", ".join(noun_ids)}; review whether a category suffices')
+                        add('INFO', key, identifier, f'Explicit noun exceptions for {role}: {", ".join(noun_ids)}; review whether a category suffices', category="explicit_noun_exceptions")
 
             required = requirements.get((key, identifier), {})
             inventory = inventories[f'{key}/{identifier}']
@@ -177,6 +177,7 @@ def audit_project(project, dictionary=None, *, word_validator=None):
                                  review_notes=sum(item['dictionary'] == key and not item['affects_completeness'] for item in findings))
     return dict(execution_success=True, words_scanned=sum(len(words) for words in selected.values()),
                 errors=counts['ERROR'], warnings=counts['WARNING'], info=counts['INFO'],
+                note_types=dict(sorted(Counter(item["category"] for item in findings if item["severity"]=="INFO").items())),
                 dictionaries=dictionaries, findings=findings, inventory=inventories)
 
 
@@ -184,9 +185,22 @@ def render_report(report, verbose=False):
     lines = ['KOTOMI DATA AUDIT', f"Words scanned: {report['words_scanned']}",
              f"Errors: {report['errors']}  Warnings: {report['warnings']}  Info: {report['info']}",
              'Completeness covers checked contracts only; per-word form obligations remain partially unverified (see inventory).']
+    labels = {'explicit_noun_exceptions':'Explicit noun exceptions',
+              'supported_adjective_variant':'Supported adjective variants', 'validation':'Other review notes'}
+    lines.append('Review notes:')
+    for kind, count in sorted(report.get('note_types', {}).items()):
+        lines.append(f'  {labels.get(kind,kind)}: {count}')
+    if not report['errors']:
+        lines.append('No confirmed data errors detected by this audit.')
+    lines.append('Supported adjective variants (including じゃ / では) are valid alternatives, not corrections. Completeness flags are unchanged.')
     for key, values in report['dictionaries'].items():
         lines.append(f"\n{key.upper()}: complete={values['complete']} incomplete={values['incomplete']} review_notes={values['review_notes']}")
-    for issue in report['findings']:
+    previous = None
+    for issue in sorted(report['findings'], key=lambda i:(i['severity'],i.get('category','validation'),i['dictionary'],i['word'],i['message'])):
+        category = issue.get('category','validation')
+        if (issue['severity'],category) != previous:
+            lines.append('\n'+labels.get(category,category))
+            previous = issue['severity'],category
         lines.append(f"[{issue['severity']}] {issue['dictionary']}/{issue['word']}: {issue['message']} ({issue['file']})")
     if verbose:
         for key, item in report['inventory'].items():

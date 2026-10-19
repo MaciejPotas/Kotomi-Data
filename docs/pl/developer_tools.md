@@ -99,3 +99,7 @@ jawnymi lukami. Przewodnik narzędzi developerskich Kotomi PL/ENG opisuje limity
 odczyt tabel i opcje CLI. Te audyty produkcyjne nie trafiają do obowiązkowego CI.
 
 JSON zapisuje też `execution_success`: false oznacza przerwane parsowanie/ładowanie lub wykonanie audytu, niezależnie od liczby błędów danych.
+
+### Grupowanie uwag w raporcie danych
+
+`data-audit.txt` najpierw podaje liczby uwag według rodzaju, a potem wskazuje konkretne słowa. Wyjątki `nouns` są osobną grupą. Rozpoznane warianty odmiany przymiotników, np. じゃ i では, są poprawnymi alternatywami, nie listą błędów do poprawienia. Pole `affects_completeness` zachowuje dotychczasowe znaczenie; zmiana prezentacji nie wpływa na kompletność słów. JSON zawiera również `category` przy uwadze i podsumowanie `note_types`.

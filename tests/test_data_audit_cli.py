@@ -164,3 +164,23 @@ class FormAuditTests(unittest.TestCase):
         self.assertEqual(report['info'], 1)
         self.assertEqual(report['warnings'], 0)
         self.assertEqual(report['dictionaries']['sample']['complete'], 1)
+
+
+class ReadableSummaryTests(unittest.TestCase):
+    def test_note_groups_preserve_completeness_and_valid_variants(self):
+        from copy import deepcopy
+        project=fixture()
+        project.words['sample']['fixture'].translation='fixture'
+        report=audit_project(project)
+        report['info']=2
+        report['note_types']={'explicit_noun_exceptions':1,'supported_adjective_variant':1}
+        report['findings']=[dict(severity='INFO',dictionary='sample',word='fixture',file='sample.xml',
+            category=category,message=message,affects_completeness=False) for category,message in [
+                ('explicit_noun_exceptions','Explicit noun exceptions for subject: fixture'),
+                ('supported_adjective_variant','Conjugation has a supported variant: じゃ / では')]]
+        before=deepcopy(report)
+        text=render_report(report)
+        self.assertIn('Explicit noun exceptions: 1',text)
+        self.assertIn('Supported adjective variants: 1',text)
+        self.assertIn('valid alternatives, not corrections',text)
+        self.assertEqual(report,before)

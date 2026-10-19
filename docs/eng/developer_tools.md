@@ -96,3 +96,7 @@ The PL/ENG Kotomi developer-tools guide documents budgets, table decoding and
 all CLI options. These production diagnostics remain outside mandatory CI.
 
 JSON also records `execution_success`: false means parsing/loading or audit execution was interrupted, independently of the number of data errors.
+
+### Grouped Data audit notes
+
+`data-audit.txt` starts with note counts by type, then identifies the words. Explicit `nouns` exceptions form a separate group. Recognized adjective variants such as じゃ and では are valid alternatives, not corrections to make. `affects_completeness` keeps its existing meaning; presentation changes do not alter word completeness. JSON also includes each finding's `category` and the `note_types` summary.
