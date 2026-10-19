@@ -43,7 +43,36 @@ from platforms.mobile.identity import (
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
 from platforms.mobile.calculation_progress import run_calculation
-from platforms.mobile.quiz_loading import QuizLoading
+try:
+    from platforms.mobile.quiz_loading import QuizLoading
+except ModuleNotFoundError as missing:
+    if missing.name != "platforms.mobile.quiz_loading":
+        raise
+
+    class QuizLoading:
+        """Keep older installed Mobile runtimes compatible with quiz updates.
+
+        The new progress popup belongs to Application Update. On older app
+        versions this is a no-UI fallback rather than an import failure.
+        """
+
+        def __init__(self, *_args, **_kwargs):
+            self.closed = False
+
+        def open(self) -> None:
+            pass
+
+        def set_percent(self, _percent: int) -> None:
+            pass
+
+        def report_fraction(self, _fraction: float, **_kwargs) -> None:
+            pass
+
+        def complete(self, callback) -> None:
+            callback()
+
+        def close(self) -> None:
+            self.closed = True
 from kotomi.core.generation.progress import report_progress
 from platforms.mobile.quiz_preflight import check_quiz_grammar
 from kotomi.application.instruction_languages import configure_quiz_controller
