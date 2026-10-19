@@ -43,6 +43,8 @@ from platforms.mobile.identity import (
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
 from platforms.mobile.calculation_progress import run_calculation
+from platforms.mobile.quiz_loading import QuizLoading
+from kotomi.core.generation.progress import report_progress
 from platforms.mobile.quiz_preflight import check_quiz_grammar
 from kotomi.application.instruction_languages import configure_quiz_controller
 from kotomi.application.settings_xml import settings_path
@@ -1956,6 +1958,13 @@ def create_app_class(policy: object = None):
             return self.manager
 
         def prepare_for_unload(self) -> None:
+            self._quiz_preflight_generation = (
+                getattr(self, "_quiz_preflight_generation", 0) + 1
+            )
+            loading = getattr(self, "_quiz_loading", None)
+            if loading is not None:
+                loading.close()
+                self._quiz_loading = None
             if not hasattr(self, "manager"):
                 return
             quiz = self.manager.get_screen("quiz")
@@ -2157,47 +2166,83 @@ def create_app_class(policy: object = None):
                 self.update_message = tr("hub.restart_required")
                 self.go_home()
                 return
-            if not self.reload_engine() or self.engine is None:
-                self.go_home()
-                return
-            engine = self.engine
-            selected_settings = settings or self.settings
-            request_generation = (
+            # A new request supersedes any unfinished feasibility callback.
+            self._quiz_preflight_generation = (
                 getattr(self, "_quiz_preflight_generation", 0) + 1
             )
-            self._quiz_preflight_generation = request_generation
+            request_generation = self._quiz_preflight_generation
+            previous = getattr(self, "_quiz_loading", None)
+            if previous is not None:
+                previous.close()
+            loading = QuizLoading(
+                tr("quiz.loading_title"),
+                tr("quiz.loading_message", title=getattr(self, "title", tr("specialized.start_quiz"))),
+                font_name=polish_font(),
+            )
+            self._quiz_loading = loading
+            selected_settings = settings or self.settings
+            loading.open()
 
-            def ready(feasible: Optional[bool], error: str) -> None:
+            def finish_loading() -> None:
+                loading.close()
+                if getattr(self, "_quiz_loading", None) is loading:
+                    self._quiz_loading = None
+
+            def begin(_dt) -> None:
                 if request_generation != self._quiz_preflight_generation:
+                    finish_loading()
                     return
-                if error or feasible is None:
-                    self._show_quiz_preflight_error(
-                        error or tr("specialized.count_failed")
-                    )
+                if not self.reload_engine() or self.engine is None:
+                    finish_loading()
+                    self.go_home()
                     return
-                if not feasible:
-                    self._show_quiz_preflight_error(
-                        tr("specialized.no_possible_questions")
-                    )
-                    return
+                engine = self.engine
+                loading.set_percent(15)
+
+                def ready(feasible: Optional[bool], error: str) -> None:
+                    if request_generation != self._quiz_preflight_generation:
+                        return
+                    if error or feasible is None:
+                        finish_loading()
+                        self._show_quiz_preflight_error(
+                            error or tr("specialized.count_failed")
+                        )
+                        return
+                    if not feasible:
+                        finish_loading()
+                        self._show_quiz_preflight_error(
+                            tr("specialized.no_possible_questions")
+                        )
+                        return
+                    try:
+                        if save_on_success:
+                            self.save_settings(selected_settings)
+                        loading.set_percent(85)
+                        session = policy_session(engine, selected_settings)
+                        quiz = self.manager.get_screen("quiz")
+                        self.manager.transition = SlideTransition(direction="left")
+                        self.manager.current = "quiz"
+                        quiz.set_session(session)
+                        loading.complete(finish_loading)
+                    except (policy_error, ProjectError, OSError) as exception:
+                        finish_loading()
+                        self._show_quiz_preflight_error(
+                            mobile_error_text(self, exception)
+                        )
+
+
                 try:
-                    if save_on_success:
-                        self.save_settings(selected_settings)
-                    session = policy_session(engine, selected_settings)
-                    quiz = self.manager.get_screen("quiz")
-                    self.manager.transition = SlideTransition(direction="left")
-                    self.manager.current = "quiz"
-                    quiz.set_session(session)
-                except (policy_error, ProjectError, OSError) as exception:
+                    self.check_feasibility(
+                        selected_settings, ready, engine=engine,
+                    )
+                except Exception as exception:
+                    finish_loading()
                     self._show_quiz_preflight_error(
                         mobile_error_text(self, exception)
                     )
 
-            self.check_feasibility(
-                selected_settings,
-                ready,
-                engine=engine,
-            )
+            # Let the modal be drawn before synchronous engine reload.
+            Clock.schedule_once(begin, 0.05)
 
         def check_feasibility(
             self,
@@ -2217,9 +2262,19 @@ def create_app_class(policy: object = None):
             ):
                 return
 
+            loading = getattr(self, "_quiz_loading", None)
+
             def worker() -> None:
                 try:
-                    result = quiz_is_feasible(selected_engine, settings)
+                    if loading is None:
+                        result = quiz_is_feasible(selected_engine, settings)
+                    else:
+                        with report_progress(
+                            lambda fraction: loading.report_fraction(
+                                fraction, start=15, span=70,
+                            )
+                        ):
+                            result = quiz_is_feasible(selected_engine, settings)
                     Clock.schedule_once(
                         lambda _dt: callback(result, ""),
                         0,
