@@ -1055,13 +1055,17 @@ def create_app_class():
                     if self.kotomi.basic_mode == "written"
                     else build_choice_questions
                 )
-                questions = factory(
-                    self.kotomi.catalog,
-                    self.kotomi.current_lesson(),
-                    asked,
-                    answer,
+                catalog = self.kotomi.catalog
+                lesson = self.kotomi.current_lesson()
+                title = self.title.text
+                run_calculation(
+                    self, ui_text("quiz.loading_title", ""),
+                    ui_text("quiz.loading_message", "", title=title),
+                    lambda: factory(catalog, lesson, asked, answer),
+                    lambda questions: self.kotomi.start_quiz(questions, title),
+                    lambda error: self.show_error(mobile_error_text(self, error)),
+                    font_name=MOBILE_FONT,
                 )
-                self.kotomi.start_quiz(questions, self.title.text)
             except ValueError as exception:
                 self.show_error(mobile_error_text(self, exception))
 
@@ -1131,16 +1135,27 @@ def create_app_class():
         def start(self) -> None:
             selected = [name for name, check in self.checks.items() if check.active]
             try:
-                questions = build_conjugation_questions(
-                    self.kotomi.catalog,
-                    self.kotomi.current_lesson(),
-                    field_from_label(self.asked.text),
-                    selected,
+                asked = field_from_label(self.asked.text)
+                catalog = self.kotomi.catalog
+                lesson = self.kotomi.current_lesson()
+                title = self.title.text
+
+                def ready(questions) -> None:
+                    self.kotomi.settings.asked_field = asked
+                    self.kotomi.settings.conjugation_forms = selected
+                    self.kotomi.settings_store.save(self.kotomi.settings.to_dict())
+                    self.kotomi.start_quiz(questions, title)
+
+                run_calculation(
+                    self, ui_text("quiz.loading_title", ""),
+                    ui_text("quiz.loading_message", "", title=title),
+                    lambda: build_conjugation_questions(
+                        catalog, lesson, asked, selected,
+                    ),
+                    ready,
+                    lambda error: self.show_error(mobile_error_text(self, error)),
+                    font_name=MOBILE_FONT,
                 )
-                self.kotomi.settings.asked_field = field_from_label(self.asked.text)
-                self.kotomi.settings.conjugation_forms = selected
-                self.kotomi.settings_store.save(self.kotomi.settings.to_dict())
-                self.kotomi.start_quiz(questions, self.title.text)
             except ValueError as exception:
                 self.show_error(mobile_error_text(self, exception))
 
@@ -1592,17 +1607,24 @@ def create_app_class():
         def start(self) -> None:
             try:
                 patterns, forms, count = self.selected_values()
-                questions = self.kotomi.sentence_engine.build_questions(
-                    self.kotomi.catalog,
-                    self.kotomi.current_lesson(),
-                    patterns,
-                    forms,
-                    count,
-                )
-                self.save_settings(patterns, forms, count)
-                self.kotomi.start_quiz(
-                    questions,
-                    ui_text("quiz.sentence_title", ""),
+                engine = self.kotomi.sentence_engine
+                catalog = self.kotomi.catalog
+                lesson = self.kotomi.current_lesson()
+                title = ui_text("quiz.sentence_title", "")
+
+                def ready(questions) -> None:
+                    self.save_settings(patterns, forms, count)
+                    self.kotomi.start_quiz(questions, title)
+
+                run_calculation(
+                    self, ui_text("quiz.loading_title", ""),
+                    ui_text("quiz.loading_message", "", title=title),
+                    lambda: engine.build_questions(
+                        catalog, lesson, patterns, forms, count,
+                    ),
+                    ready,
+                    lambda error: self.show_error(mobile_error_text(self, error)),
+                    font_name=MOBILE_FONT,
                 )
             except (ValueError, TypeError) as exception:
                 self.show_error(mobile_error_text(self, exception))
