@@ -38,16 +38,35 @@ def main():
         def unexpected_load(*a,**kw):raise AssertionError('must reuse preloaded project')
         patch.setattr(QuizProject,'load',unexpected_load)
         rows=[]
+        settings_checks=[]
         try:
             controller.build();assert controller.engine is not None,controller.engine_error
             keys=[k for k in p.sentence_quizzes['relative_clauses'].pattern_ids if k.startswith('Przydawki / ')]
             for selected in [[k] for k in keys]+[keys,p.sentence_quizzes['relative_clauses'].pattern_ids]:
                 settings=policy.QUIZ_SETTINGS_CLASS(enabled_patterns=selected,enabled_forms=list(policy.FORM_GROUPS),plain_output=True,polite_output=False)
-                assert controller.engine.has_possible_question(settings),selected
+                store=policy.SETTINGS_STORE_CLASS(Path(temp)/'roundtrip.xml')
+                store.save(settings)
+                restored=store.load()
+                assert restored.enabled_patterns==selected
+                assert restored.enabled_forms==settings.enabled_forms
+                assert restored.plain_output and not restored.polite_output
+                assert controller.engine.has_possible_question(restored),selected
                 question=controller.engine.generate_question(settings)
                 assert question.pattern_id in selected
                 assert question.source_sentence and question.expected_answer
+                if question.pattern_id.startswith('Przydawki / '):
+                    assert question.source_sentence[0].isupper(),question.source_sentence
                 rows.append({'selection':selected,'generated_pattern':question.pattern_id})
+            # A saved legacy selection stays exact; the expanded profile must not replace it.
+            legacy=policy.QUIZ_SETTINGS_CLASS(enabled_patterns=['Zdania przydawkowe'], enabled_forms=list(policy.FORM_GROUPS), plain_output=True, polite_output=False)
+            store.save(legacy)
+            assert store.load().enabled_patterns==['Zdania przydawkowe']
+            settings_checks.append('legacy selection and form/style settings round-trip unchanged')
+            # Dynamic lesson forms deliberately require plain inner clauses.
+            polite=policy.QUIZ_SETTINGS_CLASS(enabled_patterns=['Przydawki / Osoba i dopełnienie'], enabled_forms=list(policy.FORM_GROUPS), plain_output=False, polite_output=True)
+            with pytest.raises(policy.QUIZ_ERROR_CLASS):
+                controller.engine.has_possible_question(polite)
+            settings_checks.append('unsupported polite relative forms rejected')
             engine=SharedQuizEngine(p,random.Random(26))
             for title,form,verb,nouns,extra,source,answer in CASES:
                 key='Przydawki / '+title
@@ -63,7 +82,7 @@ def main():
         finally:
             controller.prepare_for_unload();_FakeWindow._callbacks.clear()
     args.output.parent.mkdir(parents=True,exist_ok=True)
-    args.output.write_text(json.dumps({'mobile':rows,'simulator_exact_pairs':len(CASES),
+    args.output.write_text(json.dumps({'mobile':rows,'simulator_exact_pairs':len(CASES),'settings_checks':settings_checks,
         'limits':'Fake widgets and font. No native device UI or APK build. No full production Cartesian count.'},ensure_ascii=False,indent=2)+'\n')
     print(f'Passed {len(rows)} Mobile selections and {len(CASES)} exact simulator pairs.')
 

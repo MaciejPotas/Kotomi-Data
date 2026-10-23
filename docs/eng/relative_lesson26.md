@@ -12,7 +12,7 @@ All IDs start with `Przydawki / `. Separate variants represent different roles, 
 |---|---|
 | Osoba i dopełnienie | Identify an agent; one verb with both subject and object |
 | Pytanie o wykonawcę | Ask `だれ`, preserving both arguments |
-| Wybór przedmiotu | `どれ` with Polish noun gender |
+| Wybór przedmiotu | `どれ` with a neutral Polish choice phrase |
 | Wskazanie przedmiotu | Identification with `これですか` |
 | Lokalizacja przedmiotu | Ask `どこ` about an object's location |
 | Miejsce czynności | A building where an activity occurs |
@@ -42,13 +42,13 @@ The existing `Czynność w toku 〜ている` composition is unchanged. Its `tra
 |---|---|
 | Kim jest osoba, która zrobiła ciasto? | ケーキをつくったひとはだれですか。 |
 | Kim jest osoba, która nie czytała książki? | ほんをよまなかったひとはだれですか。 |
-| Który to zegarek, który kupiłem? | わたしがかったとけいはどれですか。 |
+| Która z tych rzeczy to zegarek, który kupiłem? | わたしがかったとけいはどれですか。 |
 | Gdzie znajduje się miejsce, w którym mieszkam? | わたしがすんでいるところはどこですか。 |
 | Jaki był hotel, w którym nocowałem? | わたしがとまったホテルはどうでしたか。 |
 | Kiedy przypada dzień, w którym mama idzie do Japonii? | おかあさんがにほんへいくひはいつですか。 |
 | Kim jest osoba, która ma na sobie ubranie? | ふくをきているひとはだれですか。 |
 | Kim jest osoba, z którą najbardziej chcę się spotkać? | わたしがいちばんあいたいひとはだれですか。 |
-| Które to wino, które najbardziej lubię? | わたしがいちばんすきなワインはどれですか。 |
+| Która z tych rzeczy to wino, które najbardziej lubię? | わたしがいちばんすきなワインはどれですか。 |
 | Ile osób przyszło do szkoły? | がっこうへきたひとはなんにんですか。 |
 
 All pairs, rejected bindings and timings are in `docs/validation/relative_lesson26.json`. Count timings use locked selections, not the entire vocabulary product. Existing meanings are preserved: for example, `miru` still uses the existing Polish “oglądałem”.
@@ -81,6 +81,49 @@ python tools/validate_relative_lesson26_ui.py --kotomi ../Kotomi --output docs/v
 The last two commands are explicit release audits, outside unit-test discovery. They read actual published data because independent fixtures cannot certify its sentences. Cost: one project load/validation, a bounded reference list and one question per selected configuration, without complete enumeration. Engine tests use an independent v1 fixture. UI checks run real callbacks with fake controls/font; they do not operate native Windows/Android devices or build an APK.
 
 
-## Local measurements
+## Historical implementation measurements
 
 Three alternating fresh-process runs: median load 112.5 → 152.0 ms; full validation 5.78 → 9.28 s; first preview of the old pattern 11.7 → 19.0 ms. These are local measurements with the larger vocabulary/pattern inventory, not a phone latency guarantee. All samples are in `relative_lesson26_performance.json` in the Content report directory. The complete new-quiz Cartesian count was not measured.
+
+## Code-review follow-up
+
+The review changes only ten of the 21 new templates. Existing pattern definitions, quiz membership/settings, all dictionaries, grammar XML and lessons are unchanged byte for byte against the initial PR head. `relative_lesson26_regressions.json` records hashes and 76 unchanged complete legacy PL/JA pairs (18 representative families, four forms, and four forced reflexive questions). This is a release comparison, not a copied unit fixture.
+
+| Patterns | Review outcome |
+|---|---|
+| Osoba i dopełnienie; Osoba i dopełnienie 〜ている | Start with “To … jest …”; identity in nominative, head in instrumental, relative subject still nominative. |
+| Wybór przedmiotu; Upodobanie; Pożądana rzecz | Start with “Która z tych rzeczy to …”; neutral choice wording works across head genders. Japanese still asks `どれ`. |
+| Wskazanie przedmiotu | “Czy to klucz, którego zapomniałem?” replaces “Czy klucz, którego zapomniałem, to właśnie to?”. The meaning of `wasureru` is unchanged. |
+| Dzień czynności | “To piątek jest dniem, w którym mama przychodzi do Polski.” Capitalization comes from the template. |
+| Pragnienie spotkania | Fixed Polish predicate “chcę się spotkać”; Japanese verb explicitly restricted with existing `id:au`. The person and relative government remain dynamic. |
+| Pragnienie podróży | Paired yes/no question: “Czy kraj, do którego najbardziej chcę pojechać, to Indie?” / `わたしがいちばんいきたいくにはインドですか。`. |
+| Opis osoby | Paired yes/no question and existing `id:matsu` restriction: “Czy osoba, na którą czekałem, była urocza?” / `わたしがまったひとはかわいかったですか。`. Avoids arbitrary object verbs with person heads. |
+| Miejsce czynności; Miejsce czynności 〜ている | Templates unchanged. Restored pre-PR clitic behavior gives “Gdzie znajduje się dom, w którym się urodziłem?”. |
+| Pytanie o wykonawcę; Pytanie o wykonawcę 〜ている; Lokalizacja przedmiotu; Ocena miejsca; Miejsce zamieszkania; Pytanie o dzień; Ocena przedmiotu; Powód czynności; Liczba osób | Reviewed without template edits. Full pairs cover government, agreement and compatible forms. |
+
+The sole engine edit in this follow-up deletes the two-line “any earlier relative” exception introduced by #226. No new renderer condition is added. Declarative “urodziłem się” and “chcę się spotkać” retain lexical order. Questions again use “w którym się urodziłem”; unrelated and later verb clauses retain their previous behavior. The meeting template supplies its fixed modal phrase, as existing preference templates already supply their fixed predicates. It does not rewrite verb translations. General modal-question clitic placement is not redesigned.
+
+`tests/test_polish_clitic_regressions.py` adds 13 independent v2 full-pair cases for reflexives, negation, past/nonpast, relative/nonrelative questions and two verbs. The earlier meeting test keeps its expected output and now exercises the actual fixed template. The release audit checks 43 reviewed PL/JA pairs and seven rejected bindings; all checked new sentences start with capitals. The residence template has one currently supported lexical combination; it is not padded with fake vocabulary. Headless UI checks cover 21 individual selections plus all-new/mixed selections, settings persistence, rejection of unsupported polite relative forms and 43 simulator pairs. Native device interaction and APK builds remain untested.
+
+### Review performance
+
+See `relative_lesson26_review_performance.json`. Three fresh-process runs per scenario on one machine/interpreter; medians are local observations, not a device guarantee. First legacy preview is measured before validation, avoiding its caches.
+
+| Operation | Initial PR | After review |
+|---|---:|---:|
+| Load Content | 71.2 ms | 74.6 ms |
+| Full project validation | 3904 ms | 3957 ms |
+| First legacy preview | 11.2 ms | 10.3 ms |
+| First question, one new pattern | 20.0 ms | 19.4 ms |
+| First question, all 21 new patterns | 42.7 ms | 35.3 ms |
+| First question, full relative quiz | 35.0 ms | 32.9 ms |
+
+Quiz rows use a preloaded project, an availability check, then first generation. After-review availability takes 19.8/44.3/41.8 ms respectively; engine construction itself is about 0.1 ms. Cold loading/validation is separate. With the same current engine, main Content validates in 3693 ms; expanded Content with the 21 new templates removed takes 3881 ms; all templates take 3957 ms. This controlled comparison attributes most additional validation work to the expanded Content graph and a smaller part to the new templates. It does not prove that the earlier, differently timed 5.78/9.28-second measurements were caused solely by those factors. Three samples do not establish a statistical performance guarantee.
+
+`statistics()` visits complete previews through `iter_quiz_previews`; `has_possible_question()` stops at a renderable assignment. They have very different costs. Counting the small travel pattern completes (three possibilities). Counting the multi-argument identity pattern, all new patterns or the full quiz exceeds the 12-second process deadline both before and after review. No total is invented or extrapolated. This is a confirmed limitation of exhaustive statistics, not evidence of a new review regression. No counting/solver optimization or heavy CI performance test was added.
+
+Reproduce optional probes with `tools/benchmark_relative_lesson26_review.py` and `tools/compare_relative_review.py`; pass separate checked-out before/current code and Content paths, plus main Content for the benchmark. Both read only the declared production project graph. Their bounded work is documented in the scripts; they are outside test discovery. Independent fixtures cannot certify release vocabulary, complete shipped sentences or real inventory latency.
+
+### Remaining limitations
+
+Negative forms of “Liczba osób” currently have no compatible binding and are filtered out; affirmative nonpast/past are checked. This was already present at the initial PR head. Existing lexical choices such as `iku` “idzie” and `kuru` “przychodzi” can sound literal with country destinations. They were not silently changed to other travel verbs. General modal placement, grammatical person, existential relatives and arbitrary three-argument compositions remain outside scope. These cosmetic changes do not claim exhaustive linguistic validation of every Cartesian combination.

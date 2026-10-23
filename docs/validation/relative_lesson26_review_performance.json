@@ -1,0 +1,362 @@
+{
+  "method": "Three interleaved fresh-process samples; same machine/interpreter. First legacy preview BEFORE validation. Quiz uses a preloaded project, availability then first question. Cold validation is measured separately. Count process deadline 12s includes imports/load; null total means NOT measured. No optimization or CI performance threshold.",
+  "baseline_heads": {
+    "Kotomi": "16b6c24eb5405e1e5ef2e0d6bbb8053c6cb6efa4",
+    "Kotomi-Data": "269786eea1232bf9fbe9b1b7fe01c9cb5797a42b",
+    "main_content": "aa14564f8a45d5a63b4c62e880fc6237dc407240"
+  },
+  "project_samples": {
+    "before_review": [
+      {
+        "load_ms": 71.244,
+        "old_first_preview_ms": 11.249,
+        "validate_ms": 3811.308
+      },
+      {
+        "load_ms": 64.767,
+        "old_first_preview_ms": 9.816,
+        "validate_ms": 3904.024
+      },
+      {
+        "load_ms": 81.178,
+        "old_first_preview_ms": 11.171,
+        "validate_ms": 4248.185
+      }
+    ],
+    "after_review": [
+      {
+        "load_ms": 76.985,
+        "old_first_preview_ms": 10.327,
+        "validate_ms": 3957.438
+      },
+      {
+        "load_ms": 66.934,
+        "old_first_preview_ms": 9.41,
+        "validate_ms": 3952.156
+      },
+      {
+        "load_ms": 74.644,
+        "old_first_preview_ms": 11.126,
+        "validate_ms": 4299.412
+      }
+    ],
+    "main_content_current_engine": [
+      {
+        "load_ms": 66.429,
+        "old_first_preview_ms": 9.751,
+        "validate_ms": 3458.771
+      },
+      {
+        "load_ms": 69.919,
+        "old_first_preview_ms": 9.773,
+        "validate_ms": 3692.608
+      },
+      {
+        "load_ms": 74.983,
+        "old_first_preview_ms": 8.99,
+        "validate_ms": 3785.618
+      }
+    ],
+    "expanded_content_without_new_patterns": [
+      {
+        "load_ms": 83.734,
+        "old_first_preview_ms": 11.702,
+        "validate_ms": 3881.477
+      },
+      {
+        "load_ms": 93.032,
+        "old_first_preview_ms": 10.38,
+        "validate_ms": 4057.852
+      },
+      {
+        "load_ms": 66.603,
+        "old_first_preview_ms": 11.465,
+        "validate_ms": 3701.345
+      }
+    ]
+  },
+  "project_medians": {
+    "before_review": {
+      "load_ms": 71.244,
+      "old_first_preview_ms": 11.171,
+      "validate_ms": 3904.024
+    },
+    "after_review": {
+      "load_ms": 74.644,
+      "old_first_preview_ms": 10.327,
+      "validate_ms": 3957.438
+    },
+    "main_content_current_engine": {
+      "load_ms": 69.919,
+      "old_first_preview_ms": 9.751,
+      "validate_ms": 3692.608
+    },
+    "expanded_content_without_new_patterns": {
+      "load_ms": 83.734,
+      "old_first_preview_ms": 11.465,
+      "validate_ms": 3881.477
+    }
+  },
+  "quiz_samples": {
+    "before_review": {
+      "one": [
+        {
+          "load_ms": 68.247,
+          "engine_from_preloaded_ms": 0.161,
+          "availability_ms": 19.976,
+          "first_question_ms": 19.283,
+          "first_pair": [
+            "starzec, który nie kupił ryżu, to przyjaciel.",
+            "ごはんをかわなかったろうじんはともだちです。"
+          ]
+        },
+        {
+          "load_ms": 76.899,
+          "engine_from_preloaded_ms": 0.099,
+          "availability_ms": 22.514,
+          "first_question_ms": 19.986,
+          "first_pair": [
+            "starzec, który nie kupił ryżu, to przyjaciel.",
+            "ごはんをかわなかったろうじんはともだちです。"
+          ]
+        },
+        {
+          "load_ms": 91.508,
+          "engine_from_preloaded_ms": 0.126,
+          "availability_ms": 22.598,
+          "first_question_ms": 20.968,
+          "first_pair": [
+            "starzec, który nie kupił ryżu, to przyjaciel.",
+            "ごはんをかわなかったろうじんはともだちです。"
+          ]
+        }
+      ],
+      "new": [
+        {
+          "load_ms": 72.771,
+          "engine_from_preloaded_ms": 0.104,
+          "availability_ms": 47.202,
+          "first_question_ms": 42.74,
+          "first_pair": [
+            "Jaki jest powód, dla którego nie posprzątałem stacji?",
+            "わたしがえきをそうじしなかったりゆうはなんですか。"
+          ]
+        },
+        {
+          "load_ms": 72.438,
+          "engine_from_preloaded_ms": 0.104,
+          "availability_ms": 44.405,
+          "first_question_ms": 45.198,
+          "first_pair": [
+            "Jaki jest powód, dla którego nie posprzątałem stacji?",
+            "わたしがえきをそうじしなかったりゆうはなんですか。"
+          ]
+        },
+        {
+          "load_ms": 71.664,
+          "engine_from_preloaded_ms": 0.095,
+          "availability_ms": 40.471,
+          "first_question_ms": 30.294,
+          "first_pair": [
+            "Jaki jest powód, dla którego nie posprzątałem stacji?",
+            "わたしがえきをそうじしなかったりゆうはなんですか。"
+          ]
+        }
+      ],
+      "all": [
+        {
+          "load_ms": 73.326,
+          "engine_from_preloaded_ms": 0.097,
+          "availability_ms": 41.972,
+          "first_question_ms": 34.036,
+          "first_pair": [
+            "Gdzie jest klucz, którego nie zgubiłem?",
+            "わたしがなくさなかったかぎはどこですか。"
+          ]
+        },
+        {
+          "load_ms": 77.544,
+          "engine_from_preloaded_ms": 0.095,
+          "availability_ms": 38.086,
+          "first_question_ms": 34.976,
+          "first_pair": [
+            "Gdzie jest klucz, którego nie zgubiłem?",
+            "わたしがなくさなかったかぎはどこですか。"
+          ]
+        },
+        {
+          "load_ms": 68.689,
+          "engine_from_preloaded_ms": 0.098,
+          "availability_ms": 38.386,
+          "first_question_ms": 44.592,
+          "first_pair": [
+            "Gdzie jest klucz, którego nie zgubiłem?",
+            "わたしがなくさなかったかぎはどこですか。"
+          ]
+        }
+      ]
+    },
+    "after_review": {
+      "one": [
+        {
+          "load_ms": 70.266,
+          "engine_from_preloaded_ms": 0.108,
+          "availability_ms": 21.943,
+          "first_question_ms": 20.169,
+          "first_pair": [
+            "To przyjaciel jest starcem, który nie kupił ryżu.",
+            "ごはんをかわなかったろうじんはともだちです。"
+          ]
+        },
+        {
+          "load_ms": 72.347,
+          "engine_from_preloaded_ms": 0.107,
+          "availability_ms": 19.773,
+          "first_question_ms": 19.353,
+          "first_pair": [
+            "To przyjaciel jest starcem, który nie kupił ryżu.",
+            "ごはんをかわなかったろうじんはともだちです。"
+          ]
+        },
+        {
+          "load_ms": 73.255,
+          "engine_from_preloaded_ms": 0.106,
+          "availability_ms": 19.031,
+          "first_question_ms": 19.217,
+          "first_pair": [
+            "To przyjaciel jest starcem, który nie kupił ryżu.",
+            "ごはんをかわなかったろうじんはともだちです。"
+          ]
+        }
+      ],
+      "new": [
+        {
+          "load_ms": 70.673,
+          "engine_from_preloaded_ms": 0.107,
+          "availability_ms": 38.926,
+          "first_question_ms": 33.423,
+          "first_pair": [
+            "Jaki jest powód, dla którego nie posprzątałem stacji?",
+            "わたしがえきをそうじしなかったりゆうはなんですか。"
+          ]
+        },
+        {
+          "load_ms": 85.662,
+          "engine_from_preloaded_ms": 0.109,
+          "availability_ms": 44.332,
+          "first_question_ms": 36.144,
+          "first_pair": [
+            "Jaki jest powód, dla którego nie posprzątałem stacji?",
+            "わたしがえきをそうじしなかったりゆうはなんですか。"
+          ]
+        },
+        {
+          "load_ms": 75.711,
+          "engine_from_preloaded_ms": 0.11,
+          "availability_ms": 48.843,
+          "first_question_ms": 35.265,
+          "first_pair": [
+            "Jaki jest powód, dla którego nie posprzątałem stacji?",
+            "わたしがえきをそうじしなかったりゆうはなんですか。"
+          ]
+        }
+      ],
+      "all": [
+        {
+          "load_ms": 83.146,
+          "engine_from_preloaded_ms": 0.105,
+          "availability_ms": 41.751,
+          "first_question_ms": 41.683,
+          "first_pair": [
+            "Gdzie jest klucz, którego nie zgubiłem?",
+            "わたしがなくさなかったかぎはどこですか。"
+          ]
+        },
+        {
+          "load_ms": 68.593,
+          "engine_from_preloaded_ms": 0.11,
+          "availability_ms": 41.874,
+          "first_question_ms": 32.892,
+          "first_pair": [
+            "Gdzie jest klucz, którego nie zgubiłem?",
+            "わたしがなくさなかったかぎはどこですか。"
+          ]
+        },
+        {
+          "load_ms": 69.265,
+          "engine_from_preloaded_ms": 0.103,
+          "availability_ms": 36.834,
+          "first_question_ms": 31.971,
+          "first_pair": [
+            "Gdzie jest klucz, którego nie zgubiłem?",
+            "わたしがなくさなかったかぎはどこですか。"
+          ]
+        }
+      ]
+    }
+  },
+  "bounded_statistics": {
+    "before_review": {
+      "light": {
+        "load_ms": 72.777,
+        "engine_from_preloaded_ms": 0.098,
+        "statistics_ms": 2.295,
+        "statistics": {
+          "possible": 3,
+          "active_patterns": 1,
+          "eligible": 1,
+          "categories": 24,
+          "patterns": 1,
+          "words": 1,
+          "entities": 90
+        }
+      },
+      "one": {
+        "incomplete": true,
+        "process_timeout_s": 12,
+        "total": null
+      },
+      "new": {
+        "incomplete": true,
+        "process_timeout_s": 12,
+        "total": null
+      },
+      "all": {
+        "incomplete": true,
+        "process_timeout_s": 12,
+        "total": null
+      }
+    },
+    "after_review": {
+      "light": {
+        "load_ms": 72.795,
+        "engine_from_preloaded_ms": 0.107,
+        "statistics_ms": 2.313,
+        "statistics": {
+          "possible": 3,
+          "active_patterns": 1,
+          "eligible": 1,
+          "categories": 24,
+          "patterns": 1,
+          "words": 1,
+          "entities": 90
+        }
+      },
+      "one": {
+        "incomplete": true,
+        "process_timeout_s": 12,
+        "total": null
+      },
+      "new": {
+        "incomplete": true,
+        "process_timeout_s": 12,
+        "total": null
+      },
+      "all": {
+        "incomplete": true,
+        "process_timeout_s": 12,
+        "total": null
+      }
+    }
+  }
+}

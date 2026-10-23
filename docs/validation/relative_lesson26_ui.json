@@ -150,7 +150,7 @@
         "Przydawki / Pytanie o wykonawcę 〜ている",
         "Przydawki / Miejsce czynności 〜ている"
       ],
-      "generated_pattern": "Przydawki / Ocena przedmiotu"
+      "generated_pattern": "Przydawki / Pytanie o wykonawcę"
     },
     {
       "selection": [
@@ -178,9 +178,13 @@
         "Przydawki / Pytanie o wykonawcę 〜ている",
         "Przydawki / Miejsce czynności 〜ている"
       ],
-      "generated_pattern": "Przydawki / Pytanie o wykonawcę"
+      "generated_pattern": "Przydawki / Osoba i dopełnienie 〜ている"
     }
   ],
-  "simulator_exact_pairs": 23,
+  "simulator_exact_pairs": 43,
+  "settings_checks": [
+    "legacy selection and form/style settings round-trip unchanged",
+    "unsupported polite relative forms rejected"
+  ],
   "limits": "Fake widgets and font. No native device UI or APK build. No full production Cartesian count."
 }
