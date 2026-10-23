@@ -274,5 +274,89 @@
       <question>{verb@existence[role:subject, feature:existential, form, occurrence:left, agree:@left_count#left].translation} {number@left_count[set:one_to_ten, occurrence:left, agree:@item#left, case:@item#left].translation} {adjective@quality[form:attributive_nonpast, occurrence:left, agree:@item#left].translation} {noun@item[occurrence:left, quantity:@left_count#left, government:@existence#left]}, a obok {verb@existence[role:subject, feature:existential, form, occurrence:right, agree:@right_count#right].translation} {number@right_count[set:one_to_ten, occurrence:right, agree:@item#right, case:@item#right].translation} {adjective@quality[form:attributive_nonpast, occurrence:right, agree:@item#right].translation} {noun@item[occurrence:right, quantity:@right_count#right, government:@existence#right]}.</question>
       <answer>{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@left_count]}{verb@existence[role:subject, feature:existential, form]}。そのとなりに{adjective@quality[form:attributive_nonpast]}{noun@item}が{counter@unit[counts:@item, preferred, quantity:@right_count]}{verb@existence[role:subject, feature:existential, form]}。</answer>
     </sentence_pattern>
+    <sentence_pattern id="Przydawki / Osoba i dopełnienie" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>{noun@subject[category:person, case:nominative]}, {relative[agree:@subject, case:nominative].translation} {verb@action[role:subject, form, agree:@subject].translation} {noun@object[government:@action].phrase}, to {noun@identity[category:person, case:nominative]}.</question>
+      <answer>{context[pool:none].kana}{noun@object}を{verb@action[role:object, form]}{noun@subject}は{noun@identity}です。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Pytanie o wykonawcę" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>Kim jest {noun@subject[category:person, case:nominative]}, {relative[agree:@subject, case:nominative].translation} {verb@action[role:subject, form, agree:@subject].translation} {noun@object[government:@action].phrase}?</question>
+      <answer>{context[pool:none].kana}{noun@object}を{verb@action[role:object, form]}{noun@subject}は{interrogative[id:dare]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Wybór przedmiotu" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>{interrogative[id:dore, agree:@object, case:nominative].translation} to {noun@object[category:purchasable, case:nominative]}, {relative[agree:@object, government:@action].phrase} {verb@action[role:object, form].translation}?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:object, form]}{noun@object}は{interrogative[id:dore]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Wskazanie przedmiotu" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>Czy {noun@object[category:purchasable, case:nominative]}, {relative[agree:@object, government:@action].phrase} {verb@action[role:object, form].translation}, to właśnie to?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:object, form]}{noun@object}はこれですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Lokalizacja przedmiotu" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>Gdzie jest {noun@object[category:purchasable, case:nominative]}, {relative[agree:@object, government:@action].phrase} {verb@action[role:object, form].translation}?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:object, form]}{noun@object}は{interrogative[id:doko]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Miejsce czynności" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>Gdzie znajduje się {noun@location[category:building, case:nominative]}, {noun@location[relation:location].preposition} {relative[agree:@location, case:locative].translation} {verb@action[role:location, feature:intransitive, form].translation}?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:location, feature:intransitive, form]}{noun@location}は{interrogative[id:doko]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Ocena miejsca" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>{interrogative[id:dou, agree:@location, case:nominative].translation} {copula[form:past_polite, agree:@location].translation} {noun@location[category:building, case:nominative]}, {noun@location[relation:location].preposition} {relative[agree:@location, case:locative].translation} {verb@action[role:location, feature:intransitive, form].translation}?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:location, feature:intransitive, form]}{noun@location}は{interrogative[id:dou]}{copula[form:past_polite]}か。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Miejsce zamieszkania" category="przydawki">
+      <question>Gdzie znajduje się {noun@target[id:tokoro, case:nominative]}, w {relative[agree:@target, case:locative].translation} {verb@action[role:target, form:progressive].translation}?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:target, form:progressive]}{noun@target}は{interrogative[id:doko]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Dzień czynności" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>{noun@day[id:hi, case:nominative]}, w {relative[agree:@day, case:locative].translation} {noun@subject[category:person, case:nominative]} {verb@action[role:subject, form, agree:@subject].translation} {noun@destination[relation:destination].phrase}, to {noun@date[category:weekday, case:nominative]}.</question>
+      <answer>{context[pool:none].kana}{noun@subject}が{noun@destination}へ{verb@action[role:destination, form]}{noun@day}は{noun@date}です。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Pytanie o dzień" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>Kiedy przypada {noun@day[id:hi, case:nominative]}, w {relative[agree:@day, case:locative].translation} {noun@subject[category:person, case:nominative]} {verb@action[role:subject, form, agree:@subject].translation} {noun@destination[relation:destination].phrase}?</question>
+      <answer>{context[pool:none].kana}{noun@subject}が{noun@destination}へ{verb@action[role:destination, form]}{noun@day}は{interrogative[id:itsu]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Pragnienie spotkania" category="przydawki">
+      <question>Kim jest {noun@target[category:person, case:nominative]}, {relative[agree:@target, government:@action].phrase} najbardziej {verb@action[role:target, form:desiderative].translation}?</question>
+      <answer>{context[pool:none].kana}わたしがいちばん{verb@action[role:target, form:desiderative]}{noun@target}は{interrogative[id:dare]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Pragnienie podróży" category="przydawki">
+      <question>{noun@destination[id:kuni, case:nominative]}, do {relative[agree:@destination, case:genitive].translation} najbardziej {verb@action[role:destination, form:desiderative].translation}, to {noun@identity[category:country, case:nominative]}.</question>
+      <answer>{context[pool:none].kana}わたしがいちばん{verb@action[role:destination, form:desiderative]}{noun@destination}は{noun@identity}です。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Upodobanie" category="przydawki">
+      <question>{interrogative[id:dore, agree:@item, case:nominative].translation} to {noun@item[category:purchasable, case:nominative]}, {relative[agree:@item, case:accusative].translation} najbardziej lubię?</question>
+      <answer>{context[pool:none].kana}わたしがいちばん{adjective[id:suki, form:attributive_nonpast]}{noun@item}は{interrogative[id:dore]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Pożądana rzecz" category="przydawki">
+      <question>{interrogative[id:dore, agree:@item, case:nominative].translation} to {noun@item[category:purchasable, case:nominative]}, {relative[agree:@item, case:accusative].translation} najbardziej chcę mieć?</question>
+      <answer>{context[pool:none].kana}わたしがいちばん{adjective[id:hoshii, form:attributive_nonpast]}{noun@item}は{interrogative[id:dore]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Ocena przedmiotu" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>{interrogative[id:dou, agree:@object, case:nominative].translation} {copula[form:past_polite, agree:@object].translation} {noun@object[category:purchasable, case:nominative]}, {relative[agree:@object, government:@action].phrase} {verb@action[role:object, form].translation}?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:object, form]}{noun@object}は{interrogative[id:dou]}{copula[form:past_polite]}か。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Opis osoby" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>{noun@object[category:person, case:nominative]}, {relative[agree:@object, government:@action].phrase} {verb@action[role:object, form].translation}, {adjective@quality[form:predicate_polite_past, agree:@object].translation}.</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:object, form]}{noun@object}は{adjective@quality[form:predicate_polite_past]}。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Powód czynności" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>Jaki jest {noun@reason[id:riyuu, case:nominative]}, dla {relative[agree:@reason, case:genitive].translation} {verb@action[role:object, form].translation} {noun@object[government:@action].phrase}?</question>
+      <answer>{context[pool:none].kana}わたしが{noun@object}を{verb@action[role:object, form]}{noun@reason}は{interrogative[id:nan]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Liczba osób" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
+      <question>{interrogative@amount[asks_for:count].translation} {noun@subject[category:person, quantity:@amount, case:genitive]} {verb@action[role:subject, form, agree:neuter].translation} {noun@destination[relation:destination].phrase}?</question>
+      <answer>{context[pool:none].kana}{noun@destination}へ{verb@action[role:destination, form]}{noun@subject}は{counter@unit[counts:@subject, preferred, quantity:@amount]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Osoba i dopełnienie 〜ている" category="przydawki">
+      <question>{noun@subject[category:person, case:nominative]}, {relative[agree:@subject, case:nominative].translation} {verb@action[role:subject, form:progressive, agree:@subject].translation} {noun@object[government:@action].phrase}, to {noun@identity[category:person, case:nominative]}.</question>
+      <answer>{context[pool:none].kana}{noun@object}を{verb@action[role:object, form:progressive]}{noun@subject}は{noun@identity}です。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Pytanie o wykonawcę 〜ている" category="przydawki">
+      <question>Kim jest {noun@subject[category:person, case:nominative]}, {relative[agree:@subject, case:nominative].translation} {verb@action[role:subject, form:progressive, agree:@subject].translation} {noun@object[government:@action].phrase}?</question>
+      <answer>{context[pool:none].kana}{noun@object}を{verb@action[role:object, form:progressive]}{noun@subject}は{interrogative[id:dare]}ですか。</answer>
+    </sentence_pattern>
+    <sentence_pattern id="Przydawki / Miejsce czynności 〜ている" category="przydawki">
+      <question>Gdzie znajduje się {noun@location[category:building, case:nominative]}, {noun@location[relation:location].preposition} {relative[agree:@location, case:locative].translation} {verb@action[role:location, feature:intransitive, form:progressive].translation}?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[role:location, feature:intransitive, form:progressive]}{noun@location}は{interrogative[id:doko]}ですか。</answer>
+    </sentence_pattern>
   </sentence_patterns>
 </sentence_maps>

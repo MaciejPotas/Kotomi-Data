@@ -1,0 +1,236 @@
+{
+  "scope": "Opt-in production release audit; bounded locked examples, no full enumeration",
+  "timings": {
+    "load_ms": 154.3854790002115,
+    "validate_ms": 7958.038600000236
+  },
+  "examples": [
+    {
+      "pattern": "Przydawki / Osoba i dopełnienie",
+      "form": "past_plain",
+      "source": "osoba, która czytała gazetę, to mama.",
+      "answer": "しんぶんをよんだひとはおかあさんです。",
+      "render_and_locked_count_ms": 11.801476000073308
+    },
+    {
+      "pattern": "Przydawki / Osoba i dopełnienie",
+      "form": "plain_negative",
+      "source": "osoba, która nie czyta gazety, to mama.",
+      "answer": "しんぶんをよまないひとはおかあさんです。",
+      "render_and_locked_count_ms": 11.085161999744741
+    },
+    {
+      "pattern": "Przydawki / Pytanie o wykonawcę",
+      "form": "past_plain",
+      "source": "Kim jest osoba, która zrobiła ciasto?",
+      "answer": "ケーキをつくったひとはだれですか。",
+      "render_and_locked_count_ms": 10.907682999913959
+    },
+    {
+      "pattern": "Przydawki / Pytanie o wykonawcę",
+      "form": "past_negative_plain",
+      "source": "Kim jest osoba, która nie czytała książki?",
+      "answer": "ほんをよまなかったひとはだれですか。",
+      "render_and_locked_count_ms": 10.148172000299382
+    },
+    {
+      "pattern": "Przydawki / Wybór przedmiotu",
+      "form": "past_plain",
+      "source": "Który to zegarek, który kupiłem?",
+      "answer": "わたしがかったとけいはどれですか。",
+      "render_and_locked_count_ms": 9.677811000074144
+    },
+    {
+      "pattern": "Przydawki / Wskazanie przedmiotu",
+      "form": "past_plain",
+      "source": "Czy klucz, którego zapomniałem, to właśnie to?",
+      "answer": "わたしがわすれたかぎはこれですか。",
+      "render_and_locked_count_ms": 8.340316999692732
+    },
+    {
+      "pattern": "Przydawki / Lokalizacja przedmiotu",
+      "form": "past_plain",
+      "source": "Gdzie jest książka, którą otrzymałem?",
+      "answer": "わたしがもらったほんはどこですか。",
+      "render_and_locked_count_ms": 9.824603000197385
+    },
+    {
+      "pattern": "Przydawki / Miejsce czynności",
+      "form": "past_plain",
+      "source": "Gdzie znajduje się dom, w którym urodziłem się?",
+      "answer": "わたしがうまれたうちはどこですか。",
+      "render_and_locked_count_ms": 7.489352999982657
+    },
+    {
+      "pattern": "Przydawki / Ocena miejsca",
+      "form": "past_plain",
+      "source": "Jaki był hotel, w którym nocowałem?",
+      "answer": "わたしがとまったホテルはどうでしたか。",
+      "render_and_locked_count_ms": 7.714167999893107
+    },
+    {
+      "pattern": "Przydawki / Miejsce zamieszkania",
+      "form": null,
+      "source": "Gdzie znajduje się miejsce, w którym mieszkam?",
+      "answer": "わたしがすんでいるところはどこですか。",
+      "render_and_locked_count_ms": 4.67049799999586
+    },
+    {
+      "pattern": "Przydawki / Dzień czynności",
+      "form": "dictionary",
+      "source": "dzień, w którym mama przychodzi do Polski, to piątek.",
+      "answer": "おかあさんがポーランドへくるひはきんようびです。",
+      "render_and_locked_count_ms": 16.537139999854844
+    },
+    {
+      "pattern": "Przydawki / Pytanie o dzień",
+      "form": "dictionary",
+      "source": "Kiedy przypada dzień, w którym mama idzie do Japonii?",
+      "answer": "おかあさんがにほんへいくひはいつですか。",
+      "render_and_locked_count_ms": 12.749874999826716
+    },
+    {
+      "pattern": "Przydawki / Pragnienie spotkania",
+      "form": null,
+      "source": "Kim jest osoba, z którą najbardziej chcę się spotkać?",
+      "answer": "わたしがいちばんあいたいひとはだれですか。",
+      "render_and_locked_count_ms": 5.5073620001167
+    },
+    {
+      "pattern": "Przydawki / Pragnienie podróży",
+      "form": null,
+      "source": "kraj, do którego najbardziej chcę pojechać, to Indie.",
+      "answer": "わたしがいちばんいきたいくにはインドです。",
+      "render_and_locked_count_ms": 4.6171049998520175
+    },
+    {
+      "pattern": "Przydawki / Upodobanie",
+      "form": null,
+      "source": "Które to wino, które najbardziej lubię?",
+      "answer": "わたしがいちばんすきなワインはどれですか。",
+      "render_and_locked_count_ms": 6.055485000160843
+    },
+    {
+      "pattern": "Przydawki / Pożądana rzecz",
+      "form": null,
+      "source": "Który to zegarek, który najbardziej chcę mieć?",
+      "answer": "わたしがいちばんほしいとけいはどれですか。",
+      "render_and_locked_count_ms": 5.8505510000941285
+    },
+    {
+      "pattern": "Przydawki / Ocena przedmiotu",
+      "form": "past_plain",
+      "source": "Jakie było ciasto, które zrobiłem?",
+      "answer": "わたしがつくったケーキはどうでしたか。",
+      "render_and_locked_count_ms": 12.868880000041827
+    },
+    {
+      "pattern": "Przydawki / Opis osoby",
+      "form": "past_plain",
+      "source": "osoba, którą oglądałem, była urocza.",
+      "answer": "わたしがみたひとはかわいかったです。",
+      "render_and_locked_count_ms": 10.642232000009244
+    },
+    {
+      "pattern": "Przydawki / Powód czynności",
+      "form": "past_negative_plain",
+      "source": "Jaki jest powód, dla którego nie czytałem książki?",
+      "answer": "わたしがほんをよまなかったりゆうはなんですか。",
+      "render_and_locked_count_ms": 9.673129000020708
+    },
+    {
+      "pattern": "Przydawki / Liczba osób",
+      "form": "past_plain",
+      "source": "Ile osób przyszło do szkoły?",
+      "answer": "がっこうへきたひとはなんにんですか。",
+      "render_and_locked_count_ms": 12.61114799990537
+    },
+    {
+      "pattern": "Przydawki / Osoba i dopełnienie 〜ている",
+      "form": null,
+      "source": "osoba, która czyta gazetę, to mama.",
+      "answer": "しんぶんをよんでいるひとはおかあさんです。",
+      "render_and_locked_count_ms": 10.076963000301475
+    },
+    {
+      "pattern": "Przydawki / Pytanie o wykonawcę 〜ている",
+      "form": null,
+      "source": "Kim jest osoba, która ma na sobie ubranie?",
+      "answer": "ふくをきているひとはだれですか。",
+      "render_and_locked_count_ms": 10.935751000033633
+    },
+    {
+      "pattern": "Przydawki / Miejsce czynności 〜ている",
+      "form": null,
+      "source": "Gdzie znajduje się biuro, w którym pracuję?",
+      "answer": "わたしがはたらいているじむしつはどこですか。",
+      "render_and_locked_count_ms": 5.732904000069539
+    }
+  ],
+  "rejected": [
+    {
+      "pattern": "Przydawki / Pytanie o wykonawcę",
+      "words": {
+        "verb@action": "yomu"
+      },
+      "entities": {
+        "noun@subject": "book",
+        "noun@object": "newspaper"
+      },
+      "form": "dictionary"
+    },
+    {
+      "pattern": "Przydawki / Pytanie o wykonawcę",
+      "words": {
+        "verb@action": "yomu"
+      },
+      "entities": {
+        "noun@subject": "hito",
+        "noun@object": "car"
+      },
+      "form": "dictionary"
+    },
+    {
+      "pattern": "Przydawki / Wybór przedmiotu",
+      "words": {
+        "verb@action": "yomu"
+      },
+      "entities": {
+        "noun@object": "hito"
+      },
+      "form": "dictionary"
+    },
+    {
+      "pattern": "Przydawki / Pytanie o wykonawcę",
+      "words": {
+        "verb@action": "yomu"
+      },
+      "entities": {
+        "noun@subject": "hito",
+        "noun@object": "book"
+      },
+      "form": "polite_nonpast"
+    },
+    {
+      "pattern": "Przydawki / Miejsce czynności 〜ている",
+      "words": {
+        "verb@action": "kiru"
+      },
+      "entities": {
+        "noun@location": "hotel"
+      },
+      "form": null
+    },
+    {
+      "pattern": "Przydawki / Miejsce zamieszkania",
+      "words": {
+        "verb@action": "sumu"
+      },
+      "entities": {
+        "noun@target": "book"
+      },
+      "form": null
+    }
+  ],
+  "legacy_pairs": 2
+}

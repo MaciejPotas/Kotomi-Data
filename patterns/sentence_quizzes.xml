@@ -1,9 +1,30 @@
 <?xml version='1.0' encoding='utf-8'?>
 <sentence_quizzes schema_version="2" instruction_language_id="pl">
-  <quiz id="relative_clauses" label="Zdania przydawkowe" description="Przydawki dopełnieniowe i podmiotowe w czterech formach prostych" selection="references">
+  <quiz id="relative_clauses" label="Zdania przydawkowe" description="Przydawki dopełnieniowe i podmiotowe, temat, miejsce, czas, pragnienia, ocena i liczba osób" selection="references">
     <patterns>
       <pattern ref="Zdania przydawkowe" />
       <pattern ref="Zdania przydawkowe podmiotowe" />
+      <pattern ref="Przydawki / Osoba i dopełnienie" />
+      <pattern ref="Przydawki / Pytanie o wykonawcę" />
+      <pattern ref="Przydawki / Wybór przedmiotu" />
+      <pattern ref="Przydawki / Wskazanie przedmiotu" />
+      <pattern ref="Przydawki / Lokalizacja przedmiotu" />
+      <pattern ref="Przydawki / Miejsce czynności" />
+      <pattern ref="Przydawki / Ocena miejsca" />
+      <pattern ref="Przydawki / Miejsce zamieszkania" />
+      <pattern ref="Przydawki / Dzień czynności" />
+      <pattern ref="Przydawki / Pytanie o dzień" />
+      <pattern ref="Przydawki / Pragnienie spotkania" />
+      <pattern ref="Przydawki / Pragnienie podróży" />
+      <pattern ref="Przydawki / Upodobanie" />
+      <pattern ref="Przydawki / Pożądana rzecz" />
+      <pattern ref="Przydawki / Ocena przedmiotu" />
+      <pattern ref="Przydawki / Opis osoby" />
+      <pattern ref="Przydawki / Powód czynności" />
+      <pattern ref="Przydawki / Liczba osób" />
+      <pattern ref="Przydawki / Osoba i dopełnienie 〜ている" />
+      <pattern ref="Przydawki / Pytanie o wykonawcę 〜ている" />
+      <pattern ref="Przydawki / Miejsce czynności 〜ている" />
     </patterns>
   </quiz>
   <quiz id="grammar" label="Gramatyka" description="Możliwość ことができる">

@@ -1,0 +1,123 @@
+{
+  "method": "Three alternating fresh-process runs. Full project validation and one first preview per pattern. No whole-vocabulary count. Local timings, not a device benchmark.",
+  "samples": {
+    "before": [
+      {
+        "load_ms": 109.05483300030028,
+        "validate_ms": 9454.826145000425,
+        "old_first_preview_ms": 22.467677999884472,
+        "new_first_previews_ms": {}
+      },
+      {
+        "load_ms": 120.8138910001253,
+        "validate_ms": 5644.094614999631,
+        "old_first_preview_ms": 11.682583000037994,
+        "new_first_previews_ms": {}
+      },
+      {
+        "load_ms": 112.50733899987608,
+        "validate_ms": 5783.95056699992,
+        "old_first_preview_ms": 10.51224100001491,
+        "new_first_previews_ms": {}
+      }
+    ],
+    "after": [
+      {
+        "load_ms": 195.83100599993486,
+        "validate_ms": 9279.243598999983,
+        "old_first_preview_ms": 19.04710899998463,
+        "new_first_previews_ms": {
+          "Przydawki / Osoba i dopełnienie": 12.478295000164508,
+          "Przydawki / Pytanie o wykonawcę": 14.492287999928521,
+          "Przydawki / Wybór przedmiotu": 14.34634100041876,
+          "Przydawki / Wskazanie przedmiotu": 8.102406000034534,
+          "Przydawki / Lokalizacja przedmiotu": 10.559425000337797,
+          "Przydawki / Miejsce czynności": 2.571778999936214,
+          "Przydawki / Ocena miejsca": 5.572203000156151,
+          "Przydawki / Miejsce zamieszkania": 1.0491769999134704,
+          "Przydawki / Dzień czynności": 15.201451999928395,
+          "Przydawki / Pytanie o dzień": 8.234656000240648,
+          "Przydawki / Pragnienie spotkania": 2.6673580000533548,
+          "Przydawki / Pragnienie podróży": 1.2545610002234753,
+          "Przydawki / Upodobanie": 3.5267680000288237,
+          "Przydawki / Pożądana rzecz": 4.482343999825389,
+          "Przydawki / Ocena przedmiotu": 18.98209700038933,
+          "Przydawki / Opis osoby": 16.12634999992224,
+          "Przydawki / Powód czynności": 16.19125300021551,
+          "Przydawki / Liczba osób": 8.154078999723424,
+          "Przydawki / Osoba i dopełnienie 〜ている": 4.8261880001518875,
+          "Przydawki / Pytanie o wykonawcę 〜ている": 7.930155999929411,
+          "Przydawki / Miejsce czynności 〜ている": 4.289155999686045
+        }
+      },
+      {
+        "load_ms": 151.99582500008546,
+        "validate_ms": 11424.820327999896,
+        "old_first_preview_ms": 42.3357820000092,
+        "new_first_previews_ms": {
+          "Przydawki / Osoba i dopełnienie": 22.799832000146125,
+          "Przydawki / Pytanie o wykonawcę": 31.9056210000781,
+          "Przydawki / Wybór przedmiotu": 26.787826999679965,
+          "Przydawki / Wskazanie przedmiotu": 19.214647999888257,
+          "Przydawki / Lokalizacja przedmiotu": 15.788207999776205,
+          "Przydawki / Miejsce czynności": 4.701036999904318,
+          "Przydawki / Ocena miejsca": 8.17518799976824,
+          "Przydawki / Miejsce zamieszkania": 1.1385210000298684,
+          "Przydawki / Dzień czynności": 7.677162000163662,
+          "Przydawki / Pytanie o dzień": 10.501141999611718,
+          "Przydawki / Pragnienie spotkania": 2.4144849999174767,
+          "Przydawki / Pragnienie podróży": 1.261248999981035,
+          "Przydawki / Upodobanie": 4.229773000133719,
+          "Przydawki / Pożądana rzecz": 3.8256570001067303,
+          "Przydawki / Ocena przedmiotu": 18.667434000235517,
+          "Przydawki / Opis osoby": 21.002180999857956,
+          "Przydawki / Powód czynności": 22.174983999775577,
+          "Przydawki / Liczba osób": 17.555571000229975,
+          "Przydawki / Osoba i dopełnienie 〜ている": 22.354719000304613,
+          "Przydawki / Pytanie o wykonawcę 〜ている": 19.65643399989858,
+          "Przydawki / Miejsce czynności 〜ている": 7.887737000146444
+        }
+      },
+      {
+        "load_ms": 129.46307799984424,
+        "validate_ms": 6752.673146000234,
+        "old_first_preview_ms": 18.23726600014197,
+        "new_first_previews_ms": {
+          "Przydawki / Osoba i dopełnienie": 11.335939000218787,
+          "Przydawki / Pytanie o wykonawcę": 11.673330000121496,
+          "Przydawki / Wybór przedmiotu": 17.4291810003524,
+          "Przydawki / Wskazanie przedmiotu": 9.193601999868406,
+          "Przydawki / Lokalizacja przedmiotu": 9.349118000045564,
+          "Przydawki / Miejsce czynności": 2.2740700001122605,
+          "Przydawki / Ocena miejsca": 4.288940000151342,
+          "Przydawki / Miejsce zamieszkania": 1.354773999992176,
+          "Przydawki / Dzień czynności": 7.209616000181995,
+          "Przydawki / Pytanie o dzień": 8.166358999915246,
+          "Przydawki / Pragnienie spotkania": 2.8516870002022188,
+          "Przydawki / Pragnienie podróży": 1.3867320003555506,
+          "Przydawki / Upodobanie": 5.399839000347129,
+          "Przydawki / Pożądana rzecz": 4.53400700007478,
+          "Przydawki / Ocena przedmiotu": 23.276519999853917,
+          "Przydawki / Opis osoby": 16.82066200010013,
+          "Przydawki / Powód czynności": 12.834073000249191,
+          "Przydawki / Liczba osób": 7.967103999817482,
+          "Przydawki / Osoba i dopełnienie 〜ている": 6.468798000241804,
+          "Przydawki / Pytanie o wykonawcę 〜ている": 7.6851000003443914,
+          "Przydawki / Miejsce czynności 〜ている": 2.1702569997614773
+        }
+      }
+    ]
+  },
+  "medians": {
+    "before": {
+      "load_ms": 112.50733899987608,
+      "validate_ms": 5783.95056699992,
+      "old_first_preview_ms": 11.682583000037994
+    },
+    "after": {
+      "load_ms": 151.99582500008546,
+      "validate_ms": 9279.243598999983,
+      "old_first_preview_ms": 19.04710899998463
+    }
+  }
+}

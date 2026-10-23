@@ -895,31 +895,31 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="kartka papieru" genitive="kartki papieru" dative="kartce papieru" accusative="kartkę papieru" instrumental="kartką papieru" locative="kartce papieru" vocative="kartko papieru" />
     </word>
-    <word id="getsuyoubi" kana="げつようび" kanji="月曜日" type="noun" category="abstract" translation="poniedziałek">
+    <word id="getsuyoubi" kana="げつようび" kanji="月曜日" type="noun" category="weekday" translation="poniedziałek">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="poniedziałek" genitive="poniedziałku" dative="poniedziałkowi" accusative="poniedziałek" instrumental="poniedziałkiem" locative="poniedziałku" vocative="poniedziałku" />
     </word>
-    <word id="kayoubi" kana="かようび" kanji="火曜日" type="noun" category="abstract" translation="wtorek">
+    <word id="kayoubi" kana="かようび" kanji="火曜日" type="noun" category="weekday" translation="wtorek">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="wtorek" genitive="wtorku" dative="wtorkowi" accusative="wtorek" instrumental="wtorkiem" locative="wtorku" vocative="wtorku" />
     </word>
-    <word id="suiyoubi" kana="すいようび" kanji="水曜日" type="noun" category="abstract" translation="środa">
+    <word id="suiyoubi" kana="すいようび" kanji="水曜日" type="noun" category="weekday" translation="środa">
       <agreement class="feminine" />
       <cases language="pl" nominative="środa" genitive="środy" dative="środzie" accusative="środę" instrumental="środą" locative="środzie" vocative="środo" />
     </word>
-    <word id="mokuyoubi" kana="もくようび" kanji="木曜日" type="noun" category="abstract" translation="czwartek">
+    <word id="mokuyoubi" kana="もくようび" kanji="木曜日" type="noun" category="weekday" translation="czwartek">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="czwartek" genitive="czwartku" dative="czwartkowi" accusative="czwartek" instrumental="czwartkiem" locative="czwartku" vocative="czwartku" />
     </word>
-    <word id="kinyoubi" kana="きんようび" kanji="金曜日" type="noun" category="abstract" translation="piątek">
+    <word id="kinyoubi" kana="きんようび" kanji="金曜日" type="noun" category="weekday" translation="piątek">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="piątek" genitive="piątku" dative="piątkowi" accusative="piątek" instrumental="piątkiem" locative="piątku" vocative="piątku" />
     </word>
-    <word id="doyoubi" kana="どようび" kanji="土曜日" type="noun" category="abstract" translation="sobota">
+    <word id="doyoubi" kana="どようび" kanji="土曜日" type="noun" category="weekday" translation="sobota">
       <agreement class="feminine" />
       <cases language="pl" nominative="sobota" genitive="soboty" dative="sobocie" accusative="sobotę" instrumental="sobotą" locative="sobocie" vocative="soboto" />
     </word>
-    <word id="nichiyoubi" kana="にちようび" kanji="日曜日" type="noun" category="abstract" translation="niedziela">
+    <word id="nichiyoubi" kana="にちようび" kanji="日曜日" type="noun" category="weekday" translation="niedziela">
       <agreement class="feminine" />
       <cases language="pl" nominative="niedziela" genitive="niedzieli" dative="niedzieli" accusative="niedzielę" instrumental="niedzielą" locative="niedzieli" vocative="niedzielo" />
     </word>
@@ -1197,6 +1197,108 @@
       </counting>
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="pracownik odsunięty na boczny tor" genitive="pracownika odsuniętego na boczny tor" dative="pracownikowi odsuniętemu na boczny tor" accusative="pracownika odsuniętego na boczny tor" instrumental="pracownikiem odsuniętym na boczny tor" locative="pracowniku odsuniętym na boczny tor" vocative="pracowniku odsunięty na boczny tor" />
+    </word>
+    <word id="tokoro" kana="ところ" type="noun" category="place" translation="miejsce">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="miejsce" genitive="miejsca" dative="miejscu" accusative="miejsce" instrumental="miejscem" locative="miejscu" vocative="miejsce" />
+      <relations language="pl" profile="place_w_do" />
+      <counting classes="location">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="miejsca" />
+          <form profile="few" cases="genitive" value="miejsc" />
+          <form profile="few" cases="dative" value="miejscom" />
+          <form profile="few" cases="instrumental" value="miejscami" />
+          <form profile="few" cases="locative" value="miejscach" />
+          <form profile="many" cases="nominative accusative vocative" value="miejsc" />
+          <form profile="many" cases="genitive" value="miejsc" />
+          <form profile="many" cases="dative" value="miejscom" />
+          <form profile="many" cases="instrumental" value="miejscami" />
+          <form profile="many" cases="locative" value="miejscach" />
+        </source_forms>
+      </counting>
+    </word>
+    <word id="hi" kana="ひ" type="noun" category="abstract" translation="dzień">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="dzień" genitive="dnia" dative="dniowi" accusative="dzień" instrumental="dniem" locative="dniu" vocative="dniu" />
+    </word>
+    <word id="hotel" kana="ホテル" type="noun" category="building" translation="hotel">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="hotel" genitive="hotelu" dative="hotelowi" accusative="hotel" instrumental="hotelem" locative="hotelu" vocative="hotelu" />
+      <relations language="pl" profile="place_w_do" />
+      <counting classes="building">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="hotele" />
+          <form profile="few" cases="genitive" value="hoteli" />
+          <form profile="few" cases="dative" value="hotelom" />
+          <form profile="few" cases="instrumental" value="hotelami" />
+          <form profile="few" cases="locative" value="hotelach" />
+          <form profile="many" cases="nominative accusative vocative" value="hoteli" />
+          <form profile="many" cases="genitive" value="hoteli" />
+          <form profile="many" cases="dative" value="hotelom" />
+          <form profile="many" cases="instrumental" value="hotelami" />
+          <form profile="many" cases="locative" value="hotelach" />
+        </source_forms>
+      </counting>
+    </word>
+    <word id="poland" kana="ポーランド" type="noun" category="country" translation="Polska">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="Polska" genitive="Polski" dative="Polsce" accusative="Polskę" instrumental="Polską" locative="Polsce" vocative="Polsko" />
+      <relations language="pl" profile="place_w_do" />
+    </word>
+    <word id="japan" kana="にほん" type="noun" category="country" translation="Japonia">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="Japonia" genitive="Japonii" dative="Japonii" accusative="Japonię" instrumental="Japonią" locative="Japonii" vocative="Japonio" />
+      <relations language="pl" profile="place_w_do" />
+    </word>
+    <word id="india" kana="インド" type="noun" category="country" translation="Indie">
+      <agreement class="plural_non_masculine_personal" />
+      <cases language="pl" nominative="Indie" genitive="Indii" dative="Indiom" accusative="Indie" instrumental="Indiami" locative="Indiach" vocative="Indie" />
+      <relations language="pl" profile="place_w_do" />
+    </word>
+    <word id="wine" kana="ワイン" type="noun" category="drink" translation="wino">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="wino" genitive="wina" dative="winu" accusative="wino" instrumental="winem" locative="winie" vocative="wino" />
+    </word>
+    <word id="cake" kana="ケーキ" type="noun" category="food" translation="ciasto">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="ciasto" genitive="ciasta" dative="ciastu" accusative="ciasto" instrumental="ciastem" locative="cieście" vocative="ciasto" />
+      <counting classes="small_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="ciasta" />
+          <form profile="few" cases="genitive" value="ciast" />
+          <form profile="few" cases="dative" value="ciastom" />
+          <form profile="few" cases="instrumental" value="ciastami" />
+          <form profile="few" cases="locative" value="ciastach" />
+          <form profile="many" cases="nominative accusative vocative" value="ciast" />
+          <form profile="many" cases="genitive" value="ciast" />
+          <form profile="many" cases="dative" value="ciastom" />
+          <form profile="many" cases="instrumental" value="ciastami" />
+          <form profile="many" cases="locative" value="ciastach" />
+        </source_forms>
+      </counting>
+    </word>
+    <word id="watch" kana="とけい" type="noun" category="thing" translation="zegarek">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="zegarek" genitive="zegarka" dative="zegarkowi" accusative="zegarek" instrumental="zegarkiem" locative="zegarku" vocative="zegarku" />
+      <counting classes="small_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="zegarki" />
+          <form profile="few" cases="genitive" value="zegarków" />
+          <form profile="few" cases="dative" value="zegarkom" />
+          <form profile="few" cases="instrumental" value="zegarkami" />
+          <form profile="few" cases="locative" value="zegarkach" />
+          <form profile="many" cases="nominative accusative vocative" value="zegarków" />
+          <form profile="many" cases="genitive" value="zegarków" />
+          <form profile="many" cases="dative" value="zegarkom" />
+          <form profile="many" cases="instrumental" value="zegarkami" />
+          <form profile="many" cases="locative" value="zegarkach" />
+        </source_forms>
+      </counting>
+    </word>
+    <word id="kuni" kana="くに" type="noun" category="place" translation="kraj">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="kraj" genitive="kraju" dative="krajowi" accusative="kraj" instrumental="krajem" locative="kraju" vocative="kraju" />
+      <relations profile="place_w_do" />
     </word>
   </words>
 </dictionary>

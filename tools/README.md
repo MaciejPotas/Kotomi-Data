@@ -295,3 +295,8 @@ Run `python tools/validate_target_c32.py --kotomi ../Kotomi --output docs/valida
 ## Current manual audit and Windows test runner
 
 `../run_tests.bat` runs the test suite. `../run_data_audit.bat` runs `diagnostics/data_audit.py` against the Kotomi engine. See [Polski](../docs/pl/developer_tools.md) / [English](../docs/eng/developer_tools.md) for filters, JSON, exit codes and optional-form interpretation.
+
+
+## Lesson 26 release acceptance
+
+`validate_relative_lesson26.py --kotomi ../Kotomi --output docs/validation/relative_lesson26.json` checks bounded, independently reviewed full sentences, rejected bindings and old relative patterns. `validate_relative_lesson26_ui.py` with the same arguments checks per-pattern and mixed Mobile selections and exact simulator callbacks with fake widgets. These are explicit production audits, not unit tests, and never enumerate the whole vocabulary product. See `docs/eng/relative_lesson26.md` and `docs/pl/relative_lesson26.md` for scope and limitations.

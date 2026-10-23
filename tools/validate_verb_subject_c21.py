@@ -55,7 +55,14 @@ def validate_category_a_deployment(root, report):
         for row in report['verbs'] if row['id'] in selected - {'shimaru'}}
     # C3 replaces the exact bag/box subject list with the inherited container category.
     role_overrides['shimaru'] = {'ref': 'subject', 'accepts': 'closable_container'}
-    count = validate_deployment(root, report, selected, role_overrides=role_overrides)
+    # Reviewed impersonal quantity predicates: ile osób przyszło / poszło.
+    extensions = {(verb, form): {'neuter': value}
+        for verb, values in (
+            ('kuru', ('przychodzi', 'nie przychodzi', 'przyszło', 'nie przyszło')),
+            ('iku', ('idzie', 'nie idzie', 'poszło', 'nie poszło')))
+        for form, value in zip(('dictionary', 'plain_negative', 'past_plain', 'past_negative_plain'), values)}
+    count = validate_deployment(root, report, selected, role_overrides=role_overrides,
+                                agreement_extensions=extensions)
     for vid, accepts in (('hataraku', 'person'), ('neru', 'person animal')):
         role = one(root, f"words/word[@id='{vid}']/usage/role[@ref='subject']")
         require(role.attrib == {'ref': 'subject', 'accepts': accepts},
@@ -63,7 +70,7 @@ def validate_category_a_deployment(root, report):
     return count
 
 
-def validate_deployment(root, report, selected=VERBS, *, role_overrides=None):
+def validate_deployment(root, report, selected=VERBS, *, role_overrides=None, agreement_extensions=None):
     """Check selected approved operations and their complete target XML maps.
 
     The selection argument supports bounded synthetic fixtures. Only the default
@@ -132,6 +139,13 @@ def validate_deployment(root, report, selected=VERBS, *, role_overrides=None):
             expected[cls] = change['value']
     require(set(expected_maps) == {(v, f) for v in selected for f in FORMS},
             'missing priority form operations')
+    for key, values in (agreement_extensions or {}).items():
+        require(key in expected_maps, 'unselected agreement extension')
+        require(not set(values) & set(expected_maps[key]), 'agreement extension replaces baseline')
+        require(set(values) <= set(report['allowed_classes']), 'unknown extension class')
+        require(all(isinstance(value, str) and value.strip() for value in values.values()),
+                'empty agreement extension')
+        expected_maps[key].update(values)
     for vid, row in records.items():
         word = one(root, f"words/word[@id='{vid}']")
         role = one(one(word, 'usage'), "role[@ref='subject']")
