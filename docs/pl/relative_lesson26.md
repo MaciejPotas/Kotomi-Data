@@ -165,3 +165,51 @@ Niezależne ograniczone fixtury porównują rozwinięte grupy wyborów z pełną
 `SpecializedQuizSetupDialog` obsługuje Grammar (w tym wszystkie przydawki), czasowniki, przymiotniki i dostępność. Istniejący notebook zawiera teraz ograniczone przestrzenią strony `VerticalScrolledFrame` dla ustawień, form i wzorców, z lokalną obsługą kółka oraz zawijaniem etykiet checkboxów. Osobny dolny wiersz utrzymuje przyciski poza przewijaną zawartością. Launcher lekcji, konfiguracja koniugacji i zdań mają ten sam początkowy rozmiar 720×650, elastyczną część środkową i stałą stopkę; zachowano istniejące ograniczenie do obszaru roboczego monitora. Koniugacja używa tego samego kontenera; zdania zachowują przewijany PatternPicker i Listboxy form. Nie zmieniono zapisu ustawień ani reguł zaznaczania. Układ Mobile pozostaje bez zmian.
 
 `test_quiz_setup_scrolling.py` używa syntetycznych ustawień v1 i rzeczywistych kontrolek Tk: 23 wzorce, 35 form, pojedynczy wzorzec, kółko/zaznaczanie na końcu listy, resize, granice stopki i zapis/odczyt ustawień. Obejmuje też okna konfiguracji lekcji. Przy dostępnym ekranie sprawdzane są skale fontu 100/125/150%. Środowisko bez wyświetlacza pomija testy natywne, zamiast deklarować wizualną weryfikację na podstawie atrap. Nadal potrzebne jest manualne sprawdzenie Windows przy 1366×768 i Full HD, skalowaniu systemowym 125/150% oraz różnych monitorach/paskach zadań: skala fontu Tk nie zastępuje testu DPI systemu.
+
+
+## Finalny review i rzeczywiste otwieranie menu (2026-10-24)
+
+Punktem odniesienia tej kontynuacji są Kotomi `b12de81` i Content `ab18c0a`; całe PR-y porównano także z ich `main`. Doprecyzowanie użytkownika wskazało **KotomiMobile uruchomione na Windows (Kivy)**. Natywny `QuizLauncherFrame` Tk nie wywołuje statystyk ani walidacji podczas otwierania konfiguracji. Jego import, profil i ustawienia zajęły w profilowaniu 94 ms przy pierwszym wejściu i 29 ms przy kolejnym, bez pomiaru rysowania Tk.
+
+W Kivy rzeczywistą przyczyną wielosekundowego loadingu była pełna walidacja projektu podczas budowy kontrolerów verbs/adjectives/availability. Start ponownie wczytuje i waliduje projekt, więc pierwsza walidacja nie była potrzebna do pokazania ustawień. Launcher przekazuje teraz jeden świeżo wczytany projekt wszystkim tym quizom, zgodnie z istniejącą ścieżką profili Grammar. `reload_engine` czasowników i przymiotników konsumuje ten projekt tylko raz; późniejszy Start/reload nadal czyta i waliduje aktualne dane. Błędy wymagające pełnej walidacji mogą więc zostać pokazane po Start zamiast przy wejściu do konfiguracji. Nie dodano cache projektu pomiędzy otwarciami ani zmiany reguł walidacji. Odświeżanie importów zachowano dla aktualizowanych pakietów. W `open_quiz` usunięto dwie pauzy po 160 ms i oczekiwanie na końcową animację: popup znika po zbudowaniu ekranu. Loading pozostaje podczas rzeczywistej pracy, bez nowych sztucznych procentów.
+
+Pomiary używają rzeczywistego Kivy 2.3.1, SDL offscreen i Mesa na Linuksie, bez atrap widgetów. Trzy pary świeżych procesów w kolejności AB/BA, po dwa otwarcia w procesie, bez równoległych testów. Mierzone jest wywołanie callbacku menu do gotowego ekranu; fizyczne dostarczenie kliknięcia przez Windows nie jest mierzone. Osobno zapisano import/profil, odczyt projektu, analizę, ustawienia, silnik, budowę widgetów, najdłuższą klatkę UI i przejście do ustawień. Czasy etapów są zagnieżdżone, nie należy ich sumować.
+
+| Quiz | Pierwsze wejście przed → po | Ponowne wejście przed → po |
+|---|---:|---:|
+| Czasowniki | 4485 → 235 ms | 4600 → 218 ms |
+| Przymiotniki | 4435 → 215 ms | 4856 → 226 ms |
+| Dostępność | 4406 → 218 ms | 4705 → 232 ms |
+| Przydawki | 718 → 277 ms | 782 → 259 ms |
+| Gramatyka | 703 → 232 ms | 738 → 253 ms |
+
+W przykładowym pierwszym wejściu do czasowników walidacja zajmowała 3539 ms, silnik 3612 ms, a najdłuższa klatka UI 3712 ms. Po zmianie nie ma walidacji na tej ścieżce, silnik zajmuje 0,18 ms, a najdłuższa klatka 122 ms. To pomiar tego środowiska, nie gwarancja opóźnienia Windows.
+
+Profil licznika całego quizu wykazał 83 809 renderowań oraz powtarzane sprawdzenia tych samych par rola/słowo/rzeczownik. `_SearchCandidates.role_pairs` zapamiętuje najwyżej 4096 dokładnych wyników istniejącego predykatu w jednym wyszukiwaniu, dla ustalonego projektu, analizy i formy. Klucz zawiera oba sloty i oba ID; zależności całego zdania nadal sprawdza solver. Nie przechowuje zdań, nie przeżywa operacji ani edycji i nie łączy wyników różnych form. Dla jednego rzeczownika cache par nie jest używany. `iter_counted_possibilities` odrzuca niepasujące przypadki przed analizą niezależności. Zachowano poprzednie mnożenie niezależnych domen i wszystkie fallbacki, w tym dokładną enumerację metryk Symulatora.
+
+| Licznik | Identyczny wynik | Przed → po tej kontynuacji |
+|---|---:|---:|
+| Osoba i dopełnienie, mediana 3 par | 71 936 | 2,511 → 2,342 s |
+| Wszystkie 21 nowych, jedna para | 142 591 | 10,127 → 9,470 s |
+| Cały quiz przydawek, mediana 3 par | 182 651 | 13,312 → 12,723 s |
+| Stara przydawka podmiotowa, mediana 3 par | 6480 | 524 → 463 ms |
+| Sam czasownik, mediana 3 par | 2480 | 85,4 → 87,3 ms |
+| Trzy lubiane rzeczy, jedna para | 729 000 | 34,8 → 33,4 ms |
+
+Zysk licznika jest umiarkowany. Dla prostego czasownika pozostała różnica +1,9 ms; nie przedstawiamy jej jako dowodu przyspieszenia ani zerowego narzutu. Nie porównujemy bezpośrednio tych czasów z historycznym pomiarem 34,8 s na innym wykonaniu środowiska. Pełna Gramatyka nadal przekracza limit procesu 12 s, bez zwracania częściowego wyniku. Sprzężone domeny, liczniki i duże produkty słów pozostają kosztowne; dalsze ich mnożenie wymagałoby szerszego dowodu niezależności. Osobne pomiary Start nadal wynoszą około 4,2–4,6 s, głównie przez zachowaną pełną walidację na wątku UI. Usunięcie opóźnienia menu nie jest równoznaczne z usunięciem tego kosztu.
+
+Osobna próbka samego pierwszego pytania dała 29,7 → 35,4 ms dla całego quizu, 19,6 → 18,3 ms dla jednego wzorca i 1,10 → 1,10 ms dla prostego czasownika. Pojedyncza próbka nie dowodzi zerowego narzutu; kompletne wyniki i RNG pozostają zgodne.
+
+Dodatkowy review i testy obejmują przechodni łańcuch zależności trzech rzeczowników z czwartą niezależną domeną, kompletne pary i wybory przy włączonym/wyłączonym memo, cztery formy, odświeżenie po edycji, pełne eligible, konteksty i identyczny tekst. Zachowano istniejące testy progressive/desiderative, wielu argumentów, rekcji, uzgodnienia, counterów, kompozycji, filtrów i RNG. Porównanie wydania potwierdziło 76 niezmienionych starych par PL/JA. **Żaden XML ani tłumaczenie leksykalne nie zmieniły się podczas tej kontynuacji.** Oryginalna implementacja lekcji w całym PR dodaje słowa/formy i wzorce; nie należy mylić tego zakresu z optymalizacją.
+
+Kontrolery Kivy mają nowe ograniczone testy jednorazowego przekazania projektu i braku walidacji przed Start, dla obu języków instrukcji i ponownego wczytania. Istniejący test kolejki launchera sprawdza teraz natychmiastowe zamknięcie popupu po gotowym ekranie zamiast celowego oczekiwania na animację. To zamierzona zmiana prezentacji, nie zmiana oczekiwań gramatycznych. Pakiety verbs/adjectives mają wersję 1.1.3 i identyczne źródła w obu repozytoriach; starszy host nadal działa przez dotychczasową ścieżkę bez preloaded_project. Aktualne wyniki pełnego CI są podlinkowane w PR.
+
+### Windows GUI i pozostałe ograniczenia
+
+Zachowano wspólne przewijane okna Tk z poprzedniego commita, stopki poza listami oraz odtwarzanie skalowania w testach. W rzeczywistym Kivy offscreen sprawdzono przewijanie do kontrolek, odwracalne zaznaczenie, resize i granice przycisków ustawień dla czasowników i 23 przydawek przy 1366×768, 1093×614, 911×512 i 1920×1080. Te rozmiary logiczne **nie są testem systemowego DPI 125/150%**. Natywne testy Tk uruchamia Windows CI; lokalnie nie ma wyświetlacza Tk. Nie wykonano fizycznego kliknięcia/kółka myszy ani testu urządzenia Android.
+
+- P1, weryfikacja wydania: sprawdzić użytkownikowy KotomiMobile na Windows po aktualizacji aplikacji i pakietów, przy 1366×768/Full HD i DPI 125/150%. Kod i pomiar Kivy potwierdzają naprawę menu, lecz zielone CI nie potwierdza zachowania sterownika ekranu i DPI. To pozostała bramka przed bezwarunkowym zatwierdzeniem merge.
+- P2, istniejący koszt Start: około 4 s pełnej walidacji na UI. Można odłożyć oddzielną poprawkę po akceptacji tego opóźnienia; nie powstaje nowa regresja i nie osłabiono walidacji.
+- P2, dokładne statystyki: duży quiz przydawek nadal około 13 s, pełna Gramatyka nadal kosztowna. Obliczenia pozostają poza UI i są dokładne; można odłożyć dalszą optymalizację bez zmiany dostępnych zdań.
+
+Reprodukcja: `tools/benchmark_relative_lesson26_review.py --worker menu --selection verbs --kotomi KOTOMI --data CONTENT`. Opcjonalne `--menu-start` i `--menu-layout` mierzą osobno Start i sprawdzają układ. Na Linuksie użyto `KIVY_NO_ARGS=1 SDL_VIDEODRIVER=offscreen`; na Windows należy uruchomić z rzeczywistym backendem. Wyniki tej kontynuacji są w sekcji `final_review` istniejącego raportu JSON. W CI nie dodano benchmarków ani progów czasowych.

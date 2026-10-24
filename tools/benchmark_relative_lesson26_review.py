@@ -15,6 +15,123 @@ import sys
 from time import perf_counter, process_time
 
 
+def menu_worker(args):
+    """Opt-in real Kivy event loop; never used by CI. No widget doubles.
+
+    SDL offscreen on Linux measures real widgets/layout but is NOT Windows DPI
+    verification. Callbacks and timings run on the UI thread. Nested stage
+    times are inclusive and must not be summed.
+    """
+    from contextlib import ExitStack
+    from tempfile import TemporaryDirectory
+    from unittest.mock import patch
+    sys.path.insert(0, str(args.kotomi.resolve()))
+    from kivy.app import App
+    from kivy.base import EventLoop
+    from kivy.core.window import Window
+    from platforms.mobile import app as mobile
+    from kotomi.application.quiz_project import QuizProject
+    from kotomi.application.quiz_registry import discover_apps
+    from kotomi.application.settings import AppSettings
+    from kotomi.application.storage import SettingsStore
+    from kotomi.application.instruction_languages import InstructionSelection
+    Window.size = (1366, 768)
+    result = {'runtime': 'real Kivy, '+sys.platform, 'openings': []}
+    with TemporaryDirectory() as directory, ExitStack() as patches:
+        path = Path(directory)/'launcher.xml'
+        SettingsStore(path).save(AppSettings(instruction_language_id='pl').to_dict())
+        patches.enter_context(patch.object(mobile, 'LAUNCHER_SETTINGS_PATH', path))
+        master = mobile.create_master_app_class()()
+        App._running_app = master
+        master.root = master.build()
+        master.instruction_selection = InstructionSelection(
+            master.language_context, (args.data/'quiz_project.xml').resolve())
+        Window.add_widget(master.root)
+        EventLoop.ensure_window()
+        descriptor = next(d for d in discover_apps(args.kotomi)[0] if d.id == args.selection)
+        for repeat in range(2):
+            row = {'stages_ms': {}, 'calls': {}}
+            def measured(name, operation):
+                def run(*a, **kw):
+                    start = perf_counter()
+                    try:
+                        return operation(*a, **kw)
+                    finally:
+                        row['stages_ms'][name] = row['stages_ms'].get(name, 0)+(perf_counter()-start)*1000
+                        row['calls'][name] = row['calls'].get(name, 0)+1
+                return run
+            original_loader = mobile.load_app_module
+            with ExitStack() as stages:
+                def load(*a, **kw):
+                    module = measured('module_and_profile', original_loader)(*a, **kw)
+                    original_factory = getattr(module, descriptor.factory)
+                    def factory():
+                        controller = measured('controller', original_factory)()
+                        controller.build = measured('widgets_and_engine', controller.build)
+                        controller.reload_engine = measured('engine', controller.reload_engine)
+                        return controller
+                    stages.enter_context(patch.object(module, descriptor.factory, factory))
+                    store = getattr(module, 'SETTINGS_STORE_CLASS', module.SettingsStore)
+                    stages.enter_context(patch.object(store, 'load', measured('settings', store.load)))
+                    return module
+                stages.enter_context(patch.object(mobile, 'load_app_module', load))
+                stages.enter_context(patch.object(QuizProject, 'load', measured('project_load', QuizProject.load)))
+                stages.enter_context(patch.object(QuizProject, 'validate', measured('validation', QuizProject.validate)))
+                stages.enter_context(patch.object(QuizProject, 'analyze_pattern', measured('analysis', QuizProject.analyze_pattern)))
+                start = perf_counter()
+                master.open_quiz(descriptor)
+                row['callback_to_popup_ms'] = (perf_counter()-start)*1000
+                longest = 0
+                while getattr(master, '_quiz_loading', None) is not None:
+                    tick = perf_counter(); EventLoop.idle()
+                    longest = max(longest, (perf_counter()-tick)*1000)
+                    if perf_counter()-start > 12:
+                        raise TimeoutError('Menu did not become ready within 12s')
+                EventLoop.idle()
+                row['ready_ms'] = (perf_counter()-start)*1000
+                row['longest_ui_frame_ms'] = longest
+                controller = master.active_quiz_controller
+                if controller is None:
+                    raise RuntimeError(master.update_message)
+                start = perf_counter(); controller.open_settings()
+                EventLoop.idle(); EventLoop.idle()
+                row['settings_navigation_ms'] = (perf_counter()-start)*1000
+                if args.menu_layout:
+                    from kivy.uix.button import Button
+                    from kivy.uix.scrollview import ScrollView
+                    screen = controller.manager.get_screen('settings')
+                    scroll = next(w for w in screen.walk() if isinstance(w, ScrollView))
+                    layout = []
+                    for size in ((1366,768), (1093,614), (911,512), (1920,1080)):
+                        Window.size = size
+                        for _ in range(30): EventLoop.idle()
+                        footer = screen.children[0].children[0]
+                        buttons = [w for w in footer.walk() if isinstance(w, Button)]
+                        assert buttons and all(w.y >= 0 and w.top <= screen.height for w in buttons)
+                        scroll.scroll_y = 0
+                        for _ in range(3): EventLoop.idle()
+                        checks = list(screen.pattern_checks.values())+list(screen.form_checks.values())
+                        last = checks[-1]
+                        scroll.scroll_to(last, animate=False)
+                        for _ in range(3): EventLoop.idle()
+                        original = last.active; last.active = not original; last.active = original
+                        layout.append({'size':size, 'scrollable':scroll.height < scroll.children[0].height,
+                                       'footer_visible':True, 'toggle_preserved':last.active == original})
+                    row['layout'] = layout
+                if args.menu_start and repeat == 1:
+                    start = perf_counter(); controller.start_quiz()
+                    while getattr(controller, '_quiz_loading', None) is not None:
+                        EventLoop.idle()
+                        if perf_counter()-start > 12:
+                            raise TimeoutError('Start did not finish within 12s')
+                    assert controller.manager.current == 'quiz'
+                    row['start_to_question_ms'] = (perf_counter()-start)*1000
+            result['openings'].append(row)
+            master.return_to_launcher(); EventLoop.idle()
+        Window.remove_widget(master.root)
+    print(json.dumps(result, ensure_ascii=False))
+
+
 def worker(args):
     sys.path.insert(0, str(args.kotomi.resolve()))
     from kotomi.application.quiz_project import QuizProject
@@ -213,11 +330,13 @@ if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('kotomi','data','before-kotomi','before-data','main-data','output'):
         parser.add_argument('--'+name,type=Path)
-    parser.add_argument('--worker',choices=('project','quiz','count','fallback'))
+    parser.add_argument('--worker',choices=('project','quiz','count','fallback','menu'))
     parser.add_argument('--selection',default='all')
     parser.add_argument('--omit-new',action='store_true')
     parser.add_argument('--optimization',action='store_true')
     parser.add_argument('--startup-recheck',action='store_true')
+    parser.add_argument('--menu-layout',action='store_true')
+    parser.add_argument('--menu-start',action='store_true')
     parser.add_argument('--diagnostic-timeout',type=float,default=0)
     args=parser.parse_args()
-    worker(args) if args.worker else (optimization(args) if args.optimization else main(args))
+    menu_worker(args) if args.worker == 'menu' else worker(args) if args.worker else (optimization(args) if args.optimization else main(args))

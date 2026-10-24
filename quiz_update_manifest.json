@@ -18,7 +18,7 @@
     },
     {
       "id": "verbs",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "quiz_api": 1,
       "min_app_version": "1.1.2",
       "kind": "python",
@@ -31,7 +31,7 @@
     },
     {
       "id": "adjectives",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "quiz_api": 1,
       "min_app_version": "1.1.2",
       "kind": "python",
@@ -77,8 +77,8 @@
     },
     {
       "path": "apps/adjectives/app.json",
-      "sha256": "8b906e6433ff356aa50eaddfd04022f39f1fd1dbdfe7a8e2ffdeab4bf6791d85",
-      "url": "quizzes/adjectives/app.json?kotomi_sha256=8b906e6433ff356aa50eaddfd04022f39f1fd1dbdfe7a8e2ffdeab4bf6791d85"
+      "sha256": "be038f9e723e284ea7411fcd6471d7821d57a8f42b0c85fed6be4f8dd3d86018",
+      "url": "quizzes/adjectives/app.json?kotomi_sha256=be038f9e723e284ea7411fcd6471d7821d57a8f42b0c85fed6be4f8dd3d86018"
     },
     {
       "path": "apps/adjectives/logic.py",
@@ -87,8 +87,8 @@
     },
     {
       "path": "apps/adjectives/mobile.py",
-      "sha256": "9a9700a2c4c8e6f69876863fccd770bfa21c02701f4e5c7c61db09723347b4ff",
-      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=9a9700a2c4c8e6f69876863fccd770bfa21c02701f4e5c7c61db09723347b4ff"
+      "sha256": "7ec1399501acff1de99c86cbdce1338d6a45c236c48dab3d2f7c67695c0c30cd",
+      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=7ec1399501acff1de99c86cbdce1338d6a45c236c48dab3d2f7c67695c0c30cd"
     },
     {
       "path": "apps/availability/Kotomi_availability.py",
@@ -157,8 +157,8 @@
     },
     {
       "path": "apps/verbs/app.json",
-      "sha256": "497fd0c3ef8e6005342db574de832bff67cc4cce97e1964206772ed82cfa00b7",
-      "url": "quizzes/verbs/app.json?kotomi_sha256=497fd0c3ef8e6005342db574de832bff67cc4cce97e1964206772ed82cfa00b7"
+      "sha256": "4de0ea018afcdcd7f39c33a637c2739ab1393bce96a323a1ae90c327753df821",
+      "url": "quizzes/verbs/app.json?kotomi_sha256=4de0ea018afcdcd7f39c33a637c2739ab1393bce96a323a1ae90c327753df821"
     },
     {
       "path": "apps/verbs/logic.py",
@@ -167,8 +167,8 @@
     },
     {
       "path": "apps/verbs/mobile.py",
-      "sha256": "2cfb470f14b5526db231eb934752e034f7481f60b3049842ad5716c185ab0590",
-      "url": "quizzes/verbs/mobile.py?kotomi_sha256=2cfb470f14b5526db231eb934752e034f7481f60b3049842ad5716c185ab0590"
+      "sha256": "3ab77bb41113b4a69535fc1c6579493b5bf25d1d1c12722d77d125d8263c606a",
+      "url": "quizzes/verbs/mobile.py?kotomi_sha256=3ab77bb41113b4a69535fc1c6579493b5bf25d1d1c12722d77d125d8263c606a"
     }
   ]
 }

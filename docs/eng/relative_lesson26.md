@@ -165,3 +165,51 @@ Independent bounded fixtures compare expanded weighted bindings against full can
 `SpecializedQuizSetupDialog` serves Grammar (including all relative patterns), verbs, adjectives and availability. Its existing notebook now has bounded `VerticalScrolledFrame` pages for settings, forms and patterns, with local mouse-wheel bindings and wrapping checkbox labels. An independent footer row keeps action buttons outside scrolling content. The lesson launcher, conjugation and sentence setup use the same 720×650 initial size, resizable weighted body and fixed footer; the existing monitor-work-area clamp remains in use. Conjugation reuses the same viewport; sentence setup retains its existing scrolling PatternPicker and form Listboxes. Settings serialization and selection rules are unchanged; Mobile layout is untouched.
 
 `test_quiz_setup_scrolling.py` uses synthetic v1 settings and real Tk widgets: 23 patterns, 35 forms, one-pattern case, wheel/end-of-list selection, resize, footer bounds and settings round-trip. It also covers lesson setup dialogs. Font scales 100/125/150% are tested when a display is available. Headless environments skip these native tests, rather than claiming visual coverage from fake controls. Manual Windows checks at 1366×768 and Full HD, 125/150% OS scaling and monitor/taskbar combinations remain necessary: Tk font scaling is not a substitute for per-monitor DPI testing.
+
+
+## Final review and actual menu opening (2026-10-24)
+
+This continuation compares Kotomi `b12de81` and Content `ab18c0a`; the complete PRs were also reviewed against their `main` branches. The user clarified that the affected application is **KotomiMobile running on Windows (Kivy)**. Native Tk `QuizLauncherFrame` does not calculate statistics or validate the project when opening configuration. Its profiled import/profile/settings path took 94 ms initially and 29 ms on reopening, excluding Tk drawing.
+
+The Kivy bottleneck was full project validation while building verbs/adjectives/availability controllers. Start reads and validates the project again, so that initial validation was unnecessary for displaying settings. The launcher now supplies one freshly loaded project to these quizzes, following the existing Grammar profile path. Verb/adjective `reload_engine` consumes it once; subsequent Start/reload still reads and validates current data. Errors requiring full validation can consequently appear on Start instead of menu entry. There is no project cache across openings or change to validation rules. Module refresh remains intact for updated packages. `open_quiz` also removes two 160 ms pauses and the completion-animation wait, closing the popup when the screen is ready. Loading remains during actual work, without new artificial percentages.
+
+Measurements use real Kivy 2.3.1 widgets, SDL offscreen and Mesa on Linux, without widget doubles. Three fresh-process AB/BA pairs, two openings per process, no concurrent tests. Timing starts at the menu callback; physical Windows click delivery is not measured. Import/profile, project load, analysis, settings, engine, widget construction, longest UI frame and settings navigation are separate. Nested stage times are inclusive and must not be summed.
+
+| Quiz | First opening before → after | Reopening before → after |
+|---|---:|---:|
+| Verbs | 4485 → 235 ms | 4600 → 218 ms |
+| Adjectives | 4435 → 215 ms | 4856 → 226 ms |
+| Availability | 4406 → 218 ms | 4705 → 232 ms |
+| Relative clauses | 718 → 277 ms | 782 → 259 ms |
+| Grammar | 703 → 232 ms | 738 → 253 ms |
+
+One initial verb opening spent 3539 ms in validation, 3612 ms in the engine, and 3712 ms in its longest UI frame. Afterwards this path performs no validation, engine construction takes 0.18 ms and the longest frame takes 122 ms. These are environment measurements, not Windows latency guarantees.
+
+The full-relative count profile showed 83,809 renders and repeated checks of identical role/word/noun pairs. `_SearchCandidates.role_pairs` memoizes up to 4096 exact results of the existing predicate within one search, with fixed project, analysis and form. Keys include both slots and IDs; the solver still checks full-sentence dependencies. It stores no sentences, survives neither operations nor edits, and never merges forms. Single-noun searches do not use this pair memo. `iter_counted_possibilities` rejects ineligible cases before independence analysis. Previous independent-domain factoring and all fallbacks remain, including exhaustive Simulator metrics.
+
+| Count | Identical result | Before → after this continuation |
+|---|---:|---:|
+| Identity, median of 3 pairs | 71,936 | 2.511 → 2.342 s |
+| All 21 new patterns, one pair | 142,591 | 10.127 → 9.470 s |
+| Full relative quiz, median of 3 pairs | 182,651 | 13.312 → 12.723 s |
+| Legacy subject relative, median of 3 pairs | 6480 | 524 → 463 ms |
+| Simple verb, median of 3 pairs | 2480 | 85.4 → 87.3 ms |
+| Three liked things, one pair | 729,000 | 34.8 → 33.4 ms |
+
+The counting improvement is modest. The simple verb retains a +1.9 ms difference, not claimed as speedup or proof of zero overhead. These timings must not be directly compared with the historical 34.8 s from another environment execution. Full Grammar still exceeds the 12 s process deadline, without returning partial totals. Coupled domains, counters and large word products remain expensive; further factoring would require a broader independence proof. Separate Start measurements remain approximately 4.2–4.6 s, mostly preserved full validation on the UI thread. Removing menu latency does not remove that cost.
+
+A separate first-question sample measured 29.7 → 35.4 ms for the full quiz, 19.6 → 18.3 ms for one pattern, and 1.10 → 1.10 ms for the simple verb. One sample does not prove zero overhead; complete outputs and RNG remain identical.
+
+Additional review/tests cover a transitive three-noun dependency chain with a fourth independent dimension, full pairs/bindings with memo enabled/disabled, four forms, fresh results after edits, complete eligible sets, contexts and identical text. Existing progressive/desiderative, multi-argument, government/agreement, counter, composition, filter and RNG tests remain. The release comparison preserved 76 complete legacy PL/JA pairs. **No XML or lexical translation changed during this continuation.** The original lesson implementation in the complete PR adds vocabulary/forms and patterns; that scope is separate from optimization.
+
+New bounded Kivy controller tests verify one-time project handoff, no validation before Start, both instruction languages and subsequent reload. The launcher queue test now checks immediate popup dismissal once the screen is ready instead of deliberate animation waiting. This is an intentional presentation change, not a grammar expectation change. Verb/adjective packages are version 1.1.3 with identical sources in both repositories; older hosts retain their previous path without preloaded_project. Current complete CI results are linked in the PR.
+
+### Windows GUI and remaining limitations
+
+The previous shared scrollable Tk dialogs, fixed footers and test scaling restoration remain. Real Kivy offscreen checks cover scrolling to controls, reversible selection, resizing and settings-button bounds for verbs and all 23 relative patterns at 1366×768, 1093×614, 911×512 and 1920×1080. These logical sizes **do not test system DPI at 125/150%**. Native Tk tests run in Windows CI; the local environment has no Tk display. Physical mouse clicks/wheel and an Android device were not tested.
+
+- P1, release verification: exercise the user's KotomiMobile on Windows after updating both application and packages, at 1366×768/Full HD and 125/150% DPI. Code and real Kivy timings support the menu fix, but green CI does not verify the display driver or system DPI. This remains the gate before unconditional merge approval.
+- P2, existing Start cost: approximately 4 s of full validation on the UI thread. A separate fix can be deferred if that delay is accepted; no new regression or weaker validation was introduced.
+- P2, exact statistics: the large relative quiz remains approximately 13 s, and full Grammar remains expensive. Counting stays off the UI thread and exact; further optimization can be deferred without changing available sentences.
+
+Reproduce with `tools/benchmark_relative_lesson26_review.py --worker menu --selection verbs --kotomi KOTOMI --data CONTENT`. Optional `--menu-start` and `--menu-layout` separately measure Start and check layout. Linux used `KIVY_NO_ARGS=1 SDL_VIDEODRIVER=offscreen`; use the actual backend on Windows. This continuation's results are in `final_review` in the existing JSON report. No benchmark or timing threshold was added to CI.
