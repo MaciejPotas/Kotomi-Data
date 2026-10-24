@@ -12,7 +12,7 @@ import random
 import statistics
 import subprocess
 import sys
-from time import perf_counter
+from time import perf_counter, process_time
 
 
 def worker(args):
@@ -22,8 +22,10 @@ def worker(args):
     result = {}
     def timed(name, operation):
         start = perf_counter()
+        cpu = process_time()
         value = operation()
         result[name] = round((perf_counter() - start) * 1000, 3)
+        result[name.replace('_ms', '_cpu_ms')] = round((process_time() - cpu) * 1000, 3)
         return value
     p = timed('load_ms', lambda: QuizProject.load(args.data / 'quiz_project.xml'))
     if args.omit_new:
@@ -36,19 +38,39 @@ def worker(args):
         issues = timed('validate_ms', p.validate)
         assert not issues, issues
     else:
-        logic.configure_quiz_profile('relative_clauses', project=p)
+        profile = 'grammar' if args.selection == 'old_quiz' else 'relative_clauses'
+        logic.configure_quiz_profile(profile, project=p)
         policy = logic.snapshot_quiz_policy()
+        if args.selection in ('simple','independent_legacy'):
+            key = 'Sam czasownik' if args.selection == 'simple' else 'Trzy lubiane rzeczy'
+            policy.QUIZ_SETTINGS_CLASS = type('SimpleSettings', (policy.QUIZ_SETTINGS_CLASS,), {'supported_patterns':(key,)})
+            policy.QUIZ_ENGINE_CLASS = type('SimpleEngine', (policy.QUIZ_ENGINE_CLASS,), {'profile_expansions':{}})
         engine = timed('engine_from_preloaded_ms', lambda: policy.QUIZ_ENGINE_CLASS(p.manifest_path, rng=random.Random(26), project=p))
         keys = [k for k in p.sentence_quizzes['relative_clauses'].pattern_ids if k.startswith('Przydawki / ')]
         selected = {'one':['Przydawki / Osoba i dopełnienie'], 'light':['Przydawki / Pragnienie podróży'],
-                    'new':keys, 'all':p.sentence_quizzes['relative_clauses'].pattern_ids}[args.selection]
+                    'new':keys, 'all':p.sentence_quizzes['relative_clauses'].pattern_ids,
+                    'old_quiz':list(policy.PATTERN_LABELS),
+                    'old_pattern':['Zdania przydawkowe podmiotowe'], 'simple':['Sam czasownik'], 'independent_legacy':['Trzy lubiane rzeczy']}[args.selection]
         settings = policy.QUIZ_SETTINGS_CLASS(enabled_patterns=selected, enabled_forms=list(policy.FORM_GROUPS), plain_output=True, polite_output=False)
-        if args.worker == 'count':
+        if args.worker == 'fallback':
+            counted = engine.shared_engine.iter_counted_previews
+            runs = {'canonical':[], 'weighted':[]}
+            for repeat in range(5):
+                methods = [('canonical',None),('weighted',counted)]
+                if repeat % 2: methods.reverse()
+                for name,method in methods:
+                    engine.shared_engine.iter_counted_previews = method
+                    start = perf_counter()
+                    value = engine.statistics(settings)
+                    runs[name].append({'statistics_ms':(perf_counter()-start)*1000, 'statistics':value})
+            result['fallback_runs'] = runs
+        elif args.worker == 'count':
+            timed('analysis_ms', lambda: [p.analyze_pattern(key) for selected_id in selected for key in engine.pattern_expansions.get(selected_id,(selected_id,))])
             result['statistics'] = timed('statistics_ms', lambda: engine.statistics(settings))
         else:
             assert timed('availability_ms', lambda: engine.has_possible_question(settings))
             q = timed('first_question_ms', lambda: engine.generate_question(settings))
-            assert q.pattern_id in selected
+            assert q.pattern_id in {key for selected_id in selected for key in engine.pattern_expansions.get(selected_id,(selected_id,))}
             result['first_pair'] = [q.source_sentence, q.expected_answer]
     print(json.dumps(result, ensure_ascii=False))
 
@@ -95,12 +117,107 @@ def main(args):
     print(json.dumps(medians,indent=2))
 
 
+def optimization(args):
+    """Opt-in exact release audit: bounded 12s results and separate diagnostics.
+
+    Same declared Content graph for both engines, read-only. Cost follows full
+    solver enumeration in the baseline; diagnostic processes have an explicit
+    deadline. This mode is never invoked by CI or unit-test collection.
+    """
+    def launch(code, mode, selection='all', deadline=45):
+        command = [sys.executable, str(Path(__file__).resolve()), '--worker', mode,
+            '--kotomi', str(code.resolve()), '--data', str(args.data.resolve()),
+            '--selection', selection]
+        try:
+            result = subprocess.run(command, capture_output=True, text=True,
+                                    timeout=deadline, check=True)
+            return json.loads(result.stdout)
+        except subprocess.TimeoutExpired:
+            return {'incomplete':True, 'process_timeout_s':deadline, 'total':None}
+
+    if args.startup_recheck:
+        samples = {name:{key:[] for key in ('one','new','all','simple','independent_legacy')} for name in ('before','after')}
+        for repeat in range(9):
+            print('startup recheck',repeat+1,flush=True)
+            engines = [('before',args.before_kotomi),('after',args.kotomi)]
+            if repeat % 2: engines.reverse()
+            for selection in ('one','new','all','simple','independent_legacy'):
+                for name,code in engines:
+                    samples[name][selection].append(launch(code,'quiz',selection))
+        simple_counts = {name:launch(code,'count','simple',12) for name,code in engines}
+        assert simple_counts['before']['statistics'] == simple_counts['after']['statistics']
+        legacy_counts = {name:launch(code,'count','independent_legacy',12) for name,code in engines}
+        legacy_diagnostics = {}
+        for name,code in engines:
+            if legacy_counts[name].get('incomplete') and args.diagnostic_timeout:
+                print('diagnostic',name,'independent_legacy',flush=True)
+                legacy_diagnostics[name] = launch(code,'count','independent_legacy',args.diagnostic_timeout)
+        counts = [legacy_diagnostics.get(name,legacy_counts[name]).get('statistics') for name,_ in engines]
+        if all(counts): assert counts[0] == counts[1]
+        previous = json.loads(args.output.read_text())
+        previous['counting_optimization']['startup_recheck'] = {
+            'method':'Nine fresh-process samples per engine/scenario, alternating AB/BA order for each pair, including CPU time to distinguish scheduler noise. Triggered by variable startup wall times in the initial three samples; no generation code was changed.',
+            'samples':samples, 'simple_statistics':simple_counts,
+            'independent_legacy_bounded':legacy_counts, 'independent_legacy_diagnostic':legacy_diagnostics}
+        args.output.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+'\n')
+        return
+
+    result = {'method':'Same Content and interpreter, sequential fresh processes. Three paired project/first-question samples; one exact count sample per engine/scenario. The 12s process deadline includes imports/load/analysis. Longer diagnostic counts are separate and are NOT evidence of meeting the 12s deadline. No extrapolation or approximate totals.',
+        'baseline_heads':{'Kotomi':'9f9161e0968c370a39b3de85ee3669d8ed21cffe',
+                          'Kotomi-Data':'f41bb61ed4f39fea39e170656b2c218d7a3497a1'},
+        'project':{}, 'quiz':{}, 'bounded_statistics':{}, 'diagnostic_statistics':{}}
+    engines = [('before',args.before_kotomi),('after',args.kotomi)]
+    selections = ('light','one','new','all','old_quiz','old_pattern')
+    def checkpoint():
+        previous = json.loads(args.output.read_text()) if args.output.exists() else {}
+        previous['counting_optimization'] = result
+        args.output.write_text(json.dumps(previous,ensure_ascii=False,indent=2)+'\n')
+    for name,_ in engines:
+        result['project'][name] = []
+        result['quiz'][name] = {key:[] for key in selections}
+        result['bounded_statistics'][name] = {}
+        result['diagnostic_statistics'][name] = {}
+    for repeat in range(3):
+        for name,code in engines:
+            print('project',repeat,name,flush=True)
+            result['project'][name].append(launch(code,'project'))
+            for selection in selections:
+                result['quiz'][name][selection].append(launch(code,'quiz',selection))
+        checkpoint()
+    for selection in selections:
+        for name,code in engines:
+            print('bounded',name,selection,flush=True)
+            row = launch(code,'count',selection,12)
+            result['bounded_statistics'][name][selection] = row
+            checkpoint()
+        if args.diagnostic_timeout:
+            for name,code in engines:
+                row = result['bounded_statistics'][name][selection]
+                if row.get('incomplete'):
+                    print('diagnostic',name,selection,flush=True)
+                    result['diagnostic_statistics'][name][selection] = launch(
+                        code,'count',selection,args.diagnostic_timeout)
+                    checkpoint()
+        counts=[]
+        for name,_ in engines:
+            row = result['diagnostic_statistics'][name].get(selection,
+                    result['bounded_statistics'][name][selection])
+            if 'statistics' in row:
+                counts.append(row['statistics'])
+        if len(counts)==2:
+            assert counts[0] == counts[1], (selection,counts)
+    checkpoint()
+
+
 if __name__ == '__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('kotomi','data','before-kotomi','before-data','main-data','output'):
         parser.add_argument('--'+name,type=Path)
-    parser.add_argument('--worker',choices=('project','quiz','count'))
+    parser.add_argument('--worker',choices=('project','quiz','count','fallback'))
     parser.add_argument('--selection',default='all')
     parser.add_argument('--omit-new',action='store_true')
+    parser.add_argument('--optimization',action='store_true')
+    parser.add_argument('--startup-recheck',action='store_true')
+    parser.add_argument('--diagnostic-timeout',type=float,default=0)
     args=parser.parse_args()
-    worker(args) if args.worker else main(args)
+    worker(args) if args.worker else (optimization(args) if args.optimization else main(args))

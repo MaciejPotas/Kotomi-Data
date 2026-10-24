@@ -959,12 +959,17 @@ class GrammarQuizEngine:
                         settings, combination.pattern_id, analysis, rules,
                     )
                 choice_scope = scopes[combination.pattern_id]
-                for preview in iter_quiz_previews(
-                    self.shared_engine,
-                    combination.pattern_id,
-                    form_name=combination.rule.target_form,
-                    choice_scope=choice_scope,
-                ):
+                counted = getattr(self.shared_engine, "iter_counted_previews", None)
+                if counted is not None and not rules:
+                    previews = counted(combination.pattern_id,
+                        form_name=combination.rule.target_form, choice_scope=choice_scope)
+                else:
+                    # Older application hosts and post-render word filters keep
+                    # the original exact path, including fixed-slot filtering.
+                    previews = ((preview, 1, {}) for preview in iter_quiz_previews(
+                        self.shared_engine, combination.pattern_id,
+                        form_name=combination.rule.target_form, choice_scope=choice_scope))
+                for preview, multiplicity, independent_entities in previews:
                     matches = True
                     for slot in analysis.word_slots:
                         dictionary = analysis.slots[slot].dictionary
@@ -995,9 +1000,10 @@ class GrammarQuizEngine:
                             matches = False
                             break
                     if matches:
-                        possible += 1
+                        possible += multiplicity
                         selections = preview.words if analysis.focus_slot else preview.entities
-                        eligible_words.add((main_dictionary, selections[main_slot]))
+                        eligible_words.update((main_dictionary, value) for value in
+                            independent_entities.get(main_slot, (selections[main_slot],)))
         return {
             "possible": possible,
             "active_patterns": len(active_patterns),

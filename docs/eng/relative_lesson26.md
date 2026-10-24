@@ -127,3 +127,41 @@ Reproduce optional probes with `tools/benchmark_relative_lesson26_review.py` and
 ### Remaining limitations
 
 Negative forms of “Liczba osób” currently have no compatible binding and are filtered out; affirmative nonpast/past are checked. This was already present at the initial PR head. Existing lexical choices such as `iku` “idzie” and `kuru` “przychodzi” can sound literal with country destinations. They were not silently changed to other travel verbs. General modal placement, grammatical person, existential relatives and arbitrary three-argument compositions remain outside scope. These cosmetic changes do not claim exhaustive linguistic validation of every Cartesian combination.
+
+
+## Exact-count performance follow-up
+
+The earlier review measurements above are historical. Profiling 5,000 previews of the large identity pattern took 11.61 s under cProfile: about 6.27 s in solver enumeration and 4.80 s in complete preview rendering (nested costs overlap). Grammar statistics enumerated the full product of noun choices and rendered both languages for every binding. `has_possible_question()` needs only a first witness. Increasing the deadline would not remove this work.
+
+`iter_counted_possibilities()` fixes word selections and factors only noun domains proven independent by the existing realization plan and transitive alias dependencies. Each dimension is enumerated with the original solver and renderer while other choices are fixed. Coupled noun choices remain enumerated; each representative carries an exact multiplicity and the complete factored entity IDs for the eligible-word metric. Contexts still count separately, even when text is identical. Quiz totals are additive by pattern/form, as before. There is no sentence cache, result cache or approximate count to invalidate.
+
+The canonical per-form solver/rendering loop is extracted into `_iter_form_possibilities()` and reused, avoiding repeated global form discovery for already validated forms. `SharedQuizEngine.iter_counted_previews()` exposes this path to `GrammarQuizEngine.statistics()` on both hosts. Older hosts and post-render word filters keep the original path. Counters/quantity constructions, cross-noun dependencies, unbound dynamic forms, single-noun patterns and word products above 256 retain exact enumeration where factoring is inapplicable. The 256 guard chooses the algorithm, never limits the answer. No grammar/DSL/selection rule or lexical/pattern XML changes.
+
+`count_possibilities()` in the Simulator still enumerates: its distinct question/answer/vocabulary and connection metrics cannot be replaced by binding multiplication. Expensive fallbacks therefore remain possible. Windows and Mobile already run explicit statistics through their calculation/progress facilities; opening or starting a quiz continues to use the early-exit feasibility path. Selection/settings changes invoke a fresh count.
+
+| Scenario | Exact count before = after | Before | After |
+|---|---:|---:|---:|
+| Small travel pattern | 3 | 4.9 ms | 13.6 ms |
+| Large identity pattern | 71,936 | 50.584 s | 7.644 s |
+| All 21 new patterns | 142,591 | 98.521 s | 43.582 s |
+| Complete relative quiz | 182,651 | 89.495 s | 34.842 s |
+| Existing “Trzy lubiane rzeczy” | 729,000 | 158.210 s | 68.5 ms |
+| Existing simple verb pattern | 2,480 | 233.8 ms | 258.8 ms |
+| Existing subject-relative pattern (three-sample median) | 6,480 | 1.125 s | 1.280 s |
+| Existing full Grammar quiz | not obtained | >180 s | >180 s |
+
+Long before/after totals are separate diagnostic runs, not passes of the 12-second gate. The identity and old three-noun patterns now complete within that gate; all-new/full-relative selections still do not. The old full Grammar quiz remains an unresolved enumeration bottleneck, with no partial total published. This is a general optimization, demonstrated on a pre-existing non-relative pattern, not a lesson-ID exception.
+
+Initial cold medians: load 200.7 → 169.1 ms; validation 7.362 → 7.969 s. These paths were not optimized. Startup measurements were variable, so nine further fresh-process AB/BA pairs were recorded: first-question medians one/all-new/full-relative **30.3 → 34.3 / 53.5 → 63.0 / 59.6 → 65.0 ms**. The ranges overlap (for full-relative: 50.8–82.5 / 58.1–79.8 ms), but the higher medians are reported, not hidden as a speedup or proof of zero latency regression. First-generation code is unchanged; seeded complete questions and RNG state match. The slower old-pattern single samples prompted a same-process, alternating five-pair comparison: canonical 1.386 s, weighted fallback 1.400 s, identical 6,480 counts, about 1% dispatch overhead. All raw measurements remain in the existing JSON report; these local observations are not a device latency guarantee.
+
+Local verification: 1,179 application tests plus 356 subtests passed; 16 native Tk tests skipped without a display. Data validation and question-pattern validation passed; 133 Data tests ran, seven skipped. The release comparison preserved 76 legacy full pairs; every XML file remains unchanged against the pre-optimization heads. Full Windows CI is linked from the PR; OS DPI/physical-device validation remains manual.
+
+Run from the Content repository using the existing `tools/benchmark_relative_lesson26_review.py --optimization --before-kotomi BEFORE --kotomi AFTER --data CONTENT --diagnostic-timeout 180 --output docs/validation/relative_lesson26_review_performance.json`. All paths must name separate matching checkouts. The optional 180-second diagnostic is separate from the unchanged 12-second process deadline. Three alternating fresh-process project/first-question samples and one count per scenario use identical Content/interpreter; no concurrent benchmarks. Loading, validation, analysis, statistics and generation are reported separately. No performance threshold is added to CI.
+
+Independent bounded fixtures compare expanded weighted bindings against full canonical enumeration, complete representative PL/JA pairs, duplicated text/contexts, four forms, fixed progressive/desiderative forms, multiple arguments, government/agreement, counters, compositions, filters, settings changes, entity/form mutations, old-host fallback and a non-relative noun quiz. A deterministic assertion verifies fewer renderer calls, without timing hardware. Existing engine, quiz, progress and Mobile regression tests remain authoritative. The existing release comparison also checks legacy pairs and unchanged XML; production latency is measured only by the optional release tool, never copied into unit fixtures.
+
+## Windows quiz setup layout
+
+`SpecializedQuizSetupDialog` serves Grammar (including all relative patterns), verbs, adjectives and availability. Its existing notebook now has bounded `VerticalScrolledFrame` pages for settings, forms and patterns, with local mouse-wheel bindings and wrapping checkbox labels. An independent footer row keeps action buttons outside scrolling content. The lesson launcher, conjugation and sentence setup use the same 720×650 initial size, resizable weighted body and fixed footer; the existing monitor-work-area clamp remains in use. Conjugation reuses the same viewport; sentence setup retains its existing scrolling PatternPicker and form Listboxes. Settings serialization and selection rules are unchanged; Mobile layout is untouched.
+
+`test_quiz_setup_scrolling.py` uses synthetic v1 settings and real Tk widgets: 23 patterns, 35 forms, one-pattern case, wheel/end-of-list selection, resize, footer bounds and settings round-trip. It also covers lesson setup dialogs. Font scales 100/125/150% are tested when a display is available. Headless environments skip these native tests, rather than claiming visual coverage from fake controls. Manual Windows checks at 1366×768 and Full HD, 125/150% OS scaling and monitor/taskbar combinations remain necessary: Tk font scaling is not a substitute for per-monitor DPI testing.
