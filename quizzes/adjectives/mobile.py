@@ -1859,7 +1859,13 @@ def create_app_class():
         def reload_engine(self) -> bool:
             try:
                 if self.engine is None:
-                    self.engine = AdjectiveQuizEngine(self.project_path, language_context=self.language_context)
+                    kwargs = {"language_context": self.language_context}
+                    project = getattr(self, "preloaded_project", None)
+                    if project is not None:
+                        kwargs["project"] = project
+                    self.engine = AdjectiveQuizEngine(self.project_path, **kwargs)
+                    if project is not None:
+                        del self.preloaded_project
                 else:
                     self.engine.reload()
                 self.engine_error = ""

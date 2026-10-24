@@ -323,6 +323,11 @@ def create_app_class(policy: object = None):
         """Translate mobile chrome using the launcher-selected language."""
         return mobile_text(quiz_app(), key, **values)
 
+    def pattern_label(name: str) -> str:
+        key = f"specialized.pattern.{name}"
+        translated = tr(key)
+        return pattern_labels.get(name, name) if translated == key else translated
+
     def mode_label(_mode: str) -> str:
         return tr("specialized.mode.write_japanese")
 
@@ -343,7 +348,7 @@ def create_app_class(policy: object = None):
             for name in settings.enabled_forms
         )
         patterns = ", ".join(
-            tr(f"specialized.pattern.{name}")
+            pattern_label(name)
             for name in settings.enabled_patterns
         )
         lines = [
@@ -832,7 +837,7 @@ def create_app_class(policy: object = None):
             self._section(tr("specialized.tab.patterns"))
             for pattern_id, label_text in pattern_labels.items():
                 row, checkbox = setting_row(
-                    tr(f"specialized.pattern.{pattern_id}"),
+                    pattern_label(pattern_id),
                     True,
                     lambda _value: None,
                 )

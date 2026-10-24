@@ -1,5 +1,7 @@
 # Relative clauses in Content
 
+Lesson 26 families: [scope and limitations](relative_lesson26.md).
+
 The current engine includes B3 and universal target C3.2. This document preserves a historical stage; check current references and completeness with the [audit tools](developer_tools.md).
 
 Content revision 59 adds one `Zdania przydawkowe` pattern in category

@@ -1,0 +1,1647 @@
+{
+  "method": "Opt-in bounded before/after release comparison, not a unit fixture.\n\nReads the declared Content graph because release compatibility cannot be proven\nfrom independent vocabulary. At most four previews for each of 18 representative\nlegacy families plus four forced reflexive questions; never enumerates choices.\n",
+  "unchanged_full_pairs": [
+    {
+      "pattern": "Zdania przydawkowe",
+      "form": "dictionary",
+      "pair": [
+        "To jest pudełko, które otwieram.",
+        "これはわたしがひらくはこです。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "hiraku"
+        },
+        "entity_choices": {
+          "noun@item": "box"
+        },
+        "form_overrides": {
+          "verb@action": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Zdania przydawkowe",
+      "form": "plain_negative",
+      "pair": [
+        "To jest pudełko, którego nie otwieram.",
+        "これはわたしがひらかないはこです。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "hiraku"
+        },
+        "entity_choices": {
+          "noun@item": "box"
+        },
+        "form_overrides": {
+          "verb@action": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Zdania przydawkowe",
+      "form": "past_plain",
+      "pair": [
+        "To jest pudełko, które otworzyłem.",
+        "これはわたしがひらいたはこです。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "hiraku"
+        },
+        "entity_choices": {
+          "noun@item": "box"
+        },
+        "form_overrides": {
+          "verb@action": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Zdania przydawkowe",
+      "form": "past_negative_plain",
+      "pair": [
+        "To jest pudełko, którego nie otworzyłem.",
+        "これはわたしがひらかなかったはこです。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "hiraku"
+        },
+        "entity_choices": {
+          "noun@item": "box"
+        },
+        "form_overrides": {
+          "verb@action": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Zdania przydawkowe podmiotowe",
+      "form": "dictionary",
+      "pair": [
+        "To jest programista, który pisze.",
+        "これはかくプログラマーです。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "kaku"
+        },
+        "entity_choices": {
+          "noun@item": "programmer"
+        },
+        "form_overrides": {
+          "verb@action": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Zdania przydawkowe podmiotowe",
+      "form": "plain_negative",
+      "pair": [
+        "To jest programista, który nie pisze.",
+        "これはかかないプログラマーです。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "kaku"
+        },
+        "entity_choices": {
+          "noun@item": "programmer"
+        },
+        "form_overrides": {
+          "verb@action": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Zdania przydawkowe podmiotowe",
+      "form": "past_plain",
+      "pair": [
+        "To jest programista, który pisał.",
+        "これはかいたプログラマーです。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "kaku"
+        },
+        "entity_choices": {
+          "noun@item": "programmer"
+        },
+        "form_overrides": {
+          "verb@action": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Zdania przydawkowe podmiotowe",
+      "form": "past_negative_plain",
+      "pair": [
+        "To jest programista, który nie pisał.",
+        "これはかかなかったプログラマーです。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "kaku"
+        },
+        "entity_choices": {
+          "noun@item": "programmer"
+        },
+        "form_overrides": {
+          "verb@action": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Sam czasownik",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie piję.",
+        "まいにち、のむ"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb": "nomu"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Sam czasownik",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie piję.",
+        "まいにち、のまない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb": "nomu"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Sam czasownik",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj piłem.",
+        "おととい、のんだ"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb": "nomu"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Sam czasownik",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie piłem.",
+        "おととい、のまなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb": "nomu"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Czasownik z target",
+      "form": "dictionary",
+      "pair": [
+        "podaję przyjacielowi.",
+        "ともだちにわたす。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "watasu"
+        },
+        "entity_choices": {
+          "noun@target": "friend"
+        },
+        "form_overrides": {
+          "verb@action": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Czasownik z target",
+      "form": "plain_negative",
+      "pair": [
+        "nie podaję przyjacielowi.",
+        "ともだちにわたさない。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "watasu"
+        },
+        "entity_choices": {
+          "noun@target": "friend"
+        },
+        "form_overrides": {
+          "verb@action": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Czasownik z target",
+      "form": "past_plain",
+      "pair": [
+        "podałem przyjacielowi.",
+        "ともだちにわたした。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "watasu"
+        },
+        "entity_choices": {
+          "noun@target": "friend"
+        },
+        "form_overrides": {
+          "verb@action": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Czasownik z target",
+      "form": "past_negative_plain",
+      "pair": [
+        "nie podałem przyjacielowi.",
+        "ともだちにわたさなかった。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@action": "watasu"
+        },
+        "entity_choices": {
+          "noun@target": "friend"
+        },
+        "form_overrides": {
+          "verb@action": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Czasownik z dopełnieniem",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie płacę pieniądze.",
+        "まいにち、おかねをはらう"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:object]": "harau"
+        },
+        "entity_choices": {
+          "noun": "okane"
+        },
+        "form_overrides": {
+          "verb[role:object]": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Czasownik z dopełnieniem",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie płacę pieniędzy.",
+        "まいにち、おかねをはらわない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:object]": "harau"
+        },
+        "entity_choices": {
+          "noun": "okane"
+        },
+        "form_overrides": {
+          "verb[role:object]": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Czasownik z dopełnieniem",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj zapłaciłem pieniądze.",
+        "おととい、おかねをはらった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:object]": "harau"
+        },
+        "entity_choices": {
+          "noun": "okane"
+        },
+        "form_overrides": {
+          "verb[role:object]": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Czasownik z dopełnieniem",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie zapłaciłem pieniędzy.",
+        "おととい、おかねをはらわなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:object]": "harau"
+        },
+        "entity_choices": {
+          "noun": "okane"
+        },
+        "form_overrides": {
+          "verb[role:object]": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Opisane dopełnienie",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie płacę wysokie pieniądze.",
+        "まいにち、たかいおかねをはらう"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:object]": "harau",
+          "adjective@modifier": "takai"
+        },
+        "entity_choices": {
+          "noun@object": "okane"
+        },
+        "form_overrides": {
+          "verb[role:object]": "dictionary",
+          "adjective@modifier": "attributive_nonpast"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Opisane dopełnienie",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie płacę wysokich pieniędzy.",
+        "まいにち、たかいおかねをはらわない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:object]": "harau",
+          "adjective@modifier": "takai"
+        },
+        "entity_choices": {
+          "noun@object": "okane"
+        },
+        "form_overrides": {
+          "verb[role:object]": "plain_negative",
+          "adjective@modifier": "attributive_nonpast"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Opisane dopełnienie",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj zapłaciłem wysokie pieniądze.",
+        "おととい、たかいおかねをはらった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:object]": "harau",
+          "adjective@modifier": "takai"
+        },
+        "entity_choices": {
+          "noun@object": "okane"
+        },
+        "form_overrides": {
+          "verb[role:object]": "past_plain",
+          "adjective@modifier": "attributive_nonpast"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Opisane dopełnienie",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie zapłaciłem wysokich pieniędzy.",
+        "おととい、たかいおかねをはらわなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:object]": "harau",
+          "adjective@modifier": "takai"
+        },
+        "entity_choices": {
+          "noun@object": "okane"
+        },
+        "form_overrides": {
+          "verb[role:object]": "past_negative_plain",
+          "adjective@modifier": "attributive_nonpast"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Cel ruchu",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie wracam do miejsca.",
+        "まいにち、ところへかえる"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:destination]": "kaeru"
+        },
+        "entity_choices": {
+          "noun": "tokoro"
+        },
+        "form_overrides": {
+          "verb[role:destination]": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Cel ruchu",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie wracam do miejsca.",
+        "まいにち、ところへかえらない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:destination]": "kaeru"
+        },
+        "entity_choices": {
+          "noun": "tokoro"
+        },
+        "form_overrides": {
+          "verb[role:destination]": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Cel ruchu",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj wróciłem do miejsca.",
+        "おととい、ところへかえった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:destination]": "kaeru"
+        },
+        "entity_choices": {
+          "noun": "tokoro"
+        },
+        "form_overrides": {
+          "verb[role:destination]": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Cel ruchu",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie wróciłem do miejsca.",
+        "おととい、ところへかえらなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:destination]": "kaeru"
+        },
+        "entity_choices": {
+          "noun": "tokoro"
+        },
+        "form_overrides": {
+          "verb[role:destination]": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Towarzysz",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie rozmawiam z nauczycielem.",
+        "まいにち、せんせいとはなす"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:companion]": "hanasu"
+        },
+        "entity_choices": {
+          "noun": "teacher"
+        },
+        "form_overrides": {
+          "verb[role:companion]": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Towarzysz",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie rozmawiam z nauczycielem.",
+        "まいにち、せんせいとはなさない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:companion]": "hanasu"
+        },
+        "entity_choices": {
+          "noun": "teacher"
+        },
+        "form_overrides": {
+          "verb[role:companion]": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Towarzysz",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj rozmawiałem z nauczycielem.",
+        "おととい、せんせいとはなした"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:companion]": "hanasu"
+        },
+        "entity_choices": {
+          "noun": "teacher"
+        },
+        "form_overrides": {
+          "verb[role:companion]": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Towarzysz",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie rozmawiałem z nauczycielem.",
+        "おととい、せんせいとはなさなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:companion]": "hanasu"
+        },
+        "entity_choices": {
+          "noun": "teacher"
+        },
+        "form_overrides": {
+          "verb[role:companion]": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Miejsce czynności",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie rozmawiam w hotelu.",
+        "まいにち、ホテルではなす"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:location]": "hanasu"
+        },
+        "entity_choices": {
+          "noun": "hotel"
+        },
+        "form_overrides": {
+          "verb[role:location]": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Miejsce czynności",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie rozmawiam w hotelu.",
+        "まいにち、ホテルではなさない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:location]": "hanasu"
+        },
+        "entity_choices": {
+          "noun": "hotel"
+        },
+        "form_overrides": {
+          "verb[role:location]": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Miejsce czynności",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj rozmawiałem w hotelu.",
+        "おととい、ホテルではなした"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:location]": "hanasu"
+        },
+        "entity_choices": {
+          "noun": "hotel"
+        },
+        "form_overrides": {
+          "verb[role:location]": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Miejsce czynności",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie rozmawiałem w hotelu.",
+        "おととい、ホテルではなさなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:location]": "hanasu"
+        },
+        "entity_choices": {
+          "noun": "hotel"
+        },
+        "form_overrides": {
+          "verb[role:location]": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Środek transportu",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie jadę łodzią.",
+        "まいにち、ふねにのる"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:vehicle]": "noru"
+        },
+        "entity_choices": {
+          "noun": "fune"
+        },
+        "form_overrides": {
+          "verb[role:vehicle]": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Środek transportu",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie jadę łodzią.",
+        "まいにち、ふねにのらない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:vehicle]": "noru"
+        },
+        "entity_choices": {
+          "noun": "fune"
+        },
+        "form_overrides": {
+          "verb[role:vehicle]": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Środek transportu",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj jechałem łodzią.",
+        "おととい、ふねにのった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:vehicle]": "noru"
+        },
+        "entity_choices": {
+          "noun": "fune"
+        },
+        "form_overrides": {
+          "verb[role:vehicle]": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Środek transportu",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie jechałem łodzią.",
+        "おととい、ふねにのらなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:vehicle]": "noru"
+        },
+        "entity_choices": {
+          "noun": "fune"
+        },
+        "form_overrides": {
+          "verb[role:vehicle]": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Przed inną czynnością",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie płacę pieniądze, zanim zamyka się.",
+        "まいにち、しまるまえにおかねをはらう"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "harau",
+          "verb": "shimaru"
+        },
+        "entity_choices": {
+          "noun": "okane"
+        },
+        "form_overrides": {
+          "verb@main": "dictionary",
+          "verb": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Przed inną czynnością",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie płacę pieniędzy, zanim zamyka się.",
+        "まいにち、しまるまえにおかねをはらわない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "harau",
+          "verb": "shimaru"
+        },
+        "entity_choices": {
+          "noun": "okane"
+        },
+        "form_overrides": {
+          "verb@main": "plain_negative",
+          "verb": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Przed inną czynnością",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj zapłaciłem pieniądze, zanim zamknęło się.",
+        "おととい、しまるまえにおかねをはらった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "harau",
+          "verb": "shimaru"
+        },
+        "entity_choices": {
+          "noun": "okane"
+        },
+        "form_overrides": {
+          "verb@main": "past_plain",
+          "verb": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Przed inną czynnością",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie zapłaciłem pieniędzy, zanim zamknęło się.",
+        "おととい、しまるまえにおかねをはらわなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "harau",
+          "verb": "shimaru"
+        },
+        "entity_choices": {
+          "noun": "okane"
+        },
+        "form_overrides": {
+          "verb@main": "past_negative_plain",
+          "verb": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Możliwość ことができる / Cel ruchu",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie mogę biec na plażę.",
+        "まいにち、かいがんへはしることができる"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "dekiru",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@main": "dictionary",
+          "verb@embedded_verb": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Możliwość ことができる / Cel ruchu",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie mogę biec na plażę.",
+        "まいにち、かいがんへはしることができない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "dekiru",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@main": "plain_negative",
+          "verb@embedded_verb": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Możliwość ことができる / Cel ruchu",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj mogłem biec na plażę.",
+        "おととい、かいがんへはしることができた"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "dekiru",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@main": "past_plain",
+          "verb@embedded_verb": "dictionary"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Możliwość ことができる / Cel ruchu",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie mogłem biec na plażę.",
+        "おととい、かいがんへはしることができなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "dekiru",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@main": "past_negative_plain",
+          "verb@embedded_verb": "dictionary"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Czynność w toku 〜ている / Cel ruchu",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie biegnę na plażę.",
+        "まいにち、かいがんへはしっている"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "iru",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@main": "dictionary",
+          "verb@embedded_verb": "te_form"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Czynność w toku 〜ている / Cel ruchu",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie biegnę na plażę.",
+        "まいにち、かいがんへはしっていない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "iru",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@main": "plain_negative",
+          "verb@embedded_verb": "te_form"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Czynność w toku 〜ている / Cel ruchu",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj biegłem na plażę.",
+        "おととい、かいがんへはしっていた"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "iru",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@main": "past_plain",
+          "verb@embedded_verb": "te_form"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Czynność w toku 〜ている / Cel ruchu",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie biegłem na plażę.",
+        "おととい、かいがんへはしっていなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@main": "iru",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@main": "past_negative_plain",
+          "verb@embedded_verb": "te_form"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Pytanie o miejsce",
+      "form": "dictionary",
+      "pair": [
+        "Gdzie codziennie sprzątam?",
+        "まいにち、どこでそうじするの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[asks_for:place]": "doko",
+          "verb[role:location]": "soujisuru"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb[role:location]": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Pytanie o miejsce",
+      "form": "plain_negative",
+      "pair": [
+        "Gdzie codziennie nie sprzątam?",
+        "まいにち、どこでそうじしないの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[asks_for:place]": "doko",
+          "verb[role:location]": "soujisuru"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb[role:location]": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Pytanie o miejsce",
+      "form": "past_plain",
+      "pair": [
+        "Gdzie przedwczoraj posprzątałem?",
+        "おととい、どこでそうじしたの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[asks_for:place]": "doko",
+          "verb[role:location]": "soujisuru"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb[role:location]": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Pytanie o miejsce",
+      "form": "past_negative_plain",
+      "pair": [
+        "Gdzie przedwczoraj nie posprzątałem?",
+        "おととい、どこでそうじしなかったの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[asks_for:place]": "doko",
+          "verb[role:location]": "soujisuru"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb[role:location]": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Pytanie kiedy / Cel ruchu",
+      "form": "dictionary",
+      "pair": [
+        "Kiedy biegnę na plażę?",
+        "いつかいがんへはしるの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[id:itsu]": "itsu",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@embedded_verb": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Pytanie kiedy / Cel ruchu",
+      "form": "plain_negative",
+      "pair": [
+        "Kiedy nie biegnę na plażę?",
+        "いつかいがんへはしらないの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[id:itsu]": "itsu",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@embedded_verb": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Pytanie kiedy / Cel ruchu",
+      "form": "past_plain",
+      "pair": [
+        "Kiedy biegłem na plażę?",
+        "いつかいがんへはしったの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[id:itsu]": "itsu",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@embedded_verb": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Pytanie kiedy / Cel ruchu",
+      "form": "past_negative_plain",
+      "pair": [
+        "Kiedy nie biegłem na plażę?",
+        "いつかいがんへはしらなかったの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[id:itsu]": "itsu",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@embedded_verb": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Pytanie dlaczego / Cel ruchu",
+      "form": "dictionary",
+      "pair": [
+        "Dlaczego codziennie biegnę na plażę?",
+        "まいにち、どうしてかいがんへはしるの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[asks_for:reason]": "doushite",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@embedded_verb": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Pytanie dlaczego / Cel ruchu",
+      "form": "plain_negative",
+      "pair": [
+        "Dlaczego codziennie nie biegnę na plażę?",
+        "まいにち、どうしてかいがんへはしらないの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[asks_for:reason]": "doushite",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@embedded_verb": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Pytanie dlaczego / Cel ruchu",
+      "form": "past_plain",
+      "pair": [
+        "Dlaczego przedwczoraj biegłem na plażę?",
+        "おととい、どうしてかいがんへはしったの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[asks_for:reason]": "doushite",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@embedded_verb": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Pytanie dlaczego / Cel ruchu",
+      "form": "past_negative_plain",
+      "pair": [
+        "Dlaczego przedwczoraj nie biegłem na plażę?",
+        "おととい、どうしてかいがんへはしらなかったの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "interrogative[asks_for:reason]": "doushite",
+          "verb@embedded_verb": "hashiru"
+        },
+        "entity_choices": {
+          "noun@embedded_noun": "kaigan"
+        },
+        "form_overrides": {
+          "verb@embedded_verb": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Łącznik だから",
+      "form": "dictionary",
+      "pair": [
+        "zamyka się, dlatego buduję.",
+        "しまる。だから、たてる。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "connector[id:dakara]": "dakara",
+          "verb@first": "shimaru",
+          "verb@second": "tateru"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb@first": "dictionary",
+          "verb@second": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Łącznik だから",
+      "form": "plain_negative",
+      "pair": [
+        "nie zamyka się, dlatego nie buduję.",
+        "しまらない。だから、たてない。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "connector[id:dakara]": "dakara",
+          "verb@first": "shimaru",
+          "verb@second": "tateru"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb@first": "plain_negative",
+          "verb@second": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Łącznik だから",
+      "form": "past_plain",
+      "pair": [
+        "zamknęło się, dlatego budowałem.",
+        "しまった。だから、たてた。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "connector[id:dakara]": "dakara",
+          "verb@first": "shimaru",
+          "verb@second": "tateru"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb@first": "past_plain",
+          "verb@second": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Łącznik だから",
+      "form": "past_negative_plain",
+      "pair": [
+        "nie zamknęło się, dlatego nie budowałem.",
+        "しまらなかった。だから、たてなかった。"
+      ],
+      "bindings": {
+        "word_choices": {
+          "connector[id:dakara]": "dakara",
+          "verb@first": "shimaru",
+          "verb@second": "tateru"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb@first": "past_negative_plain",
+          "verb@second": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Reakcja na przyczynę",
+      "form": "dictionary",
+      "pair": [
+        "Codziennie jestem zaskoczony opowieścią.",
+        "まいにち、はなしにおどろく"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:reaction_target]": "odoroku"
+        },
+        "entity_choices": {
+          "noun": "hanashi"
+        },
+        "form_overrides": {
+          "verb[role:reaction_target]": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Reakcja na przyczynę",
+      "form": "plain_negative",
+      "pair": [
+        "Codziennie nie jestem zaskoczony opowieścią.",
+        "まいにち、はなしにおどろかない"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:reaction_target]": "odoroku"
+        },
+        "entity_choices": {
+          "noun": "hanashi"
+        },
+        "form_overrides": {
+          "verb[role:reaction_target]": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Reakcja na przyczynę",
+      "form": "past_plain",
+      "pair": [
+        "Przedwczoraj byłem zaskoczony opowieścią.",
+        "おととい、はなしにおどろいた"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:reaction_target]": "odoroku"
+        },
+        "entity_choices": {
+          "noun": "hanashi"
+        },
+        "form_overrides": {
+          "verb[role:reaction_target]": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Reakcja na przyczynę",
+      "form": "past_negative_plain",
+      "pair": [
+        "Przedwczoraj nie byłem zaskoczony opowieścią.",
+        "おととい、はなしにおどろかなかった"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb[role:reaction_target]": "odoroku"
+        },
+        "entity_choices": {
+          "noun": "hanashi"
+        },
+        "form_overrides": {
+          "verb[role:reaction_target]": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Pytanie kiedy / Sam czasownik",
+      "form": "dictionary",
+      "pair": [
+        "Kiedy się bawię?",
+        "いつあそぶの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@embedded_verb": "asobu",
+          "interrogative[id:itsu]": "itsu"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb@embedded_verb": "dictionary"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Pytanie kiedy / Sam czasownik",
+      "form": "plain_negative",
+      "pair": [
+        "Kiedy się nie bawię?",
+        "いつあそばないの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@embedded_verb": "asobu",
+          "interrogative[id:itsu]": "itsu"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb@embedded_verb": "plain_negative"
+        },
+        "context_pool": "present",
+        "context_option": "every_day"
+      }
+    },
+    {
+      "pattern": "Pytanie kiedy / Sam czasownik",
+      "form": "past_plain",
+      "pair": [
+        "Kiedy się bawiłem?",
+        "いつあそんだの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@embedded_verb": "asobu",
+          "interrogative[id:itsu]": "itsu"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb@embedded_verb": "past_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    },
+    {
+      "pattern": "Pytanie kiedy / Sam czasownik",
+      "form": "past_negative_plain",
+      "pair": [
+        "Kiedy się nie bawiłem?",
+        "いつあそばなかったの？"
+      ],
+      "bindings": {
+        "word_choices": {
+          "verb@embedded_verb": "asobu",
+          "interrogative[id:itsu]": "itsu"
+        },
+        "entity_choices": {},
+        "form_overrides": {
+          "verb@embedded_verb": "past_negative_plain"
+        },
+        "context_pool": "past",
+        "context_option": "day_before_yesterday"
+      }
+    }
+  ],
+  "unchanged_xml_sha256": {
+    "dictionaries/adjectives.xml": "24d23adea0b50b0cb8fbfc36f1f58b7f0b59c350a5207653066bf06b7d9ba7fc",
+    "dictionaries/adverbs.xml": "141f8aaf07b9e21c3009d6f9c4dcc6683e54c3294a6926bd4727d90b090551be",
+    "dictionaries/connectors.xml": "e05a94f8dc32a7d5aa7770b53747f0856783d7206a7d7733403386ac3f5467d4",
+    "dictionaries/copulas.xml": "879da1c86c80d7b08372f1335bf35967cd9111d5e268825b58d2c60d07837d25",
+    "dictionaries/counters.xml": "dd03350253b859adb5d6d9f3b2981ee2bd2eac0f01fa4a8adf2af4659adf0e16",
+    "dictionaries/demonstratives.xml": "bb00b0fb6f1b193c91b4d8599cc78df4ceb76f2fdb8110142f8a069c3f20fe14",
+    "dictionaries/expressions.xml": "8919fb3be5dcdd5555d722759c28423148a274f791822b2fab6c6be4026e8beb",
+    "dictionaries/interrogatives.xml": "12f2a848c9786a40a0b30fbd1fae3a8b2698123f3fca3131c5a8705764fce3b0",
+    "dictionaries/nouns.xml": "0e7c32066631b661adcc2d059b102127bc14fee89ffb2c4efc68964d6e7d49b6",
+    "dictionaries/numbers.xml": "a67fe6a11c35fecdfd73a753aa4076ae5a593419ee3e9efb8dd75e6570208a95",
+    "dictionaries/verbs.xml": "68f748e30839c98d4e13efa483c36c90e8c6b92d6cc5dae6f22fef1d6f1f4ca9",
+    "grammar/contexts.xml": "a4a09bcb9ea672f9b4707839f78900842db17eb2abf899fc6594841666dfe0ae",
+    "grammar/counting.xml": "6b8d0d72a8203523e2471a85cf455d579f43f3c1f8d59a1b4afec9c49926b9d2",
+    "lessons/lessons.xml": "5116263ee74b4138d5e298f5b1bed89ae72c44d324da9a337c18ec8f4826d05f"
+  },
+  "old_pattern_definitions_unchanged": true,
+  "quiz_definition_unchanged": true
+}

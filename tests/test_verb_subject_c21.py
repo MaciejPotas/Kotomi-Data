@@ -32,6 +32,23 @@ class DeploymentTests(unittest.TestCase):
     def validate(self):
         return validate_deployment(self.root, self.report, self.selected)
 
+    def test_reviewed_extension_preserves_baseline_and_rejects_other_additions(self):
+        form = self.word.find('forms/form')
+        section = form.find('agreement_translations')
+        key = ('fixture_new', form.get('ref'))
+        ET.SubElement(section, 'translation', {'class': 'neuter', 'value': 'fixture quantity'})
+        with self.assertRaises(ValueError): self.validate()
+        kwargs = {'agreement_extensions': {key: {'neuter': 'fixture quantity'}}}
+        self.assertEqual(validate_deployment(self.root, self.report, self.selected, **kwargs), 9)
+        section[-1].set('value', 'wrong')
+        with self.assertRaises(ValueError):
+            validate_deployment(self.root, self.report, self.selected, **kwargs)
+        section[-1].set('value', 'fixture quantity')
+        original = section[0]
+        with self.assertRaises(ValueError):
+            validate_deployment(self.root, self.report, self.selected,
+                agreement_extensions={key: {original.get('class'): original.get('value')}})
+
     def test_valid_deployment_is_read_only(self):
         before = ET.tostring(self.root), deepcopy(self.report)
         self.assertEqual(self.validate(), 9)

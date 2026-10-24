@@ -4,10 +4,10 @@ import unittest
 import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 CASES = set('nominative genitive dative accusative instrumental locative vocative'.split())
-NON_COUNTABLE = set('gohan jikan music okane television naka oku ashita saisho detarame kikitori getsuyoubi kayoubi suiyoubi mokuyoubi kinyoubi doyoubi nichiyoubi'.split())
+NON_COUNTABLE = set('hi poland japan india wine kuni gohan jikan music okane television naka oku ashita saisho detarame kikitori getsuyoubi kayoubi suiyoubi mokuyoubi kinyoubi doyoubi nichiyoubi'.split())
 VERBS = set('dictionary polite_nonpast plain_negative polite_negative past_plain past_polite past_negative_plain past_negative_polite te_form potential passive causative tara volitional imperative'.split())
 ADJECTIVES = set('predicate_plain_nonpast predicate_polite_nonpast predicate_plain_negative predicate_polite_negative predicate_plain_past predicate_polite_past predicate_plain_past_negative predicate_polite_past_negative attributive_nonpast connective adverbial conditional nominalized appearance_sou excessive_sugiru'.split())
-NONPRODUCTIVE = {'aru_possessive': {'potential', 'passive', 'causative'}, 'aru_existential': {'potential', 'passive', 'causative'}, 'dekiru': {'potential', 'passive'}, 'mieru': {'potential', 'passive'}, 'chigau': {'passive'}, 'hareru': {'passive'}, 'kumoru': {'passive'}}
+NONPRODUCTIVE = {'umareru': {'passive'}, 'aru_possessive': {'potential', 'passive', 'causative'}, 'aru_existential': {'potential', 'passive', 'causative'}, 'dekiru': {'potential', 'passive'}, 'mieru': {'potential', 'passive'}, 'chigau': {'passive'}, 'hareru': {'passive'}, 'kumoru': {'passive'}}
 
 def words(name):
     return {w.get('id'): w for w in ET.parse(ROOT / 'dictionaries' / f'{name}.xml').findall('./words/word')}
@@ -46,7 +46,9 @@ class LexicalCompletenessTests(unittest.TestCase):
                 with self.subTest(dictionary=dictionary, word=identifier):
                     forms = {f.get('ref'): f for f in word.findall('./forms/form')}
                     excluded = NONPRODUCTIVE.get(identifier, set()) if dictionary == 'verbs' else set()
-                    self.assertEqual(set(forms), required - excluded)
+                    optional = {'progressive', 'desiderative'} if dictionary == 'verbs' else set()
+                    self.assertTrue(required - excluded <= set(forms))
+                    self.assertTrue(set(forms) <= (required - excluded) | optional)
                     for name, form in forms.items():
                         for field in ('kana', 'kanji', 'translation'):
                             self.assertTrue(form.get(field, '').strip(), (identifier, name, field))

@@ -159,3 +159,10 @@ Oba PR-y należy wdrożyć razem, bo starszy katalog gramatyki nie zna nowych kl
 - [Tofugu: counter つ](https://www.tofugu.com/japanese/japanese-counter-tsu/)
 - [Tofugu: zestawienie counterów](https://www.tofugu.com/japanese/japanese-counters-list/)
 - [Tae Kim: potencjał i あり得る](https://guidetojapanese.org/learn/complete/potential)
+
+
+## Uzupełnienie lekcji 26
+
+`tokoro`, `hotel`, `cake` i `watch` mają komplet form liczenia i istniejące klasy odpowiednio location, building, small_object i small_object. `poland`, `japan` i `india` to nazwy własne, nie liczone egzemplarze państw. `wine` oznacza wino jako substancję, bez dopisania jednostki kieliszka. `hi` to dzień kalendarzowy, a `kuni` to kraj; obecny katalog nie zawiera właściwych counterów dni i państw, dlatego pozostają jawnymi wyjątkami liczenia. Nie zastępujemy ich sztucznym counterem rzeczy.
+
+`progressive` i `desiderative` są opcjonalnymi formami leksykalnymi, dostępnymi tylko dla haseł z rzeczywistą realizacją. Nie wymaga się ich od całego słownika. `umareru` nie otrzymuje sztucznej formy biernej; potencjalna `生まれられる` pozostaje odrębną realizacją. `tomaru_stay` odróżnia nocowanie 泊まる od istniejącego zatrzymywania się 止まる.

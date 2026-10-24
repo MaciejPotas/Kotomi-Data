@@ -1,0 +1,190 @@
+{
+  "mobile": [
+    {
+      "selection": [
+        "Przydawki / Osoba i dopełnienie"
+      ],
+      "generated_pattern": "Przydawki / Osoba i dopełnienie"
+    },
+    {
+      "selection": [
+        "Przydawki / Pytanie o wykonawcę"
+      ],
+      "generated_pattern": "Przydawki / Pytanie o wykonawcę"
+    },
+    {
+      "selection": [
+        "Przydawki / Wybór przedmiotu"
+      ],
+      "generated_pattern": "Przydawki / Wybór przedmiotu"
+    },
+    {
+      "selection": [
+        "Przydawki / Wskazanie przedmiotu"
+      ],
+      "generated_pattern": "Przydawki / Wskazanie przedmiotu"
+    },
+    {
+      "selection": [
+        "Przydawki / Lokalizacja przedmiotu"
+      ],
+      "generated_pattern": "Przydawki / Lokalizacja przedmiotu"
+    },
+    {
+      "selection": [
+        "Przydawki / Miejsce czynności"
+      ],
+      "generated_pattern": "Przydawki / Miejsce czynności"
+    },
+    {
+      "selection": [
+        "Przydawki / Ocena miejsca"
+      ],
+      "generated_pattern": "Przydawki / Ocena miejsca"
+    },
+    {
+      "selection": [
+        "Przydawki / Miejsce zamieszkania"
+      ],
+      "generated_pattern": "Przydawki / Miejsce zamieszkania"
+    },
+    {
+      "selection": [
+        "Przydawki / Dzień czynności"
+      ],
+      "generated_pattern": "Przydawki / Dzień czynności"
+    },
+    {
+      "selection": [
+        "Przydawki / Pytanie o dzień"
+      ],
+      "generated_pattern": "Przydawki / Pytanie o dzień"
+    },
+    {
+      "selection": [
+        "Przydawki / Pragnienie spotkania"
+      ],
+      "generated_pattern": "Przydawki / Pragnienie spotkania"
+    },
+    {
+      "selection": [
+        "Przydawki / Pragnienie podróży"
+      ],
+      "generated_pattern": "Przydawki / Pragnienie podróży"
+    },
+    {
+      "selection": [
+        "Przydawki / Upodobanie"
+      ],
+      "generated_pattern": "Przydawki / Upodobanie"
+    },
+    {
+      "selection": [
+        "Przydawki / Pożądana rzecz"
+      ],
+      "generated_pattern": "Przydawki / Pożądana rzecz"
+    },
+    {
+      "selection": [
+        "Przydawki / Ocena przedmiotu"
+      ],
+      "generated_pattern": "Przydawki / Ocena przedmiotu"
+    },
+    {
+      "selection": [
+        "Przydawki / Opis osoby"
+      ],
+      "generated_pattern": "Przydawki / Opis osoby"
+    },
+    {
+      "selection": [
+        "Przydawki / Powód czynności"
+      ],
+      "generated_pattern": "Przydawki / Powód czynności"
+    },
+    {
+      "selection": [
+        "Przydawki / Liczba osób"
+      ],
+      "generated_pattern": "Przydawki / Liczba osób"
+    },
+    {
+      "selection": [
+        "Przydawki / Osoba i dopełnienie 〜ている"
+      ],
+      "generated_pattern": "Przydawki / Osoba i dopełnienie 〜ている"
+    },
+    {
+      "selection": [
+        "Przydawki / Pytanie o wykonawcę 〜ている"
+      ],
+      "generated_pattern": "Przydawki / Pytanie o wykonawcę 〜ている"
+    },
+    {
+      "selection": [
+        "Przydawki / Miejsce czynności 〜ている"
+      ],
+      "generated_pattern": "Przydawki / Miejsce czynności 〜ている"
+    },
+    {
+      "selection": [
+        "Przydawki / Osoba i dopełnienie",
+        "Przydawki / Pytanie o wykonawcę",
+        "Przydawki / Wybór przedmiotu",
+        "Przydawki / Wskazanie przedmiotu",
+        "Przydawki / Lokalizacja przedmiotu",
+        "Przydawki / Miejsce czynności",
+        "Przydawki / Ocena miejsca",
+        "Przydawki / Miejsce zamieszkania",
+        "Przydawki / Dzień czynności",
+        "Przydawki / Pytanie o dzień",
+        "Przydawki / Pragnienie spotkania",
+        "Przydawki / Pragnienie podróży",
+        "Przydawki / Upodobanie",
+        "Przydawki / Pożądana rzecz",
+        "Przydawki / Ocena przedmiotu",
+        "Przydawki / Opis osoby",
+        "Przydawki / Powód czynności",
+        "Przydawki / Liczba osób",
+        "Przydawki / Osoba i dopełnienie 〜ている",
+        "Przydawki / Pytanie o wykonawcę 〜ている",
+        "Przydawki / Miejsce czynności 〜ている"
+      ],
+      "generated_pattern": "Przydawki / Pytanie o wykonawcę"
+    },
+    {
+      "selection": [
+        "Zdania przydawkowe",
+        "Zdania przydawkowe podmiotowe",
+        "Przydawki / Osoba i dopełnienie",
+        "Przydawki / Pytanie o wykonawcę",
+        "Przydawki / Wybór przedmiotu",
+        "Przydawki / Wskazanie przedmiotu",
+        "Przydawki / Lokalizacja przedmiotu",
+        "Przydawki / Miejsce czynności",
+        "Przydawki / Ocena miejsca",
+        "Przydawki / Miejsce zamieszkania",
+        "Przydawki / Dzień czynności",
+        "Przydawki / Pytanie o dzień",
+        "Przydawki / Pragnienie spotkania",
+        "Przydawki / Pragnienie podróży",
+        "Przydawki / Upodobanie",
+        "Przydawki / Pożądana rzecz",
+        "Przydawki / Ocena przedmiotu",
+        "Przydawki / Opis osoby",
+        "Przydawki / Powód czynności",
+        "Przydawki / Liczba osób",
+        "Przydawki / Osoba i dopełnienie 〜ている",
+        "Przydawki / Pytanie o wykonawcę 〜ている",
+        "Przydawki / Miejsce czynności 〜ている"
+      ],
+      "generated_pattern": "Przydawki / Osoba i dopełnienie 〜ている"
+    }
+  ],
+  "simulator_exact_pairs": 43,
+  "settings_checks": [
+    "legacy selection and form/style settings round-trip unchanged",
+    "unsupported polite relative forms rejected"
+  ],
+  "limits": "Fake widgets and font. No native device UI or APK build. No full production Cartesian count."
+}
