@@ -44,7 +44,7 @@
     },
     {
       "id": "availability",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "quiz_api": 1,
       "min_app_version": "1.1.2",
       "kind": "python",
@@ -97,8 +97,8 @@
     },
     {
       "path": "apps/availability/app.json",
-      "sha256": "8d17812635ae506859ea092a8473f3fba2fecf12f3f153fb450ee9383a0511a4",
-      "url": "quizzes/availability/app.json?kotomi_sha256=8d17812635ae506859ea092a8473f3fba2fecf12f3f153fb450ee9383a0511a4"
+      "sha256": "9d5f227d56e143b9ac7e74136e28ff7bbbb92913d57727951eb3664b9b8a3179",
+      "url": "quizzes/availability/app.json?kotomi_sha256=9d5f227d56e143b9ac7e74136e28ff7bbbb92913d57727951eb3664b9b8a3179"
     },
     {
       "path": "apps/availability/logic.py",
@@ -107,8 +107,8 @@
     },
     {
       "path": "apps/availability/mobile.py",
-      "sha256": "0eb39f2a63449dcecbb819abd5c3e9480237a883f95bf5eaf5eb4bdfc9feae97",
-      "url": "quizzes/availability/mobile.py?kotomi_sha256=0eb39f2a63449dcecbb819abd5c3e9480237a883f95bf5eaf5eb4bdfc9feae97"
+      "sha256": "08f3b56fb39fee01a174f1ad53c13ea4c013ff8f2e2e8e613ce4c27b0d1d8d89",
+      "url": "quizzes/availability/mobile.py?kotomi_sha256=08f3b56fb39fee01a174f1ad53c13ea4c013ff8f2e2e8e613ce4c27b0d1d8d89"
     },
     {
       "path": "apps/grammar/Kotomi_grammar.py",
