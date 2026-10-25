@@ -1,8 +1,8 @@
 {
   "id": "grammar",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "quiz_api": 1,
-  "min_app_version": "1.1.2",
+  "min_app_version": "1.1.3",
   "kind": "python",
   "title": "Gramatyka",
   "description": "Quizy zdań utworzone w Quiz Studio",

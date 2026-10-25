@@ -602,6 +602,13 @@ class GrammarQuizEngine:
     def build_combinations(
         self, settings: GrammarQuizSettings
     ) -> List[GenerationCombination]:
+        cache = getattr(self, "precalculation", None)
+        if cache is not None:
+            return cache.combinations(self, settings, GenerationCombination, GenerationRule,
+                                      self._build_combinations)
+        return self._build_combinations(settings)
+
+    def _build_combinations(self, settings: GrammarQuizSettings) -> List[GenerationCombination]:
         combinations: List[GenerationCombination] = []
         for selected_id in settings.enabled_patterns:
             for pattern_id in self.pattern_expansions.get(

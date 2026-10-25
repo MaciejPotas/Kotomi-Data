@@ -75,6 +75,7 @@ except ModuleNotFoundError as missing:
         def close(self) -> None:
             self.closed = True
 from kotomi.core.generation.progress import report_progress
+from platforms.mobile.navigation_timing import NavigationTiming
 from platforms.mobile.quiz_preflight import check_quiz_grammar
 try:
     from platforms.mobile.quiz_preflight import project_stamp
@@ -2041,6 +2042,8 @@ def create_app_class(policy: object = None):
                         del self.preloaded_project
                 else:
                     self.engine.reload()
+                factory = getattr(self, "precalculation_factory", None)
+                self.engine.precalculation = factory(self.engine.project) if factory else None
                 self._engine_stamp = project_stamp(self.engine.project)
                 self.engine_error = ""
                 return True
@@ -2232,6 +2235,9 @@ def create_app_class(policy: object = None):
                 getattr(self, "_quiz_preflight_generation", 0) + 1
             )
             request_generation = self._quiz_preflight_generation
+            timing = NavigationTiming("quiz_start:availability")
+            worker_requested = timing.queued()
+            result_queued = 0
             selected_settings = deepcopy(settings or self.settings)
             loading = QuizLoading(
                 tr("quiz.loading_title"),
@@ -2258,9 +2264,13 @@ def create_app_class(policy: object = None):
                     self._quiz_loading = None
 
             def ready(session, error: str) -> None:
+                timing.delivered(result_queued)
+                ui_started = timing.queued()
                 if not active():
+                    timing.finish("cancelled")
                     return
                 if error or session is None:
+                    timing.finish("error")
                     finish_loading()
                     # Preserve the actionable source-grammar recovery dialog.
                     if self.engine is not None and not check_quiz_grammar(
@@ -2280,18 +2290,25 @@ def create_app_class(policy: object = None):
                     self.manager.transition = SlideTransition(direction="left", duration=0)
                     self.manager.current = "quiz"
                     loading.complete(finish_loading)
+                    timing.elapsed("ui_transition", ui_started)
+                    timing.finish()
                 except Exception as exception:
                     finish_loading()
                     self._show_quiz_preflight_error(mobile_error_text(self, exception))
 
             def worker() -> None:
+                nonlocal result_queued
                 session = None
                 error = ""
                 try:
                     with self._quiz_start_lock:
+                        timing.elapsed("worker_queue_and_lock_wait", worker_requested)
                         if not active():
+                            timing.finish("cancelled")
                             return
-                        if not self.reload_engine(force=False) or self.engine is None:
+                        with timing.stage("project_freshness_and_reload"):
+                            engine_ready = self.reload_engine(force=False)
+                        if not engine_ready or self.engine is None:
                             error = self.engine_error
                         else:
                             engine = self.engine
@@ -2301,17 +2318,24 @@ def create_app_class(policy: object = None):
                                     fraction, start=15, span=65,
                                 )
                             ):
-                                feasible = quiz_is_feasible(engine, selected_settings)
+                                with timing.stage("feasibility"):
+                                    feasible = quiz_is_feasible(engine, selected_settings)
                             if feasible and active():
                                 loading.set_percent(80)
-                                session = policy_session(engine, selected_settings)
-                                if session.next_question() is None:
+                                with timing.stage("session_preparation"):
+                                    session = policy_session(engine, selected_settings)
+                                with timing.stage("first_question"):
+                                    first_question = session.next_question()
+                                if first_question is None:
                                     session = None
                                 else:
                                     loading.set_percent(99)
                 except Exception as exception:
                     error = mobile_error_text(self, exception)
                     session = None
+                if timing.enabled and getattr(self.engine, "precalculation", None) is not None:
+                    self.engine.precalculation.store.log("quiz_start")
+                result_queued = timing.queued()
                 Clock.schedule_once(lambda _dt: ready(session, error), 0)
 
             threading.Thread(target=worker, daemon=True).start()
