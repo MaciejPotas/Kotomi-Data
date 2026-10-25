@@ -50,6 +50,10 @@ from platforms.mobile.presentation import (
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
 from platforms.mobile.calculation_progress import run_calculation
+try:
+    from platforms.mobile.calculation_progress import run_preparation
+except ImportError:
+    run_preparation = run_calculation
 from kotomi.application.calculation import prepare_sentence_setup
 
 
@@ -1058,7 +1062,7 @@ def create_app_class():
                 catalog = self.kotomi.catalog
                 lesson = self.kotomi.current_lesson()
                 title = self.title.text
-                run_calculation(
+                run_preparation(
                     self, ui_text("quiz.loading_title", ""),
                     ui_text("quiz.loading_message", "", title=title),
                     lambda: factory(catalog, lesson, asked, answer),
@@ -1146,7 +1150,7 @@ def create_app_class():
                     self.kotomi.settings_store.save(self.kotomi.settings.to_dict())
                     self.kotomi.start_quiz(questions, title)
 
-                run_calculation(
+                run_preparation(
                     self, ui_text("quiz.loading_title", ""),
                     ui_text("quiz.loading_message", "", title=title),
                     lambda: build_conjugation_questions(
@@ -1223,7 +1227,7 @@ def create_app_class():
             engine, catalog = controller.sentence_engine, controller.catalog
             lesson = controller.current_lesson()
             self.report.text = ui_text("quiz.finding_patterns")
-            run_calculation(
+            run_preparation(
                 self, ui_text("quiz.sentence_title"), ui_text("quiz.finding_patterns"),
                 lambda: prepare_sentence_setup(engine, catalog, lesson),
                 self._setup_ready, self._setup_failed, font_name=MOBILE_FONT,
@@ -1616,7 +1620,7 @@ def create_app_class():
                     self.save_settings(patterns, forms, count)
                     self.kotomi.start_quiz(questions, title)
 
-                run_calculation(
+                run_preparation(
                     self, ui_text("quiz.loading_title", ""),
                     ui_text("quiz.loading_message", "", title=title),
                     lambda: engine.build_questions(

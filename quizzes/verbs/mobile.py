@@ -2128,7 +2128,10 @@ def create_app_class():
                 font_name=MOBILE_FONT,
             )
             self._quiz_loading = loading
-            loading.open()
+            if hasattr(loading, "open_quiet"):
+                loading.open_quiet(self.manager.get_screen(self.manager.current))
+            else:
+                loading.open()  # Compatibility with older Application Update packages.
             # A cancelled worker can still be finishing. Serialize access to
             # the controller's RNG and engine before accepting another Start.
             if not hasattr(self, "_quiz_start_lock"):
