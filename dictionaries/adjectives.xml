@@ -3012,7 +3012,7 @@
       </polish_forms>
     </word>
     <word id="suki" kana="すき" type="na_adjective" translation="lubiany" kanji="好き">
-      <describes categories="purchasable" />
+      <describes categories="concrete abstract" />
       <forms>
         <form ref="attributive_nonpast" kana="すきな" translation="lubiany" kanji="好きな" />
         <form ref="predicate_plain_nonpast" kana="すきだ" translation="jest lubiany" kanji="好きだ" />
@@ -3046,7 +3046,7 @@
       </polish_forms>
     </word>
     <word id="hoshii" kana="ほしい" type="i_adjective" translation="pożądany" kanji="欲しい">
-      <describes categories="purchasable" />
+      <describes categories="concrete abstract" />
       <forms>
         <form ref="attributive_nonpast" kana="ほしい" translation="pożądany" kanji="欲しい" />
         <form ref="predicate_plain_nonpast" kana="ほしい" translation="jest pożądany" kanji="欲しい" />

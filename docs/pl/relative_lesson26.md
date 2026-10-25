@@ -215,3 +215,14 @@ Zachowano wspólne przewijane okna Tk z poprzedniego commita, stopki poza listam
 Reprodukcja: `tools/benchmark_relative_lesson26_review.py --worker menu --selection verbs --kotomi KOTOMI --data CONTENT`. Opcjonalne `--menu-start` i `--menu-layout` mierzą osobno Start i sprawdzają układ. Na Linuksie użyto `KIVY_NO_ARGS=1 SDL_VIDEODRIVER=offscreen`; na Windows należy uruchomić z rzeczywistym backendem. Wyniki tej kontynuacji są w sekcji `final_review` istniejącego raportu JSON. W CI nie dodano benchmarków ani progów czasowych.
 
 W końcowej kontroli ekranu Kivy wykryto też wyświetlanie kluczy `specialized.pattern...` zamiast nazw wzorców Content. Wspólna prezentacja Availability/Grammar używa teraz etykiety z profilu, gdy brak tłumaczenia interfejsu; istniejące przetłumaczone nazwy zachowują pierwszeństwo. Poprawka dotyczy listy i podsumowania, nie ID, zaznaczeń ani zdań. Dodano niezależny test tej ścieżki. Powyższe pomiary wykonano przed tą poprawką samych etykiet.
+
+
+## Audyt zakresu słów i odmiany (2026-10-25)
+
+Rozszerzono `suki` i `hoshii` z `purchasable` na `concrete abstract`: słowa nie są ograniczone do zakupów. Ograniczenia konkretnego pytania nadal należą do patternu. `tomaru_stay` dopuszcza `place`, także nocleg poza budynkiem. Nie zmieniono tłumaczeń ani form czasowników.
+
+Sprawdzono dziesięć nowych rzeczowników, dwa przymiotniki i dwa czasowniki. `tokoro`, `hotel`, `cake`, `watch` mają komplet few/many dla siedmiu przypadków. Uzupełniono taki komplet dla `hi` (dni, dniom, dniami, dniach) i `kuni` (kraje/krajów, krajom, krajami, krajach), bez sztucznego countera. Nazwy własne Poland/Japan/India i substancja wine nie otrzymują sztucznych form liczenia egzemplarzy. Brak countera nie oznacza braku polskiej odmiany.
+
+Oba przymiotniki mają wszystkie 15 form z katalogu i odmianę dla obsługiwanych klas zgodności. Katalog nie obsługuje jeszcze klasy męskoosobowej liczby mnogiej; nie rozszerzono silnika w tym zadaniu. `tomaru_stay` ma 15 podstawowych form; `umareru` 14, bez sztucznej strony biernej. Progressive/desiderative pozostają opcjonalne. Poszerzenie kompatybilności może zwiększyć liczniki, dlatego wcześniejsze wyniki wydajności opisują poprzedni zestaw danych.
+
+W edytorze Tk kategorię i klasę zgodności przeniesiono do rozwijanej sekcji Więcej ustawień, bezpośrednio nad profil relacji rzeczownika. Zapis danych i mechanizm wyboru pozostają bez zmian.

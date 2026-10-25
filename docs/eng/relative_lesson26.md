@@ -215,3 +215,14 @@ The previous shared scrollable Tk dialogs, fixed footers and test scaling restor
 Reproduce with `tools/benchmark_relative_lesson26_review.py --worker menu --selection verbs --kotomi KOTOMI --data CONTENT`. Optional `--menu-start` and `--menu-layout` separately measure Start and check layout. Linux used `KIVY_NO_ARGS=1 SDL_VIDEODRIVER=offscreen`; use the actual backend on Windows. This continuation's results are in `final_review` in the existing JSON report. No benchmark or timing threshold was added to CI.
 
 Final Kivy screen inspection also found raw `specialized.pattern...` keys instead of Content pattern names. Shared Availability/Grammar presentation now falls back to the profile label when a UI translation is missing; existing translated labels retain precedence. This changes the list and summary, not IDs, selections or sentences. An independent regression test covers the path. The measurements above preceded this label-only correction.
+
+
+## Vocabulary scope and inflection audit (2026-10-25)
+
+Broadened `suki` and `hoshii` from `purchasable` to `concrete abstract`: their lexical scope is not restricted to shopping. Individual question restrictions remain in patterns. `tomaru_stay` accepts `place`, including overnight stays outside buildings. Verb translations and forms are unchanged.
+
+Reviewed ten new nouns, two adjectives and two verbs. `tokoro`, `hotel`, `cake` and `watch` already cover all seven cases for few/many. Added that coverage for `hi` and `kuni`, without assigning an inappropriate Japanese counter. Proper names Poland/Japan/India and mass-noun wine do not receive artificial item-counting forms. Missing counters do not imply missing Polish inflection.
+
+Both adjectives contain all 15 catalog forms and inflection for supported agreement classes. Masculine-personal plural is not yet a supported class; this task does not extend the engine. `tomaru_stay` has 15 basic forms; `umareru` has 14, without an artificial passive. Progressive/desiderative remain optional. Broader compatibility may increase totals, so earlier performance measurements describe the previous data set.
+
+In the Tk noun editor, category and agreement class now appear inside More settings, immediately above the noun relation profile. Persistence and selection behavior are unchanged.

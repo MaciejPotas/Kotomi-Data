@@ -1220,6 +1220,20 @@
     <word id="hi" kana="ひ" type="noun" category="abstract" translation="dzień">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="dzień" genitive="dnia" dative="dniowi" accusative="dzień" instrumental="dniem" locative="dniu" vocative="dniu" />
+      <counting>
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="dni" />
+          <form profile="few" cases="genitive" value="dni" />
+          <form profile="few" cases="dative" value="dniom" />
+          <form profile="few" cases="instrumental" value="dniami" />
+          <form profile="few" cases="locative" value="dniach" />
+          <form profile="many" cases="nominative accusative vocative" value="dni" />
+          <form profile="many" cases="genitive" value="dni" />
+          <form profile="many" cases="dative" value="dniom" />
+          <form profile="many" cases="instrumental" value="dniami" />
+          <form profile="many" cases="locative" value="dniach" />
+        </source_forms>
+      </counting>
     </word>
     <word id="hotel" kana="ホテル" type="noun" category="building" translation="hotel">
       <agreement class="masculine_inanimate" />
@@ -1299,6 +1313,20 @@
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="kraj" genitive="kraju" dative="krajowi" accusative="kraj" instrumental="krajem" locative="kraju" vocative="kraju" />
       <relations profile="place_w_do" />
+      <counting>
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="kraje" />
+          <form profile="few" cases="genitive" value="krajów" />
+          <form profile="few" cases="dative" value="krajom" />
+          <form profile="few" cases="instrumental" value="krajami" />
+          <form profile="few" cases="locative" value="krajach" />
+          <form profile="many" cases="nominative accusative vocative" value="krajów" />
+          <form profile="many" cases="genitive" value="krajów" />
+          <form profile="many" cases="dative" value="krajom" />
+          <form profile="many" cases="instrumental" value="krajami" />
+          <form profile="many" cases="locative" value="krajach" />
+        </source_forms>
+      </counting>
     </word>
   </words>
 </dictionary>

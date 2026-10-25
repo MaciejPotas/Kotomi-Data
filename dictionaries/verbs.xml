@@ -3689,7 +3689,7 @@
         <feature ref="intransitive" />
       </features>
       <usage>
-        <role ref="location" accepts="building" />
+        <role ref="location" accepts="place" />
       </usage>
       <forms>
         <form ref="dictionary" kana="とまる" translation="nocuję" kanji="泊まる" />
