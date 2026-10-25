@@ -4,10 +4,10 @@ import unittest
 import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 CASES = set('nominative genitive dative accusative instrumental locative vocative'.split())
-NON_COUNTABLE = set('gohan jikan music okane television naka oku ashita saisho detarame kikitori getsuyoubi kayoubi suiyoubi mokuyoubi kinyoubi doyoubi nichiyoubi'.split())
+WITHOUT_COUNTER = set('hi poland japan india wine kuni gohan jikan music okane television naka oku ashita saisho detarame kikitori getsuyoubi kayoubi suiyoubi mokuyoubi kinyoubi doyoubi nichiyoubi'.split())
 VERBS = set('dictionary polite_nonpast plain_negative polite_negative past_plain past_polite past_negative_plain past_negative_polite te_form potential passive causative tara volitional imperative'.split())
 ADJECTIVES = set('predicate_plain_nonpast predicate_polite_nonpast predicate_plain_negative predicate_polite_negative predicate_plain_past predicate_polite_past predicate_plain_past_negative predicate_polite_past_negative attributive_nonpast connective adverbial conditional nominalized appearance_sou excessive_sugiru'.split())
-NONPRODUCTIVE = {'aru_possessive': {'potential', 'passive', 'causative'}, 'aru_existential': {'potential', 'passive', 'causative'}, 'dekiru': {'potential', 'passive'}, 'mieru': {'potential', 'passive'}, 'chigau': {'passive'}, 'hareru': {'passive'}, 'kumoru': {'passive'}}
+NONPRODUCTIVE = {'umareru': {'passive'}, 'aru_possessive': {'potential', 'passive', 'causative'}, 'aru_existential': {'potential', 'passive', 'causative'}, 'dekiru': {'potential', 'passive'}, 'mieru': {'potential', 'passive'}, 'chigau': {'passive'}, 'hareru': {'passive'}, 'kumoru': {'passive'}}
 
 def words(name):
     return {w.get('id'): w for w in ET.parse(ROOT / 'dictionaries' / f'{name}.xml').findall('./words/word')}
@@ -15,19 +15,22 @@ def words(name):
 class LexicalCompletenessTests(unittest.TestCase):
     def test_nouns_have_all_cases_and_counting_or_documented_exception(self):
         nouns = words('nouns')
-        self.assertTrue(NON_COUNTABLE <= nouns.keys())
+        self.assertTrue(WITHOUT_COUNTER <= nouns.keys())
         bindings = {c.get('ref'): c for c in ET.parse(ROOT / 'grammar/counting.xml').findall('./counter_bindings/class')}
         counters = words('counters')
         for identifier, noun in nouns.items():
             with self.subTest(noun=identifier):
                 self.assertTrue(all(noun.find('cases').get(c, '').strip() for c in CASES))
                 counting = noun.find('counting')
-                if identifier in NON_COUNTABLE:
-                    self.assertIsNone(counting)
-                    continue
-                self.assertIsNotNone(counting)
-                self.assertTrue(counting.get('classes', '').split())
-                for cls in counting.get('classes').split():
+                if identifier in WITHOUT_COUNTER:
+                    if counting is None:
+                        continue
+                    # Polish source forms are independent of Japanese counters.
+                    self.assertFalse(counting.get('classes', '').split())
+                else:
+                    self.assertIsNotNone(counting)
+                    self.assertTrue(counting.get('classes', '').split())
+                for cls in counting.get('classes', '').split():
                     counter = counters[bindings[cls].get('default_counter')]
                     self.assertIsNotNone(counter.find("./quantity_realizations/realization[@symbol='how_many']"))
                 values = {}
@@ -46,7 +49,9 @@ class LexicalCompletenessTests(unittest.TestCase):
                 with self.subTest(dictionary=dictionary, word=identifier):
                     forms = {f.get('ref'): f for f in word.findall('./forms/form')}
                     excluded = NONPRODUCTIVE.get(identifier, set()) if dictionary == 'verbs' else set()
-                    self.assertEqual(set(forms), required - excluded)
+                    optional = {'progressive', 'desiderative'} if dictionary == 'verbs' else set()
+                    self.assertTrue(required - excluded <= set(forms))
+                    self.assertTrue(set(forms) <= (required - excluded) | optional)
                     for name, form in forms.items():
                         for field in ('kana', 'kanji', 'translation'):
                             self.assertTrue(form.get(field, '').strip(), (identifier, name, field))

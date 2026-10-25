@@ -3011,5 +3011,73 @@
         <override classes="plural_non_masculine_personal" cases="instrumental" value="najgorszymi" />
       </polish_forms>
     </word>
+    <word id="suki" kana="すき" type="na_adjective" translation="lubiany" kanji="好き">
+      <describes categories="concrete abstract" />
+      <forms>
+        <form ref="attributive_nonpast" kana="すきな" translation="lubiany" kanji="好きな" />
+        <form ref="predicate_plain_nonpast" kana="すきだ" translation="jest lubiany" kanji="好きだ" />
+        <form ref="predicate_polite_nonpast" kana="すきです" translation="jest lubiany" kanji="好きです" />
+        <form ref="predicate_plain_negative" kana="すきじゃない" translation="nie jest lubiany" kanji="好きじゃない" />
+        <form ref="predicate_polite_negative" kana="すきじゃありません" translation="nie jest lubiany" kanji="好きじゃありません" />
+        <form ref="predicate_plain_past" kana="すきだった" translation="był lubiany" kanji="好きだった" />
+        <form ref="predicate_polite_past" kana="すきでした" translation="był lubiany" kanji="好きでした" />
+        <form ref="predicate_plain_past_negative" kana="すきじゃなかった" translation="nie był lubiany" kanji="好きじゃなかった" />
+        <form ref="predicate_polite_past_negative" kana="すきじゃありませんでした" translation="nie był lubiany" kanji="好きじゃありませんでした" />
+        <form ref="connective" kana="すきで" translation="lubiany" kanji="好きで" />
+        <form ref="adverbial" kana="すきに" translation="lubiany" kanji="好きに" />
+        <form ref="conditional" kana="すきなら" translation="lubiany" kanji="好きなら" />
+        <form ref="nominalized" kana="すきさ" translation="lubiany" kanji="好きさ" />
+        <form ref="appearance_sou" kana="すきそう" translation="lubiany" kanji="好きそう" />
+        <form ref="excessive_sugiru" kana="すきすぎる" translation="lubiany" kanji="好きすぎる" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="lubiany" />
+        <common cases="genitive" value="lubianego" />
+        <common cases="dative" value="lubianemu" />
+        <common cases="instrumental locative" value="lubianym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="lubianego" />
+        <override classes="feminine" cases="nominative vocative" value="lubiana" />
+        <override classes="feminine" cases="genitive dative locative" value="lubianej" />
+        <override classes="feminine" cases="accusative instrumental" value="lubianą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="lubiane" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="lubianych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="lubianym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="lubianymi" />
+      </polish_forms>
+    </word>
+    <word id="hoshii" kana="ほしい" type="i_adjective" translation="pożądany" kanji="欲しい">
+      <describes categories="concrete abstract" />
+      <forms>
+        <form ref="attributive_nonpast" kana="ほしい" translation="pożądany" kanji="欲しい" />
+        <form ref="predicate_plain_nonpast" kana="ほしい" translation="jest pożądany" kanji="欲しい" />
+        <form ref="predicate_polite_nonpast" kana="ほしいです" translation="jest pożądany" kanji="欲しいです" />
+        <form ref="predicate_plain_negative" kana="ほしくない" translation="nie jest pożądany" kanji="欲しくない" />
+        <form ref="predicate_polite_negative" kana="ほしくないです" translation="nie jest pożądany" kanji="欲しくないです" />
+        <form ref="predicate_plain_past" kana="ほしかった" translation="był pożądany" kanji="欲しかった" />
+        <form ref="predicate_polite_past" kana="ほしかったです" translation="był pożądany" kanji="欲しかったです" />
+        <form ref="predicate_plain_past_negative" kana="ほしくなかった" translation="nie był pożądany" kanji="欲しくなかった" />
+        <form ref="predicate_polite_past_negative" kana="ほしくなかったです" translation="nie był pożądany" kanji="欲しくなかったです" />
+        <form ref="connective" kana="ほしくて" translation="pożądany" kanji="欲しくて" />
+        <form ref="adverbial" kana="ほしく" translation="pożądany" kanji="欲しく" />
+        <form ref="conditional" kana="ほしければ" translation="pożądany" kanji="欲しければ" />
+        <form ref="nominalized" kana="ほしさ" translation="pożądany" kanji="欲しさ" />
+        <form ref="appearance_sou" kana="ほしそう" translation="pożądany" kanji="欲しそう" />
+        <form ref="excessive_sugiru" kana="ほしすぎる" translation="pożądany" kanji="欲しすぎる" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="pożądany" />
+        <common cases="genitive" value="pożądanego" />
+        <common cases="dative" value="pożądanemu" />
+        <common cases="instrumental locative" value="pożądanym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="pożądanego" />
+        <override classes="feminine" cases="nominative vocative" value="pożądana" />
+        <override classes="feminine" cases="genitive dative locative" value="pożądanej" />
+        <override classes="feminine" cases="accusative instrumental" value="pożądaną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="pożądane" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="pożądanych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="pożądanym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="pożądanymi" />
+      </polish_forms>
+    </word>
   </words>
 </dictionary>
