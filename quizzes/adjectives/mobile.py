@@ -2189,19 +2189,20 @@ def create_app_class():
                         else:
                             engine = self.engine
                             loading.set_percent(15)
-                            with report_progress(
-                                lambda fraction: loading.report_fraction(
-                                    fraction, start=15, span=65,
-                                )
-                            ):
-                                feasible = quiz_is_feasible(engine, selected_settings)
-                            if feasible and active():
-                                loading.set_percent(80)
-                                session = AdjectiveQuizSession(engine, selected_settings)
-                                if session.next_question() is None:
-                                    session = None
-                                else:
-                                    loading.set_percent(99)
+                            with engine.reuse_start_spaces(selected_settings):
+                                with report_progress(
+                                    lambda fraction: loading.report_fraction(
+                                        fraction, start=15, span=65,
+                                    )
+                                ):
+                                    feasible = quiz_is_feasible(engine, selected_settings)
+                                if feasible and active():
+                                    loading.set_percent(80)
+                                    session = AdjectiveQuizSession(engine, selected_settings)
+                                    if session.next_question() is None:
+                                        session = None
+                                    else:
+                                        loading.set_percent(99)
                 except Exception as exception:
                     error = mobile_error_text(self, exception)
                     session = None
