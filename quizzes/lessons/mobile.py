@@ -2639,7 +2639,13 @@ def create_app_class():
             configure_quiz_controller(
                 self, QUIZ_DATA_DIR, INSTALL_ROOT / "settings" / "mobile_launcher.xml",
             )
-            runtime = load_instruction_runtime(self.instruction_selection)
+            runtime = getattr(self, "preloaded_runtime", None)
+            if runtime is None:
+                runtime = load_instruction_runtime(self.instruction_selection)
+            else:
+                del self.preloaded_runtime
+                if hasattr(self, "preloaded_project"):
+                    del self.preloaded_project
             self.catalog_store = runtime.catalog_store
             self.catalog = runtime.catalog
             self.sentence_engine = runtime.sentence_engine
@@ -2782,3 +2788,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

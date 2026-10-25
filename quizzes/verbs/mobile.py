@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import sys
 import threading
+from copy import deepcopy
 from typing import Dict, List, Optional, Set
 
 
@@ -84,6 +85,12 @@ except ModuleNotFoundError as missing:
             self.closed = True
 from kotomi.core.generation.progress import report_progress
 from platforms.mobile.quiz_preflight import check_quiz_grammar
+try:
+    from platforms.mobile.quiz_preflight import project_stamp
+except ImportError:
+    # Older application runtimes keep the safe reload path for updated packages.
+    def project_stamp(_project):
+        return None
 from kotomi.application.update_transport import QuizUpdater, UpdateError, load_update_url
 
 
@@ -1425,7 +1432,7 @@ def create_app_class():
             self._cancel_auto_advance()
             self.cancel_focus()
             self.session = session
-            self.next_question()
+            self.next_question(prepared=session.current_question is not None)
 
         def _button_action(self, callback) -> None:
             callback()
@@ -1515,12 +1522,13 @@ def create_app_class():
             self.progress.set_fitted_text(progress_text, progress_text)
             self.progress_bar.value = current / total
 
-        def next_question(self) -> None:
+        def next_question(self, *, prepared: bool = False) -> None:
             self._cancel_auto_advance()
             if self.session is None:
                 return
             if (
-                self.session.current_question is not None
+                not prepared
+                and self.session.current_question is not None
                 and not self.session.waiting_for_next
             ):
                 self.status.color = accent_info
@@ -1540,7 +1548,10 @@ def create_app_class():
             self.hint.set_fitted_text("", "")
             self.hint.opacity = 0
             try:
-                question = self.session.next_question()
+                if prepared:
+                    question = self.session.current_question
+                else:
+                    question = self.session.next_question()
             except (MobileQuizError, ProjectError) as exception:
                 self.status.color = accent_bad
                 message = mobile_error_text(self, exception)
@@ -1857,8 +1868,19 @@ def create_app_class():
             quiz.cancel_focus()
             quiz.answer_input.focus = False
 
-        def reload_engine(self) -> bool:
+        def reload_engine(self, *, force: bool = True) -> bool:
             try:
+                if not force and self.engine is not None:
+                    stamp = project_stamp(self.engine.project)
+                    if (stamp is not None
+                            and stamp == getattr(self, "_engine_stamp", None)
+                            and self.engine.project.manifest_path == self.project_path.resolve()
+                            and self.engine.language_context is self.language_context):
+                        return True
+                if (self.engine is not None
+                        and (self.engine.project_path != self.project_path.resolve()
+                             or self.engine.language_context is not self.language_context)):
+                    self.engine = None
                 if self.engine is None:
                     kwargs = {"language_context": self.language_context}
                     project = getattr(self, "preloaded_project", None)
@@ -1869,6 +1891,7 @@ def create_app_class():
                         del self.preloaded_project
                 else:
                     self.engine.reload()
+                self._engine_stamp = project_stamp(self.engine.project)
                 self.engine_error = ""
                 return True
             except (MobileQuizError, ProjectError, OSError) as exception:
@@ -1954,7 +1977,7 @@ def create_app_class():
             self._refresh_home_update_state()
 
         def update_quiz(self) -> None:
-            if self.update_in_progress:
+            if self.update_in_progress or getattr(self, "_quiz_loading", None) is not None:
                 return
             try:
                 manifest_url = load_update_url(
@@ -2089,83 +2112,95 @@ def create_app_class():
                 self.update_message = tr("hub.restart_required")
                 self.go_home()
                 return
-            # A new request supersedes any unfinished feasibility callback.
+            if self.update_in_progress:
+                return
+            if (getattr(self, "_quiz_loading", None) is not None
+                    or getattr(self.manager.get_screen(self.manager.current), "_calculation_progress", None) is not None):
+                return
             self._quiz_preflight_generation = (
                 getattr(self, "_quiz_preflight_generation", 0) + 1
             )
             request_generation = self._quiz_preflight_generation
-            previous = getattr(self, "_quiz_loading", None)
-            if previous is not None:
-                previous.close()
+            selected_settings = deepcopy(settings or self.settings)
             loading = QuizLoading(
                 tr("quiz.loading_title"),
                 tr("quiz.loading_message", title=getattr(self, "title", tr("specialized.start_quiz"))),
                 font_name=MOBILE_FONT,
             )
             self._quiz_loading = loading
-            selected_settings = settings or self.settings
             loading.open()
+            # A cancelled worker can still be finishing. Serialize access to
+            # the controller's RNG and engine before accepting another Start.
+            if not hasattr(self, "_quiz_start_lock"):
+                self._quiz_start_lock = threading.Lock()
+
+            def active() -> bool:
+                return (request_generation == self._quiz_preflight_generation
+                        and self._quiz_loading is loading and not loading.closed)
 
             def finish_loading() -> None:
                 loading.close()
                 if getattr(self, "_quiz_loading", None) is loading:
                     self._quiz_loading = None
 
-            def begin(_dt) -> None:
-                if request_generation != self._quiz_preflight_generation:
-                    finish_loading()
+            def ready(session, error: str) -> None:
+                if not active():
                     return
-                if not self.reload_engine() or self.engine is None:
+                if error or session is None:
                     finish_loading()
-                    self.go_home()
-                    return
-                engine = self.engine
-                loading.set_percent(15)
-
-                def ready(feasible: Optional[bool], error: str) -> None:
-                    if request_generation != self._quiz_preflight_generation:
+                    # Preserve the actionable source-grammar recovery dialog.
+                    if self.engine is not None and not check_quiz_grammar(
+                        self, self.engine, selected_settings,
+                        self._show_quiz_preflight_error, font_name=MOBILE_FONT,
+                    ):
                         return
-                    if error or feasible is None:
-                        finish_loading()
-                        self._show_quiz_preflight_error(
-                            error or tr("specialized.count_failed")
-                        )
-                        return
-                    if not feasible:
-                        finish_loading()
-                        self._show_quiz_preflight_error(
-                            tr("specialized.no_possible_questions")
-                        )
-                        return
-                    try:
-                        if save_on_success:
-                            self.save_settings(selected_settings)
-                        loading.set_percent(85)
-                        session = VerbQuizSession(engine, selected_settings)
-                        quiz = self.manager.get_screen("quiz")
-                        self.manager.transition = SlideTransition(direction="left")
-                        self.manager.current = "quiz"
-                        quiz.set_session(session)
-                        loading.complete(finish_loading)
-                    except (MobileQuizError, ProjectError, OSError) as exception:
-                        finish_loading()
-                        self._show_quiz_preflight_error(
-                            mobile_error_text(self, exception)
-                        )
-
-
-                try:
-                    self.check_feasibility(
-                        selected_settings, ready, engine=engine,
+                    self._show_quiz_preflight_error(
+                        error or tr("specialized.no_possible_questions")
                     )
+                    return
+                try:
+                    if save_on_success:
+                        self.save_settings(selected_settings)
+                    quiz = self.manager.get_screen("quiz")
+                    quiz.set_session(session)
+                    self.manager.transition = SlideTransition(direction="left", duration=0)
+                    self.manager.current = "quiz"
+                    loading.complete(finish_loading)
                 except Exception as exception:
                     finish_loading()
-                    self._show_quiz_preflight_error(
-                        mobile_error_text(self, exception)
-                    )
+                    self._show_quiz_preflight_error(mobile_error_text(self, exception))
 
-            # Let the modal be drawn before synchronous engine reload.
-            Clock.schedule_once(begin, 0.05)
+            def worker() -> None:
+                session = None
+                error = ""
+                try:
+                    with self._quiz_start_lock:
+                        if not active():
+                            return
+                        if not self.reload_engine(force=False) or self.engine is None:
+                            error = self.engine_error
+                        else:
+                            engine = self.engine
+                            loading.set_percent(15)
+                            with report_progress(
+                                lambda fraction: loading.report_fraction(
+                                    fraction, start=15, span=65,
+                                )
+                            ):
+                                feasible = quiz_is_feasible(engine, selected_settings)
+                            if feasible and active():
+                                loading.set_percent(80)
+                                session = VerbQuizSession(engine, selected_settings)
+                                if session.next_question() is None:
+                                    session = None
+                                else:
+                                    loading.set_percent(99)
+                except Exception as exception:
+                    error = mobile_error_text(self, exception)
+                    session = None
+                Clock.schedule_once(lambda _dt: ready(session, error), 0)
+
+            threading.Thread(target=worker, daemon=True).start()
 
         def check_feasibility(
             self,
@@ -2223,14 +2258,29 @@ def create_app_class():
             self.manager.current = "settings"
 
         def open_settings(self) -> None:
+            self._quiz_preflight_generation = getattr(self, "_quiz_preflight_generation", 0) + 1
+            loading = getattr(self, "_quiz_loading", None)
+            if loading is not None:
+                loading.close()
+                self._quiz_loading = None
             self.manager.transition = SlideTransition(direction="left")
             self.manager.current = "settings"
 
         def open_help(self) -> None:
+            self._quiz_preflight_generation = getattr(self, "_quiz_preflight_generation", 0) + 1
+            loading = getattr(self, "_quiz_loading", None)
+            if loading is not None:
+                loading.close()
+                self._quiz_loading = None
             self.manager.transition = SlideTransition(direction="left")
             self.manager.current = "help"
 
         def go_home(self) -> None:
+            self._quiz_preflight_generation = getattr(self, "_quiz_preflight_generation", 0) + 1
+            loading = getattr(self, "_quiz_loading", None)
+            if loading is not None:
+                loading.close()
+                self._quiz_loading = None
             if hasattr(self, "manager") and self.manager.has_screen("quiz"):
                 quiz = self.manager.get_screen("quiz")
                 quiz.screen_active = False
@@ -2246,6 +2296,8 @@ def create_app_class():
             *,
             engine=None,
         ) -> None:
+            if getattr(self, "_quiz_loading", None) is not None:
+                return
             selected_engine = self.engine if engine is None else engine
             if selected_engine is None:
                 callback(None, self.engine_error)
@@ -2279,6 +2331,7 @@ def create_app_class():
             return True
 
         def on_stop(self):
+            self.prepare_for_unload()
             if not getattr(self, "embedded_mode", False):
                 Window.unbind(on_keyboard=self._on_keyboard)
 
@@ -2306,3 +2359,4 @@ def main() -> int:
         raise
     app_class().run()
     return 0
+
