@@ -10,6 +10,8 @@ from __future__ import annotations
 from kotomi.core.generation.progress import progress_leaves, progress_step
 
 from dataclasses import asdict, dataclass, field
+from contextlib import contextmanager
+from copy import deepcopy
 import os
 from pathlib import Path
 import random
@@ -767,6 +769,23 @@ class AdjectiveQuizEngine:
             result *= candidate_count - index
         return result
 
+    @contextmanager
+    def reuse_start_spaces(self, settings: AdjectiveQuizSettings):
+        """Share only this Start's space; callers serialize access to the engine."""
+        self._start_spaces = [deepcopy(settings), None]
+        try:
+            yield
+        finally:
+            self._start_spaces = None
+
+    def _question_spaces(self, settings: AdjectiveQuizSettings):
+        prepared = getattr(self, "_start_spaces", None)
+        if prepared is None or prepared[0] != settings:
+            return self.build_spaces(settings)
+        if prepared[1] is None:
+            prepared[1] = self.build_spaces(settings)
+        return prepared[1]
+
     def has_possible_question(self, settings: AdjectiveQuizSettings) -> bool:
         """Check feasibility by generating one question without consuming RNG."""
         rng_state = self.rng.getstate()
@@ -792,7 +811,7 @@ class AdjectiveQuizEngine:
         }
 
     def generate_question(self, settings: AdjectiveQuizSettings) -> AdjectiveQuestion:
-        spaces = self.build_spaces(settings)
+        spaces = self._question_spaces(settings)
         total = sum(space.question_count for space in spaces)
         if total <= 0:
             raise MobileQuizError("Brak pytań dla bieżących ustawień i filtra.")
@@ -803,7 +822,7 @@ class AdjectiveQuizEngine:
         raise MobileQuizError("Nie udało się wygenerować różniącej się pary zdań.")
 
     def build_questions(self, settings: AdjectiveQuizSettings) -> List[AdjectiveQuestion]:
-        spaces = self.build_spaces(settings)
+        spaces = self._question_spaces(settings)
         total = sum(space.question_count for space in spaces)
         if total <= 0:
             raise MobileQuizError("Brak pytań dla bieżących ustawień i filtra.")
