@@ -2359,4 +2359,3 @@ def main() -> int:
         raise
     app_class().run()
     return 0
-
