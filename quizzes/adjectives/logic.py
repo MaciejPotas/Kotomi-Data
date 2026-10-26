@@ -507,6 +507,12 @@ class AdjectiveQuizEngine:
         )
 
     def build_spaces(self, settings: AdjectiveQuizSettings) -> List[QuestionSpace]:
+        cache = getattr(self, "precalculation", None)
+        if cache is not None:
+            return cache.adjective_preparation(self, settings, self._build_spaces)
+        return self._build_spaces(settings)
+
+    def _build_spaces(self, settings: AdjectiveQuizSettings) -> List[QuestionSpace]:
         settings.validate()
         rules = self.build_generation_rules(settings)
         filters = parse_word_filter(settings.word_filter)
@@ -689,6 +695,9 @@ class AdjectiveQuizEngine:
         return sorted(result, key=lambda word: (word.kana, word.id))
 
     def _entity_matches_adjective(self, entity: Entity, adjective: Word) -> bool:
+        relations = getattr(self, "_precalculated_adjective_relations", None)
+        if relations is not None:
+            return relations.matches(entity, adjective)
         return self.shared_engine.adjective_matches(entity, adjective)
 
     def _catalog_form_name(
