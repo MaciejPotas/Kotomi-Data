@@ -62,7 +62,7 @@ def validate_category_a_deployment(root, report):
             ('iku', ('idzie', 'nie idzie', 'poszło', 'nie poszło')))
         for form, value in zip(('dictionary', 'plain_negative', 'past_plain', 'past_negative_plain'), values)}
     count = validate_deployment(root, report, selected, role_overrides=role_overrides,
-                                agreement_extensions=extensions)
+                                agreement_extensions=extensions, allow_plural_extensions=True)
     for vid, accepts in (('hataraku', 'person'), ('neru', 'person animal')):
         role = one(root, f"words/word[@id='{vid}']/usage/role[@ref='subject']")
         require(role.attrib == {'ref': 'subject', 'accepts': accepts},
@@ -70,7 +70,8 @@ def validate_category_a_deployment(root, report):
     return count
 
 
-def validate_deployment(root, report, selected=VERBS, *, role_overrides=None, agreement_extensions=None):
+def validate_deployment(root, report, selected=VERBS, *, role_overrides=None, agreement_extensions=None,
+                        allow_plural_extensions=False):
     """Check selected approved operations and their complete target XML maps.
 
     The selection argument supports bounded synthetic fixtures. Only the default
@@ -164,5 +165,18 @@ def validate_deployment(root, report, selected=VERBS, *, role_overrides=None, ag
                     f'{vid}/{form}: invalid translation structure')
             actual = {e.get('class'): e.get('value') for e in entries}
             require(len(actual) == len(entries), f'{vid}/{form}: duplicate class')
-            require(actual == expected_maps[vid, form], f'{vid}/{form}: changed agreement map')
+            expected = expected_maps[vid, form]
+            if allow_plural_extensions:
+                # The historic C2 deployment stays immutable. Only new plural
+                # realizations may be appended to this production snapshot.
+                extras = set(actual) - set(expected)
+                require(
+                    all(actual.get(cls) == value for cls, value in expected.items())
+                    and extras <= {'plural_masculine_personal', 'plural_non_masculine_personal'}
+                    and all(isinstance(actual[cls], str) and actual[cls].strip()
+                            for cls in extras),
+                    f'{vid}/{form}: changed agreement map',
+                )
+            else:
+                require(actual == expected, f'{vid}/{form}: changed agreement map')
     return len(changes)
