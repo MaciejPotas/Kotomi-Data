@@ -49,8 +49,8 @@
     },
     {
       "path": "data/dictionaries/nouns.xml",
-      "sha256": "4f40b171a27bb1dffd244194fc097d548fdf3c4a3f677471570cf364391c67b3",
-      "url": "dictionaries/nouns.xml?kotomi_sha256=4f40b171a27bb1dffd244194fc097d548fdf3c4a3f677471570cf364391c67b3"
+      "sha256": "0d47f6fb3b60870da1d0089d74fd752190d2cade066c5f90c284db6be91f806a",
+      "url": "dictionaries/nouns.xml?kotomi_sha256=0d47f6fb3b60870da1d0089d74fd752190d2cade066c5f90c284db6be91f806a"
     },
     {
       "path": "data/dictionaries/numbers.xml",

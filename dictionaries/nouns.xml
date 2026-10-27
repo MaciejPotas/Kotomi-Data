@@ -1701,7 +1701,7 @@
       <cases language="pl" nominative="rodzic" genitive="rodzica" dative="rodzicowi" accusative="rodzica" instrumental="rodzicem" locative="rodzicu" vocative="rodzicu" />
     </word>
     <word id="oyayubi" kana="おやゆび" kanji="親指" type="noun" category="thing" translation="kciuk">
-      <counting classes="small_object">
+      <counting classes="long_object">
         <source_forms language="pl">
           <form profile="few" cases="nominative" value="kciuki" />
           <form profile="few" cases="genitive" value="kciuków" />
@@ -1849,24 +1849,6 @@
       <cases language="pl" nominative="szczenię" genitive="szczenięcia" dative="szczenięciu" accusative="szczenię" instrumental="szczenięciem" locative="szczenięciu" vocative="szczenię" />
     </word>
     <word id="inugoya" kana="いぬごや" kanji="犬小屋" type="noun" category="thing" translation="buda dla psa">
-      <counting classes="small_object">
-        <source_forms language="pl">
-          <form profile="few" cases="nominative" value="budy dla psa" />
-          <form profile="few" cases="genitive" value="bud dla psa" />
-          <form profile="few" cases="dative" value="budom dla psa" />
-          <form profile="few" cases="accusative" value="budy dla psa" />
-          <form profile="few" cases="instrumental" value="budami dla psa" />
-          <form profile="few" cases="locative" value="budach dla psa" />
-          <form profile="few" cases="vocative" value="budy dla psa" />
-          <form profile="many" cases="nominative" value="bud dla psa" />
-          <form profile="many" cases="genitive" value="bud dla psa" />
-          <form profile="many" cases="dative" value="budom dla psa" />
-          <form profile="many" cases="accusative" value="bud dla psa" />
-          <form profile="many" cases="instrumental" value="budami dla psa" />
-          <form profile="many" cases="locative" value="budach dla psa" />
-          <form profile="many" cases="vocative" value="bud dla psa" />
-        </source_forms>
-      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="buda dla psa" genitive="budy dla psa" dative="budzie dla psa" accusative="budę dla psa" instrumental="budą dla psa" locative="budzie dla psa" vocative="budo dla psa" />
     </word>
