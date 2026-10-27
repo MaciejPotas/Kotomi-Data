@@ -3447,5 +3447,338 @@
         <override classes="plural_masculine_personal" cases="instrumental" value="pożądanymi" />
       </polish_forms>
     </word>
+    <word id="mijikai" kana="みじかい" kanji="短い" type="i_adjective" translation="krótki">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="みじかい" kanji="短い" translation="jest krótki" />
+        <form ref="predicate_polite_nonpast" kana="みじかいです" kanji="短いです" translation="jest krótki" />
+        <form ref="predicate_plain_negative" kana="みじかくない" kanji="短くない" translation="nie jest krótki" />
+        <form ref="predicate_polite_negative" kana="みじかくないです" kanji="短くないです" translation="nie jest krótki" />
+        <form ref="predicate_plain_past" kana="みじかかった" kanji="短かった" translation="był krótki" />
+        <form ref="predicate_polite_past" kana="みじかかったです" kanji="短かったです" translation="był krótki" />
+        <form ref="predicate_plain_past_negative" kana="みじかくなかった" kanji="短くなかった" translation="nie był krótki" />
+        <form ref="predicate_polite_past_negative" kana="みじかくなかったです" kanji="短くなかったです" translation="nie był krótki" />
+        <form ref="attributive_nonpast" kana="みじかい" kanji="短い" translation="krótki" />
+        <form ref="connective" kana="みじかくて" kanji="短くて" translation="krótki" />
+        <form ref="adverbial" kana="みじかく" kanji="短く" translation="krótki" />
+        <form ref="conditional" kana="みじかければ" kanji="短ければ" translation="krótki" />
+        <form ref="nominalized" kana="みじかさ" kanji="短さ" translation="krótki" />
+        <form ref="appearance_sou" kana="みじかそう" kanji="短そう" translation="krótki" />
+        <form ref="excessive_sugiru" kana="みじかすぎる" kanji="短すぎる" translation="krótki" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="krótki" />
+        <common cases="genitive" value="krótkiego" />
+        <common cases="dative" value="krótkiemu" />
+        <common cases="instrumental locative" value="krótkim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="krótkiego" />
+        <override classes="feminine" cases="nominative vocative" value="krótka" />
+        <override classes="feminine" cases="genitive dative locative" value="krótkiej" />
+        <override classes="feminine" cases="accusative instrumental" value="krótką" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="krótkie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="krótkich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="krótkim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="krótkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="krótcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="krótkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="krótkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="krótkimi" />
+      </polish_forms>
+    </word>
+    <word id="koudai" kana="こうだい" kanji="広大" type="na_adjective" translation="ogromny">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="こうだいだ" kanji="広大だ" translation="jest ogromny" />
+        <form ref="predicate_polite_nonpast" kana="こうだいです" kanji="広大です" translation="jest ogromny" />
+        <form ref="predicate_plain_negative" kana="こうだいじゃない" kanji="広大じゃない" translation="nie jest ogromny" />
+        <form ref="predicate_polite_negative" kana="こうだいではありません" kanji="広大ではありません" translation="nie jest ogromny" />
+        <form ref="predicate_plain_past" kana="こうだいだった" kanji="広大だった" translation="był ogromny" />
+        <form ref="predicate_polite_past" kana="こうだいでした" kanji="広大でした" translation="był ogromny" />
+        <form ref="predicate_plain_past_negative" kana="こうだいではなかった" kanji="広大ではなかった" translation="nie był ogromny" />
+        <form ref="predicate_polite_past_negative" kana="こうだいではありませんでした" kanji="広大ではありませんでした" translation="nie był ogromny" />
+        <form ref="attributive_nonpast" kana="こうだいな" kanji="広大な" translation="ogromny" />
+        <form ref="connective" kana="こうだいで" kanji="広大で" translation="ogromny" />
+        <form ref="adverbial" kana="こうだいに" kanji="広大に" translation="ogromny" />
+        <form ref="conditional" kana="こうだいなら" kanji="広大なら" translation="ogromny" />
+        <form ref="nominalized" kana="こうだいさ" kanji="広大さ" translation="ogromny" />
+        <form ref="appearance_sou" kana="こうだいそう" kanji="広大そう" translation="ogromny" />
+        <form ref="excessive_sugiru" kana="こうだいすぎる" kanji="広大すぎる" translation="ogromny" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="ogromny" />
+        <common cases="genitive" value="ogromnego" />
+        <common cases="dative" value="ogromnemu" />
+        <common cases="instrumental locative" value="ogromnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="ogromnego" />
+        <override classes="feminine" cases="nominative vocative" value="ogromna" />
+        <override classes="feminine" cases="genitive dative locative" value="ogromnej" />
+        <override classes="feminine" cases="accusative instrumental" value="ogromną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="ogromne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="ogromnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="ogromnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="ogromnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ogromni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="ogromnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="ogromnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="ogromnymi" />
+      </polish_forms>
+    </word>
+    <word id="tanki_short_tempered" kana="たんき" kanji="短気" type="na_adjective" translation="porywczy">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="たんきだ" kanji="短気だ" translation="jest porywczy" />
+        <form ref="predicate_polite_nonpast" kana="たんきです" kanji="短気です" translation="jest porywczy" />
+        <form ref="predicate_plain_negative" kana="たんきじゃない" kanji="短気じゃない" translation="nie jest porywczy" />
+        <form ref="predicate_polite_negative" kana="たんきではありません" kanji="短気ではありません" translation="nie jest porywczy" />
+        <form ref="predicate_plain_past" kana="たんきだった" kanji="短気だった" translation="był porywczy" />
+        <form ref="predicate_polite_past" kana="たんきでした" kanji="短気でした" translation="był porywczy" />
+        <form ref="predicate_plain_past_negative" kana="たんきではなかった" kanji="短気ではなかった" translation="nie był porywczy" />
+        <form ref="predicate_polite_past_negative" kana="たんきではありませんでした" kanji="短気ではありませんでした" translation="nie był porywczy" />
+        <form ref="attributive_nonpast" kana="たんきな" kanji="短気な" translation="porywczy" />
+        <form ref="connective" kana="たんきで" kanji="短気で" translation="porywczy" />
+        <form ref="adverbial" kana="たんきに" kanji="短気に" translation="porywczy" />
+        <form ref="conditional" kana="たんきなら" kanji="短気なら" translation="porywczy" />
+        <form ref="nominalized" kana="たんきさ" kanji="短気さ" translation="porywczy" />
+        <form ref="appearance_sou" kana="たんきそう" kanji="短気そう" translation="porywczy" />
+        <form ref="excessive_sugiru" kana="たんきすぎる" kanji="短気すぎる" translation="porywczy" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="porywczy" />
+        <common cases="genitive" value="porywczego" />
+        <common cases="dative" value="porywczemu" />
+        <common cases="instrumental locative" value="porywczym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="porywczego" />
+        <override classes="feminine" cases="nominative vocative" value="porywcza" />
+        <override classes="feminine" cases="genitive dative locative" value="porywczej" />
+        <override classes="feminine" cases="accusative instrumental" value="porywczą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="porywcze" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="porywczych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="porywczym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="porywczymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="porywczy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="porywczych" />
+        <override classes="plural_masculine_personal" cases="dative" value="porywczym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="porywczymi" />
+      </polish_forms>
+    </word>
+    <word id="hayai_early" kana="はやい" kanji="早い" type="i_adjective" translation="wczesny">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="はやい" kanji="早い" translation="jest wczesny" />
+        <form ref="predicate_polite_nonpast" kana="はやいです" kanji="早いです" translation="jest wczesny" />
+        <form ref="predicate_plain_negative" kana="はやくない" kanji="早くない" translation="nie jest wczesny" />
+        <form ref="predicate_polite_negative" kana="はやくないです" kanji="早くないです" translation="nie jest wczesny" />
+        <form ref="predicate_plain_past" kana="はやかった" kanji="早かった" translation="był wczesny" />
+        <form ref="predicate_polite_past" kana="はやかったです" kanji="早かったです" translation="był wczesny" />
+        <form ref="predicate_plain_past_negative" kana="はやくなかった" kanji="早くなかった" translation="nie był wczesny" />
+        <form ref="predicate_polite_past_negative" kana="はやくなかったです" kanji="早くなかったです" translation="nie był wczesny" />
+        <form ref="attributive_nonpast" kana="はやい" kanji="早い" translation="wczesny" />
+        <form ref="connective" kana="はやくて" kanji="早くて" translation="wczesny" />
+        <form ref="adverbial" kana="はやく" kanji="早く" translation="wczesny" />
+        <form ref="conditional" kana="はやければ" kanji="早ければ" translation="wczesny" />
+        <form ref="nominalized" kana="はやさ" kanji="早さ" translation="wczesny" />
+        <form ref="appearance_sou" kana="はやそう" kanji="早そう" translation="wczesny" />
+        <form ref="excessive_sugiru" kana="はやすぎる" kanji="早すぎる" translation="wczesny" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="wczesny" />
+        <common cases="genitive" value="wczesnego" />
+        <common cases="dative" value="wczesnemu" />
+        <common cases="instrumental locative" value="wczesnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="wczesnego" />
+        <override classes="feminine" cases="nominative vocative" value="wczesna" />
+        <override classes="feminine" cases="genitive dative locative" value="wczesnej" />
+        <override classes="feminine" cases="accusative instrumental" value="wczesną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="wczesne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="wczesnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="wczesnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="wczesnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="wcześni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="wczesnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="wczesnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="wczesnymi" />
+      </polish_forms>
+    </word>
+    <word id="osoi_late" kana="おそい" kanji="遅い" type="i_adjective" translation="późny">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="おそい" kanji="遅い" translation="jest późny" />
+        <form ref="predicate_polite_nonpast" kana="おそいです" kanji="遅いです" translation="jest późny" />
+        <form ref="predicate_plain_negative" kana="おそくない" kanji="遅くない" translation="nie jest późny" />
+        <form ref="predicate_polite_negative" kana="おそくないです" kanji="遅くないです" translation="nie jest późny" />
+        <form ref="predicate_plain_past" kana="おそかった" kanji="遅かった" translation="był późny" />
+        <form ref="predicate_polite_past" kana="おそかったです" kanji="遅かったです" translation="był późny" />
+        <form ref="predicate_plain_past_negative" kana="おそくなかった" kanji="遅くなかった" translation="nie był późny" />
+        <form ref="predicate_polite_past_negative" kana="おそくなかったです" kanji="遅くなかったです" translation="nie był późny" />
+        <form ref="attributive_nonpast" kana="おそい" kanji="遅い" translation="późny" />
+        <form ref="connective" kana="おそくて" kanji="遅くて" translation="późny" />
+        <form ref="adverbial" kana="おそく" kanji="遅く" translation="późny" />
+        <form ref="conditional" kana="おそければ" kanji="遅ければ" translation="późny" />
+        <form ref="nominalized" kana="おそさ" kanji="遅さ" translation="późny" />
+        <form ref="appearance_sou" kana="おそそう" kanji="遅そう" translation="późny" />
+        <form ref="excessive_sugiru" kana="おそすぎる" kanji="遅すぎる" translation="późny" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="późny" />
+        <common cases="genitive" value="późnego" />
+        <common cases="dative" value="późnemu" />
+        <common cases="instrumental locative" value="późnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="późnego" />
+        <override classes="feminine" cases="nominative vocative" value="późna" />
+        <override classes="feminine" cases="genitive dative locative" value="późnej" />
+        <override classes="feminine" cases="accusative instrumental" value="późną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="późne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="późnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="późnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="późnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="późni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="późnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="późnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="późnymi" />
+      </polish_forms>
+    </word>
+    <word id="kichou" kana="きちょう" kanji="貴重" type="na_adjective" translation="cenny">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="きちょうだ" kanji="貴重だ" translation="jest cenny" />
+        <form ref="predicate_polite_nonpast" kana="きちょうです" kanji="貴重です" translation="jest cenny" />
+        <form ref="predicate_plain_negative" kana="きちょうじゃない" kanji="貴重じゃない" translation="nie jest cenny" />
+        <form ref="predicate_polite_negative" kana="きちょうではありません" kanji="貴重ではありません" translation="nie jest cenny" />
+        <form ref="predicate_plain_past" kana="きちょうだった" kanji="貴重だった" translation="był cenny" />
+        <form ref="predicate_polite_past" kana="きちょうでした" kanji="貴重でした" translation="był cenny" />
+        <form ref="predicate_plain_past_negative" kana="きちょうではなかった" kanji="貴重ではなかった" translation="nie był cenny" />
+        <form ref="predicate_polite_past_negative" kana="きちょうではありませんでした" kanji="貴重ではありませんでした" translation="nie był cenny" />
+        <form ref="attributive_nonpast" kana="きちょうな" kanji="貴重な" translation="cenny" />
+        <form ref="connective" kana="きちょうで" kanji="貴重で" translation="cenny" />
+        <form ref="adverbial" kana="きちょうに" kanji="貴重に" translation="cenny" />
+        <form ref="conditional" kana="きちょうなら" kanji="貴重なら" translation="cenny" />
+        <form ref="nominalized" kana="きちょうさ" kanji="貴重さ" translation="cenny" />
+        <form ref="appearance_sou" kana="きちょうそう" kanji="貴重そう" translation="cenny" />
+        <form ref="excessive_sugiru" kana="きちょうすぎる" kanji="貴重すぎる" translation="cenny" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="cenny" />
+        <common cases="genitive" value="cennego" />
+        <common cases="dative" value="cennemu" />
+        <common cases="instrumental locative" value="cennym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="cennego" />
+        <override classes="feminine" cases="nominative vocative" value="cenna" />
+        <override classes="feminine" cases="genitive dative locative" value="cennej" />
+        <override classes="feminine" cases="accusative instrumental" value="cenną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="cenne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="cennych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="cennym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="cennymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="cenni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="cennych" />
+        <override classes="plural_masculine_personal" cases="dative" value="cennym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="cennymi" />
+      </polish_forms>
+    </word>
+    <word id="tegaru" kana="てがる" kanji="手軽" type="na_adjective" translation="łatwy">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="てがるだ" kanji="手軽だ" translation="jest łatwy" />
+        <form ref="predicate_polite_nonpast" kana="てがるです" kanji="手軽です" translation="jest łatwy" />
+        <form ref="predicate_plain_negative" kana="てがるじゃない" kanji="手軽じゃない" translation="nie jest łatwy" />
+        <form ref="predicate_polite_negative" kana="てがるではありません" kanji="手軽ではありません" translation="nie jest łatwy" />
+        <form ref="predicate_plain_past" kana="てがるだった" kanji="手軽だった" translation="był łatwy" />
+        <form ref="predicate_polite_past" kana="てがるでした" kanji="手軽でした" translation="był łatwy" />
+        <form ref="predicate_plain_past_negative" kana="てがるではなかった" kanji="手軽ではなかった" translation="nie był łatwy" />
+        <form ref="predicate_polite_past_negative" kana="てがるではありませんでした" kanji="手軽ではありませんでした" translation="nie był łatwy" />
+        <form ref="attributive_nonpast" kana="てがるな" kanji="手軽な" translation="łatwy" />
+        <form ref="connective" kana="てがるで" kanji="手軽で" translation="łatwy" />
+        <form ref="adverbial" kana="てがるに" kanji="手軽に" translation="łatwy" />
+        <form ref="conditional" kana="てがるなら" kanji="手軽なら" translation="łatwy" />
+        <form ref="nominalized" kana="てがるさ" kanji="手軽さ" translation="łatwy" />
+        <form ref="appearance_sou" kana="てがるそう" kanji="手軽そう" translation="łatwy" />
+        <form ref="excessive_sugiru" kana="てがるすぎる" kanji="手軽すぎる" translation="łatwy" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="łatwy" />
+        <common cases="genitive" value="łatwego" />
+        <common cases="dative" value="łatwemu" />
+        <common cases="instrumental locative" value="łatwym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="łatwego" />
+        <override classes="feminine" cases="nominative vocative" value="łatwa" />
+        <override classes="feminine" cases="genitive dative locative" value="łatwej" />
+        <override classes="feminine" cases="accusative instrumental" value="łatwą" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="łatwe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="łatwych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="łatwym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="łatwymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="łatwi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="łatwych" />
+        <override classes="plural_masculine_personal" cases="dative" value="łatwym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="łatwymi" />
+      </polish_forms>
+    </word>
+    <word id="kigaru" kana="きがる" kanji="気軽" type="na_adjective" translation="swobodny">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="きがるだ" kanji="気軽だ" translation="jest swobodny" />
+        <form ref="predicate_polite_nonpast" kana="きがるです" kanji="気軽です" translation="jest swobodny" />
+        <form ref="predicate_plain_negative" kana="きがるじゃない" kanji="気軽じゃない" translation="nie jest swobodny" />
+        <form ref="predicate_polite_negative" kana="きがるではありません" kanji="気軽ではありません" translation="nie jest swobodny" />
+        <form ref="predicate_plain_past" kana="きがるだった" kanji="気軽だった" translation="był swobodny" />
+        <form ref="predicate_polite_past" kana="きがるでした" kanji="気軽でした" translation="był swobodny" />
+        <form ref="predicate_plain_past_negative" kana="きがるではなかった" kanji="気軽ではなかった" translation="nie był swobodny" />
+        <form ref="predicate_polite_past_negative" kana="きがるではありませんでした" kanji="気軽ではありませんでした" translation="nie był swobodny" />
+        <form ref="attributive_nonpast" kana="きがるな" kanji="気軽な" translation="swobodny" />
+        <form ref="connective" kana="きがるで" kanji="気軽で" translation="swobodny" />
+        <form ref="adverbial" kana="きがるに" kanji="気軽に" translation="swobodny" />
+        <form ref="conditional" kana="きがるなら" kanji="気軽なら" translation="swobodny" />
+        <form ref="nominalized" kana="きがるさ" kanji="気軽さ" translation="swobodny" />
+        <form ref="appearance_sou" kana="きがるそう" kanji="気軽そう" translation="swobodny" />
+        <form ref="excessive_sugiru" kana="きがるすぎる" kanji="気軽すぎる" translation="swobodny" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="swobodny" />
+        <common cases="genitive" value="swobodnego" />
+        <common cases="dative" value="swobodnemu" />
+        <common cases="instrumental locative" value="swobodnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="swobodnego" />
+        <override classes="feminine" cases="nominative vocative" value="swobodna" />
+        <override classes="feminine" cases="genitive dative locative" value="swobodnej" />
+        <override classes="feminine" cases="accusative instrumental" value="swobodną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="swobodne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="swobodnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="swobodnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="swobodnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="swobodni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="swobodnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="swobodnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="swobodnymi" />
+      </polish_forms>
+    </word>
+    <word id="keihaku" kana="けいはく" kanji="軽薄" type="na_adjective" translation="lekkomyślny">
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="けいはくだ" kanji="軽薄だ" translation="jest lekkomyślny" />
+        <form ref="predicate_polite_nonpast" kana="けいはくです" kanji="軽薄です" translation="jest lekkomyślny" />
+        <form ref="predicate_plain_negative" kana="けいはくじゃない" kanji="軽薄じゃない" translation="nie jest lekkomyślny" />
+        <form ref="predicate_polite_negative" kana="けいはくではありません" kanji="軽薄ではありません" translation="nie jest lekkomyślny" />
+        <form ref="predicate_plain_past" kana="けいはくだった" kanji="軽薄だった" translation="był lekkomyślny" />
+        <form ref="predicate_polite_past" kana="けいはくでした" kanji="軽薄でした" translation="był lekkomyślny" />
+        <form ref="predicate_plain_past_negative" kana="けいはくではなかった" kanji="軽薄ではなかった" translation="nie był lekkomyślny" />
+        <form ref="predicate_polite_past_negative" kana="けいはくではありませんでした" kanji="軽薄ではありませんでした" translation="nie był lekkomyślny" />
+        <form ref="attributive_nonpast" kana="けいはくな" kanji="軽薄な" translation="lekkomyślny" />
+        <form ref="connective" kana="けいはくで" kanji="軽薄で" translation="lekkomyślny" />
+        <form ref="adverbial" kana="けいはくに" kanji="軽薄に" translation="lekkomyślny" />
+        <form ref="conditional" kana="けいはくなら" kanji="軽薄なら" translation="lekkomyślny" />
+        <form ref="nominalized" kana="けいはくさ" kanji="軽薄さ" translation="lekkomyślny" />
+        <form ref="appearance_sou" kana="けいはくそう" kanji="軽薄そう" translation="lekkomyślny" />
+        <form ref="excessive_sugiru" kana="けいはくすぎる" kanji="軽薄すぎる" translation="lekkomyślny" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="lekkomyślny" />
+        <common cases="genitive" value="lekkomyślnego" />
+        <common cases="dative" value="lekkomyślnemu" />
+        <common cases="instrumental locative" value="lekkomyślnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="lekkomyślnego" />
+        <override classes="feminine" cases="nominative vocative" value="lekkomyślna" />
+        <override classes="feminine" cases="genitive dative locative" value="lekkomyślnej" />
+        <override classes="feminine" cases="accusative instrumental" value="lekkomyślną" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="lekkomyślne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="lekkomyślnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="lekkomyślnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="lekkomyślnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="lekkomyślni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="lekkomyślnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="lekkomyślnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="lekkomyślnymi" />
+      </polish_forms>
+    </word>
   </words>
 </dictionary>
