@@ -3,5 +3,10 @@
   <words>
     <word id="shikata_ga_nai" kana="しかたがない" kanji="仕方がない" translation="nic nie da się zrobić" />
     <word id="shouganai" kana="しょうがない" translation="nic nie poradzisz (potocznie)" />
+    <word id="tanjikan" kana="たんじかん" kanji="短時間" translation="w krótkim czasie" />
+    <word id="teireberu_no" kana="ていれべるの" kanji="低レベルの" translation="na niskim poziomie" />
+    <word id="makkura" kana="まっくら" kanji="真っ暗" translation="kompletne ciemności" />
+    <word id="nijuu" kana="にじゅう" kanji="二重" translation="podwójny" />
+    <word id="migaru" kana="みがる" kanji="身軽" translation="lekki, bez obciążenia" />
   </words>
 </dictionary>
