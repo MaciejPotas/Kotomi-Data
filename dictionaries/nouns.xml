@@ -482,22 +482,22 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="praca" genitive="pracy" accusative="pracę" instrumental="pracą" locative="pracy" dative="pracy" vocative="praco" />
     </word>
-    <word id="sister" kana="あね" kanji="姉" type="noun" category="person" translation="siostra">
+    <word id="sister" kana="あね" kanji="姉" type="noun" category="person" translation="starsza siostra">
       <counting classes="person">
         <source_forms language="pl">
-          <form profile="few" cases="nominative accusative vocative" value="siostry" />
-          <form profile="few" cases="genitive" value="sióstr" />
-          <form profile="few" cases="dative" value="siostrom" />
-          <form profile="few" cases="instrumental" value="siostrami" />
-          <form profile="few" cases="locative" value="siostrach" />
-          <form profile="many" cases="nominative genitive accusative vocative" value="sióstr" />
-          <form profile="many" cases="dative" value="siostrom" />
-          <form profile="many" cases="instrumental" value="siostrami" />
-          <form profile="many" cases="locative" value="siostrach" />
+          <form profile="few" cases="nominative accusative vocative" value="starsze siostry" />
+          <form profile="few" cases="genitive" value="starszych sióstr" />
+          <form profile="few" cases="dative" value="starszym siostrom" />
+          <form profile="few" cases="instrumental" value="starszymi siostrami" />
+          <form profile="few" cases="locative" value="starszych siostrach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="starszych sióstr" />
+          <form profile="many" cases="dative" value="starszym siostrom" />
+          <form profile="many" cases="instrumental" value="starszymi siostrami" />
+          <form profile="many" cases="locative" value="starszych siostrach" />
         </source_forms>
       </counting>
       <agreement class="feminine" />
-      <cases language="pl" nominative="siostra" genitive="siostry" accusative="siostrę" instrumental="siostrą" locative="siostrze" dative="siostrze" vocative="siostro" />
+      <cases language="pl" nominative="starsza siostra" genitive="starszej siostry" dative="starszej siostrze" accusative="starszą siostrę" instrumental="starszą siostrą" locative="starszej siostrze" vocative="starsza siostro" />
     </word>
     <word id="song" kana="うた" kanji="歌" type="noun" category="music" translation="piosenka">
       <counting classes="song">
@@ -1851,20 +1851,20 @@
     <word id="inugoya" kana="いぬごや" kanji="犬小屋" type="noun" category="thing" translation="buda dla psa">
       <counting classes="small_object">
         <source_forms language="pl">
-          <form profile="few" cases="nominative" value="budy dla psów" />
-          <form profile="few" cases="genitive" value="bud dla psów" />
-          <form profile="few" cases="dative" value="budom dla psów" />
-          <form profile="few" cases="accusative" value="budy dla psów" />
-          <form profile="few" cases="instrumental" value="budami dla psów" />
-          <form profile="few" cases="locative" value="budach dla psów" />
-          <form profile="few" cases="vocative" value="budy dla psów" />
-          <form profile="many" cases="nominative" value="bud dla psów" />
-          <form profile="many" cases="genitive" value="bud dla psów" />
-          <form profile="many" cases="dative" value="budom dla psów" />
-          <form profile="many" cases="accusative" value="bud dla psów" />
-          <form profile="many" cases="instrumental" value="budami dla psów" />
-          <form profile="many" cases="locative" value="budach dla psów" />
-          <form profile="many" cases="vocative" value="bud dla psów" />
+          <form profile="few" cases="nominative" value="budy dla psa" />
+          <form profile="few" cases="genitive" value="bud dla psa" />
+          <form profile="few" cases="dative" value="budom dla psa" />
+          <form profile="few" cases="accusative" value="budy dla psa" />
+          <form profile="few" cases="instrumental" value="budami dla psa" />
+          <form profile="few" cases="locative" value="budach dla psa" />
+          <form profile="few" cases="vocative" value="budy dla psa" />
+          <form profile="many" cases="nominative" value="bud dla psa" />
+          <form profile="many" cases="genitive" value="bud dla psa" />
+          <form profile="many" cases="dative" value="budom dla psa" />
+          <form profile="many" cases="accusative" value="bud dla psa" />
+          <form profile="many" cases="instrumental" value="budami dla psa" />
+          <form profile="many" cases="locative" value="budach dla psa" />
+          <form profile="many" cases="vocative" value="bud dla psa" />
         </source_forms>
       </counting>
       <agreement class="feminine" />
