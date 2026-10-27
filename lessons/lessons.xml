@@ -818,6 +818,172 @@
       <local_word id="ola_kanji_151_155_012" translation="brać, wziąć, zdjąć" kana="とる" kanji="取る" romaji="toru" example="彼は数学で満点を取った。" />
       <local_word id="ola_kanji_151_155_013" translation="zdjąć, odłączyć, zdemontować" kana="とりはずす" kanji="取り外す" romaji="torihazusu" example="カーテンを取りはずして洗濯に出しなさい。" />
     </lesson>
+    <lesson id="ola_kanji_166_170" group="Ola" main="Kanji" name="166-170">
+      <word id="ola_kanji_166_170_001">
+        <dictionary_ref dictionary="adjectives" word="hiroi" />
+      </word>
+      <word id="ola_kanji_166_170_002">
+        <dictionary_ref dictionary="verbs" word="hirogeru" />
+      </word>
+      <word id="ola_kanji_166_170_003">
+        <dictionary_ref dictionary="nouns" word="hiroshima" />
+      </word>
+      <word id="ola_kanji_166_170_004">
+        <dictionary_ref dictionary="nouns" word="koukoku" />
+      </word>
+      <word id="ola_kanji_166_170_005">
+        <dictionary_ref dictionary="adjectives" word="koudai" />
+      </word>
+      <word id="ola_kanji_166_170_006">
+        <dictionary_ref dictionary="adjectives" word="mijikai" />
+      </word>
+      <word id="ola_kanji_166_170_007">
+        <dictionary_ref dictionary="nouns" word="tanki_period" />
+      </word>
+      <word id="ola_kanji_166_170_008">
+        <dictionary_ref dictionary="adjectives" word="tanki_short_tempered" />
+      </word>
+      <word id="ola_kanji_166_170_009">
+        <dictionary_ref dictionary="expressions" word="tanjikan" />
+      </word>
+      <word id="ola_kanji_166_170_010">
+        <dictionary_ref dictionary="nouns" word="tansho" />
+      </word>
+      <word id="ola_kanji_166_170_011">
+        <dictionary_ref dictionary="nouns" word="tanka_poem" />
+      </word>
+      <word id="ola_kanji_166_170_012">
+        <dictionary_ref dictionary="adjectives" word="hikui" />
+      </word>
+      <word id="ola_kanji_166_170_013">
+        <dictionary_ref dictionary="nouns" word="teikiatsu" />
+      </word>
+      <word id="ola_kanji_166_170_014">
+        <dictionary_ref dictionary="verbs" word="teika_suru" />
+      </word>
+      <word id="ola_kanji_166_170_015">
+        <dictionary_ref dictionary="adjectives" word="saitei" />
+      </word>
+      <word id="ola_kanji_166_170_016">
+        <dictionary_ref dictionary="nouns" word="teion" />
+      </word>
+      <word id="ola_kanji_166_170_017">
+        <dictionary_ref dictionary="expressions" word="teireberu_no" />
+      </word>
+      <word id="ola_kanji_166_170_018">
+        <dictionary_ref dictionary="adjectives" word="kurai" />
+      </word>
+      <word id="ola_kanji_166_170_019">
+        <dictionary_ref dictionary="expressions" word="makkura" />
+      </word>
+      <word id="ola_kanji_166_170_020">
+        <dictionary_ref dictionary="verbs" word="anki_suru" />
+      </word>
+      <word id="ola_kanji_166_170_021">
+        <dictionary_ref dictionary="nouns" word="anzan" />
+      </word>
+      <word id="ola_kanji_166_170_022">
+        <dictionary_ref dictionary="nouns" word="ansatsu" />
+      </word>
+      <word id="ola_kanji_166_170_023">
+        <dictionary_ref dictionary="nouns" word="angou" />
+      </word>
+      <word id="ola_kanji_166_170_024">
+        <dictionary_ref dictionary="adjectives" word="tooi" />
+      </word>
+      <word id="ola_kanji_166_170_025">
+        <dictionary_ref dictionary="verbs" word="enryo_suru" />
+      </word>
+      <word id="ola_kanji_166_170_026">
+        <dictionary_ref dictionary="nouns" word="ensoku" />
+      </word>
+      <word id="ola_kanji_166_170_027">
+        <dictionary_ref dictionary="nouns" word="eien" />
+      </word>
+      <word id="ola_kanji_166_170_028">
+        <dictionary_ref dictionary="nouns" word="enpou" />
+      </word>
+      <word id="ola_kanji_166_170_029">
+        <dictionary_ref dictionary="nouns" word="enkyori" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_171_175" group="Ola" main="Kanji" name="171-175">
+      <word id="ola_kanji_171_175_001">
+        <dictionary_ref dictionary="adjectives" word="chikai" />
+      </word>
+      <word id="ola_kanji_171_175_002">
+        <dictionary_ref dictionary="adverbs" word="chikaku_ni" />
+      </word>
+      <word id="ola_kanji_171_175_003">
+        <dictionary_ref dictionary="adverbs" word="saikin" />
+      </word>
+      <word id="ola_kanji_171_175_004">
+        <dictionary_ref dictionary="nouns" word="kinjo" />
+      </word>
+      <word id="ola_kanji_171_175_005">
+        <dictionary_ref dictionary="nouns" word="fukin" />
+      </word>
+      <word id="ola_kanji_171_175_006">
+        <dictionary_ref dictionary="nouns" word="kinki_region" />
+      </word>
+      <word id="ola_kanji_171_175_007">
+        <dictionary_ref dictionary="adjectives" word="hayai_early" />
+      </word>
+      <word id="ola_kanji_171_175_008">
+        <dictionary_ref dictionary="nouns" word="hayaoki" />
+      </word>
+      <word id="ola_kanji_171_175_009">
+        <dictionary_ref dictionary="adverbs" word="souchou" />
+      </word>
+      <word id="ola_kanji_171_175_010">
+        <dictionary_ref dictionary="adverbs" word="sassoku" />
+      </word>
+      <word id="ola_kanji_171_175_011">
+        <dictionary_ref dictionary="adjectives" word="osoi_late" />
+      </word>
+      <word id="ola_kanji_171_175_012">
+        <dictionary_ref dictionary="verbs" word="okureru" />
+      </word>
+      <word id="ola_kanji_171_175_013">
+        <dictionary_ref dictionary="nouns" word="chikoku" />
+      </word>
+      <word id="ola_kanji_171_175_014">
+        <dictionary_ref dictionary="adjectives" word="omoi" />
+      </word>
+      <word id="ola_kanji_171_175_015">
+        <dictionary_ref dictionary="verbs" word="kasaneru" />
+      </word>
+      <word id="ola_kanji_171_175_016">
+        <dictionary_ref dictionary="nouns" word="taijuu" />
+      </word>
+      <word id="ola_kanji_171_175_017">
+        <dictionary_ref dictionary="expressions" word="nijuu" />
+      </word>
+      <word id="ola_kanji_171_175_018">
+        <dictionary_ref dictionary="nouns" word="juuryoku" />
+      </word>
+      <word id="ola_kanji_171_175_019">
+        <dictionary_ref dictionary="adjectives" word="kichou" />
+      </word>
+      <word id="ola_kanji_171_175_020">
+        <dictionary_ref dictionary="adjectives" word="karui" />
+      </word>
+      <word id="ola_kanji_171_175_021">
+        <dictionary_ref dictionary="expressions" word="migaru" />
+      </word>
+      <word id="ola_kanji_171_175_022">
+        <dictionary_ref dictionary="adjectives" word="kigaru" />
+      </word>
+      <word id="ola_kanji_171_175_023">
+        <dictionary_ref dictionary="adjectives" word="tegaru" />
+      </word>
+      <word id="ola_kanji_171_175_024">
+        <dictionary_ref dictionary="adjectives" word="keihaku" />
+      </word>
+      <word id="ola_kanji_171_175_025">
+        <dictionary_ref dictionary="verbs" word="keishi_suru" />
+      </word>
+    </lesson>
     <lesson id="thematic_exchange" group="Tematyczne" main="Relacje i wymiana" name="Dawać, otrzymywać i pożyczać">
       <word id="thematic_verbs_ageru_give">
         <dictionary_ref dictionary="verbs" word="ageru_give" />
