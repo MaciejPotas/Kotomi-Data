@@ -59,8 +59,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "c12d4805099410d737323e4e436d0401b03210de533b38be8c8dc96f31b667cc",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=c12d4805099410d737323e4e436d0401b03210de533b38be8c8dc96f31b667cc"
+      "sha256": "c5406bd38362ee45c2062b83e9a6e8ab6e3335e5795e360092bd5fb361ba07dd",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=c5406bd38362ee45c2062b83e9a6e8ab6e3335e5795e360092bd5fb361ba07dd"
     },
     {
       "path": "data/grammar/contexts.xml",
