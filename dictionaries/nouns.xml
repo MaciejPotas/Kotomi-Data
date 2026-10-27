@@ -1634,5 +1634,285 @@
       <agreement class="plural_non_masculine_personal" />
       <cases language="pl" nominative="dzieci" genitive="dzieci" dative="dzieciom" accusative="dzieci" instrumental="dziećmi" locative="dzieciach" vocative="dzieci" />
     </word>
+    <word id="oniisan" kana="おにいさん" kanji="お兄さん" type="noun" category="person" translation="starszy brat">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="starsi bracia" />
+          <form profile="few" cases="genitive" value="starszych braci" />
+          <form profile="few" cases="dative" value="starszym braciom" />
+          <form profile="few" cases="accusative" value="starszych braci" />
+          <form profile="few" cases="instrumental" value="starszymi braćmi" />
+          <form profile="few" cases="locative" value="starszych braciach" />
+          <form profile="few" cases="vocative" value="starsi bracia" />
+          <form profile="many" cases="nominative" value="starszych braci" />
+          <form profile="many" cases="genitive" value="starszych braci" />
+          <form profile="many" cases="dative" value="starszym braciom" />
+          <form profile="many" cases="accusative" value="starszych braci" />
+          <form profile="many" cases="instrumental" value="starszymi braćmi" />
+          <form profile="many" cases="locative" value="starszych braciach" />
+          <form profile="many" cases="vocative" value="starszych braci" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="starszy brat" genitive="starszego brata" dative="starszemu bratu" accusative="starszego brata" instrumental="starszym bratem" locative="starszym bracie" vocative="starszy bracie" />
+    </word>
+    <word id="oneesan" kana="おねえさん" kanji="お姉さん" type="noun" category="person" translation="starsza siostra">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="starsze siostry" />
+          <form profile="few" cases="genitive" value="starszych sióstr" />
+          <form profile="few" cases="dative" value="starszym siostrom" />
+          <form profile="few" cases="accusative" value="starsze siostry" />
+          <form profile="few" cases="instrumental" value="starszymi siostrami" />
+          <form profile="few" cases="locative" value="starszych siostrach" />
+          <form profile="few" cases="vocative" value="starsze siostry" />
+          <form profile="many" cases="nominative" value="starszych sióstr" />
+          <form profile="many" cases="genitive" value="starszych sióstr" />
+          <form profile="many" cases="dative" value="starszym siostrom" />
+          <form profile="many" cases="accusative" value="starszych sióstr" />
+          <form profile="many" cases="instrumental" value="starszymi siostrami" />
+          <form profile="many" cases="locative" value="starszych siostrach" />
+          <form profile="many" cases="vocative" value="starszych sióstr" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="starsza siostra" genitive="starszej siostry" dative="starszej siostrze" accusative="starszą siostrę" instrumental="starszą siostrą" locative="starszej siostrze" vocative="starsza siostro" />
+    </word>
+    <word id="oya" kana="おや" kanji="親" type="noun" category="person" translation="rodzic">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="rodzice" />
+          <form profile="few" cases="genitive" value="rodziców" />
+          <form profile="few" cases="dative" value="rodzicom" />
+          <form profile="few" cases="accusative" value="rodziców" />
+          <form profile="few" cases="instrumental" value="rodzicami" />
+          <form profile="few" cases="locative" value="rodzicach" />
+          <form profile="few" cases="vocative" value="rodzice" />
+          <form profile="many" cases="nominative" value="rodziców" />
+          <form profile="many" cases="genitive" value="rodziców" />
+          <form profile="many" cases="dative" value="rodzicom" />
+          <form profile="many" cases="accusative" value="rodziców" />
+          <form profile="many" cases="instrumental" value="rodzicami" />
+          <form profile="many" cases="locative" value="rodzicach" />
+          <form profile="many" cases="vocative" value="rodziców" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="rodzic" genitive="rodzica" dative="rodzicowi" accusative="rodzica" instrumental="rodzicem" locative="rodzicu" vocative="rodzicu" />
+    </word>
+    <word id="oyayubi" kana="おやゆび" kanji="親指" type="noun" category="thing" translation="kciuk">
+      <counting classes="small_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="kciuki" />
+          <form profile="few" cases="genitive" value="kciuków" />
+          <form profile="few" cases="dative" value="kciukom" />
+          <form profile="few" cases="accusative" value="kciuki" />
+          <form profile="few" cases="instrumental" value="kciukami" />
+          <form profile="few" cases="locative" value="kciukach" />
+          <form profile="few" cases="vocative" value="kciuki" />
+          <form profile="many" cases="nominative" value="kciuków" />
+          <form profile="many" cases="genitive" value="kciuków" />
+          <form profile="many" cases="dative" value="kciukom" />
+          <form profile="many" cases="accusative" value="kciuków" />
+          <form profile="many" cases="instrumental" value="kciukami" />
+          <form profile="many" cases="locative" value="kciukach" />
+          <form profile="many" cases="vocative" value="kciuków" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="kciuk" genitive="kciuka" dative="kciukowi" accusative="kciuk" instrumental="kciukiem" locative="kciuku" vocative="kciuku" />
+    </word>
+    <word id="shinyuu" kana="しんゆう" kanji="親友" type="noun" category="person" translation="przyjaciel">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="przyjaciele" />
+          <form profile="few" cases="genitive" value="przyjaciół" />
+          <form profile="few" cases="dative" value="przyjaciołom" />
+          <form profile="few" cases="accusative" value="przyjaciół" />
+          <form profile="few" cases="instrumental" value="przyjaciółmi" />
+          <form profile="few" cases="locative" value="przyjaciołach" />
+          <form profile="few" cases="vocative" value="przyjaciele" />
+          <form profile="many" cases="nominative" value="przyjaciół" />
+          <form profile="many" cases="genitive" value="przyjaciół" />
+          <form profile="many" cases="dative" value="przyjaciołom" />
+          <form profile="many" cases="accusative" value="przyjaciół" />
+          <form profile="many" cases="instrumental" value="przyjaciółmi" />
+          <form profile="many" cases="locative" value="przyjaciołach" />
+          <form profile="many" cases="vocative" value="przyjaciół" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="przyjaciel" genitive="przyjaciela" dative="przyjacielowi" accusative="przyjaciela" instrumental="przyjacielem" locative="przyjacielu" vocative="przyjacielu" />
+    </word>
+    <word id="nikushin" kana="にくしん" kanji="肉親" type="noun" category="person" translation="krewny">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="krewni" />
+          <form profile="few" cases="genitive" value="krewnych" />
+          <form profile="few" cases="dative" value="krewnym" />
+          <form profile="few" cases="accusative" value="krewnych" />
+          <form profile="few" cases="instrumental" value="krewnymi" />
+          <form profile="few" cases="locative" value="krewnych" />
+          <form profile="few" cases="vocative" value="krewni" />
+          <form profile="many" cases="nominative" value="krewnych" />
+          <form profile="many" cases="genitive" value="krewnych" />
+          <form profile="many" cases="dative" value="krewnym" />
+          <form profile="many" cases="accusative" value="krewnych" />
+          <form profile="many" cases="instrumental" value="krewnymi" />
+          <form profile="many" cases="locative" value="krewnych" />
+          <form profile="many" cases="vocative" value="krewnych" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="krewny" genitive="krewnego" dative="krewnemu" accusative="krewnego" instrumental="krewnym" locative="krewnym" vocative="krewny" />
+    </word>
+    <word id="aruji" kana="あるじ" kanji="主" type="noun" category="person" translation="głowa rodu">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="głowa rodu" genitive="głowy rodu" dative="głowie rodu" accusative="głowę rodu" instrumental="głową rodu" locative="głowie rodu" vocative="głowo rodu" />
+    </word>
+    <word id="shugo" kana="しゅご" kanji="主語" type="noun" category="abstract" translation="podmiot">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="podmiot" genitive="podmiotu" dative="podmiotowi" accusative="podmiot" instrumental="podmiotem" locative="podmiocie" vocative="podmiocie" />
+    </word>
+    <word id="sofubo" kana="そふぼ" kanji="祖父母" type="noun" category="person" translation="dziadkowie">
+      <agreement class="plural_masculine_personal" />
+      <cases language="pl" nominative="dziadkowie" genitive="dziadków" dative="dziadkom" accusative="dziadków" instrumental="dziadkami" locative="dziadkach" vocative="dziadkowie" />
+    </word>
+    <word id="sokoku" kana="そこく" kanji="祖国" type="noun" category="place" translation="ojczyzna">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="ojczyzna" genitive="ojczyzny" dative="ojczyźnie" accusative="ojczyznę" instrumental="ojczyzną" locative="ojczyźnie" vocative="ojczyzno" />
+    </word>
+    <word id="sosen" kana="そせん" kanji="祖先" type="noun" category="person" translation="przodek">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="przodkowie" />
+          <form profile="few" cases="genitive" value="przodków" />
+          <form profile="few" cases="dative" value="przodkom" />
+          <form profile="few" cases="accusative" value="przodków" />
+          <form profile="few" cases="instrumental" value="przodkami" />
+          <form profile="few" cases="locative" value="przodkach" />
+          <form profile="few" cases="vocative" value="przodkowie" />
+          <form profile="many" cases="nominative" value="przodków" />
+          <form profile="many" cases="genitive" value="przodków" />
+          <form profile="many" cases="dative" value="przodkom" />
+          <form profile="many" cases="accusative" value="przodków" />
+          <form profile="many" cases="instrumental" value="przodkami" />
+          <form profile="many" cases="locative" value="przodkach" />
+          <form profile="many" cases="vocative" value="przodków" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="przodek" genitive="przodka" dative="przodkowi" accusative="przodka" instrumental="przodkiem" locative="przodku" vocative="przodku" />
+    </word>
+    <word id="senzo" kana="せんぞ" kanji="先祖" type="noun" category="person" translation="przodek">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="przodkowie" />
+          <form profile="few" cases="genitive" value="przodków" />
+          <form profile="few" cases="dative" value="przodkom" />
+          <form profile="few" cases="accusative" value="przodków" />
+          <form profile="few" cases="instrumental" value="przodkami" />
+          <form profile="few" cases="locative" value="przodkach" />
+          <form profile="few" cases="vocative" value="przodkowie" />
+          <form profile="many" cases="nominative" value="przodków" />
+          <form profile="many" cases="genitive" value="przodków" />
+          <form profile="many" cases="dative" value="przodkom" />
+          <form profile="many" cases="accusative" value="przodków" />
+          <form profile="many" cases="instrumental" value="przodkami" />
+          <form profile="many" cases="locative" value="przodkach" />
+          <form profile="many" cases="vocative" value="przodków" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="przodek" genitive="przodka" dative="przodkowi" accusative="przodka" instrumental="przodkiem" locative="przodku" vocative="przodku" />
+    </word>
+    <word id="koinu" kana="こいぬ" kanji="子犬" type="noun" category="animal" translation="szczenię">
+      <counting classes="small_animal">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="szczenięta" />
+          <form profile="few" cases="genitive" value="szczeniąt" />
+          <form profile="few" cases="dative" value="szczeniętom" />
+          <form profile="few" cases="accusative" value="szczenięta" />
+          <form profile="few" cases="instrumental" value="szczeniętami" />
+          <form profile="few" cases="locative" value="szczeniętach" />
+          <form profile="few" cases="vocative" value="szczenięta" />
+          <form profile="many" cases="nominative" value="szczeniąt" />
+          <form profile="many" cases="genitive" value="szczeniąt" />
+          <form profile="many" cases="dative" value="szczeniętom" />
+          <form profile="many" cases="accusative" value="szczeniąt" />
+          <form profile="many" cases="instrumental" value="szczeniętami" />
+          <form profile="many" cases="locative" value="szczeniętach" />
+          <form profile="many" cases="vocative" value="szczeniąt" />
+        </source_forms>
+      </counting>
+      <agreement class="neuter" />
+      <cases language="pl" nominative="szczenię" genitive="szczenięcia" dative="szczenięciu" accusative="szczenię" instrumental="szczenięciem" locative="szczenięciu" vocative="szczenię" />
+    </word>
+    <word id="inugoya" kana="いぬごや" kanji="犬小屋" type="noun" category="thing" translation="buda dla psa">
+      <counting classes="small_object">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="budy dla psów" />
+          <form profile="few" cases="genitive" value="bud dla psów" />
+          <form profile="few" cases="dative" value="budom dla psów" />
+          <form profile="few" cases="accusative" value="budy dla psów" />
+          <form profile="few" cases="instrumental" value="budami dla psów" />
+          <form profile="few" cases="locative" value="budach dla psów" />
+          <form profile="few" cases="vocative" value="budy dla psów" />
+          <form profile="many" cases="nominative" value="bud dla psów" />
+          <form profile="many" cases="genitive" value="bud dla psów" />
+          <form profile="many" cases="dative" value="budom dla psów" />
+          <form profile="many" cases="accusative" value="bud dla psów" />
+          <form profile="many" cases="instrumental" value="budami dla psów" />
+          <form profile="many" cases="locative" value="budach dla psów" />
+          <form profile="many" cases="vocative" value="bud dla psów" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="buda dla psa" genitive="budy dla psa" dative="budzie dla psa" accusative="budę dla psa" instrumental="budą dla psa" locative="budzie dla psa" vocative="budo dla psa" />
+    </word>
+    <word id="norainu" kana="のらいぬ" kanji="野良犬" type="noun" category="animal" translation="bezpański pies">
+      <counting classes="small_animal">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="bezpańskie psy" />
+          <form profile="few" cases="genitive" value="bezpańskich psów" />
+          <form profile="few" cases="dative" value="bezpańskim psom" />
+          <form profile="few" cases="accusative" value="bezpańskie psy" />
+          <form profile="few" cases="instrumental" value="bezpańskimi psami" />
+          <form profile="few" cases="locative" value="bezpańskich psach" />
+          <form profile="few" cases="vocative" value="bezpańskie psy" />
+          <form profile="many" cases="nominative" value="bezpańskich psów" />
+          <form profile="many" cases="genitive" value="bezpańskich psów" />
+          <form profile="many" cases="dative" value="bezpańskim psom" />
+          <form profile="many" cases="accusative" value="bezpańskich psów" />
+          <form profile="many" cases="instrumental" value="bezpańskimi psami" />
+          <form profile="many" cases="locative" value="bezpańskich psach" />
+          <form profile="many" cases="vocative" value="bezpańskich psów" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_animate" />
+      <cases language="pl" nominative="bezpański pies" genitive="bezpańskiego psa" dative="bezpańskiemu psu" accusative="bezpańskiego psa" instrumental="bezpańskim psem" locative="bezpańskim psie" vocative="bezpański psie" />
+    </word>
+    <word id="yaken" kana="やけん" kanji="野犬" type="noun" category="animal" translation="bezpański pies">
+      <counting classes="small_animal">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="bezpańskie psy" />
+          <form profile="few" cases="genitive" value="bezpańskich psów" />
+          <form profile="few" cases="dative" value="bezpańskim psom" />
+          <form profile="few" cases="accusative" value="bezpańskie psy" />
+          <form profile="few" cases="instrumental" value="bezpańskimi psami" />
+          <form profile="few" cases="locative" value="bezpańskich psach" />
+          <form profile="few" cases="vocative" value="bezpańskie psy" />
+          <form profile="many" cases="nominative" value="bezpańskich psów" />
+          <form profile="many" cases="genitive" value="bezpańskich psów" />
+          <form profile="many" cases="dative" value="bezpańskim psom" />
+          <form profile="many" cases="accusative" value="bezpańskich psów" />
+          <form profile="many" cases="instrumental" value="bezpańskimi psami" />
+          <form profile="many" cases="locative" value="bezpańskich psach" />
+          <form profile="many" cases="vocative" value="bezpańskich psów" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_animate" />
+      <cases language="pl" nominative="bezpański pies" genitive="bezpańskiego psa" dative="bezpańskiemu psu" accusative="bezpańskiego psa" instrumental="bezpańskim psem" locative="bezpańskim psie" vocative="bezpański psie" />
+    </word>
   </words>
 </dictionary>

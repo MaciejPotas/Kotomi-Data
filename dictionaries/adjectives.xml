@@ -3447,5 +3447,43 @@
         <override classes="plural_masculine_personal" cases="instrumental" value="pożądanymi" />
       </polish_forms>
     </word>
+    <word id="shitashii" kana="したしい" kanji="親しい" type="i_adjective" translation="bliski, dobrze znany">
+      <describes categories="person" />
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="したしい" translation="jest bliski" kanji="親しい" />
+        <form ref="predicate_polite_nonpast" kana="したしいです" translation="jest bliski" kanji="親しいです" />
+        <form ref="predicate_plain_negative" kana="したしくない" translation="nie jest bliski" kanji="親しくない" />
+        <form ref="predicate_polite_negative" kana="したしくないです" translation="nie jest bliski" kanji="親しくないです" />
+        <form ref="predicate_plain_past" kana="したしかった" translation="był bliski" kanji="親しかった" />
+        <form ref="predicate_polite_past" kana="したしかったです" translation="był bliski" kanji="親しかったです" />
+        <form ref="predicate_plain_past_negative" kana="したしくなかった" translation="nie był bliski" kanji="親しくなかった" />
+        <form ref="predicate_polite_past_negative" kana="したしくなかったです" translation="nie był bliski" kanji="親しくなかったです" />
+        <form ref="attributive_nonpast" kana="したしい" translation="bliski" kanji="親しい" />
+        <form ref="connective" kana="したしくて" translation="bliski" kanji="親しくて" />
+        <form ref="adverbial" kana="したしく" translation="bliski" kanji="親しく" />
+        <form ref="conditional" kana="したしければ" translation="bliski" kanji="親しければ" />
+        <form ref="nominalized" kana="したしさ" translation="bliski" kanji="親しさ" />
+        <form ref="appearance_sou" kana="したしそう" translation="bliski" kanji="親しそう" />
+        <form ref="excessive_sugiru" kana="したしすぎる" translation="bliski" kanji="親しすぎる" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="bliski" />
+        <common cases="genitive" value="bliskiego" />
+        <common cases="dative" value="bliskiemu" />
+        <common cases="instrumental locative" value="bliskim" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="bliskiego" />
+        <override classes="feminine" cases="nominative vocative" value="bliska" />
+        <override classes="feminine" cases="genitive dative locative" value="bliskiej" />
+        <override classes="feminine" cases="accusative instrumental" value="bliską" />
+        <override classes="neuter plural_non_masculine_personal" cases="nominative accusative vocative" value="bliskie" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="bliskich" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="bliskim" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="bliskimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="bliscy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="bliskich" />
+        <override classes="plural_masculine_personal" cases="dative" value="bliskim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="bliskimi" />
+      </polish_forms>
+    </word>
   </words>
 </dictionary>

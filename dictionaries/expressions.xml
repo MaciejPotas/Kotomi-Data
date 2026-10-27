@@ -3,5 +3,16 @@
   <words>
     <word id="shikata_ga_nai" kana="しかたがない" kanji="仕方がない" translation="nic nie da się zrobić" />
     <word id="shouganai" kana="しょうがない" translation="nic nie poradzisz (potocznie)" />
+    <word id="watashi" kana="わたし" kanji="私" translation="ja" />
+    <word id="shiritsu" kana="しりつ" kanji="私立" translation="prywatny" />
+    <word id="shiyou" kana="しよう" kanji="私用" translation="prywatny użytek, prywatna sprawa" />
+    <word id="fukei" kana="ふけい" kanji="父兄" translation="rodzice, opiekunowie" />
+    <word id="omona" kana="おもな" kanji="主な" translation="główny" />
+    <word id="shujin" kana="しゅじん" kanji="主人" translation="mąż, głowa rodu, właściciel" />
+    <word id="shuyouna" kana="しゅような" kanji="主要な" translation="główny" />
+    <word id="shuchousuru" kana="しゅちょうする" kanji="主張する" translation="twierdzić, upierać się" />
+    <word id="ichizoku" kana="いちぞく" kanji="一族" translation="cała rodzina, klan" />
+    <word id="shuzoku" kana="しゅぞく" kanji="種族" translation="rasa, plemię" />
+    <word id="minzoku" kana="みんぞく" kanji="民族" translation="rasa, naród, nacja" />
   </words>
 </dictionary>

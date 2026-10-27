@@ -1299,68 +1299,125 @@
         <dictionary_ref dictionary="nouns" word="madogiwazoku" />
       </word>
     </lesson>
-    <lesson id="ola_kanji_family_1" group="Ola" main="Kanji" name="Rodzina 1 — najbliżsi">
-      <word id="ola_kanji_family_1_001">
-        <dictionary_ref dictionary="nouns" word="kazoku" />
+    <lesson id="ola_kanji_156_160" group="Ola" main="Kanji" name="156-160">
+      <word id="ola_kanji_156_160_001">
+        <dictionary_ref dictionary="expressions" word="watashi" />
       </word>
-      <word id="ola_kanji_family_1_002">
-        <dictionary_ref dictionary="nouns" word="ryoushin" />
+      <word id="ola_kanji_156_160_002">
+        <dictionary_ref dictionary="expressions" word="shiritsu" />
       </word>
-      <word id="ola_kanji_family_1_003">
-        <dictionary_ref dictionary="nouns" word="chichi" />
+      <word id="ola_kanji_156_160_003">
+        <dictionary_ref dictionary="expressions" word="shiyou" />
       </word>
-      <word id="ola_kanji_family_1_004">
-        <dictionary_ref dictionary="nouns" word="haha" />
-      </word>
-      <word id="ola_kanji_family_1_005">
-        <dictionary_ref dictionary="nouns" word="otousan" />
-      </word>
-      <word id="ola_kanji_family_1_006">
-        <dictionary_ref dictionary="nouns" word="mother" />
-      </word>
-      <word id="ola_kanji_family_1_007">
+      <word id="ola_kanji_156_160_004">
         <dictionary_ref dictionary="nouns" word="ani" />
       </word>
-      <word id="ola_kanji_family_1_008">
-        <dictionary_ref dictionary="nouns" word="sister" />
+      <word id="ola_kanji_156_160_005">
+        <dictionary_ref dictionary="nouns" word="oniisan" />
       </word>
-      <word id="ola_kanji_family_1_009">
+      <word id="ola_kanji_156_160_006">
+        <dictionary_ref dictionary="expressions" word="fukei" />
+      </word>
+      <word id="ola_kanji_156_160_007">
         <dictionary_ref dictionary="nouns" word="otouto" />
       </word>
-      <word id="ola_kanji_family_1_010">
-        <dictionary_ref dictionary="nouns" word="imouto" />
-      </word>
-    </lesson>
-    <lesson id="ola_kanji_family_2" group="Ola" main="Kanji" name="Rodzina 2 — krewni i dzieci">
-      <word id="ola_kanji_family_2_001">
+      <word id="ola_kanji_156_160_008">
         <dictionary_ref dictionary="nouns" word="kyoudai" />
       </word>
-      <word id="ola_kanji_family_2_002">
+      <word id="ola_kanji_156_160_009">
+        <dictionary_ref dictionary="nouns" word="sister" />
+      </word>
+      <word id="ola_kanji_156_160_010">
+        <dictionary_ref dictionary="nouns" word="oneesan" />
+      </word>
+      <word id="ola_kanji_156_160_011">
+        <dictionary_ref dictionary="nouns" word="imouto" />
+      </word>
+      <word id="ola_kanji_156_160_012">
         <dictionary_ref dictionary="nouns" word="shimai" />
       </word>
-      <word id="ola_kanji_family_2_003">
+    </lesson>
+    <lesson id="ola_kanji_161_165" group="Ola" main="Kanji" name="161-165">
+      <word id="ola_kanji_161_165_001">
+        <dictionary_ref dictionary="nouns" word="oya" />
+      </word>
+      <word id="ola_kanji_161_165_002">
+        <dictionary_ref dictionary="nouns" word="oyayubi" />
+      </word>
+      <word id="ola_kanji_161_165_003">
+        <dictionary_ref dictionary="adjectives" word="shitashii" />
+      </word>
+      <word id="ola_kanji_161_165_004">
+        <dictionary_ref dictionary="nouns" word="ryoushin" />
+      </word>
+      <word id="ola_kanji_161_165_005">
+        <dictionary_ref dictionary="nouns" word="shinyuu" />
+      </word>
+      <word id="ola_kanji_161_165_006">
+        <dictionary_ref dictionary="nouns" word="nikushin" />
+      </word>
+      <word id="ola_kanji_161_165_007">
+        <dictionary_ref dictionary="nouns" word="aruji" />
+      </word>
+      <word id="ola_kanji_161_165_008">
+        <dictionary_ref dictionary="expressions" word="omona" />
+      </word>
+      <word id="ola_kanji_161_165_009">
+        <dictionary_ref dictionary="expressions" word="shujin" />
+      </word>
+      <word id="ola_kanji_161_165_010">
+        <dictionary_ref dictionary="expressions" word="shuyouna" />
+      </word>
+      <word id="ola_kanji_161_165_011">
+        <dictionary_ref dictionary="nouns" word="shugo" />
+      </word>
+      <word id="ola_kanji_161_165_012">
+        <dictionary_ref dictionary="expressions" word="shuchousuru" />
+      </word>
+      <word id="ola_kanji_161_165_013">
         <dictionary_ref dictionary="nouns" word="sofu" />
       </word>
-      <word id="ola_kanji_family_2_004">
+      <word id="ola_kanji_161_165_014">
         <dictionary_ref dictionary="nouns" word="sobo" />
       </word>
-      <word id="ola_kanji_family_2_005">
-        <dictionary_ref dictionary="nouns" word="musuko" />
+      <word id="ola_kanji_161_165_015">
+        <dictionary_ref dictionary="nouns" word="sofubo" />
       </word>
-      <word id="ola_kanji_family_2_006">
-        <dictionary_ref dictionary="nouns" word="musume" />
+      <word id="ola_kanji_161_165_016">
+        <dictionary_ref dictionary="nouns" word="sokoku" />
       </word>
-      <word id="ola_kanji_family_2_007">
-        <dictionary_ref dictionary="nouns" word="kodomo" />
+      <word id="ola_kanji_161_165_017">
+        <dictionary_ref dictionary="nouns" word="sosen" />
       </word>
-      <word id="ola_kanji_family_2_008">
-        <dictionary_ref dictionary="nouns" word="kodomotachi" />
+      <word id="ola_kanji_161_165_018">
+        <dictionary_ref dictionary="nouns" word="senzo" />
       </word>
-      <word id="ola_kanji_family_2_009">
-        <dictionary_ref dictionary="nouns" word="otto" />
+      <word id="ola_kanji_161_165_019">
+        <dictionary_ref dictionary="nouns" word="kazoku" />
       </word>
-      <word id="ola_kanji_family_2_010">
-        <dictionary_ref dictionary="nouns" word="tsuma" />
+      <word id="ola_kanji_161_165_020">
+        <dictionary_ref dictionary="expressions" word="ichizoku" />
+      </word>
+      <word id="ola_kanji_161_165_021">
+        <dictionary_ref dictionary="expressions" word="shuzoku" />
+      </word>
+      <word id="ola_kanji_161_165_022">
+        <dictionary_ref dictionary="expressions" word="minzoku" />
+      </word>
+      <word id="ola_kanji_161_165_023">
+        <dictionary_ref dictionary="nouns" word="inu" />
+      </word>
+      <word id="ola_kanji_161_165_024">
+        <dictionary_ref dictionary="nouns" word="koinu" />
+      </word>
+      <word id="ola_kanji_161_165_025">
+        <dictionary_ref dictionary="nouns" word="inugoya" />
+      </word>
+      <word id="ola_kanji_161_165_026">
+        <dictionary_ref dictionary="nouns" word="norainu" />
+      </word>
+      <word id="ola_kanji_161_165_027">
+        <dictionary_ref dictionary="nouns" word="yaken" />
       </word>
     </lesson>
   </lessons>
