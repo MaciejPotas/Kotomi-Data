@@ -16698,7 +16698,8 @@
     </word>
     <word id="hirogeru" kana="ひろげる" kanji="広げる" type="ichidan" ending="ru" translation="poszerzać">
       <usage>
-        <role ref="subject" accepts="thing" />
+        <role ref="subject" accepts="person" />
+        <role ref="object" accepts="thing" government="direct_object" />
       </usage>
       <forms>
         <form ref="dictionary" kana="ひろげる" kanji="広げる" translation="poszerzam">
@@ -16791,7 +16792,7 @@
         </form>
         <form ref="te_form" kana="ひろげて" kanji="広げて" translation="poszerzając" />
         <form ref="potential" kana="ひろげられる" kanji="広げられる" translation="mogę poszerzać" />
-        <form ref="passive" kana="ひろげられる" kanji="広げられる" translation="jest poszerzać" />
+        <form ref="passive" kana="ひろげられる" kanji="広げられる" translation="jest poszerzany" />
         <form ref="causative" kana="ひろげさせる" kanji="広げさせる" translation="każę komuś poszerzać" />
         <form ref="tara" kana="ひろげたら" kanji="広げたら" translation="jeśli poszerza" />
         <form ref="volitional" kana="ひろげよう" kanji="広げよう" translation="chcę poszerzać" />
@@ -16892,9 +16893,8 @@
           </agreement_translations>
         </form>
         <form ref="te_form" kana="ていかして" kanji="低下して" translation="obniżając się" />
-        <form ref="potential" kana="ていかできる" kanji="低下できる" translation="mogę obniżać się" />
-        <form ref="passive" kana="ていかされる" kanji="低下される" translation="jest obniżać się" />
-        <form ref="causative" kana="ていかさせる" kanji="低下させる" translation="każę komuś obniżać się" />
+        <form ref="potential" kana="ていかできる" kanji="低下できる" translation="może się obniżyć" />
+        <form ref="causative" kana="ていかさせる" kanji="低下させる" translation="sprawiam, że coś się obniża" />
         <form ref="tara" kana="ていかしたら" kanji="低下したら" translation="jeśli obniża się" />
         <form ref="volitional" kana="ていかしよう" kanji="低下しよう" translation="chcę obniżać się" />
         <form ref="imperative" kana="ていかしろ" kanji="低下しろ" translation="proszę obniżać się" />
@@ -16994,8 +16994,8 @@
           </agreement_translations>
         </form>
         <form ref="te_form" kana="あんきして" kanji="暗記して" translation="ucząc się na pamięć" />
-        <form ref="potential" kana="あんきできる" kanji="暗記できる" translation="mogę uczyć się na pamięć" />
-        <form ref="passive" kana="あんきされる" kanji="暗記される" translation="jest uczyć się na pamięć" />
+        <form ref="potential" kana="あんきできる" kanji="暗記できる" translation="mogę nauczyć się na pamięć" />
+        <form ref="passive" kana="あんきされる" kanji="暗記される" translation="jest zapamiętywane" />
         <form ref="causative" kana="あんきさせる" kanji="暗記させる" translation="każę komuś uczyć się na pamięć" />
         <form ref="tara" kana="あんきしたら" kanji="暗記したら" translation="jeśli uczy się na pamięć" />
         <form ref="volitional" kana="あんきしよう" kanji="暗記しよう" translation="chcę uczyć się na pamięć" />
@@ -17096,9 +17096,8 @@
           </agreement_translations>
         </form>
         <form ref="te_form" kana="えんりょして" kanji="遠慮して" translation="powstrzymując się" />
-        <form ref="potential" kana="えんりょできる" kanji="遠慮できる" translation="mogę powstrzymywać się" />
-        <form ref="passive" kana="えんりょされる" kanji="遠慮される" translation="jest powstrzymywać się" />
-        <form ref="causative" kana="えんりょさせる" kanji="遠慮させる" translation="każę komuś powstrzymywać się" />
+        <form ref="potential" kana="えんりょできる" kanji="遠慮できる" translation="może się powstrzymywać" />
+        <form ref="causative" kana="えんりょさせる" kanji="遠慮させる" translation="zmuszam kogoś do powstrzymania się" />
         <form ref="tara" kana="えんりょしたら" kanji="遠慮したら" translation="jeśli powstrzymuje się" />
         <form ref="volitional" kana="えんりょしよう" kanji="遠慮しよう" translation="chcę powstrzymywać się" />
         <form ref="imperative" kana="えんりょしろ" kanji="遠慮しろ" translation="proszę powstrzymywać się" />
@@ -17198,9 +17197,8 @@
           </agreement_translations>
         </form>
         <form ref="te_form" kana="おくれて" kanji="遅れて" translation="spóźniając się" />
-        <form ref="potential" kana="おくれられる" kanji="遅れられる" translation="mogę spóźniać się" />
-        <form ref="passive" kana="おくれられる" kanji="遅れられる" translation="jest spóźniać się" />
-        <form ref="causative" kana="おくれさせる" kanji="遅れさせる" translation="każę komuś spóźniać się" />
+        <form ref="potential" kana="おくれられる" kanji="遅れられる" translation="może się spóźnić" />
+        <form ref="causative" kana="おくれさせる" kanji="遅れさせる" translation="sprawiam, że ktoś się spóźnia" />
         <form ref="tara" kana="おくれたら" kanji="遅れたら" translation="jeśli spóźnia się" />
         <form ref="volitional" kana="おくれよう" kanji="遅れよう" translation="chcę spóźniać się" />
         <form ref="imperative" kana="おくれろ" kanji="遅れろ" translation="proszę spóźniać się" />
@@ -17301,7 +17299,7 @@
         </form>
         <form ref="te_form" kana="かさねて" kanji="重ねて" translation="układając w stos" />
         <form ref="potential" kana="かさねられる" kanji="重ねられる" translation="mogę układać w stos" />
-        <form ref="passive" kana="かさねられる" kanji="重ねられる" translation="jest układać w stos" />
+        <form ref="passive" kana="かさねられる" kanji="重ねられる" translation="jest układany w stos" />
         <form ref="causative" kana="かさねさせる" kanji="重ねさせる" translation="każę komuś układać w stos" />
         <form ref="tara" kana="かさねたら" kanji="重ねたら" translation="jeśli układa w stos" />
         <form ref="volitional" kana="かさねよう" kanji="重ねよう" translation="chcę układać w stos" />
@@ -17403,7 +17401,7 @@
         </form>
         <form ref="te_form" kana="けいしして" kanji="軽視して" translation="lekceważąc" />
         <form ref="potential" kana="けいしできる" kanji="軽視できる" translation="mogę lekceważyć" />
-        <form ref="passive" kana="けいしされる" kanji="軽視される" translation="jest lekceważyć" />
+        <form ref="passive" kana="けいしされる" kanji="軽視される" translation="jest lekceważony" />
         <form ref="causative" kana="けいしさせる" kanji="軽視させる" translation="każę komuś lekceważyć" />
         <form ref="tara" kana="けいししたら" kanji="軽視したら" translation="jeśli lekceważy" />
         <form ref="volitional" kana="けいししよう" kanji="軽視しよう" translation="chcę lekceważyć" />
