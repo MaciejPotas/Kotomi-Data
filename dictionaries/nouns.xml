@@ -1333,6 +1333,24 @@
       <cases language="pl" nominative="Hiroszima" genitive="Hiroszimy" dative="Hiroszimie" accusative="Hiroszimę" instrumental="Hiroszimą" locative="Hiroszimie" vocative="Hiroszimo" />
     </word>
     <word id="koukoku" kana="こうこく" kanji="広告" type="noun" category="media" translation="reklama">
+      <counting classes="publication">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="reklamy" />
+          <form profile="few" cases="genitive" value="reklam" />
+          <form profile="few" cases="dative" value="reklamom" />
+          <form profile="few" cases="accusative" value="reklamy" />
+          <form profile="few" cases="instrumental" value="reklamami" />
+          <form profile="few" cases="locative" value="reklamach" />
+          <form profile="few" cases="vocative" value="reklamy" />
+          <form profile="many" cases="nominative" value="reklam" />
+          <form profile="many" cases="genitive" value="reklam" />
+          <form profile="many" cases="dative" value="reklamom" />
+          <form profile="many" cases="accusative" value="reklam" />
+          <form profile="many" cases="instrumental" value="reklamami" />
+          <form profile="many" cases="locative" value="reklamach" />
+          <form profile="many" cases="vocative" value="reklam" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="reklama" genitive="reklamy" dative="reklamie" accusative="reklamę" instrumental="reklamą" locative="reklamie" vocative="reklamo" />
     </word>
@@ -1341,10 +1359,46 @@
       <cases language="pl" nominative="krótki termin" genitive="krótkiego terminu" dative="krótkiemu terminowi" accusative="krótki termin" instrumental="krótkim terminem" locative="krótkim terminie" vocative="krótki terminie" />
     </word>
     <word id="tansho" kana="たんしょ" kanji="短所" type="noun" category="abstract" translation="wada">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="wady" />
+          <form profile="few" cases="genitive" value="wad" />
+          <form profile="few" cases="dative" value="wadom" />
+          <form profile="few" cases="accusative" value="wady" />
+          <form profile="few" cases="instrumental" value="wadami" />
+          <form profile="few" cases="locative" value="wadach" />
+          <form profile="few" cases="vocative" value="wady" />
+          <form profile="many" cases="nominative" value="wad" />
+          <form profile="many" cases="genitive" value="wad" />
+          <form profile="many" cases="dative" value="wadom" />
+          <form profile="many" cases="accusative" value="wad" />
+          <form profile="many" cases="instrumental" value="wadami" />
+          <form profile="many" cases="locative" value="wadach" />
+          <form profile="many" cases="vocative" value="wad" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="wada" genitive="wady" dative="wadzie" accusative="wadę" instrumental="wadą" locative="wadzie" vocative="wado" />
     </word>
     <word id="tanka_poem" kana="たんか" kanji="短歌" type="noun" category="text" translation="wiersz tanka">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="wiersze tanka" />
+          <form profile="few" cases="genitive" value="wierszy tanka" />
+          <form profile="few" cases="dative" value="wierszom tanka" />
+          <form profile="few" cases="accusative" value="wiersze tanka" />
+          <form profile="few" cases="instrumental" value="wierszami tanka" />
+          <form profile="few" cases="locative" value="wierszach tanka" />
+          <form profile="few" cases="vocative" value="wiersze tanka" />
+          <form profile="many" cases="nominative" value="wierszy tanka" />
+          <form profile="many" cases="genitive" value="wierszy tanka" />
+          <form profile="many" cases="dative" value="wierszom tanka" />
+          <form profile="many" cases="accusative" value="wierszy tanka" />
+          <form profile="many" cases="instrumental" value="wierszami tanka" />
+          <form profile="many" cases="locative" value="wierszach tanka" />
+          <form profile="many" cases="vocative" value="wierszy tanka" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="wiersz tanka" genitive="wiersza tanka" dative="wierszowi tanka" accusative="wiersz tanka" instrumental="wierszem tanka" locative="wierszu tanka" vocative="wierszu tanka" />
     </word>
@@ -1361,14 +1415,68 @@
       <cases language="pl" nominative="liczenie w pamięci" genitive="liczenia w pamięci" dative="liczeniu w pamięci" accusative="liczenie w pamięci" instrumental="liczeniem w pamięci" locative="liczeniu w pamięci" vocative="liczenie w pamięci" />
     </word>
     <word id="ansatsu" kana="あんさつ" kanji="暗殺" type="noun" category="abstract" translation="zamach">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="zamachy" />
+          <form profile="few" cases="genitive" value="zamachów" />
+          <form profile="few" cases="dative" value="zamachom" />
+          <form profile="few" cases="accusative" value="zamachy" />
+          <form profile="few" cases="instrumental" value="zamachami" />
+          <form profile="few" cases="locative" value="zamachach" />
+          <form profile="few" cases="vocative" value="zamachy" />
+          <form profile="many" cases="nominative" value="zamachów" />
+          <form profile="many" cases="genitive" value="zamachów" />
+          <form profile="many" cases="dative" value="zamachom" />
+          <form profile="many" cases="accusative" value="zamachów" />
+          <form profile="many" cases="instrumental" value="zamachami" />
+          <form profile="many" cases="locative" value="zamachach" />
+          <form profile="many" cases="vocative" value="zamachów" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="zamach" genitive="zamachu" dative="zamachowi" accusative="zamach" instrumental="zamachem" locative="zamachu" vocative="zamachu" />
     </word>
     <word id="angou" kana="あんごう" kanji="暗号" type="noun" category="abstract" translation="szyfr">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="szyfry" />
+          <form profile="few" cases="genitive" value="szyfrów" />
+          <form profile="few" cases="dative" value="szyfrom" />
+          <form profile="few" cases="accusative" value="szyfry" />
+          <form profile="few" cases="instrumental" value="szyframi" />
+          <form profile="few" cases="locative" value="szyfrach" />
+          <form profile="few" cases="vocative" value="szyfry" />
+          <form profile="many" cases="nominative" value="szyfrów" />
+          <form profile="many" cases="genitive" value="szyfrów" />
+          <form profile="many" cases="dative" value="szyfrom" />
+          <form profile="many" cases="accusative" value="szyfrów" />
+          <form profile="many" cases="instrumental" value="szyframi" />
+          <form profile="many" cases="locative" value="szyfrach" />
+          <form profile="many" cases="vocative" value="szyfrów" />
+        </source_forms>
+      </counting>
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="szyfr" genitive="szyfru" dative="szyfrowi" accusative="szyfr" instrumental="szyfrem" locative="szyfrze" vocative="szyfrze" />
     </word>
     <word id="ensoku" kana="えんそく" kanji="遠足" type="noun" category="abstract" translation="wycieczka">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="wycieczki" />
+          <form profile="few" cases="genitive" value="wycieczek" />
+          <form profile="few" cases="dative" value="wycieczkom" />
+          <form profile="few" cases="accusative" value="wycieczki" />
+          <form profile="few" cases="instrumental" value="wycieczkami" />
+          <form profile="few" cases="locative" value="wycieczkach" />
+          <form profile="few" cases="vocative" value="wycieczki" />
+          <form profile="many" cases="nominative" value="wycieczek" />
+          <form profile="many" cases="genitive" value="wycieczek" />
+          <form profile="many" cases="dative" value="wycieczkom" />
+          <form profile="many" cases="accusative" value="wycieczek" />
+          <form profile="many" cases="instrumental" value="wycieczkami" />
+          <form profile="many" cases="locative" value="wycieczkach" />
+          <form profile="many" cases="vocative" value="wycieczek" />
+        </source_forms>
+      </counting>
       <agreement class="feminine" />
       <cases language="pl" nominative="wycieczka" genitive="wycieczki" dative="wycieczce" accusative="wycieczkę" instrumental="wycieczką" locative="wycieczce" vocative="wycieczko" />
     </word>
@@ -1377,6 +1485,24 @@
       <cases language="pl" nominative="wieczność" genitive="wieczności" dative="wieczności" accusative="wieczność" instrumental="wiecznością" locative="wieczności" vocative="wieczności" />
     </word>
     <word id="enpou" kana="えんぽう" kanji="遠方" type="noun" category="place" translation="odległe miejsce">
+      <counting classes="location">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="odległe miejsca" />
+          <form profile="few" cases="genitive" value="odległych miejsc" />
+          <form profile="few" cases="dative" value="odległym miejscom" />
+          <form profile="few" cases="accusative" value="odległe miejsca" />
+          <form profile="few" cases="instrumental" value="odległymi miejscami" />
+          <form profile="few" cases="locative" value="odległych miejscach" />
+          <form profile="few" cases="vocative" value="odległe miejsca" />
+          <form profile="many" cases="nominative" value="odległych miejsc" />
+          <form profile="many" cases="genitive" value="odległych miejsc" />
+          <form profile="many" cases="dative" value="odległym miejscom" />
+          <form profile="many" cases="accusative" value="odległych miejsc" />
+          <form profile="many" cases="instrumental" value="odległymi miejscami" />
+          <form profile="many" cases="locative" value="odległych miejscach" />
+          <form profile="many" cases="vocative" value="odległych miejsc" />
+        </source_forms>
+      </counting>
       <agreement class="neuter" />
       <cases language="pl" nominative="odległe miejsce" genitive="odległego miejsca" dative="odległemu miejscu" accusative="odległe miejsce" instrumental="odległym miejscem" locative="odległym miejscu" vocative="odległe miejsce" />
     </word>
@@ -1401,6 +1527,24 @@
       <cases language="pl" nominative="wczesne wstawanie" genitive="wczesnego wstawania" dative="wczesnemu wstawaniu" accusative="wczesne wstawanie" instrumental="wczesnym wstawaniem" locative="wczesnym wstawaniu" vocative="wczesne wstawanie" />
     </word>
     <word id="chikoku" kana="ちこく" kanji="遅刻" type="noun" category="abstract" translation="spóźnienie">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="spóźnienia" />
+          <form profile="few" cases="genitive" value="spóźnień" />
+          <form profile="few" cases="dative" value="spóźnieniom" />
+          <form profile="few" cases="accusative" value="spóźnienia" />
+          <form profile="few" cases="instrumental" value="spóźnieniami" />
+          <form profile="few" cases="locative" value="spóźnieniach" />
+          <form profile="few" cases="vocative" value="spóźnienia" />
+          <form profile="many" cases="nominative" value="spóźnień" />
+          <form profile="many" cases="genitive" value="spóźnień" />
+          <form profile="many" cases="dative" value="spóźnieniom" />
+          <form profile="many" cases="accusative" value="spóźnień" />
+          <form profile="many" cases="instrumental" value="spóźnieniami" />
+          <form profile="many" cases="locative" value="spóźnieniach" />
+          <form profile="many" cases="vocative" value="spóźnień" />
+        </source_forms>
+      </counting>
       <agreement class="neuter" />
       <cases language="pl" nominative="spóźnienie" genitive="spóźnienia" dative="spóźnieniu" accusative="spóźnienie" instrumental="spóźnieniem" locative="spóźnieniu" vocative="spóźnienie" />
     </word>
