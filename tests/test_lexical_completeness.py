@@ -7,7 +7,7 @@ CASES = set('nominative genitive dative accusative instrumental locative vocativ
 WITHOUT_COUNTER = set('hi poland japan india wine kuni gohan jikan music okane television naka oku ashita saisho detarame kikitori getsuyoubi kayoubi suiyoubi mokuyoubi kinyoubi doyoubi nichiyoubi hiroshima tanki_period teikiatsu teion anzan eien enkyori kinjo fukin kinki_region hayaoki taijuu juuryoku kazoku ryoushin shimai'.split())
 VERBS = set('dictionary polite_nonpast plain_negative polite_negative past_plain past_polite past_negative_plain past_negative_polite te_form potential passive causative tara volitional imperative'.split())
 ADJECTIVES = set('predicate_plain_nonpast predicate_polite_nonpast predicate_plain_negative predicate_polite_negative predicate_plain_past predicate_polite_past predicate_plain_past_negative predicate_polite_past_negative attributive_nonpast connective adverbial conditional nominalized appearance_sou excessive_sugiru'.split())
-NONPRODUCTIVE = {'umareru': {'passive'}, 'aru_possessive': {'potential', 'passive', 'causative'}, 'aru_existential': {'potential', 'passive', 'causative'}, 'dekiru': {'potential', 'passive'}, 'mieru': {'potential', 'passive'}, 'chigau': {'passive'}, 'hareru': {'passive'}, 'kumoru': {'passive'}}
+NONPRODUCTIVE = {'umareru': {'passive'}, 'aru_possessive': {'potential', 'passive', 'causative'}, 'aru_existential': {'potential', 'passive', 'causative'}, 'dekiru': {'potential', 'passive'}, 'mieru': {'potential', 'passive'}, 'chigau': {'passive'}, 'hareru': {'passive'}, 'kumoru': {'passive'}, 'teika_suru': {'passive'}, 'enryo_suru': {'passive'}, 'okureru': {'passive'}}
 
 def words(name):
     return {w.get('id'): w for w in ET.parse(ROOT / 'dictionaries' / f'{name}.xml').findall('./words/word')}
