@@ -24,5 +24,8 @@
     <word id="yoku" kana="よく" translation="często" categories="frequency" />
     <word id="yukkuri" kana="ゆっくり" translation="powoli" categories="manner" />
     <word id="totemo" kana="とても" translation="bardzo" categories="degree" />
+    <word id="chikaku_ni" kana="ちかくに" kanji="近くに" translation="blisko, w pobliżu" categories="manner" />
+    <word id="souchou" kana="そうちょう" kanji="早朝" translation="wcześnie rano" categories="time" />
+    <word id="sassoku" kana="さっそく" kanji="早速" translation="od razu, natychmiast" categories="time" />
   </words>
 </dictionary>
