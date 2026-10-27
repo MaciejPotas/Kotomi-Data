@@ -3447,5 +3447,77 @@
         <override classes="plural_masculine_personal" cases="instrumental" value="pożądanymi" />
       </polish_forms>
     </word>
+    <word id="kyoutsuu" kana="きょうつう" kanji="共通" type="na_adjective" translation="wspólny">
+      <describes categories="abstract concrete" />
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="きょうつうだ" translation="jest wspólny" kanji="共通だ" />
+        <form ref="predicate_polite_nonpast" kana="きょうつうです" translation="jest wspólny" kanji="共通です" />
+        <form ref="predicate_plain_negative" kana="きょうつうではない" translation="nie jest wspólny" kanji="共通ではない" />
+        <form ref="predicate_polite_negative" kana="きょうつうではありません" translation="nie jest wspólny" kanji="共通ではありません" />
+        <form ref="predicate_plain_past" kana="きょうつうだった" translation="był wspólny" kanji="共通だった" />
+        <form ref="predicate_polite_past" kana="きょうつうでした" translation="był wspólny" kanji="共通でした" />
+        <form ref="predicate_plain_past_negative" kana="きょうつうではなかった" translation="nie był wspólny" kanji="共通ではなかった" />
+        <form ref="predicate_polite_past_negative" kana="きょうつうではありませんでした" translation="nie był wspólny" kanji="共通ではありませんでした" />
+        <form ref="attributive_nonpast" kana="きょうつうの" translation="wspólny" kanji="共通の" />
+        <form ref="connective" kana="きょうつうで" translation="wspólny" kanji="共通で" />
+        <form ref="conditional" kana="きょうつうなら" translation="wspólny" kanji="共通なら" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="wspólny" />
+        <common cases="genitive" value="wspólnego" />
+        <common cases="dative" value="wspólnemu" />
+        <common cases="instrumental locative" value="wspólnym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="wspólnego" />
+        <override classes="feminine" cases="nominative vocative" value="wspólna" />
+        <override classes="feminine" cases="genitive dative locative" value="wspólnej" />
+        <override classes="feminine" cases="accusative instrumental" value="wspólną" />
+        <override classes="neuter" cases="nominative accusative vocative" value="wspólne" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="wspólni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="wspólnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="wspólnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="wspólnymi" />
+        <override classes="plural_non_masculine_personal" cases="nominative accusative vocative" value="wspólne" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="wspólnych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="wspólnym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="wspólnymi" />
+      </polish_forms>
+    </word>
+    <word id="futsuu" kana="ふつう" kanji="普通" type="na_adjective" translation="zwykły">
+      <describes categories="abstract concrete" />
+      <forms>
+        <form ref="predicate_plain_nonpast" kana="ふつうだ" translation="jest zwykły" kanji="普通だ" />
+        <form ref="predicate_polite_nonpast" kana="ふつうです" translation="jest zwykły" kanji="普通です" />
+        <form ref="predicate_plain_negative" kana="ふつうではない" translation="nie jest zwykły" kanji="普通ではない" />
+        <form ref="predicate_polite_negative" kana="ふつうではありません" translation="nie jest zwykły" kanji="普通ではありません" />
+        <form ref="predicate_plain_past" kana="ふつうだった" translation="był zwykły" kanji="普通だった" />
+        <form ref="predicate_polite_past" kana="ふつうでした" translation="był zwykły" kanji="普通でした" />
+        <form ref="predicate_plain_past_negative" kana="ふつうではなかった" translation="nie był zwykły" kanji="普通ではなかった" />
+        <form ref="predicate_polite_past_negative" kana="ふつうではありませんでした" translation="nie był zwykły" kanji="普通ではありませんでした" />
+        <form ref="attributive_nonpast" kana="ふつうの" translation="zwykły" kanji="普通の" />
+        <form ref="connective" kana="ふつうで" translation="zwykły" kanji="普通で" />
+        <form ref="adverbial" kana="ふつうに" translation="zwykle" kanji="普通に" />
+        <form ref="conditional" kana="ふつうなら" translation="zwykły" kanji="普通なら" />
+        <form ref="excessive_sugiru" kana="ふつうすぎる" translation="zbyt zwykły" kanji="普通すぎる" />
+      </forms>
+      <polish_forms>
+        <common cases="nominative accusative vocative" value="zwykły" />
+        <common cases="genitive" value="zwykłego" />
+        <common cases="dative" value="zwykłemu" />
+        <common cases="instrumental locative" value="zwykłym" />
+        <override classes="masculine_personal masculine_animate" cases="accusative" value="zwykłego" />
+        <override classes="feminine" cases="nominative vocative" value="zwykła" />
+        <override classes="feminine" cases="genitive dative locative" value="zwykłej" />
+        <override classes="feminine" cases="accusative instrumental" value="zwykłą" />
+        <override classes="neuter" cases="nominative accusative vocative" value="zwykłe" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="zwykli" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="zwykłych" />
+        <override classes="plural_masculine_personal" cases="dative" value="zwykłym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="zwykłymi" />
+        <override classes="plural_non_masculine_personal" cases="nominative accusative vocative" value="zwykłe" />
+        <override classes="plural_non_masculine_personal" cases="genitive locative" value="zwykłych" />
+        <override classes="plural_non_masculine_personal" cases="dative" value="zwykłym" />
+        <override classes="plural_non_masculine_personal" cases="instrumental" value="zwykłymi" />
+      </polish_forms>
+    </word>
   </words>
 </dictionary>

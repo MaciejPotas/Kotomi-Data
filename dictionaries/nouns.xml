@@ -1328,5 +1328,280 @@
         </source_forms>
       </counting>
     </word>
+    <word id="kyoushitsu" kana="きょうしつ" kanji="教室" type="noun" category="place" translation="sala lekcyjna">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="sale lekcyjne" />
+          <form profile="few" cases="genitive" value="sal lekcyjnych" />
+          <form profile="few" cases="dative" value="salom lekcyjnym" />
+          <form profile="few" cases="instrumental" value="salami lekcyjnymi" />
+          <form profile="few" cases="locative" value="salach lekcyjnych" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="sal lekcyjnych" />
+          <form profile="many" cases="dative" value="salom lekcyjnym" />
+          <form profile="many" cases="instrumental" value="salami lekcyjnymi" />
+          <form profile="many" cases="locative" value="salach lekcyjnych" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <relations language="pl" profile="place_w_do" />
+      <cases language="pl" nominative="sala lekcyjna" genitive="sali lekcyjnej" dative="sali lekcyjnej" accusative="salę lekcyjną" instrumental="salą lekcyjną" locative="sali lekcyjnej" vocative="salo lekcyjna" />
+    </word>
+    <word id="kyoukasho" kana="きょうかしょ" kanji="教科書" type="noun" category="text" translation="podręcznik">
+      <counting classes="bound_volume">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="podręczniki" />
+          <form profile="few" cases="genitive" value="podręczników" />
+          <form profile="few" cases="dative" value="podręcznikom" />
+          <form profile="few" cases="instrumental" value="podręcznikami" />
+          <form profile="few" cases="locative" value="podręcznikach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="podręczników" />
+          <form profile="many" cases="dative" value="podręcznikom" />
+          <form profile="many" cases="instrumental" value="podręcznikami" />
+          <form profile="many" cases="locative" value="podręcznikach" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="podręcznik" genitive="podręcznika" dative="podręcznikowi" accusative="podręcznik" instrumental="podręcznikiem" locative="podręczniku" vocative="podręczniku" />
+    </word>
+    <word id="kyouiku" kana="きょういく" kanji="教育" type="noun" category="abstract" translation="edukacja">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="edukacja" genitive="edukacji" dative="edukacji" accusative="edukację" instrumental="edukacją" locative="edukacji" vocative="edukacjo" />
+    </word>
+    <word id="kyouju" kana="きょうじゅ" kanji="教授" type="noun" category="person" translation="profesor">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="profesorowie" />
+          <form profile="few" cases="genitive accusative" value="profesorów" />
+          <form profile="few" cases="dative" value="profesorom" />
+          <form profile="few" cases="instrumental" value="profesorami" />
+          <form profile="few" cases="locative" value="profesorach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="profesorów" />
+          <form profile="many" cases="dative" value="profesorom" />
+          <form profile="many" cases="instrumental" value="profesorami" />
+          <form profile="many" cases="locative" value="profesorach" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="profesor" genitive="profesora" dative="profesorowi" accusative="profesora" instrumental="profesorem" locative="profesorze" vocative="profesorze" />
+    </word>
+    <word id="kyoushi" kana="きょうし" kanji="教師" type="noun" category="person" translation="nauczyciel">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="nauczyciele" />
+          <form profile="few" cases="genitive accusative" value="nauczycieli" />
+          <form profile="few" cases="dative" value="nauczycielom" />
+          <form profile="few" cases="instrumental" value="nauczycielami" />
+          <form profile="few" cases="locative" value="nauczycielach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="nauczycieli" />
+          <form profile="many" cases="dative" value="nauczycielom" />
+          <form profile="many" cases="instrumental" value="nauczycielami" />
+          <form profile="many" cases="locative" value="nauczycielach" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="nauczyciel" genitive="nauczyciela" dative="nauczycielowi" accusative="nauczyciela" instrumental="nauczycielem" locative="nauczycielu" vocative="nauczycielu" />
+    </word>
+    <word id="sagyou" kana="さぎょう" kanji="作業" type="noun" category="abstract" translation="praca">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="praca" genitive="pracy" dative="pracy" accusative="pracę" instrumental="pracą" locative="pracy" vocative="praco" />
+    </word>
+    <word id="tezukuri" kana="てづくり" kanji="手作り" type="noun" category="abstract" translation="ręczne wykonanie">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="ręczne wykonanie" genitive="ręcznego wykonania" dative="ręcznemu wykonaniu" accusative="ręczne wykonanie" instrumental="ręcznym wykonaniem" locative="ręcznym wykonaniu" vocative="ręczne wykonanie" />
+    </word>
+    <word id="sakka" kana="さっか" kanji="作家" type="noun" category="person" translation="twórca">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="twórcy" />
+          <form profile="few" cases="genitive accusative" value="twórców" />
+          <form profile="few" cases="dative" value="twórcom" />
+          <form profile="few" cases="instrumental" value="twórcami" />
+          <form profile="few" cases="locative" value="twórcach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="twórców" />
+          <form profile="many" cases="dative" value="twórcom" />
+          <form profile="many" cases="instrumental" value="twórcami" />
+          <form profile="many" cases="locative" value="twórcach" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="twórca" genitive="twórcy" dative="twórcy" accusative="twórcę" instrumental="twórcą" locative="twórcy" vocative="twórco" />
+    </word>
+    <word id="sakuhin" kana="さくひん" kanji="作品" type="noun" category="media" translation="dzieło">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="dzieła" />
+          <form profile="few" cases="genitive" value="dzieł" />
+          <form profile="few" cases="dative" value="dziełom" />
+          <form profile="few" cases="instrumental" value="dziełami" />
+          <form profile="few" cases="locative" value="dziełach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="dzieł" />
+          <form profile="many" cases="dative" value="dziełom" />
+          <form profile="many" cases="instrumental" value="dziełami" />
+          <form profile="many" cases="locative" value="dziełach" />
+        </source_forms>
+      </counting>
+      <agreement class="neuter" />
+      <cases language="pl" nominative="dzieło" genitive="dzieła" dative="dziełu" accusative="dzieło" instrumental="dziełem" locative="dziele" vocative="dzieło" />
+    </word>
+    <word id="meisaku" kana="めいさく" kanji="名作" type="noun" category="media" translation="arcydzieło">
+      <counting classes="general_item">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="arcydzieła" />
+          <form profile="few" cases="genitive" value="arcydzieł" />
+          <form profile="few" cases="dative" value="arcydziełom" />
+          <form profile="few" cases="instrumental" value="arcydziełami" />
+          <form profile="few" cases="locative" value="arcydziełach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="arcydzieł" />
+          <form profile="many" cases="dative" value="arcydziełom" />
+          <form profile="many" cases="instrumental" value="arcydziełami" />
+          <form profile="many" cases="locative" value="arcydziełach" />
+        </source_forms>
+      </counting>
+      <agreement class="neuter" />
+      <cases language="pl" nominative="arcydzieło" genitive="arcydzieła" dative="arcydziełu" accusative="arcydzieło" instrumental="arcydziełem" locative="arcydziele" vocative="arcydzieło" />
+    </word>
+    <word id="koutsuu" kana="こうつう" kanji="交通" type="noun" category="abstract" translation="ruch drogowy">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="ruch drogowy" genitive="ruchu drogowego" dative="ruchowi drogowemu" accusative="ruch drogowy" instrumental="ruchem drogowym" locative="ruchu drogowym" vocative="ruchu drogowy" />
+    </word>
+    <word id="tsuugaku" kana="つうがく" kanji="通学" type="noun" category="abstract" translation="uczęszczanie do szkoły">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="uczęszczanie do szkoły" genitive="uczęszczania do szkoły" dative="uczęszczaniu do szkoły" accusative="uczęszczanie do szkoły" instrumental="uczęszczaniem do szkoły" locative="uczęszczaniu do szkoły" vocative="uczęszczanie do szkoły" />
+    </word>
+    <word id="sanpo" kana="さんぽ" kanji="散歩" type="noun" category="abstract" translation="spacer">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="spacer" genitive="spaceru" dative="spacerowi" accusative="spacer" instrumental="spacerem" locative="spacerze" vocative="spacerze" />
+    </word>
+    <word id="hodou" kana="ほどう" kanji="歩道" type="noun" category="place" translation="chodnik">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="chodnik" genitive="chodnika" dative="chodnikowi" accusative="chodnik" instrumental="chodnikiem" locative="chodniku" vocative="chodniku" />
+    </word>
+    <word id="oudanhodou" kana="おうだんほどう" kanji="横断歩道" type="noun" category="place" translation="przejście dla pieszych">
+      <counting classes="location">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="przejścia dla pieszych" />
+          <form profile="few" cases="genitive" value="przejść dla pieszych" />
+          <form profile="few" cases="dative" value="przejściom dla pieszych" />
+          <form profile="few" cases="instrumental" value="przejściami dla pieszych" />
+          <form profile="few" cases="locative" value="przejściach dla pieszych" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="przejść dla pieszych" />
+          <form profile="many" cases="dative" value="przejściom dla pieszych" />
+          <form profile="many" cases="instrumental" value="przejściami dla pieszych" />
+          <form profile="many" cases="locative" value="przejściach dla pieszych" />
+        </source_forms>
+      </counting>
+      <agreement class="neuter" />
+      <relations language="pl" profile="place_na_na" />
+      <cases language="pl" nominative="przejście dla pieszych" genitive="przejścia dla pieszych" dative="przejściu dla pieszych" accusative="przejście dla pieszych" instrumental="przejściem dla pieszych" locative="przejściu dla pieszych" vocative="przejście dla pieszych" />
+    </word>
+    <word id="torihiki" kana="とりひき" kanji="取り引き" type="noun" category="abstract" translation="transakcja">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="transakcja" genitive="transakcji" dative="transakcji" accusative="transakcję" instrumental="transakcją" locative="transakcji" vocative="transakcjo" />
+    </word>
+    <word id="shuzai" kana="しゅざい" kanji="取材" type="noun" category="abstract" translation="zbieranie materiałów">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="zbieranie materiałów" genitive="zbierania materiałów" dative="zbieraniu materiałów" accusative="zbieranie materiałów" instrumental="zbieraniem materiałów" locative="zbieraniu materiałów" vocative="zbieranie materiałów" />
+    </word>
+    <word id="shiyou" kana="しよう" kanji="私用" type="noun" category="abstract" translation="sprawa prywatna">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="sprawa prywatna" genitive="sprawy prywatnej" dative="sprawie prywatnej" accusative="sprawę prywatną" instrumental="sprawą prywatną" locative="sprawie prywatnej" vocative="sprawo prywatna" />
+    </word>
+    <word id="ani" kana="あに" kanji="兄" type="noun" category="person" translation="starszy brat">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="starsi bracia" />
+          <form profile="few" cases="genitive accusative" value="starszych braci" />
+          <form profile="few" cases="dative" value="starszym braciom" />
+          <form profile="few" cases="instrumental" value="starszymi braćmi" />
+          <form profile="few" cases="locative" value="starszych braciach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="starszych braci" />
+          <form profile="many" cases="dative" value="starszym braciom" />
+          <form profile="many" cases="instrumental" value="starszymi braćmi" />
+          <form profile="many" cases="locative" value="starszych braciach" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="starszy brat" genitive="starszego brata" dative="starszemu bratu" accusative="starszego brata" instrumental="starszym bratem" locative="starszym bracie" vocative="starszy bracie" />
+    </word>
+    <word id="oniisan" kana="おにいさん" kanji="お兄さん" type="noun" category="person" translation="starszy brat">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="starsi bracia" />
+          <form profile="few" cases="genitive accusative" value="starszych braci" />
+          <form profile="few" cases="dative" value="starszym braciom" />
+          <form profile="few" cases="instrumental" value="starszymi braćmi" />
+          <form profile="few" cases="locative" value="starszych braciach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="starszych braci" />
+          <form profile="many" cases="dative" value="starszym braciom" />
+          <form profile="many" cases="instrumental" value="starszymi braćmi" />
+          <form profile="many" cases="locative" value="starszych braciach" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="starszy brat" genitive="starszego brata" dative="starszemu bratu" accusative="starszego brata" instrumental="starszym bratem" locative="starszym bracie" vocative="starszy bracie" />
+    </word>
+    <word id="fukei" kana="ふけい" kanji="父兄" type="noun" category="person" translation="opiekunowie">
+      <agreement class="plural_masculine_personal" />
+      <cases language="pl" nominative="opiekunowie" genitive="opiekunów" dative="opiekunom" accusative="opiekunów" instrumental="opiekunami" locative="opiekunach" vocative="opiekunowie" />
+    </word>
+    <word id="otouto" kana="おとうと" kanji="弟" type="noun" category="person" translation="młodszy brat">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative vocative" value="młodsi bracia" />
+          <form profile="few" cases="genitive accusative" value="młodszych braci" />
+          <form profile="few" cases="dative" value="młodszym braciom" />
+          <form profile="few" cases="instrumental" value="młodszymi braćmi" />
+          <form profile="few" cases="locative" value="młodszych braciach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="młodszych braci" />
+          <form profile="many" cases="dative" value="młodszym braciom" />
+          <form profile="many" cases="instrumental" value="młodszymi braćmi" />
+          <form profile="many" cases="locative" value="młodszych braciach" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="młodszy brat" genitive="młodszego brata" dative="młodszemu bratu" accusative="młodszego brata" instrumental="młodszym bratem" locative="młodszym bracie" vocative="młodszy bracie" />
+    </word>
+    <word id="kyoudai" kana="きょうだい" kanji="兄弟" type="noun" category="person" translation="rodzeństwo">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="rodzeństwo" genitive="rodzeństwa" dative="rodzeństwu" accusative="rodzeństwo" instrumental="rodzeństwem" locative="rodzeństwie" vocative="rodzeństwo" />
+    </word>
+    <word id="oneesan" kana="おねえさん" kanji="お姉さん" type="noun" category="person" translation="starsza siostra">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="starsze siostry" />
+          <form profile="few" cases="genitive" value="starszych sióstr" />
+          <form profile="few" cases="dative" value="starszym siostrom" />
+          <form profile="few" cases="instrumental" value="starszymi siostrami" />
+          <form profile="few" cases="locative" value="starszych siostrach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="starszych sióstr" />
+          <form profile="many" cases="dative" value="starszym siostrom" />
+          <form profile="many" cases="instrumental" value="starszymi siostrami" />
+          <form profile="many" cases="locative" value="starszych siostrach" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="starsza siostra" genitive="starszej siostry" dative="starszej siostrze" accusative="starszą siostrę" instrumental="starszą siostrą" locative="starszej siostrze" vocative="starsza siostro" />
+    </word>
+    <word id="imouto" kana="いもうと" kanji="妹" type="noun" category="person" translation="młodsza siostra">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative accusative vocative" value="młodsze siostry" />
+          <form profile="few" cases="genitive" value="młodszych sióstr" />
+          <form profile="few" cases="dative" value="młodszym siostrom" />
+          <form profile="few" cases="instrumental" value="młodszymi siostrami" />
+          <form profile="few" cases="locative" value="młodszych siostrach" />
+          <form profile="many" cases="nominative genitive accusative vocative" value="młodszych sióstr" />
+          <form profile="many" cases="dative" value="młodszym siostrom" />
+          <form profile="many" cases="instrumental" value="młodszymi siostrami" />
+          <form profile="many" cases="locative" value="młodszych siostrach" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="młodsza siostra" genitive="młodszej siostry" dative="młodszej siostrze" accusative="młodszą siostrę" instrumental="młodszą siostrą" locative="młodszej siostrze" vocative="młodsza siostro" />
+    </word>
+    <word id="shimai" kana="しまい" kanji="姉妹" type="noun" category="person" translation="siostry">
+      <agreement class="plural_non_masculine_personal" />
+      <cases language="pl" nominative="siostry" genitive="sióstr" dative="siostrom" accusative="siostry" instrumental="siostrami" locative="siostrach" vocative="siostry" />
+    </word>
   </words>
 </dictionary>

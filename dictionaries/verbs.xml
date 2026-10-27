@@ -16696,5 +16696,145 @@
         </form>
       </forms>
     </word>
+    <word id="shinposuru" kana="しんぽする" kanji="進歩する" type="irregular" ending="suru" translation="robić postępy">
+      <usage>
+        <role ref="subject" accepts="person abstract" />
+      </usage>
+      <forms>
+        <form ref="dictionary" kana="しんぽする" kanji="進歩する" translation="robię postępy">
+          <agreement_translations>
+            <translation class="masculine_personal" value="robi postępy" />
+            <translation class="masculine_animate" value="robi postępy" />
+            <translation class="masculine_inanimate" value="robi postępy" />
+            <translation class="feminine" value="robi postępy" />
+            <translation class="neuter" value="robi postępy" />
+            <translation class="plural_non_masculine_personal" value="robią postępy" />
+            <translation class="plural_masculine_personal" value="robią postępy" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="しんぽします" kanji="進歩します" translation="robię postępy">
+          <agreement_translations>
+            <translation class="masculine_personal" value="robi postępy" />
+            <translation class="masculine_animate" value="robi postępy" />
+            <translation class="masculine_inanimate" value="robi postępy" />
+            <translation class="feminine" value="robi postępy" />
+            <translation class="neuter" value="robi postępy" />
+            <translation class="plural_non_masculine_personal" value="robią postępy" />
+            <translation class="plural_masculine_personal" value="robią postępy" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="しんぽしない" kanji="進歩しない" translation="nie robię postępów">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie robi postępów" />
+            <translation class="masculine_animate" value="nie robi postępów" />
+            <translation class="masculine_inanimate" value="nie robi postępów" />
+            <translation class="feminine" value="nie robi postępów" />
+            <translation class="neuter" value="nie robi postępów" />
+            <translation class="plural_non_masculine_personal" value="nie robią postępów" />
+            <translation class="plural_masculine_personal" value="nie robią postępów" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="しんぽしません" kanji="進歩しません" translation="nie robię postępów">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie robi postępów" />
+            <translation class="masculine_animate" value="nie robi postępów" />
+            <translation class="masculine_inanimate" value="nie robi postępów" />
+            <translation class="feminine" value="nie robi postępów" />
+            <translation class="neuter" value="nie robi postępów" />
+            <translation class="plural_non_masculine_personal" value="nie robią postępów" />
+            <translation class="plural_masculine_personal" value="nie robią postępów" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="しんぽした" kanji="進歩した" translation="poczyniłem postępy">
+          <agreement_translations>
+            <translation class="masculine_personal" value="poczynił postępy" />
+            <translation class="masculine_animate" value="poczynił postępy" />
+            <translation class="masculine_inanimate" value="poczynił postępy" />
+            <translation class="feminine" value="poczyniła postępy" />
+            <translation class="neuter" value="poczyniło postępy" />
+            <translation class="plural_non_masculine_personal" value="poczyniły postępy" />
+            <translation class="plural_masculine_personal" value="poczynili postępy" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="しんぽしました" kanji="進歩しました" translation="poczyniłem postępy">
+          <agreement_translations>
+            <translation class="masculine_personal" value="poczynił postępy" />
+            <translation class="masculine_animate" value="poczynił postępy" />
+            <translation class="masculine_inanimate" value="poczynił postępy" />
+            <translation class="feminine" value="poczyniła postępy" />
+            <translation class="neuter" value="poczyniło postępy" />
+            <translation class="plural_non_masculine_personal" value="poczyniły postępy" />
+            <translation class="plural_masculine_personal" value="poczynili postępy" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="しんぽしなかった" kanji="進歩しなかった" translation="nie poczyniłem postępów">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie poczynił postępów" />
+            <translation class="masculine_animate" value="nie poczynił postępów" />
+            <translation class="masculine_inanimate" value="nie poczynił postępów" />
+            <translation class="feminine" value="nie poczyniła postępów" />
+            <translation class="neuter" value="nie poczyniło postępów" />
+            <translation class="plural_non_masculine_personal" value="nie poczyniły postępów" />
+            <translation class="plural_masculine_personal" value="nie poczynili postępów" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="しんぽしませんでした" kanji="進歩しませんでした" translation="nie poczyniłem postępów">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie poczynił postępów" />
+            <translation class="masculine_animate" value="nie poczynił postępów" />
+            <translation class="masculine_inanimate" value="nie poczynił postępów" />
+            <translation class="feminine" value="nie poczyniła postępów" />
+            <translation class="neuter" value="nie poczyniło postępów" />
+            <translation class="plural_non_masculine_personal" value="nie poczyniły postępów" />
+            <translation class="plural_masculine_personal" value="nie poczynili postępów" />
+          </agreement_translations>
+        </form>
+        <form ref="potential" kana="しんぽできる" kanji="進歩できる" translation="mogę robić postępy">
+          <agreement_translations>
+            <translation class="masculine_personal" value="może robić postępy" />
+            <translation class="masculine_animate" value="może robić postępy" />
+            <translation class="masculine_inanimate" value="może robić postępy" />
+            <translation class="feminine" value="może robić postępy" />
+            <translation class="neuter" value="może robić postępy" />
+            <translation class="plural_non_masculine_personal" value="mogą robić postępy" />
+            <translation class="plural_masculine_personal" value="mogą robić postępy" />
+          </agreement_translations>
+        </form>
+        <form ref="progressive" kana="しんぽしている" kanji="進歩している" translation="robię postępy">
+          <agreement_translations>
+            <translation class="masculine_personal" value="robi postępy" />
+            <translation class="masculine_animate" value="robi postępy" />
+            <translation class="masculine_inanimate" value="robi postępy" />
+            <translation class="feminine" value="robi postępy" />
+            <translation class="neuter" value="robi postępy" />
+            <translation class="plural_non_masculine_personal" value="robią postępy" />
+            <translation class="plural_masculine_personal" value="robią postępy" />
+          </agreement_translations>
+        </form>
+        <form ref="desiderative" kana="しんぽしたい" kanji="進歩したい" translation="chcę robić postępy">
+          <agreement_translations>
+            <translation class="masculine_personal" value="chce robić postępy" />
+            <translation class="masculine_animate" value="chce robić postępy" />
+            <translation class="masculine_inanimate" value="chce robić postępy" />
+            <translation class="feminine" value="chce robić postępy" />
+            <translation class="neuter" value="chce robić postępy" />
+            <translation class="plural_non_masculine_personal" value="chcą robić postępy" />
+            <translation class="plural_masculine_personal" value="chcą robić postępy" />
+          </agreement_translations>
+        </form>
+        <form ref="tara" kana="しんぽしたら" kanji="進歩したら" translation="jeśli poczynię postępy">
+          <agreement_translations>
+            <translation class="masculine_personal" value="jeśli poczyni postępy" />
+            <translation class="masculine_animate" value="jeśli poczyni postępy" />
+            <translation class="masculine_inanimate" value="jeśli poczyni postępy" />
+            <translation class="feminine" value="jeśli poczyni postępy" />
+            <translation class="neuter" value="jeśli poczyni postępy" />
+            <translation class="plural_non_masculine_personal" value="jeśli poczynią postępy" />
+            <translation class="plural_masculine_personal" value="jeśli poczynią postępy" />
+          </agreement_translations>
+        </form>
+        <form ref="te_form" kana="しんぽして" kanji="進歩して" translation="robiąc postępy" />
+      </forms>
+    </word>
   </words>
 </dictionary>

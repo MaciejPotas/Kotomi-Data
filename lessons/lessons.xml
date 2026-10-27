@@ -804,19 +804,87 @@
       <local_word id="ola_kanji_146_150_017" translation="otwierać i zamykać" kana="かいへい" kanji="開閉" romaji="kaihei" example="N/A" />
     </lesson>
     <lesson id="ola_kanji_151_155" group="Ola" main="Kanji" name="151-155">
-      <local_word id="ola_kanji_151_155_001" translation="uczyć czegoś ( kogoś )" kana="おしえる" kanji="教える" romaji="oshieru" example="地下鉄へ行く道を教えていただけませんか。" />
-      <local_word id="ola_kanji_151_155_002" translation="robić, wytwarzać" kana="つくる" kanji="作る" romaji="tsukuru" example="例外は作るべきではないと思います。" />
-      <local_word id="ola_kanji_151_155_003" translation="wykonany ręcznie, rękodzieło" kana="てづくり" kanji="手作り" romaji="tezukuri" example="N/A" />
-      <local_word id="ola_kanji_151_155_004" translation="autor, pisarza, artysta" kana="さっか" kanji="作家" romaji="sakka" example="その作家は私たちによく知られています。" />
-      <local_word id="ola_kanji_151_155_005" translation="arcydzieło, znany utwór ( o ksiazce, filmie.. )" kana="めいさく" kanji="名作" romaji="meisaku" example="この映画はまさしく不朽の名作である。" />
-      <local_word id="ola_kanji_151_155_006" translation="przechodzić ( przez miejsce, mijać miejsce )" kana="とおる" kanji="通る" romaji="tooru" example="この道を通ります。" />
-      <local_word id="ola_kanji_151_155_007" translation="uczęszczać, chodzić regularnie ( na lekcje )" kana="かよう" kanji="通う" romaji="kayou" example="６歳以上の子供は学校に通わなければならない。" />
-      <local_word id="ola_kanji_151_155_008" translation="Droga do szkoły, dojazd do szkoły" kana="つうがく" kanji="通学" romaji="tsuugaku" example="いつもバス通学です。" />
-      <local_word id="ola_kanji_151_155_009" translation="iść, chodzić ( pieszo )" kana="あるく" kanji="歩く" romaji="aruku" example="N/A" />
-      <local_word id="ola_kanji_151_155_010" translation="spacer" kana="さんぽ" kanji="散歩" romaji="sanpo" example="公園を散歩しましょう。" />
-      <local_word id="ola_kanji_151_155_011" translation="chodnik" kana="ほどう" kanji="歩道" romaji="hodou" example="歩道にお金が落ちていた。" />
-      <local_word id="ola_kanji_151_155_012" translation="brać, wziąć, zdjąć" kana="とる" kanji="取る" romaji="toru" example="彼は数学で満点を取った。" />
-      <local_word id="ola_kanji_151_155_013" translation="zdjąć, odłączyć, zdemontować" kana="とりはずす" kanji="取り外す" romaji="torihazusu" example="カーテンを取りはずして洗濯に出しなさい。" />
+      <word id="ola_kanji_151_155_001">
+        <dictionary_ref dictionary="verbs" word="oshieru" />
+      </word>
+      <word id="ola_kanji_151_155_002">
+        <dictionary_ref dictionary="nouns" word="kyouiku" />
+      </word>
+      <word id="ola_kanji_151_155_003">
+        <dictionary_ref dictionary="nouns" word="kyoushitsu" />
+      </word>
+      <word id="ola_kanji_151_155_004">
+        <dictionary_ref dictionary="nouns" word="kyouju" />
+      </word>
+      <word id="ola_kanji_151_155_005">
+        <dictionary_ref dictionary="nouns" word="kyoukasho" />
+      </word>
+      <word id="ola_kanji_151_155_006">
+        <dictionary_ref dictionary="nouns" word="kyoushi" />
+      </word>
+      <word id="ola_kanji_151_155_007">
+        <dictionary_ref dictionary="verbs" word="tsukuru" />
+      </word>
+      <word id="ola_kanji_151_155_008">
+        <dictionary_ref dictionary="nouns" word="sagyou" />
+      </word>
+      <word id="ola_kanji_151_155_009">
+        <dictionary_ref dictionary="nouns" word="tezukuri" />
+      </word>
+      <word id="ola_kanji_151_155_010">
+        <dictionary_ref dictionary="nouns" word="sakka" />
+      </word>
+      <word id="ola_kanji_151_155_011">
+        <dictionary_ref dictionary="nouns" word="sakuhin" />
+      </word>
+      <word id="ola_kanji_151_155_012">
+        <dictionary_ref dictionary="nouns" word="meisaku" />
+      </word>
+      <word id="ola_kanji_151_155_013">
+        <dictionary_ref dictionary="verbs" word="tooru" />
+      </word>
+      <word id="ola_kanji_151_155_014">
+        <dictionary_ref dictionary="nouns" word="tsuugaku" />
+      </word>
+      <word id="ola_kanji_151_155_015">
+        <dictionary_ref dictionary="verbs" word="kayou" />
+      </word>
+      <word id="ola_kanji_151_155_016">
+        <dictionary_ref dictionary="adjectives" word="kyoutsuu" />
+      </word>
+      <word id="ola_kanji_151_155_017">
+        <dictionary_ref dictionary="nouns" word="koutsuu" />
+      </word>
+      <word id="ola_kanji_151_155_018">
+        <dictionary_ref dictionary="adjectives" word="futsuu" />
+      </word>
+      <word id="ola_kanji_151_155_019">
+        <dictionary_ref dictionary="verbs" word="aruku" />
+      </word>
+      <word id="ola_kanji_151_155_020">
+        <dictionary_ref dictionary="nouns" word="hodou" />
+      </word>
+      <word id="ola_kanji_151_155_021">
+        <dictionary_ref dictionary="nouns" word="sanpo" />
+      </word>
+      <word id="ola_kanji_151_155_022">
+        <dictionary_ref dictionary="nouns" word="oudanhodou" />
+      </word>
+      <word id="ola_kanji_151_155_023">
+        <dictionary_ref dictionary="verbs" word="shinposuru" />
+      </word>
+      <word id="ola_kanji_151_155_024">
+        <dictionary_ref dictionary="verbs" word="toru" />
+      </word>
+      <word id="ola_kanji_151_155_025">
+        <dictionary_ref dictionary="nouns" word="shuzai" />
+      </word>
+      <word id="ola_kanji_151_155_026">
+        <dictionary_ref dictionary="verbs" word="torihazusu" />
+      </word>
+      <word id="ola_kanji_151_155_027">
+        <dictionary_ref dictionary="nouns" word="torihiki" />
+      </word>
     </lesson>
     <lesson id="thematic_exchange" group="Tematyczne" main="Relacje i wymiana" name="Dawać, otrzymywać i pożyczać">
       <word id="thematic_verbs_ageru_give">
