@@ -1328,5 +1328,101 @@
         </source_forms>
       </counting>
     </word>
+    <word id="hiroshima" kana="ひろしま" kanji="広島" type="noun" category="place" translation="Hiroszima">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="Hiroszima" genitive="Hiroszimy" dative="Hiroszimie" accusative="Hiroszimę" instrumental="Hiroszimą" locative="Hiroszimie" vocative="Hiroszimo" />
+    </word>
+    <word id="koukoku" kana="こうこく" kanji="広告" type="noun" category="media" translation="reklama">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="reklama" genitive="reklamy" dative="reklamie" accusative="reklamę" instrumental="reklamą" locative="reklamie" vocative="reklamo" />
+    </word>
+    <word id="tanki_period" kana="たんき" kanji="短期" type="noun" category="duration" translation="krótki termin">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="krótki termin" genitive="krótkiego terminu" dative="krótkiemu terminowi" accusative="krótki termin" instrumental="krótkim terminem" locative="krótkim terminie" vocative="krótki terminie" />
+    </word>
+    <word id="tansho" kana="たんしょ" kanji="短所" type="noun" category="abstract" translation="wada">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="wada" genitive="wady" dative="wadzie" accusative="wadę" instrumental="wadą" locative="wadzie" vocative="wado" />
+    </word>
+    <word id="tanka_poem" kana="たんか" kanji="短歌" type="noun" category="text" translation="wiersz tanka">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="wiersz tanka" genitive="wiersza tanka" dative="wierszowi tanka" accusative="wiersz tanka" instrumental="wierszem tanka" locative="wierszu tanka" vocative="wierszu tanka" />
+    </word>
+    <word id="teikiatsu" kana="ていきあつ" kanji="低気圧" type="noun" category="abstract" translation="niskie ciśnienie atmosferyczne">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="niskie ciśnienie atmosferyczne" genitive="niskiego ciśnienia atmosferycznego" dative="niskiemu ciśnieniu atmosferycznemu" accusative="niskie ciśnienie atmosferyczne" instrumental="niskim ciśnieniem atmosferycznym" locative="niskim ciśnieniu atmosferycznym" vocative="niskie ciśnienie atmosferyczne" />
+    </word>
+    <word id="teion" kana="ていおん" kanji="低温" type="noun" category="abstract" translation="niska temperatura">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="niska temperatura" genitive="niskiej temperatury" dative="niskiej temperaturze" accusative="niską temperaturę" instrumental="niską temperaturą" locative="niskiej temperaturze" vocative="niska temperaturo" />
+    </word>
+    <word id="anzan" kana="あんざん" kanji="暗算" type="noun" category="abstract" translation="liczenie w pamięci">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="liczenie w pamięci" genitive="liczenia w pamięci" dative="liczeniu w pamięci" accusative="liczenie w pamięci" instrumental="liczeniem w pamięci" locative="liczeniu w pamięci" vocative="liczenie w pamięci" />
+    </word>
+    <word id="ansatsu" kana="あんさつ" kanji="暗殺" type="noun" category="abstract" translation="zamach">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="zamach" genitive="zamachu" dative="zamachowi" accusative="zamach" instrumental="zamachem" locative="zamachu" vocative="zamachu" />
+    </word>
+    <word id="angou" kana="あんごう" kanji="暗号" type="noun" category="abstract" translation="szyfr">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="szyfr" genitive="szyfru" dative="szyfrowi" accusative="szyfr" instrumental="szyfrem" locative="szyfrze" vocative="szyfrze" />
+    </word>
+    <word id="ensoku" kana="えんそく" kanji="遠足" type="noun" category="abstract" translation="wycieczka">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="wycieczka" genitive="wycieczki" dative="wycieczce" accusative="wycieczkę" instrumental="wycieczką" locative="wycieczce" vocative="wycieczko" />
+    </word>
+    <word id="eien" kana="えいえん" kanji="永遠" type="noun" category="abstract" translation="wieczność">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="wieczność" genitive="wieczności" dative="wieczności" accusative="wieczność" instrumental="wiecznością" locative="wieczności" vocative="wieczności" />
+    </word>
+    <word id="enpou" kana="えんぽう" kanji="遠方" type="noun" category="place" translation="odległe miejsce">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="odległe miejsce" genitive="odległego miejsca" dative="odległemu miejscu" accusative="odległe miejsce" instrumental="odległym miejscem" locative="odległym miejscu" vocative="odległe miejsce" />
+    </word>
+    <word id="enkyori" kana="えんきょり" kanji="遠距離" type="noun" category="abstract" translation="duża odległość">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="duża odległość" genitive="dużej odległości" dative="dużej odległości" accusative="dużą odległość" instrumental="dużą odległością" locative="dużej odległości" vocative="duża odległości" />
+    </word>
+    <word id="kinjo" kana="きんじょ" kanji="近所" type="noun" category="place" translation="sąsiedztwo">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="sąsiedztwo" genitive="sąsiedztwa" dative="sąsiedztwu" accusative="sąsiedztwo" instrumental="sąsiedztwem" locative="sąsiedztwie" vocative="sąsiedztwo" />
+    </word>
+    <word id="fukin" kana="ふきん" kanji="付近" type="noun" category="place" translation="okolica">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="okolica" genitive="okolicy" dative="okolicy" accusative="okolicę" instrumental="okolicą" locative="okolicy" vocative="okolico" />
+    </word>
+    <word id="kinki_region" kana="きんき" kanji="近畿" type="noun" category="place" translation="region Kinki">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="region Kinki" genitive="regionu Kinki" dative="regionowi Kinki" accusative="region Kinki" instrumental="regionem Kinki" locative="regionie Kinki" vocative="regionie Kinki" />
+    </word>
+    <word id="hayaoki" kana="はやおき" kanji="早起き" type="noun" category="abstract" translation="wczesne wstawanie">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="wczesne wstawanie" genitive="wczesnego wstawania" dative="wczesnemu wstawaniu" accusative="wczesne wstawanie" instrumental="wczesnym wstawaniem" locative="wczesnym wstawaniu" vocative="wczesne wstawanie" />
+    </word>
+    <word id="chikoku" kana="ちこく" kanji="遅刻" type="noun" category="abstract" translation="spóźnienie">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="spóźnienie" genitive="spóźnienia" dative="spóźnieniu" accusative="spóźnienie" instrumental="spóźnieniem" locative="spóźnieniu" vocative="spóźnienie" />
+    </word>
+    <word id="taijuu" kana="たいじゅう" kanji="体重" type="noun" category="abstract" translation="ciężar ciała">
+      <agreement class="masculine_inanimate" />
+      <cases language="pl" nominative="ciężar ciała" genitive="ciężaru ciała" dative="ciężarowi ciała" accusative="ciężar ciała" instrumental="ciężarem ciała" locative="ciężarze ciała" vocative="ciężarze ciała" />
+    </word>
+    <word id="juuryoku" kana="じゅうりょく" kanji="重力" type="noun" category="abstract" translation="grawitacja">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="grawitacja" genitive="grawitacji" dative="grawitacji" accusative="grawitację" instrumental="grawitacją" locative="grawitacji" vocative="grawitacjo" />
+    </word>
+    <word id="kazoku" kana="かぞく" kanji="家族" type="noun" category="person" translation="rodzina">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="rodzina" genitive="rodziny" dative="rodzinie" accusative="rodzinę" instrumental="rodziną" locative="rodzinie" vocative="rodzino" />
+    </word>
+    <word id="ryoushin" kana="りょうしん" kanji="両親" type="noun" category="person" translation="rodzice">
+      <agreement class="plural_masculine_personal" />
+      <cases language="pl" nominative="rodzice" genitive="rodziców" dative="rodzicom" accusative="rodziców" instrumental="rodzicami" locative="rodzicach" vocative="rodzice" />
+    </word>
+    <word id="shimai" kana="しまい" kanji="姉妹" type="noun" category="person" translation="siostry">
+      <agreement class="plural_non_masculine_personal" />
+      <cases language="pl" nominative="siostry" genitive="sióstr" dative="siostrom" accusative="siostry" instrumental="siostrami" locative="siostrach" vocative="siostry" />
+    </word>
   </words>
 </dictionary>
