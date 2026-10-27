@@ -50,6 +50,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="tych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="tym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="tymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ci" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="tych" />
+        <override classes="plural_masculine_personal" cases="dative" value="tym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="tymi" />
       </polish_forms>
     </word>
     <word id="sono" kana="その" translation="ten (blisko rozmówcy)">
@@ -68,6 +72,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="tych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="tym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="tymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ci" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="tych" />
+        <override classes="plural_masculine_personal" cases="dative" value="tym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="tymi" />
       </polish_forms>
     </word>
     <word id="ano" kana="あの" translation="tamten (daleko od obu rozmówców)">
@@ -86,6 +94,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="tamtych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="tamtym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="tamtymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="tamci" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="tamtych" />
+        <override classes="plural_masculine_personal" cases="dative" value="tamtym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="tamtymi" />
       </polish_forms>
     </word>
   </words>

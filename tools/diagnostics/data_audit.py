@@ -75,6 +75,19 @@ def known_conjugation_variant(word, actual, expected):
                for full, short in variants)
 
 
+def agreement_inventory(word, capabilities):
+    """Inventory every stored form, without inventing per-word obligations."""
+    classes = tuple(getattr(capabilities, 'verb_agreement_classes', ()))
+    forms = {}
+    for name, form in sorted(word.forms.items()):
+        cells = getattr(form, 'agreement_translations', {})
+        forms[name] = dict(missing_classes=[cls for cls in classes if not cells.get(cls, '').strip()],
+                           stored_classes=sorted(cls for cls, value in cells.items() if value.strip()))
+    return dict(classes=list(classes), forms=forms,
+                fully_populated_forms=sum(not row['missing_classes'] for row in forms.values()) if classes else 0,
+                scope='Stored cells only. Impersonal, existential, imperative, volitional and contextual passive applicability requires separate review.')
+
+
 def audit_project(project, dictionary=None, *, word_validator=None):
     """Return deterministic findings without changing the supplied project."""
     findings = []
@@ -156,6 +169,8 @@ def audit_project(project, dictionary=None, *, word_validator=None):
 
             required = requirements.get((key, identifier), {})
             inventory = inventories[f'{key}/{identifier}']
+            if schema == 'verb':
+                inventory['verb_agreement'] = agreement_inventory(word, project.instruction_language.capabilities)
             inventory.update(form_inventory(word, catalog, generated, required))
             for name in inventory['missing_required_forms']:
                 add('WARNING', key, identifier,
@@ -195,6 +210,13 @@ def render_report(report, verbose=False):
     lines.append('Supported adjective variants (including じゃ / では) are valid alternatives, not corrections. Completeness flags are unchanged.')
     for key, values in report['dictionaries'].items():
         lines.append(f"\n{key.upper()}: complete={values['complete']} incomplete={values['incomplete']} review_notes={values['review_notes']}")
+    agreement_rows = [item['verb_agreement'] for item in report['inventory'].values()
+                      if item.get('verb_agreement', {}).get('classes')]
+    if agreement_rows:
+        full = sum(row['fully_populated_forms'] for row in agreement_rows)
+        total = sum(len(row['forms']) for row in agreement_rows)
+        lines.append(f'\nStored verb agreement: {full}/{total} forms have all declared classes. '
+                     'This is separate from checked-contract completeness above; missing cells need applicability review.')
     previous = None
     for issue in sorted(report['findings'], key=lambda i:(i['severity'],i.get('category','validation'),i['dictionary'],i['word'],i['message'])):
         category = issue.get('category','validation')
@@ -208,6 +230,8 @@ def render_report(report, verbose=False):
             for field in ('required_by_patterns', 'generated_forms', 'optional_forms_not_explicit',
                           'missing_required_forms', 'unsupported_by_generator', 'requirements_status', 'generation_scope'):
                 lines.append(f"  {field}: {item[field]}")
+            if 'verb_agreement' in item:
+                lines.append(f"  verb_agreement: {item['verb_agreement']}")
     return '\n'.join(lines) + '\n'
 
 

@@ -33,6 +33,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="czerwonych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="czerwonym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="czerwonymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="czerwoni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="czerwonych" />
+        <override classes="plural_masculine_personal" cases="dative" value="czerwonym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="czerwonymi" />
       </polish_forms>
     </word>
     <word id="akarui" kana="あかるい" kanji="明るい" type="i_adjective" translation="jasny">
@@ -66,6 +70,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="jasnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="jasnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="jasnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="jaśni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="jasnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="jasnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="jasnymi" />
       </polish_forms>
     </word>
     <word id="amai" kana="あまい" kanji="甘い" type="i_adjective" translation="słodki">
@@ -100,6 +108,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="słodkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="słodkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="słodkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="słodcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="słodkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="słodkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="słodkimi" />
       </polish_forms>
     </word>
     <word id="anzen" kana="あんぜん" kanji="安全" type="na_adjective" translation="bezpieczny">
@@ -133,6 +145,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="bezpiecznych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="bezpiecznym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="bezpiecznymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="bezpieczni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="bezpiecznych" />
+        <override classes="plural_masculine_personal" cases="dative" value="bezpiecznym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="bezpiecznymi" />
       </polish_forms>
     </word>
     <word id="aoi" kana="あおい" kanji="青い" type="i_adjective" translation="niebieski">
@@ -167,6 +183,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="niebieskich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="niebieskim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="niebieskimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="niebiescy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="niebieskich" />
+        <override classes="plural_masculine_personal" cases="dative" value="niebieskim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="niebieskimi" />
       </polish_forms>
     </word>
     <word id="arai" kana="あらい" kanji="荒い" type="i_adjective" translation="szorstki">
@@ -201,6 +221,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="szorstkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="szorstkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="szorstkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="szorstcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="szorstkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="szorstkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="szorstkimi" />
       </polish_forms>
     </word>
     <word id="atarashii" kana="あたらしい" kanji="新しい" type="i_adjective" translation="nowy">
@@ -234,6 +258,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="nowych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="nowym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="nowymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="nowi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="nowych" />
+        <override classes="plural_masculine_personal" cases="dative" value="nowym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="nowymi" />
       </polish_forms>
     </word>
     <word id="atatakai" kana="あたたかい" kanji="暖かい" type="i_adjective" translation="ciepły">
@@ -268,6 +296,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="ciepłych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="ciepłym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="ciepłymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ciepli" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="ciepłych" />
+        <override classes="plural_masculine_personal" cases="dative" value="ciepłym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="ciepłymi" />
       </polish_forms>
     </word>
     <word id="atsui" kana="あつい" kanji="暑い" type="i_adjective" translation="gorący">
@@ -302,6 +334,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="gorących" />
         <override classes="plural_non_masculine_personal" cases="dative" value="gorącym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="gorącymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="gorący" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="gorących" />
+        <override classes="plural_masculine_personal" cases="dative" value="gorącym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="gorącymi" />
       </polish_forms>
     </word>
     <word id="azayaka" kana="あざやか" kanji="鮮やか" type="na_adjective" translation="żywy">
@@ -335,6 +371,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="żywych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="żywym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="żywymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="żywi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="żywych" />
+        <override classes="plural_masculine_personal" cases="dative" value="żywym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="żywymi" />
       </polish_forms>
     </word>
     <word id="chiisai" kana="ちいさい" kanji="小さい" type="i_adjective" translation="mały">
@@ -369,6 +409,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="małych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="małym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="małymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="mali" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="małych" />
+        <override classes="plural_masculine_personal" cases="dative" value="małym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="małymi" />
       </polish_forms>
     </word>
     <word id="chikai" kana="ちかい" kanji="近い" type="i_adjective" translation="bliski">
@@ -402,6 +446,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="bliskich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="bliskim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="bliskimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="bliscy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="bliskich" />
+        <override classes="plural_masculine_personal" cases="dative" value="bliskim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="bliskimi" />
       </polish_forms>
     </word>
     <word id="fukuzatsu" kana="ふくざつ" kanji="複雑" type="na_adjective" translation="skomplikowany">
@@ -435,6 +483,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="skomplikowanych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="skomplikowanym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="skomplikowanymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="skomplikowani" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="skomplikowanych" />
+        <override classes="plural_masculine_personal" cases="dative" value="skomplikowanym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="skomplikowanymi" />
       </polish_forms>
     </word>
     <word id="furui" kana="ふるい" kanji="古い" type="i_adjective" translation="stary">
@@ -468,6 +520,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="starych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="starym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="starymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="starzy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="starych" />
+        <override classes="plural_masculine_personal" cases="dative" value="starym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="starymi" />
       </polish_forms>
     </word>
     <word id="ganko" kana="がんこ" kanji="頑固" type="na_adjective" translation="uparty">
@@ -502,6 +558,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="upartych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="upartym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="upartymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="uparci" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="upartych" />
+        <override classes="plural_masculine_personal" cases="dative" value="upartym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="upartymi" />
       </polish_forms>
     </word>
     <word id="genki" kana="げんき" kanji="元気" type="na_adjective" translation="energiczny">
@@ -536,6 +596,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="energicznych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="energicznym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="energicznymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="energiczni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="energicznych" />
+        <override classes="plural_masculine_personal" cases="dative" value="energicznym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="energicznymi" />
       </polish_forms>
     </word>
     <word id="hadazamui" kana="はだざむい" kanji="肌寒い" type="i_adjective" translation="chłodny">
@@ -570,6 +634,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="chłodnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="chłodnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="chłodnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="chłodni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="chłodnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="chłodnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="chłodnymi" />
       </polish_forms>
     </word>
     <word id="hayai" kana="はやい" kanji="速い" type="i_adjective" translation="szybki">
@@ -604,6 +672,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="szybkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="szybkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="szybkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="szybcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="szybkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="szybkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="szybkimi" />
       </polish_forms>
     </word>
     <word id="heikinteki" kana="へいきんてき" kanji="平均的" type="na_adjective" translation="przeciętny">
@@ -637,6 +709,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="przeciętnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="przeciętnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="przeciętnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="przeciętni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="przeciętnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="przeciętnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="przeciętnymi" />
       </polish_forms>
     </word>
     <word id="hen" kana="へん" kanji="変" type="na_adjective" translation="dziwny">
@@ -670,6 +746,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="dziwnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="dziwnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="dziwnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="dziwni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="dziwnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="dziwnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="dziwnymi" />
       </polish_forms>
     </word>
     <word id="hidoi" kana="ひどい" type="i_adjective" translation="okropny">
@@ -703,6 +783,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="okropnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="okropnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="okropnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="okropni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="okropnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="okropnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="okropnymi" />
       </polish_forms>
     </word>
     <word id="hikui" kana="ひくい" kanji="低い" type="i_adjective" translation="niski">
@@ -736,6 +820,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="niskich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="niskim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="niskimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="niscy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="niskich" />
+        <override classes="plural_masculine_personal" cases="dative" value="niskim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="niskimi" />
       </polish_forms>
     </word>
     <word id="hiroi" kana="ひろい" kanji="広い" type="i_adjective" translation="szeroki">
@@ -769,6 +857,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="szerokich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="szerokim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="szerokimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="szerocy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="szerokich" />
+        <override classes="plural_masculine_personal" cases="dative" value="szerokim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="szerokimi" />
       </polish_forms>
     </word>
     <word id="ijou" kana="いじょう" kanji="異常" type="na_adjective" translation="nienormalny">
@@ -802,6 +894,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="nienormalnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="nienormalnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="nienormalnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="nienormalni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="nienormalnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="nienormalnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="nienormalnymi" />
       </polish_forms>
     </word>
     <word id="juuyou" kana="じゅうよう" kanji="重要" type="na_adjective" translation="ważny">
@@ -835,6 +931,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="ważnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="ważnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="ważnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ważni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="ważnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="ważnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="ważnymi" />
       </polish_forms>
     </word>
     <word id="kanashii" kana="かなしい" kanji="悲しい" type="i_adjective" translation="smutny">
@@ -868,6 +968,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="smutnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="smutnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="smutnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="smutni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="smutnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="smutnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="smutnymi" />
       </polish_forms>
     </word>
     <word id="kantan" kana="かんたん" kanji="簡単" type="na_adjective" translation="łatwy">
@@ -901,6 +1005,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="łatwych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="łatwym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="łatwymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="łatwi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="łatwych" />
+        <override classes="plural_masculine_personal" cases="dative" value="łatwym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="łatwymi" />
       </polish_forms>
     </word>
     <word id="karai" kana="からい" kanji="辛い" type="i_adjective" translation="ostry">
@@ -935,6 +1043,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="ostrych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="ostrym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="ostrymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ostrzy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="ostrych" />
+        <override classes="plural_masculine_personal" cases="dative" value="ostrym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="ostrymi" />
       </polish_forms>
     </word>
     <word id="karui" kana="かるい" kanji="軽い" type="i_adjective" translation="lekki">
@@ -968,6 +1080,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="lekkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="lekkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="lekkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="lekcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="lekkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="lekkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="lekkimi" />
       </polish_forms>
     </word>
     <word id="katai" kana="かたい" kanji="硬い" type="i_adjective" translation="twardy">
@@ -1002,6 +1118,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="twardych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="twardym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="twardymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="twardzi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="twardych" />
+        <override classes="plural_masculine_personal" cases="dative" value="twardym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="twardymi" />
       </polish_forms>
     </word>
     <word id="kawaii" kana="かわいい" kanji="可愛い" type="i_adjective" translation="uroczy">
@@ -1036,6 +1156,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="uroczych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="uroczym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="uroczymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="uroczy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="uroczych" />
+        <override classes="plural_masculine_personal" cases="dative" value="uroczym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="uroczymi" />
       </polish_forms>
     </word>
     <word id="kiiroi" kana="きいろい" kanji="黄色い" type="i_adjective" translation="żółty">
@@ -1070,6 +1194,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="żółtych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="żółtym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="żółtymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="żółci" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="żółtych" />
+        <override classes="plural_masculine_personal" cases="dative" value="żółtym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="żółtymi" />
       </polish_forms>
     </word>
     <word id="kiken" kana="きけん" kanji="危険" type="na_adjective" translation="niebezpieczny">
@@ -1103,6 +1231,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="niebezpiecznych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="niebezpiecznym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="niebezpiecznymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="niebezpieczni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="niebezpiecznych" />
+        <override classes="plural_masculine_personal" cases="dative" value="niebezpiecznym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="niebezpiecznymi" />
       </polish_forms>
     </word>
     <word id="kirei" kana="きれい" kanji="綺麗" type="na_adjective" translation="czysty">
@@ -1136,6 +1268,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="czystych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="czystym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="czystymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="czyści" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="czystych" />
+        <override classes="plural_masculine_personal" cases="dative" value="czystym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="czystymi" />
       </polish_forms>
     </word>
     <word id="kitanai" kana="きたない" kanji="汚い" type="i_adjective" translation="brudny">
@@ -1170,6 +1306,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="brudnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="brudnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="brudnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="brudni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="brudnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="brudnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="brudnymi" />
       </polish_forms>
     </word>
     <word id="kodoku" kana="こどく" kanji="孤独" type="na_adjective" translation="samotny">
@@ -1204,6 +1344,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="samotnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="samotnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="samotnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="samotni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="samotnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="samotnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="samotnymi" />
       </polish_forms>
     </word>
     <word id="kouka" kana="こうか" kanji="高価" type="na_adjective" translation="kosztowny">
@@ -1237,6 +1381,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="kosztownych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="kosztownym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="kosztownymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="kosztowni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="kosztownych" />
+        <override classes="plural_masculine_personal" cases="dative" value="kosztownym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="kosztownymi" />
       </polish_forms>
     </word>
     <word id="kurai" kana="くらい" kanji="暗い" type="i_adjective" translation="ciemny">
@@ -1270,6 +1418,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="ciemnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="ciemnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="ciemnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ciemni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="ciemnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="ciemnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="ciemnymi" />
       </polish_forms>
     </word>
     <word id="kuroi" kana="くろい" kanji="黒い" type="i_adjective" translation="czarny">
@@ -1304,6 +1456,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="czarnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="czarnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="czarnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="czarni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="czarnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="czarnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="czarnymi" />
       </polish_forms>
     </word>
     <word id="majime" kana="まじめ" kanji="真面目" type="na_adjective" translation="poważny">
@@ -1338,6 +1494,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="poważnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="poważnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="poważnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="poważni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="poważnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="poważnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="poważnymi" />
       </polish_forms>
     </word>
     <word id="marui" kana="まるい" kanji="丸い" type="i_adjective" translation="okrągły">
@@ -1372,6 +1532,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="okrągłych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="okrągłym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="okrągłymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="okrągli" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="okrągłych" />
+        <override classes="plural_masculine_personal" cases="dative" value="okrągłym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="okrągłymi" />
       </polish_forms>
     </word>
     <word id="mazui" kana="まずい" kanji="不味い" type="i_adjective" translation="niesmaczny">
@@ -1406,6 +1570,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="niesmacznych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="niesmacznym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="niesmacznymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="niesmaczni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="niesmacznych" />
+        <override classes="plural_masculine_personal" cases="dative" value="niesmacznym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="niesmacznymi" />
       </polish_forms>
     </word>
     <word id="mazushii" kana="まずしい" kanji="貧しい" type="i_adjective" translation="biedny">
@@ -1440,6 +1608,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="biednych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="biednym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="biednymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="biedni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="biednych" />
+        <override classes="plural_masculine_personal" cases="dative" value="biednym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="biednymi" />
       </polish_forms>
     </word>
     <word id="minikui" kana="みにくい" kanji="醜い" type="i_adjective" translation="brzydki">
@@ -1473,6 +1645,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="brzydkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="brzydkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="brzydkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="brzydcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="brzydkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="brzydkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="brzydkimi" />
       </polish_forms>
     </word>
     <word id="miryokuteki" kana="みりょくてき" kanji="魅力的" type="na_adjective" translation="atrakcyjny">
@@ -1506,6 +1682,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="atrakcyjnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="atrakcyjnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="atrakcyjnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="atrakcyjni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="atrakcyjnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="atrakcyjnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="atrakcyjnymi" />
       </polish_forms>
     </word>
     <word id="muzukashii" kana="むずかしい" kanji="難しい" type="i_adjective" translation="trudny">
@@ -1539,6 +1719,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="trudnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="trudnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="trudnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="trudni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="trudnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="trudnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="trudnymi" />
       </polish_forms>
     </word>
     <word id="nameraka" kana="なめらか" kanji="滑らか" type="na_adjective" translation="gładki">
@@ -1572,6 +1756,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="gładkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="gładkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="gładkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="gładcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="gładkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="gładkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="gładkimi" />
       </polish_forms>
     </word>
     <word id="nigai" kana="にがい" kanji="苦い" type="i_adjective" translation="gorzki">
@@ -1606,6 +1794,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="gorzkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="gorzkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="gorzkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="gorzcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="gorzkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="gorzkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="gorzkimi" />
       </polish_forms>
     </word>
     <word id="oishii" kana="おいしい" kanji="美味しい" type="i_adjective" translation="pyszny">
@@ -1640,6 +1832,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="pysznych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="pysznym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="pysznymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="pyszni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="pysznych" />
+        <override classes="plural_masculine_personal" cases="dative" value="pysznym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="pysznymi" />
       </polish_forms>
     </word>
     <word id="okanemochi" kana="おかねもち" kanji="お金持ち" type="na_adjective" translation="bogaty">
@@ -1674,6 +1870,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="bogatych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="bogatym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="bogatymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="bogaci" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="bogatych" />
+        <override classes="plural_masculine_personal" cases="dative" value="bogatym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="bogatymi" />
       </polish_forms>
     </word>
     <word id="omoi" kana="おもい" kanji="重い" type="i_adjective" translation="ciężki">
@@ -1707,6 +1907,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="ciężkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="ciężkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="ciężkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ciężcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="ciężkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="ciężkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="ciężkimi" />
       </polish_forms>
     </word>
     <word id="omoshiroi" kana="おもしろい" kanji="面白い" type="i_adjective" translation="ciekawy">
@@ -1740,6 +1944,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="ciekawych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="ciekawym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="ciekawymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="ciekawi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="ciekawych" />
+        <override classes="plural_masculine_personal" cases="dative" value="ciekawym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="ciekawymi" />
       </polish_forms>
     </word>
     <word id="ooi" kana="おおい" kanji="多い" type="i_adjective" translation="liczny">
@@ -1773,6 +1981,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="licznych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="licznym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="licznymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="liczni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="licznych" />
+        <override classes="plural_masculine_personal" cases="dative" value="licznym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="licznymi" />
       </polish_forms>
     </word>
     <word id="ookii" kana="おおきい" kanji="大きい" type="i_adjective" translation="duży">
@@ -1806,6 +2018,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="dużych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="dużym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="dużymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="duzi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="dużych" />
+        <override classes="plural_masculine_personal" cases="dative" value="dużym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="dużymi" />
       </polish_forms>
     </word>
     <word id="osoi" kana="おそい" kanji="遅い" type="i_adjective" translation="wolny">
@@ -1840,6 +2056,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="wolnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="wolnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="wolnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="wolni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="wolnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="wolnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="wolnymi" />
       </polish_forms>
     </word>
     <word id="otonashii" kana="おとなしい" kanji="大人しい" type="i_adjective" translation="spokojny">
@@ -1874,6 +2094,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="spokojnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="spokojnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="spokojnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="spokojni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="spokojnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="spokojnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="spokojnymi" />
       </polish_forms>
     </word>
     <word id="samui" kana="さむい" kanji="寒い" type="i_adjective" translation="zimny">
@@ -1908,6 +2132,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="zimnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="zimnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="zimnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="zimni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="zimnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="zimnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="zimnymi" />
       </polish_forms>
     </word>
     <word id="seijou" kana="せいじょう" kanji="正常" type="na_adjective" translation="normalny">
@@ -1941,6 +2169,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="normalnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="normalnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="normalnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="normalni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="normalnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="normalnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="normalnymi" />
       </polish_forms>
     </word>
     <word id="semai" kana="せまい" kanji="狭い" type="i_adjective" translation="wąski">
@@ -1974,6 +2206,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="wąskich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="wąskim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="wąskimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="wąscy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="wąskich" />
+        <override classes="plural_masculine_personal" cases="dative" value="wąskim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="wąskimi" />
       </polish_forms>
     </word>
     <word id="shakouteki" kana="しゃこうてき" kanji="社交的" type="na_adjective" translation="towarzyski">
@@ -2008,6 +2244,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="towarzyskich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="towarzyskim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="towarzyskimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="towarzyscy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="towarzyskich" />
+        <override classes="plural_masculine_personal" cases="dative" value="towarzyskim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="towarzyskimi" />
       </polish_forms>
     </word>
     <word id="shikakui" kana="しかくい" kanji="四角い" type="i_adjective" translation="kwadratowy">
@@ -2042,6 +2282,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="kwadratowych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="kwadratowym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="kwadratowymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="kwadratowi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="kwadratowych" />
+        <override classes="plural_masculine_personal" cases="dative" value="kwadratowym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="kwadratowymi" />
       </polish_forms>
     </word>
     <word id="shiokarai" kana="しおからい" kanji="塩辛い" type="i_adjective" translation="słony">
@@ -2076,6 +2320,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="słonych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="słonym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="słonymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="słoni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="słonych" />
+        <override classes="plural_masculine_personal" cases="dative" value="słonym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="słonymi" />
       </polish_forms>
     </word>
     <word id="shiroi" kana="しろい" kanji="白い" type="i_adjective" translation="biały">
@@ -2110,6 +2358,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="białych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="białym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="białymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="biali" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="białych" />
+        <override classes="plural_masculine_personal" cases="dative" value="białym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="białymi" />
       </polish_forms>
     </word>
     <word id="shitashimiyasui" kana="したしみやすい" kanji="親しみやすい" type="i_adjective" translation="przystępny">
@@ -2144,6 +2396,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="przystępnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="przystępnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="przystępnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="przystępni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="przystępnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="przystępnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="przystępnymi" />
       </polish_forms>
     </word>
     <word id="shizuka" kana="しずか" kanji="静か" type="na_adjective" translation="cichy">
@@ -2177,6 +2433,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="cichych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="cichym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="cichymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="cisi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="cichych" />
+        <override classes="plural_masculine_personal" cases="dative" value="cichym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="cichymi" />
       </polish_forms>
     </word>
     <word id="subarashii" kana="すばらしい" kanji="素晴らしい" type="i_adjective" translation="wspaniały">
@@ -2210,6 +2470,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="wspaniałych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="wspaniałym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="wspaniałymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="wspaniali" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="wspaniałych" />
+        <override classes="plural_masculine_personal" cases="dative" value="wspaniałym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="wspaniałymi" />
       </polish_forms>
     </word>
     <word id="sukunai" kana="すくない" kanji="少ない" type="i_adjective" translation="nieliczny">
@@ -2243,6 +2507,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="nielicznych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="nielicznym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="nielicznymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="nieliczni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="nielicznych" />
+        <override classes="plural_masculine_personal" cases="dative" value="nielicznym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="nielicznymi" />
       </polish_forms>
     </word>
     <word id="suppai" kana="すっぱい" kanji="酸っぱい" type="i_adjective" translation="kwaśny">
@@ -2277,6 +2545,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="kwaśnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="kwaśnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="kwaśnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="kwaśni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="kwaśnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="kwaśnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="kwaśnymi" />
       </polish_forms>
     </word>
     <word id="suteki" kana="すてき" kanji="素敵" type="na_adjective" translation="świetny">
@@ -2310,6 +2582,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="świetnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="świetnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="świetnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="świetni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="świetnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="świetnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="świetnymi" />
       </polish_forms>
     </word>
     <word id="tadashii" kana="ただしい" kanji="正しい" type="i_adjective" translation="poprawny">
@@ -2343,6 +2619,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="poprawnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="poprawnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="poprawnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="poprawni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="poprawnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="poprawnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="poprawnymi" />
       </polish_forms>
     </word>
     <word id="takai" kana="たかい" kanji="高い" type="i_adjective" translation="wysoki">
@@ -2376,6 +2656,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="wysokich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="wysokim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="wysokimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="wysocy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="wysokich" />
+        <override classes="plural_masculine_personal" cases="dative" value="wysokim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="wysokimi" />
       </polish_forms>
     </word>
     <word id="tanoshii" kana="たのしい" kanji="楽しい" type="i_adjective" translation="przyjemny">
@@ -2409,6 +2693,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="przyjemnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="przyjemnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="przyjemnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="przyjemni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="przyjemnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="przyjemnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="przyjemnymi" />
       </polish_forms>
     </word>
     <word id="tooi" kana="とおい" kanji="遠い" type="i_adjective" translation="daleki">
@@ -2442,6 +2730,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="dalekich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="dalekim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="dalekimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="dalecy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="dalekich" />
+        <override classes="plural_masculine_personal" cases="dative" value="dalekim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="dalekimi" />
       </polish_forms>
     </word>
     <word id="toumei" kana="とうめい" kanji="透明" type="na_adjective" translation="przezroczysty">
@@ -2476,6 +2768,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="przezroczystych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="przezroczystym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="przezroczystymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="przezroczyści" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="przezroczystych" />
+        <override classes="plural_masculine_personal" cases="dative" value="przezroczystym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="przezroczystymi" />
       </polish_forms>
     </word>
     <word id="tsumaranai" kana="つまらない" type="i_adjective" translation="nudny">
@@ -2509,6 +2805,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="nudnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="nudnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="nudnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="nudni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="nudnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="nudnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="nudnymi" />
       </polish_forms>
     </word>
     <word id="tsuyoi" kana="つよい" kanji="強い" type="i_adjective" translation="silny">
@@ -2542,6 +2842,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="silnych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="silnym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="silnymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="silni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="silnych" />
+        <override classes="plural_masculine_personal" cases="dative" value="silnym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="silnymi" />
       </polish_forms>
     </word>
     <word id="ureshii" kana="うれしい" kanji="嬉しい" type="i_adjective" translation="szczęśliwy">
@@ -2576,6 +2880,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="szczęśliwych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="szczęśliwym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="szczęśliwymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="szczęśliwi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="szczęśliwych" />
+        <override classes="plural_masculine_personal" cases="dative" value="szczęśliwym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="szczęśliwymi" />
       </polish_forms>
     </word>
     <word id="utsukushii" kana="うつくしい" kanji="美しい" type="i_adjective" translation="piękny">
@@ -2609,6 +2917,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="pięknych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="pięknym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="pięknymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="piękni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="pięknych" />
+        <override classes="plural_masculine_personal" cases="dative" value="pięknym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="pięknymi" />
       </polish_forms>
     </word>
     <word id="wakai" kana="わかい" kanji="若い" type="i_adjective" translation="młody">
@@ -2643,6 +2955,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="młodych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="młodym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="młodymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="młodzi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="młodych" />
+        <override classes="plural_masculine_personal" cases="dative" value="młodym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="młodymi" />
       </polish_forms>
     </word>
     <word id="warui" kana="わるい" kanji="悪い" type="i_adjective" translation="zły">
@@ -2676,6 +2992,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="złych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="złym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="złymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="źli" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="złych" />
+        <override classes="plural_masculine_personal" cases="dative" value="złym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="złymi" />
       </polish_forms>
     </word>
     <word id="yasashii" kana="やさしい" kanji="優しい" type="i_adjective" translation="miły">
@@ -2710,6 +3030,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="miłych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="miłym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="miłymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="mili" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="miłych" />
+        <override classes="plural_masculine_personal" cases="dative" value="miłym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="miłymi" />
       </polish_forms>
     </word>
     <word id="yasui" kana="やすい" kanji="安い" type="i_adjective" translation="tani">
@@ -2743,6 +3067,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="tanich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="tanim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="tanimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="tani" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="tanich" />
+        <override classes="plural_masculine_personal" cases="dative" value="tanim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="tanimi" />
       </polish_forms>
     </word>
     <word id="yawarakai" kana="やわらかい" kanji="柔らかい" type="i_adjective" translation="miękki">
@@ -2777,6 +3105,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="miękkich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="miękkim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="miękkimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="miękcy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="miękkich" />
+        <override classes="plural_masculine_personal" cases="dative" value="miękkim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="miękkimi" />
       </polish_forms>
     </word>
     <word id="yoi" kana="よい" kanji="良い" type="i_adjective" translation="dobry">
@@ -2810,6 +3142,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="dobrych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="dobrym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="dobrymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="dobrzy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="dobrych" />
+        <override classes="plural_masculine_personal" cases="dative" value="dobrym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="dobrymi" />
       </polish_forms>
     </word>
     <word id="yowai" kana="よわい" kanji="弱い" type="i_adjective" translation="słaby">
@@ -2843,6 +3179,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="słabych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="słabym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="słabymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="słabi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="słabych" />
+        <override classes="plural_masculine_personal" cases="dative" value="słabym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="słabymi" />
       </polish_forms>
     </word>
     <word id="kowai" kana="こわい" kanji="怖い" type="i_adjective" translation="straszny, przerażający">
@@ -2876,6 +3216,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="strasznych, przerażających" />
         <override classes="plural_non_masculine_personal" cases="dative" value="strasznym, przerażającym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="strasznymi, przerażającymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="straszni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="strasznych" />
+        <override classes="plural_masculine_personal" cases="dative" value="strasznym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="strasznymi" />
       </polish_forms>
     </word>
     <word id="fushigi" kana="ふしぎ" kanji="不思議" type="na_adjective" translation="dziwny, tajemniczy">
@@ -2909,6 +3253,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="dziwnych, tajemniczych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="dziwnym, tajemniczym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="dziwnymi, tajemniczymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="tajemniczy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="tajemniczych" />
+        <override classes="plural_masculine_personal" cases="dative" value="tajemniczym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="tajemniczymi" />
       </polish_forms>
     </word>
     <word id="shoppai" kana="しょっぱい" kanji="しょっぱい" type="i_adjective" translation="słony">
@@ -2943,6 +3291,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="słonych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="słonym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="słonymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="słoni" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="słonych" />
+        <override classes="plural_masculine_personal" cases="dative" value="słonym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="słonymi" />
       </polish_forms>
     </word>
     <word id="saikou" kana="さいこう" kanji="最高" type="na_adjective" translation="najlepszy">
@@ -2976,6 +3328,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="najlepszych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="najlepszym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="najlepszymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="najlepsi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="najlepszych" />
+        <override classes="plural_masculine_personal" cases="dative" value="najlepszym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="najlepszymi" />
       </polish_forms>
     </word>
     <word id="saitei" kana="さいてい" kanji="最低" type="na_adjective" translation="najgorszy">
@@ -3009,6 +3365,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="najgorszych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="najgorszym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="najgorszymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="najgorsi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="najgorszych" />
+        <override classes="plural_masculine_personal" cases="dative" value="najgorszym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="najgorszymi" />
       </polish_forms>
     </word>
     <word id="suki" kana="すき" type="na_adjective" translation="lubiany" kanji="好き">
@@ -3043,6 +3403,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="lubianych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="lubianym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="lubianymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="lubiani" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="lubianych" />
+        <override classes="plural_masculine_personal" cases="dative" value="lubianym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="lubianymi" />
       </polish_forms>
     </word>
     <word id="hoshii" kana="ほしい" type="i_adjective" translation="pożądany" kanji="欲しい">
@@ -3077,6 +3441,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="pożądanych" />
         <override classes="plural_non_masculine_personal" cases="dative" value="pożądanym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="pożądanymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="pożądani" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="pożądanych" />
+        <override classes="plural_masculine_personal" cases="dative" value="pożądanym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="pożądanymi" />
       </polish_forms>
     </word>
   </words>

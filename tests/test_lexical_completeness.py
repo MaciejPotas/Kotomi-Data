@@ -58,6 +58,7 @@ class LexicalCompletenessTests(unittest.TestCase):
 
     def test_adjective_overrides_are_complete_and_nonredundant(self):
         classes = 'masculine_personal masculine_animate masculine_inanimate feminine neuter plural_non_masculine_personal'.split()
+        explicit_plural_class = 'plural_masculine_personal'
         for identifier, word in words('adjectives').items():
             with self.subTest(word=identifier):
                 common = {c: n.get('value') for n in word.findall('./polish_forms/common') for c in n.get('cases').split()}
@@ -65,10 +66,15 @@ class LexicalCompletenessTests(unittest.TestCase):
                 for n in word.findall('./polish_forms/override'):
                     for cls in n.get('classes').split():
                         for case in n.get('cases').split():
-                            self.assertNotEqual(n.get('value'), common.get(case))
+                            # Plural masculine-personal cells are explicit even
+                            # when a surface form happens to equal common:
+                            # another class must not erase this paradigm.
+                            if cls != explicit_plural_class:
+                                self.assertNotEqual(n.get('value'), common.get(case))
                             self.assertNotIn((cls, case), specific)
                             specific[cls, case] = n.get('value')
                 self.assertTrue(all(specific.get((cls, c), common.get(c)) for cls in classes for c in CASES))
+                self.assertTrue(all(specific.get((explicit_plural_class, c)) for c in CASES))
 
     def test_reviewed_irregulars_and_japanese_variants(self):
         for identifier, form, expected in [('shinu','te_form','umarłszy'),('ageru_give','te_form','dając komuś'),('tomaru','te_form','zatrzymując się')]:

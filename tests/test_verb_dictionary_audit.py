@@ -303,13 +303,16 @@ class EngineRoleContractTests(unittest.TestCase):
 
     def test_actual_inheritance_drift_is_caught_by_validator(self):
         from kotomi.core.project.models import NounCategory
-        from kotomi.languages.polish import PolishLanguage
         fixture=json.loads((ROOT/'tests/fixtures/c1/v1.json').read_text())
         report=fixture['report'];report['verbs']=report['verbs'][:1]
         row=report['verbs'][0];row['current_roles']=[{'ref':'subject','matched_nouns':['actor','prop']}]
         self.project.entities={'actor':self.actor,'prop':self.prop}
         self.project.words={'verbs':{row['id']:self.word}}
-        self.project.patterns={};self.project.instruction_language=PolishLanguage
+        self.project.patterns={}
+        # C1 is a historical six-class snapshot. This case exercises actual
+        # role inheritance, independently of later language-catalog additions.
+        self.project.instruction_language=SimpleNamespace(capabilities=SimpleNamespace(
+            verb_agreement_classes=tuple(report['allowed_classes'])))
         validator.validate_engine(report,self.project,self.matches,lambda *args:False)
         self.project.noun_categories['child']=NounCategory('child','Child',parent='object')
         with self.assertRaisesRegex(ValueError,'Role matches drift'):

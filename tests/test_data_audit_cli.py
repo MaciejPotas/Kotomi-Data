@@ -95,6 +95,19 @@ class FormAuditTests(unittest.TestCase):
         self.assertTrue(report['execution_success'])
         self.assertEqual(report['warnings'], 1)
 
+    def test_agreement_inventory_does_not_call_a_plural_only_form_complete(self):
+        self.project.instruction_language.capabilities.verb_agreement_classes = (
+            'feminine', 'plural_masculine_personal', 'plural_non_masculine_personal')
+        self.word.forms['dictionary'].agreement_translations = {'plural_masculine_personal': 'stored'}
+        self.word.forms['potential'] = self.form('かける', 'can write')
+        report = audit_project(self.project)
+        row = report['inventory']['sample/fixture']['verb_agreement']
+        self.assertEqual(row['fully_populated_forms'], 0)
+        self.assertEqual(row['forms']['dictionary']['missing_classes'], ['feminine', 'plural_non_masculine_personal'])
+        self.assertEqual(len(row['forms']['potential']['missing_classes']), 3)
+        self.assertIn('Stored verb agreement: 0/2', render_report(report))
+        self.assertEqual(report['errors'], 0)  # Applicability is not inferred.
+
     def test_generated_and_optional_forms_are_not_missing_obligations(self):
         report = audit_project(self.project)
         row = report['inventory']['sample/fixture']

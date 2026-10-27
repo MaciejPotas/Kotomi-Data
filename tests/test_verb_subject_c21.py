@@ -178,3 +178,34 @@ class DeploymentTests(unittest.TestCase):
         self.report['changes'][0]['depends_on'] = [self.report['changes'][1]['id']]
         with self.assertRaisesRegex(ValueError, 'incorrect dependencies'):
             self.validate()
+
+    def test_production_plural_extension_preserves_historical_translations(self):
+        section = self.word.find('forms/form/agreement_translations')
+        original = dict(section[0].attrib)
+        added = ET.SubElement(section, 'translation', {
+            'class': 'plural_masculine_personal', 'value': 'pracowali',
+        })
+        # Historic C2 fixture contract still rejects extra classes by default.
+        with self.assertRaisesRegex(ValueError, 'changed agreement map'):
+            self.validate()
+        kwargs = {'allowed_extension_classes': ('plural_masculine_personal', 'plural_non_masculine_personal')}
+        self.assertEqual(
+            validate_deployment(self.root, self.report, self.selected, **kwargs), 9)
+        # Reject changing an old translation, even when plural additions are allowed.
+        section[0].set('value', 'changed baseline')
+        with self.assertRaisesRegex(ValueError, 'changed agreement map'):
+            validate_deployment(self.root, self.report, self.selected, **kwargs)
+        section[0].attrib.clear()
+        section[0].attrib.update(original)
+        # No arbitrary new classes or empty plural values.
+        added.set('class', 'neuter')
+        with self.assertRaisesRegex(ValueError, 'changed agreement map'):
+            validate_deployment(self.root, self.report, self.selected, **kwargs)
+        # A separately reviewed singular extension is permitted without
+        # authorizing changes to any existing value.
+        extended = {'allowed_extension_classes': (*kwargs['allowed_extension_classes'], 'neuter')}
+        self.assertEqual(validate_deployment(self.root, self.report, self.selected, **extended), 9)
+        added.set('class', 'plural_non_masculine_personal')
+        added.set('value', '')
+        with self.assertRaisesRegex(ValueError, 'changed agreement map'):
+            validate_deployment(self.root, self.report, self.selected, **kwargs)

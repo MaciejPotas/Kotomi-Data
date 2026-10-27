@@ -62,7 +62,9 @@ def validate_category_a_deployment(root, report):
             ('iku', ('idzie', 'nie idzie', 'poszło', 'nie poszło')))
         for form, value in zip(('dictionary', 'plain_negative', 'past_plain', 'past_negative_plain'), values)}
     count = validate_deployment(root, report, selected, role_overrides=role_overrides,
-                                agreement_extensions=extensions)
+                                agreement_extensions=extensions,
+                                allowed_extension_classes=set(report['allowed_classes']) |
+                                    {'plural_masculine_personal', 'plural_non_masculine_personal'})
     for vid, accepts in (('hataraku', 'person'), ('neru', 'person animal')):
         role = one(root, f"words/word[@id='{vid}']/usage/role[@ref='subject']")
         require(role.attrib == {'ref': 'subject', 'accepts': accepts},
@@ -70,7 +72,8 @@ def validate_category_a_deployment(root, report):
     return count
 
 
-def validate_deployment(root, report, selected=VERBS, *, role_overrides=None, agreement_extensions=None):
+def validate_deployment(root, report, selected=VERBS, *, role_overrides=None, agreement_extensions=None,
+                        allowed_extension_classes=()):
     """Check selected approved operations and their complete target XML maps.
 
     The selection argument supports bounded synthetic fixtures. Only the default
@@ -164,5 +167,18 @@ def validate_deployment(root, report, selected=VERBS, *, role_overrides=None, ag
                     f'{vid}/{form}: invalid translation structure')
             actual = {e.get('class'): e.get('value') for e in entries}
             require(len(actual) == len(entries), f'{vid}/{form}: duplicate class')
-            require(actual == expected_maps[vid, form], f'{vid}/{form}: changed agreement map')
+            expected = expected_maps[vid, form]
+            if allowed_extension_classes:
+                # Preserve every reviewed historical value while allowing
+                # explicitly authorized missing singular and plural cells.
+                extras = set(actual) - set(expected)
+                require(
+                    all(actual.get(cls) == value for cls, value in expected.items())
+                    and extras <= set(allowed_extension_classes)
+                    and all(isinstance(actual[cls], str) and actual[cls].strip()
+                            for cls in extras),
+                    f'{vid}/{form}: changed agreement map',
+                )
+            else:
+                require(actual == expected, f'{vid}/{form}: changed agreement map')
     return len(changes)

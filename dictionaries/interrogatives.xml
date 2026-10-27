@@ -9,7 +9,16 @@
         <common cases="instrumental locative" value="kim" />
       </polish_forms>
     </word>
-    <word id="donata" kana="どなた" asks_for="person" target_categories="person" translation="kto (grzecznie)" />
+    <word id="donata" kana="どなた" asks_for="person" target_categories="person" translation="kto (grzecznie)">
+      <polish_forms>
+        <common cases="nominative" value="kto" />
+        <common cases="genitive" value="kogo" />
+        <common cases="dative" value="komu" />
+        <common cases="accusative" value="kogo" />
+        <common cases="instrumental" value="kim" />
+        <common cases="locative" value="kim" />
+      </polish_forms>
+    </word>
     <word id="nani" kana="なに" asks_for="thing" kanji="何" target_categories="food drink text media vehicle thing abstract" translation="co">
       <polish_forms>
         <common cases="nominative accusative" value="co" />
@@ -43,6 +52,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="których" />
         <override classes="plural_non_masculine_personal" cases="dative" value="którym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="którymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="którzy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="których" />
+        <override classes="plural_masculine_personal" cases="dative" value="którym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="którymi" />
       </polish_forms>
     </word>
     <word id="dono" kana="どの" asks_for="choice_modifier" translation="który">
@@ -59,6 +72,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="których" />
         <override classes="plural_non_masculine_personal" cases="dative" value="którym" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="którymi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="którzy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="których" />
+        <override classes="plural_masculine_personal" cases="dative" value="którym" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="którymi" />
       </polish_forms>
     </word>
     <word id="dochira" kana="どちら" asks_for="choice" translation="która strona" />
@@ -77,6 +94,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="jakich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="jakim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="jakimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="jacy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="jakich" />
+        <override classes="plural_masculine_personal" cases="dative" value="jakim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="jakimi" />
       </polish_forms>
     </word>
     <word id="naze" kana="なぜ" asks_for="reason" kanji="何故" translation="dlaczego" />
@@ -96,6 +117,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="jakich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="jakim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="jakimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="jacy" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="jakich" />
+        <override classes="plural_masculine_personal" cases="dative" value="jakim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="jakimi" />
       </polish_forms>
     </word>
     <word id="ikura" kana="いくら" asks_for="price" translation="ile kosztuje">
@@ -121,6 +146,10 @@
         <override classes="plural_non_masculine_personal" cases="genitive locative" value="czyich" />
         <override classes="plural_non_masculine_personal" cases="dative" value="czyim" />
         <override classes="plural_non_masculine_personal" cases="instrumental" value="czyimi" />
+        <override classes="plural_masculine_personal" cases="nominative vocative" value="czyi" />
+        <override classes="plural_masculine_personal" cases="genitive accusative locative" value="czyich" />
+        <override classes="plural_masculine_personal" cases="dative" value="czyim" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="czyimi" />
       </polish_forms>
     </word>
     <word id="how_many" kana="なん" kanji="何" romaji="nan" asks_for="count" quantity_symbol="how_many" translation="ile" />
