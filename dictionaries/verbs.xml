@@ -163,14 +163,54 @@
         <role ref="subject" accepts="place food drink text media vehicle thing abstract" government="direct_object" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="ある" translation="mam" kanji="有る" />
-        <form ref="polite_nonpast" kana="あります" translation="mam" kanji="有ります" />
-        <form ref="plain_negative" kana="ない" translation="nie mam" kanji="ない" />
-        <form ref="polite_negative" kana="ありません" translation="nie mam" kanji="有りません" />
-        <form ref="past_plain" kana="あった" translation="miałem" kanji="有った" />
-        <form ref="past_polite" kana="ありました" translation="miałem" kanji="有りました" />
-        <form ref="past_negative_plain" kana="なかった" translation="nie miałem" kanji="なかった" />
-        <form ref="past_negative_polite" kana="ありませんでした" translation="nie miałem" kanji="有りませんでした" />
+        <form ref="dictionary" kana="ある" translation="mam" kanji="有る" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="mają" />
+            <translation class="plural_non_masculine_personal" value="mają" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="あります" translation="mam" kanji="有ります" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="mają" />
+            <translation class="plural_non_masculine_personal" value="mają" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="ない" translation="nie mam" kanji="ない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie mają" />
+            <translation class="plural_non_masculine_personal" value="nie mają" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="ありません" translation="nie mam" kanji="有りません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie mają" />
+            <translation class="plural_non_masculine_personal" value="nie mają" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="あった" translation="miałem" kanji="有った" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="mieli" />
+            <translation class="plural_non_masculine_personal" value="miały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="ありました" translation="miałem" kanji="有りました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="mieli" />
+            <translation class="plural_non_masculine_personal" value="miały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="なかった" translation="nie miałem" kanji="なかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie mieli" />
+            <translation class="plural_non_masculine_personal" value="nie miały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="ありませんでした" translation="nie miałem" kanji="有りませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie mieli" />
+            <translation class="plural_non_masculine_personal" value="nie miały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="あって" kanji="有って" translation="mając" />
         <form ref="tara" kana="あったら" kanji="有ったら" translation="jeśli mam" />
         <form ref="volitional" kana="あろう" kanji="有ろう" translation="zapewne mam" />
@@ -210,30 +250,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="idzie pieszo" />
             <translation class="feminine" value="idzie pieszo" />
+            <translation class="plural_masculine_personal" value="idą pieszo" />
+            <translation class="plural_non_masculine_personal" value="idą pieszo" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="あるきます" translation="idę pieszo" kanji="歩きます" />
+        <form ref="polite_nonpast" kana="あるきます" translation="idę pieszo" kanji="歩きます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="idą pieszo" />
+            <translation class="plural_non_masculine_personal" value="idą pieszo" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="あるかない" translation="nie idę pieszo" kanji="歩かない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie idzie pieszo" />
             <translation class="feminine" value="nie idzie pieszo" />
+            <translation class="plural_masculine_personal" value="nie idą pieszo" />
+            <translation class="plural_non_masculine_personal" value="nie idą pieszo" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="あるきません" translation="nie idę pieszo" kanji="歩きません" />
+        <form ref="polite_negative" kana="あるきません" translation="nie idę pieszo" kanji="歩きません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie idą pieszo" />
+            <translation class="plural_non_masculine_personal" value="nie idą pieszo" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="あるいた" translation="szedłem pieszo" kanji="歩いた">
           <agreement_translations>
             <translation class="masculine_personal" value="szedł pieszo" />
             <translation class="feminine" value="szła pieszo" />
+            <translation class="plural_masculine_personal" value="szli pieszo" />
+            <translation class="plural_non_masculine_personal" value="szły pieszo" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="あるきました" translation="szedłem pieszo" kanji="歩きました" />
+        <form ref="past_polite" kana="あるきました" translation="szedłem pieszo" kanji="歩きました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="szli pieszo" />
+            <translation class="plural_non_masculine_personal" value="szły pieszo" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="あるかなかった" translation="nie szedłem pieszo" kanji="歩かなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie szedł pieszo" />
             <translation class="feminine" value="nie szła pieszo" />
+            <translation class="plural_masculine_personal" value="nie szli pieszo" />
+            <translation class="plural_non_masculine_personal" value="nie szły pieszo" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="あるきませんでした" translation="nie szedłem pieszo" kanji="歩きませんでした" />
+        <form ref="past_negative_polite" kana="あるきませんでした" translation="nie szedłem pieszo" kanji="歩きませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie szli pieszo" />
+            <translation class="plural_non_masculine_personal" value="nie szły pieszo" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="あるいて" kanji="歩いて" translation="idąc pieszo" />
         <form ref="potential" kana="あるける" kanji="歩ける" translation="mogę iść pieszo" />
         <form ref="passive" kana="あるかれる" kanji="歩かれる" translation="ktoś chodzi, co mi przeszkadza" />
@@ -255,33 +323,61 @@
             <translation class="masculine_personal" value="bawi się" />
             <translation class="masculine_animate" value="bawi się" />
             <translation class="feminine" value="bawi się" />
+            <translation class="plural_masculine_personal" value="bawią się" />
+            <translation class="plural_non_masculine_personal" value="bawią się" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="あそびます" translation="bawię się" kanji="遊びます" />
+        <form ref="polite_nonpast" kana="あそびます" translation="bawię się" kanji="遊びます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="bawią się" />
+            <translation class="plural_non_masculine_personal" value="bawią się" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="あそばない" translation="nie bawię się" kanji="遊ばない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie bawi się" />
             <translation class="masculine_animate" value="nie bawi się" />
             <translation class="feminine" value="nie bawi się" />
+            <translation class="plural_masculine_personal" value="nie bawią się" />
+            <translation class="plural_non_masculine_personal" value="nie bawią się" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="あそびません" translation="nie bawię się" kanji="遊びません" />
+        <form ref="polite_negative" kana="あそびません" translation="nie bawię się" kanji="遊びません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie bawią się" />
+            <translation class="plural_non_masculine_personal" value="nie bawią się" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="あそんだ" translation="bawiłem się" kanji="遊んだ">
           <agreement_translations>
             <translation class="masculine_personal" value="bawił się" />
             <translation class="masculine_animate" value="bawił się" />
             <translation class="feminine" value="bawiła się" />
+            <translation class="plural_masculine_personal" value="bawili się" />
+            <translation class="plural_non_masculine_personal" value="bawiły się" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="あそびました" translation="bawiłem się" kanji="遊びました" />
+        <form ref="past_polite" kana="あそびました" translation="bawiłem się" kanji="遊びました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="bawili się" />
+            <translation class="plural_non_masculine_personal" value="bawiły się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="あそばなかった" translation="nie bawiłem się" kanji="遊ばなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie bawił się" />
             <translation class="masculine_animate" value="nie bawił się" />
             <translation class="feminine" value="nie bawiła się" />
+            <translation class="plural_masculine_personal" value="nie bawili się" />
+            <translation class="plural_non_masculine_personal" value="nie bawiły się" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="あそびませんでした" translation="nie bawiłem się" kanji="遊びませんでした" />
+        <form ref="past_negative_polite" kana="あそびませんでした" translation="nie bawiłem się" kanji="遊びませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie bawili się" />
+            <translation class="plural_non_masculine_personal" value="nie bawiły się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="あそんで" kanji="遊んで" translation="bawiąc się" />
         <form ref="potential" kana="あそべる" kanji="遊べる" translation="mogę się bawić" />
         <form ref="passive" kana="あそばれる" kanji="遊ばれる" translation="ktoś się bawi, co mi przeszkadza" />
@@ -327,30 +423,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="przeprasza" />
             <translation class="feminine" value="przeprasza" />
+            <translation class="plural_masculine_personal" value="przepraszają" />
+            <translation class="plural_non_masculine_personal" value="przepraszają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="あやまります" translation="przepraszam" kanji="謝ります" />
+        <form ref="polite_nonpast" kana="あやまります" translation="przepraszam" kanji="謝ります" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="przepraszają" />
+            <translation class="plural_non_masculine_personal" value="przepraszają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="あやまらない" translation="nie przepraszam" kanji="謝らない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie przeprasza" />
             <translation class="feminine" value="nie przeprasza" />
+            <translation class="plural_masculine_personal" value="nie przepraszają" />
+            <translation class="plural_non_masculine_personal" value="nie przepraszają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="あやまりません" translation="nie przepraszam" kanji="謝りません" />
+        <form ref="polite_negative" kana="あやまりません" translation="nie przepraszam" kanji="謝りません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie przepraszają" />
+            <translation class="plural_non_masculine_personal" value="nie przepraszają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="あやまった" translation="przeprosiłem" kanji="謝った">
           <agreement_translations>
             <translation class="masculine_personal" value="przeprosił" />
             <translation class="feminine" value="przeprosiła" />
+            <translation class="plural_masculine_personal" value="przeprosili" />
+            <translation class="plural_non_masculine_personal" value="przeprosiły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="あやまりました" translation="przeprosiłem" kanji="謝りました" />
+        <form ref="past_polite" kana="あやまりました" translation="przeprosiłem" kanji="謝りました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="przeprosili" />
+            <translation class="plural_non_masculine_personal" value="przeprosiły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="あやまらなかった" translation="nie przeprosiłem" kanji="謝らなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie przeprosił" />
             <translation class="feminine" value="nie przeprosiła" />
+            <translation class="plural_masculine_personal" value="nie przeprosili" />
+            <translation class="plural_non_masculine_personal" value="nie przeprosiły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="あやまりませんでした" translation="nie przeprosiłem" kanji="謝りませんでした" />
+        <form ref="past_negative_polite" kana="あやまりませんでした" translation="nie przeprosiłem" kanji="謝りませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie przeprosili" />
+            <translation class="plural_non_masculine_personal" value="nie przeprosiły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="あやまって" kanji="謝って" translation="przepraszając" />
         <form ref="potential" kana="あやまれる" kanji="謝れる" translation="mogę przepraszać" />
         <form ref="passive" kana="あやまられる" kanji="謝られる" translation="ktoś mnie przeprasza" />
@@ -429,33 +553,61 @@
             <translation class="masculine_personal" value="wychodzi" />
             <translation class="masculine_animate" value="wychodzi" />
             <translation class="feminine" value="wychodzi" />
+            <translation class="plural_masculine_personal" value="wychodzą" />
+            <translation class="plural_non_masculine_personal" value="wychodzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="でます" translation="wychodzę" kanji="出ます" />
+        <form ref="polite_nonpast" kana="でます" translation="wychodzę" kanji="出ます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wychodzą" />
+            <translation class="plural_non_masculine_personal" value="wychodzą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="でない" translation="nie wychodzę" kanji="出ない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wychodzi" />
             <translation class="masculine_animate" value="nie wychodzi" />
             <translation class="feminine" value="nie wychodzi" />
+            <translation class="plural_masculine_personal" value="nie wychodzą" />
+            <translation class="plural_non_masculine_personal" value="nie wychodzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="でません" translation="nie wychodzę" kanji="出ません" />
+        <form ref="polite_negative" kana="でません" translation="nie wychodzę" kanji="出ません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wychodzą" />
+            <translation class="plural_non_masculine_personal" value="nie wychodzą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="でた" translation="wyszedłem" kanji="出た">
           <agreement_translations>
             <translation class="masculine_personal" value="wyszedł" />
             <translation class="masculine_animate" value="wyszedł" />
             <translation class="feminine" value="wyszła" />
+            <translation class="plural_masculine_personal" value="wyszli" />
+            <translation class="plural_non_masculine_personal" value="wyszły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="でました" translation="wyszedłem" kanji="出ました" />
+        <form ref="past_polite" kana="でました" translation="wyszedłem" kanji="出ました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wyszli" />
+            <translation class="plural_non_masculine_personal" value="wyszły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="でなかった" translation="nie wyszedłem" kanji="出なかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wyszedł" />
             <translation class="masculine_animate" value="nie wyszedł" />
             <translation class="feminine" value="nie wyszła" />
+            <translation class="plural_masculine_personal" value="nie wyszli" />
+            <translation class="plural_non_masculine_personal" value="nie wyszły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="でませんでした" translation="nie wyszedłem" kanji="出ませんでした" />
+        <form ref="past_negative_polite" kana="でませんでした" translation="nie wyszedłem" kanji="出ませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wyszli" />
+            <translation class="plural_non_masculine_personal" value="nie wyszły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="でて" kanji="出て" translation="wychodząc" />
         <form ref="potential" kana="でられる" kanji="出られる" translation="mogę wychodzić" />
         <form ref="passive" kana="でられる" kanji="出られる" translation="ktoś wychodzi, co mi przeszkadza" />
@@ -520,33 +672,61 @@
             <translation class="masculine_personal" value="wchodzi" />
             <translation class="masculine_animate" value="wchodzi" />
             <translation class="feminine" value="wchodzi" />
+            <translation class="plural_masculine_personal" value="wchodzą" />
+            <translation class="plural_non_masculine_personal" value="wchodzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="はいります" translation="wchodzę" kanji="入ります" />
+        <form ref="polite_nonpast" kana="はいります" translation="wchodzę" kanji="入ります" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wchodzą" />
+            <translation class="plural_non_masculine_personal" value="wchodzą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="はいらない" translation="nie wchodzę" kanji="入らない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wchodzi" />
             <translation class="masculine_animate" value="nie wchodzi" />
             <translation class="feminine" value="nie wchodzi" />
+            <translation class="plural_masculine_personal" value="nie wchodzą" />
+            <translation class="plural_non_masculine_personal" value="nie wchodzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="はいりません" translation="nie wchodzę" kanji="入りません" />
+        <form ref="polite_negative" kana="はいりません" translation="nie wchodzę" kanji="入りません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wchodzą" />
+            <translation class="plural_non_masculine_personal" value="nie wchodzą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="はいった" translation="wszedłem" kanji="入った">
           <agreement_translations>
             <translation class="masculine_personal" value="wszedł" />
             <translation class="masculine_animate" value="wszedł" />
             <translation class="feminine" value="weszła" />
+            <translation class="plural_masculine_personal" value="weszli" />
+            <translation class="plural_non_masculine_personal" value="weszły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="はいりました" translation="wszedłem" kanji="入りました" />
+        <form ref="past_polite" kana="はいりました" translation="wszedłem" kanji="入りました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="weszli" />
+            <translation class="plural_non_masculine_personal" value="weszły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="はいらなかった" translation="nie wszedłem" kanji="入らなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wszedł" />
             <translation class="masculine_animate" value="nie wszedł" />
             <translation class="feminine" value="nie weszła" />
+            <translation class="plural_masculine_personal" value="nie weszli" />
+            <translation class="plural_non_masculine_personal" value="nie weszły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="はいりませんでした" translation="nie wszedłem" kanji="入りませんでした" />
+        <form ref="past_negative_polite" kana="はいりませんでした" translation="nie wszedłem" kanji="入りませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie weszli" />
+            <translation class="plural_non_masculine_personal" value="nie weszły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="はいって" kanji="入って" translation="wchodząc" />
         <form ref="potential" kana="はいれる" kanji="入れる" translation="mogę wchodzić" />
         <form ref="passive" kana="はいられる" kanji="入られる" translation="ktoś wchodzi, co mi przeszkadza" />
@@ -613,30 +793,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="rozmawia" />
             <translation class="feminine" value="rozmawia" />
+            <translation class="plural_masculine_personal" value="rozmawiają" />
+            <translation class="plural_non_masculine_personal" value="rozmawiają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="はなします" translation="rozmawiam" kanji="話します" />
+        <form ref="polite_nonpast" kana="はなします" translation="rozmawiam" kanji="話します" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="rozmawiają" />
+            <translation class="plural_non_masculine_personal" value="rozmawiają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="はなさない" translation="nie rozmawiam" kanji="話さない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie rozmawia" />
             <translation class="feminine" value="nie rozmawia" />
+            <translation class="plural_masculine_personal" value="nie rozmawiają" />
+            <translation class="plural_non_masculine_personal" value="nie rozmawiają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="はなしません" translation="nie rozmawiam" kanji="話しません" />
+        <form ref="polite_negative" kana="はなしません" translation="nie rozmawiam" kanji="話しません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie rozmawiają" />
+            <translation class="plural_non_masculine_personal" value="nie rozmawiają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="はなした" translation="rozmawiałem" kanji="話した">
           <agreement_translations>
             <translation class="masculine_personal" value="rozmawiał" />
             <translation class="feminine" value="rozmawiała" />
+            <translation class="plural_masculine_personal" value="rozmawiali" />
+            <translation class="plural_non_masculine_personal" value="rozmawiały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="はなしました" translation="rozmawiałem" kanji="話しました" />
+        <form ref="past_polite" kana="はなしました" translation="rozmawiałem" kanji="話しました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="rozmawiali" />
+            <translation class="plural_non_masculine_personal" value="rozmawiały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="はなさなかった" translation="nie rozmawiałem" kanji="話さなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie rozmawiał" />
             <translation class="feminine" value="nie rozmawiała" />
+            <translation class="plural_masculine_personal" value="nie rozmawiali" />
+            <translation class="plural_non_masculine_personal" value="nie rozmawiały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="はなしませんでした" translation="nie rozmawiałem" kanji="話しませんでした" />
+        <form ref="past_negative_polite" kana="はなしませんでした" translation="nie rozmawiałem" kanji="話しませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie rozmawiali" />
+            <translation class="plural_non_masculine_personal" value="nie rozmawiały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="はなして" kanji="話して" translation="rozmawiając" />
         <form ref="potential" kana="はなせる" kanji="話せる" translation="mogę rozmawiać" />
         <form ref="passive" kana="はなされる" kanji="話される" translation="ktoś o mnie mówi" />
@@ -657,30 +865,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="płaci" />
             <translation class="feminine" value="płaci" />
+            <translation class="plural_masculine_personal" value="płacą" />
+            <translation class="plural_non_masculine_personal" value="płacą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="はらいます" translation="płacę" kanji="払います" />
+        <form ref="polite_nonpast" kana="はらいます" translation="płacę" kanji="払います" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="płacą" />
+            <translation class="plural_non_masculine_personal" value="płacą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="はらわない" translation="nie płacę" kanji="払わない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie płaci" />
             <translation class="feminine" value="nie płaci" />
+            <translation class="plural_masculine_personal" value="nie płacą" />
+            <translation class="plural_non_masculine_personal" value="nie płacą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="はらいません" translation="nie płacę" kanji="払いません" />
+        <form ref="polite_negative" kana="はらいません" translation="nie płacę" kanji="払いません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie płacą" />
+            <translation class="plural_non_masculine_personal" value="nie płacą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="はらった" translation="zapłaciłem" kanji="払った">
           <agreement_translations>
             <translation class="masculine_personal" value="zapłacił" />
             <translation class="feminine" value="zapłaciła" />
+            <translation class="plural_masculine_personal" value="zapłacili" />
+            <translation class="plural_non_masculine_personal" value="zapłaciły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="はらいました" translation="zapłaciłem" kanji="払いました" />
+        <form ref="past_polite" kana="はらいました" translation="zapłaciłem" kanji="払いました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zapłacili" />
+            <translation class="plural_non_masculine_personal" value="zapłaciły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="はらわなかった" translation="nie zapłaciłem" kanji="払わなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie zapłacił" />
             <translation class="feminine" value="nie zapłaciła" />
+            <translation class="plural_masculine_personal" value="nie zapłacili" />
+            <translation class="plural_non_masculine_personal" value="nie zapłaciły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="はらいませんでした" translation="nie zapłaciłem" kanji="払いませんでした" />
+        <form ref="past_negative_polite" kana="はらいませんでした" translation="nie zapłaciłem" kanji="払いませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zapłacili" />
+            <translation class="plural_non_masculine_personal" value="nie zapłaciły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="はらって" kanji="払って" translation="płacąc" />
         <form ref="potential" kana="はらえる" kanji="払える" translation="mogę płacić" />
         <form ref="passive" kana="はらわれる" kanji="払われる" translation="jest opłacane" />
@@ -723,33 +959,61 @@
             <translation class="masculine_personal" value="biegnie" />
             <translation class="masculine_animate" value="biegnie" />
             <translation class="feminine" value="biegnie" />
+            <translation class="plural_masculine_personal" value="biegną" />
+            <translation class="plural_non_masculine_personal" value="biegną" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="はしります" translation="biegnę" kanji="走ります" />
+        <form ref="polite_nonpast" kana="はしります" translation="biegnę" kanji="走ります" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="biegną" />
+            <translation class="plural_non_masculine_personal" value="biegną" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="はしらない" translation="nie biegnę" kanji="走らない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie biegnie" />
             <translation class="masculine_animate" value="nie biegnie" />
             <translation class="feminine" value="nie biegnie" />
+            <translation class="plural_masculine_personal" value="nie biegną" />
+            <translation class="plural_non_masculine_personal" value="nie biegną" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="はしりません" translation="nie biegnę" kanji="走りません" />
+        <form ref="polite_negative" kana="はしりません" translation="nie biegnę" kanji="走りません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie biegną" />
+            <translation class="plural_non_masculine_personal" value="nie biegną" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="はしった" translation="biegłem" kanji="走った">
           <agreement_translations>
             <translation class="masculine_personal" value="biegł" />
             <translation class="masculine_animate" value="biegł" />
             <translation class="feminine" value="biegła" />
+            <translation class="plural_masculine_personal" value="biegli" />
+            <translation class="plural_non_masculine_personal" value="biegły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="はしりました" translation="biegłem" kanji="走りました" />
+        <form ref="past_polite" kana="はしりました" translation="biegłem" kanji="走りました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="biegli" />
+            <translation class="plural_non_masculine_personal" value="biegły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="はしらなかった" translation="nie biegłem" kanji="走らなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie biegł" />
             <translation class="masculine_animate" value="nie biegł" />
             <translation class="feminine" value="nie biegła" />
+            <translation class="plural_masculine_personal" value="nie biegli" />
+            <translation class="plural_non_masculine_personal" value="nie biegły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="はしりませんでした" translation="nie biegłem" kanji="走りませんでした" />
+        <form ref="past_negative_polite" kana="はしりませんでした" translation="nie biegłem" kanji="走りませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie biegli" />
+            <translation class="plural_non_masculine_personal" value="nie biegły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="はしって" kanji="走って" translation="biegnąc" />
         <form ref="potential" kana="はしれる" kanji="走れる" translation="mogę biec" />
         <form ref="passive" kana="はしられる" kanji="走られる" translation="ktoś biegnie, co mi przeszkadza" />
@@ -769,30 +1033,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="pracuje" />
             <translation class="feminine" value="pracuje" />
+            <translation class="plural_masculine_personal" value="pracują" />
+            <translation class="plural_non_masculine_personal" value="pracują" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="はたらきます" translation="pracuję" kanji="働きます" />
+        <form ref="polite_nonpast" kana="はたらきます" translation="pracuję" kanji="働きます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="pracują" />
+            <translation class="plural_non_masculine_personal" value="pracują" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="はたらかない" translation="nie pracuję" kanji="働かない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pracuje" />
             <translation class="feminine" value="nie pracuje" />
+            <translation class="plural_masculine_personal" value="nie pracują" />
+            <translation class="plural_non_masculine_personal" value="nie pracują" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="はたらきません" translation="nie pracuję" kanji="働きません" />
+        <form ref="polite_negative" kana="はたらきません" translation="nie pracuję" kanji="働きません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie pracują" />
+            <translation class="plural_non_masculine_personal" value="nie pracują" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="はたらいた" translation="pracowałem" kanji="働いた">
           <agreement_translations>
             <translation class="masculine_personal" value="pracował" />
             <translation class="feminine" value="pracowała" />
+            <translation class="plural_masculine_personal" value="pracowali" />
+            <translation class="plural_non_masculine_personal" value="pracowały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="はたらきました" translation="pracowałem" kanji="働きました" />
+        <form ref="past_polite" kana="はたらきました" translation="pracowałem" kanji="働きました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="pracowali" />
+            <translation class="plural_non_masculine_personal" value="pracowały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="はたらかなかった" translation="nie pracowałem" kanji="働かなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pracował" />
             <translation class="feminine" value="nie pracowała" />
+            <translation class="plural_masculine_personal" value="nie pracowali" />
+            <translation class="plural_non_masculine_personal" value="nie pracowały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="はたらきませんでした" translation="nie pracowałem" kanji="働きませんでした" />
+        <form ref="past_negative_polite" kana="はたらきませんでした" translation="nie pracowałem" kanji="働きませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie pracowali" />
+            <translation class="plural_non_masculine_personal" value="nie pracowały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="はたらいて" kanji="働いて" translation="pracując" />
         <form ref="potential" kana="はたらける" kanji="働ける" translation="mogę pracować" />
         <form ref="passive" kana="はたらかれる" kanji="働かれる" translation="ktoś pracuje, co mi przeszkadza" />
@@ -804,6 +1096,8 @@
           <agreement_translations>
             <translation class="masculine_personal" value="pracuje" />
             <translation class="feminine" value="pracuje" />
+            <translation class="plural_masculine_personal" value="pracują" />
+            <translation class="plural_non_masculine_personal" value="pracują" />
           </agreement_translations>
         </form>
       </forms>
@@ -846,36 +1140,64 @@
             <translation class="masculine_animate" value="idzie" />
             <translation class="feminine" value="idzie" />
             <translation class="neuter" value="idzie" />
+            <translation class="plural_masculine_personal" value="idą" />
+            <translation class="plural_non_masculine_personal" value="idą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="いきます" translation="idę" kanji="行きます" />
+        <form ref="polite_nonpast" kana="いきます" translation="idę" kanji="行きます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="idą" />
+            <translation class="plural_non_masculine_personal" value="idą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="いかない" translation="nie idę" kanji="行かない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie idzie" />
             <translation class="masculine_animate" value="nie idzie" />
             <translation class="feminine" value="nie idzie" />
             <translation class="neuter" value="nie idzie" />
+            <translation class="plural_masculine_personal" value="nie idą" />
+            <translation class="plural_non_masculine_personal" value="nie idą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="いきません" translation="nie idę" kanji="行きません" />
+        <form ref="polite_negative" kana="いきません" translation="nie idę" kanji="行きません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie idą" />
+            <translation class="plural_non_masculine_personal" value="nie idą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="いった" translation="poszedłem" kanji="行った">
           <agreement_translations>
             <translation class="masculine_personal" value="poszedł" />
             <translation class="masculine_animate" value="poszedł" />
             <translation class="feminine" value="poszła" />
             <translation class="neuter" value="poszło" />
+            <translation class="plural_masculine_personal" value="poszli" />
+            <translation class="plural_non_masculine_personal" value="poszły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="いきました" translation="poszedłem" kanji="行きました" />
+        <form ref="past_polite" kana="いきました" translation="poszedłem" kanji="行きました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="poszli" />
+            <translation class="plural_non_masculine_personal" value="poszły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="いかなかった" translation="nie poszedłem" kanji="行かなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie poszedł" />
             <translation class="masculine_animate" value="nie poszedł" />
             <translation class="feminine" value="nie poszła" />
             <translation class="neuter" value="nie poszło" />
+            <translation class="plural_masculine_personal" value="nie poszli" />
+            <translation class="plural_non_masculine_personal" value="nie poszły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="いきませんでした" translation="nie poszedłem" kanji="行きませんでした" />
+        <form ref="past_negative_polite" kana="いきませんでした" translation="nie poszedłem" kanji="行きませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie poszli" />
+            <translation class="plural_non_masculine_personal" value="nie poszły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="いって" kanji="行って" translation="idąc" />
         <form ref="potential" kana="いける" kanji="行ける" translation="mogę iść" />
         <form ref="passive" kana="いかれる" kanji="行かれる" translation="ktoś odchodzi, co mnie dotyka" />
@@ -946,30 +1268,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="śpieszy się" />
             <translation class="feminine" value="śpieszy się" />
+            <translation class="plural_masculine_personal" value="śpieszą się" />
+            <translation class="plural_non_masculine_personal" value="śpieszą się" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="いそぎます" translation="śpieszę się" kanji="急ぎます" />
+        <form ref="polite_nonpast" kana="いそぎます" translation="śpieszę się" kanji="急ぎます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="śpieszą się" />
+            <translation class="plural_non_masculine_personal" value="śpieszą się" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="いそがない" translation="nie śpieszę się" kanji="急がない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie śpieszy się" />
             <translation class="feminine" value="nie śpieszy się" />
+            <translation class="plural_masculine_personal" value="nie śpieszą się" />
+            <translation class="plural_non_masculine_personal" value="nie śpieszą się" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="いそぎません" translation="nie śpieszę się" kanji="急ぎません" />
+        <form ref="polite_negative" kana="いそぎません" translation="nie śpieszę się" kanji="急ぎません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie śpieszą się" />
+            <translation class="plural_non_masculine_personal" value="nie śpieszą się" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="いそいだ" translation="śpieszyłem się" kanji="急いだ">
           <agreement_translations>
             <translation class="masculine_personal" value="śpieszył się" />
             <translation class="feminine" value="śpieszyła się" />
+            <translation class="plural_masculine_personal" value="śpieszyli się" />
+            <translation class="plural_non_masculine_personal" value="śpieszyły się" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="いそぎました" translation="śpieszyłem się" kanji="急ぎました" />
+        <form ref="past_polite" kana="いそぎました" translation="śpieszyłem się" kanji="急ぎました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="śpieszyli się" />
+            <translation class="plural_non_masculine_personal" value="śpieszyły się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="いそがなかった" translation="nie śpieszyłem się" kanji="急がなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie śpieszył się" />
             <translation class="feminine" value="nie śpieszyła się" />
+            <translation class="plural_masculine_personal" value="nie śpieszyli się" />
+            <translation class="plural_non_masculine_personal" value="nie śpieszyły się" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="いそぎませんでした" translation="nie śpieszyłem się" kanji="急ぎませんでした" />
+        <form ref="past_negative_polite" kana="いそぎませんでした" translation="nie śpieszyłem się" kanji="急ぎませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie śpieszyli się" />
+            <translation class="plural_non_masculine_personal" value="nie śpieszyły się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="いそいで" kanji="急いで" translation="śpiesząc się" />
         <form ref="potential" kana="いそげる" kanji="急げる" translation="mogę się śpieszyć" />
         <form ref="passive" kana="いそがれる" kanji="急がれる" translation="ktoś się śpieszy, co mi przeszkadza" />
@@ -1015,33 +1365,61 @@
             <translation class="masculine_personal" value="wraca" />
             <translation class="masculine_animate" value="wraca" />
             <translation class="feminine" value="wraca" />
+            <translation class="plural_masculine_personal" value="wracają" />
+            <translation class="plural_non_masculine_personal" value="wracają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="かえります" translation="wracam" kanji="帰ります" />
+        <form ref="polite_nonpast" kana="かえります" translation="wracam" kanji="帰ります" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wracają" />
+            <translation class="plural_non_masculine_personal" value="wracają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="かえらない" translation="nie wracam" kanji="帰らない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wraca" />
             <translation class="masculine_animate" value="nie wraca" />
             <translation class="feminine" value="nie wraca" />
+            <translation class="plural_masculine_personal" value="nie wracają" />
+            <translation class="plural_non_masculine_personal" value="nie wracają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="かえりません" translation="nie wracam" kanji="帰りません" />
+        <form ref="polite_negative" kana="かえりません" translation="nie wracam" kanji="帰りません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wracają" />
+            <translation class="plural_non_masculine_personal" value="nie wracają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="かえった" translation="wróciłem" kanji="帰った">
           <agreement_translations>
             <translation class="masculine_personal" value="wrócił" />
             <translation class="masculine_animate" value="wrócił" />
             <translation class="feminine" value="wróciła" />
+            <translation class="plural_masculine_personal" value="wrócili" />
+            <translation class="plural_non_masculine_personal" value="wróciły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="かえりました" translation="wróciłem" kanji="帰りました" />
+        <form ref="past_polite" kana="かえりました" translation="wróciłem" kanji="帰りました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wrócili" />
+            <translation class="plural_non_masculine_personal" value="wróciły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="かえらなかった" translation="nie wróciłem" kanji="帰らなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wrócił" />
             <translation class="masculine_animate" value="nie wrócił" />
             <translation class="feminine" value="nie wróciła" />
+            <translation class="plural_masculine_personal" value="nie wrócili" />
+            <translation class="plural_non_masculine_personal" value="nie wróciły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="かえりませんでした" translation="nie wróciłem" kanji="帰りませんでした" />
+        <form ref="past_negative_polite" kana="かえりませんでした" translation="nie wróciłem" kanji="帰りませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wrócili" />
+            <translation class="plural_non_masculine_personal" value="nie wróciły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="かえって" kanji="帰って" translation="wracając" />
         <form ref="potential" kana="かえれる" kanji="帰れる" translation="mogę wracać" />
         <form ref="passive" kana="かえられる" kanji="帰られる" translation="ktoś wraca do domu, co mnie dotyka" />
@@ -1062,30 +1440,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="pisze" />
             <translation class="feminine" value="pisze" />
+            <translation class="plural_masculine_personal" value="piszą" />
+            <translation class="plural_non_masculine_personal" value="piszą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="かきます" translation="piszę" kanji="書きます" />
+        <form ref="polite_nonpast" kana="かきます" translation="piszę" kanji="書きます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="piszą" />
+            <translation class="plural_non_masculine_personal" value="piszą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="かかない" translation="nie piszę" kanji="書かない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pisze" />
             <translation class="feminine" value="nie pisze" />
+            <translation class="plural_masculine_personal" value="nie piszą" />
+            <translation class="plural_non_masculine_personal" value="nie piszą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="かきません" translation="nie piszę" kanji="書きません" />
+        <form ref="polite_negative" kana="かきません" translation="nie piszę" kanji="書きません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie piszą" />
+            <translation class="plural_non_masculine_personal" value="nie piszą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="かいた" translation="pisałem" kanji="書いた">
           <agreement_translations>
             <translation class="masculine_personal" value="pisał" />
             <translation class="feminine" value="pisała" />
+            <translation class="plural_masculine_personal" value="pisali" />
+            <translation class="plural_non_masculine_personal" value="pisały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="かきました" translation="pisałem" kanji="書きました" />
+        <form ref="past_polite" kana="かきました" translation="pisałem" kanji="書きました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="pisali" />
+            <translation class="plural_non_masculine_personal" value="pisały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="かかなかった" translation="nie pisałem" kanji="書かなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pisał" />
             <translation class="feminine" value="nie pisała" />
+            <translation class="plural_masculine_personal" value="nie pisali" />
+            <translation class="plural_non_masculine_personal" value="nie pisały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="かきませんでした" translation="nie pisałem" kanji="書きませんでした" />
+        <form ref="past_negative_polite" kana="かきませんでした" translation="nie pisałem" kanji="書きませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie pisali" />
+            <translation class="plural_non_masculine_personal" value="nie pisały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="かいて" kanji="書いて" translation="pisząc" />
         <form ref="potential" kana="かける" kanji="書ける" translation="mogę pisać" />
         <form ref="passive" kana="かかれる" kanji="書かれる" translation="jest napisane" />
@@ -1106,30 +1512,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="zastanawia się" />
             <translation class="feminine" value="zastanawia się" />
+            <translation class="plural_masculine_personal" value="zastanawiają się" />
+            <translation class="plural_non_masculine_personal" value="zastanawiają się" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="かんがえます" translation="zastanawiam się" kanji="考えます" />
+        <form ref="polite_nonpast" kana="かんがえます" translation="zastanawiam się" kanji="考えます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zastanawiają się" />
+            <translation class="plural_non_masculine_personal" value="zastanawiają się" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="かんがえない" translation="nie zastanawiam się" kanji="考えない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie zastanawia się" />
             <translation class="feminine" value="nie zastanawia się" />
+            <translation class="plural_masculine_personal" value="nie zastanawiają się" />
+            <translation class="plural_non_masculine_personal" value="nie zastanawiają się" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="かんがえません" translation="nie zastanawiam się" kanji="考えません" />
+        <form ref="polite_negative" kana="かんがえません" translation="nie zastanawiam się" kanji="考えません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zastanawiają się" />
+            <translation class="plural_non_masculine_personal" value="nie zastanawiają się" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="かんがえた" translation="zastanawiałem się" kanji="考えた">
           <agreement_translations>
             <translation class="masculine_personal" value="zastanawiał się" />
             <translation class="feminine" value="zastanawiała się" />
+            <translation class="plural_masculine_personal" value="zastanawiali się" />
+            <translation class="plural_non_masculine_personal" value="zastanawiały się" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="かんがえました" translation="zastanawiałem się" kanji="考えました" />
+        <form ref="past_polite" kana="かんがえました" translation="zastanawiałem się" kanji="考えました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zastanawiali się" />
+            <translation class="plural_non_masculine_personal" value="zastanawiały się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="かんがえなかった" translation="nie zastanawiałem się" kanji="考えなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie zastanawiał się" />
             <translation class="feminine" value="nie zastanawiała się" />
+            <translation class="plural_masculine_personal" value="nie zastanawiali się" />
+            <translation class="plural_non_masculine_personal" value="nie zastanawiały się" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="かんがえませんでした" translation="nie zastanawiałem się" kanji="考えませんでした" />
+        <form ref="past_negative_polite" kana="かんがえませんでした" translation="nie zastanawiałem się" kanji="考えませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zastanawiali się" />
+            <translation class="plural_non_masculine_personal" value="nie zastanawiały się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="かんがえて" kanji="考えて" translation="zastanawiając się" />
         <form ref="potential" kana="かんがえられる" kanji="考えられる" translation="mogę się zastanawiać" />
         <form ref="passive" kana="かんがえられる" kanji="考えられる" translation="jest rozważane" />
@@ -1174,30 +1608,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="kupuje" />
             <translation class="feminine" value="kupuje" />
+            <translation class="plural_masculine_personal" value="kupują" />
+            <translation class="plural_non_masculine_personal" value="kupują" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="かいます" translation="kupuję" kanji="買います" />
+        <form ref="polite_nonpast" kana="かいます" translation="kupuję" kanji="買います" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="kupują" />
+            <translation class="plural_non_masculine_personal" value="kupują" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="かわない" translation="nie kupuję" kanji="買わない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie kupuje" />
             <translation class="feminine" value="nie kupuje" />
+            <translation class="plural_masculine_personal" value="nie kupują" />
+            <translation class="plural_non_masculine_personal" value="nie kupują" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="かいません" translation="nie kupuję" kanji="買いません" />
+        <form ref="polite_negative" kana="かいません" translation="nie kupuję" kanji="買いません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie kupują" />
+            <translation class="plural_non_masculine_personal" value="nie kupują" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="かった" translation="kupiłem" kanji="買った">
           <agreement_translations>
             <translation class="masculine_personal" value="kupił" />
             <translation class="feminine" value="kupiła" />
+            <translation class="plural_masculine_personal" value="kupili" />
+            <translation class="plural_non_masculine_personal" value="kupiły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="かいました" translation="kupiłem" kanji="買いました" />
+        <form ref="past_polite" kana="かいました" translation="kupiłem" kanji="買いました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="kupili" />
+            <translation class="plural_non_masculine_personal" value="kupiły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="かわなかった" translation="nie kupiłem" kanji="買わなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie kupił" />
             <translation class="feminine" value="nie kupiła" />
+            <translation class="plural_masculine_personal" value="nie kupili" />
+            <translation class="plural_non_masculine_personal" value="nie kupiły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="かいませんでした" translation="nie kupiłem" kanji="買いませんでした" />
+        <form ref="past_negative_polite" kana="かいませんでした" translation="nie kupiłem" kanji="買いませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie kupili" />
+            <translation class="plural_non_masculine_personal" value="nie kupiły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="かって" kanji="買って" translation="kupując" />
         <form ref="potential" kana="かえる" kanji="買える" translation="mogę kupować" />
         <form ref="passive" kana="かわれる" kanji="買われる" translation="jest kupowane" />
@@ -1284,30 +1746,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="wraca do kraju" />
             <translation class="feminine" value="wraca do kraju" />
+            <translation class="plural_masculine_personal" value="wracają do kraju" />
+            <translation class="plural_non_masculine_personal" value="wracają do kraju" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="きこくします" translation="wracam do kraju" kanji="帰国します" />
+        <form ref="polite_nonpast" kana="きこくします" translation="wracam do kraju" kanji="帰国します" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wracają do kraju" />
+            <translation class="plural_non_masculine_personal" value="wracają do kraju" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="きこくしない" translation="nie wracam do kraju" kanji="帰国しない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wraca do kraju" />
             <translation class="feminine" value="nie wraca do kraju" />
+            <translation class="plural_masculine_personal" value="nie wracają do kraju" />
+            <translation class="plural_non_masculine_personal" value="nie wracają do kraju" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="きこくしません" translation="nie wracam do kraju" kanji="帰国しません" />
+        <form ref="polite_negative" kana="きこくしません" translation="nie wracam do kraju" kanji="帰国しません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wracają do kraju" />
+            <translation class="plural_non_masculine_personal" value="nie wracają do kraju" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="きこくした" translation="wróciłem do kraju" kanji="帰国した">
           <agreement_translations>
             <translation class="masculine_personal" value="wrócił do kraju" />
             <translation class="feminine" value="wróciła do kraju" />
+            <translation class="plural_masculine_personal" value="wrócili do kraju" />
+            <translation class="plural_non_masculine_personal" value="wróciły do kraju" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="きこくしました" translation="wróciłem do kraju" kanji="帰国しました" />
+        <form ref="past_polite" kana="きこくしました" translation="wróciłem do kraju" kanji="帰国しました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wrócili do kraju" />
+            <translation class="plural_non_masculine_personal" value="wróciły do kraju" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="きこくしなかった" translation="nie wróciłem do kraju" kanji="帰国しなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wrócił do kraju" />
             <translation class="feminine" value="nie wróciła do kraju" />
+            <translation class="plural_masculine_personal" value="nie wrócili do kraju" />
+            <translation class="plural_non_masculine_personal" value="nie wróciły do kraju" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="きこくしませんでした" translation="nie wróciłem do kraju" kanji="帰国しませんでした" />
+        <form ref="past_negative_polite" kana="きこくしませんでした" translation="nie wróciłem do kraju" kanji="帰国しませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wrócili do kraju" />
+            <translation class="plural_non_masculine_personal" value="nie wróciły do kraju" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="きこくして" kanji="帰国して" translation="wracając do kraju" />
         <form ref="potential" kana="きこくできる" kanji="帰国できる" translation="mogę wracać do kraju" />
         <form ref="passive" kana="きこくされる" kanji="帰国される" translation="ktoś wraca do kraju, co mnie dotyka" />
@@ -1351,30 +1841,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="zakłada" />
             <translation class="feminine" value="zakłada" />
+            <translation class="plural_masculine_personal" value="zakładają" />
+            <translation class="plural_non_masculine_personal" value="zakładają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="きます" translation="zakładam" kanji="着ます" />
+        <form ref="polite_nonpast" kana="きます" translation="zakładam" kanji="着ます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zakładają" />
+            <translation class="plural_non_masculine_personal" value="zakładają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="きない" translation="nie zakładam" kanji="着ない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie zakłada" />
             <translation class="feminine" value="nie zakłada" />
+            <translation class="plural_masculine_personal" value="nie zakładają" />
+            <translation class="plural_non_masculine_personal" value="nie zakładają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="きません" translation="nie zakładam" kanji="着ません" />
+        <form ref="polite_negative" kana="きません" translation="nie zakładam" kanji="着ません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zakładają" />
+            <translation class="plural_non_masculine_personal" value="nie zakładają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="きた" translation="założyłem" kanji="着た">
           <agreement_translations>
             <translation class="masculine_personal" value="założył" />
             <translation class="feminine" value="założyła" />
+            <translation class="plural_masculine_personal" value="założyli" />
+            <translation class="plural_non_masculine_personal" value="założyły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="きました" translation="założyłem" kanji="着ました" />
+        <form ref="past_polite" kana="きました" translation="założyłem" kanji="着ました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="założyli" />
+            <translation class="plural_non_masculine_personal" value="założyły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="きなかった" translation="nie założyłem" kanji="着なかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie założył" />
             <translation class="feminine" value="nie założyła" />
+            <translation class="plural_masculine_personal" value="nie założyli" />
+            <translation class="plural_non_masculine_personal" value="nie założyły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="きませんでした" translation="nie założyłem" kanji="着ませんでした" />
+        <form ref="past_negative_polite" kana="きませんでした" translation="nie założyłem" kanji="着ませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie założyli" />
+            <translation class="plural_non_masculine_personal" value="nie założyły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="きて" kanji="着て" translation="nosząc" />
         <form ref="potential" kana="きられる" kanji="着られる" translation="mogę nosić" />
         <form ref="passive" kana="きられる" kanji="着られる" translation="jest noszone" />
@@ -1386,6 +1904,8 @@
           <agreement_translations>
             <translation class="masculine_personal" value="ma na sobie" />
             <translation class="feminine" value="ma na sobie" />
+            <translation class="plural_masculine_personal" value="mają na sobie" />
+            <translation class="plural_non_masculine_personal" value="mają na sobie" />
           </agreement_translations>
         </form>
       </forms>
@@ -1401,30 +1921,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="odpowiada" />
             <translation class="feminine" value="odpowiada" />
+            <translation class="plural_masculine_personal" value="odpowiadają" />
+            <translation class="plural_non_masculine_personal" value="odpowiadają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="こたえます" translation="odpowiadam" kanji="答えます" />
+        <form ref="polite_nonpast" kana="こたえます" translation="odpowiadam" kanji="答えます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="odpowiadają" />
+            <translation class="plural_non_masculine_personal" value="odpowiadają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="こたえない" translation="nie odpowiadam" kanji="答えない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie odpowiada" />
             <translation class="feminine" value="nie odpowiada" />
+            <translation class="plural_masculine_personal" value="nie odpowiadają" />
+            <translation class="plural_non_masculine_personal" value="nie odpowiadają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="こたえません" translation="nie odpowiadam" kanji="答えません" />
+        <form ref="polite_negative" kana="こたえません" translation="nie odpowiadam" kanji="答えません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie odpowiadają" />
+            <translation class="plural_non_masculine_personal" value="nie odpowiadają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="こたえた" translation="odpowiedziałem" kanji="答えた">
           <agreement_translations>
             <translation class="masculine_personal" value="odpowiedział" />
             <translation class="feminine" value="odpowiedziała" />
+            <translation class="plural_masculine_personal" value="odpowiedzieli" />
+            <translation class="plural_non_masculine_personal" value="odpowiedziały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="こたえました" translation="odpowiedziałem" kanji="答えました" />
+        <form ref="past_polite" kana="こたえました" translation="odpowiedziałem" kanji="答えました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="odpowiedzieli" />
+            <translation class="plural_non_masculine_personal" value="odpowiedziały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="こたえなかった" translation="nie odpowiedziałem" kanji="答えなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie odpowiedział" />
             <translation class="feminine" value="nie odpowiedziała" />
+            <translation class="plural_masculine_personal" value="nie odpowiedzieli" />
+            <translation class="plural_non_masculine_personal" value="nie odpowiedziały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="こたえませんでした" translation="nie odpowiedziałem" kanji="答えませんでした" />
+        <form ref="past_negative_polite" kana="こたえませんでした" translation="nie odpowiedziałem" kanji="答えませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie odpowiedzieli" />
+            <translation class="plural_non_masculine_personal" value="nie odpowiedziały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="こたえて" kanji="答えて" translation="odpowiadając" />
         <form ref="potential" kana="こたえられる" kanji="答えられる" translation="mogę odpowiadać" />
         <form ref="passive" kana="こたえられる" kanji="答えられる" translation="ktoś mi odpowiada" />
@@ -1467,36 +2015,64 @@
             <translation class="masculine_animate" value="przychodzi" />
             <translation class="feminine" value="przychodzi" />
             <translation class="neuter" value="przychodzi" />
+            <translation class="plural_masculine_personal" value="przychodzą" />
+            <translation class="plural_non_masculine_personal" value="przychodzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="きます" translation="przychodzę" kanji="来ます" />
+        <form ref="polite_nonpast" kana="きます" translation="przychodzę" kanji="来ます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="przychodzą" />
+            <translation class="plural_non_masculine_personal" value="przychodzą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="こない" translation="nie przychodzę" kanji="来ない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie przychodzi" />
             <translation class="masculine_animate" value="nie przychodzi" />
             <translation class="feminine" value="nie przychodzi" />
             <translation class="neuter" value="nie przychodzi" />
+            <translation class="plural_masculine_personal" value="nie przychodzą" />
+            <translation class="plural_non_masculine_personal" value="nie przychodzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="きません" translation="nie przychodzę" kanji="来ません" />
+        <form ref="polite_negative" kana="きません" translation="nie przychodzę" kanji="来ません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie przychodzą" />
+            <translation class="plural_non_masculine_personal" value="nie przychodzą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="きた" translation="przyszedłem" kanji="来た">
           <agreement_translations>
             <translation class="masculine_personal" value="przyszedł" />
             <translation class="masculine_animate" value="przyszedł" />
             <translation class="feminine" value="przyszła" />
             <translation class="neuter" value="przyszło" />
+            <translation class="plural_masculine_personal" value="przyszli" />
+            <translation class="plural_non_masculine_personal" value="przyszły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="きました" translation="przyszedłem" kanji="来ました" />
+        <form ref="past_polite" kana="きました" translation="przyszedłem" kanji="来ました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="przyszli" />
+            <translation class="plural_non_masculine_personal" value="przyszły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="こなかった" translation="nie przyszedłem" kanji="来なかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie przyszedł" />
             <translation class="masculine_animate" value="nie przyszedł" />
             <translation class="feminine" value="nie przyszła" />
             <translation class="neuter" value="nie przyszło" />
+            <translation class="plural_masculine_personal" value="nie przyszli" />
+            <translation class="plural_non_masculine_personal" value="nie przyszły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="きませんでした" translation="nie przyszedłem" kanji="来ませんでした" />
+        <form ref="past_negative_polite" kana="きませんでした" translation="nie przyszedłem" kanji="来ませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie przyszli" />
+            <translation class="plural_non_masculine_personal" value="nie przyszły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="きて" kanji="来て" translation="przychodząc" />
         <form ref="potential" kana="こられる" kanji="来られる" translation="mogę przychodzić" />
         <form ref="passive" kana="こられる" kanji="来られる" translation="ktoś przychodzi, co mi przeszkadza" />
@@ -1518,33 +2094,61 @@
             <translation class="masculine_personal" value="czeka" />
             <translation class="masculine_animate" value="czeka" />
             <translation class="feminine" value="czeka" />
+            <translation class="plural_masculine_personal" value="czekają" />
+            <translation class="plural_non_masculine_personal" value="czekają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="まちます" translation="czekam" kanji="待ちます" />
+        <form ref="polite_nonpast" kana="まちます" translation="czekam" kanji="待ちます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="czekają" />
+            <translation class="plural_non_masculine_personal" value="czekają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="またない" translation="nie czekam" kanji="待たない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie czeka" />
             <translation class="masculine_animate" value="nie czeka" />
             <translation class="feminine" value="nie czeka" />
+            <translation class="plural_masculine_personal" value="nie czekają" />
+            <translation class="plural_non_masculine_personal" value="nie czekają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="まちません" translation="nie czekam" kanji="待ちません" />
+        <form ref="polite_negative" kana="まちません" translation="nie czekam" kanji="待ちません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie czekają" />
+            <translation class="plural_non_masculine_personal" value="nie czekają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="まった" translation="czekałem" kanji="待った">
           <agreement_translations>
             <translation class="masculine_personal" value="czekał" />
             <translation class="masculine_animate" value="czekał" />
             <translation class="feminine" value="czekała" />
+            <translation class="plural_masculine_personal" value="czekali" />
+            <translation class="plural_non_masculine_personal" value="czekały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="まちました" translation="czekałem" kanji="待ちました" />
+        <form ref="past_polite" kana="まちました" translation="czekałem" kanji="待ちました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="czekali" />
+            <translation class="plural_non_masculine_personal" value="czekały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="またなかった" translation="nie czekałem" kanji="待たなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie czekał" />
             <translation class="masculine_animate" value="nie czekał" />
             <translation class="feminine" value="nie czekała" />
+            <translation class="plural_masculine_personal" value="nie czekali" />
+            <translation class="plural_non_masculine_personal" value="nie czekały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="まちませんでした" translation="nie czekałem" kanji="待ちませんでした" />
+        <form ref="past_negative_polite" kana="まちませんでした" translation="nie czekałem" kanji="待ちませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie czekali" />
+            <translation class="plural_non_masculine_personal" value="nie czekały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="まって" kanji="待って" translation="czekając" />
         <form ref="potential" kana="まてる" kanji="待てる" translation="mogę czekać" />
         <form ref="passive" kana="またれる" kanji="待たれる" translation="ktoś na mnie czeka" />
@@ -1720,14 +2324,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="なく" translation="płaczę" kanji="泣く" />
-        <form ref="polite_nonpast" kana="なきます" translation="płaczę" kanji="泣きます" />
-        <form ref="plain_negative" kana="なかない" translation="nie płaczę" kanji="泣かない" />
-        <form ref="polite_negative" kana="なきません" translation="nie płaczę" kanji="泣きません" />
-        <form ref="past_plain" kana="ないた" translation="płakałem" kanji="泣いた" />
-        <form ref="past_polite" kana="なきました" translation="płakałem" kanji="泣きました" />
-        <form ref="past_negative_plain" kana="なかなかった" translation="nie płakałem" kanji="泣かなかった" />
-        <form ref="past_negative_polite" kana="なきませんでした" translation="nie płakałem" kanji="泣きませんでした" />
+        <form ref="dictionary" kana="なく" translation="płaczę" kanji="泣く" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="płaczą" />
+            <translation class="plural_non_masculine_personal" value="płaczą" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="なきます" translation="płaczę" kanji="泣きます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="płaczą" />
+            <translation class="plural_non_masculine_personal" value="płaczą" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="なかない" translation="nie płaczę" kanji="泣かない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie płaczą" />
+            <translation class="plural_non_masculine_personal" value="nie płaczą" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="なきません" translation="nie płaczę" kanji="泣きません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie płaczą" />
+            <translation class="plural_non_masculine_personal" value="nie płaczą" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="ないた" translation="płakałem" kanji="泣いた" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="płakali" />
+            <translation class="plural_non_masculine_personal" value="płakały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="なきました" translation="płakałem" kanji="泣きました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="płakali" />
+            <translation class="plural_non_masculine_personal" value="płakały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="なかなかった" translation="nie płakałem" kanji="泣かなかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie płakali" />
+            <translation class="plural_non_masculine_personal" value="nie płakały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="なきませんでした" translation="nie płakałem" kanji="泣きませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie płakali" />
+            <translation class="plural_non_masculine_personal" value="nie płakały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="ないて" kanji="泣いて" translation="płacząc" />
         <form ref="potential" kana="なける" kanji="泣ける" translation="mogę płakać" />
         <form ref="passive" kana="なかれる" kanji="泣かれる" translation="ktoś płacze, co mnie martwi" />
@@ -1816,33 +2460,61 @@
             <translation class="masculine_personal" value="śpi" />
             <translation class="masculine_animate" value="śpi" />
             <translation class="feminine" value="śpi" />
+            <translation class="plural_masculine_personal" value="śpią" />
+            <translation class="plural_non_masculine_personal" value="śpią" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="ねます" translation="śpię" kanji="寝ます" />
+        <form ref="polite_nonpast" kana="ねます" translation="śpię" kanji="寝ます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="śpią" />
+            <translation class="plural_non_masculine_personal" value="śpią" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="ねない" translation="nie śpię" kanji="寝ない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie śpi" />
             <translation class="masculine_animate" value="nie śpi" />
             <translation class="feminine" value="nie śpi" />
+            <translation class="plural_masculine_personal" value="nie śpią" />
+            <translation class="plural_non_masculine_personal" value="nie śpią" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="ねません" translation="nie śpię" kanji="寝ません" />
+        <form ref="polite_negative" kana="ねません" translation="nie śpię" kanji="寝ません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie śpią" />
+            <translation class="plural_non_masculine_personal" value="nie śpią" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="ねた" translation="spałem" kanji="寝た">
           <agreement_translations>
             <translation class="masculine_personal" value="spał" />
             <translation class="masculine_animate" value="spał" />
             <translation class="feminine" value="spała" />
+            <translation class="plural_masculine_personal" value="spali" />
+            <translation class="plural_non_masculine_personal" value="spały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="ねました" translation="spałem" kanji="寝ました" />
+        <form ref="past_polite" kana="ねました" translation="spałem" kanji="寝ました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="spali" />
+            <translation class="plural_non_masculine_personal" value="spały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="ねなかった" translation="nie spałem" kanji="寝なかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie spał" />
             <translation class="masculine_animate" value="nie spał" />
             <translation class="feminine" value="nie spała" />
+            <translation class="plural_masculine_personal" value="nie spali" />
+            <translation class="plural_non_masculine_personal" value="nie spały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="ねませんでした" translation="nie spałem" kanji="寝ませんでした" />
+        <form ref="past_negative_polite" kana="ねませんでした" translation="nie spałem" kanji="寝ませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie spali" />
+            <translation class="plural_non_masculine_personal" value="nie spały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="ねて" kanji="寝て" translation="śpiąc" />
         <form ref="potential" kana="ねられる" kanji="寝られる" translation="mogę spać" />
         <form ref="passive" kana="ねられる" kanji="寝られる" translation="ktoś zasypia, co mi przeszkadza" />
@@ -1867,33 +2539,61 @@
             <translation class="masculine_personal" value="pije" />
             <translation class="masculine_animate" value="pije" />
             <translation class="feminine" value="pije" />
+            <translation class="plural_masculine_personal" value="piją" />
+            <translation class="plural_non_masculine_personal" value="piją" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="のみます" translation="piję" kanji="飲みます" />
+        <form ref="polite_nonpast" kana="のみます" translation="piję" kanji="飲みます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="piją" />
+            <translation class="plural_non_masculine_personal" value="piją" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="のまない" translation="nie piję" kanji="飲まない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pije" />
             <translation class="masculine_animate" value="nie pije" />
             <translation class="feminine" value="nie pije" />
+            <translation class="plural_masculine_personal" value="nie piją" />
+            <translation class="plural_non_masculine_personal" value="nie piją" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="のみません" translation="nie piję" kanji="飲みません" />
+        <form ref="polite_negative" kana="のみません" translation="nie piję" kanji="飲みません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie piją" />
+            <translation class="plural_non_masculine_personal" value="nie piją" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="のんだ" translation="piłem" kanji="飲んだ">
           <agreement_translations>
             <translation class="masculine_personal" value="pił" />
             <translation class="masculine_animate" value="pił" />
             <translation class="feminine" value="piła" />
+            <translation class="plural_masculine_personal" value="pili" />
+            <translation class="plural_non_masculine_personal" value="piły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="のみました" translation="piłem" kanji="飲みました" />
+        <form ref="past_polite" kana="のみました" translation="piłem" kanji="飲みました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="pili" />
+            <translation class="plural_non_masculine_personal" value="piły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="のまなかった" translation="nie piłem" kanji="飲まなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pił" />
             <translation class="masculine_animate" value="nie pił" />
             <translation class="feminine" value="nie piła" />
+            <translation class="plural_masculine_personal" value="nie pili" />
+            <translation class="plural_non_masculine_personal" value="nie piły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="のみませんでした" translation="nie piłem" kanji="飲みませんでした" />
+        <form ref="past_negative_polite" kana="のみませんでした" translation="nie piłem" kanji="飲みませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie pili" />
+            <translation class="plural_non_masculine_personal" value="nie piły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="のんで" kanji="飲んで" translation="pijąc" />
         <form ref="potential" kana="のめる" kanji="飲める" translation="mogę pić" />
         <form ref="passive" kana="のまれる" kanji="飲まれる" translation="jest wypijane" />
@@ -1999,14 +2699,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="おちる" translation="upadam" kanji="落ちる" />
-        <form ref="polite_nonpast" kana="おちます" translation="upadam" kanji="落ちます" />
-        <form ref="plain_negative" kana="おちない" translation="nie upadam" kanji="落ちない" />
-        <form ref="polite_negative" kana="おちません" translation="nie upadam" kanji="落ちません" />
-        <form ref="past_plain" kana="おちた" translation="upadłem" kanji="落ちた" />
-        <form ref="past_polite" kana="おちました" translation="upadłem" kanji="落ちました" />
-        <form ref="past_negative_plain" kana="おちなかった" translation="nie upadłem" kanji="落ちなかった" />
-        <form ref="past_negative_polite" kana="おちませんでした" translation="nie upadłem" kanji="落ちませんでした" />
+        <form ref="dictionary" kana="おちる" translation="upadam" kanji="落ちる" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="upadają" />
+            <translation class="plural_non_masculine_personal" value="upadają" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="おちます" translation="upadam" kanji="落ちます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="upadają" />
+            <translation class="plural_non_masculine_personal" value="upadają" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="おちない" translation="nie upadam" kanji="落ちない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie upadają" />
+            <translation class="plural_non_masculine_personal" value="nie upadają" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="おちません" translation="nie upadam" kanji="落ちません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie upadają" />
+            <translation class="plural_non_masculine_personal" value="nie upadają" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="おちた" translation="upadłem" kanji="落ちた" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="upadli" />
+            <translation class="plural_non_masculine_personal" value="upadły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="おちました" translation="upadłem" kanji="落ちました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="upadli" />
+            <translation class="plural_non_masculine_personal" value="upadły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="おちなかった" translation="nie upadłem" kanji="落ちなかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie upadli" />
+            <translation class="plural_non_masculine_personal" value="nie upadły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="おちませんでした" translation="nie upadłem" kanji="落ちませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie upadli" />
+            <translation class="plural_non_masculine_personal" value="nie upadły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="おちて" kanji="落ちて" translation="upadając" />
         <form ref="potential" kana="おちられる" kanji="落ちられる" translation="mogę upadać" />
         <form ref="passive" kana="おちられる" kanji="落ちられる" translation="coś upada, co mnie dotyka" />
@@ -2022,14 +2762,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="おきる" translation="budzę się" kanji="起きる" />
-        <form ref="polite_nonpast" kana="おきます" translation="budzę się" kanji="起きます" />
-        <form ref="plain_negative" kana="おきない" translation="nie budzę się" kanji="起きない" />
-        <form ref="polite_negative" kana="おきません" translation="nie budzę się" kanji="起きません" />
-        <form ref="past_plain" kana="おきた" translation="obudziłem się" kanji="起きた" />
-        <form ref="past_polite" kana="おきました" translation="obudziłem się" kanji="起きました" />
-        <form ref="past_negative_plain" kana="おきなかった" translation="nie obudziłem się" kanji="起きなかった" />
-        <form ref="past_negative_polite" kana="おきませんでした" translation="nie obudziłem się" kanji="起きませんでした" />
+        <form ref="dictionary" kana="おきる" translation="budzę się" kanji="起きる" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="budzą się" />
+            <translation class="plural_non_masculine_personal" value="budzą się" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="おきます" translation="budzę się" kanji="起きます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="budzą się" />
+            <translation class="plural_non_masculine_personal" value="budzą się" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="おきない" translation="nie budzę się" kanji="起きない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie budzą się" />
+            <translation class="plural_non_masculine_personal" value="nie budzą się" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="おきません" translation="nie budzę się" kanji="起きません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie budzą się" />
+            <translation class="plural_non_masculine_personal" value="nie budzą się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="おきた" translation="obudziłem się" kanji="起きた" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="obudzili się" />
+            <translation class="plural_non_masculine_personal" value="obudziły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="おきました" translation="obudziłem się" kanji="起きました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="obudzili się" />
+            <translation class="plural_non_masculine_personal" value="obudziły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="おきなかった" translation="nie obudziłem się" kanji="起きなかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie obudzili się" />
+            <translation class="plural_non_masculine_personal" value="nie obudziły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="おきませんでした" translation="nie obudziłem się" kanji="起きませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie obudzili się" />
+            <translation class="plural_non_masculine_personal" value="nie obudziły się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="おきて" kanji="起きて" translation="budząc się" />
         <form ref="potential" kana="おきられる" kanji="起きられる" translation="mogę się budzić" />
         <form ref="passive" kana="おきられる" kanji="起きられる" translation="ktoś się budzi, co mi przeszkadza" />
@@ -2050,30 +2830,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="złości się" />
             <translation class="feminine" value="złości się" />
+            <translation class="plural_masculine_personal" value="złoszczą się" />
+            <translation class="plural_non_masculine_personal" value="złoszczą się" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="おこります" translation="złoszczę się" kanji="怒ります" />
+        <form ref="polite_nonpast" kana="おこります" translation="złoszczę się" kanji="怒ります" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="złoszczą się" />
+            <translation class="plural_non_masculine_personal" value="złoszczą się" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="おこらない" translation="nie złoszczę się" kanji="怒らない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie złości się" />
             <translation class="feminine" value="nie złości się" />
+            <translation class="plural_masculine_personal" value="nie złoszczą się" />
+            <translation class="plural_non_masculine_personal" value="nie złoszczą się" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="おこりません" translation="nie złoszczę się" kanji="怒りません" />
+        <form ref="polite_negative" kana="おこりません" translation="nie złoszczę się" kanji="怒りません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie złoszczą się" />
+            <translation class="plural_non_masculine_personal" value="nie złoszczą się" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="おこった" translation="zezłościłem się" kanji="怒った">
           <agreement_translations>
             <translation class="masculine_personal" value="zezłościł się" />
             <translation class="feminine" value="zezłościła się" />
+            <translation class="plural_masculine_personal" value="zezłościli się" />
+            <translation class="plural_non_masculine_personal" value="zezłościły się" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="おこりました" translation="zezłościłem się" kanji="怒りました" />
+        <form ref="past_polite" kana="おこりました" translation="zezłościłem się" kanji="怒りました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zezłościli się" />
+            <translation class="plural_non_masculine_personal" value="zezłościły się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="おこらなかった" translation="nie zezłościłem się" kanji="怒らなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie zezłościł się" />
             <translation class="feminine" value="nie zezłościła się" />
+            <translation class="plural_masculine_personal" value="nie zezłościli się" />
+            <translation class="plural_non_masculine_personal" value="nie zezłościły się" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="おこりませんでした" translation="nie zezłościłem się" kanji="怒りませんでした" />
+        <form ref="past_negative_polite" kana="おこりませんでした" translation="nie zezłościłem się" kanji="怒りませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zezłościli się" />
+            <translation class="plural_non_masculine_personal" value="nie zezłościły się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="おこって" kanji="怒って" translation="gniewając się" />
         <form ref="potential" kana="おこれる" kanji="怒れる" translation="mogę się rozgniewać" />
         <form ref="passive" kana="おこられる" kanji="怒られる" translation="ktoś się na mnie gniewa" />
@@ -2118,30 +2926,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="myśli" />
             <translation class="feminine" value="myśli" />
+            <translation class="plural_masculine_personal" value="myślą" />
+            <translation class="plural_non_masculine_personal" value="myślą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="おもいます" translation="myślę" kanji="思います" />
+        <form ref="polite_nonpast" kana="おもいます" translation="myślę" kanji="思います" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="myślą" />
+            <translation class="plural_non_masculine_personal" value="myślą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="おもわない" translation="nie myślę" kanji="思わない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie myśli" />
             <translation class="feminine" value="nie myśli" />
+            <translation class="plural_masculine_personal" value="nie myślą" />
+            <translation class="plural_non_masculine_personal" value="nie myślą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="おもいません" translation="nie myślę" kanji="思いません" />
+        <form ref="polite_negative" kana="おもいません" translation="nie myślę" kanji="思いません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie myślą" />
+            <translation class="plural_non_masculine_personal" value="nie myślą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="おもった" translation="pomyślałem" kanji="思った">
           <agreement_translations>
             <translation class="masculine_personal" value="pomyślał" />
             <translation class="feminine" value="pomyślała" />
+            <translation class="plural_masculine_personal" value="pomyśleli" />
+            <translation class="plural_non_masculine_personal" value="pomyślały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="おもいました" translation="pomyślałem" kanji="思いました" />
+        <form ref="past_polite" kana="おもいました" translation="pomyślałem" kanji="思いました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="pomyśleli" />
+            <translation class="plural_non_masculine_personal" value="pomyślały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="おもわなかった" translation="nie pomyślałem" kanji="思わなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pomyślał" />
             <translation class="feminine" value="nie pomyślała" />
+            <translation class="plural_masculine_personal" value="nie pomyśleli" />
+            <translation class="plural_non_masculine_personal" value="nie pomyślały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="おもいませんでした" translation="nie pomyślałem" kanji="思いませんでした" />
+        <form ref="past_negative_polite" kana="おもいませんでした" translation="nie pomyślałem" kanji="思いませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie pomyśleli" />
+            <translation class="plural_non_masculine_personal" value="nie pomyślały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="おもって" kanji="思って" translation="myśląc" />
         <form ref="potential" kana="おもえる" kanji="思える" translation="mogę myśleć" />
         <form ref="passive" kana="おもわれる" kanji="思われる" translation="ktoś o mnie myśli" />
@@ -2231,33 +3067,61 @@
             <translation class="masculine_personal" value="pływa" />
             <translation class="masculine_animate" value="pływa" />
             <translation class="feminine" value="pływa" />
+            <translation class="plural_masculine_personal" value="pływają" />
+            <translation class="plural_non_masculine_personal" value="pływają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="およぎます" translation="pływam" kanji="泳ぎます" />
+        <form ref="polite_nonpast" kana="およぎます" translation="pływam" kanji="泳ぎます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="pływają" />
+            <translation class="plural_non_masculine_personal" value="pływają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="およがない" translation="nie pływam" kanji="泳がない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pływa" />
             <translation class="masculine_animate" value="nie pływa" />
             <translation class="feminine" value="nie pływa" />
+            <translation class="plural_masculine_personal" value="nie pływają" />
+            <translation class="plural_non_masculine_personal" value="nie pływają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="およぎません" translation="nie pływam" kanji="泳ぎません" />
+        <form ref="polite_negative" kana="およぎません" translation="nie pływam" kanji="泳ぎません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie pływają" />
+            <translation class="plural_non_masculine_personal" value="nie pływają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="およいだ" translation="pływałem" kanji="泳いだ">
           <agreement_translations>
             <translation class="masculine_personal" value="pływał" />
             <translation class="masculine_animate" value="pływał" />
             <translation class="feminine" value="pływała" />
+            <translation class="plural_masculine_personal" value="pływali" />
+            <translation class="plural_non_masculine_personal" value="pływały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="およぎました" translation="pływałem" kanji="泳ぎました" />
+        <form ref="past_polite" kana="およぎました" translation="pływałem" kanji="泳ぎました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="pływali" />
+            <translation class="plural_non_masculine_personal" value="pływały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="およがなかった" translation="nie pływałem" kanji="泳がなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pływał" />
             <translation class="masculine_animate" value="nie pływał" />
             <translation class="feminine" value="nie pływała" />
+            <translation class="plural_masculine_personal" value="nie pływali" />
+            <translation class="plural_non_masculine_personal" value="nie pływały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="およぎませんでした" translation="nie pływałem" kanji="泳ぎませんでした" />
+        <form ref="past_negative_polite" kana="およぎませんでした" translation="nie pływałem" kanji="泳ぎませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie pływali" />
+            <translation class="plural_non_masculine_personal" value="nie pływały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="およいで" kanji="泳いで" translation="pływając" />
         <form ref="potential" kana="およげる" kanji="泳げる" translation="mogę pływać" />
         <form ref="passive" kana="およがれる" kanji="泳がれる" translation="ktoś pływa, co mi przeszkadza" />
@@ -2278,30 +3142,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="ćwiczy" />
             <translation class="feminine" value="ćwiczy" />
+            <translation class="plural_masculine_personal" value="ćwiczą" />
+            <translation class="plural_non_masculine_personal" value="ćwiczą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="れんしゅうします" translation="ćwiczę" kanji="練習します" />
+        <form ref="polite_nonpast" kana="れんしゅうします" translation="ćwiczę" kanji="練習します" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="ćwiczą" />
+            <translation class="plural_non_masculine_personal" value="ćwiczą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="れんしゅうしない" translation="nie ćwiczę" kanji="練習しない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie ćwiczy" />
             <translation class="feminine" value="nie ćwiczy" />
+            <translation class="plural_masculine_personal" value="nie ćwiczą" />
+            <translation class="plural_non_masculine_personal" value="nie ćwiczą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="れんしゅうしません" translation="nie ćwiczę" kanji="練習しません" />
+        <form ref="polite_negative" kana="れんしゅうしません" translation="nie ćwiczę" kanji="練習しません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie ćwiczą" />
+            <translation class="plural_non_masculine_personal" value="nie ćwiczą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="れんしゅうした" translation="ćwiczyłem" kanji="練習した">
           <agreement_translations>
             <translation class="masculine_personal" value="ćwiczył" />
             <translation class="feminine" value="ćwiczyła" />
+            <translation class="plural_masculine_personal" value="ćwiczyli" />
+            <translation class="plural_non_masculine_personal" value="ćwiczyły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="れんしゅうしました" translation="ćwiczyłem" kanji="練習しました" />
+        <form ref="past_polite" kana="れんしゅうしました" translation="ćwiczyłem" kanji="練習しました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="ćwiczyli" />
+            <translation class="plural_non_masculine_personal" value="ćwiczyły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="れんしゅうしなかった" translation="nie ćwiczyłem" kanji="練習しなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie ćwiczył" />
             <translation class="feminine" value="nie ćwiczyła" />
+            <translation class="plural_masculine_personal" value="nie ćwiczyli" />
+            <translation class="plural_non_masculine_personal" value="nie ćwiczyły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="れんしゅうしませんでした" translation="nie ćwiczyłem" kanji="練習しませんでした" />
+        <form ref="past_negative_polite" kana="れんしゅうしませんでした" translation="nie ćwiczyłem" kanji="練習しませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie ćwiczyli" />
+            <translation class="plural_non_masculine_personal" value="nie ćwiczyły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="れんしゅうして" kanji="練習して" translation="ćwicząc" />
         <form ref="potential" kana="れんしゅうできる" kanji="練習できる" translation="mogę ćwiczyć" />
         <form ref="passive" kana="れんしゅうされる" kanji="練習される" translation="jest ćwiczone" />
@@ -2368,30 +3260,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="pierze" />
             <translation class="feminine" value="pierze" />
+            <translation class="plural_masculine_personal" value="piorą" />
+            <translation class="plural_non_masculine_personal" value="piorą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="せんたくします" translation="piorę" kanji="洗濯します" />
+        <form ref="polite_nonpast" kana="せんたくします" translation="piorę" kanji="洗濯します" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="piorą" />
+            <translation class="plural_non_masculine_personal" value="piorą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="せんたくしない" translation="nie piorę" kanji="洗濯しない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie pierze" />
             <translation class="feminine" value="nie pierze" />
+            <translation class="plural_masculine_personal" value="nie piorą" />
+            <translation class="plural_non_masculine_personal" value="nie piorą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="せんたくしません" translation="nie piorę" kanji="洗濯しません" />
+        <form ref="polite_negative" kana="せんたくしません" translation="nie piorę" kanji="洗濯しません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie piorą" />
+            <translation class="plural_non_masculine_personal" value="nie piorą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="せんたくした" translation="prałem" kanji="洗濯した">
           <agreement_translations>
             <translation class="masculine_personal" value="prał" />
             <translation class="feminine" value="prała" />
+            <translation class="plural_masculine_personal" value="prali" />
+            <translation class="plural_non_masculine_personal" value="prały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="せんたくしました" translation="prałem" kanji="洗濯しました" />
+        <form ref="past_polite" kana="せんたくしました" translation="prałem" kanji="洗濯しました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="prali" />
+            <translation class="plural_non_masculine_personal" value="prały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="せんたくしなかった" translation="nie prałem" kanji="洗濯しなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie prał" />
             <translation class="feminine" value="nie prała" />
+            <translation class="plural_masculine_personal" value="nie prali" />
+            <translation class="plural_non_masculine_personal" value="nie prały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="せんたくしませんでした" translation="nie prałem" kanji="洗濯しませんでした" />
+        <form ref="past_negative_polite" kana="せんたくしませんでした" translation="nie prałem" kanji="洗濯しませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie prali" />
+            <translation class="plural_non_masculine_personal" value="nie prały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="せんたくして" kanji="洗濯して" translation="piorąc" />
         <form ref="potential" kana="せんたくできる" kanji="洗濯できる" translation="mogę prać" />
         <form ref="passive" kana="せんたくされる" kanji="洗濯される" translation="jest prane" />
@@ -2473,14 +3393,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="しぬ" translation="umieram" kanji="死ぬ" />
-        <form ref="polite_nonpast" kana="しにます" translation="umieram" kanji="死にます" />
-        <form ref="plain_negative" kana="しなない" translation="nie umieram" kanji="死なない" />
-        <form ref="polite_negative" kana="しにません" translation="nie umieram" kanji="死にません" />
-        <form ref="past_plain" kana="しんだ" translation="umarłem" kanji="死んだ" />
-        <form ref="past_polite" kana="しにました" translation="umarłem" kanji="死にました" />
-        <form ref="past_negative_plain" kana="しななかった" translation="nie umarłem" kanji="死ななかった" />
-        <form ref="past_negative_polite" kana="しにませんでした" translation="nie umarłem" kanji="死にませんでした" />
+        <form ref="dictionary" kana="しぬ" translation="umieram" kanji="死ぬ" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="umierają" />
+            <translation class="plural_non_masculine_personal" value="umierają" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="しにます" translation="umieram" kanji="死にます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="umierają" />
+            <translation class="plural_non_masculine_personal" value="umierają" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="しなない" translation="nie umieram" kanji="死なない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie umierają" />
+            <translation class="plural_non_masculine_personal" value="nie umierają" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="しにません" translation="nie umieram" kanji="死にません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie umierają" />
+            <translation class="plural_non_masculine_personal" value="nie umierają" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="しんだ" translation="umarłem" kanji="死んだ" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="umarli" />
+            <translation class="plural_non_masculine_personal" value="umarły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="しにました" translation="umarłem" kanji="死にました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="umarli" />
+            <translation class="plural_non_masculine_personal" value="umarły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="しななかった" translation="nie umarłem" kanji="死ななかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie umarli" />
+            <translation class="plural_non_masculine_personal" value="nie umarły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="しにませんでした" translation="nie umarłem" kanji="死にませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie umarli" />
+            <translation class="plural_non_masculine_personal" value="nie umarły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="しんで" kanji="死んで" translation="umarłszy" />
         <form ref="potential" kana="しねる" kanji="死ねる" translation="mogę umrzeć" />
         <form ref="passive" kana="しなれる" kanji="死なれる" translation="ktoś mi umiera" />
@@ -2524,30 +3484,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="sprząta" />
             <translation class="feminine" value="sprząta" />
+            <translation class="plural_masculine_personal" value="sprzątają" />
+            <translation class="plural_non_masculine_personal" value="sprzątają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="そうじします" translation="sprzątam" kanji="掃除します" />
+        <form ref="polite_nonpast" kana="そうじします" translation="sprzątam" kanji="掃除します" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="sprzątają" />
+            <translation class="plural_non_masculine_personal" value="sprzątają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="そうじしない" translation="nie sprzątam" kanji="掃除しない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie sprząta" />
             <translation class="feminine" value="nie sprząta" />
+            <translation class="plural_masculine_personal" value="nie sprzątają" />
+            <translation class="plural_non_masculine_personal" value="nie sprzątają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="そうじしません" translation="nie sprzątam" kanji="掃除しません" />
+        <form ref="polite_negative" kana="そうじしません" translation="nie sprzątam" kanji="掃除しません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie sprzątają" />
+            <translation class="plural_non_masculine_personal" value="nie sprzątają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="そうじした" translation="posprzątałem" kanji="掃除した">
           <agreement_translations>
             <translation class="masculine_personal" value="posprzątał" />
             <translation class="feminine" value="posprzątała" />
+            <translation class="plural_masculine_personal" value="posprzątali" />
+            <translation class="plural_non_masculine_personal" value="posprzątały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="そうじしました" translation="posprzątałem" kanji="掃除しました" />
+        <form ref="past_polite" kana="そうじしました" translation="posprzątałem" kanji="掃除しました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="posprzątali" />
+            <translation class="plural_non_masculine_personal" value="posprzątały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="そうじしなかった" translation="nie posprzątałem" kanji="掃除しなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie posprzątał" />
             <translation class="feminine" value="nie posprzątała" />
+            <translation class="plural_masculine_personal" value="nie posprzątali" />
+            <translation class="plural_non_masculine_personal" value="nie posprzątały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="そうじしませんでした" translation="nie posprzątałem" kanji="掃除しませんでした" />
+        <form ref="past_negative_polite" kana="そうじしませんでした" translation="nie posprzątałem" kanji="掃除しませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie posprzątali" />
+            <translation class="plural_non_masculine_personal" value="nie posprzątały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="そうじして" kanji="掃除して" translation="sprzątając" />
         <form ref="potential" kana="そうじできる" kanji="掃除できる" translation="mogę sprzątać" />
         <form ref="passive" kana="そうじされる" kanji="掃除される" translation="jest sprzątane" />
@@ -2683,33 +3671,61 @@
             <translation class="masculine_personal" value="je" />
             <translation class="masculine_animate" value="je" />
             <translation class="feminine" value="je" />
+            <translation class="plural_masculine_personal" value="jedzą" />
+            <translation class="plural_non_masculine_personal" value="jedzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="たべます" translation="jem" kanji="食べます" />
+        <form ref="polite_nonpast" kana="たべます" translation="jem" kanji="食べます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="jedzą" />
+            <translation class="plural_non_masculine_personal" value="jedzą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="たべない" translation="nie jem" kanji="食べない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie je" />
             <translation class="masculine_animate" value="nie je" />
             <translation class="feminine" value="nie je" />
+            <translation class="plural_masculine_personal" value="nie jedzą" />
+            <translation class="plural_non_masculine_personal" value="nie jedzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="たべません" translation="nie jem" kanji="食べません" />
+        <form ref="polite_negative" kana="たべません" translation="nie jem" kanji="食べません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie jedzą" />
+            <translation class="plural_non_masculine_personal" value="nie jedzą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="たべた" translation="jadłem" kanji="食べた">
           <agreement_translations>
             <translation class="masculine_personal" value="jadł" />
             <translation class="masculine_animate" value="jadł" />
             <translation class="feminine" value="jadła" />
+            <translation class="plural_masculine_personal" value="jedli" />
+            <translation class="plural_non_masculine_personal" value="jadły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="たべました" translation="jadłem" kanji="食べました" />
+        <form ref="past_polite" kana="たべました" translation="jadłem" kanji="食べました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="jedli" />
+            <translation class="plural_non_masculine_personal" value="jadły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="たべなかった" translation="nie jadłem" kanji="食べなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie jadł" />
             <translation class="masculine_animate" value="nie jadł" />
             <translation class="feminine" value="nie jadła" />
+            <translation class="plural_masculine_personal" value="nie jedli" />
+            <translation class="plural_non_masculine_personal" value="nie jadły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="たべませんでした" translation="nie jadłem" kanji="食べませんでした" />
+        <form ref="past_negative_polite" kana="たべませんでした" translation="nie jadłem" kanji="食べませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie jedli" />
+            <translation class="plural_non_masculine_personal" value="nie jadły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="たべて" kanji="食べて" translation="jedząc" />
         <form ref="potential" kana="たべられる" kanji="食べられる" translation="mogę jeść" />
         <form ref="passive" kana="たべられる" kanji="食べられる" translation="jest zjadane" />
@@ -2771,14 +3787,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="たつ" translation="stoję" kanji="立つ" />
-        <form ref="polite_nonpast" kana="たちます" translation="stoję" kanji="立ちます" />
-        <form ref="plain_negative" kana="たたない" translation="nie stoję" kanji="立たない" />
-        <form ref="polite_negative" kana="たちません" translation="nie stoję" kanji="立ちません" />
-        <form ref="past_plain" kana="たった" translation="stałem" kanji="立った" />
-        <form ref="past_polite" kana="たちました" translation="stałem" kanji="立ちました" />
-        <form ref="past_negative_plain" kana="たたなかった" translation="nie stałem" kanji="立たなかった" />
-        <form ref="past_negative_polite" kana="たちませんでした" translation="nie stałem" kanji="立ちませんでした" />
+        <form ref="dictionary" kana="たつ" translation="stoję" kanji="立つ" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="stoją" />
+            <translation class="plural_non_masculine_personal" value="stoją" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="たちます" translation="stoję" kanji="立ちます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="stoją" />
+            <translation class="plural_non_masculine_personal" value="stoją" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="たたない" translation="nie stoję" kanji="立たない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie stoją" />
+            <translation class="plural_non_masculine_personal" value="nie stoją" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="たちません" translation="nie stoję" kanji="立ちません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie stoją" />
+            <translation class="plural_non_masculine_personal" value="nie stoją" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="たった" translation="stałem" kanji="立った" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="stali" />
+            <translation class="plural_non_masculine_personal" value="stały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="たちました" translation="stałem" kanji="立ちました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="stali" />
+            <translation class="plural_non_masculine_personal" value="stały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="たたなかった" translation="nie stałem" kanji="立たなかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie stali" />
+            <translation class="plural_non_masculine_personal" value="nie stały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="たちませんでした" translation="nie stałem" kanji="立ちませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie stali" />
+            <translation class="plural_non_masculine_personal" value="nie stały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="たって" kanji="立って" translation="stojąc" />
         <form ref="potential" kana="たてる" kanji="立てる" translation="mogę stać" />
         <form ref="passive" kana="たたれる" kanji="立たれる" translation="ktoś stoi, co mi przeszkadza" />
@@ -2931,14 +3987,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="つかれる" translation="jestem zmęczony" kanji="疲れる" />
-        <form ref="polite_nonpast" kana="つかれます" translation="jestem zmęczony" kanji="疲れます" />
-        <form ref="plain_negative" kana="つかれない" translation="nie jestem zmęczony" kanji="疲れない" />
-        <form ref="polite_negative" kana="つかれません" translation="nie jestem zmęczony" kanji="疲れません" />
-        <form ref="past_plain" kana="つかれた" translation="zmęczyłem się" kanji="疲れた" />
-        <form ref="past_polite" kana="つかれました" translation="zmęczyłem się" kanji="疲れました" />
-        <form ref="past_negative_plain" kana="つかれなかった" translation="nie zmęczyłem się" kanji="疲れなかった" />
-        <form ref="past_negative_polite" kana="つかれませんでした" translation="nie zmęczyłem się" kanji="疲れませんでした" />
+        <form ref="dictionary" kana="つかれる" translation="jestem zmęczony" kanji="疲れる" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="są zmęczeni" />
+            <translation class="plural_non_masculine_personal" value="są zmęczone" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="つかれます" translation="jestem zmęczony" kanji="疲れます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="są zmęczeni" />
+            <translation class="plural_non_masculine_personal" value="są zmęczone" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="つかれない" translation="nie jestem zmęczony" kanji="疲れない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie są zmęczeni" />
+            <translation class="plural_non_masculine_personal" value="nie są zmęczone" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="つかれません" translation="nie jestem zmęczony" kanji="疲れません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie są zmęczeni" />
+            <translation class="plural_non_masculine_personal" value="nie są zmęczone" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="つかれた" translation="zmęczyłem się" kanji="疲れた" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zmęczyli się" />
+            <translation class="plural_non_masculine_personal" value="zmęczyły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="つかれました" translation="zmęczyłem się" kanji="疲れました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zmęczyli się" />
+            <translation class="plural_non_masculine_personal" value="zmęczyły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="つかれなかった" translation="nie zmęczyłem się" kanji="疲れなかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zmęczyli się" />
+            <translation class="plural_non_masculine_personal" value="nie zmęczyły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="つかれませんでした" translation="nie zmęczyłem się" kanji="疲れませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zmęczyli się" />
+            <translation class="plural_non_masculine_personal" value="nie zmęczyły się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="つかれて" kanji="疲れて" translation="będąc zmęczonym" />
         <form ref="potential" kana="つかれられる" kanji="疲れられる" translation="mogę być zmęczonym" />
         <form ref="passive" kana="つかれられる" kanji="疲れられる" translation="ktoś się męczy, co mnie dotyka" />
@@ -3005,30 +4101,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="robi" />
             <translation class="feminine" value="robi" />
+            <translation class="plural_masculine_personal" value="robią" />
+            <translation class="plural_non_masculine_personal" value="robią" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="つくります" translation="robię" kanji="作ります" />
+        <form ref="polite_nonpast" kana="つくります" translation="robię" kanji="作ります" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="robią" />
+            <translation class="plural_non_masculine_personal" value="robią" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="つくらない" translation="nie robię" kanji="作らない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie robi" />
             <translation class="feminine" value="nie robi" />
+            <translation class="plural_masculine_personal" value="nie robią" />
+            <translation class="plural_non_masculine_personal" value="nie robią" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="つくりません" translation="nie robię" kanji="作りません" />
+        <form ref="polite_negative" kana="つくりません" translation="nie robię" kanji="作りません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie robią" />
+            <translation class="plural_non_masculine_personal" value="nie robią" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="つくった" translation="zrobiłem" kanji="作った">
           <agreement_translations>
             <translation class="masculine_personal" value="zrobił" />
             <translation class="feminine" value="zrobiła" />
+            <translation class="plural_masculine_personal" value="zrobili" />
+            <translation class="plural_non_masculine_personal" value="zrobiły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="つくりました" translation="zrobiłem" kanji="作りました" />
+        <form ref="past_polite" kana="つくりました" translation="zrobiłem" kanji="作りました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zrobili" />
+            <translation class="plural_non_masculine_personal" value="zrobiły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="つくらなかった" translation="nie zrobiłem" kanji="作らなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie zrobił" />
             <translation class="feminine" value="nie zrobiła" />
+            <translation class="plural_masculine_personal" value="nie zrobili" />
+            <translation class="plural_non_masculine_personal" value="nie zrobiły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="つくりませんでした" translation="nie zrobiłem" kanji="作りませんでした" />
+        <form ref="past_negative_polite" kana="つくりませんでした" translation="nie zrobiłem" kanji="作りませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zrobili" />
+            <translation class="plural_non_masculine_personal" value="nie zrobiły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="つくって" kanji="作って" translation="robiąc" />
         <form ref="potential" kana="つくれる" kanji="作れる" translation="mogę robić" />
         <form ref="passive" kana="つくられる" kanji="作られる" translation="jest wytwarzane" />
@@ -3067,14 +4191,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="うごく" translation="ruszam się" kanji="動く" />
-        <form ref="polite_nonpast" kana="うごきます" translation="ruszam się" kanji="動きます" />
-        <form ref="plain_negative" kana="うごかない" translation="nie ruszam się" kanji="動かない" />
-        <form ref="polite_negative" kana="うごきません" translation="nie ruszam się" kanji="動きません" />
-        <form ref="past_plain" kana="うごいた" translation="ruszałem się" kanji="動いた" />
-        <form ref="past_polite" kana="うごきました" translation="ruszałem się" kanji="動きました" />
-        <form ref="past_negative_plain" kana="うごかなかった" translation="nie ruszałem się" kanji="動かなかった" />
-        <form ref="past_negative_polite" kana="うごきませんでした" translation="nie ruszałem się" kanji="動きませんでした" />
+        <form ref="dictionary" kana="うごく" translation="ruszam się" kanji="動く" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="ruszają się" />
+            <translation class="plural_non_masculine_personal" value="ruszają się" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="うごきます" translation="ruszam się" kanji="動きます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="ruszają się" />
+            <translation class="plural_non_masculine_personal" value="ruszają się" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="うごかない" translation="nie ruszam się" kanji="動かない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie ruszają się" />
+            <translation class="plural_non_masculine_personal" value="nie ruszają się" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="うごきません" translation="nie ruszam się" kanji="動きません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie ruszają się" />
+            <translation class="plural_non_masculine_personal" value="nie ruszają się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="うごいた" translation="ruszałem się" kanji="動いた" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="ruszali się" />
+            <translation class="plural_non_masculine_personal" value="ruszały się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="うごきました" translation="ruszałem się" kanji="動きました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="ruszali się" />
+            <translation class="plural_non_masculine_personal" value="ruszały się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="うごかなかった" translation="nie ruszałem się" kanji="動かなかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie ruszali się" />
+            <translation class="plural_non_masculine_personal" value="nie ruszały się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="うごきませんでした" translation="nie ruszałem się" kanji="動きませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie ruszali się" />
+            <translation class="plural_non_masculine_personal" value="nie ruszały się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="うごいて" kanji="動いて" translation="ruszając się" />
         <form ref="potential" kana="うごける" kanji="動ける" translation="mogę się ruszać" />
         <form ref="passive" kana="うごかれる" kanji="動かれる" translation="ktoś się rusza, co mi przeszkadza" />
@@ -3117,30 +4281,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="ćwiczy fizycznie" />
             <translation class="feminine" value="ćwiczy fizycznie" />
+            <translation class="plural_masculine_personal" value="ćwiczą fizycznie" />
+            <translation class="plural_non_masculine_personal" value="ćwiczą fizycznie" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="うんどうします" translation="ćwiczę fizycznie" kanji="運動します" />
+        <form ref="polite_nonpast" kana="うんどうします" translation="ćwiczę fizycznie" kanji="運動します" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="ćwiczą fizycznie" />
+            <translation class="plural_non_masculine_personal" value="ćwiczą fizycznie" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="うんどうしない" translation="nie ćwiczę fizycznie" kanji="運動しない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie ćwiczy fizycznie" />
             <translation class="feminine" value="nie ćwiczy fizycznie" />
+            <translation class="plural_masculine_personal" value="nie ćwiczą fizycznie" />
+            <translation class="plural_non_masculine_personal" value="nie ćwiczą fizycznie" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="うんどうしません" translation="nie ćwiczę fizycznie" kanji="運動しません" />
+        <form ref="polite_negative" kana="うんどうしません" translation="nie ćwiczę fizycznie" kanji="運動しません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie ćwiczą fizycznie" />
+            <translation class="plural_non_masculine_personal" value="nie ćwiczą fizycznie" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="うんどうした" translation="ćwiczyłem fizycznie" kanji="運動した">
           <agreement_translations>
             <translation class="masculine_personal" value="ćwiczył fizycznie" />
             <translation class="feminine" value="ćwiczyła fizycznie" />
+            <translation class="plural_masculine_personal" value="ćwiczyli fizycznie" />
+            <translation class="plural_non_masculine_personal" value="ćwiczyły fizycznie" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="うんどうしました" translation="ćwiczyłem fizycznie" kanji="運動しました" />
+        <form ref="past_polite" kana="うんどうしました" translation="ćwiczyłem fizycznie" kanji="運動しました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="ćwiczyli fizycznie" />
+            <translation class="plural_non_masculine_personal" value="ćwiczyły fizycznie" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="うんどうしなかった" translation="nie ćwiczyłem fizycznie" kanji="運動しなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie ćwiczył fizycznie" />
             <translation class="feminine" value="nie ćwiczyła fizycznie" />
+            <translation class="plural_masculine_personal" value="nie ćwiczyli fizycznie" />
+            <translation class="plural_non_masculine_personal" value="nie ćwiczyły fizycznie" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="うんどうしませんでした" translation="nie ćwiczyłem fizycznie" kanji="運動しませんでした" />
+        <form ref="past_negative_polite" kana="うんどうしませんでした" translation="nie ćwiczyłem fizycznie" kanji="運動しませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie ćwiczyli fizycznie" />
+            <translation class="plural_non_masculine_personal" value="nie ćwiczyły fizycznie" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="うんどうして" kanji="運動して" translation="ćwicząc fizycznie" />
         <form ref="potential" kana="うんどうできる" kanji="運動できる" translation="mogę ćwiczyć fizycznie" />
         <form ref="passive" kana="うんどうされる" kanji="運動される" translation="ktoś ćwiczy, co mi przeszkadza" />
@@ -3161,30 +4353,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="kłamie" />
             <translation class="feminine" value="kłamie" />
+            <translation class="plural_masculine_personal" value="kłamią" />
+            <translation class="plural_non_masculine_personal" value="kłamią" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="うそをつきます" translation="kłamię" kanji="嘘をつきます" />
+        <form ref="polite_nonpast" kana="うそをつきます" translation="kłamię" kanji="嘘をつきます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="kłamią" />
+            <translation class="plural_non_masculine_personal" value="kłamią" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="うそをつかない" translation="nie kłamię" kanji="嘘をつかない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie kłamie" />
             <translation class="feminine" value="nie kłamie" />
+            <translation class="plural_masculine_personal" value="nie kłamią" />
+            <translation class="plural_non_masculine_personal" value="nie kłamią" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="うそをつきません" translation="nie kłamię" kanji="嘘をつきません" />
+        <form ref="polite_negative" kana="うそをつきません" translation="nie kłamię" kanji="嘘をつきません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie kłamią" />
+            <translation class="plural_non_masculine_personal" value="nie kłamią" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="うそをついた" translation="skłamałem" kanji="嘘をついた">
           <agreement_translations>
             <translation class="masculine_personal" value="skłamał" />
             <translation class="feminine" value="skłamała" />
+            <translation class="plural_masculine_personal" value="skłamali" />
+            <translation class="plural_non_masculine_personal" value="skłamały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="うそをつきました" translation="skłamałem" kanji="嘘をつきました" />
+        <form ref="past_polite" kana="うそをつきました" translation="skłamałem" kanji="嘘をつきました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="skłamali" />
+            <translation class="plural_non_masculine_personal" value="skłamały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="うそをつかなかった" translation="nie skłamałem" kanji="嘘をつかなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie skłamał" />
             <translation class="feminine" value="nie skłamała" />
+            <translation class="plural_masculine_personal" value="nie skłamali" />
+            <translation class="plural_non_masculine_personal" value="nie skłamały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="うそをつきませんでした" translation="nie skłamałem" kanji="嘘をつきませんでした" />
+        <form ref="past_negative_polite" kana="うそをつきませんでした" translation="nie skłamałem" kanji="嘘をつきませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie skłamali" />
+            <translation class="plural_non_masculine_personal" value="nie skłamały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="うそをついて" kanji="嘘をついて" translation="kłamiąc" />
         <form ref="potential" kana="うそをつける" kanji="嘘をつける" translation="mogę kłamać" />
         <form ref="passive" kana="うそをつかれる" kanji="嘘をつかれる" translation="ktoś mnie okłamuje" />
@@ -3205,30 +4425,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="śpiewa" />
             <translation class="feminine" value="śpiewa" />
+            <translation class="plural_masculine_personal" value="śpiewają" />
+            <translation class="plural_non_masculine_personal" value="śpiewają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="うたいます" translation="śpiewam" kanji="歌います" />
+        <form ref="polite_nonpast" kana="うたいます" translation="śpiewam" kanji="歌います" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="śpiewają" />
+            <translation class="plural_non_masculine_personal" value="śpiewają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="うたわない" translation="nie śpiewam" kanji="歌わない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie śpiewa" />
             <translation class="feminine" value="nie śpiewa" />
+            <translation class="plural_masculine_personal" value="nie śpiewają" />
+            <translation class="plural_non_masculine_personal" value="nie śpiewają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="うたいません" translation="nie śpiewam" kanji="歌いません" />
+        <form ref="polite_negative" kana="うたいません" translation="nie śpiewam" kanji="歌いません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie śpiewają" />
+            <translation class="plural_non_masculine_personal" value="nie śpiewają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="うたった" translation="śpiewałem" kanji="歌った">
           <agreement_translations>
             <translation class="masculine_personal" value="śpiewał" />
             <translation class="feminine" value="śpiewała" />
+            <translation class="plural_masculine_personal" value="śpiewali" />
+            <translation class="plural_non_masculine_personal" value="śpiewały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="うたいました" translation="śpiewałem" kanji="歌いました" />
+        <form ref="past_polite" kana="うたいました" translation="śpiewałem" kanji="歌いました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="śpiewali" />
+            <translation class="plural_non_masculine_personal" value="śpiewały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="うたわなかった" translation="nie śpiewałem" kanji="歌わなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie śpiewał" />
             <translation class="feminine" value="nie śpiewała" />
+            <translation class="plural_masculine_personal" value="nie śpiewali" />
+            <translation class="plural_non_masculine_personal" value="nie śpiewały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="うたいませんでした" translation="nie śpiewałem" kanji="歌いませんでした" />
+        <form ref="past_negative_polite" kana="うたいませんでした" translation="nie śpiewałem" kanji="歌いませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie śpiewali" />
+            <translation class="plural_non_masculine_personal" value="nie śpiewały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="うたって" kanji="歌って" translation="śpiewając" />
         <form ref="potential" kana="うたえる" kanji="歌える" translation="mogę śpiewać" />
         <form ref="passive" kana="うたわれる" kanji="歌われる" translation="jest śpiewane" />
@@ -3244,14 +4492,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="わかる" translation="rozumiem" kanji="分かる" />
-        <form ref="polite_nonpast" kana="わかります" translation="rozumiem" kanji="分かります" />
-        <form ref="plain_negative" kana="わからない" translation="nie rozumiem" kanji="分からない" />
-        <form ref="polite_negative" kana="わかりません" translation="nie rozumiem" kanji="分かりません" />
-        <form ref="past_plain" kana="わかった" translation="zrozumiałem" kanji="分かった" />
-        <form ref="past_polite" kana="わかりました" translation="zrozumiałem" kanji="分かりました" />
-        <form ref="past_negative_plain" kana="わからなかった" translation="nie zrozumiałem" kanji="分からなかった" />
-        <form ref="past_negative_polite" kana="わかりませんでした" translation="nie zrozumiałem" kanji="分かりませんでした" />
+        <form ref="dictionary" kana="わかる" translation="rozumiem" kanji="分かる" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="rozumieją" />
+            <translation class="plural_non_masculine_personal" value="rozumieją" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="わかります" translation="rozumiem" kanji="分かります" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="rozumieją" />
+            <translation class="plural_non_masculine_personal" value="rozumieją" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="わからない" translation="nie rozumiem" kanji="分からない" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie rozumieją" />
+            <translation class="plural_non_masculine_personal" value="nie rozumieją" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="わかりません" translation="nie rozumiem" kanji="分かりません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie rozumieją" />
+            <translation class="plural_non_masculine_personal" value="nie rozumieją" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="わかった" translation="zrozumiałem" kanji="分かった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zrozumieli" />
+            <translation class="plural_non_masculine_personal" value="zrozumiały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="わかりました" translation="zrozumiałem" kanji="分かりました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="zrozumieli" />
+            <translation class="plural_non_masculine_personal" value="zrozumiały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="わからなかった" translation="nie zrozumiałem" kanji="分からなかった" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zrozumieli" />
+            <translation class="plural_non_masculine_personal" value="nie zrozumiały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="わかりませんでした" translation="nie zrozumiałem" kanji="分かりませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie zrozumieli" />
+            <translation class="plural_non_masculine_personal" value="nie zrozumiały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="わかって" kanji="分かって" translation="rozumiejąc" />
         <form ref="potential" kana="わかる" kanji="分かる" translation="mogę rozumieć" />
         <form ref="passive" kana="わかられる" kanji="分かられる" translation="jest rozumiane" />
@@ -3272,30 +4560,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="śmieje się" />
             <translation class="feminine" value="śmieje się" />
+            <translation class="plural_masculine_personal" value="śmieją się" />
+            <translation class="plural_non_masculine_personal" value="śmieją się" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="わらいます" translation="śmieję się" kanji="笑います" />
+        <form ref="polite_nonpast" kana="わらいます" translation="śmieję się" kanji="笑います" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="śmieją się" />
+            <translation class="plural_non_masculine_personal" value="śmieją się" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="わらわない" translation="nie śmieję się" kanji="笑わない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie śmieje się" />
             <translation class="feminine" value="nie śmieje się" />
+            <translation class="plural_masculine_personal" value="nie śmieją się" />
+            <translation class="plural_non_masculine_personal" value="nie śmieją się" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="わらいません" translation="nie śmieję się" kanji="笑いません" />
+        <form ref="polite_negative" kana="わらいません" translation="nie śmieję się" kanji="笑いません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie śmieją się" />
+            <translation class="plural_non_masculine_personal" value="nie śmieją się" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="わらった" translation="śmiałem się" kanji="笑った">
           <agreement_translations>
             <translation class="masculine_personal" value="śmiał się" />
             <translation class="feminine" value="śmiała się" />
+            <translation class="plural_masculine_personal" value="śmiali się" />
+            <translation class="plural_non_masculine_personal" value="śmiały się" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="わらいました" translation="śmiałem się" kanji="笑いました" />
+        <form ref="past_polite" kana="わらいました" translation="śmiałem się" kanji="笑いました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="śmiali się" />
+            <translation class="plural_non_masculine_personal" value="śmiały się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="わらわなかった" translation="nie śmiałem się" kanji="笑わなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie śmiał się" />
             <translation class="feminine" value="nie śmiała się" />
+            <translation class="plural_masculine_personal" value="nie śmiali się" />
+            <translation class="plural_non_masculine_personal" value="nie śmiały się" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="わらいませんでした" translation="nie śmiałem się" kanji="笑いませんでした" />
+        <form ref="past_negative_polite" kana="わらいませんでした" translation="nie śmiałem się" kanji="笑いませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie śmiali się" />
+            <translation class="plural_non_masculine_personal" value="nie śmiały się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="わらって" kanji="笑って" translation="śmiejąc się" />
         <form ref="potential" kana="わらえる" kanji="笑える" translation="mogę się śmiać" />
         <form ref="passive" kana="わらわれる" kanji="笑われる" translation="ktoś się ze mnie śmieje" />
@@ -3339,30 +4655,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="czyta" />
             <translation class="feminine" value="czyta" />
+            <translation class="plural_masculine_personal" value="czytają" />
+            <translation class="plural_non_masculine_personal" value="czytają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="よみます" translation="czytam" kanji="読みます" />
+        <form ref="polite_nonpast" kana="よみます" translation="czytam" kanji="読みます" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="czytają" />
+            <translation class="plural_non_masculine_personal" value="czytają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="よまない" translation="nie czytam" kanji="読まない">
           <agreement_translations>
             <translation class="masculine_personal" value="nie czyta" />
             <translation class="feminine" value="nie czyta" />
+            <translation class="plural_masculine_personal" value="nie czytają" />
+            <translation class="plural_non_masculine_personal" value="nie czytają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="よみません" translation="nie czytam" kanji="読みません" />
+        <form ref="polite_negative" kana="よみません" translation="nie czytam" kanji="読みません" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie czytają" />
+            <translation class="plural_non_masculine_personal" value="nie czytają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="よんだ" translation="czytałem" kanji="読んだ">
           <agreement_translations>
             <translation class="masculine_personal" value="czytał" />
             <translation class="feminine" value="czytała" />
+            <translation class="plural_masculine_personal" value="czytali" />
+            <translation class="plural_non_masculine_personal" value="czytały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="よみました" translation="czytałem" kanji="読みました" />
+        <form ref="past_polite" kana="よみました" translation="czytałem" kanji="読みました" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="czytali" />
+            <translation class="plural_non_masculine_personal" value="czytały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="よまなかった" translation="nie czytałem" kanji="読まなかった">
           <agreement_translations>
             <translation class="masculine_personal" value="nie czytał" />
             <translation class="feminine" value="nie czytała" />
+            <translation class="plural_masculine_personal" value="nie czytali" />
+            <translation class="plural_non_masculine_personal" value="nie czytały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="よみませんでした" translation="nie czytałem" kanji="読みませんでした" />
+        <form ref="past_negative_polite" kana="よみませんでした" translation="nie czytałem" kanji="読みませんでした" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie czytali" />
+            <translation class="plural_non_masculine_personal" value="nie czytały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="よんで" kanji="読んで" translation="czytając" />
         <form ref="potential" kana="よめる" kanji="読める" translation="mogę czytać" />
         <form ref="passive" kana="よまれる" kanji="読まれる" translation="jest czytane" />
@@ -3374,6 +4718,8 @@
           <agreement_translations>
             <translation class="masculine_personal" value="czyta" />
             <translation class="feminine" value="czyta" />
+            <translation class="plural_masculine_personal" value="czytają" />
+            <translation class="plural_non_masculine_personal" value="czytają" />
           </agreement_translations>
         </form>
       </forms>
@@ -3527,14 +4873,54 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="だまる" kanji="黙る" translation="milczę" />
-        <form ref="polite_nonpast" kana="だまります" kanji="黙ります" translation="milczę" />
-        <form ref="plain_negative" kana="だまらない" kanji="黙らない" translation="nie milczę" />
-        <form ref="polite_negative" kana="だまりません" kanji="黙りません" translation="nie milczę" />
-        <form ref="past_plain" kana="だまった" kanji="黙った" translation="milczałem" />
-        <form ref="past_polite" kana="だまりました" kanji="黙りました" translation="milczałem" />
-        <form ref="past_negative_plain" kana="だまらなかった" kanji="黙らなかった" translation="nie milczałem" />
-        <form ref="past_negative_polite" kana="だまりませんでした" kanji="黙りませんでした" translation="nie milczałem" />
+        <form ref="dictionary" kana="だまる" kanji="黙る" translation="milczę" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="milczą" />
+            <translation class="plural_non_masculine_personal" value="milczą" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="だまります" kanji="黙ります" translation="milczę" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="milczą" />
+            <translation class="plural_non_masculine_personal" value="milczą" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="だまらない" kanji="黙らない" translation="nie milczę" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie milczą" />
+            <translation class="plural_non_masculine_personal" value="nie milczą" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="だまりません" kanji="黙りません" translation="nie milczę" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie milczą" />
+            <translation class="plural_non_masculine_personal" value="nie milczą" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="だまった" kanji="黙った" translation="milczałem" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="milczeli" />
+            <translation class="plural_non_masculine_personal" value="milczały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="だまりました" kanji="黙りました" translation="milczałem" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="milczeli" />
+            <translation class="plural_non_masculine_personal" value="milczały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="だまらなかった" kanji="黙らなかった" translation="nie milczałem" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie milczeli" />
+            <translation class="plural_non_masculine_personal" value="nie milczały" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="だまりませんでした" kanji="黙りませんでした" translation="nie milczałem" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie milczeli" />
+            <translation class="plural_non_masculine_personal" value="nie milczały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="だまって" kanji="黙って" translation="milcząc" />
         <form ref="potential" kana="だまれる" kanji="黙れる" translation="mogę milczeć" />
         <form ref="passive" kana="だまられる" kanji="黙られる" translation="ktoś milczy, co mi przeszkadza" />
@@ -3602,30 +4988,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="wierzy" />
             <translation class="feminine" value="wierzy" />
+            <translation class="plural_masculine_personal" value="wierzą" />
+            <translation class="plural_non_masculine_personal" value="wierzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="しんじます" kanji="信じます" translation="wierzę" />
+        <form ref="polite_nonpast" kana="しんじます" kanji="信じます" translation="wierzę" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wierzą" />
+            <translation class="plural_non_masculine_personal" value="wierzą" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="しんじない" kanji="信じない" translation="nie wierzę">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wierzy" />
             <translation class="feminine" value="nie wierzy" />
+            <translation class="plural_masculine_personal" value="nie wierzą" />
+            <translation class="plural_non_masculine_personal" value="nie wierzą" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="しんじません" kanji="信じません" translation="nie wierzę" />
+        <form ref="polite_negative" kana="しんじません" kanji="信じません" translation="nie wierzę" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wierzą" />
+            <translation class="plural_non_masculine_personal" value="nie wierzą" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="しんじた" kanji="信じた" translation="wierzyłem">
           <agreement_translations>
             <translation class="masculine_personal" value="wierzył" />
             <translation class="feminine" value="wierzyła" />
+            <translation class="plural_masculine_personal" value="wierzyli" />
+            <translation class="plural_non_masculine_personal" value="wierzyły" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="しんじました" kanji="信じました" translation="wierzyłem" />
+        <form ref="past_polite" kana="しんじました" kanji="信じました" translation="wierzyłem" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="wierzyli" />
+            <translation class="plural_non_masculine_personal" value="wierzyły" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="しんじなかった" kanji="信じなかった" translation="nie wierzyłem">
           <agreement_translations>
             <translation class="masculine_personal" value="nie wierzył" />
             <translation class="feminine" value="nie wierzyła" />
+            <translation class="plural_masculine_personal" value="nie wierzyli" />
+            <translation class="plural_non_masculine_personal" value="nie wierzyły" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="しんじませんでした" kanji="信じませんでした" translation="nie wierzyłem" />
+        <form ref="past_negative_polite" kana="しんじませんでした" kanji="信じませんでした" translation="nie wierzyłem" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie wierzyli" />
+            <translation class="plural_non_masculine_personal" value="nie wierzyły" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="しんじて" kanji="信じて" translation="wierząc" />
         <form ref="potential" kana="しんじられる" kanji="信じられる" translation="mogę wierzyć" />
         <form ref="passive" kana="しんじられる" kanji="信じられる" translation="ktoś mi wierzy" />
@@ -3645,30 +5059,58 @@
           <agreement_translations>
             <translation class="masculine_personal" value="mieszka" />
             <translation class="feminine" value="mieszka" />
+            <translation class="plural_masculine_personal" value="mieszkają" />
+            <translation class="plural_non_masculine_personal" value="mieszkają" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="すみます" kanji="住みます" translation="mieszkam" />
+        <form ref="polite_nonpast" kana="すみます" kanji="住みます" translation="mieszkam" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="mieszkają" />
+            <translation class="plural_non_masculine_personal" value="mieszkają" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="すまない" kanji="住まない" translation="nie mieszkam">
           <agreement_translations>
             <translation class="masculine_personal" value="nie mieszka" />
             <translation class="feminine" value="nie mieszka" />
+            <translation class="plural_masculine_personal" value="nie mieszkają" />
+            <translation class="plural_non_masculine_personal" value="nie mieszkają" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="すみません" kanji="住みません" translation="nie mieszkam" />
+        <form ref="polite_negative" kana="すみません" kanji="住みません" translation="nie mieszkam" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie mieszkają" />
+            <translation class="plural_non_masculine_personal" value="nie mieszkają" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="すんだ" kanji="住んだ" translation="mieszkałem">
           <agreement_translations>
             <translation class="masculine_personal" value="mieszkał" />
             <translation class="feminine" value="mieszkała" />
+            <translation class="plural_masculine_personal" value="mieszkali" />
+            <translation class="plural_non_masculine_personal" value="mieszkały" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="すみました" kanji="住みました" translation="mieszkałem" />
+        <form ref="past_polite" kana="すみました" kanji="住みました" translation="mieszkałem" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="mieszkali" />
+            <translation class="plural_non_masculine_personal" value="mieszkały" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="すまなかった" kanji="住まなかった" translation="nie mieszkałem">
           <agreement_translations>
             <translation class="masculine_personal" value="nie mieszkał" />
             <translation class="feminine" value="nie mieszkała" />
+            <translation class="plural_masculine_personal" value="nie mieszkali" />
+            <translation class="plural_non_masculine_personal" value="nie mieszkały" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="すみませんでした" kanji="住みませんでした" translation="nie mieszkałem" />
+        <form ref="past_negative_polite" kana="すみませんでした" kanji="住みませんでした" translation="nie mieszkałem" >
+          <agreement_translations>
+            <translation class="plural_masculine_personal" value="nie mieszkali" />
+            <translation class="plural_non_masculine_personal" value="nie mieszkały" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="すんで" kanji="住んで" translation="mieszkając" />
         <form ref="potential" kana="すめる" kanji="住める" translation="mogę mieszkać" />
         <form ref="passive" kana="すまれる" kanji="住まれる" translation="ktoś mieszka, co mi przeszkadza" />
@@ -3680,6 +5122,8 @@
           <agreement_translations>
             <translation class="masculine_personal" value="mieszka" />
             <translation class="feminine" value="mieszka" />
+            <translation class="plural_masculine_personal" value="mieszkają" />
+            <translation class="plural_non_masculine_personal" value="mieszkają" />
           </agreement_translations>
         </form>
       </forms>

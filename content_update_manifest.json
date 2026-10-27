@@ -1,16 +1,16 @@
 {
   "format": 3,
-  "revision": 67,
+  "revision": 68,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "9a7d2da09d1c98498d10eabb5ee1495d14fc400f286fd114a37e80ccee5da189",
-      "url": "content_revision.json?kotomi_sha256=9a7d2da09d1c98498d10eabb5ee1495d14fc400f286fd114a37e80ccee5da189"
+      "sha256": "dad56a115d0f96eab69f6a71f19634adda29da0c53dca5e2a5f5106cd45e1710",
+      "url": "content_revision.json?kotomi_sha256=dad56a115d0f96eab69f6a71f19634adda29da0c53dca5e2a5f5106cd45e1710"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
-      "sha256": "105df6fdbc7d043cab94358953b7fe73243a49a90f8b50037044a0547dd39426",
-      "url": "dictionaries/adjectives.xml?kotomi_sha256=105df6fdbc7d043cab94358953b7fe73243a49a90f8b50037044a0547dd39426"
+      "sha256": "ec72601a2887aa2692af9a471e0ac7f16b118b31bd5a6143c159dbde52fe402a",
+      "url": "dictionaries/adjectives.xml?kotomi_sha256=ec72601a2887aa2692af9a471e0ac7f16b118b31bd5a6143c159dbde52fe402a"
     },
     {
       "path": "data/dictionaries/adverbs.xml",
@@ -34,8 +34,8 @@
     },
     {
       "path": "data/dictionaries/demonstratives.xml",
-      "sha256": "bb00b0fb6f1b193c91b4d8599cc78df4ceb76f2fdb8110142f8a069c3f20fe14",
-      "url": "dictionaries/demonstratives.xml?kotomi_sha256=bb00b0fb6f1b193c91b4d8599cc78df4ceb76f2fdb8110142f8a069c3f20fe14"
+      "sha256": "fe0955c192ae3994820ac9da822810325ee8e0c6be8217999c1c768f87b66165",
+      "url": "dictionaries/demonstratives.xml?kotomi_sha256=fe0955c192ae3994820ac9da822810325ee8e0c6be8217999c1c768f87b66165"
     },
     {
       "path": "data/dictionaries/expressions.xml",
@@ -44,8 +44,8 @@
     },
     {
       "path": "data/dictionaries/interrogatives.xml",
-      "sha256": "12f2a848c9786a40a0b30fbd1fae3a8b2698123f3fca3131c5a8705764fce3b0",
-      "url": "dictionaries/interrogatives.xml?kotomi_sha256=12f2a848c9786a40a0b30fbd1fae3a8b2698123f3fca3131c5a8705764fce3b0"
+      "sha256": "d881c51ca8ce8a4712a3ed310ce9894e318093c79258deabdd1dba7eb783108a",
+      "url": "dictionaries/interrogatives.xml?kotomi_sha256=d881c51ca8ce8a4712a3ed310ce9894e318093c79258deabdd1dba7eb783108a"
     },
     {
       "path": "data/dictionaries/nouns.xml",
@@ -59,8 +59,8 @@
     },
     {
       "path": "data/dictionaries/verbs.xml",
-      "sha256": "16e0cecb8bd16bb6115d688b077426c92c0c13380b697f7fa436faa3f3757c3b",
-      "url": "dictionaries/verbs.xml?kotomi_sha256=16e0cecb8bd16bb6115d688b077426c92c0c13380b697f7fa436faa3f3757c3b"
+      "sha256": "c12d4805099410d737323e4e436d0401b03210de533b38be8c8dc96f31b667cc",
+      "url": "dictionaries/verbs.xml?kotomi_sha256=c12d4805099410d737323e4e436d0401b03210de533b38be8c8dc96f31b667cc"
     },
     {
       "path": "data/grammar/contexts.xml",
