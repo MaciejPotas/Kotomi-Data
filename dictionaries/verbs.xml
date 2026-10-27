@@ -262,30 +262,50 @@
           <agreement_translations>
             <translation class="feminine" value="otwiera się" />
             <translation class="neuter" value="otwiera się" />
+            <translation class="plural_non_masculine_personal" value="otwierają się" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="あきます" translation="otwiera się" kanji="開きます" />
+        <form ref="polite_nonpast" kana="あきます" translation="otwiera się" kanji="開きます" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="otwierają się" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="あかない" translation="nie otwiera się" kanji="開かない">
           <agreement_translations>
             <translation class="feminine" value="nie otwiera się" />
             <translation class="neuter" value="nie otwiera się" />
+            <translation class="plural_non_masculine_personal" value="nie otwierają się" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="あきません" translation="nie otwiera się" kanji="開きません" />
+        <form ref="polite_negative" kana="あきません" translation="nie otwiera się" kanji="開きません" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie otwierają się" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="あいた" translation="otworzyło się" kanji="開いた">
           <agreement_translations>
             <translation class="feminine" value="otworzyła się" />
             <translation class="neuter" value="otworzyło się" />
+            <translation class="plural_non_masculine_personal" value="otworzyły się" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="あきました" translation="otworzyło się" kanji="開きました" />
+        <form ref="past_polite" kana="あきました" translation="otworzyło się" kanji="開きました" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="otworzyły się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="あかなかった" translation="nie otworzyło się" kanji="開かなかった">
           <agreement_translations>
             <translation class="feminine" value="nie otworzyła się" />
             <translation class="neuter" value="nie otworzyło się" />
+            <translation class="plural_non_masculine_personal" value="nie otworzyły się" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="あきませんでした" translation="nie otworzyło się" kanji="開きませんでした" />
+        <form ref="past_negative_polite" kana="あきませんでした" translation="nie otworzyło się" kanji="開きませんでした" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie otworzyły się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="あいて" kanji="開いて" translation="otwierając się" />
         <form ref="potential" kana="あける" kanji="開ける" translation="może się otworzyć" />
         <form ref="passive" kana="あかれる" kanji="開かれる" translation="coś się otwiera, co mi przeszkadza" />
@@ -2923,14 +2943,46 @@
         <role ref="subject" accepts="concrete" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="みえる" translation="jest widoczne" kanji="見える" />
-        <form ref="polite_nonpast" kana="みえます" translation="jest widoczne" kanji="見えます" />
-        <form ref="plain_negative" kana="みえない" translation="nie jest widoczne" kanji="見えない" />
-        <form ref="polite_negative" kana="みえません" translation="nie jest widoczne" kanji="見えません" />
-        <form ref="past_plain" kana="みえた" translation="było widoczne" kanji="見えた" />
-        <form ref="past_polite" kana="みえました" translation="było widoczne" kanji="見えました" />
-        <form ref="past_negative_plain" kana="みえなかった" translation="nie było widoczne" kanji="見えなかった" />
-        <form ref="past_negative_polite" kana="みえませんでした" translation="nie było widoczne" kanji="見えませんでした" />
+        <form ref="dictionary" kana="みえる" translation="jest widoczne" kanji="見える" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="są widoczne" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="みえます" translation="jest widoczne" kanji="見えます" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="są widoczne" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="みえない" translation="nie jest widoczne" kanji="見えない" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie są widoczne" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="みえません" translation="nie jest widoczne" kanji="見えません" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie są widoczne" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="みえた" translation="było widoczne" kanji="見えた" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="były widoczne" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="みえました" translation="było widoczne" kanji="見えました" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="były widoczne" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="みえなかった" translation="nie było widoczne" kanji="見えなかった" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie były widoczne" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="みえませんでした" translation="nie było widoczne" kanji="見えませんでした" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie były widoczne" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="みえて" kanji="見えて" translation="będąc widocznym" />
         <form ref="causative" kana="みえさせる" kanji="見えさせる" translation="sprawiam, że coś staje się widoczne" />
         <form ref="tara" kana="みえたら" kanji="見えたら" translation="jeśli jest widoczne" />
@@ -4439,14 +4491,46 @@
         <role ref="location" />
       </usage>
       <forms>
-        <form ref="dictionary" kana="おわる" translation="kończy się" kanji="終わる" />
-        <form ref="polite_nonpast" kana="おわります" translation="kończy się" kanji="終わります" />
-        <form ref="plain_negative" kana="おわらない" translation="nie kończy się" kanji="終わらない" />
-        <form ref="polite_negative" kana="おわりません" translation="nie kończy się" kanji="終わりません" />
-        <form ref="past_plain" kana="おわった" translation="skończyło się" kanji="終わった" />
-        <form ref="past_polite" kana="おわりました" translation="skończyło się" kanji="終わりました" />
-        <form ref="past_negative_plain" kana="おわらなかった" translation="nie skończyło się" kanji="終わらなかった" />
-        <form ref="past_negative_polite" kana="おわりませんでした" translation="nie skończyło się" kanji="終わりませんでした" />
+        <form ref="dictionary" kana="おわる" translation="kończy się" kanji="終わる" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="kończą się" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="おわります" translation="kończy się" kanji="終わります" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="kończą się" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="おわらない" translation="nie kończy się" kanji="終わらない" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie kończą się" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="おわりません" translation="nie kończy się" kanji="終わりません" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie kończą się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="おわった" translation="skończyło się" kanji="終わった" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="skończyły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="おわりました" translation="skończyło się" kanji="終わりました" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="skończyły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="おわらなかった" translation="nie skończyło się" kanji="終わらなかった" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie skończyły się" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="おわりませんでした" translation="nie skończyło się" kanji="終わりませんでした" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie skończyły się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="おわって" kanji="終わって" translation="kończąc się" />
         <form ref="potential" kana="おわれる" kanji="終われる" translation="może się skończyć" />
         <form ref="passive" kana="おわられる" kanji="終わられる" translation="coś się kończy, co mnie dotyka" />
@@ -4811,30 +4895,50 @@
           <agreement_translations>
             <translation class="feminine" value="zamyka się" />
             <translation class="neuter" value="zamyka się" />
+            <translation class="plural_non_masculine_personal" value="zamykają się" />
           </agreement_translations>
         </form>
-        <form ref="polite_nonpast" kana="しまります" translation="zamyka się" kanji="閉まります" />
+        <form ref="polite_nonpast" kana="しまります" translation="zamyka się" kanji="閉まります" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="zamykają się" />
+          </agreement_translations>
+        </form>
         <form ref="plain_negative" kana="しまらない" translation="nie zamyka się" kanji="閉まらない">
           <agreement_translations>
             <translation class="feminine" value="nie zamyka się" />
             <translation class="neuter" value="nie zamyka się" />
+            <translation class="plural_non_masculine_personal" value="nie zamykają się" />
           </agreement_translations>
         </form>
-        <form ref="polite_negative" kana="しまりません" translation="nie zamyka się" kanji="閉まりません" />
+        <form ref="polite_negative" kana="しまりません" translation="nie zamyka się" kanji="閉まりません" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie zamykają się" />
+          </agreement_translations>
+        </form>
         <form ref="past_plain" kana="しまった" translation="zamknęło się" kanji="閉まった">
           <agreement_translations>
             <translation class="feminine" value="zamknęła się" />
             <translation class="neuter" value="zamknęło się" />
+            <translation class="plural_non_masculine_personal" value="zamknęły się" />
           </agreement_translations>
         </form>
-        <form ref="past_polite" kana="しまりました" translation="zamknęło się" kanji="閉まりました" />
+        <form ref="past_polite" kana="しまりました" translation="zamknęło się" kanji="閉まりました" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="zamknęły się" />
+          </agreement_translations>
+        </form>
         <form ref="past_negative_plain" kana="しまらなかった" translation="nie zamknęło się" kanji="閉まらなかった">
           <agreement_translations>
             <translation class="feminine" value="nie zamknęła się" />
             <translation class="neuter" value="nie zamknęło się" />
+            <translation class="plural_non_masculine_personal" value="nie zamknęły się" />
           </agreement_translations>
         </form>
-        <form ref="past_negative_polite" kana="しまりませんでした" translation="nie zamknęło się" kanji="閉まりませんでした" />
+        <form ref="past_negative_polite" kana="しまりませんでした" translation="nie zamknęło się" kanji="閉まりませんでした" >
+          <agreement_translations>
+            <translation class="plural_non_masculine_personal" value="nie zamknęły się" />
+          </agreement_translations>
+        </form>
         <form ref="te_form" kana="しまって" kanji="閉まって" translation="zamykając się" />
         <form ref="potential" kana="しまれる" kanji="閉まれる" translation="może się zamknąć" />
         <form ref="passive" kana="しまられる" kanji="閉まられる" translation="coś się zamyka, co mnie dotyka" />
