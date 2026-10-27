@@ -1328,5 +1328,311 @@
         </source_forms>
       </counting>
     </word>
+    <word id="kazoku" kana="かぞく" kanji="家族" type="noun" category="person" translation="rodzina">
+      <agreement class="feminine" />
+      <cases language="pl" nominative="rodzina" genitive="rodziny" dative="rodzinie" accusative="rodzinę" instrumental="rodziną" locative="rodzinie" vocative="rodzino" />
+    </word>
+    <word id="ryoushin" kana="りょうしん" kanji="両親" type="noun" category="person" translation="rodzice">
+      <agreement class="plural_masculine_personal" />
+      <cases language="pl" nominative="rodzice" genitive="rodziców" dative="rodzicom" accusative="rodziców" instrumental="rodzicami" locative="rodzicach" vocative="rodzice" />
+    </word>
+    <word id="chichi" kana="ちち" kanji="父" type="noun" category="person" translation="ojciec">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="ojcowie" />
+          <form profile="few" cases="genitive" value="ojców" />
+          <form profile="few" cases="dative" value="ojcom" />
+          <form profile="few" cases="accusative" value="ojców" />
+          <form profile="few" cases="instrumental" value="ojcami" />
+          <form profile="few" cases="locative" value="ojcach" />
+          <form profile="few" cases="vocative" value="ojcowie" />
+          <form profile="many" cases="nominative" value="ojców" />
+          <form profile="many" cases="genitive" value="ojców" />
+          <form profile="many" cases="dative" value="ojcom" />
+          <form profile="many" cases="accusative" value="ojców" />
+          <form profile="many" cases="instrumental" value="ojcami" />
+          <form profile="many" cases="locative" value="ojcach" />
+          <form profile="many" cases="vocative" value="ojców" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="ojciec" genitive="ojca" dative="ojcu" accusative="ojca" instrumental="ojcem" locative="ojcu" vocative="ojcze" />
+    </word>
+    <word id="haha" kana="はは" kanji="母" type="noun" category="person" translation="matka">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="matki" />
+          <form profile="few" cases="genitive" value="matek" />
+          <form profile="few" cases="dative" value="matkom" />
+          <form profile="few" cases="accusative" value="matki" />
+          <form profile="few" cases="instrumental" value="matkami" />
+          <form profile="few" cases="locative" value="matkach" />
+          <form profile="few" cases="vocative" value="matki" />
+          <form profile="many" cases="nominative" value="matek" />
+          <form profile="many" cases="genitive" value="matek" />
+          <form profile="many" cases="dative" value="matkom" />
+          <form profile="many" cases="accusative" value="matek" />
+          <form profile="many" cases="instrumental" value="matkami" />
+          <form profile="many" cases="locative" value="matkach" />
+          <form profile="many" cases="vocative" value="matek" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="matka" genitive="matki" dative="matce" accusative="matkę" instrumental="matką" locative="matce" vocative="matko" />
+    </word>
+    <word id="otousan" kana="おとうさん" kanji="お父さん" type="noun" category="person" translation="tata">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="tatowie" />
+          <form profile="few" cases="genitive" value="tatów" />
+          <form profile="few" cases="dative" value="tatom" />
+          <form profile="few" cases="accusative" value="tatów" />
+          <form profile="few" cases="instrumental" value="tatami" />
+          <form profile="few" cases="locative" value="tatach" />
+          <form profile="few" cases="vocative" value="tatowie" />
+          <form profile="many" cases="nominative" value="tatów" />
+          <form profile="many" cases="genitive" value="tatów" />
+          <form profile="many" cases="dative" value="tatom" />
+          <form profile="many" cases="accusative" value="tatów" />
+          <form profile="many" cases="instrumental" value="tatami" />
+          <form profile="many" cases="locative" value="tatach" />
+          <form profile="many" cases="vocative" value="tatów" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="tata" genitive="taty" dative="tacie" accusative="tatę" instrumental="tatą" locative="tacie" vocative="tato" />
+    </word>
+    <word id="ani" kana="あに" kanji="兄" type="noun" category="person" translation="starszy brat">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="starsi bracia" />
+          <form profile="few" cases="genitive" value="starszych braci" />
+          <form profile="few" cases="dative" value="starszym braciom" />
+          <form profile="few" cases="accusative" value="starszych braci" />
+          <form profile="few" cases="instrumental" value="starszymi braćmi" />
+          <form profile="few" cases="locative" value="starszych braciach" />
+          <form profile="few" cases="vocative" value="starsi bracia" />
+          <form profile="many" cases="nominative" value="starszych braci" />
+          <form profile="many" cases="genitive" value="starszych braci" />
+          <form profile="many" cases="dative" value="starszym braciom" />
+          <form profile="many" cases="accusative" value="starszych braci" />
+          <form profile="many" cases="instrumental" value="starszymi braćmi" />
+          <form profile="many" cases="locative" value="starszych braciach" />
+          <form profile="many" cases="vocative" value="starszych braci" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="starszy brat" genitive="starszego brata" dative="starszemu bratu" accusative="starszego brata" instrumental="starszym bratem" locative="starszym bracie" vocative="starszy bracie" />
+    </word>
+    <word id="otouto" kana="おとうと" kanji="弟" type="noun" category="person" translation="młodszy brat">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="młodsi bracia" />
+          <form profile="few" cases="genitive" value="młodszych braci" />
+          <form profile="few" cases="dative" value="młodszym braciom" />
+          <form profile="few" cases="accusative" value="młodszych braci" />
+          <form profile="few" cases="instrumental" value="młodszymi braćmi" />
+          <form profile="few" cases="locative" value="młodszych braciach" />
+          <form profile="few" cases="vocative" value="młodsi bracia" />
+          <form profile="many" cases="nominative" value="młodszych braci" />
+          <form profile="many" cases="genitive" value="młodszych braci" />
+          <form profile="many" cases="dative" value="młodszym braciom" />
+          <form profile="many" cases="accusative" value="młodszych braci" />
+          <form profile="many" cases="instrumental" value="młodszymi braćmi" />
+          <form profile="many" cases="locative" value="młodszych braciach" />
+          <form profile="many" cases="vocative" value="młodszych braci" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="młodszy brat" genitive="młodszego brata" dative="młodszemu bratu" accusative="młodszego brata" instrumental="młodszym bratem" locative="młodszym bracie" vocative="młodszy bracie" />
+    </word>
+    <word id="imouto" kana="いもうと" kanji="妹" type="noun" category="person" translation="młodsza siostra">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="młodsze siostry" />
+          <form profile="few" cases="genitive" value="młodszych sióstr" />
+          <form profile="few" cases="dative" value="młodszym siostrom" />
+          <form profile="few" cases="accusative" value="młodsze siostry" />
+          <form profile="few" cases="instrumental" value="młodszymi siostrami" />
+          <form profile="few" cases="locative" value="młodszych siostrach" />
+          <form profile="few" cases="vocative" value="młodsze siostry" />
+          <form profile="many" cases="nominative" value="młodszych sióstr" />
+          <form profile="many" cases="genitive" value="młodszych sióstr" />
+          <form profile="many" cases="dative" value="młodszym siostrom" />
+          <form profile="many" cases="accusative" value="młodszych sióstr" />
+          <form profile="many" cases="instrumental" value="młodszymi siostrami" />
+          <form profile="many" cases="locative" value="młodszych siostrach" />
+          <form profile="many" cases="vocative" value="młodszych sióstr" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="młodsza siostra" genitive="młodszej siostry" dative="młodszej siostrze" accusative="młodszą siostrę" instrumental="młodszą siostrą" locative="młodszej siostrze" vocative="młodsza siostro" />
+    </word>
+    <word id="kyoudai" kana="きょうだい" kanji="兄弟" type="noun" category="person" translation="rodzeństwo">
+      <agreement class="neuter" />
+      <cases language="pl" nominative="rodzeństwo" genitive="rodzeństwa" dative="rodzeństwu" accusative="rodzeństwo" instrumental="rodzeństwem" locative="rodzeństwie" vocative="rodzeństwo" />
+    </word>
+    <word id="shimai" kana="しまい" kanji="姉妹" type="noun" category="person" translation="siostry">
+      <agreement class="plural_non_masculine_personal" />
+      <cases language="pl" nominative="siostry" genitive="sióstr" dative="siostrom" accusative="siostry" instrumental="siostrami" locative="siostrach" vocative="siostry" />
+    </word>
+    <word id="sofu" kana="そふ" kanji="祖父" type="noun" category="person" translation="dziadek">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="dziadkowie" />
+          <form profile="few" cases="genitive" value="dziadków" />
+          <form profile="few" cases="dative" value="dziadkom" />
+          <form profile="few" cases="accusative" value="dziadków" />
+          <form profile="few" cases="instrumental" value="dziadkami" />
+          <form profile="few" cases="locative" value="dziadkach" />
+          <form profile="few" cases="vocative" value="dziadkowie" />
+          <form profile="many" cases="nominative" value="dziadków" />
+          <form profile="many" cases="genitive" value="dziadków" />
+          <form profile="many" cases="dative" value="dziadkom" />
+          <form profile="many" cases="accusative" value="dziadków" />
+          <form profile="many" cases="instrumental" value="dziadkami" />
+          <form profile="many" cases="locative" value="dziadkach" />
+          <form profile="many" cases="vocative" value="dziadków" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="dziadek" genitive="dziadka" dative="dziadkowi" accusative="dziadka" instrumental="dziadkiem" locative="dziadku" vocative="dziadku" />
+    </word>
+    <word id="sobo" kana="そぼ" kanji="祖母" type="noun" category="person" translation="babcia">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="babcie" />
+          <form profile="few" cases="genitive" value="babć" />
+          <form profile="few" cases="dative" value="babciom" />
+          <form profile="few" cases="accusative" value="babcie" />
+          <form profile="few" cases="instrumental" value="babciami" />
+          <form profile="few" cases="locative" value="babciach" />
+          <form profile="few" cases="vocative" value="babcie" />
+          <form profile="many" cases="nominative" value="babć" />
+          <form profile="many" cases="genitive" value="babć" />
+          <form profile="many" cases="dative" value="babciom" />
+          <form profile="many" cases="accusative" value="babć" />
+          <form profile="many" cases="instrumental" value="babciami" />
+          <form profile="many" cases="locative" value="babciach" />
+          <form profile="many" cases="vocative" value="babć" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="babcia" genitive="babci" dative="babci" accusative="babcię" instrumental="babcią" locative="babci" vocative="babciu" />
+    </word>
+    <word id="musuko" kana="むすこ" kanji="息子" type="noun" category="person" translation="syn">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="synowie" />
+          <form profile="few" cases="genitive" value="synów" />
+          <form profile="few" cases="dative" value="synom" />
+          <form profile="few" cases="accusative" value="synów" />
+          <form profile="few" cases="instrumental" value="synami" />
+          <form profile="few" cases="locative" value="synach" />
+          <form profile="few" cases="vocative" value="synowie" />
+          <form profile="many" cases="nominative" value="synów" />
+          <form profile="many" cases="genitive" value="synów" />
+          <form profile="many" cases="dative" value="synom" />
+          <form profile="many" cases="accusative" value="synów" />
+          <form profile="many" cases="instrumental" value="synami" />
+          <form profile="many" cases="locative" value="synach" />
+          <form profile="many" cases="vocative" value="synów" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="syn" genitive="syna" dative="synowi" accusative="syna" instrumental="synem" locative="synu" vocative="synu" />
+    </word>
+    <word id="musume" kana="むすめ" kanji="娘" type="noun" category="person" translation="córka">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="córki" />
+          <form profile="few" cases="genitive" value="córek" />
+          <form profile="few" cases="dative" value="córkom" />
+          <form profile="few" cases="accusative" value="córki" />
+          <form profile="few" cases="instrumental" value="córkami" />
+          <form profile="few" cases="locative" value="córkach" />
+          <form profile="few" cases="vocative" value="córki" />
+          <form profile="many" cases="nominative" value="córek" />
+          <form profile="many" cases="genitive" value="córek" />
+          <form profile="many" cases="dative" value="córkom" />
+          <form profile="many" cases="accusative" value="córek" />
+          <form profile="many" cases="instrumental" value="córkami" />
+          <form profile="many" cases="locative" value="córkach" />
+          <form profile="many" cases="vocative" value="córek" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="córka" genitive="córki" dative="córce" accusative="córkę" instrumental="córką" locative="córce" vocative="córko" />
+    </word>
+    <word id="kodomo" kana="こども" kanji="子供" type="noun" category="person" translation="dziecko">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="dzieci" />
+          <form profile="few" cases="genitive" value="dzieci" />
+          <form profile="few" cases="dative" value="dzieciom" />
+          <form profile="few" cases="accusative" value="dzieci" />
+          <form profile="few" cases="instrumental" value="dziećmi" />
+          <form profile="few" cases="locative" value="dzieciach" />
+          <form profile="few" cases="vocative" value="dzieci" />
+          <form profile="many" cases="nominative" value="dzieci" />
+          <form profile="many" cases="genitive" value="dzieci" />
+          <form profile="many" cases="dative" value="dzieciom" />
+          <form profile="many" cases="accusative" value="dzieci" />
+          <form profile="many" cases="instrumental" value="dziećmi" />
+          <form profile="many" cases="locative" value="dzieciach" />
+          <form profile="many" cases="vocative" value="dzieci" />
+        </source_forms>
+      </counting>
+      <agreement class="neuter" />
+      <cases language="pl" nominative="dziecko" genitive="dziecka" dative="dziecku" accusative="dziecko" instrumental="dzieckiem" locative="dziecku" vocative="dziecko" />
+    </word>
+    <word id="otto" kana="おっと" kanji="夫" type="noun" category="person" translation="mąż">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="mężowie" />
+          <form profile="few" cases="genitive" value="mężów" />
+          <form profile="few" cases="dative" value="mężom" />
+          <form profile="few" cases="accusative" value="mężów" />
+          <form profile="few" cases="instrumental" value="mężami" />
+          <form profile="few" cases="locative" value="mężach" />
+          <form profile="few" cases="vocative" value="mężowie" />
+          <form profile="many" cases="nominative" value="mężów" />
+          <form profile="many" cases="genitive" value="mężów" />
+          <form profile="many" cases="dative" value="mężom" />
+          <form profile="many" cases="accusative" value="mężów" />
+          <form profile="many" cases="instrumental" value="mężami" />
+          <form profile="many" cases="locative" value="mężach" />
+          <form profile="many" cases="vocative" value="mężów" />
+        </source_forms>
+      </counting>
+      <agreement class="masculine_personal" />
+      <cases language="pl" nominative="mąż" genitive="męża" dative="mężowi" accusative="męża" instrumental="mężem" locative="mężu" vocative="mężu" />
+    </word>
+    <word id="tsuma" kana="つま" kanji="妻" type="noun" category="person" translation="żona">
+      <counting classes="person">
+        <source_forms language="pl">
+          <form profile="few" cases="nominative" value="żony" />
+          <form profile="few" cases="genitive" value="żon" />
+          <form profile="few" cases="dative" value="żonom" />
+          <form profile="few" cases="accusative" value="żony" />
+          <form profile="few" cases="instrumental" value="żonami" />
+          <form profile="few" cases="locative" value="żonach" />
+          <form profile="few" cases="vocative" value="żony" />
+          <form profile="many" cases="nominative" value="żon" />
+          <form profile="many" cases="genitive" value="żon" />
+          <form profile="many" cases="dative" value="żonom" />
+          <form profile="many" cases="accusative" value="żon" />
+          <form profile="many" cases="instrumental" value="żonami" />
+          <form profile="many" cases="locative" value="żonach" />
+          <form profile="many" cases="vocative" value="żon" />
+        </source_forms>
+      </counting>
+      <agreement class="feminine" />
+      <cases language="pl" nominative="żona" genitive="żony" dative="żonie" accusative="żonę" instrumental="żoną" locative="żonie" vocative="żono" />
+    </word>
+    <word id="kodomotachi" kana="こどもたち" kanji="子供たち" type="noun" category="person" translation="dzieci">
+      <agreement class="plural_non_masculine_personal" />
+      <cases language="pl" nominative="dzieci" genitive="dzieci" dative="dzieciom" accusative="dzieci" instrumental="dziećmi" locative="dzieciach" vocative="dzieci" />
+    </word>
   </words>
 </dictionary>

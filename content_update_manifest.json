@@ -1,11 +1,11 @@
 {
   "format": 3,
-  "revision": 69,
+  "revision": 70,
   "files": [
     {
       "path": "data/content_revision.json",
-      "sha256": "949ecc9f12fa1f5e45d7d76f6f8c6e51394c93366e913f41634cee417e976919",
-      "url": "content_revision.json?kotomi_sha256=949ecc9f12fa1f5e45d7d76f6f8c6e51394c93366e913f41634cee417e976919"
+      "sha256": "75e7c1173f11dde47e15a47d6bf3dbed22b4ce59feb67f5dbd013154b17d5a31",
+      "url": "content_revision.json?kotomi_sha256=75e7c1173f11dde47e15a47d6bf3dbed22b4ce59feb67f5dbd013154b17d5a31"
     },
     {
       "path": "data/dictionaries/adjectives.xml",
@@ -49,8 +49,8 @@
     },
     {
       "path": "data/dictionaries/nouns.xml",
-      "sha256": "6655759b88b281da0af53990d334c29d41cdb2c2c284b57d98ea5e1cb57ecc4e",
-      "url": "dictionaries/nouns.xml?kotomi_sha256=6655759b88b281da0af53990d334c29d41cdb2c2c284b57d98ea5e1cb57ecc4e"
+      "sha256": "00c711b1bd431e8a6e3e6c4be765bbfc4e34db0140b52851dbc94151f3756ddc",
+      "url": "dictionaries/nouns.xml?kotomi_sha256=00c711b1bd431e8a6e3e6c4be765bbfc4e34db0140b52851dbc94151f3756ddc"
     },
     {
       "path": "data/dictionaries/numbers.xml",
@@ -74,8 +74,8 @@
     },
     {
       "path": "data/lessons/lessons.xml",
-      "sha256": "5116263ee74b4138d5e298f5b1bed89ae72c44d324da9a337c18ec8f4826d05f",
-      "url": "lessons/lessons.xml?kotomi_sha256=5116263ee74b4138d5e298f5b1bed89ae72c44d324da9a337c18ec8f4826d05f"
+      "sha256": "fc00629d231baad3c0b2b82dc72ebfa2c02f1a279530b6a2a6b109b77120a121",
+      "url": "lessons/lessons.xml?kotomi_sha256=fc00629d231baad3c0b2b82dc72ebfa2c02f1a279530b6a2a6b109b77120a121"
     },
     {
       "path": "data/patterns/sentence_maps.xml",

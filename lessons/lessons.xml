@@ -1299,5 +1299,69 @@
         <dictionary_ref dictionary="nouns" word="madogiwazoku" />
       </word>
     </lesson>
+    <lesson id="ola_kanji_family_1" group="Ola" main="Kanji" name="Rodzina 1 — najbliżsi">
+      <word id="ola_kanji_family_1_001">
+        <dictionary_ref dictionary="nouns" word="kazoku" />
+      </word>
+      <word id="ola_kanji_family_1_002">
+        <dictionary_ref dictionary="nouns" word="ryoushin" />
+      </word>
+      <word id="ola_kanji_family_1_003">
+        <dictionary_ref dictionary="nouns" word="chichi" />
+      </word>
+      <word id="ola_kanji_family_1_004">
+        <dictionary_ref dictionary="nouns" word="haha" />
+      </word>
+      <word id="ola_kanji_family_1_005">
+        <dictionary_ref dictionary="nouns" word="otousan" />
+      </word>
+      <word id="ola_kanji_family_1_006">
+        <dictionary_ref dictionary="nouns" word="mother" />
+      </word>
+      <word id="ola_kanji_family_1_007">
+        <dictionary_ref dictionary="nouns" word="ani" />
+      </word>
+      <word id="ola_kanji_family_1_008">
+        <dictionary_ref dictionary="nouns" word="sister" />
+      </word>
+      <word id="ola_kanji_family_1_009">
+        <dictionary_ref dictionary="nouns" word="otouto" />
+      </word>
+      <word id="ola_kanji_family_1_010">
+        <dictionary_ref dictionary="nouns" word="imouto" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_family_2" group="Ola" main="Kanji" name="Rodzina 2 — krewni i dzieci">
+      <word id="ola_kanji_family_2_001">
+        <dictionary_ref dictionary="nouns" word="kyoudai" />
+      </word>
+      <word id="ola_kanji_family_2_002">
+        <dictionary_ref dictionary="nouns" word="shimai" />
+      </word>
+      <word id="ola_kanji_family_2_003">
+        <dictionary_ref dictionary="nouns" word="sofu" />
+      </word>
+      <word id="ola_kanji_family_2_004">
+        <dictionary_ref dictionary="nouns" word="sobo" />
+      </word>
+      <word id="ola_kanji_family_2_005">
+        <dictionary_ref dictionary="nouns" word="musuko" />
+      </word>
+      <word id="ola_kanji_family_2_006">
+        <dictionary_ref dictionary="nouns" word="musume" />
+      </word>
+      <word id="ola_kanji_family_2_007">
+        <dictionary_ref dictionary="nouns" word="kodomo" />
+      </word>
+      <word id="ola_kanji_family_2_008">
+        <dictionary_ref dictionary="nouns" word="kodomotachi" />
+      </word>
+      <word id="ola_kanji_family_2_009">
+        <dictionary_ref dictionary="nouns" word="otto" />
+      </word>
+      <word id="ola_kanji_family_2_010">
+        <dictionary_ref dictionary="nouns" word="tsuma" />
+      </word>
+    </lesson>
   </lessons>
 </lesson_catalog>
