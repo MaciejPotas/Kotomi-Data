@@ -9,7 +9,16 @@
         <common cases="instrumental locative" value="kim" />
       </polish_forms>
     </word>
-    <word id="donata" kana="どなた" asks_for="person" target_categories="person" translation="kto (grzecznie)" />
+    <word id="donata" kana="どなた" asks_for="person" target_categories="person" translation="kto (grzecznie)">
+      <polish_forms>
+        <common cases="nominative" value="kto" />
+        <common cases="genitive" value="kogo" />
+        <common cases="dative" value="komu" />
+        <common cases="accusative" value="kogo" />
+        <common cases="instrumental" value="kim" />
+        <common cases="locative" value="kim" />
+      </polish_forms>
+    </word>
     <word id="nani" kana="なに" asks_for="thing" kanji="何" target_categories="food drink text media vehicle thing abstract" translation="co">
       <polish_forms>
         <common cases="nominative accusative" value="co" />

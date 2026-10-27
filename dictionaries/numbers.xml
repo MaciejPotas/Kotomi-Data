@@ -3,15 +3,22 @@
   <words>
     <word id="one" value="1" kana="いち" kanji="一" romaji="ichi" translation="jeden">
       <polish_forms>
-        <common cases="nominative accusative" value="jeden" />
+        <common cases="nominative accusative vocative" value="jeden" />
         <common cases="genitive" value="jednego" />
         <common cases="instrumental locative" value="jednym" />
-        <override classes="feminine" cases="nominative" value="jedna" />
+        <override classes="feminine" cases="nominative vocative" value="jedna" />
         <override classes="feminine" cases="accusative instrumental" value="jedną" />
         <override classes="feminine" cases="genitive dative locative" value="jednej" />
-        <override classes="neuter" cases="nominative accusative" value="jedno" />
+        <override classes="neuter" cases="nominative accusative vocative" value="jedno" />
         <override classes="masculine_animate masculine_personal" cases="accusative" value="jednego" />
         <common cases="dative" value="jednemu" />
+        <override classes="plural_masculine_personal" cases="nominative" value="jedni" />
+        <override classes="plural_masculine_personal" cases="genitive" value="jednych" />
+        <override classes="plural_masculine_personal" cases="dative" value="jednym" />
+        <override classes="plural_masculine_personal" cases="accusative" value="jednych" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="jednymi" />
+        <override classes="plural_masculine_personal" cases="locative" value="jednych" />
+        <override classes="plural_masculine_personal" cases="vocative" value="jedni" />
       </polish_forms>
     </word>
     <word id="two" value="2" kana="に" kanji="二" romaji="ni" translation="dwa">
@@ -21,6 +28,14 @@
         <common cases="dative" value="dwóm" />
         <common cases="instrumental" value="dwoma" />
         <override classes="feminine" cases="nominative accusative" value="dwie" />
+        <override classes="masculine_personal" cases="nominative" value="dwaj" />
+        <override classes="masculine_personal" cases="accusative" value="dwóch" />
+        <override classes="plural_masculine_personal" cases="nominative" value="dwaj" />
+        <override classes="plural_masculine_personal" cases="accusative" value="dwóch" />
+        <override classes="plural_masculine_personal" cases="genitive" value="dwóch" />
+        <override classes="plural_masculine_personal" cases="locative" value="dwóch" />
+        <override classes="plural_masculine_personal" cases="dative" value="dwóm" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="dwoma" />
       </polish_forms>
     </word>
     <word id="three" value="3" kana="さん" kanji="三" romaji="san" translation="trzy">
@@ -29,6 +44,14 @@
         <common cases="genitive locative" value="trzech" />
         <common cases="dative" value="trzem" />
         <common cases="instrumental" value="trzema" />
+        <override classes="masculine_personal" cases="nominative" value="trzej" />
+        <override classes="masculine_personal" cases="accusative" value="trzech" />
+        <override classes="plural_masculine_personal" cases="nominative" value="trzej" />
+        <override classes="plural_masculine_personal" cases="accusative" value="trzech" />
+        <override classes="plural_masculine_personal" cases="genitive" value="trzech" />
+        <override classes="plural_masculine_personal" cases="locative" value="trzech" />
+        <override classes="plural_masculine_personal" cases="dative" value="trzem" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="trzema" />
       </polish_forms>
     </word>
     <word id="four" value="4" kana="よん" kanji="四" romaji="yon" translation="cztery">
@@ -37,6 +60,14 @@
         <common cases="genitive locative" value="czterech" />
         <common cases="dative" value="czterem" />
         <common cases="instrumental" value="czterema" />
+        <override classes="masculine_personal" cases="nominative" value="czterej" />
+        <override classes="masculine_personal" cases="accusative" value="czterech" />
+        <override classes="plural_masculine_personal" cases="nominative" value="czterej" />
+        <override classes="plural_masculine_personal" cases="accusative" value="czterech" />
+        <override classes="plural_masculine_personal" cases="genitive" value="czterech" />
+        <override classes="plural_masculine_personal" cases="locative" value="czterech" />
+        <override classes="plural_masculine_personal" cases="dative" value="czterem" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="czterema" />
       </polish_forms>
     </word>
     <word id="five" value="5" kana="ご" kanji="五" romaji="go" translation="pięć">
@@ -45,6 +76,14 @@
         <common cases="genitive locative" value="pięciu" />
         <common cases="dative" value="pięciu" />
         <common cases="instrumental" value="pięcioma" />
+        <override classes="masculine_personal" cases="nominative" value="pięciu" />
+        <override classes="masculine_personal" cases="accusative" value="pięciu" />
+        <override classes="plural_masculine_personal" cases="nominative" value="pięciu" />
+        <override classes="plural_masculine_personal" cases="accusative" value="pięciu" />
+        <override classes="plural_masculine_personal" cases="genitive" value="pięciu" />
+        <override classes="plural_masculine_personal" cases="locative" value="pięciu" />
+        <override classes="plural_masculine_personal" cases="dative" value="pięciu" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="pięcioma" />
       </polish_forms>
     </word>
     <word id="six" value="6" kana="ろく" kanji="六" romaji="roku" translation="sześć">
@@ -53,6 +92,14 @@
         <common cases="genitive locative" value="sześciu" />
         <common cases="dative" value="sześciu" />
         <common cases="instrumental" value="sześcioma" />
+        <override classes="masculine_personal" cases="nominative" value="sześciu" />
+        <override classes="masculine_personal" cases="accusative" value="sześciu" />
+        <override classes="plural_masculine_personal" cases="nominative" value="sześciu" />
+        <override classes="plural_masculine_personal" cases="accusative" value="sześciu" />
+        <override classes="plural_masculine_personal" cases="genitive" value="sześciu" />
+        <override classes="plural_masculine_personal" cases="locative" value="sześciu" />
+        <override classes="plural_masculine_personal" cases="dative" value="sześciu" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="sześcioma" />
       </polish_forms>
     </word>
     <word id="seven" value="7" kana="なな" kanji="七" romaji="nana" translation="siedem">
@@ -61,6 +108,14 @@
         <common cases="genitive locative" value="siedmiu" />
         <common cases="dative" value="siedmiu" />
         <common cases="instrumental" value="siedmioma" />
+        <override classes="masculine_personal" cases="nominative" value="siedmiu" />
+        <override classes="masculine_personal" cases="accusative" value="siedmiu" />
+        <override classes="plural_masculine_personal" cases="nominative" value="siedmiu" />
+        <override classes="plural_masculine_personal" cases="accusative" value="siedmiu" />
+        <override classes="plural_masculine_personal" cases="genitive" value="siedmiu" />
+        <override classes="plural_masculine_personal" cases="locative" value="siedmiu" />
+        <override classes="plural_masculine_personal" cases="dative" value="siedmiu" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="siedmioma" />
       </polish_forms>
     </word>
     <word id="eight" value="8" kana="はち" kanji="八" romaji="hachi" translation="osiem">
@@ -69,6 +124,14 @@
         <common cases="genitive locative" value="ośmiu" />
         <common cases="dative" value="ośmiu" />
         <common cases="instrumental" value="ośmioma" />
+        <override classes="masculine_personal" cases="nominative" value="ośmiu" />
+        <override classes="masculine_personal" cases="accusative" value="ośmiu" />
+        <override classes="plural_masculine_personal" cases="nominative" value="ośmiu" />
+        <override classes="plural_masculine_personal" cases="accusative" value="ośmiu" />
+        <override classes="plural_masculine_personal" cases="genitive" value="ośmiu" />
+        <override classes="plural_masculine_personal" cases="locative" value="ośmiu" />
+        <override classes="plural_masculine_personal" cases="dative" value="ośmiu" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="ośmioma" />
       </polish_forms>
     </word>
     <word id="nine" value="9" kana="きゅう" kanji="九" romaji="kyuu" translation="dziewięć">
@@ -77,6 +140,14 @@
         <common cases="genitive locative" value="dziewięciu" />
         <common cases="dative" value="dziewięciu" />
         <common cases="instrumental" value="dziewięcioma" />
+        <override classes="masculine_personal" cases="nominative" value="dziewięciu" />
+        <override classes="masculine_personal" cases="accusative" value="dziewięciu" />
+        <override classes="plural_masculine_personal" cases="nominative" value="dziewięciu" />
+        <override classes="plural_masculine_personal" cases="accusative" value="dziewięciu" />
+        <override classes="plural_masculine_personal" cases="genitive" value="dziewięciu" />
+        <override classes="plural_masculine_personal" cases="locative" value="dziewięciu" />
+        <override classes="plural_masculine_personal" cases="dative" value="dziewięciu" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="dziewięcioma" />
       </polish_forms>
     </word>
     <word id="ten" value="10" kana="じゅう" kanji="十" romaji="juu" translation="dziesięć">
@@ -85,6 +156,14 @@
         <common cases="genitive locative" value="dziesięciu" />
         <common cases="dative" value="dziesięciu" />
         <common cases="instrumental" value="dziesięcioma" />
+        <override classes="masculine_personal" cases="nominative" value="dziesięciu" />
+        <override classes="masculine_personal" cases="accusative" value="dziesięciu" />
+        <override classes="plural_masculine_personal" cases="nominative" value="dziesięciu" />
+        <override classes="plural_masculine_personal" cases="accusative" value="dziesięciu" />
+        <override classes="plural_masculine_personal" cases="genitive" value="dziesięciu" />
+        <override classes="plural_masculine_personal" cases="locative" value="dziesięciu" />
+        <override classes="plural_masculine_personal" cases="dative" value="dziesięciu" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="dziesięcioma" />
       </polish_forms>
     </word>
     <word id="twenty" value="20" kana="にじゅう" kanji="二十" romaji="nijuu" translation="dwadzieścia">
@@ -93,6 +172,14 @@
         <common value="dwudziestu" cases="genitive locative" />
         <common cases="dative" value="dwudziestu" />
         <common cases="instrumental" value="dwudziestoma" />
+        <override classes="masculine_personal" cases="nominative" value="dwudziestu" />
+        <override classes="masculine_personal" cases="accusative" value="dwudziestu" />
+        <override classes="plural_masculine_personal" cases="nominative" value="dwudziestu" />
+        <override classes="plural_masculine_personal" cases="accusative" value="dwudziestu" />
+        <override classes="plural_masculine_personal" cases="genitive" value="dwudziestu" />
+        <override classes="plural_masculine_personal" cases="locative" value="dwudziestu" />
+        <override classes="plural_masculine_personal" cases="dative" value="dwudziestu" />
+        <override classes="plural_masculine_personal" cases="instrumental" value="dwudziestoma" />
       </polish_forms>
     </word>
   </words>

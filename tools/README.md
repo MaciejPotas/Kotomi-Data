@@ -296,6 +296,13 @@ Run `python tools/validate_target_c32.py --kotomi ../Kotomi --output docs/valida
 
 `../run_tests.bat` runs the test suite. `../run_data_audit.bat` runs `diagnostics/data_audit.py` against the Kotomi engine. See [Polski](../docs/pl/developer_tools.md) / [English](../docs/eng/developer_tools.md) for filters, JSON, exit codes and optional-form interpretation.
 
+The JSON inventory also exposes `verb_agreement`: stored/missing classes for
+every form, using the application's language capabilities. The text report
+separates fully populated agreement matrices from checked-contract completeness.
+An intentionally impersonal or contextual form must not be filled mechanically.
+Content 69 review and per-form decisions: [Polski](../docs/pl/polish_agreement_audit.md)
+/ [English](../docs/eng/polish_agreement_audit.md).
+
 
 ## Lesson 26 release acceptance
 

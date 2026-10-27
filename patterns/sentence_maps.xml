@@ -303,8 +303,8 @@
       <answer>{context[pool:none].kana}わたしが{verb@action[role:location, feature:intransitive, form]}{noun@location}は{interrogative[id:dou]}{copula[form:past_polite]}か。</answer>
     </sentence_pattern>
     <sentence_pattern id="Przydawki / Miejsce zamieszkania" category="przydawki">
-      <question>Gdzie znajduje się {noun@target[id:tokoro, case:nominative]}, w {relative[agree:@target, case:locative].translation} {verb@action[role:target, form:progressive].translation}?</question>
-      <answer>{context[pool:none].kana}わたしが{verb@action[role:target, form:progressive]}{noun@target}は{interrogative[id:doko]}ですか。</answer>
+      <question>Gdzie znajduje się {noun@target[id:tokoro, case:nominative]}, w {relative[agree:@target, case:locative].translation} {verb@action[id:sumu, role:target, form:progressive].translation}?</question>
+      <answer>{context[pool:none].kana}わたしが{verb@action[id:sumu, role:target, form:progressive]}{noun@target}は{interrogative[id:doko]}ですか。</answer>
     </sentence_pattern>
     <sentence_pattern id="Przydawki / Dzień czynności" category="przydawki" forms="dictionary plain_negative past_plain past_negative_plain">
       <question>To {noun@date[category:weekday, case:nominative]} jest {noun@day[id:hi, case:instrumental]}, w {relative[agree:@day, case:locative].translation} {noun@subject[category:person, case:nominative]} {verb@action[role:subject, form, agree:@subject].translation} {noun@destination[relation:destination].phrase}.</question>
@@ -319,8 +319,8 @@
       <answer>{context[pool:none].kana}わたしがいちばん{verb@action[id:au, role:target, form:desiderative]}{noun@target}は{interrogative[id:dare]}ですか。</answer>
     </sentence_pattern>
     <sentence_pattern id="Przydawki / Pragnienie podróży" category="przydawki">
-      <question>Czy {noun@destination[id:kuni, case:nominative]}, do {relative[agree:@destination, case:genitive].translation} najbardziej {verb@action[role:destination, form:desiderative].translation}, to {noun@identity[category:country, case:nominative]}?</question>
-      <answer>{context[pool:none].kana}わたしがいちばん{verb@action[role:destination, form:desiderative]}{noun@destination}は{noun@identity}ですか。</answer>
+      <question>Czy {noun@destination[id:kuni, case:nominative]}, do {relative[agree:@destination, case:genitive].translation} najbardziej {verb@action[role:destination, feature:intransitive, form:desiderative].translation}, to {noun@identity[category:country, case:nominative]}?</question>
+      <answer>{context[pool:none].kana}わたしがいちばん{verb@action[role:destination, feature:intransitive, form:desiderative]}{noun@destination}は{noun@identity}ですか。</answer>
     </sentence_pattern>
     <sentence_pattern id="Przydawki / Upodobanie" category="przydawki">
       <question>Która z tych rzeczy to {noun@item[category:purchasable, case:nominative]}, {relative[agree:@item, case:accusative].translation} najbardziej lubię?</question>

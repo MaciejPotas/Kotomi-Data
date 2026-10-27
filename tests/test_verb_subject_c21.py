@@ -188,7 +188,7 @@ class DeploymentTests(unittest.TestCase):
         # Historic C2 fixture contract still rejects extra classes by default.
         with self.assertRaisesRegex(ValueError, 'changed agreement map'):
             self.validate()
-        kwargs = {'allow_plural_extensions': True}
+        kwargs = {'allowed_extension_classes': ('plural_masculine_personal', 'plural_non_masculine_personal')}
         self.assertEqual(
             validate_deployment(self.root, self.report, self.selected, **kwargs), 9)
         # Reject changing an old translation, even when plural additions are allowed.
@@ -201,6 +201,10 @@ class DeploymentTests(unittest.TestCase):
         added.set('class', 'neuter')
         with self.assertRaisesRegex(ValueError, 'changed agreement map'):
             validate_deployment(self.root, self.report, self.selected, **kwargs)
+        # A separately reviewed singular extension is permitted without
+        # authorizing changes to any existing value.
+        extended = {'allowed_extension_classes': (*kwargs['allowed_extension_classes'], 'neuter')}
+        self.assertEqual(validate_deployment(self.root, self.report, self.selected, **extended), 9)
         added.set('class', 'plural_non_masculine_personal')
         added.set('value', '')
         with self.assertRaisesRegex(ValueError, 'changed agreement map'):
