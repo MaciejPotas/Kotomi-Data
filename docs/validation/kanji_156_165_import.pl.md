@@ -36,7 +36,7 @@ Data analizy: 2026-10-28. Materiały: *新漢字16-1（156–160）* i *新漢�
 | 163 | 祖国 | そこく | ojczyzna | `sokoku` | `nouns` / country | Dodane | 7 przypadków | Ojczyzna jako kraj pochodzenia/przynależności. |
 | 163 | 祖先 | そせん | przodek | `sosen` | `nouns` / person | Dodane | 7 + few/many | Synonim 先祖, możliwa kolizja w quizach. |
 | 163 | 先祖 | せんぞ | przodek | `senzo` | `nouns` / person | Dodane | 7 + few/many | Synonim 祖先, inne słowo/odczyt, bez sztucznego duplikowania ID. |
-| 164 | 家族 | かぞく | rodzina | `kazoku` | `nouns` / abstract | Dodane | 7 przypadków | Jednostka społeczna, nie pojedynczy człowiek; brak kategorii kolektywnej. |
+| 164 | 家族 | かぞく | rodzina | `kazoku` | `nouns` / person | Dodane | 7 przypadków | Tymczasowo `person` jako zbiorowy wykonawca czynności; polska odmiana żeńska w liczbie pojedynczej bez zmian. |
 | 164 | 一族 | いちぞく | cała rodzina, klan | `ichizoku` | `nouns` / abstract | Dodane | 7 przypadków | Klan lub rozbudowana wspólnota rodowa. |
 | 164 | 民族 | みんぞく | rasa, naród, nacja | `minzoku` | `nouns` / abstract | Dodane | 7 przypadków | Przyjęto «grupa etniczna», bez utożsamiania z rasą biologiczną. |
 | 164 | 種族 | しゅぞく | rasa, plemię | `shuzoku` | `nouns` / abstract | Dodane | 7 przypadków | «Plemię»; biologiczna klasyfikacja wymaga odrębnego sensu. |
@@ -48,7 +48,7 @@ Data analizy: 2026-10-28. Materiały: *新漢字16-1（156–160）* i *新漢�
 
 ## B. Decyzje semantyczne i gramatyczne
 
-1. **Osoby w liczbie mnogiej i zbiorowości.** `父兄`, `姉妹`, `両親`, `祖父母` oznaczają konkretne osoby, dlatego mają `person` i niezależne klasy polskiej liczby mnogiej. `家族`, `一族`, `民族`, `種族`, `兄弟` nadal mają `abstract` jako grupy lub rzeczownik zbiorowy, z ryzykiem niewykorzystania naturalnych ról dla grup.
+1. **Osoby w liczbie mnogiej i zbiorowości.** `父兄`, `姉妹`, `両親`, `祖父母` oznaczają konkretne osoby, dlatego mają `person` i niezależne klasy polskiej liczby mnogiej. `家族` tymczasowo ma `person`, żeby dopasowywać naturalne role podmiotu; `一族`, `民族`, `種族` i `兄弟` nadal mają `abstract` jako grupy lub rzeczownik zbiorowy, z ryzykiem niewykorzystania naturalnych ról dla grup.
 2. **Liczba mnoga.** `父兄`, `姉妹`, `両親` i `祖父母` otrzymały poprawne polskie realizacje liczby mnogiej oraz stosowną klasę `plural_masculine_personal` albo `plural_non_masculine_personal`. Nie wstawiono im fikcyjnej liczby pojedynczej ani profilów liczenia. `兄弟` ma polski zbiorowy rzeczownik `rodzeństwo`, a nie obowiązkowe `bracia`.
 3. **Kategoria cielesna.** `親指` ma `body_part`, selekcjonowalne dziecko `concrete`, dodane deklaratywnie na branchu Kotomi. Nie dziedziczy po `purchasable` ani `thing`. Licznik `long_object` odpowiada 本 dla palców. Kategoria jest dostępna tylko w wersji Kotomi zawierającej nową gramatykę.
 4. **Czasownik.** `主張する` jest czasownikiem `irregular` typu suru. Ma naturalny `subject` z kategorią `person`; nie otrzymał wymuszonego dopełnienia `accepts="*"`. Istniejący wzorzec `Cytowana opinia` obsługuje cytowane twierdzenia przez cechę `reporting`, dlatego dodano ją bez zmian silnika. Obsługa dowolnego zdania podrzędnego pozostaje osobnym zagadnieniem. W tym wpisie są 17 form japońskich i realizacje uzgodnienia dla 11 form, w siedmiu klasach.
@@ -127,7 +127,7 @@ Kontrola reguł kategorii (nie pełnego generowania): sawaru + oyayubi oraz akai
 
 Indywidualnie oceniono fukei, ryoushin, sofubo i shimai: oznaczają faktyczne osoby, więc semantyczne person jest właściwe. Ich klasy uzgodnienia pozostają odpowiednio plural_masculine_personal (fukei, ryoushin, sofubo) oraz plural_non_masculine_personal (shimai). Pozwala to m.in. na role podmiotowe iku i hanasu, jak również na spotykanie przez au. Przed zmianą abstract takie role były wykluczane. Nie dodawano sztucznej liczby pojedynczej.
 
-Kyoudai oznacza w polskich danych rodzeństwo, rzeczownik zbiorowy w liczbie pojedynczej. Kazoku, ichizoku, minzoku i shuzoku oznaczają grupy społeczne, pozostają abstract. Kategoria group_of_people sama nie rozwiązałaby problemu: jeśli nie dziedziczy person, wykluczy naturalne czasowniki, a jeśli dziedziczy person, nadal dopuszcza jednostkowe wzorce pytające o wiek. Pozostaje potrzeba osobnego kontraktu semantycznej liczebności, bez zmian silnika w tym zadaniu.
+Kyoudai oznacza w polskich danych rodzeństwo, rzeczownik zbiorowy w liczbie pojedynczej. Kazoku tymczasowo ma person jako zbiorowy uczestnik czynności; ichizoku, minzoku i shuzoku pozostają abstract. Kategoria group_of_people sama nie rozwiązałaby problemu: jeśli nie dziedziczy person, wykluczy naturalne czasowniki, a jeśli dziedziczy person, nadal dopuszcza jednostkowe wzorce pytające o wiek. Pozostaje potrzeba osobnego kontraktu semantycznej liczebności, bez zmian silnika w tym zadaniu.
 
 ### shuyou, shitashii i inugoya
 
@@ -177,3 +177,9 @@ Added the following reviewed exceptions to that contract, not fake XML forms:
 
 This is an adjustment to an **existing lexical coverage contract**, not
 removal of the coverage test or relaxation for all nouns/adjectives.
+
+### Tymczasowa semantyka `kazoku` (家族)
+
+Przed merge ustawiono `kazoku` jako `person` zamiast `abstract`, aby rodzina mogła występować jako zbiorowy podmiot czynności (np. w roli podmiotu `shuchousuru`) oraz pasować do `shitashii`. Polska klasa `feminine` i siedem przypadków pozostają niezmienione; kategoria semantyczna nie oznacza liczby pojedynczej japońskiego referenta.
+
+**Ograniczenie:** `person` nie dziedziczy `abstract`, dlatego naturalne 家族を持つ („mieć rodzinę”) nie będzie zgodne z istniejącym filtrem dopełnienia `motsu`, który akceptuje `abstract`, ale nie `person`. Nie poszerzano globalnie ról `abstract` o `person`, bo dopuściłoby to wiele innych niepożądanych kombinacji. Docelowo potrzebna jest analiza kategorii zbiorowości osób; bez zmian silnika ani DSL.

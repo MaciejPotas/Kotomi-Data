@@ -1643,7 +1643,7 @@
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="przodek" genitive="przodka" dative="przodkowi" accusative="przodka" instrumental="przodkiem" locative="przodku" vocative="przodku" />
     </word>
-    <word id="kazoku" kana="かぞく" kanji="家族" type="noun" category="abstract" translation="rodzina">
+    <word id="kazoku" kana="かぞく" kanji="家族" type="noun" category="person" translation="rodzina">
       <agreement class="feminine" />
       <cases language="pl" nominative="rodzina" genitive="rodziny" dative="rodzinie" accusative="rodzinę" instrumental="rodziną" locative="rodzinie" vocative="rodzino" />
     </word>
