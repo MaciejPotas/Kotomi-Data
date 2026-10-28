@@ -16696,5 +16696,139 @@
         </form>
       </forms>
     </word>
+    <word id="shuchousuru" kana="しゅちょうする" kanji="主張する" type="irregular" ending="suru" translation="twierdzić">
+      <usage>
+        <role ref="subject" accepts="person" />
+      </usage>
+      <forms>
+        <form ref="dictionary" kana="しゅちょうする" translation="twierdzę" kanji="主張する">
+          <agreement_translations>
+            <translation class="masculine_personal" value="twierdzi" />
+            <translation class="masculine_animate" value="twierdzi" />
+            <translation class="masculine_inanimate" value="twierdzi" />
+            <translation class="feminine" value="twierdzi" />
+            <translation class="neuter" value="twierdzi" />
+            <translation class="plural_masculine_personal" value="twierdzą" />
+            <translation class="plural_non_masculine_personal" value="twierdzą" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_nonpast" kana="しゅちょうします" translation="twierdzę" kanji="主張します">
+          <agreement_translations>
+            <translation class="masculine_personal" value="twierdzi" />
+            <translation class="masculine_animate" value="twierdzi" />
+            <translation class="masculine_inanimate" value="twierdzi" />
+            <translation class="feminine" value="twierdzi" />
+            <translation class="neuter" value="twierdzi" />
+            <translation class="plural_masculine_personal" value="twierdzą" />
+            <translation class="plural_non_masculine_personal" value="twierdzą" />
+          </agreement_translations>
+        </form>
+        <form ref="plain_negative" kana="しゅちょうしない" translation="nie twierdzę" kanji="主張しない">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie twierdzi" />
+            <translation class="masculine_animate" value="nie twierdzi" />
+            <translation class="masculine_inanimate" value="nie twierdzi" />
+            <translation class="feminine" value="nie twierdzi" />
+            <translation class="neuter" value="nie twierdzi" />
+            <translation class="plural_masculine_personal" value="nie twierdzą" />
+            <translation class="plural_non_masculine_personal" value="nie twierdzą" />
+          </agreement_translations>
+        </form>
+        <form ref="polite_negative" kana="しゅちょうしません" translation="nie twierdzę" kanji="主張しません">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie twierdzi" />
+            <translation class="masculine_animate" value="nie twierdzi" />
+            <translation class="masculine_inanimate" value="nie twierdzi" />
+            <translation class="feminine" value="nie twierdzi" />
+            <translation class="neuter" value="nie twierdzi" />
+            <translation class="plural_masculine_personal" value="nie twierdzą" />
+            <translation class="plural_non_masculine_personal" value="nie twierdzą" />
+          </agreement_translations>
+        </form>
+        <form ref="past_plain" kana="しゅちょうした" translation="twierdziłem" kanji="主張した">
+          <agreement_translations>
+            <translation class="masculine_personal" value="twierdził" />
+            <translation class="masculine_animate" value="twierdził" />
+            <translation class="masculine_inanimate" value="twierdził" />
+            <translation class="feminine" value="twierdziła" />
+            <translation class="neuter" value="twierdziło" />
+            <translation class="plural_masculine_personal" value="twierdzili" />
+            <translation class="plural_non_masculine_personal" value="twierdziły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_polite" kana="しゅちょうしました" translation="twierdziłem" kanji="主張しました">
+          <agreement_translations>
+            <translation class="masculine_personal" value="twierdził" />
+            <translation class="masculine_animate" value="twierdził" />
+            <translation class="masculine_inanimate" value="twierdził" />
+            <translation class="feminine" value="twierdziła" />
+            <translation class="neuter" value="twierdziło" />
+            <translation class="plural_masculine_personal" value="twierdzili" />
+            <translation class="plural_non_masculine_personal" value="twierdziły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_plain" kana="しゅちょうしなかった" translation="nie twierdziłem" kanji="主張しなかった">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie twierdził" />
+            <translation class="masculine_animate" value="nie twierdził" />
+            <translation class="masculine_inanimate" value="nie twierdził" />
+            <translation class="feminine" value="nie twierdziła" />
+            <translation class="neuter" value="nie twierdziło" />
+            <translation class="plural_masculine_personal" value="nie twierdzili" />
+            <translation class="plural_non_masculine_personal" value="nie twierdziły" />
+          </agreement_translations>
+        </form>
+        <form ref="past_negative_polite" kana="しゅちょうしませんでした" translation="nie twierdziłem" kanji="主張しませんでした">
+          <agreement_translations>
+            <translation class="masculine_personal" value="nie twierdził" />
+            <translation class="masculine_animate" value="nie twierdził" />
+            <translation class="masculine_inanimate" value="nie twierdził" />
+            <translation class="feminine" value="nie twierdziła" />
+            <translation class="neuter" value="nie twierdziło" />
+            <translation class="plural_masculine_personal" value="nie twierdzili" />
+            <translation class="plural_non_masculine_personal" value="nie twierdziły" />
+          </agreement_translations>
+        </form>
+        <form ref="te_form" kana="しゅちょうして" translation="twierdząc" kanji="主張して" />
+        <form ref="potential" kana="しゅちょうできる" translation="móc twierdzić" kanji="主張できる">
+          <agreement_translations>
+            <translation class="masculine_personal" value="może twierdzić" />
+            <translation class="masculine_animate" value="może twierdzić" />
+            <translation class="masculine_inanimate" value="może twierdzić" />
+            <translation class="feminine" value="może twierdzić" />
+            <translation class="neuter" value="może twierdzić" />
+            <translation class="plural_masculine_personal" value="mogą twierdzić" />
+            <translation class="plural_non_masculine_personal" value="mogą twierdzić" />
+          </agreement_translations>
+        </form>
+        <form ref="passive" kana="しゅちょうされる" translation="jest utrzymywane" kanji="主張される" />
+        <form ref="causative" kana="しゅちょうさせる" translation="kazać twierdzić" kanji="主張させる" />
+        <form ref="tara" kana="しゅちょうしたら" translation="jeśli twierdził" kanji="主張したら" />
+        <form ref="volitional" kana="しゅちょうしよう" translation="twierdźmy" kanji="主張しよう" />
+        <form ref="imperative" kana="しゅちょうしろ" translation="twierdź" kanji="主張しろ" />
+        <form ref="progressive" kana="しゅちょうしている" translation="twierdzę" kanji="主張している">
+          <agreement_translations>
+            <translation class="masculine_personal" value="twierdzi" />
+            <translation class="masculine_animate" value="twierdzi" />
+            <translation class="masculine_inanimate" value="twierdzi" />
+            <translation class="feminine" value="twierdzi" />
+            <translation class="neuter" value="twierdzi" />
+            <translation class="plural_masculine_personal" value="twierdzą" />
+            <translation class="plural_non_masculine_personal" value="twierdzą" />
+          </agreement_translations>
+        </form>
+        <form ref="desiderative" kana="しゅちょうしたい" translation="chcę twierdzić" kanji="主張したい">
+          <agreement_translations>
+            <translation class="masculine_personal" value="chce twierdzić" />
+            <translation class="masculine_animate" value="chce twierdzić" />
+            <translation class="masculine_inanimate" value="chce twierdzić" />
+            <translation class="feminine" value="chce twierdzić" />
+            <translation class="neuter" value="chce twierdzić" />
+            <translation class="plural_masculine_personal" value="chcą twierdzić" />
+            <translation class="plural_non_masculine_personal" value="chcą twierdzić" />
+          </agreement_translations>
+        </form>
+      </forms>
+    </word>
   </words>
 </dictionary>

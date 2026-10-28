@@ -818,6 +818,115 @@
       <local_word id="ola_kanji_151_155_012" translation="brać, wziąć, zdjąć" kana="とる" kanji="取る" romaji="toru" example="彼は数学で満点を取った。" />
       <local_word id="ola_kanji_151_155_013" translation="zdjąć, odłączyć, zdemontować" kana="とりはずす" kanji="取り外す" romaji="torihazusu" example="カーテンを取りはずして洗濯に出しなさい。" />
     </lesson>
+    <lesson id="ola_kanji_156_160" group="Ola" main="Kanji" name="156-160">
+      <word id="ola_kanji_156_160_001">
+        <dictionary_ref dictionary="nouns" word="shiyou" />
+      </word>
+      <word id="ola_kanji_156_160_002">
+        <dictionary_ref dictionary="nouns" word="ani" />
+      </word>
+      <word id="ola_kanji_156_160_003">
+        <dictionary_ref dictionary="nouns" word="oniisan" />
+      </word>
+      <word id="ola_kanji_156_160_004">
+        <dictionary_ref dictionary="nouns" word="fukei" />
+      </word>
+      <word id="ola_kanji_156_160_005">
+        <dictionary_ref dictionary="nouns" word="otouto" />
+      </word>
+      <word id="ola_kanji_156_160_006">
+        <dictionary_ref dictionary="nouns" word="kyoudai" />
+      </word>
+      <word id="ola_kanji_156_160_007">
+        <dictionary_ref dictionary="nouns" word="sister" />
+      </word>
+      <word id="ola_kanji_156_160_008">
+        <dictionary_ref dictionary="nouns" word="oneesan" />
+      </word>
+      <word id="ola_kanji_156_160_009">
+        <dictionary_ref dictionary="nouns" word="imouto" />
+      </word>
+      <word id="ola_kanji_156_160_010">
+        <dictionary_ref dictionary="nouns" word="shimai" />
+      </word>
+    </lesson>
+    <lesson id="ola_kanji_161_165" group="Ola" main="Kanji" name="161-165">
+      <word id="ola_kanji_161_165_001">
+        <dictionary_ref dictionary="nouns" word="oya" />
+      </word>
+      <word id="ola_kanji_161_165_002">
+        <dictionary_ref dictionary="nouns" word="oyayubi" />
+      </word>
+      <word id="ola_kanji_161_165_003">
+        <dictionary_ref dictionary="adjectives" word="shitashii" />
+      </word>
+      <word id="ola_kanji_161_165_004">
+        <dictionary_ref dictionary="nouns" word="ryoushin" />
+      </word>
+      <word id="ola_kanji_161_165_005">
+        <dictionary_ref dictionary="nouns" word="shinyuu" />
+      </word>
+      <word id="ola_kanji_161_165_006">
+        <dictionary_ref dictionary="nouns" word="nikushin" />
+      </word>
+      <word id="ola_kanji_161_165_007">
+        <dictionary_ref dictionary="nouns" word="aruji" />
+      </word>
+      <word id="ola_kanji_161_165_008">
+        <dictionary_ref dictionary="nouns" word="shujin_husband" />
+      </word>
+      <word id="ola_kanji_161_165_009">
+        <dictionary_ref dictionary="nouns" word="shugo" />
+      </word>
+      <word id="ola_kanji_161_165_010">
+        <dictionary_ref dictionary="verbs" word="shuchousuru" />
+      </word>
+      <word id="ola_kanji_161_165_011">
+        <dictionary_ref dictionary="nouns" word="sofu" />
+      </word>
+      <word id="ola_kanji_161_165_012">
+        <dictionary_ref dictionary="nouns" word="sobo" />
+      </word>
+      <word id="ola_kanji_161_165_013">
+        <dictionary_ref dictionary="nouns" word="sofubo" />
+      </word>
+      <word id="ola_kanji_161_165_014">
+        <dictionary_ref dictionary="nouns" word="sokoku" />
+      </word>
+      <word id="ola_kanji_161_165_015">
+        <dictionary_ref dictionary="nouns" word="sosen" />
+      </word>
+      <word id="ola_kanji_161_165_016">
+        <dictionary_ref dictionary="nouns" word="senzo" />
+      </word>
+      <word id="ola_kanji_161_165_017">
+        <dictionary_ref dictionary="nouns" word="kazoku" />
+      </word>
+      <word id="ola_kanji_161_165_018">
+        <dictionary_ref dictionary="nouns" word="ichizoku" />
+      </word>
+      <word id="ola_kanji_161_165_019">
+        <dictionary_ref dictionary="nouns" word="minzoku" />
+      </word>
+      <word id="ola_kanji_161_165_020">
+        <dictionary_ref dictionary="nouns" word="shuzoku" />
+      </word>
+      <word id="ola_kanji_161_165_021">
+        <dictionary_ref dictionary="nouns" word="inu" />
+      </word>
+      <word id="ola_kanji_161_165_022">
+        <dictionary_ref dictionary="nouns" word="koinu" />
+      </word>
+      <word id="ola_kanji_161_165_023">
+        <dictionary_ref dictionary="nouns" word="inugoya" />
+      </word>
+      <word id="ola_kanji_161_165_024">
+        <dictionary_ref dictionary="nouns" word="norainu" />
+      </word>
+      <word id="ola_kanji_161_165_025">
+        <dictionary_ref dictionary="nouns" word="yaken" />
+      </word>
+    </lesson>
     <lesson id="thematic_exchange" group="Tematyczne" main="Relacje i wymiana" name="Dawać, otrzymywać i pożyczać">
       <word id="thematic_verbs_ageru_give">
         <dictionary_ref dictionary="verbs" word="ageru_give" />
