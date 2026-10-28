@@ -11,7 +11,7 @@ Data analizy: 2026-10-28. Materiały: *新漢字16-1（156–160）* i *新漢�
 | 156 | 私用 | しよう | prywatny użytek; prywatna sprawa | `shiyou` | `nouns` / abstract | Dodane | 7 przypadków | Przyjęto sens «prywatny użytek»; drugie znaczenie do osobnej analizy. |
 | 157 | 兄 | あに | starszy brat (własny) | `ani` | `nouns` / person | Dodane | 7 + few/many | Odniesienie do własnej rodziny jest pragmatyczne. |
 | 157 | お兄さん | おにいさん | starszy brat (czyjś) | `oniisan` | `nouns` / person | Dodane | 7 + few/many | Honorificzne określenie; polski przekład koliduje z 兄. |
-| 157 | 父兄 | ふけい | rodzice, opiekunowie | `fukei` | `nouns` / person | Dodane | 7 (pluralia) | Kontekst szkolny; słowo tradycyjne, preferuje się 保護者. |
+| 157 | 父兄 | ふけい | rodzice, opiekunowie | `fukei` | `nouns` / abstract | Dodane | 7 (pluralia) | Kontekst szkolny; słowo tradycyjne, preferuje się 保護者. |
 | 158 | 弟 | おとうと | młodszy brat | `otouto` | `nouns` / person | Dodane | 7 + few/many | Relacja wieku zakodowana w polskich przypadkach. |
 | 158 | 兄弟 | きょうだい | rodzeństwo; bracia | `kyoudai` | `nouns` / abstract | Dodane | 7 (zbiorowe) | Wybrano neutralne rodzeństwo, nie mylono grupy z osobą. |
 | 159 | 姉 | あね | starsza siostra (własna) | `sister` | `nouns` / person | Uzupełnione | 7 + few/many | Korekta wcześniejszego, zbyt ogólnego «siostra». |
@@ -19,7 +19,7 @@ Data analizy: 2026-10-28. Materiały: *新漢字16-1（156–160）* i *新漢�
 | 160 | 妹 | いもうと | młodsza siostra | `imouto` | `nouns` / person | Dodane | 7 + few/many | Rozróżnienie starsza/młodsza utrzymane. |
 | 160 | 姉妹 | しまい | siostry | `shimai` | `nouns` / abstract | Dodane | 7 (liczba mnoga) | Zbiorowa grupa żeńska, brak jednostkowego licznika. |
 | 161 | 親 | おや | rodzic | `oya` | `nouns` / person | Dodane | 7 + few/many | Japoński rodzic nie wymusza płci, polski rodzic ma rodzaj gramatyczny. |
-| 161 | 親指 | おやゆび | kciuk | `oyayubi` | `nouns` / concrete | Dodane | 7 + few/many | Brak kategorii «część ciała»; użyto szerokiego konkretu i licznika 本. |
+| 161 | 親指 | おやゆび | kciuk | `oyayubi` | `nouns` / concrete | Blokada walidacji | 7 + few/many | Brak kategorii «część ciała»; użyto szerokiego konkretu i licznika 本. |
 | 161 | 親しい | したしい | bliski, dobrze znany | `shitashii` | `adjectives` / describes: person | Dodane | 15 japońskich + PL | Przymiotnik i, bliski relacyjnie, nie bez ograniczeń dla wszystkich rzeczy. |
 | 161 | 両親 | りょうしん | rodzice | `ryoushin` | `nouns` / abstract | Dodane | 7 (liczba mnoga) | Zbiorowość rodziców, nie dowolna pojedyncza osoba. |
 | 161 | 親友 | しんゆう | przyjaciel | `shinyuu` | `nouns` / person | Dodane | 7 + few/many | Bliski przyjaciel, nie każdy znajomy. |
@@ -27,9 +27,9 @@ Data analizy: 2026-10-28. Materiały: *新漢字16-1（156–160）* i *新漢�
 | 162 | 主 | あるじ | głowa rodu | `aruji` | `nouns` / person | Dodane | 7 + few/many | Sens gospodarz/pan domu; inne użycia kontekstowe. |
 | 162 | 主な | おもな | główny | brak | nieobsługiwane | Wymaga decyzji | Brak | Funkcja wyłącznie przydawkowa, nie regularna odmiana na-adjective. |
 | 162 | 主人 | しゅじん | mąż; właściciel; pan domu | `shujin_husband + shujin_owner` | `nouns` / person | Dodane (2 sensy) | 7 + few/many | Rozdzielono męża i właściciela. Lekcja referuje sens «mąż». |
-| 162 | 主要な | しゅような | główny | `shuyou` | `adjectives` / describes: abstract concrete | Dodane, blokada lekcji | 11 japońskich + PL | Lemma 主要 jest poprawna, ale dictionary_ref nie wybiera 主要な. |
+| 162 | 主要な | しゅような | główny | `shuyou` | `adjectives` / describes: abstract | Dodane, blokada lekcji | 11 japońskich + PL | Lemma 主要 jest poprawna, ale dictionary_ref nie wybiera 主要な. |
 | 162 | 主語 | しゅご | podmiot | `shugo` | `nouns` / abstract | Dodane | 7 + few/many | Pojęcie gramatyczne, nie człowiek. |
-| 162 | 主張する | しゅちょうする | twierdzić, upierać się | `shuchousuru` | `verbs` / subject: person | Dodane | 17 japońskich + uzgodnienia | Składnia zdań podrzędnych (〜と) nieobsługiwana przez proste role. |
+| 162 | 主張する | しゅちょうする | twierdzić, upierać się | `shuchousuru` | `verbs` / subject: person; reporting | Dodane | 17 japońskich + uzgodnienia | Składnia zdań podrzędnych (〜と) nieobsługiwana przez proste role. |
 | 163 | 祖父 | そふ | dziadek | `sofu` | `nouns` / person | Dodane | 7 + few/many | Wpis osobowy. |
 | 163 | 祖母 | そぼ | babcia | `sobo` | `nouns` / person | Dodane | 7 + few/many | Wpis osobowy. |
 | 163 | 祖父母 | そふぼ | dziadkowie | `sofubo` | `nouns` / abstract | Dodane | 7 (liczba mnoga) | Zbiorowa para/grupa dziadków. |
@@ -50,13 +50,13 @@ Data analizy: 2026-10-28. Materiały: *新漢字16-1（156–160）* i *新漢�
 
 1. **Grupy osób kontra pojedynczy człowiek.** `家族`, `一族`, `民族`, `種族`, `兄弟`, `姉妹`, `両親` i `祖父母` zaklasyfikowano ostrożnie jako `abstract`, ponieważ nie istnieje właściwa kategoria `group_of_people`. Słowa opisujące jednostkowych krewnych mają kategorię `person`. Nie poszerzano kategorii tylko po to, by pasowały do wzorców.
 2. **Liczba mnoga.** `父兄`, `姉妹`, `両親` i `祖父母` otrzymały poprawne polskie realizacje liczby mnogiej oraz stosowną klasę `plural_masculine_personal` albo `plural_non_masculine_personal`. Nie wstawiono im fikcyjnej liczby pojedynczej ani profilów liczenia. `兄弟` ma polski zbiorowy rzeczownik `rodzeństwo`, a nie obowiązkowe `bracia`.
-3. **Kategoria cielesna.** `親指` nie mieści się w obecnym drzewie bez zniekształcenia jako przedmiot handlowy. Wpis używa `concrete`, a nie `thing` (poddrzewo `purchasable`). Licznik `long_object` odpowiada japońskiemu 本 dla palców. `concrete` jest obecnie nieselekcjonowalną kategorią ogólną, co ogranicza wygodę edycji i wymaga sprawdzenia zachowania UI.
-4. **Czasownik.** `主張する` jest czasownikiem `irregular` typu suru. Ma naturalny `subject` z kategorią `person`; nie otrzymał wymuszonego dopełnienia `accepts="*"`. Ważne znaczenie składniowe `〜と主張する` ("twierdzić, że...") wymaga zdania podrzędnego i nie jest modelowane przez zwykłe `object`. W tym wpisie są 17 form japońskich i realizacje uzgodnienia dla 11 form, w siedmiu klasach.
+3. **Kategoria cielesna.** `親指` nie mieści się w obecnym drzewie bez zniekształcenia jako przedmiot handlowy. Wpis używa `concrete`, a nie `thing` (poddrzewo `purchasable`). Licznik `long_object` odpowiada japońskiemu 本 dla palców. `concrete` ma `selectable=false` i skutkuje błędem walidacji w Kotomi. Obecnie brak poprawnej selekcjonowalnej kategorii: `thing` dziedziczy po `purchasable`. Konieczna osobna decyzja dotycząca `body_part` lub równoważnej kategorii w Kotomi.
+4. **Czasownik.** `主張する` jest czasownikiem `irregular` typu suru. Ma naturalny `subject` z kategorią `person`; nie otrzymał wymuszonego dopełnienia `accepts="*"`. Istniejący wzorzec `Cytowana opinia` obsługuje cytowane twierdzenia przez cechę `reporting`, dlatego dodano ją bez zmian silnika. Obsługa dowolnego zdania podrzędnego pozostaje osobnym zagadnieniem. W tym wpisie są 17 form japońskich i realizacje uzgodnienia dla 11 form, w siedmiu klasach.
 5. **Rozdzielenie homografów i znaczeń.** `主人` ma oddzielne wpisy `shujin_husband` i `shujin_owner`, ponieważ polskie `mąż` oraz `właściciel` nie są gramatycznie równoważnymi synonimami w każdym zdaniu. Lekcja zawiera jedno źródłowe hasło i referuje pierwsze znaczenie. Odrębny właściciel pozostaje w słowniku na przyszłość.
 6. **Pragmatyka japońska.** `兄`/`お兄さん` oraz `姉`/`お姉さん` różnią się honoryfikatywnością i odniesieniem do własnej/cudzej rodziny. Polskie tłumaczenia mogą być identyczne, co wymaga ostrożności w quizach. Nie dodano sztucznych wyrażeń do tłumaczeń wyłącznie w celu eliminacji kolizji.
 7. **Znaczenia z materiałów.** `民族` opisuje wspólnotę etniczną, nie biologiczną rasę; użyto `grupa etniczna`. `野犬` i `野良犬` mogą oznaczać psa bez właściciela. Potoczna różnica dzikości nie została narzucona jako obligatoryjna. `父兄` w kontekście szkolnym jest tradycyjną nazwą opiekunów, częściej zastępowaną współcześnie przez `保護者`.
 8. **Liczenie.** Profile `few` i `many` dodano tam, gdzie istnieje naturalny sposób policzenia danego referenta. Nie dopisano `general_item` zbiorowościom lub wyrażeniom masowym wyłącznie dla pokrycia walidacji.
-9. **Przymiotniki.** `親しい` ma 15 naturalnych form japońskich i polską odmianę przez wszystkie obsługiwane klasy. `主要` ma 11 użytecznych form, pominięto mechanicznie możliwe, lecz w zwykłym użyciu nienaturalne `主要さ`, `主要そう`, `主要すぎる`, `主要に`. Każda część `polish_forms` obejmuje wszystkie przypadki i klasy, nie polega na kopiowaniu formy męskiej.
+9. **Przymiotniki.** `親しい` ma 15 naturalnych form japońskich i polską odmianę przez wszystkie obsługiwane klasy. `主要` ma 11 użytecznych form i zawężone `describes` do `abstract` (zamiast `abstract concrete`), pominięto mechanicznie możliwe, lecz w zwykłym użyciu nienaturalne `主要さ`, `主要そう`, `主要すぎる`, `主要に`. Każda część `polish_forms` obejmuje wszystkie przypadki i klasy, nie polega na kopiowaniu formy męskiej.
 10. **Regresja `姉`.** Zachowano istniejące ID `sister`, klasę `feminine`, kategorię `person` i licznik `person`. Zmieniono tylko tłumaczenie oraz realizacje przypadków i `few/many` na `starsza siostra`. Ta zmiana jest semantycznie uzasadniona, lecz nie było możliwości uruchomienia pełnych poprzednich quizów.
 
 ## C. Nieobsługiwane możliwości i decyzje blokujące
@@ -67,7 +67,7 @@ Data analizy: 2026-10-28. Materiały: *新漢字16-1（156–160）* i *新漢�
 | `私立` | Przedrzeczownikowe `私立の学校`, znaczenie prywatny | Aktualne `na_adjective` wytwarza `〜な`, nie `〜の` | Brak referencji w lekcji 156–160 | Kategoria `no_adjective` lub składnia `noun+の` obsługiwana w lekcji i wzorcach | Tak |
 | `主な` | Przydawka główny z odczytem おもな | Wyłącznie przydawkowe użycie, nie pełny paradygmat na-adjective | Brak referencji w lekcji 161–165 | Typ 連体詞/prenominal albo opcjonalne formy ograniczone do przydawkowych | Tak |
 | `主要な` | Pokazanie w lekcji dokładnie `主要な` | `dictionary_ref` identyfikuje tylko słownik i słowo, bez wyboru formy `attributive_nonpast` | Przymiotnik zapisany poprawnie w słowniku jako `主要`, lecz pominięty w lekcji, aby nie fałszować zapisu | Opcjonalny `form_ref` na poziomie referencji lekcji | Tak |
-| `主張する` | `X は Y と主張する` z pełnym zdaniem jako twierdzeniem | Zwykłe role rzeczownikowe nie reprezentują cytatu/zdania podrzędnego | Brak konstrukcji `twierdzi, że...` w nowych wzorcach | Osobny wzorzec i kontrakt zależności zdaniowych | Tak, oddzielna decyzja |
+| `主張する` | `〜と主張する` dla twierdzenia | Istniejący wzorzec `Cytowana opinia` używa `reporting` | Możliwe bez nowego DSL w zakresie tego wzorca | Dodano `reporting`, wymagane uruchomienie podglądu i quizów | Nie dla istniejącego wzorca; tak dla pełnej obsługi dowolnego zdania podrzędnego |
 | Grupy rodzinne | Predykaty poprawne dla rodziny i członków grupy z odrębnymi zgodnościami | Brak kategorii zbiorowości ludzi | Konserwatywne filtrowanie może odrzucić naturalne zdania | Semantyczna kategoria kolektywna i jasne relacje z `person` | Tak |
 | Synonimy | Wyróżnianie 兄 / お兄さん, 祖先 / 先祖, 野良犬 / 野犬 | Jeden polski odpowiednik nie odróżnia wariantów kontekstowych | Ryzyko niejednoznacznych odpowiedzi | Weryfikacja wariantowych odpowiedzi w quizach, ewentualnie metadane pragmatyczne | Możliwe |
 
@@ -88,7 +88,7 @@ Nie dodawano obejść przez `expressions`, sztucznych `local_word`, nieprawidło
 
 **Wpływ na produkcję:** zmiana istniejącego `sister` wymaga regresji integracyjnej. Niejednoznaczności synonimów oraz cztery brakujące referencje lekcji pozostają otwarte. Nie wprowadzono nowych testów Kotomi, w szczególności testów odczytujących produkcyjne dane.
 
-**Ocena gotowości:** **NIEGOTOWE DO MERGE** do momentu rozstrzygnięcia czterech braków lekcyjnych i wykonania pełnej walidacji. Nie wykonuj merge automatycznie.
+**Ocena gotowości:** **NIEGOTOWE DO MERGE**. `oyayubi` ma kategorię odrzucaną przez walidator Kotomi. Ponadto cztery pozycje lekcyjne pozostają bez referencji i nie wykonano pełnej walidacji integracyjnej. Nie wykonuj merge automatycznie.
 
 ## F. Referencje zewnętrzne
 
@@ -96,3 +96,21 @@ Nie dodawano obejść przez `expressions`, sztucznych `local_word`, nieprawidło
 - [主要, Kotobank](https://kotobank.jp/word/%E4%B8%BB%E8%A6%81-529415): rzeczownik i przymiotnik typu na.
 - [父兄, Kotobank](https://kotobank.jp/word/%E7%88%B6%E5%85%84-617681): opiekunowie szkolni.
 - [野犬, Kotobank](https://kotobank.jp/word/%E9%87%8E%E7%8A%AC-596137): podstawowe znaczenie oraz różnice użycia.
+
+## G. Poprawki po code review (2026-10-28)
+
+| Punkt | Wynik |
+|---|---|
+| F-01, `sister` | Zachowano poprawną semantykę „starsza siostra” oraz zaktualizowano 6 jawnych oczekiwań w `validate_target_c32.py` i `validate_relative_lesson26.py`. Nie zmieniano istniejących wzorców ani Kotomi. |
+| F-02, 39 pozycji | Potwierdzono 35 odwołań w lekcjach. `私`, `私立`, `主な` wymagają dokładniejszego kontraktu reprezentacji; `主要な` już istnieje jako forma `attributive_nonpast` hasła `shuyou`, lecz lekcja nie wskazuje formy. Nie dodano fikcyjnych wpisów. |
+| F-03, `oyayubi` | `concrete` ma `selectable=false`; Kotomi odrzuca takie wpisy. `thing` nie jest semantycznie poprawne, bo dziedziczy po `purchasable`. Pozostawiono jawny blocker wymagający decyzji o kategorii `body_part` w osobnym zadaniu Kotomi. |
+| F-04, `shuchousuru` | Wykorzystano istniejące `reporting` we wzorcu `Cytowana opinia`. Nie utworzono nowego wzorca. |
+| F-05, `shuyou` | Usunięto `concrete` z `describes`, aby nie generować przypadkowych połączeń jak „główny kciuk”. Szersza precyzja semantyczna wymaga dokładniejszych kategorii, nie sztucznych obejść. |
+| F-06, `inugoya`, `shitashii` | „Budy dla psów” jest naturalnym wariantem mnogości. `shitashii` pozostawiono przy `person`: `親しい関係` jest naturalne, lecz dołączenie całego `abstract` bez precyzyjnej kategorii byłoby zbyt szerokie. |
+| Dodatkowo, `fukei` | `父兄` oznacza zbiorowość rodziców/opiekunów, nie jednego człowieka. Zmieniono `person` na `abstract` zgodnie z pozostałymi zbiorowościami. |
+
+**Kontrole statyczne:** potwierdzono komplet siedmiu przypadków w 122 rzeczownikach, 35 referencji w dwóch lekcjach, istnienie `reporting` w gramatyce Kotomi i wzorcu `Cytowana opinia`. Sprawdzono zgodność SHA-256 zmodyfikowanych plików z aktualizowanym manifestem.
+
+**Niewykonane:** pełna walidacja `tools/validate_repository.py`, `unittest discover`, `validate_question_patterns.py` i uruchomienie wzorców na aktualnym Kotomi. Dostęp z GitHub pozwala odczytywać i publikować pliki, ale nie uruchamiać skryptów na repozytorium. Brak uruchomionych testów nie jest pozytywnym wynikiem.
+
+**Rewizja Content:** nadal `70`, bez zmian `quiz_update_manifest.json`.

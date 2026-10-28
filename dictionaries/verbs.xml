@@ -16697,6 +16697,9 @@
       </forms>
     </word>
     <word id="shuchousuru" kana="しゅちょうする" kanji="主張する" type="irregular" ending="suru" translation="twierdzić">
+      <features>
+        <feature ref="reporting" />
+      </features>
       <usage>
         <role ref="subject" accepts="person" />
       </usage>

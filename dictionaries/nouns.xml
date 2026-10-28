@@ -1366,7 +1366,7 @@
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="starszy brat" genitive="starszego brata" dative="starszemu bratu" accusative="starszego brata" instrumental="starszym bratem" locative="starszym bracie" vocative="starszy bracie" />
     </word>
-    <word id="fukei" kana="ふけい" kanji="父兄" type="noun" category="person" translation="opiekunowie">
+    <word id="fukei" kana="ふけい" kanji="父兄" type="noun" category="abstract" translation="opiekunowie">
       <agreement class="plural_masculine_personal" />
       <cases language="pl" nominative="opiekunowie" genitive="opiekunów" dative="opiekunom" accusative="opiekunów" instrumental="opiekunami" locative="opiekunach" vocative="opiekunowie" />
     </word>

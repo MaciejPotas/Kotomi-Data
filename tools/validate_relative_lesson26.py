@@ -66,7 +66,7 @@ CASES = [
 # Additional reviewed bindings vary gender, noun, verb and polarity.
 CASES += [
  ('Osoba i dopełnienie', 'past_plain', 'tsukuru', {'subject':'hito','object':'cake','identity':'sister'}, {},
-  'To siostra jest osobą, która zrobiła ciasto.', 'ケーキをつくったひとはあねです。'),
+  'To starsza siostra jest osobą, która zrobiła ciasto.', 'ケーキをつくったひとはあねです。'),
  ('Pytanie o wykonawcę', 'dictionary', 'yomu', {'subject':'teacher','object':'book'}, {},
   'Kim jest nauczyciel, który czyta książkę?', 'ほんをよむせんせいはだれですか。'),
  ('Wybór przedmiotu', 'past_negative_plain', 'yomu', {'object':'book'}, {},
@@ -82,7 +82,7 @@ CASES += [
  ('Dzień czynności', 'past_plain', 'iku', {'subject':'teacher','destination':'school','day':'hi','date':'getsuyoubi'}, {},
   'To poniedziałek jest dniem, w którym nauczyciel poszedł do szkoły.', 'せんせいががっこうへいったひはげつようびです。'),
  ('Pytanie o dzień', 'past_negative_plain', 'kuru', {'subject':'sister','destination':'school','day':'hi'}, {},
-  'Kiedy przypada dzień, w którym siostra nie przyszła do szkoły?', 'あねががっこうへこなかったひはいつですか。'),
+  'Kiedy przypada dzień, w którym starsza siostra nie przyszła do szkoły?', 'あねががっこうへこなかったひはいつですか。'),
  ('Pragnienie spotkania', None, 'au', {'target':'teacher'}, {},
   'Kim jest nauczyciel, z którym najbardziej chcę się spotkać?', 'わたしがいちばんあいたいせんせいはだれですか。'),
  ('Pragnienie podróży', None, 'iku', {'destination':'kuni','identity':'japan'}, {},
@@ -100,7 +100,7 @@ CASES += [
  ('Liczba osób', 'past_plain', 'iku', {'subject':'hito','destination':'school'}, {},
   'Ile osób poszło do szkoły?', 'がっこうへいったひとはなんにんですか。'),
  ('Osoba i dopełnienie 〜ている', None, 'kiru', {'subject':'hito','object':'clothes','identity':'sister'}, {},
-  'To siostra jest osobą, która ma na sobie ubranie.', 'ふくをきているひとはあねです。'),
+  'To starsza siostra jest osobą, która ma na sobie ubranie.', 'ふくをきているひとはあねです。'),
  ('Pytanie o wykonawcę 〜ている', None, 'yomu', {'subject':'teacher','object':'book'}, {},
   'Kim jest nauczyciel, który czyta książkę?', 'ほんをよんでいるせんせいはだれですか。'),
  ('Miejsce czynności 〜ている', None, 'hataraku', {'location':'school'}, {},

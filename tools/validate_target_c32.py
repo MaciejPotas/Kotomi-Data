@@ -59,9 +59,9 @@ def main():
         ('hairu','room','wchodzę do pokoju.','へやにはいる。'),
         ('hairu','daidokoro','wchodzę do kuchni.','だいどころにはいる。'),
         ('hairu','jimusitsu','wchodzę do biura.','じむしつにはいる。'),
-        ('kariru','sister','pożyczam od siostry.','あねにかりる。'),
-        ('kasu','sister','pożyczam siostrze.','あねにかす。'),
-        ('ageru_give','sister','daję siostrze.','あねにあげる。')]:
+        ('kariru','sister','pożyczam od starszej siostry.','あねにかりる。'),
+        ('kasu','sister','pożyczam starszej siostrze.','あねにかす。'),
+        ('ageru_give','sister','daję starszej siostrze.','あねにあげる。')]:
         q = p.build_preview(identifier,form_name='dictionary',word_choices={'verb@action':verb},entity_choices={'noun@target':noun})
         assert (q.source,q.answer)==(pl,jp)
         results['examples'].append({'verb':verb,'noun':noun,'polish':q.source,'japanese':q.answer})
