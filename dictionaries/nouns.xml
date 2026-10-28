@@ -1366,7 +1366,7 @@
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="starszy brat" genitive="starszego brata" dative="starszemu bratu" accusative="starszego brata" instrumental="starszym bratem" locative="starszym bracie" vocative="starszy bracie" />
     </word>
-    <word id="fukei" kana="ふけい" kanji="父兄" type="noun" category="abstract" translation="opiekunowie">
+    <word id="fukei" kana="ふけい" kanji="父兄" type="noun" category="person" translation="opiekunowie">
       <agreement class="plural_masculine_personal" />
       <cases language="pl" nominative="opiekunowie" genitive="opiekunów" dative="opiekunom" accusative="opiekunów" instrumental="opiekunami" locative="opiekunach" vocative="opiekunowie" />
     </word>
@@ -1425,7 +1425,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="młodsza siostra" genitive="młodszej siostry" dative="młodszej siostrze" accusative="młodszą siostrę" instrumental="młodszą siostrą" locative="młodszej siostrze" vocative="młodsza siostro" />
     </word>
-    <word id="shimai" kana="しまい" kanji="姉妹" type="noun" category="abstract" translation="siostry">
+    <word id="shimai" kana="しまい" kanji="姉妹" type="noun" category="person" translation="siostry">
       <agreement class="plural_non_masculine_personal" />
       <cases language="pl" nominative="siostry" genitive="sióstr" dative="siostrom" accusative="siostry" instrumental="siostrami" locative="siostrach" vocative="siostry" />
     </word>
@@ -1446,7 +1446,7 @@
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="rodzic" genitive="rodzica" dative="rodzicowi" accusative="rodzica" instrumental="rodzicem" locative="rodzicu" vocative="rodzicu" />
     </word>
-    <word id="oyayubi" kana="おやゆび" kanji="親指" type="noun" category="concrete" translation="kciuk">
+    <word id="oyayubi" kana="おやゆび" kanji="親指" type="noun" category="body_part" translation="kciuk">
       <counting classes="long_object">
         <source_forms language="pl">
           <form profile="few" cases="nominative accusative vocative" value="kciuki" />
@@ -1463,7 +1463,7 @@
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="kciuk" genitive="kciuka" dative="kciukowi" accusative="kciuk" instrumental="kciukiem" locative="kciuku" vocative="kciuku" />
     </word>
-    <word id="ryoushin" kana="りょうしん" kanji="両親" type="noun" category="abstract" translation="rodzice">
+    <word id="ryoushin" kana="りょうしん" kanji="両親" type="noun" category="person" translation="rodzice">
       <agreement class="plural_masculine_personal" />
       <cases language="pl" nominative="rodzice" genitive="rodziców" dative="rodzicom" accusative="rodziców" instrumental="rodzicami" locative="rodzicach" vocative="rodzice" />
     </word>
@@ -1601,7 +1601,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="babcia" genitive="babci" dative="babci" accusative="babcię" instrumental="babcią" locative="babci" vocative="babciu" />
     </word>
-    <word id="sofubo" kana="そふぼ" kanji="祖父母" type="noun" category="abstract" translation="dziadkowie">
+    <word id="sofubo" kana="そふぼ" kanji="祖父母" type="noun" category="person" translation="dziadkowie">
       <agreement class="plural_masculine_personal" />
       <cases language="pl" nominative="dziadkowie" genitive="dziadków" dative="dziadkom" accusative="dziadków" instrumental="dziadkami" locative="dziadkach" vocative="dziadkowie" />
     </word>

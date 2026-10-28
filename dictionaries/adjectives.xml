@@ -3486,7 +3486,7 @@
       </polish_forms>
     </word>
     <word id="shuyou" kana="しゅよう" kanji="主要" type="na_adjective" translation="główny">
-      <describes categories="abstract" />
+      <describes categories="abstract person place" />
       <forms>
         <form ref="predicate_plain_nonpast" kana="しゅようだ" translation="jest główny" kanji="主要だ" />
         <form ref="predicate_polite_nonpast" kana="しゅようです" translation="jest główny" kanji="主要です" />
