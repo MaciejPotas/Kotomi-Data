@@ -152,3 +152,28 @@ quiz_project.xml ustawia min_kotomi_version na 1.8.0, ale main Kotomi w chwili a
 Statycznie: sprawdzono zmienione wpisy, dziedziczenie semantyczne, klasy uzgodnienia, brak zmiany liczby wpisów, pokrycie lekcji, obecność reporting, aktualizację SHA-256 manifestu Content. Po stronie Kotomi przygotowano testy kategorii z syntetycznymi fixture, w tym Studio. Nie wykonano: pytest, python tools/validate_repository.py, python -m unittest discover -s tests -v, python tools/validate_question_patterns.py, QuizProject.validate(), podglądu Cytowana opinia, scenariuszy integracyjnych sister ani uruchomienia CI. Kod GitHub jest dostępny do odczytu i commitu, ale lokalny runtime nie może pobrać repozytoriów. Przejście kontroli statycznych nie jest równoznaczne z przejściem testów.
 
 **Ocena: PARTIAL, bez PR i merge.** Przed udostępnieniem Content wymagane są kontrolowane testy rzeczywistego silnika i zabezpieczenie starszych aplikacji.
+
+
+### CI contract review: numeric classifiers and nonproductive adjective forms
+
+The initial CI run for Data PR #92 passed the repository validator but failed
+`tests/test_lexical_completeness.py` on 11 nouns deliberately lacking counting
+and on 4 intentionally omitted `shuyou` adjective forms. The existing test
+requires either a complete counting profile or an explicit reviewed exception.
+Added the following reviewed exceptions to that contract, not fake XML forms:
+
+- Uncountable or nonproductively countable selected senses: `shiyou`,
+  `sokoku` (homeland identity, not a generic countable country).
+- Fixed plural references with no singular headword: `fukei`, `shimai`,
+  `ryoushin`, `sofubo`.
+- Collective/group concepts whose current meaning does not specify an ordinary
+  numeral classifier: `kyoudai`, `kazoku`, `ichizoku`, `minzoku`, `shuzoku`.
+  Some groups can be enumerated in suitable contexts; a future dedicated,
+  linguistically reviewed counting sense may support them without making it a
+  mandatory form of the current sense.
+- `shuyou`: exempted `adverbial`, `nominalized`, `appearance_sou`,
+  `excessive_sugiru`. All 11 stored Japanese forms and all Polish adjective
+  agreement forms remain unchanged.
+
+This is an adjustment to an **existing lexical coverage contract**, not
+removal of the coverage test or relaxation for all nouns/adjectives.
