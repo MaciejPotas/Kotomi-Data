@@ -1387,7 +1387,7 @@
       <agreement class="masculine_personal" />
       <cases language="pl" nominative="młodszy brat" genitive="młodszego brata" dative="młodszemu bratu" accusative="młodszego brata" instrumental="młodszym bratem" locative="młodszym bracie" vocative="młodszy bracie" />
     </word>
-    <word id="kyoudai" kana="きょうだい" kanji="兄弟" type="noun" category="abstract" translation="rodzeństwo">
+    <word id="kyoudai" kana="きょうだい" kanji="兄弟" type="noun" category="person" translation="rodzeństwo">
       <agreement class="neuter" />
       <cases language="pl" nominative="rodzeństwo" genitive="rodzeństwa" dative="rodzeństwu" accusative="rodzeństwo" instrumental="rodzeństwem" locative="rodzeństwie" vocative="rodzeństwo" />
     </word>
@@ -1647,15 +1647,15 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="rodzina" genitive="rodziny" dative="rodzinie" accusative="rodzinę" instrumental="rodziną" locative="rodzinie" vocative="rodzino" />
     </word>
-    <word id="ichizoku" kana="いちぞく" kanji="一族" type="noun" category="abstract" translation="klan">
+    <word id="ichizoku" kana="いちぞく" kanji="一族" type="noun" category="person" translation="klan">
       <agreement class="masculine_inanimate" />
       <cases language="pl" nominative="klan" genitive="klanu" dative="klanowi" accusative="klan" instrumental="klanem" locative="klanie" vocative="klanie" />
     </word>
-    <word id="minzoku" kana="みんぞく" kanji="民族" type="noun" category="abstract" translation="grupa etniczna">
+    <word id="minzoku" kana="みんぞく" kanji="民族" type="noun" category="person" translation="grupa etniczna">
       <agreement class="feminine" />
       <cases language="pl" nominative="grupa etniczna" genitive="grupy etnicznej" dative="grupie etnicznej" accusative="grupę etniczną" instrumental="grupą etniczną" locative="grupie etnicznej" vocative="grupo etniczna" />
     </word>
-    <word id="shuzoku" kana="しゅぞく" kanji="種族" type="noun" category="abstract" translation="plemię">
+    <word id="shuzoku" kana="しゅぞく" kanji="種族" type="noun" category="person" translation="plemię">
       <agreement class="neuter" />
       <cases language="pl" nominative="plemię" genitive="plemienia" dative="plemieniu" accusative="plemię" instrumental="plemieniem" locative="plemieniu" vocative="plemię" />
     </word>
