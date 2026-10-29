@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<noun_categories schema_version="2">
+  <category id="concrete" selectable="false" label="Concrete" />
+  <category id="person" parent="concrete" selectable="true" label="Person" />
+  <category id="body_part" parent="concrete" selectable="true" label="Body part" />
+  <category id="animal" parent="concrete" selectable="true" label="Animal" />
+  <category id="place" parent="concrete" selectable="true" label="Place" />
+  <category id="purchasable" parent="concrete" selectable="false" label="Purchasable" />
+  <category id="food" parent="purchasable" selectable="true" label="Food" />
+  <category id="drink" parent="purchasable" selectable="true" label="Drink" />
+  <category id="text" parent="purchasable" selectable="true" label="Text" />
+  <category id="media" parent="purchasable" selectable="true" label="Audible media" />
+  <category id="vehicle" parent="purchasable" selectable="true" label="Vehicle" />
+  <category id="thing" parent="purchasable" selectable="true" label="Thing" />
+  <category id="item" parent="thing" selectable="true" label="Item" />
+  <category id="abstract" selectable="true" label="Abstract" />
+  <category id="availability_reason" parent="abstract" selectable="true" label="Availability reason" />
+  <category id="container" parent="thing" selectable="true" label="Container" />
+  <category id="closable_container" parent="container" selectable="true" label="Closable container" />
+  <category id="clothing" parent="thing" selectable="true" label="Clothing" />
+  <category id="money" parent="availability_reason" selectable="true" label="Money" />
+  <category id="duration" parent="availability_reason" selectable="true" label="Duration" />
+  <category id="music" parent="media" selectable="true" label="Music and musical pieces" />
+  <category id="building" parent="place" selectable="true" label="Building" />
+  <category id="attendance_facility" parent="building" selectable="true" label="Attendance facility" />
+  <category id="weekday" parent="abstract" selectable="true" label="Weekday" />
+  <category id="country" parent="place" selectable="true" label="Country" />
+</noun_categories>

@@ -159,3 +159,7 @@ w Studio i quizach zdań z lekcji bez wskazywania ID przysłówka.
 
 See [English](../docs/eng/adverb_categories.md) /
 [polski](../docs/pl/adverb_categories.md) for the syntax and limitations.
+
+Architecture, extension workflow and cleanup decisions: [English](../docs/eng/repository_cleanup.md) / [Polski](../docs/pl/repository_cleanup.md).
+
+Counted constructions and adjective agreement: [English](grammar_contexts.md) / [Polski](grammar_contexts.pl.md).

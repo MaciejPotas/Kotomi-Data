@@ -1,28 +1,28 @@
-# Contexts and counting Content
+# Semantic categories, contexts and counting Content
 
-This directory contains learning material and lexical relationships, not grammar definitions.
+| File | Reader and load stage | Decision | Reason |
+|---|---|---|---|
+| `categories.xml` | `QuizProject.load` after built-in grammar, before dictionaries; Data validator | Keep | Complete declarative semantic hierarchy, editable without rebuilding Kotomi |
+| `contexts.xml` | `load_contexts`, after dictionaries | Keep | Lexical context options, dictionary references, suffixes and weights used by DSL and quizzes |
+| `counting.xml` | `load_counting_content`, after built-in counting contracts | Keep | Lexical counter bindings and study number sets, not duplicate composition algorithms |
+| `README.md` | Developers and maintainers | Refactor | Documents the current ownership boundary and consumers |
 
-- `contexts.xml` owns concrete options such as today, yesterday and next week,
-  their word references, literal separator suffixes and selection weights. Inline
-  options remain supported; referenced lexical text belongs to dictionaries.
-- `counting.xml` owns `number_sets` and `counter_bindings`. A binding references a
-  Kotomi counting class and lists this database's compatible/default counter IDs.
-- Noun counting classes and preferred counters, exact counter surfaces and
-  exceptional quantity realizations remain in complete dictionary entries.
+The manifest explicitly references all three XML files. They are shipped by the
+Content updater and validated before installation. None is an unused grammar
+copy. Removing contexts or counting breaks context selection or counter/numeric
+study choices. Removing categories loses the Content-defined semantic hierarchy.
 
-Kotomi supplies form catalogs, agreement templates, semantic categories, roles,
-features, government, noun relations and clitics. Its Japanese grammar also owns
-number composition and counter composition profiles. The selected source grammar
-owns count profiles and quantity-to-profile mappings, including Polish one/few/many.
+Kotomi owns form contracts, roles, features, agreement, government, noun relations,
+clitics and Japanese number/counter composition. Semantic category declarations
+belong to Content; a new algorithmic behavior still requires a Kotomi change.
+Adverb flat catalogs remain in their individual dictionary files.
 
-Content references those IDs but cannot redefine grammar or the Studio schema.
-Historical `min_kotomi_version` metadata is not an enforced gate. Content 63+ uses
-update manifest format 2 to reject legacy clients; new clients validate the full
-snapshot before installation. See the [C3 guide](../docs/eng/noun_role_categories_c3.md).
+Quiz selectability is derived from each form's context contract in Kotomi.
+Forms with `context="none"`, including `progressive` and `desiderative`, remain
+available to patterns that explicitly request them, but are excluded from the
+ordinary tense-selection quiz. Their lexical translations belong to Content.
 
-Number sets such as `one_to_ten`, `two_to_four` and `two_or_more` select vocabulary
-for study. Pattern numeric ranges retain their existing semantics and bounds.
-No lexical translations are synthesized for generated numeric candidates.
+New categories: [English](../docs/eng/semantic_category_catalog.md) /
+[Polski](../docs/pl/semantic_category_catalog.md).
 
-Quiz selectability is derived from the form context and pattern compatibility in
-Kotomi. Content forms contain lexical values and a `ref`, not grammar metadata.
+Architecture, extension workflow and cleanup decisions: [English](../docs/eng/repository_cleanup.md) / [Polski](../docs/pl/repository_cleanup.md).
