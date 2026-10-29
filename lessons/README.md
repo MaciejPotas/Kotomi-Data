@@ -12,3 +12,5 @@ current dictionary entry. Reload a materialized catalog after editing words.
 No lesson/group name imposes a fixed word count. Tests must check universal
 reference rules, not the contents of a named lesson. Complete bilingual
 examples: [English](../docs/eng/context_vocabulary.md) / [Polski](../docs/pl/context_vocabulary.md).
+
+Architecture, extension workflow and cleanup decisions: [English](../docs/eng/repository_cleanup.md) / [Polski](../docs/pl/repository_cleanup.md).

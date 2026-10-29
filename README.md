@@ -141,3 +141,5 @@ quality remains a separate, explicitly scoped check in the combined Kotomi suite
 Adverb semantic categories (Kotomi 1.8.0+): [English](docs/eng/adverb_categories.md) / [Polski](docs/pl/adverb_categories.md).
 
 Semantic category catalog: [English](docs/eng/semantic_category_catalog.md) / [Polski](docs/pl/semantic_category_catalog.md).
+
+Architecture, extension workflow and cleanup decisions: [English](docs/eng/repository_cleanup.md) / [Polski](docs/pl/repository_cleanup.md).

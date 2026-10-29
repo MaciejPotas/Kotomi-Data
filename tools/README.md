@@ -307,3 +307,5 @@ Content 69 review and per-form decisions: [Polski](../docs/pl/polish_agreement_a
 ## Lesson 26 release acceptance
 
 `validate_relative_lesson26.py --kotomi ../Kotomi --output docs/validation/relative_lesson26.json` checks bounded, independently reviewed full sentences, rejected bindings and old relative patterns. `validate_relative_lesson26_ui.py` with the same arguments checks per-pattern and mixed Mobile selections and exact simulator callbacks with fake widgets. These are explicit production audits, not unit tests, and never enumerate the whole vocabulary product. See `docs/eng/relative_lesson26.md` and `docs/pl/relative_lesson26.md` for scope and limitations.
+
+Architecture, extension workflow and cleanup decisions: [English](../docs/eng/repository_cleanup.md) / [Polski](../docs/pl/repository_cleanup.md).

@@ -110,3 +110,5 @@ New subject roles use exact noun lists; missing agreement classes mean an
 unsupported realization. See the curated B3 inventory and editor instructions:
 [Polski](../docs/pl/relative_clauses.md#b3-przydawki-podmiotowe) /
 [English](../docs/eng/relative_clauses.md#b3-subject-relative-clauses).
+
+Architecture, extension workflow and cleanup decisions: [English](../docs/eng/repository_cleanup.md) / [Polski](../docs/pl/repository_cleanup.md).

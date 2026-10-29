@@ -24,3 +24,5 @@ ordinary tense-selection quiz. Their lexical translations belong to Content.
 
 New categories: [English](../docs/eng/semantic_category_catalog.md) /
 [Polski](../docs/pl/semantic_category_catalog.md).
+
+Architecture, extension workflow and cleanup decisions: [English](../docs/eng/repository_cleanup.md) / [Polski](../docs/pl/repository_cleanup.md).
