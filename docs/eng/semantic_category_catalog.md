@@ -22,6 +22,15 @@ selectability, missing parents and cycles. `tests/test_noun_category_catalog.py`
 uses tiny independent fixtures. Kotomi additionally checks pattern constraints and
 exposes the catalog in Studio. Runtime/cache dependency checks include this file.
 
+The Data validator also checks explicit `category:id` properties in canonical
+`noun[...]` and `adverb[...]` tokens in both question and answer, including
+composite templates. Noun IDs use this catalog; adverb IDs use the separate
+`adverbs` dictionary catalog. Errors identify the pattern, field and unknown ID.
+This is a reference check, not another DSL parser: malformed syntax, unsupported
+selectors, alias rules and composite expansion remain Kotomi's responsibility.
+Content without `semantic_categories` retains its previous behavior. Synthetic
+coverage is in `tests/test_pattern_category_references.py`.
+
 Increment `content_revision.json` and regenerate `content_update_manifest.json`
 with Kotomi's `write_content_manifest` tooling. All category changes must be in
 the same Content snapshot as the words and patterns using them. No translation,

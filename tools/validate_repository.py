@@ -347,6 +347,7 @@ def validate_semantic_categories(root: Path | None = None) -> None:
     root = root or ROOT
     manifest = ET.parse(root / "quiz_project.xml").getroot()
     noun_catalog = validate_noun_category_catalog(root, manifest)
+    adverb_catalog = set()
     for entry in manifest.findall("./dictionaries/dictionary"):
         dictionary = ET.parse(root / entry.get("file")).getroot()
         schema = dictionary.get("schema") or entry.get("schema")
@@ -359,6 +360,8 @@ def validate_semantic_categories(root: Path | None = None) -> None:
                            or (node.tail or "").strip() for node in catalog)):
                 raise AssertionError("Invalid semantic category catalog entry")
         categories = [node.get("id", "") for node in dictionary.findall("./categories/category")]
+        if schema == "adverb" and entry.get("id") == "adverbs":
+            adverb_catalog.update(categories)
         if catalogs and schema != "adverb":
             raise AssertionError("Semantic category catalogs require adverb schema")
         if len(catalogs) > 1 or len(categories) != len(set(categories)):
@@ -388,6 +391,38 @@ def validate_semantic_categories(root: Path | None = None) -> None:
                 raise AssertionError("Duplicate semantic category membership")
             if set(values) - set(categories):
                 raise AssertionError(f"Unknown semantic category on {entry.get('id')}/{word.get('id')}")
+    if noun_catalog is not None:
+        validate_pattern_category_references(root, manifest, noun_catalog, adverb_catalog)
+
+
+# Extract only explicit category IDs from canonical property blocks. Invalid
+# syntax, unsupported selector kinds, bindings and expansion belong to Kotomi's
+# parser. In particular an adverb category is NOT a noun semantic category.
+_CATEGORY_TOKEN = re.compile(
+    r"\{\s*(noun|adverb)(?:@[a-z][a-z0-9_]*)?\[([^{}\[\]]*)\]"
+    r"(?:\.[a-z][a-z0-9_]*)*\s*\}"
+)
+_CATEGORY_PROPERTY = re.compile(r"\s*category\s*:\s*([a-z][a-z0-9_]*)\s*")
+
+
+def validate_pattern_category_references(root, manifest, noun_catalog, adverb_catalog):
+    maps = manifest.find("sentence_maps")
+    if maps is None:
+        return  # Dictionary-only fixtures/legacy manifests have no pattern file.
+    patterns = ET.parse(root / maps.get("file")).getroot()
+    catalogs = {"noun": noun_catalog, "adverb": adverb_catalog}
+    # Composite templates share sentence_pattern nodes with simple patterns.
+    # Validate their own question/answer tokens; never expand referenced patterns.
+    for pattern in patterns.findall("./sentence_patterns/sentence_pattern"):
+        for field in ("question", "answer"):
+            for kind, properties in _CATEGORY_TOKEN.findall(pattern.findtext(field, "")):
+                for item in properties.split(","):
+                    match = _CATEGORY_PROPERTY.fullmatch(item)
+                    if match is not None and match[1] not in catalogs[kind]:
+                        raise AssertionError(
+                            f"Pattern {pattern.get('id', '<missing>')} {field}: "
+                            f"unknown {kind} category '{match[1]}'"
+                        )
 
 
 def validate_context_references(root: Path | None = None) -> None:

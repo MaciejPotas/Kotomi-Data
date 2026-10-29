@@ -23,6 +23,15 @@ brakujących rodziców i cykle. `tests/test_noun_category_catalog.py` ma małe,
 niezależne dane testowe. Kotomi dodatkowo sprawdza ograniczenia wzorców i pokazuje
 katalog w Studio. Kontrola zależności runtime/cache obejmuje ten plik.
 
+Walidator Data sprawdza również jawne właściwości `category:id` w kanonicznych
+tokenach `noun[...]` i `adverb[...]`, w pytaniu i odpowiedzi, także w szablonach
+złożonych. Rzeczowniki korzystają z tego katalogu, a przysłówki z osobnego
+katalogu słownika `adverbs`. Błąd wskazuje wzorzec, pole i nieznane ID.
+To kontrola referencji, a nie drugi parser DSL: błędna składnia, niedozwolone
+selektory, reguły aliasów i rozwijanie wzorców pozostają zadaniem Kotomi.
+Dane bez `semantic_categories` zachowują dotychczasowe działanie. Testy
+syntetyczne znajdują się w `tests/test_pattern_category_references.py`.
+
 Zwiększ rewizję w `content_revision.json` i odtwórz `content_update_manifest.json`
 narzędziem `write_content_manifest` z Kotomi. Kategorie, używające ich słowa i
 wzorce muszą trafić do jednego kompletnego snapshotu Content. Deklaracja kategorii
