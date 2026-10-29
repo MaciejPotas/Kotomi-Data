@@ -854,20 +854,11 @@
       <word id="ola_kanji_161_165_001">
         <dictionary_ref dictionary="nouns" word="oya" />
       </word>
-      <word id="ola_kanji_161_165_002">
-        <dictionary_ref dictionary="nouns" word="oyayubi" />
-      </word>
       <word id="ola_kanji_161_165_003">
         <dictionary_ref dictionary="adjectives" word="shitashii" />
       </word>
-      <word id="ola_kanji_161_165_004">
-        <dictionary_ref dictionary="nouns" word="ryoushin" />
-      </word>
       <word id="ola_kanji_161_165_005">
         <dictionary_ref dictionary="nouns" word="shinyuu" />
-      </word>
-      <word id="ola_kanji_161_165_006">
-        <dictionary_ref dictionary="nouns" word="nikushin" />
       </word>
       <word id="ola_kanji_161_165_007">
         <dictionary_ref dictionary="nouns" word="aruji" />
@@ -893,9 +884,6 @@
       <word id="ola_kanji_161_165_014">
         <dictionary_ref dictionary="nouns" word="sokoku" />
       </word>
-      <word id="ola_kanji_161_165_015">
-        <dictionary_ref dictionary="nouns" word="sosen" />
-      </word>
       <word id="ola_kanji_161_165_016">
         <dictionary_ref dictionary="nouns" word="senzo" />
       </word>
@@ -905,26 +893,11 @@
       <word id="ola_kanji_161_165_018">
         <dictionary_ref dictionary="nouns" word="ichizoku" />
       </word>
-      <word id="ola_kanji_161_165_019">
-        <dictionary_ref dictionary="nouns" word="minzoku" />
-      </word>
-      <word id="ola_kanji_161_165_020">
-        <dictionary_ref dictionary="nouns" word="shuzoku" />
-      </word>
       <word id="ola_kanji_161_165_021">
         <dictionary_ref dictionary="nouns" word="inu" />
       </word>
       <word id="ola_kanji_161_165_022">
         <dictionary_ref dictionary="nouns" word="koinu" />
-      </word>
-      <word id="ola_kanji_161_165_023">
-        <dictionary_ref dictionary="nouns" word="inugoya" />
-      </word>
-      <word id="ola_kanji_161_165_024">
-        <dictionary_ref dictionary="nouns" word="norainu" />
-      </word>
-      <word id="ola_kanji_161_165_025">
-        <dictionary_ref dictionary="nouns" word="yaken" />
       </word>
     </lesson>
     <lesson id="thematic_exchange" group="Tematyczne" main="Relacje i wymiana" name="Dawać, otrzymywać i pożyczać">
@@ -1121,7 +1094,6 @@
       <word id="ola_l24_dokkai_nouns_004">
         <dictionary_ref dictionary="nouns" word="naka" />
       </word>
-      <local_word id="ola_l24_dokkai_nouns_005" translation="jedna osoba" kana="ひとり" kanji="一人" romaji="hitori" example="" />
       <word id="ola_l24_dokkai_nouns_006">
         <dictionary_ref dictionary="nouns" word="koe" />
       </word>
@@ -1155,6 +1127,7 @@
       <word id="ola_l24_dokkai_nouns_022">
         <dictionary_ref dictionary="nouns" word="detarame" />
       </word>
+      <local_word id="ola_l24_dokkai_nouns_005" translation="jedna osoba" kana="ひとり" kanji="一人" romaji="hitori" example="" />
     </lesson>
     <lesson id="ola_l24_dokkai_verbs" group="Ola" main="Czytanka 24 - クスコのバザールで" name="Czasowniki">
       <word id="ola_l24_dokkai_verbs_003">
@@ -1403,9 +1376,6 @@
       </word>
       <word id="szymon_pierwsza_zwroty_11">
         <dictionary_ref dictionary="verbs" word="tsukau" />
-      </word>
-      <word id="szymon_pierwsza_zwroty_12">
-        <dictionary_ref dictionary="nouns" word="madogiwazoku" />
       </word>
     </lesson>
   </lessons>

@@ -1176,28 +1176,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="powtórka" genitive="powtórki" dative="powtórce" accusative="powtórkę" instrumental="powtórką" locative="powtórce" vocative="powtórko" />
     </word>
-    <word id="madogiwazoku" kana="まどぎわぞく" kanji="窓際族" type="noun" category="person" translation="pracownik odsunięty na boczny tor">
-      <counting classes="person">
-        <source_forms language="pl">
-          <form profile="few" cases="nominative" value="pracownicy odsunięci na boczny tor" />
-          <form profile="few" cases="genitive" value="pracowników odsuniętych na boczny tor" />
-          <form profile="few" cases="dative" value="pracownikom odsuniętym na boczny tor" />
-          <form profile="few" cases="accusative" value="pracowników odsuniętych na boczny tor" />
-          <form profile="few" cases="instrumental" value="pracownikami odsuniętymi na boczny tor" />
-          <form profile="few" cases="locative" value="pracownikach odsuniętych na boczny tor" />
-          <form profile="few" cases="vocative" value="pracownicy odsunięci na boczny tor" />
-          <form profile="many" cases="nominative" value="pracowników odsuniętych na boczny tor" />
-          <form profile="many" cases="genitive" value="pracowników odsuniętych na boczny tor" />
-          <form profile="many" cases="dative" value="pracownikom odsuniętym na boczny tor" />
-          <form profile="many" cases="accusative" value="pracowników odsuniętych na boczny tor" />
-          <form profile="many" cases="instrumental" value="pracownikami odsuniętymi na boczny tor" />
-          <form profile="many" cases="locative" value="pracownikach odsuniętych na boczny tor" />
-          <form profile="many" cases="vocative" value="pracowników odsuniętych na boczny tor" />
-        </source_forms>
-      </counting>
-      <agreement class="masculine_personal" />
-      <cases language="pl" nominative="pracownik odsunięty na boczny tor" genitive="pracownika odsuniętego na boczny tor" dative="pracownikowi odsuniętemu na boczny tor" accusative="pracownika odsuniętego na boczny tor" instrumental="pracownikiem odsuniętym na boczny tor" locative="pracowniku odsuniętym na boczny tor" vocative="pracowniku odsunięty na boczny tor" />
-    </word>
+    
     <word id="tokoro" kana="ところ" type="noun" category="place" translation="miejsce">
       <agreement class="neuter" />
       <cases language="pl" nominative="miejsce" genitive="miejsca" dative="miejscu" accusative="miejsce" instrumental="miejscem" locative="miejscu" vocative="miejsce" />
@@ -1655,10 +1634,7 @@
       <agreement class="feminine" />
       <cases language="pl" nominative="grupa etniczna" genitive="grupy etnicznej" dative="grupie etnicznej" accusative="grupę etniczną" instrumental="grupą etniczną" locative="grupie etnicznej" vocative="grupo etniczna" />
     </word>
-    <word id="shuzoku" kana="しゅぞく" kanji="種族" type="noun" category="person" translation="plemię">
-      <agreement class="neuter" />
-      <cases language="pl" nominative="plemię" genitive="plemienia" dative="plemieniu" accusative="plemię" instrumental="plemieniem" locative="plemieniu" vocative="plemię" />
-    </word>
+    
     <word id="koinu" kana="こいぬ" kanji="子犬" type="noun" category="animal" translation="szczenię">
       <counting classes="small_animal">
         <source_forms language="pl">
@@ -1710,22 +1686,6 @@
       <agreement class="masculine_animate" />
       <cases language="pl" nominative="bezpański pies" genitive="bezpańskiego psa" dative="bezpańskiemu psu" accusative="bezpańskiego psa" instrumental="bezpańskim psem" locative="bezpańskim psie" vocative="bezpański psie" />
     </word>
-    <word id="yaken" kana="やけん" kanji="野犬" type="noun" category="animal" translation="bezpański pies">
-      <counting classes="small_animal">
-        <source_forms language="pl">
-          <form profile="few" cases="nominative accusative vocative" value="bezpańskie psy" />
-          <form profile="few" cases="genitive" value="bezpańskich psów" />
-          <form profile="few" cases="dative" value="bezpańskim psom" />
-          <form profile="few" cases="instrumental" value="bezpańskimi psami" />
-          <form profile="few" cases="locative" value="bezpańskich psach" />
-          <form profile="many" cases="nominative genitive accusative vocative" value="bezpańskich psów" />
-          <form profile="many" cases="dative" value="bezpańskim psom" />
-          <form profile="many" cases="instrumental" value="bezpańskimi psami" />
-          <form profile="many" cases="locative" value="bezpańskich psach" />
-        </source_forms>
-      </counting>
-      <agreement class="masculine_animate" />
-      <cases language="pl" nominative="bezpański pies" genitive="bezpańskiego psa" dative="bezpańskiemu psu" accusative="bezpańskiego psa" instrumental="bezpańskim psem" locative="bezpańskim psie" vocative="bezpański psie" />
-    </word>
+    
   </words>
 </dictionary>

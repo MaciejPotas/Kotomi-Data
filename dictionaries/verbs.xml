@@ -15295,140 +15295,6 @@
         <form ref="imperative" kana="かせ" kanji="貸せ" translation="pożyczaj komuś!" />
       </forms>
     </word>
-    <word id="kureru" kana="くれる" type="ichidan" ending="ru" translation="dawać mi, nam">
-      <usage>
-        <role ref="object" accepts="food drink text media vehicle thing money" government="direct_object" />
-        <role ref="target" accepts="person" />
-        <role ref="location" />
-      </usage>
-      <forms>
-        <form ref="dictionary" kana="くれる" translation="daje mi, nam" kanji="くれる">
-          <agreement_translations>
-            <translation class="masculine_personal" value="daje mi" />
-            <translation class="masculine_animate" value="daje mi" />
-            <translation class="masculine_inanimate" value="daje mi" />
-            <translation class="feminine" value="daje mi" />
-            <translation class="neuter" value="daje mi" />
-            <translation class="plural_non_masculine_personal" value="dają mi" />
-            <translation class="plural_masculine_personal" value="dają mi" />
-          </agreement_translations>
-        </form>
-        <form ref="polite_nonpast" kana="くれます" translation="daje mi, nam" kanji="くれます">
-          <agreement_translations>
-            <translation class="masculine_personal" value="daje mi" />
-            <translation class="masculine_animate" value="daje mi" />
-            <translation class="masculine_inanimate" value="daje mi" />
-            <translation class="feminine" value="daje mi" />
-            <translation class="neuter" value="daje mi" />
-            <translation class="plural_non_masculine_personal" value="dają mi" />
-            <translation class="plural_masculine_personal" value="dają mi" />
-          </agreement_translations>
-        </form>
-        <form ref="plain_negative" kana="くれない" translation="nie daje mi, nam" kanji="くれない">
-          <agreement_translations>
-            <translation class="masculine_personal" value="nie daje mi" />
-            <translation class="masculine_animate" value="nie daje mi" />
-            <translation class="masculine_inanimate" value="nie daje mi" />
-            <translation class="feminine" value="nie daje mi" />
-            <translation class="neuter" value="nie daje mi" />
-            <translation class="plural_non_masculine_personal" value="nie dają mi" />
-            <translation class="plural_masculine_personal" value="nie dają mi" />
-          </agreement_translations>
-        </form>
-        <form ref="polite_negative" kana="くれません" translation="nie daje mi, nam" kanji="くれません">
-          <agreement_translations>
-            <translation class="masculine_personal" value="nie daje mi" />
-            <translation class="masculine_animate" value="nie daje mi" />
-            <translation class="masculine_inanimate" value="nie daje mi" />
-            <translation class="feminine" value="nie daje mi" />
-            <translation class="neuter" value="nie daje mi" />
-            <translation class="plural_non_masculine_personal" value="nie dają mi" />
-            <translation class="plural_masculine_personal" value="nie dają mi" />
-          </agreement_translations>
-        </form>
-        <form ref="past_plain" kana="くれた" translation="dał mi, nam" kanji="くれた">
-          <agreement_translations>
-            <translation class="masculine_personal" value="dał mi" />
-            <translation class="masculine_animate" value="dał mi" />
-            <translation class="masculine_inanimate" value="dał mi" />
-            <translation class="feminine" value="dała mi" />
-            <translation class="neuter" value="dało mi" />
-            <translation class="plural_non_masculine_personal" value="dały mi" />
-            <translation class="plural_masculine_personal" value="dali mi" />
-          </agreement_translations>
-        </form>
-        <form ref="past_polite" kana="くれました" translation="dał mi, nam" kanji="くれました">
-          <agreement_translations>
-            <translation class="masculine_personal" value="dał mi" />
-            <translation class="masculine_animate" value="dał mi" />
-            <translation class="masculine_inanimate" value="dał mi" />
-            <translation class="feminine" value="dała mi" />
-            <translation class="neuter" value="dało mi" />
-            <translation class="plural_non_masculine_personal" value="dały mi" />
-            <translation class="plural_masculine_personal" value="dali mi" />
-          </agreement_translations>
-        </form>
-        <form ref="past_negative_plain" kana="くれなかった" translation="nie dał mi, nam" kanji="くれなかった">
-          <agreement_translations>
-            <translation class="masculine_personal" value="nie dał mi" />
-            <translation class="masculine_animate" value="nie dał mi" />
-            <translation class="masculine_inanimate" value="nie dał mi" />
-            <translation class="feminine" value="nie dała mi" />
-            <translation class="neuter" value="nie dało mi" />
-            <translation class="plural_non_masculine_personal" value="nie dały mi" />
-            <translation class="plural_masculine_personal" value="nie dali mi" />
-          </agreement_translations>
-        </form>
-        <form ref="past_negative_polite" kana="くれませんでした" translation="nie dał mi, nam" kanji="くれませんでした">
-          <agreement_translations>
-            <translation class="masculine_personal" value="nie dał mi" />
-            <translation class="masculine_animate" value="nie dał mi" />
-            <translation class="masculine_inanimate" value="nie dał mi" />
-            <translation class="feminine" value="nie dała mi" />
-            <translation class="neuter" value="nie dało mi" />
-            <translation class="plural_non_masculine_personal" value="nie dały mi" />
-            <translation class="plural_masculine_personal" value="nie dali mi" />
-          </agreement_translations>
-        </form>
-        <form ref="te_form" kana="くれて" kanji="くれて" translation="dając mi" />
-        <form ref="potential" kana="くれられる" kanji="くれられる" translation="może mi dać">
-          <agreement_translations>
-            <translation class="masculine_personal" value="może mi dać" />
-            <translation class="masculine_animate" value="może mi dać" />
-            <translation class="masculine_inanimate" value="może mi dać" />
-            <translation class="feminine" value="może mi dać" />
-            <translation class="neuter" value="może mi dać" />
-            <translation class="plural_non_masculine_personal" value="mogą mi dać" />
-            <translation class="plural_masculine_personal" value="mogą mi dać" />
-          </agreement_translations>
-        </form>
-        <form ref="passive" kana="くれられる" kanji="くれられる" translation="ktoś daje coś innej osobie, co mnie dotyka" />
-        <form ref="causative" kana="くれさせる" kanji="くれさせる" translation="sprawiam, że ktoś mi coś daje">
-          <agreement_translations>
-            <translation class="masculine_personal" value="sprawia, że ktoś mi coś daje" />
-            <translation class="masculine_animate" value="sprawia, że ktoś mi coś daje" />
-            <translation class="masculine_inanimate" value="sprawia, że ktoś mi coś daje" />
-            <translation class="feminine" value="sprawia, że ktoś mi coś daje" />
-            <translation class="neuter" value="sprawia, że ktoś mi coś daje" />
-            <translation class="plural_non_masculine_personal" value="sprawiają, że ktoś mi coś daje" />
-            <translation class="plural_masculine_personal" value="sprawiają, że ktoś mi coś daje" />
-          </agreement_translations>
-        </form>
-        <form ref="tara" kana="くれたら" kanji="くれたら" translation="jeśli ktoś mi da">
-          <agreement_translations>
-            <translation class="masculine_personal" value="jeśli da mi" />
-            <translation class="masculine_animate" value="jeśli da mi" />
-            <translation class="masculine_inanimate" value="jeśli da mi" />
-            <translation class="feminine" value="jeśli da mi" />
-            <translation class="neuter" value="jeśli da mi" />
-            <translation class="plural_non_masculine_personal" value="jeśli dadzą mi" />
-            <translation class="plural_masculine_personal" value="jeśli dadzą mi" />
-          </agreement_translations>
-        </form>
-        <form ref="volitional" kana="くれよう" kanji="くれよう" translation="dajmy" />
-        <form ref="imperative" kana="くれ" kanji="くれ" translation="daj mi!" />
-      </forms>
-    </word>
     <word id="morau" kana="もらう" type="godan" ending="u" translation="otrzymywać">
       <usage>
         <role ref="object" accepts="food drink text media vehicle thing money" government="direct_object" />
@@ -16831,6 +16697,54 @@
             <translation class="plural_non_masculine_personal" value="chcą twierdzić" />
           </agreement_translations>
         </form>
+      </forms>
+    </word>
+    <word id="kureru" kana="くれる" type="ichidan" ending="ru" translation="dawać mi" kanji="呉れる" romaji="kureru">
+      <usage>
+        <role ref="object" accepts="food drink text media vehicle thing money" government="direct_object" />
+        <role ref="target" accepts="person" />
+        <role ref="location" />
+      </usage>
+      <forms>
+        <form ref="dictionary" kana="くれる" translation="daję mi" kanji="呉れる" romaji="kureru">
+          
+        </form>
+        <form ref="polite_nonpast" kana="くれます" translation="daję mi" kanji="呉れます" romaji="kuremasu">
+          
+        </form>
+        <form ref="plain_negative" kana="くれない" translation="nie daję mi" kanji="呉れない" romaji="kurenai">
+          
+        </form>
+        <form ref="polite_negative" kana="くれません" translation="nie daję mi" kanji="呉れません" romaji="kuremasen">
+          
+        </form>
+        <form ref="past_plain" kana="くれた" translation="dawałem mi" kanji="呉れた" romaji="kureta">
+          
+        </form>
+        <form ref="past_polite" kana="くれました" translation="dawałem mi" kanji="呉れました" romaji="kuremashita">
+          
+        </form>
+        <form ref="past_negative_plain" kana="くれなかった" translation="nie dawałem mi" kanji="呉れなかった" romaji="kurenakatta">
+          
+        </form>
+        <form ref="past_negative_polite" kana="くれませんでした" translation="nie dawałem mi" kanji="呉れませんでした" romaji="kuremasendeshita">
+          
+        </form>
+        <form ref="te_form" kana="くれて" kanji="呉れて" translation="dając mi" romaji="kurete" />
+        <form ref="potential" kana="くれられる" kanji="呉れられる" translation="mogę dawać mi" romaji="kurerareru">
+          
+        </form>
+        <form ref="passive" kana="くれられる" kanji="呉れられる" romaji="kurerareru" />
+        <form ref="causative" kana="くれさせる" kanji="呉れさせる" romaji="kuresaseru">
+          
+        </form>
+        <form ref="tara" kana="くれたら" kanji="呉れたら" translation="jeśli będę dawać mi" romaji="kuretara">
+          
+        </form>
+        <form ref="volitional" kana="くれよう" kanji="呉れよう" translation="dawajmy mi" romaji="kureyou" />
+        <form ref="imperative" kana="くれ" kanji="呉れ" translation="dawaj mi!" romaji="kure" />
+  <form ref="progressive" kana="くれている" kanji="呉れている" romaji="kureteiru" />
+  <form ref="desiderative" kana="くれたい" kanji="呉れたい" romaji="kuretai" />
       </forms>
     </word>
   </words>
