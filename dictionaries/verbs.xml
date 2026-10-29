@@ -16734,8 +16734,8 @@
         <form ref="potential" kana="くれられる" kanji="呉れられる" translation="mogę dawać mi" romaji="kurerareru">
           
         </form>
-        <form ref="passive" kana="くれられる" kanji="呉れられる" romaji="kurerareru" />
-        <form ref="causative" kana="くれさせる" kanji="呉れさせる" romaji="kuresaseru">
+        <form ref="passive" kana="くれられる" kanji="呉れられる" romaji="kurerareru" translation="daję mi" />
+        <form ref="causative" kana="くれさせる" kanji="呉れさせる" romaji="kuresaseru" translation="daję mi">
           
         </form>
         <form ref="tara" kana="くれたら" kanji="呉れたら" translation="jeśli będę dawać mi" romaji="kuretara">
@@ -16743,8 +16743,8 @@
         </form>
         <form ref="volitional" kana="くれよう" kanji="呉れよう" translation="dawajmy mi" romaji="kureyou" />
         <form ref="imperative" kana="くれ" kanji="呉れ" translation="dawaj mi!" romaji="kure" />
-  <form ref="progressive" kana="くれている" kanji="呉れている" romaji="kureteiru" />
-  <form ref="desiderative" kana="くれたい" kanji="呉れたい" romaji="kuretai" />
+  <form ref="progressive" kana="くれている" kanji="呉れている" romaji="kureteiru" translation="daję mi" />
+  <form ref="desiderative" kana="くれたい" kanji="呉れたい" romaji="kuretai" translation="daję mi" />
       </forms>
     </word>
   </words>
