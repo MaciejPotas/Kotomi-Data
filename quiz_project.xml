@@ -16,6 +16,7 @@
   <retired_dictionaries>
     <dictionary id="time_expressions" />
   </retired_dictionaries>
+  <semantic_categories file="grammar/categories.xml" />
   <counting file="grammar/counting.xml" />
   <contexts file="grammar/contexts.xml" />
   <sentence_maps file="patterns/sentence_maps.xml" />

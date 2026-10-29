@@ -25,6 +25,7 @@ PROJECT_SCHEMA_FILES = {
     "dictionaries/nouns.xml",
     "dictionaries/numbers.xml",
     "dictionaries/verbs.xml",
+    "grammar/categories.xml",
     "grammar/contexts.xml",
     "grammar/counting.xml",
     "patterns/sentence_maps.xml",
@@ -45,6 +46,7 @@ CONTENT_MANIFEST_ORDER = [
     "data/dictionaries/nouns.xml",
     "data/dictionaries/numbers.xml",
     "data/dictionaries/verbs.xml",
+    "data/grammar/categories.xml",
     "data/grammar/contexts.xml",
     "data/grammar/counting.xml",
     "data/lessons/lessons.xml",
@@ -300,10 +302,51 @@ def validate_sentence_quiz_references(root: Path | None = None) -> None:
                 raise AssertionError(f"Quiz {quiz.get('id')} references missing pattern {reference.get('ref')}")
 
 
+def validate_noun_category_catalog(root: Path, manifest):
+    references = manifest.findall("semantic_categories")
+    if not references:
+        return None  # Older Content uses the application's compatibility catalog.
+    if len(references) != 1 or set(references[0].attrib) != {"file"} or len(references[0]):
+        raise AssertionError("Invalid semantic category file reference")
+    path = (root / references[0].get("file")).resolve()
+    if not path.is_relative_to(root.resolve()):
+        raise AssertionError("Semantic categories must be inside Content")
+    catalog = ET.parse(path).getroot()
+    if catalog.tag != "noun_categories" or catalog.attrib != {"schema_version": "2"}:
+        raise AssertionError("Invalid noun category catalog")
+    categories = {}
+    for node in catalog:
+        name = node.get("id", "")
+        if node.tag != "category" or set(node.attrib) - {"id", "parent", "label", "selectable"} or len(node):
+            raise AssertionError("Invalid noun category declaration")
+        if not re.fullmatch(r"[a-z][a-z0-9_]*", name):
+            raise AssertionError("Invalid noun category identifier")
+        if name in categories:
+            raise AssertionError(f"Duplicate noun category {name}")
+        if node.get("selectable", "true") not in {"true", "false"}:
+            raise AssertionError("Invalid category selectable flag")
+        categories[name] = node
+    if not categories:
+        raise AssertionError("Empty noun category catalog")
+    completed = set()
+    for name in categories:
+        current, seen = name, set()
+        while current and current not in completed:
+            if current not in categories:
+                raise AssertionError(f"Unknown noun category parent {current}")
+            if current in seen:
+                raise AssertionError(f"Cyclic noun category inheritance: {current}")
+            seen.add(current)
+            current = categories[current].get("parent", "")
+        completed.update(seen)
+    return categories
+
+
 def validate_semantic_categories(root: Path | None = None) -> None:
     """Validate declared catalogs and memberships, independent of word inventory."""
     root = root or ROOT
     manifest = ET.parse(root / "quiz_project.xml").getroot()
+    noun_catalog = validate_noun_category_catalog(root, manifest)
     for entry in manifest.findall("./dictionaries/dictionary"):
         dictionary = ET.parse(root / entry.get("file")).getroot()
         schema = dictionary.get("schema") or entry.get("schema")
@@ -323,6 +366,19 @@ def validate_semantic_categories(root: Path | None = None) -> None:
         if any(not re.fullmatch(r"[a-z][a-z0-9_]*", value) for value in categories):
             raise AssertionError("Invalid semantic category identifier")
         for word in dictionary.findall("./words/word"):
+            if noun_catalog is not None:
+                used = set(word.get("target_categories", "").split())
+                if word.get("category"):
+                    used.add(word.get("category"))
+                    if schema == "noun" and word.get("category") in noun_catalog and noun_catalog[word.get("category")].get("selectable", "true") != "true":
+                        raise AssertionError("Noun uses nonselectable category")
+                for node in word.findall("./usage/role"):
+                    used.update(node.get("accepts", "").split())
+                for node in word.findall("describes"):
+                    used.update(node.get("categories", "").split())
+                used.discard("*")
+                if used - set(noun_catalog):
+                    raise AssertionError(f"Unknown noun category on {entry.get('id')}/{word.get('id')}: {sorted(used-set(noun_catalog))}")
             values = word.get("categories", "").split()
             if values and schema != "adverb":
                 raise AssertionError("Semantic memberships require adverb schema")
