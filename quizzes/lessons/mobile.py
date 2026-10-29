@@ -48,6 +48,22 @@ from platforms.mobile.presentation import (
     mobile_font_path,
     scaled_button_height,
 )
+try:
+    from platforms.mobile.presentation import verified_single_line_font_size
+except ImportError:
+    # Quiz Update can install new package code before Application Update.
+    # Older app runtimes keep their original proportional fitting behavior.
+    def verified_single_line_font_size(
+        initial_sp: float,
+        available_width: float,
+        *,
+        minimum_sp: float,
+        measure_width,
+        safety_px: float = 2.0,
+    ) -> float:
+        return initial_sp
+
+
 from platforms.mobile.i18n import mobile_error_text, mobile_text
 from platforms.mobile.calculation_progress import run_calculation
 try:
@@ -308,6 +324,23 @@ def create_app_class():
                     minimum_sp=self._minimum_font_sp,
                     maximum_lines=self._maximum_fit_lines,
                 )
+                if fitted_lines == 1 and probe.texture.size[0] > available_width - dp(2):
+                    def measured_width(size_sp: float) -> float:
+                        rendered = CoreLabel(
+                            text=self._fit_plain_text,
+                            font_name=self.font_name,
+                            font_size=sp(size_sp),
+                        )
+                        rendered.refresh()
+                        return float(rendered.texture.size[0])
+
+                    fitted_sp = verified_single_line_font_size(
+                        fitted_sp,
+                        available_width,
+                        minimum_sp=self._minimum_font_sp,
+                        measure_width=measured_width,
+                        safety_px=dp(2),
+                    )
                 # Kivy's shorten mode always forces one line and overrides
                 # max_lines, so it must be off for the bounded wrap case.
                 self.shorten = self._allow_shorten and fitted_lines == 1
