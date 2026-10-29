@@ -397,7 +397,7 @@ podaje wynik łączny. Najwyższy pierwotny iloraz po korekcie: 1.105499.
 | Zdania przydawkowe podmiotowe | warm/first_question | 17.961 | 17.833 | 0.993 |
 
 Czasy są medianami median rund; iloraz jest medianą ilorazów parowanych.
-[Surowe pomiary i diagnostyka](noun_role_performance_c3.json).
+[Surowe pomiary i diagnostyka](https://github.com/MaciejPotas/Kotomi-Data/blob/44682b1ce2359d341b241313356921cb160c31ac/docs/validation/noun_role_performance_c3.json).
 
 
 ## Wyniki końcowe C3.1

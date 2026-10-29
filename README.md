@@ -108,7 +108,7 @@ uses opaque source text; Polish enables optional enrichment on the same Word.
 Switching grammar is non-destructive and does not mutate Content. Test-only
 providers and fixtures are not published in this repository.
 
-Kotomi provides form catalogs, roles/categories/features, agreement templates,
+Kotomi provides form catalogs, roles/features, agreement templates,
 government frames, noun relation profiles, source clitics and counting rules.
 Content references these IDs but does not define grammar or Studio field schemas.
 `grammar/counting.xml` contains lexical counter bindings and learning number sets;
@@ -139,3 +139,5 @@ counts or group names. Mutation tests use versioned fixtures. Published lexical
 quality remains a separate, explicitly scoped check in the combined Kotomi suite.
 
 Adverb semantic categories (Kotomi 1.8.0+): [English](docs/eng/adverb_categories.md) / [Polski](docs/pl/adverb_categories.md).
+
+Semantic category catalog: [English](docs/eng/semantic_category_catalog.md) / [Polski](docs/pl/semantic_category_catalog.md).

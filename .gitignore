@@ -4,3 +4,6 @@ __pycache__/
 
 # Local diagnostic output
 audit-results/
+
+# Historical generated reports remain accessible through pinned audit links.
+/docs/validation/noun_role_performance_c3.json
