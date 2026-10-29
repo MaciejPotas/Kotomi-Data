@@ -30,6 +30,7 @@ from platforms.mobile.presentation import (
     MOBILE_WRONG_BACKGROUND,
     MobileReviewInputMixin,
     fitted_compact_text_layout,
+    verified_single_line_font_size,
     format_grammatical_hint_entry,
     format_mobile_hint_entries,
     format_mobile_hint_entry,
@@ -567,6 +568,23 @@ def create_app_class(policy: object = None):
                     fitted_sp,
                     height_sp * 0.80 / max(1, fitted_lines),
                 )
+                if fitted_lines == 1 and probe.texture.size[0] > available_width - dp(2):
+                    def measured_width(size_sp: float) -> float:
+                        rendered = CoreLabel(
+                            text=self._fit_plain_text,
+                            font_name=self.font_name,
+                            font_size=sp(size_sp),
+                        )
+                        rendered.refresh()
+                        return float(rendered.texture.size[0])
+
+                    fitted_sp = verified_single_line_font_size(
+                        fitted_sp,
+                        available_width,
+                        minimum_sp=minimum_sp,
+                        measure_width=measured_width,
+                        safety_px=dp(2),
+                    )
                 self.shorten = False
                 if hasattr(self, "max_lines"):
                     self.max_lines = 1
