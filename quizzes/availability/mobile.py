@@ -30,7 +30,6 @@ from platforms.mobile.presentation import (
     MOBILE_WRONG_BACKGROUND,
     MobileReviewInputMixin,
     fitted_compact_text_layout,
-    verified_single_line_font_size,
     format_grammatical_hint_entry,
     format_mobile_hint_entries,
     format_mobile_hint_entry,
@@ -38,6 +37,22 @@ from platforms.mobile.presentation import (
     scaled_button_height,
     validate_mobile_button_scale,
 )
+try:
+    from platforms.mobile.presentation import verified_single_line_font_size
+except ImportError:
+    # Quiz Update can install new package code before Application Update.
+    # Older app runtimes keep their original proportional fitting behavior.
+    def verified_single_line_font_size(
+        initial_sp: float,
+        available_width: float,
+        *,
+        minimum_sp: float,
+        measure_width,
+        safety_px: float = 2.0,
+    ) -> float:
+        return initial_sp
+
+
 from platforms.mobile.identity import (
     app_icon_png_path,
     apply_kivy_window_icon,

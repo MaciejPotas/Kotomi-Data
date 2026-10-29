@@ -42,13 +42,28 @@ from platforms.mobile.presentation import (
     mobile_picker_row_text,
     MobileReviewInputMixin,
     fitted_compact_text_layout,
-    verified_single_line_font_size,
     fitted_single_line_font_size,
     format_grammatical_hint_entry,
     format_mobile_hint_entries,
     mobile_font_path,
     scaled_button_height,
 )
+try:
+    from platforms.mobile.presentation import verified_single_line_font_size
+except ImportError:
+    # Quiz Update can install new package code before Application Update.
+    # Older app runtimes keep their original proportional fitting behavior.
+    def verified_single_line_font_size(
+        initial_sp: float,
+        available_width: float,
+        *,
+        minimum_sp: float,
+        measure_width,
+        safety_px: float = 2.0,
+    ) -> float:
+        return initial_sp
+
+
 from platforms.mobile.i18n import mobile_error_text, mobile_text
 from platforms.mobile.calculation_progress import run_calculation
 try:
