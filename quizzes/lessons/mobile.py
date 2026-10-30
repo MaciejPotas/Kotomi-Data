@@ -47,6 +47,7 @@ from platforms.mobile.presentation import (
     scaled_button_height,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
+from platforms.mobile.settings_layout import number_setting, style_settings_action
 from platforms.mobile.selection_picker import (
     OptionState, SelectionPickerBinding, open_selection_picker, open_settings_panel,
 )
@@ -722,20 +723,21 @@ def create_app_class():
             flip = AppButton(text=ui_text("settings.reverse", ""))
             flip.bind(on_release=lambda *_: self.flip())
             settings_content.add_widget(flip)
-            settings_content.add_widget(
-                AppLabel(text=ui_text(
-                    "settings.learning_target",
-                    "",
-                ))
+            target_row, self.target = number_setting(
+                ui_text("settings.learning_target", ""), AppInput, AppLabel,
             )
-            self.target = AppInput(text="1", input_filter="int")
-            settings_content.add_widget(self.target)
-            size_label = AppLabel(text=ui_text("mobile.button_scale", ""))
-            self.button_scale = AppInput(text="100", input_filter="int")
+            self.target.text = "1"
+            settings_content.add_widget(target_row)
+            size_row, self.button_scale = number_setting(
+                ui_text("mobile.button_scale", ""), AppInput, AppLabel,
+            )
+            self.button_scale.text = "100"
             display = AppButton(text=ui_text("mobile.button_scale", ""))
             display.bind(on_release=lambda *_: open_settings_panel(
-                self, display.text, (size_label, self.button_scale), ui_text, MOBILE_FONT,
+                self, display.text, (size_row,), ui_text, MOBILE_FONT,
+                editable_fields=((self.button_scale, "text"),),
             ))
+            style_settings_action(display)
             settings_content.add_widget(display)
             settings_content.add_widget(
                 AppLabel(
@@ -1079,15 +1081,11 @@ def create_app_class():
             self.form_selection = MobileMultiSelection((), ())
 
             root.add_widget(Widget())
-            root.add_widget(
-                AppLabel(
-                    text=ui_text("mobile.question_count", ""),
-                    fixed_height=32,
-                    single_line=True,
-                )
+            count_row, self.question_count = number_setting(
+                ui_text("mobile.question_count"), AppInput, AppLabel,
             )
-            self.question_count = AppInput(text="10", input_filter="int")
-            root.add_widget(self.question_count)
+            self.question_count.text = "10"
+            root.add_widget(count_row)
             start = AppButton(text=ui_text("action.start", ""))
             start.bind(on_release=lambda *_: self.start())
             calculate = AppButton(
@@ -1096,6 +1094,7 @@ def create_app_class():
             calculate.bind(on_release=lambda *_: self.show_possibilities())
             back = AppButton(text=ui_text("action.back", ""))
             back.bind(on_release=lambda *_: setattr(self.manager, "current", "lesson"))
+            style_settings_action(calculate, primary=True)
             root.add_widget(calculate)
             root.add_widget(button_row([back, start]))
             self.add_widget(root)

@@ -87,8 +87,8 @@
     },
     {
       "path": "apps/adjectives/mobile.py",
-      "sha256": "4cece1ee7d4b92925896568560c3dc334f7c793806e0bc2548a9902e1a595a48",
-      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=4cece1ee7d4b92925896568560c3dc334f7c793806e0bc2548a9902e1a595a48"
+      "sha256": "9031badba6d4152fff123d2614f55c5e5b88330825faa69ee3aad02cabb05449",
+      "url": "quizzes/adjectives/mobile.py?kotomi_sha256=9031badba6d4152fff123d2614f55c5e5b88330825faa69ee3aad02cabb05449"
     },
     {
       "path": "apps/availability/Kotomi_availability.py",
@@ -107,8 +107,8 @@
     },
     {
       "path": "apps/availability/mobile.py",
-      "sha256": "8ab5616f3cb5cca80f91b783cfd6fe976230a9ad4676c9eb60009385ced010b4",
-      "url": "quizzes/availability/mobile.py?kotomi_sha256=8ab5616f3cb5cca80f91b783cfd6fe976230a9ad4676c9eb60009385ced010b4"
+      "sha256": "32762176af8cc2684903aae4c5fd28ef52bc9e4f5f8ee63c5236e5b7a95bf96f",
+      "url": "quizzes/availability/mobile.py?kotomi_sha256=32762176af8cc2684903aae4c5fd28ef52bc9e4f5f8ee63c5236e5b7a95bf96f"
     },
     {
       "path": "apps/grammar/Kotomi_grammar.py",
@@ -147,8 +147,8 @@
     },
     {
       "path": "apps/lessons/mobile.py",
-      "sha256": "378e27d2b1d21b6c2f9e7f8ba8962152cc144fbb47bfa74530b1ab7e11b8aec1",
-      "url": "quizzes/lessons/mobile.py?kotomi_sha256=378e27d2b1d21b6c2f9e7f8ba8962152cc144fbb47bfa74530b1ab7e11b8aec1"
+      "sha256": "87f7de2b227d80610dab6808dd22a541fc6d696b50f5068e0d11236bc962ac94",
+      "url": "quizzes/lessons/mobile.py?kotomi_sha256=87f7de2b227d80610dab6808dd22a541fc6d696b50f5068e0d11236bc962ac94"
     },
     {
       "path": "apps/verbs/Kotomi_verbs.py",
@@ -167,8 +167,8 @@
     },
     {
       "path": "apps/verbs/mobile.py",
-      "sha256": "7464b6adfa9bec7109aa8fd613245a789e207feed52a0862bb9d19c307731dbf",
-      "url": "quizzes/verbs/mobile.py?kotomi_sha256=7464b6adfa9bec7109aa8fd613245a789e207feed52a0862bb9d19c307731dbf"
+      "sha256": "0c7a0a8e9b15c8290eff5ad6313d19f190a69a9db03cc300809f8dd7ab6d2e0a",
+      "url": "quizzes/verbs/mobile.py?kotomi_sha256=0c7a0a8e9b15c8290eff5ad6313d19f190a69a9db03cc300809f8dd7ab6d2e0a"
     }
   ]
 }

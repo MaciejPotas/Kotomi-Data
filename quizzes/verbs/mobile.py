@@ -52,6 +52,7 @@ from platforms.mobile.identity import (
     configure_windows_app_id,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
+from platforms.mobile.settings_layout import number_setting, filter_setting, style_settings_action
 from platforms.mobile.selection_picker import (
     OptionState, SelectionPickerBinding, open_settings_panel, pattern_option_label,
 )
@@ -753,30 +754,13 @@ def create_app_class():
             self.content.add_widget(self.pattern_picker)
             self.content.add_widget(self.form_picker)
 
-            self._section(tr("specialized.word_filter"))
-            filter_help = PolishLabel(
-                text=tr(
-                    "specialized.word_filter_help",
-                    example="ending=su,ru;type=godan",
-                ),
-                font_size=15,
-                halign="left",
-                valign="middle",
-                size_hint_y=None,
-                height=70,
+            filter_card, self.word_filter = filter_setting(
+                tr("specialized.word_filter"),
+                tr("specialized.word_filter_help", example="ending=su,ru;type=godan"),
+                "ending=su,ru;type=godan", PolishInput, PolishLabel, PolishButton,
             )
-            wrap_label(filter_help)
-            self.content.add_widget(filter_help)
-            self.word_filter = PolishInput(
-                multiline=False,
-                font_size=18,
-                size_hint_y=None,
-                height=64,
-                hint_text="ending=su,ru;type=godan",
-            )
-            self.content.add_widget(self.word_filter)
+            self.content.add_widget(filter_card)
 
-            self._section(tr("specialized.flow"))
             font_row = BoxLayout(
                 orientation="vertical",
                 size_hint_y=None,
@@ -856,7 +840,11 @@ def create_app_class():
             )
             self.display_button.bind(on_release=lambda *_: open_settings_panel(
                 self, self.display_button.text, self.display_widgets, tr, MOBILE_FONT,
+                editable_fields=((self.font_scale_slider, "value"),
+                                 (self.mobile_button_scale_slider, "value"),
+                                 (self.auto_advance, "text")),
             ))
+            style_settings_action(self.display_button)
             self.content.add_widget(self.display_button)
 
             statistics_button = PolishButton(
@@ -868,6 +856,7 @@ def create_app_class():
             statistics_button.bind(
                 on_release=lambda *_: self.calculate_statistics()
             )
+            style_settings_action(statistics_button, primary=True)
             self.content.add_widget(statistics_button)
             self.statistics = PolishLabel(
                 text="",
@@ -989,30 +978,7 @@ def create_app_class():
             decimal: bool = False,
             *, add_to_content: bool = True,
         ) -> TextInput:
-            row = BoxLayout(
-                orientation="vertical",
-                size_hint_y=None,
-                height=104,
-                spacing=dp(4),
-            )
-            label = PolishLabel(
-                text=title,
-                font_size=18,
-                halign="left",
-                valign="middle",
-                size_hint_y=None,
-                height=36,
-            )
-            wrap_label(label)
-            value = PolishInput(
-                multiline=False,
-                input_filter=None if decimal else "int",
-                font_size=22,
-                size_hint_y=None,
-                height=64,
-            )
-            row.add_widget(label)
-            row.add_widget(value)
+            row, value = number_setting(title, PolishInput, PolishLabel, decimal=decimal)
             if add_to_content:
                 self.content.add_widget(row)
             return value
