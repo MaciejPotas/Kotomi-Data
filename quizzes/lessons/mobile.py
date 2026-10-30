@@ -38,8 +38,6 @@ from platforms.mobile.presentation import (
     MOBILE_QUIZ_LAYOUT,
     MOBILE_WRONG_BACKGROUND,
     MobileMultiSelection,
-    filter_mobile_picker_groups,
-    mobile_picker_row_text,
     MobileReviewInputMixin,
     fitted_compact_text_layout,
     fitted_single_line_font_size,
@@ -49,7 +47,10 @@ from platforms.mobile.presentation import (
     scaled_button_height,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
-from platforms.mobile.calculation_progress import run_calculation
+from platforms.mobile.selection_picker import (
+    OptionState, SelectionPickerBinding, open_selection_picker, open_settings_panel,
+)
+from platforms.mobile.calculation_progress import run_calculation, run_loading_preparation
 try:
     from platforms.mobile.calculation_progress import run_preparation
 except ImportError:
@@ -396,121 +397,6 @@ def create_app_class():
     # Palette from the Sentence Quiz list picker mockup.
     PICKER_BLUE = (0.118, 0.451, 0.910, 1)
     PICKER_SELECTED = (0.918, 0.953, 1, 1)
-    PICKER_BACKGROUND = (0.965, 0.969, 0.976, 1)
-    PICKER_TEXT = (0.122, 0.161, 0.216, 1)
-    PICKER_MUTED = (0.420, 0.451, 0.502, 1)
-    PICKER_DIVIDER = (0.898, 0.906, 0.922, 1)
-
-    class MobilePickerRow(ButtonBehavior, BoxLayout):
-        """Checkbox list row rather than a block-sized toggle button."""
-
-        def __init__(self, label: str, detail: str, selected: bool,
-                     enabled: bool, on_toggle, **kwargs):
-            super().__init__(
-                orientation="horizontal",
-                size_hint_y=None,
-                height=dp(68),
-                padding=(dp(12), dp(7)),
-                spacing=dp(10),
-                **kwargs,
-            )
-            self.option_enabled = enabled
-            self.selected = selected
-            self._on_toggle = on_toggle
-            with self.canvas.before:
-                self._background_color = Color(*PICKER_SELECTED)
-                self._background = RoundedRectangle(radius=[dp(10)])
-
-            checkbox_slot = AnchorLayout(
-                anchor_x="center", anchor_y="center",
-                size_hint=(None, 1), width=dp(34),
-            )
-            self.checkbox = Label(
-                text="✓" if selected else "",
-                font_name=POLISH_FONT,
-                bold=True,
-                font_size="18sp",
-                color=(1, 1, 1, 1),
-                size_hint=(None, None),
-                size=(dp(28), dp(28)),
-                halign="center",
-                valign="middle",
-            )
-            self.checkbox.text_size = (dp(28), dp(28))
-            with self.checkbox.canvas.before:
-                self._check_fill = Color(*PICKER_BLUE)
-                self._check_rect = RoundedRectangle(radius=[dp(6)])
-                self._check_inner_fill = Color(1, 1, 1, 0)
-                self._check_inner = RoundedRectangle(radius=[dp(5)])
-            self.checkbox.bind(pos=self._update_check_geometry,
-                               size=self._update_check_geometry)
-            checkbox_slot.add_widget(self.checkbox)
-            self.add_widget(checkbox_slot)
-
-            text_column = BoxLayout(
-                orientation="vertical", size_hint_y=None, spacing=dp(0),
-            )
-            title = AppLabel(
-                text=label,
-                font_size="16sp",
-                color=PICKER_TEXT,
-                disabled_color=PICKER_TEXT,
-                size_hint_y=None,
-            )
-            subtitle = AppLabel(
-                text=detail,
-                font_size="12sp",
-                color=PICKER_MUTED,
-                disabled_color=PICKER_MUTED,
-                fixed_height=21,
-                single_line=True,
-            )
-            text_column.add_widget(title)
-            if detail:
-                text_column.add_widget(subtitle)
-            text_column.bind(minimum_height=text_column.setter("height"))
-            text_column.bind(height=self._fit_height)
-            self.add_widget(text_column)
-            self.bind(pos=self._update_geometry, size=self._update_geometry)
-            self.disabled = not enabled
-            self.opacity = 1 if enabled else 0.75
-            self.set_selected(selected)
-            self._update_geometry()
-            self._update_check_geometry()
-
-        def _fit_height(self, _widget, height):
-            self.height = max(dp(64), height + dp(14))
-
-        def _update_geometry(self, *_args):
-            self._background.pos = self.pos
-            self._background.size = self.size
-
-        def _update_check_geometry(self, *_args):
-            self._check_rect.pos = self.checkbox.pos
-            self._check_rect.size = self.checkbox.size
-            self._check_inner.pos = (
-                self.checkbox.x + dp(1.5),
-                self.checkbox.y + dp(1.5),
-            )
-            self._check_inner.size = (
-                max(0, self.checkbox.width - dp(3)),
-                max(0, self.checkbox.height - dp(3)),
-            )
-
-        def set_selected(self, selected: bool):
-            self.selected = selected
-            self._background_color.rgba = (
-                PICKER_SELECTED if selected else (1, 1, 1, 1)
-            )
-            self._check_fill.rgba = (
-                PICKER_BLUE if selected else (0.67, 0.71, 0.76, 1)
-            )
-            self._check_inner_fill.rgba = (1, 1, 1, 0 if selected else 1)
-            self.checkbox.text = "✓" if selected else ""
-
-        def on_release(self):
-            if self.option_enabled:
-                self._on_toggle()
 
     class ChoiceButton(JapaneseButton):
         """White answer button with a visible border on light mobile themes."""
@@ -844,14 +730,13 @@ def create_app_class():
             )
             self.target = AppInput(text="1", input_filter="int")
             settings_content.add_widget(self.target)
-            settings_content.add_widget(
-                AppLabel(text=ui_text(
-                    "mobile.button_scale",
-                    "",
-                ))
-            )
+            size_label = AppLabel(text=ui_text("mobile.button_scale", ""))
             self.button_scale = AppInput(text="100", input_filter="int")
-            settings_content.add_widget(self.button_scale)
+            display = AppButton(text=ui_text("mobile.button_scale", ""))
+            display.bind(on_release=lambda *_: open_settings_panel(
+                self, display.text, (size_label, self.button_scale), ui_text, MOBILE_FONT,
+            ))
+            settings_content.add_widget(display)
             settings_content.add_widget(
                 AppLabel(
                     text=(
@@ -1093,17 +978,15 @@ def create_app_class():
                 height=dp(48),
             )
             root.add_widget(self.asked)
-            root.add_widget(AppLabel(text=ui_text("quiz.forms", "")))
-            select_all = AppButton(text=ui_text("action.select_all", ""))
-            select_all.bind(on_release=lambda *_: self.set_all_forms(True))
-            clear = AppButton(
-                text=ui_text("action.clear_selection", "")
+            self.form_picker = AppButton()
+            self.checks = {}
+            self.form_labels = {}
+            self.form_binding = SelectionPickerBinding(
+                self, self.form_picker, self.checks, self.form_labels,
+                "forms", ui_text("quiz.forms"), ui_text, MOBILE_FONT,
             )
-            clear.bind(on_release=lambda *_: self.set_all_forms(False))
-            root.add_widget(button_row([select_all, clear]))
-            scroll, self.form_stack = scroll_stack(6, interactive_bar=True)
-            self.checks: Dict[str, MobileOptionToggle] = {}
-            root.add_widget(scroll)
+            root.add_widget(self.form_picker)
+            root.add_widget(Widget())
             start = AppButton(text=ui_text("action.start", ""))
             start.bind(on_release=lambda *_: self.start())
             back = AppButton(text=ui_text("action.back", ""))
@@ -1115,26 +998,21 @@ def create_app_class():
             for check in self.checks.values():
                 if not check.disabled:
                     check.active = active
+            self.form_binding.refresh()
 
         def on_pre_enter(self, *_args):
             lesson = self.kotomi.current_lesson()
             self.title.text = ui_text("quiz.conjugation", "") + "\n" + lesson.path
             self.asked.text = field_label(self.kotomi.settings.asked_field)
             available = available_forms(self.kotomi.catalog, lesson)
-            self.form_stack.clear_widgets()
-            self.checks = {}
+            self.checks.clear()
+            self.form_labels.clear()
             for form_name in available:
-                check = MobileOptionToggle(
-                    text=form_label(
-                        form_name,
-                        self.kotomi.catalog.form_labels,
-                    )
+                self.checks[form_name] = OptionState(
+                    active=form_name in self.kotomi.settings.conjugation_forms,
                 )
-                check.active = (
-                    form_name in self.kotomi.settings.conjugation_forms
-                )
-                self.checks[form_name] = check
-                self.form_stack.add_widget(check)
+                self.form_labels[form_name] = form_label(form_name, self.kotomi.catalog.form_labels)
+            self.form_binding.refresh()
 
         def start(self) -> None:
             selected = [name for name, check in self.checks.items() if check.active]
@@ -1227,7 +1105,7 @@ def create_app_class():
             engine, catalog = controller.sentence_engine, controller.catalog
             lesson = controller.current_lesson()
             self.report.text = ui_text("quiz.finding_patterns")
-            run_preparation(
+            run_loading_preparation(
                 self, ui_text("quiz.sentence_title"), ui_text("quiz.finding_patterns"),
                 lambda: prepare_sentence_setup(engine, catalog, lesson),
                 self._setup_ready, self._setup_failed, font_name=MOBILE_FONT,
@@ -1321,7 +1199,7 @@ def create_app_class():
         def open_options_popup(self, group: str) -> None:
             """Open the searchable, collapsible, checkbox-style option list."""
             if group == "patterns":
-                title = ui_text("mobile.picker_patterns_title")
+                title = ui_text("quiz.patterns")
                 selection = self.pattern_selection
                 try:
                     from kotomi.application.pattern_selection import PatternEntry, PatternSelection
@@ -1333,257 +1211,21 @@ def create_app_class():
                 except ImportError:
                     # Executable quiz packages can run on the previous host.
                     groups = [("", ui_text("mobile.picker_single_patterns"), self.pattern_options)]
-                filters = ("all", "available", "selected")
-                hint_key = "mobile.picker_pattern_hint"
-                search_key = "mobile.picker_pattern_search"
             elif group == "forms":
-                title = ui_text("mobile.picker_forms_title")
+                title = ui_text("quiz.forms")
                 selection = self.form_selection
                 groups = [
                     (category, heading,
                      [(key, label, True) for key, label in forms])
                     for category, heading, forms in self.form_groups
                 ]
-                filters = ("all", "verb", "adjective", "selected")
-                hint_key = "mobile.picker_form_hint"
-                search_key = "mobile.picker_form_search"
             else:
                 raise ValueError(f"Unknown sentence option group: {group}")
 
-            modal = ModalView(
-                size_hint=(1, 1),
-                background="",
-                background_color=(1, 1, 1, 1),
-                auto_dismiss=True,
+            return open_selection_picker(
+                self, group, title, selection, groups, ui_text, MOBILE_FONT,
+                self.refresh_picker_labels,
             )
-            root = BoxLayout(
-                orientation="vertical",
-                spacing=dp(8),
-                padding=(dp(14), dp(8), dp(14), dp(10)),
-            )
-            with root.canvas.before:
-                Color(1, 1, 1, 1)
-                modal_background = RoundedRectangle(radius=[0])
-            def fit_background(*_args):
-                modal_background.pos = root.pos
-                modal_background.size = root.size
-            root.bind(pos=fit_background, size=fit_background)
-            fit_background()
-
-            header = BoxLayout(
-                orientation="horizontal",
-                size_hint_y=None, height=dp(54), spacing=dp(3),
-            )
-            back = AppButton(
-                text="<", size_hint_x=None, width=dp(40), height=dp(48),
-                font_size="27sp", color=PICKER_TEXT,
-                background_color=(1, 1, 1, 1),
-            )
-            back.bind(on_release=lambda *_: modal.dismiss())
-            header.add_widget(back)
-            heading = AppLabel(
-                text=title, font_size="21sp", color=PICKER_TEXT,
-                halign="center", fixed_height=48, single_line=True,
-            )
-            header.add_widget(heading)
-            selection_count = AppLabel(
-                size_hint_x=None, width=dp(112), fixed_height=48,
-                font_size="15sp", color=PICKER_BLUE,
-                single_line=True,
-            )
-            header.add_widget(selection_count)
-            root.add_widget(header)
-            root.add_widget(AppLabel(
-                text=ui_text(hint_key, ""),
-                color=PICKER_MUTED, font_size="14sp", fixed_height=42,
-                halign="center",
-            ))
-
-            search_panel = BoxLayout(
-                orientation="horizontal",
-                size_hint_y=None, height=dp(48),
-                padding=(dp(12), dp(2)), spacing=dp(6),
-            )
-            with search_panel.canvas.before:
-                Color(*PICKER_BACKGROUND)
-                search_bg = RoundedRectangle(radius=[dp(20)])
-            def fit_search(*_args):
-                search_bg.pos = search_panel.pos
-                search_bg.size = search_panel.size
-            search_panel.bind(pos=fit_search, size=fit_search)
-            fit_search()
-            search = TextInput(
-                hint_text=ui_text(search_key, ""),
-                font_name=POLISH_FONT,
-                font_size=sp(16),
-                foreground_color=PICKER_TEXT,
-                hint_text_color=PICKER_MUTED,
-                cursor_color=PICKER_BLUE,
-                multiline=False,
-                background_normal="",
-                background_active="",
-                background_color=(0, 0, 0, 0),
-                padding=(dp(3), dp(11)),
-            )
-            search_panel.add_widget(search)
-            root.add_widget(search_panel)
-
-            chip_scroll = ScrollView(
-                size_hint_y=None, height=dp(44),
-                do_scroll_x=True, do_scroll_y=False,
-                bar_width=0,
-            )
-            chips = BoxLayout(
-                orientation="horizontal",
-                size_hint_x=None, size_hint_y=None,
-                height=dp(42), spacing=dp(6),
-            )
-            chips.bind(minimum_width=chips.setter("width"))
-            chip_scroll.add_widget(chips)
-            root.add_widget(chip_scroll)
-
-            scroll, stack = scroll_stack(6, interactive_bar=True)
-            root.add_widget(scroll)
-            actions = BoxLayout(
-                orientation="horizontal",
-                size_hint_y=None, height=dp(47), spacing=dp(8),
-            )
-            clear = AppButton(
-                text=ui_text("action.clear_selection"),
-                height=dp(47), font_size="14sp",
-                color=PICKER_MUTED, background_color=PICKER_BACKGROUND,
-            )
-            confirm = AppButton(
-                text=ui_text("action.ok"),
-                height=dp(47), font_size="16sp",
-                color=(1, 1, 1, 1), background_color=PICKER_BLUE,
-            )
-            actions.add_widget(confirm)
-            actions.add_widget(clear)
-            root.add_widget(actions)
-            modal.add_widget(root)
-
-            active_filter = ["all"]
-            collapsed = self.__dict__.setdefault("picker_collapsed", {}).setdefault(group, set())
-            rows_by_id: Dict[str, List[MobilePickerRow]] = {}
-            filter_buttons: Dict[str, AppButton] = {}
-
-            def update_header() -> None:
-                selected, total = selection.counts()
-                selection_count.text = f"{selected}/{total}"
-                self.refresh_picker_labels()
-
-            def matching_groups():
-                return filter_mobile_picker_groups(
-                    groups, selection, search.text, active_filter[0]
-                )
-
-            def set_selected(option_id: str) -> None:
-                selection.select(
-                    option_id, not selection.is_selected(option_id)
-                )
-                update_header()
-                if active_filter[0] == "selected":
-                    render_rows(reset_scroll=False)
-                else:
-                    for row in rows_by_id.get(option_id, ()):
-                        row.set_selected(selection.is_selected(option_id))
-
-            def toggle_category(category: str) -> None:
-                if category in collapsed:
-                    collapsed.remove(category)
-                else:
-                    collapsed.add(category)
-                render_rows(reset_scroll=False)
-
-            def render_rows(*_args, reset_scroll=True) -> None:
-                previous_position = scroll.scroll_y
-                stack.clear_widgets()
-                rows_by_id.clear()
-                for category, section_label, entries in matching_groups():
-                    closed = category in collapsed and not search.text.strip()
-                    section_header = AppButton(
-                        text=("[+]  " if closed else "[-]  ") + section_label
-                             + f"  ({len(entries)})",
-                        font_size="16sp",
-                        halign="left", color=PICKER_TEXT,
-                        background_color=(1, 1, 1, 1),
-                        height=dp(43),
-                    )
-                    section_header.bind(
-                        on_release=lambda _button, key=category:
-                        toggle_category(key)
-                    )
-                    stack.add_widget(section_header)
-                    if closed:
-                        continue
-                    for option_id, label, enabled in entries:
-                        title_text, detail = mobile_picker_row_text(
-                            group, option_id, label, enabled,
-                            ui_text("mobile.picker_unavailable"),
-                        )
-                        row = MobilePickerRow(
-                            label=title_text, detail=detail,
-                            selected=selection.is_selected(option_id),
-                            enabled=enabled,
-                            on_toggle=lambda key=option_id: set_selected(key),
-                        )
-                        rows_by_id.setdefault(option_id, []).append(row)
-                        stack.add_widget(row)
-                if not stack.children:
-                    stack.add_widget(AppLabel(
-                        text=ui_text("mobile.picker_no_results"),
-                        color=PICKER_MUTED,
-                    ))
-                target = 1.0 if reset_scroll else previous_position
-                Clock.schedule_once(
-                    lambda _dt: setattr(scroll, "scroll_y", target), 0
-                )
-
-            def choose_filter(key: str) -> None:
-                active_filter[0] = key
-                for option, button in filter_buttons.items():
-                    active = option == key
-                    button.background_color = (
-                        PICKER_BLUE if active else PICKER_BACKGROUND
-                    )
-                    button.color = (1, 1, 1, 1) if active else PICKER_MUTED
-                render_rows(reset_scroll=True)
-
-            for key in filters:
-                caption = ui_text(f"mobile.picker_filter_{key}")
-                chip = AppButton(
-                    text=caption,
-                    font_size="14sp",
-                    size_hint_x=None,
-                    width=dp(max(86, len(caption) * 9 + 28)),
-                    height=dp(38),
-                    background_color=PICKER_BACKGROUND,
-                    color=PICKER_MUTED,
-                )
-                chip.bind(
-                    on_release=lambda _button, name=key: choose_filter(name)
-                )
-                chips.add_widget(chip)
-                filter_buttons[key] = chip
-
-            def clear_matching() -> None:
-                # Clear only matching options, including collapsed sections.
-                matching_ids = [
-                    option_id
-                    for _category, _heading, entries in matching_groups()
-                    for option_id, _label, enabled in entries if enabled
-                ]
-                selection.select_many(matching_ids, False)
-                update_header()
-                render_rows(reset_scroll=False)
-
-            clear.bind(on_release=lambda *_: clear_matching())
-            confirm.bind(on_release=lambda *_: modal.dismiss())
-            search.bind(text=lambda *_: render_rows(reset_scroll=True))
-            update_header()
-            choose_filter("all")
-            modal.open()
 
         def selected_values(self):
             patterns = self.pattern_selection.selected_values()
@@ -1620,7 +1262,7 @@ def create_app_class():
                     self.save_settings(patterns, forms, count)
                     self.kotomi.start_quiz(questions, title)
 
-                run_preparation(
+                run_loading_preparation(
                     self, ui_text("quiz.loading_title", ""),
                     ui_text("quiz.loading_message", "", title=title),
                     lambda: engine.build_questions(

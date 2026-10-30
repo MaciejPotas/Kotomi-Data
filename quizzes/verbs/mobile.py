@@ -52,6 +52,9 @@ from platforms.mobile.identity import (
     configure_windows_app_id,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
+from platforms.mobile.selection_picker import (
+    OptionState, SelectionPickerBinding, open_settings_panel, pattern_option_label,
+)
 from platforms.mobile.calculation_progress import run_calculation
 try:
     from platforms.mobile.quiz_loading import QuizLoading
@@ -253,7 +256,7 @@ def create_app_class():
             for name in settings.enabled_forms
         )
         patterns = ", ".join(
-            tr(f"specialized.pattern.{name}")
+            pattern_option_label(name, PATTERN_LABELS.get(name, name), tr)
             for name in settings.enabled_patterns
         )
         return "\n".join(
@@ -723,29 +726,36 @@ def create_app_class():
                 tr("specialized.plain_to_polite"),
             )
 
-            self._section(tr("specialized.answer_style"))
-            self._boolean_row("plain_output", tr("specialized.plain"))
-            self._boolean_row("polite_output", tr("specialized.polite"))
-
-            self._section(tr("specialized.tab.forms"))
-            for form_id, form in FORM_GROUPS.items():
-                row, checkbox = setting_row(
-                    tr(f"specialized.form_group.{form_id}"),
-                    True,
-                    lambda _value: None,
-                )
-                self.form_checks[form_id] = checkbox
-                self.content.add_widget(row)
-
-            self._section(tr("specialized.tab.patterns"))
-            for pattern_id, label_text in PATTERN_LABELS.items():
-                row, checkbox = setting_row(
-                    tr(f"specialized.pattern.{pattern_id}"),
-                    True,
-                    lambda _value: None,
-                )
-                self.pattern_checks[pattern_id] = checkbox
-                self.content.add_widget(row)
+            # Forms contains only answer style and the shared form list.
+            answer_style = BoxLayout(orientation="vertical", size_hint_y=None, spacing=dp(4))
+            answer_style.bind(minimum_height=answer_style.setter("height"))
+            answer_style.add_widget(PolishLabel(
+                text=tr("specialized.answer_style"), size_hint_y=None, height=dp(36)))
+            style_choices = BoxLayout(size_hint_y=None, spacing=dp(8))
+            style_choices.bind(minimum_height=style_choices.setter("height"))
+            answer_style.add_widget(style_choices)
+            for key, caption in (("plain_output", "specialized.plain"),
+                                 ("polite_output", "specialized.polite")):
+                row, toggle = setting_row(tr(caption), True, lambda _value: None)
+                self.value_checks[key] = toggle
+                style_choices.add_widget(row)
+            self.form_checks = {key: OptionState() for key in FORM_GROUPS}
+            self.pattern_checks = {key: OptionState() for key in PATTERN_LABELS}
+            self.form_picker = PolishButton(size_hint_y=None, height=dp(56))
+            self.pattern_picker = PolishButton(size_hint_y=None, height=dp(56))
+            self.pattern_binding = SelectionPickerBinding(
+                self, self.pattern_picker, self.pattern_checks,
+                {key: pattern_option_label(key, label, tr) for key, label in PATTERN_LABELS.items()},
+                "patterns", tr("quiz.patterns"), tr, MOBILE_FONT,
+            )
+            self.form_binding = SelectionPickerBinding(
+                self, self.form_picker, self.form_checks,
+                {key: tr(f"specialized.form_group.{key}") for key in FORM_GROUPS},
+                "forms", tr("specialized.tab.forms"), tr, MOBILE_FONT,
+                leading_widgets=(answer_style,),
+            )
+            self.content.add_widget(self.pattern_picker)
+            self.content.add_widget(self.form_picker)
 
             self._section(tr("specialized.word_filter"))
             filter_help = PolishLabel(
@@ -804,7 +814,6 @@ def create_app_class():
             font_title.add_widget(self.font_scale_value)
             font_row.add_widget(font_title)
             font_row.add_widget(self.font_scale_slider)
-            self.content.add_widget(font_row)
             button_row = BoxLayout(
                 orientation="vertical",
                 size_hint_y=None,
@@ -838,7 +847,15 @@ def create_app_class():
             button_title.add_widget(self.mobile_button_scale_value)
             button_row.add_widget(button_title)
             button_row.add_widget(self.mobile_button_scale_slider)
-            self.content.add_widget(button_row)
+            self.display_widgets = (font_row, button_row)
+            self.display_button = PolishButton(
+                text=tr("specialized.text_scale") + " / " + tr("specialized.button_scale"),
+                size_hint_y=None, height=dp(64),
+            )
+            self.display_button.bind(on_release=lambda *_: open_settings_panel(
+                self, self.display_button.text, self.display_widgets, tr, MOBILE_FONT,
+            ))
+            self.content.add_widget(self.display_button)
             self.question_count = self._number_input(
                 tr("specialized.question_count"),
             )
@@ -1037,6 +1054,8 @@ def create_app_class():
                 checkbox.active = name in settings.enabled_forms
             for name, checkbox in self.pattern_checks.items():
                 checkbox.active = name in settings.enabled_patterns
+            self.pattern_binding.refresh()
+            self.form_binding.refresh()
             self.word_filter.text = settings.word_filter
             self.question_count.text = str(settings.question_count)
             self.auto_advance.text = str(
