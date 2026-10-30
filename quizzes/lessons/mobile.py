@@ -978,7 +978,7 @@ def create_app_class():
                 height=dp(48),
             )
             root.add_widget(self.asked)
-            self.form_picker = AppButton()
+            self.form_picker = AppButton(font_size="19sp")
             self.checks = {}
             self.form_labels = {}
             self.form_binding = SelectionPickerBinding(
@@ -1059,14 +1059,14 @@ def create_app_class():
             # The setup stays the same height regardless of the option count.
             # Full-height touch targets live only in the picker popups.
             self.pattern_picker = AppButton(
-                color=PICKER_BLUE, background_color=PICKER_SELECTED,
+                font_size="19sp", color=PICKER_BLUE, background_color=PICKER_SELECTED,
             )
             self.pattern_picker.bind(
                 on_release=lambda *_: self.open_options_popup("patterns")
             )
             root.add_widget(self.pattern_picker)
             self.form_picker = AppButton(
-                color=PICKER_BLUE, background_color=PICKER_SELECTED,
+                font_size="19sp", color=PICKER_BLUE, background_color=PICKER_SELECTED,
             )
             self.form_picker.bind(
                 on_release=lambda *_: self.open_options_popup("forms")

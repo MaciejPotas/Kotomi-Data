@@ -844,8 +844,8 @@ def create_app_class(policy: object = None):
                 style_choices.add_widget(row)
             self.form_checks = {key: OptionState() for key in form_groups}
             self.pattern_checks = {key: OptionState() for key in pattern_labels}
-            self.form_picker = PolishButton(size_hint_y=None, height=dp(56))
-            self.pattern_picker = PolishButton(size_hint_y=None, height=dp(56))
+            self.form_picker = PolishButton(font_size=19, size_hint_y=None, height=dp(56))
+            self.pattern_picker = PolishButton(font_size=19, size_hint_y=None, height=dp(56))
             self.pattern_binding = SelectionPickerBinding(
                 self, self.pattern_picker, self.pattern_checks,
                 {key: pattern_label(key) for key in pattern_labels},
@@ -976,22 +976,21 @@ def create_app_class(policy: object = None):
             button_title.add_widget(self.mobile_button_scale_value)
             button_size_row.add_widget(button_title)
             button_size_row.add_widget(self.mobile_button_scale_slider)
-            self.display_widgets = (font_row, button_size_row)
+            self.question_count = self._number_input(
+                tr("specialized.question_count"),
+            )
+            self.auto_advance = self._number_input(
+                tr("specialized.auto_advance"), decimal=True, add_to_content=False,
+            )
+            self.display_widgets = (font_row, button_size_row, self.auto_advance.parent)
             self.display_button = PolishButton(
-                text=tr("specialized.text_scale") + " / " + tr("specialized.button_scale"),
-                size_hint_y=None, height=dp(64),
+                text=tr("specialized.section.size_behavior"),
+                font_size=19, size_hint_y=None, height=dp(64),
             )
             self.display_button.bind(on_release=lambda *_: open_settings_panel(
                 self, self.display_button.text, self.display_widgets, tr, mixed_font,
             ))
             self.content.add_widget(self.display_button)
-            self.question_count = self._number_input(
-                tr("specialized.question_count"),
-            )
-            self.auto_advance = self._number_input(
-                tr("specialized.auto_advance"),
-                decimal=True,
-            )
 
             statistics_button = PolishButton(
                 text=tr("specialized.calculate_options"),
@@ -1120,6 +1119,7 @@ def create_app_class(policy: object = None):
             self,
             title: str,
             decimal: bool = False,
+            *, add_to_content: bool = True,
         ) -> TextInput:
             row = BoxLayout(
                 orientation="vertical",
@@ -1145,7 +1145,8 @@ def create_app_class(policy: object = None):
             )
             row.add_widget(label)
             row.add_widget(value)
-            self.content.add_widget(row)
+            if add_to_content:
+                self.content.add_widget(row)
             return value
 
         def on_pre_enter(self, *_args):

@@ -716,19 +716,15 @@ def create_app_class():
             )
             self.content.add_widget(self.mode_spinner)
 
-            self._section(tr("specialized.direction"))
-            self._boolean_row(
-                "polite_to_plain",
-                tr("specialized.polite_to_plain"),
-            )
-            self._boolean_row(
-                "plain_to_polite",
-                tr("specialized.plain_to_polite"),
-            )
-
-            # Forms contains only answer style and the shared form list.
+            # Forms groups transformation directions, answer style and form selection.
             answer_style = BoxLayout(orientation="vertical", size_hint_y=None, spacing=dp(4))
             answer_style.bind(minimum_height=answer_style.setter("height"))
+            answer_style.add_widget(PolishLabel(
+                text=tr("specialized.direction"), size_hint_y=None, height=dp(36)))
+            for key in ("polite_to_plain", "plain_to_polite"):
+                row, toggle = setting_row(tr(f"specialized.{key}"), True, lambda _value: None)
+                self.value_checks[key] = toggle
+                answer_style.add_widget(row)
             answer_style.add_widget(PolishLabel(
                 text=tr("specialized.answer_style"), size_hint_y=None, height=dp(36)))
             style_choices = BoxLayout(size_hint_y=None, spacing=dp(8))
@@ -741,8 +737,8 @@ def create_app_class():
                 style_choices.add_widget(row)
             self.form_checks = {key: OptionState() for key in FORM_GROUPS}
             self.pattern_checks = {key: OptionState() for key in PATTERN_LABELS}
-            self.form_picker = PolishButton(size_hint_y=None, height=dp(56))
-            self.pattern_picker = PolishButton(size_hint_y=None, height=dp(56))
+            self.form_picker = PolishButton(font_size=19, size_hint_y=None, height=dp(56))
+            self.pattern_picker = PolishButton(font_size=19, size_hint_y=None, height=dp(56))
             self.pattern_binding = SelectionPickerBinding(
                 self, self.pattern_picker, self.pattern_checks,
                 {key: pattern_option_label(key, label, tr) for key, label in PATTERN_LABELS.items()},
@@ -847,22 +843,21 @@ def create_app_class():
             button_title.add_widget(self.mobile_button_scale_value)
             button_row.add_widget(button_title)
             button_row.add_widget(self.mobile_button_scale_slider)
-            self.display_widgets = (font_row, button_row)
+            self.question_count = self._number_input(
+                tr("specialized.question_count"),
+            )
+            self.auto_advance = self._number_input(
+                tr("specialized.auto_advance"), decimal=True, add_to_content=False,
+            )
+            self.display_widgets = (font_row, button_row, self.auto_advance.parent)
             self.display_button = PolishButton(
-                text=tr("specialized.text_scale") + " / " + tr("specialized.button_scale"),
-                size_hint_y=None, height=dp(64),
+                text=tr("specialized.section.size_behavior"),
+                font_size=19, size_hint_y=None, height=dp(64),
             )
             self.display_button.bind(on_release=lambda *_: open_settings_panel(
                 self, self.display_button.text, self.display_widgets, tr, MOBILE_FONT,
             ))
             self.content.add_widget(self.display_button)
-            self.question_count = self._number_input(
-                tr("specialized.question_count"),
-            )
-            self.auto_advance = self._number_input(
-                tr("specialized.auto_advance"),
-                decimal=True,
-            )
 
             statistics_button = PolishButton(
                 text=tr("specialized.calculate_options"),
@@ -992,6 +987,7 @@ def create_app_class():
             self,
             title: str,
             decimal: bool = False,
+            *, add_to_content: bool = True,
         ) -> TextInput:
             row = BoxLayout(
                 orientation="vertical",
@@ -1017,7 +1013,8 @@ def create_app_class():
             )
             row.add_widget(label)
             row.add_widget(value)
-            self.content.add_widget(row)
+            if add_to_content:
+                self.content.add_widget(row)
             return value
 
         def on_pre_enter(self, *_args):
