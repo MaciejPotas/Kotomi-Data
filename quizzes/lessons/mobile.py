@@ -1677,8 +1677,8 @@ def create_app_class():
             if not question.options:
                 self.mount_answer_row()
 
-            # A regular BoxLayout keeps the quiz pinned to the top.  A final
-            # flexible spacer consumes spare room without enabling drag/scroll.
+            # Reserved question/answer slots retain their geometry. Only
+            # genuine overflow enables scrolling on compact viewports.
             self.content_layout = BoxLayout(
                 orientation="vertical",
                 spacing=dp(MOBILE_QUIZ_LAYOUT.content_spacing),
@@ -1693,9 +1693,8 @@ def create_app_class():
             self.content_layout.bind(
                 minimum_height=self.content_layout.setter("height")
             )
-            content_anchor = AnchorLayout(anchor_x="left", anchor_y="top")
-            content_anchor.add_widget(self.content_layout)
-            self.root_layout.add_widget(content_anchor)
+            from platforms.mobile.quiz_widgets import quiz_content_viewport
+            self.root_layout.add_widget(quiz_content_viewport(self.content_layout))
             self.prompt_label = AdaptiveSingleLineLabel(
                 appearance_question=True,
                 text=self.question_markup(question),
@@ -1725,20 +1724,13 @@ def create_app_class():
         def render_choices(self, question: Question) -> None:
             if self.content_layout is None:
                 return
-            scale = self.kotomi.settings.mobile_button_scale
-            option_height = scaled_button_height(
-                MOBILE_QUIZ_LAYOUT.action_height,
-                scale,
-            )
             options = GridLayout(
                 cols=1,
-                spacing=dp(6),
+                spacing=dp(self.kotomi.appearance.button_spacing),
                 size_hint_y=None,
-                height=dp(
-                    option_height * len(question.options)
-                    + 6 * max(0, len(question.options) - 1)
-                ),
             )
+            options._appearance_spacing = True
+            options.bind(minimum_height=options.setter("height"))
             for option in question.options:
                 button = ChoiceButton(
                     text=option,
