@@ -352,7 +352,7 @@ def create_app_class():
     ) -> BoxLayout:
         kwargs.setdefault("size_hint_y", None)
         kwargs.setdefault("spacing", dp(6))
-        kwargs["height"] = mobile_button_height(base_height)
+        kwargs["height"] = scaled_button_height(base_height, current_button_scale())
         row = BoxLayout(**kwargs)
         row._mobile_action_base_height = float(base_height)
         return row
@@ -492,7 +492,7 @@ def create_app_class():
             kwargs.setdefault("color", button_text)
             base_height = kwargs.get("height")
             if base_height is not None:
-                kwargs["height"] = mobile_button_height(base_height)
+                kwargs["height"] = scaled_button_height(base_height, current_button_scale())
             if "font_size" in kwargs:
                 kwargs["font_size"] = scaled_font_size(
                     kwargs["font_size"]
@@ -518,8 +518,8 @@ def create_app_class():
             self._active = bool(active)
             self._setting_callback = kwargs.pop("setting_callback", None)
             kwargs.setdefault("size_hint_y", None)
-            kwargs.setdefault("height", 64)
-            kwargs.setdefault("font_size", 19)
+            kwargs.setdefault("height", dp(64))
+            kwargs.setdefault("font_size", sp(19))
             kwargs.setdefault("halign", "left")
             kwargs.setdefault("valign", "middle")
             super().__init__(**kwargs)
@@ -623,35 +623,35 @@ def create_app_class():
             root.add_widget(
                 PolishLabel(
                     text="Kotomi",
-                    font_size=34,
+                    font_size=sp(34),
                     size_hint_y=None,
-                    height=54,
+                    height=dp(54),
                 )
             )
             root.add_widget(
                 JapaneseLabel(
                     text="どうしのクイズ",
-                    font_size=28,
+                    font_size=sp(28),
                     size_hint_y=None,
-                    height=46,
+                    height=dp(46),
                 )
             )
             self.summary = PolishLabel(
                 text="",
-                font_size=19,
+                font_size=sp(19),
                 halign="left",
                 valign="middle",
                 size_hint_y=None,
-                height=150,
+                height=dp(150),
             )
             wrap_label(self.summary)
             root.add_widget(self.summary)
 
             self.start_button = PolishButton(
                 text=tr("specialized.start_quiz"),
-                font_size=24,
+                font_size=sp(24),
                 size_hint_y=None,
-                height=76,
+                height=dp(76),
             )
             self.start_button.bind(
                 on_release=lambda *_: quiz_app().start_quiz()
@@ -659,9 +659,9 @@ def create_app_class():
             root.add_widget(self.start_button)
             settings_button = PolishButton(
                 text=tr("action.settings"),
-                font_size=22,
+                font_size=sp(22),
                 size_hint_y=None,
-                height=70,
+                height=dp(70),
             )
             settings_button.bind(
                 on_release=lambda *_: quiz_app().open_settings()
@@ -669,9 +669,9 @@ def create_app_class():
             root.add_widget(settings_button)
             help_button = PolishButton(
                 text=tr("specialized.help"),
-                font_size=22,
+                font_size=sp(22),
                 size_hint_y=None,
-                height=70,
+                height=dp(70),
             )
             help_button.bind(
                 on_release=lambda *_: quiz_app().open_help()
@@ -683,9 +683,9 @@ def create_app_class():
                     if embedded_mode
                     else tr("specialized.exit")
                 ),
-                font_size=22,
+                font_size=sp(22),
                 size_hint_y=None,
-                height=70,
+                height=dp(70),
             )
             exit_button.bind(
                 on_release=lambda *_: leave_quiz()
@@ -737,18 +737,18 @@ def create_app_class():
                         f"{tr('specialized.verbs_title')} "
                         f"{tr('specialized.settings_suffix')}"
                     ),
-                    font_size=24,
+                    font_size=sp(24),
                     size_hint_y=None,
-                    height=48,
+                    height=dp(48),
                 )
             )
             self._section(tr("specialized.question_type"))
             self.mode_spinner = PolishSpinner(
                 text=mode_label(MODE_POLISH_TO_JAPANESE),
                 values=[mode_label(mode) for mode in MODE_LABELS],
-                font_size=19,
+                font_size=sp(19),
                 size_hint_y=None,
-                height=64,
+                height=dp(64),
             )
             self.content.add_widget(self.mode_spinner)
 
@@ -773,8 +773,8 @@ def create_app_class():
                 style_choices.add_widget(row)
             self.form_checks = {key: OptionState() for key in FORM_GROUPS}
             self.pattern_checks = {key: OptionState() for key in PATTERN_LABELS}
-            self.form_picker = PolishButton(font_size=19, size_hint_y=None, height=dp(56))
-            self.pattern_picker = PolishButton(font_size=19, size_hint_y=None, height=dp(56))
+            self.form_picker = PolishButton(font_size=sp(19), size_hint_y=None, height=dp(56))
+            self.pattern_picker = PolishButton(font_size=sp(19), size_hint_y=None, height=dp(56))
             self.pattern_binding = SelectionPickerBinding(
                 self, self.pattern_picker, self.pattern_checks,
                 {key: pattern_option_label(key, label, tr) for key, label in PATTERN_LABELS.items()},
@@ -799,13 +799,13 @@ def create_app_class():
             font_row = BoxLayout(
                 orientation="vertical",
                 size_hint_y=None,
-                height=96,
+                height=dp(96),
                 spacing=dp(4),
             )
-            font_title = BoxLayout(size_hint_y=None, height=36)
+            font_title = BoxLayout(size_hint_y=None, height=dp(36))
             font_label = PolishLabel(
                 text=tr("specialized.text_scale"),
-                font_size=18,
+                font_size=sp(18),
                 halign="left",
                 valign="middle",
             )
@@ -818,9 +818,9 @@ def create_app_class():
             )
             self.font_scale_value = PolishLabel(
                 text="100%",
-                font_size=18,
+                font_size=sp(18),
                 size_hint_x=None,
-                width=72,
+                width=dp(72),
             )
             self.font_scale_slider.bind(
                 value=self._font_scale_changed
@@ -838,7 +838,7 @@ def create_app_class():
             button_title = BoxLayout(size_hint_y=None, height=dp(36))
             button_label = PolishLabel(
                 text=tr("specialized.button_scale"),
-                font_size=18,
+                font_size=sp(18),
                 halign="left",
                 valign="middle",
             )
@@ -851,7 +851,7 @@ def create_app_class():
             )
             self.mobile_button_scale_value = PolishLabel(
                 text="100%",
-                font_size=18,
+                font_size=sp(18),
                 size_hint_x=None,
                 width=dp(72),
             )
@@ -871,7 +871,7 @@ def create_app_class():
             self.display_widgets = (font_row, button_row, self.auto_advance.parent)
             self.display_button = PolishButton(
                 text=tr("specialized.section.size_behavior"),
-                font_size=19, size_hint_y=None, height=dp(64),
+                font_size=sp(19), size_hint_y=None, height=dp(64),
             )
             self.display_button.bind(on_release=lambda *_: open_settings_panel(
                 self, self.display_button.text, self.display_widgets, tr, MOBILE_FONT,
@@ -884,9 +884,9 @@ def create_app_class():
 
             statistics_button = PolishButton(
                 text=tr("specialized.calculate_options"),
-                font_size=19,
+                font_size=sp(19),
                 size_hint_y=None,
-                height=62,
+                height=dp(62),
             )
             statistics_button.bind(
                 on_release=lambda *_: self.calculate_statistics()
@@ -896,11 +896,11 @@ def create_app_class():
             self.statistics = PolishLabel(
                 text="",
                 color=accent_info,
-                font_size=17,
+                font_size=sp(17),
                 halign="left",
                 valign="middle",
                 size_hint_y=None,
-                height=120,
+                height=dp(120),
             )
             wrap_label(self.statistics)
             self.content.add_widget(self.statistics)
@@ -909,9 +909,9 @@ def create_app_class():
                 self._section(tr("settings.updates"))
                 self.settings_check_update_button = PolishButton(
                     text=tr("action.check_updates"),
-                    font_size=19,
+                    font_size=sp(19),
                     size_hint_y=None,
-                    height=62,
+                    height=dp(62),
                 )
                 self.settings_check_update_button.bind(
                     on_release=lambda *_: quiz_app().check_for_updates()
@@ -919,9 +919,9 @@ def create_app_class():
                 self.content.add_widget(self.settings_check_update_button)
                 self.settings_update_button = PolishButton(
                     text=tr("action.update"),
-                    font_size=19,
+                    font_size=sp(19),
                     size_hint_y=None,
-                    height=62,
+                    height=dp(62),
                 )
                 self.settings_update_button.bind(
                     on_release=lambda *_: quiz_app().update_quiz()
@@ -930,11 +930,11 @@ def create_app_class():
                 self.update_status = PolishLabel(
                     text=tr("settings.update_not_checked"),
                     color=accent_info,
-                    font_size=16,
+                    font_size=sp(16),
                     halign="left",
                     valign="middle",
                     size_hint_y=None,
-                    height=64,
+                    height=dp(64),
                 )
                 wrap_label(self.update_status)
                 self.content.add_widget(self.update_status)
@@ -946,11 +946,11 @@ def create_app_class():
             self.status = PolishLabel(
                 text="",
                 color=accent_bad,
-                font_size=17,
+                font_size=sp(17),
                 halign="left",
                 valign="middle",
                 size_hint_y=None,
-                height=70,
+                height=dp(70),
             )
             wrap_label(self.status)
             self.content.add_widget(self.status)
@@ -965,14 +965,14 @@ def create_app_class():
             )
             buttons._mobile_action_base_height = 144
             save_row = mobile_action_row(68, spacing=dp(8))
-            save = PolishButton(text=tr("action.save"), font_size=19)
+            save = PolishButton(text=tr("action.save"), font_size=sp(19))
             save.bind(on_release=lambda *_: self.save(False))
             save_start = PolishButton(
                 text=tr("specialized.save_start"),
-                font_size=18,
+                font_size=sp(18),
             )
             save_start.bind(on_release=lambda *_: self.save(True))
-            back = PolishButton(text=tr("action.back"), font_size=19)
+            back = PolishButton(text=tr("action.back"), font_size=sp(19))
             back.bind(
                 on_release=lambda *_: quiz_app().go_home()
             )
@@ -989,11 +989,11 @@ def create_app_class():
             label = PolishLabel(
                 text=text,
                 color=accent_info,
-                font_size=21,
+                font_size=sp(21),
                 halign="left",
                 valign="middle",
                 size_hint_y=None,
-                height=48,
+                height=dp(48),
             )
             wrap_label(label)
             self.content.add_widget(label)
@@ -1229,30 +1229,30 @@ def create_app_class():
             content.add_widget(
                 PolishLabel(
                     text=tr("specialized.help"),
-                    font_size=30,
+                    font_size=sp(30),
                     size_hint_y=None,
-                    height=54,
+                    height=dp(54),
                 )
             )
             for title, body in sections:
                 title_label = PolishLabel(
                     text=title,
                     color=accent_info,
-                    font_size=22,
+                    font_size=sp(22),
                     halign="left",
                     valign="middle",
                     size_hint_y=None,
-                    height=44,
+                    height=dp(44),
                 )
                 wrap_label(title_label)
                 content.add_widget(title_label)
                 body_label = PolishLabel(
                     text=body,
-                    font_size=19,
+                    font_size=sp(19),
                     halign="left",
                     valign="middle",
                     size_hint_y=None,
-                    height=120,
+                    height=dp(120),
                 )
                 wrap_label(body_label)
                 content.add_widget(body_label)
@@ -1260,9 +1260,9 @@ def create_app_class():
             root.add_widget(scroll)
             back = PolishButton(
                 text=tr("action.back"),
-                font_size=21,
+                font_size=sp(21),
                 size_hint_y=None,
-                height=68,
+                height=dp(68),
             )
             back.bind(
                 on_release=lambda *_: quiz_app().go_home()
@@ -1779,26 +1779,26 @@ def create_app_class():
                 PolishLabel(
                     text=tr("specialized.finished"),
                     color=accent_info,
-                    font_size=30,
+                    font_size=sp(30),
                     size_hint_y=None,
-                    height=58,
+                    height=dp(58),
                 )
             )
             self.results = PolishLabel(
                 text="",
-                font_size=23,
+                font_size=sp(23),
                 halign="center",
                 valign="middle",
                 size_hint_y=None,
-                height=220,
+                height=dp(220),
             )
             wrap_label(self.results)
             root.add_widget(self.results)
             again = PolishButton(
                 text=tr("specialized.again"),
-                font_size=22,
+                font_size=sp(22),
                 size_hint_y=None,
-                height=72,
+                height=dp(72),
             )
             again.bind(
                 on_release=lambda *_: quiz_app().start_quiz()
@@ -1806,9 +1806,9 @@ def create_app_class():
             root.add_widget(again)
             settings_button = PolishButton(
                 text=tr("action.settings"),
-                font_size=21,
+                font_size=sp(21),
                 size_hint_y=None,
-                height=70,
+                height=dp(70),
             )
             settings_button.bind(
                 on_release=lambda *_: quiz_app().open_settings()
@@ -1816,9 +1816,9 @@ def create_app_class():
             root.add_widget(settings_button)
             home = PolishButton(
                 text=tr("specialized.main_menu"),
-                font_size=21,
+                font_size=sp(21),
                 size_hint_y=None,
-                height=70,
+                height=dp(70),
             )
             home.bind(
                 on_release=lambda *_: quiz_app().go_home()
@@ -2102,7 +2102,7 @@ def create_app_class():
                 None,
             )
             if base_height is not None:
-                widget.height = mobile_button_height(base_height)
+                widget.height = scaled_button_height(base_height, current_button_scale())
             base_row_height = getattr(
                 widget,
                 "_mobile_action_base_height",
