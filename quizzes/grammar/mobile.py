@@ -17,7 +17,7 @@ if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
 from apps.grammar import logic as _logic
-from apps.availability.mobile import (
+from platforms.mobile.sentence_quiz import (
     create_app_class as _create_mobile_sentence_app_class,
 )
 
