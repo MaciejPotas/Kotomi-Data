@@ -34,6 +34,7 @@ from kotomi.application.quiz_preflight import iter_quiz_previews
 from kotomi.application.quiz_project import QuizProject
 from kotomi.core.generation import balanced_choice, normalize_answer
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
+from kotomi.application.settings import validate_mobile_button_font_scale
 from kotomi.application.settings_xml import load_settings, save_settings
 
 
@@ -124,6 +125,7 @@ class AvailabilityQuizSettings:
     random_order: bool = True
     auto_advance_seconds: float = 100.0
     font_scale: float = 1.0
+    mobile_button_font_scale: float = 1.0
     mobile_button_scale: float = DEFAULT_MOBILE_BUTTON_SCALE
 
     @classmethod
@@ -170,6 +172,9 @@ class AvailabilityQuizSettings:
                 values.get("font_scale"),
                 defaults.font_scale,
             ),
+            mobile_button_font_scale=_safe_float(
+                values.get("mobile_button_font_scale"), defaults.mobile_button_font_scale,
+            ),
             mobile_button_scale=_safe_float(
                 values.get("mobile_button_scale"),
                 defaults.mobile_button_scale,
@@ -206,6 +211,7 @@ class AvailabilityQuizSettings:
             )
         try:
             validate_mobile_button_scale(self.mobile_button_scale)
+            validate_mobile_button_font_scale(self.mobile_button_font_scale)
         except (TypeError, ValueError) as exception:
             raise MobileQuizError(str(exception)) from exception
         parse_word_filter(self.word_filter)

@@ -32,6 +32,8 @@ from platforms.mobile.identity import (
 )
 from platforms.mobile.presentation import (
     FocusRequest,
+    quiz_button_font_size,
+    apply_quiz_button_fonts,
     MOBILE_BUTTON_BACKGROUND,
     MOBILE_BUTTON_TEXT,
     MOBILE_CORRECT_BACKGROUND,
@@ -63,7 +65,7 @@ except ImportError:
 
 
 from platforms.mobile.i18n import mobile_error_text, mobile_text
-from platforms.mobile.settings_layout import number_setting, style_settings_action
+from platforms.mobile.settings_layout import number_setting, style_settings_action, size_setting
 from platforms.mobile.selection_picker import (
     OptionState, SelectionPickerBinding, open_selection_picker, open_settings_panel,
 )
@@ -100,7 +102,7 @@ def create_app_class():
     from kivy.uix.progressbar import ProgressBar
     from kivy.uix.screenmanager import Screen, ScreenManager
     from kivy.uix.scrollview import ScrollView
-    from kivy.uix.spinner import Spinner
+    from kivy.uix.spinner import Spinner, SpinnerOption
     from kivy.uix.textinput import TextInput
     from kivy.uix.togglebutton import ToggleButton
     from kivy.uix.widget import Widget
@@ -145,6 +147,18 @@ def create_app_class():
             fallback()
             return True
         return False
+
+    def current_text_scale() -> float:
+        return float(getattr(getattr(quiz_app(), "settings", None), "mobile_text_scale", 1.0))
+
+    def current_button_font_scale() -> float:
+        return float(getattr(getattr(quiz_app(), "settings", None), "mobile_button_font_scale", 1.0))
+
+    def prepare_text_font(kwargs):
+        value = kwargs["font_size"]
+        base = sp(float(value[:-2])) if isinstance(value, str) and value.endswith("sp") else float(value)
+        kwargs["font_size"] = base * current_text_scale()
+        return base
 
     def ui_text(key: str, fallback: str = "", **values: object) -> str:
         translated = mobile_text(quiz_app(), key, **values)
@@ -242,7 +256,9 @@ def create_app_class():
             kwargs.setdefault("size_hint_y", None)
             kwargs.setdefault("halign", "left")
             kwargs.setdefault("valign", "middle")
+            base_font = prepare_text_font(kwargs)
             super().__init__(**kwargs)
+            self._mobile_text_base_font = base_font
             if single_line and hasattr(self, "max_lines"):
                 self.max_lines = 1
             bind_wrapping(
@@ -316,13 +332,13 @@ def create_app_class():
                 probe = CoreLabel(
                     text=self._fit_plain_text,
                     font_name=self.font_name,
-                    font_size=sp(self._preferred_font_sp),
+                    font_size=sp((self._preferred_font_sp * current_text_scale())),
                 )
                 probe.refresh()
                 fitted_lines, fitted_sp = fitted_compact_text_layout(
                     float(probe.texture.size[0]),
                     available_width,
-                    preferred_sp=self._preferred_font_sp,
+                    preferred_sp=(self._preferred_font_sp * current_text_scale()),
                     minimum_sp=self._minimum_font_sp,
                     maximum_lines=self._maximum_fit_lines,
                 )
@@ -370,7 +386,9 @@ def create_app_class():
             kwargs["height"] = scaled_button_height(base_height, button_scale)
             kwargs.setdefault("halign", "center")
             kwargs.setdefault("valign", "middle")
+            kwargs["font_size"] = quiz_button_font_size(current_button_font_scale())
             super().__init__(**kwargs)
+            self._mobile_button_font = True
             self._mobile_base_height = base_height
 
             def fit_text(instance, _value=None) -> None:
@@ -387,6 +405,20 @@ def create_app_class():
             kwargs.setdefault("font_name", JAPANESE_FONT)
             super().__init__(**kwargs)
 
+    class AppSpinnerOption(SpinnerOption):
+        def __init__(self, **kwargs):
+            kwargs.setdefault("font_name", POLISH_FONT)
+            kwargs["font_size"] = quiz_button_font_size(current_button_font_scale())
+            super().__init__(**kwargs)
+            self._mobile_button_font = True
+
+    class AppSpinner(Spinner):
+        def __init__(self, **kwargs):
+            kwargs.setdefault("option_cls", AppSpinnerOption)
+            kwargs["font_size"] = quiz_button_font_size(current_button_font_scale())
+            super().__init__(**kwargs)
+            self._mobile_button_font = True
+
     class MobileOptionToggle(ToggleButton):
         """Large setup option that remains easy to tap inside a ScrollView."""
 
@@ -400,7 +432,9 @@ def create_app_class():
             kwargs.setdefault("height", dp(48))
             kwargs.setdefault("halign", "left")
             kwargs.setdefault("valign", "middle")
+            kwargs["font_size"] = quiz_button_font_size(current_button_font_scale())
             super().__init__(**kwargs)
+            self._mobile_button_font = True
             self.state = "down" if active else "normal"
             self.bind(size=self._fit_text, state=self._update_background)
             self._fit_text()
@@ -482,14 +516,14 @@ def create_app_class():
                     probe = CoreLabel(
                         text=line or " ",
                         font_name=self.font_name,
-                        font_size=sp(self._preferred_font_sp),
+                        font_size=sp((self._preferred_font_sp * current_button_font_scale())),
                     )
                     probe.refresh()
                     natural_line_widths.append(float(probe.texture.size[0]))
                 fitted_lines, fitted_sp = fitted_choice_text_layout(
                     natural_line_widths,
                     available_width,
-                    preferred_sp=self._preferred_font_sp,
+                    preferred_sp=(self._preferred_font_sp * current_button_font_scale()),
                     minimum_sp=self._minimum_font_sp,
                 )
                 self.shorten = fitted_lines == 1
@@ -517,7 +551,9 @@ def create_app_class():
             kwargs.setdefault("write_tab", False)
             kwargs.setdefault("size_hint_y", None)
             kwargs.setdefault("height", dp(46))
+            base_font = prepare_text_font(kwargs)
             super().__init__(**kwargs)
+            self._mobile_text_base_font = base_font
 
     def vertical_root(*, padding=12, spacing=8) -> BoxLayout:
         return BoxLayout(
@@ -736,7 +772,7 @@ def create_app_class():
             settings_content.add_widget(
                 AppLabel(text=ui_text("settings.show", ""))
             )
-            self.asked = Spinner(
+            self.asked = AppSpinner(
                 values=labels,
                 font_name=POLISH_FONT,
                 size_hint_y=None,
@@ -746,7 +782,7 @@ def create_app_class():
             settings_content.add_widget(
                 AppLabel(text=ui_text("settings.expect", ""))
             )
-            self.answer = Spinner(
+            self.answer = AppSpinner(
                 values=labels,
                 font_name=POLISH_FONT,
                 size_hint_y=None,
@@ -765,10 +801,18 @@ def create_app_class():
                 ui_text("mobile.button_scale", ""), AppInput, AppLabel,
             )
             self.button_scale.text = "100"
-            display = AppButton(text=ui_text("mobile.button_scale", ""))
+            text_row, self.text_scale_slider = size_setting(ui_text("specialized.text_scale"), MOBILE_FONT)
+            font_row, self.button_font_scale_slider = size_setting(ui_text("mobile.button_font_scale"), MOBILE_FONT)
+            reset_sizes = AppButton(text=ui_text("mobile.reset_sizes"))
+            reset_sizes.bind(on_release=lambda *_: self._reset_sizes())
+            self.display_widgets = (text_row, font_row, size_row, reset_sizes)
+            display = AppButton(text=ui_text("specialized.section.size_behavior"))
+            self.display_button = display
             display.bind(on_release=lambda *_: open_settings_panel(
-                self, display.text, (size_row,), ui_text, MOBILE_FONT,
-                editable_fields=((self.button_scale, "text"),),
+                self, display.text, self.display_widgets, ui_text, MOBILE_FONT,
+                editable_fields=((self.button_scale, "text"),
+                                 (self.text_scale_slider, "value"),
+                                 (self.button_font_scale_slider, "value")),
             ))
             style_settings_action(display)
             settings_content.add_widget(display)
@@ -796,6 +840,13 @@ def create_app_class():
             self.answer.text = field_label(settings.answer_field)
             self.target.text = str(settings.required_correct_answers)
             self.button_scale.text = str(round(settings.mobile_button_scale * 100))
+            self.text_scale_slider.value = settings.mobile_text_scale
+            self.button_font_scale_slider.value = settings.mobile_button_font_scale
+
+        def _reset_sizes(self) -> None:
+            self.button_scale.text = "100"
+            self.text_scale_slider.value = 1.0
+            self.button_font_scale_slider.value = 1.0
 
         def flip(self) -> None:
             asked = self.asked.text
@@ -809,6 +860,8 @@ def create_app_class():
                 settings.answer_field = field_from_label(self.answer.text)
                 settings.required_correct_answers = int(self.target.text)
                 settings.mobile_button_scale = int(self.button_scale.text) / 100.0
+                settings.mobile_text_scale = float(self.text_scale_slider.value)
+                settings.mobile_button_font_scale = float(self.button_font_scale_slider.value)
                 settings.validate()
             except (TypeError, ValueError) as exception:
                 self.show_error(mobile_error_text(self, exception))
@@ -816,6 +869,7 @@ def create_app_class():
             self.kotomi.settings = settings
             self.kotomi.settings_store.save(settings.to_dict())
             self.kotomi.apply_button_scale(settings.mobile_button_scale)
+            self.kotomi.apply_text_sizes()
             self.manager.current = "lessons"
 
     class LessonDetailScreen(BaseScreen):
@@ -906,7 +960,7 @@ def create_app_class():
                 AppLabel(text=ui_text("settings.show", ""))
             )
             labels = [field_label(name) for name in FIELD_LABELS]
-            self.asked = Spinner(
+            self.asked = AppSpinner(
                 text=field_label("translation"),
                 values=labels,
                 font_name=POLISH_FONT,
@@ -917,7 +971,7 @@ def create_app_class():
             root.add_widget(
                 AppLabel(text=ui_text("settings.expect", ""))
             )
-            self.answer = Spinner(
+            self.answer = AppSpinner(
                 text=field_label("kana"),
                 values=labels,
                 font_name=POLISH_FONT,
@@ -1005,7 +1059,7 @@ def create_app_class():
                     "",
                 ))
             )
-            self.asked = Spinner(
+            self.asked = AppSpinner(
                 text=field_label("translation"),
                 values=[field_label(name) for name in FIELD_LABELS],
                 font_name=POLISH_FONT,
@@ -2404,6 +2458,20 @@ def create_app_class():
             quiz.cancel_choice_event()
             if quiz.answer_input is not None:
                 quiz.answer_input.focus = False
+
+        def apply_text_sizes(self) -> None:
+            apply_quiz_button_fonts(self.manager, self.settings.mobile_button_font_scale)
+
+            def resize(widget):
+                base = getattr(widget, "_mobile_text_base_font", None)
+                if base is not None:
+                    widget.font_size = base * self.settings.mobile_text_scale
+                    refit = getattr(widget, "_fit_font_to_width", None)
+                    if callable(refit):
+                        refit()
+                for child in getattr(widget, "children", ()):
+                    resize(child)
+            resize(self.manager)
 
         def apply_button_scale(self, scale: float) -> None:
             def resize(widget) -> None:

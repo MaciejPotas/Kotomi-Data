@@ -32,6 +32,7 @@ from kotomi.application.quiz_preflight import iter_quiz_previews
 from kotomi.application.quiz_project import QuizProject
 from kotomi.application.quiz_hints import selected_context_hint
 from kotomi.core.generation import balanced_choice, normalize_answer
+from kotomi.application.settings import validate_mobile_button_font_scale
 from kotomi.application.settings_xml import load_settings, save_settings
 from kotomi.application.settings import validate_mobile_button_scale
 PROJECT_ENVIRONMENT_VARIABLE = "JAPANESE_QUIZ_PROJECT"
@@ -127,6 +128,7 @@ class VerbQuizSettings:
     random_order: bool = True
     auto_advance_seconds: float = 100.0
     font_scale: float = 1.0
+    mobile_button_font_scale: float = 1.0
     mobile_button_scale: float = 1.0
 
     @classmethod
@@ -179,6 +181,9 @@ class VerbQuizSettings:
                 values.get("font_scale"),
                 defaults.font_scale,
             ),
+            mobile_button_font_scale=_safe_float(
+                values.get("mobile_button_font_scale"), defaults.mobile_button_font_scale,
+            ),
             mobile_button_scale=_safe_float(
                 values.get("mobile_button_scale"),
                 defaults.mobile_button_scale,
@@ -220,6 +225,7 @@ class VerbQuizSettings:
             )
         try:
             validate_mobile_button_scale(self.mobile_button_scale)
+            validate_mobile_button_font_scale(self.mobile_button_font_scale)
         except (TypeError, ValueError) as exception:
             raise MobileQuizError(str(exception)) from exception
         parse_word_filter(self.word_filter)
