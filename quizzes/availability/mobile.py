@@ -23,6 +23,8 @@ from kotomi.core.project import ProjectError
 from platforms.mobile.presentation import (
     DEFAULT_MOBILE_BUTTON_SCALE,
     FocusRequest,
+    quiz_button_font_size,
+    apply_quiz_button_fonts,
     MOBILE_BUTTON_BACKGROUND,
     MOBILE_BUTTON_TEXT,
     MOBILE_CORRECT_BACKGROUND,
@@ -59,7 +61,7 @@ from platforms.mobile.identity import (
     configure_windows_app_id,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
-from platforms.mobile.settings_layout import number_setting, filter_setting, style_settings_action
+from platforms.mobile.settings_layout import number_setting, filter_setting, style_settings_action, size_setting
 from platforms.mobile.selection_picker import (
     OptionState, SelectionPickerBinding, open_settings_panel, pattern_option_label,
 )
@@ -262,7 +264,7 @@ def mobile_sentence_hint_entries(
 
 def _apply_absolute_font_scale(widget: object, scale: float) -> None:
     base_font_size = getattr(widget, "_quiz_base_font_size", None)
-    if base_font_size is not None:
+    if base_font_size is not None and not getattr(widget, "_mobile_button_font", False):
         resized = float(base_font_size) * float(scale)
         maximum = getattr(widget, "_mobile_max_font_size", None)
         widget.font_size = (
@@ -430,6 +432,7 @@ def create_app_class(policy: object = None):
     input_wrong_background = (1.0, 0.86, 0.86, 1.0)
     hint_active_background = (0.76, 0.88, 0.97, 1.0)
     font_scale_state = {"value": 1.0}
+    button_font_scale_state = {"value": 1.0}
     button_scale_state = {"value": DEFAULT_MOBILE_BUTTON_SCALE}
     mixed_font = mobile_font_path(FONTS_DIR)
 
@@ -616,10 +619,10 @@ def create_app_class(policy: object = None):
             kwargs.setdefault("background_normal", "")
             kwargs.setdefault("background_color", button_background)
             kwargs.setdefault("color", button_text)
-            base_font_size = prepare_font_size(kwargs)
             base_button_height = prepare_button_height(kwargs)
+            kwargs["font_size"] = quiz_button_font_size(button_font_scale_state["value"])
             super().__init__(**kwargs)
-            remember_base_font_size(self, base_font_size)
+            self._mobile_button_font = True
             remember_base_button_height(self, base_button_height)
 
     class PolishInput(TextInput):
@@ -678,9 +681,9 @@ def create_app_class(policy: object = None):
         def __init__(self, **kwargs):
             kwargs.setdefault("font_name", polish_font())
             kwargs.setdefault("option_cls", PolishButton)
-            base_font_size = prepare_font_size(kwargs)
+            kwargs["font_size"] = quiz_button_font_size(button_font_scale_state["value"])
             super().__init__(**kwargs)
-            remember_base_font_size(self, base_font_size)
+            self._mobile_button_font = True
 
     class JapaneseInput(MobileReviewInputMixin, TextInput):
         def __init__(self, **kwargs):
@@ -999,7 +1002,12 @@ def create_app_class(policy: object = None):
             self.auto_advance = self._number_input(
                 tr("specialized.auto_advance"), decimal=True, add_to_content=False,
             )
-            self.display_widgets = (font_row, button_size_row, self.auto_advance.parent)
+            button_font_row, self.button_font_scale_slider = size_setting(
+                tr("mobile.button_font_scale"), mixed_font,
+            )
+            reset_sizes = PolishButton(text=tr("mobile.reset_sizes"), size_hint_y=None, height=dp(48))
+            reset_sizes.bind(on_release=lambda *_: self._reset_sizes())
+            self.display_widgets = (font_row, button_font_row, button_size_row, reset_sizes, self.auto_advance.parent)
             self.display_button = PolishButton(
                 text=tr("specialized.section.size_behavior"),
                 font_size=sp(19), size_hint_y=None, height=dp(64),
@@ -1007,6 +1015,7 @@ def create_app_class(policy: object = None):
             self.display_button.bind(on_release=lambda *_: open_settings_panel(
                 self, self.display_button.text, self.display_widgets, tr, mixed_font,
                 editable_fields=((self.font_scale_slider, "value"),
+                                 (self.button_font_scale_slider, "value"),
                                  (self.mobile_button_scale_slider, "value"),
                                  (self.auto_advance, "text")),
             ))
@@ -1200,6 +1209,7 @@ def create_app_class(policy: object = None):
             self.auto_advance.text = str(
                 settings.auto_advance_seconds
             )
+            self.button_font_scale_slider.value = settings.mobile_button_font_scale
             self.font_scale_slider.value = settings.font_scale
             self._font_scale_changed(
                 self.font_scale_slider,
@@ -1239,6 +1249,7 @@ def create_app_class(policy: object = None):
                     -1.0,
                 ),
                 font_scale=float(self.font_scale_slider.value),
+                mobile_button_font_scale=float(self.button_font_scale_slider.value),
                 mobile_button_scale=float(
                     self.mobile_button_scale_slider.value
                 ),
@@ -1268,6 +1279,11 @@ def create_app_class(policy: object = None):
             ):
                 if field is not None:
                     field.disabled = not enabled
+
+        def _reset_sizes(self) -> None:
+            self.font_scale_slider.value = 1.0
+            self.button_font_scale_slider.value = 1.0
+            self.mobile_button_scale_slider.value = 1.0
 
         def _font_scale_changed(
             self,
@@ -1997,6 +2013,7 @@ def create_app_class(policy: object = None):
             self.settings_store = policy_store(policy_settings_path())
             self.settings = self.settings_store.load()
             font_scale_state["value"] = self.settings.font_scale
+            button_font_scale_state["value"] = self.settings.mobile_button_font_scale
             button_scale_state["value"] = self.settings.mobile_button_scale
             self.engine: Optional[object] = None
             self.engine_error = ""
@@ -2217,6 +2234,8 @@ def create_app_class(policy: object = None):
         def save_settings(self, settings: object) -> None:
             self.settings_store.save(settings)
             self.settings = settings
+            apply_quiz_button_fonts(self.manager, settings.mobile_button_font_scale)
+            button_font_scale_state["value"] = settings.mobile_button_font_scale
             self.apply_font_scale(settings.font_scale)
             self.apply_mobile_button_scale(settings.mobile_button_scale)
 

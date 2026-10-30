@@ -32,6 +32,8 @@ from kotomi.application.quiz_preflight import (
 from kotomi.application.paths import FONTS_DIR
 from platforms.mobile.presentation import (
     FocusRequest,
+    quiz_button_font_size,
+    apply_quiz_button_fonts,
     MOBILE_BUTTON_BACKGROUND,
     MOBILE_BUTTON_TEXT,
     MOBILE_CORRECT_BACKGROUND,
@@ -68,7 +70,7 @@ from platforms.mobile.identity import (
     configure_windows_app_id,
 )
 from platforms.mobile.i18n import mobile_error_text, mobile_text
-from platforms.mobile.settings_layout import number_setting, filter_setting, style_settings_action
+from platforms.mobile.settings_layout import number_setting, filter_setting, style_settings_action, size_setting
 from platforms.mobile.selection_picker import (
     OptionState, SelectionPickerBinding, open_settings_panel, pattern_option_label,
 )
@@ -324,6 +326,7 @@ def create_app_class():
     input_wrong_background = (1.0, 0.86, 0.86, 1.0)
     hint_active_background = (0.76, 0.88, 0.97, 1.0)
     font_scale_state = {"value": 1.0}
+    button_font_scale_state = {"value": 1.0}
     button_scale_state = {"value": 1.0}
 
     def polish_font() -> str:
@@ -493,11 +496,9 @@ def create_app_class():
             base_height = kwargs.get("height")
             if base_height is not None:
                 kwargs["height"] = scaled_button_height(base_height, current_button_scale())
-            if "font_size" in kwargs:
-                kwargs["font_size"] = scaled_font_size(
-                    kwargs["font_size"]
-                )
+            kwargs["font_size"] = quiz_button_font_size(button_font_scale_state["value"])
             super().__init__(**kwargs)
+            self._mobile_button_font = True
             if base_height is not None:
                 self._mobile_button_base_height = float(base_height)
 
@@ -559,11 +560,9 @@ def create_app_class():
         def __init__(self, **kwargs):
             kwargs.setdefault("font_name", polish_font())
             kwargs.setdefault("option_cls", PolishButton)
-            if "font_size" in kwargs:
-                kwargs["font_size"] = scaled_font_size(
-                    kwargs["font_size"]
-                )
+            kwargs["font_size"] = quiz_button_font_size(button_font_scale_state["value"])
             super().__init__(**kwargs)
+            self._mobile_button_font = True
 
     class JapaneseInput(MobileReviewInputMixin, TextInput):
         def __init__(self, **kwargs):
@@ -868,7 +867,12 @@ def create_app_class():
             self.auto_advance = self._number_input(
                 tr("specialized.auto_advance"), decimal=True, add_to_content=False,
             )
-            self.display_widgets = (font_row, button_row, self.auto_advance.parent)
+            button_font_row, self.button_font_scale_slider = size_setting(
+                tr("mobile.button_font_scale"), MOBILE_FONT,
+            )
+            reset_sizes = PolishButton(text=tr("mobile.reset_sizes"), size_hint_y=None, height=dp(48))
+            reset_sizes.bind(on_release=lambda *_: self._reset_sizes())
+            self.display_widgets = (font_row, button_font_row, button_row, reset_sizes, self.auto_advance.parent)
             self.display_button = PolishButton(
                 text=tr("specialized.section.size_behavior"),
                 font_size=sp(19), size_hint_y=None, height=dp(64),
@@ -876,6 +880,7 @@ def create_app_class():
             self.display_button.bind(on_release=lambda *_: open_settings_panel(
                 self, self.display_button.text, self.display_widgets, tr, MOBILE_FONT,
                 editable_fields=((self.font_scale_slider, "value"),
+                                 (self.button_font_scale_slider, "value"),
                                  (self.mobile_button_scale_slider, "value"),
                                  (self.auto_advance, "text")),
             ))
@@ -1059,6 +1064,7 @@ def create_app_class():
             self.auto_advance.text = str(
                 settings.auto_advance_seconds
             )
+            self.button_font_scale_slider.value = settings.mobile_button_font_scale
             self.font_scale_slider.value = settings.font_scale
             self._font_scale_changed(
                 self.font_scale_slider,
@@ -1114,12 +1120,18 @@ def create_app_class():
                     -1.0,
                 ),
                 font_scale=float(self.font_scale_slider.value),
+                mobile_button_font_scale=float(self.button_font_scale_slider.value),
                 mobile_button_scale=float(
                     self.mobile_button_scale_slider.value
                 ),
             )
             settings.validate()
             return settings
+
+        def _reset_sizes(self) -> None:
+            self.font_scale_slider.value = 1.0
+            self.button_font_scale_slider.value = 1.0
+            self.mobile_button_scale_slider.value = 1.0
 
         def _font_scale_changed(
             self,
@@ -1849,6 +1861,7 @@ def create_app_class():
             )
             self.settings = self.settings_store.load()
             font_scale_state["value"] = self.settings.font_scale
+            button_font_scale_state["value"] = self.settings.mobile_button_font_scale
             button_scale_state["value"] = validate_mobile_button_scale(
                 self.settings.mobile_button_scale
             )
@@ -2066,7 +2079,9 @@ def create_app_class():
             previous_scale = self.settings.font_scale
             self.settings_store.save(settings)
             self.settings = settings
+            apply_quiz_button_fonts(self.manager, settings.mobile_button_font_scale)
             font_scale_state["value"] = settings.font_scale
+            button_font_scale_state["value"] = settings.mobile_button_font_scale
             if abs(previous_scale - settings.font_scale) > 0.001:
                 self._rescale_widget_fonts(
                     self.manager,
@@ -2079,7 +2094,7 @@ def create_app_class():
             widget,
             ratio: float,
         ) -> None:
-            if hasattr(widget, "font_size"):
+            if hasattr(widget, "font_size") and not getattr(widget, "_mobile_button_font", False):
                 base = getattr(widget, "_mobile_base_font_size", None)
                 resized = (
                     float(base) * current_font_scale()

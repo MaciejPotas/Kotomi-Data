@@ -39,6 +39,7 @@ from kotomi.core.generation import compatibility as compatibility_solver
 from kotomi.core.generation.counting import NumericRangeCandidates
 from kotomi.core.generation.models import ChoiceScope, NumericRangeScope
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
+from kotomi.application.settings import validate_mobile_button_font_scale
 from kotomi.application.settings_xml import load_settings, save_settings, settings_path
 from apps.availability.logic import (
     AvailabilityQuizSession,
@@ -157,6 +158,7 @@ class GrammarQuizSettings:
     random_order: bool = True
     auto_advance_seconds: float = 100.0
     font_scale: float = 1.0
+    mobile_button_font_scale: float = 1.0
     mobile_button_scale: float = DEFAULT_MOBILE_BUTTON_SCALE
 
     def __post_init__(self) -> None:
@@ -206,6 +208,9 @@ class GrammarQuizSettings:
                 values.get("auto_advance_seconds"), defaults.auto_advance_seconds
             ),
             font_scale=_safe_float(values.get("font_scale"), defaults.font_scale),
+            mobile_button_font_scale=_safe_float(
+                values.get("mobile_button_font_scale"), defaults.mobile_button_font_scale,
+            ),
             mobile_button_scale=_safe_float(
                 values.get("mobile_button_scale"), defaults.mobile_button_scale
             ),
@@ -244,6 +249,7 @@ class GrammarQuizSettings:
             raise GrammarQuizError("Rozmiar tekstu musi mieścić się w zakresie 70–300%.")
         try:
             validate_mobile_button_scale(self.mobile_button_scale)
+            validate_mobile_button_font_scale(self.mobile_button_font_scale)
         except (TypeError, ValueError) as exception:
             raise GrammarQuizError(str(exception)) from exception
         parse_slot_filter(self.word_filter)
