@@ -1,8 +1,8 @@
 {
   "id": "availability",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "quiz_api": 1,
-  "min_app_version": "1.1.8",
+  "min_app_version": "1.1.9",
   "kind": "python",
   "title": "Dostępność",
   "description": "Rzeczowniki i czasowniki",

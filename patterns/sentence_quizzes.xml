@@ -81,4 +81,30 @@
       <pattern ref="Numer piętra" />
     </patterns>
   </quiz>
+  <quiz id="verbs" label="Czasowniki" description="Zdania i formy" selection="references">
+    <patterns>
+      <pattern ref="Sam czasownik" />
+      <pattern ref="Czasownik z dopełnieniem" />
+      <pattern ref="Cel ruchu" />
+      <pattern ref="Towarzysz" />
+      <pattern ref="Miejsce czynności" />
+      <pattern ref="Środek transportu" />
+    </patterns>
+  </quiz>
+  <quiz id="adjectives" label="Przymiotniki" description="Zdania i formy" selection="references" filters="adjective.type">
+    <patterns>
+      <pattern ref="Przymiotnik po temacie" />
+      <pattern ref="Sam przymiotnik" />
+      <pattern ref="Przymiotnik przed rzeczownikiem" />
+    </patterns>
+  </quiz>
+  <quiz id="availability" label="Dostępność" description="Zdania i formy" selection="references">
+    <patterns>
+      <pattern ref="Dostępność 〜がある / Sam czasownik" />
+      <pattern ref="Dostępność 〜がある / Czasownik z dopełnieniem" />
+      <pattern ref="Dostępność 〜がある / Cel ruchu" />
+      <pattern ref="Dostępność 〜がある / Towarzysz" />
+      <pattern ref="Dostępność 〜がある / Miejsce czynności" />
+    </patterns>
+  </quiz>
 </sentence_quizzes>

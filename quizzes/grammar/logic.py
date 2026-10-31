@@ -41,8 +41,9 @@ from kotomi.core.generation.models import ChoiceScope, NumericRangeScope
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from kotomi.application.settings import validate_mobile_button_font_scale
 from kotomi.application.settings_xml import load_settings, save_settings, settings_path
-from apps.availability.logic import (
-    AvailabilityQuizSession,
+from kotomi.application.sentence_session import (
+    SentenceQuizSession,
+    QuestionSpaceExhausted,
     FORM_GROUPS,
     FORM_STYLE_LABELS,
     SubmissionResult,
@@ -61,9 +62,11 @@ _HistoryKey = str | tuple[str, str]
 def quiz_settings_path() -> Path:
     return settings_path(INSTALL_ROOT, SETTINGS_FILENAME)
 
+MODE_TRANSFORMATION = "transformation"
 MODE_POLISH_TO_JAPANESE = "polish_to_japanese"
 MODE_LABELS = {
     MODE_POLISH_TO_JAPANESE: "Napisz zdanie po japońsku",
+    MODE_TRANSFORMATION: "Zmień japońskie zdanie",
 }
 
 PATTERN_LABELS = {
@@ -74,6 +77,10 @@ PATTERN_LABELS = {
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 PATTERN_EXPANSIONS = {pattern_id: (pattern_id,) for pattern_id in SUPPORTED_PATTERNS}
 SUPPORTS_NUMERIC_QUANTITY_RANGE = False
+FILTER_OPTIONS = {}
+SUPPORTS_WORD_CHAINS = False
+MOBILE_DIRECTION_TOGGLES = (("polite_to_plain", "specialized.polite_to_plain"),
+                            ("plain_to_polite", "specialized.plain_to_polite"))
 
 MOBILE_APP_TITLE = "Kotomi, gramatyka"
 MOBILE_SUBTITLE = "ことができる"
@@ -141,6 +148,9 @@ ENTITY_FILTER_FIELDS = {
 class GrammarQuizError(ValueError):
     """Raised for invalid grammar settings or unavailable questions."""
 
+class GrammarQuizExhausted(GrammarQuizError, QuestionSpaceExhausted):
+    """All renderable questions have already been used."""
+
 
 @dataclass
 class GrammarQuizSettings:
@@ -150,6 +160,10 @@ class GrammarQuizSettings:
     enabled_forms: List[str] = field(default_factory=lambda: list(FORM_GROUPS))
     enabled_patterns: List[str] | None = None
     word_filter: str = ""
+    filter_selections: Dict[str, List[str]] = field(default_factory=dict)
+    polite_to_plain: bool = True
+    plain_to_polite: bool = False
+    word_chain_length: int = 1
     quantity_range_enabled: bool = False
     quantity_range_min: int = 1
     quantity_range_max: int = 20
@@ -185,6 +199,11 @@ class GrammarQuizSettings:
                 if str(value) in defaults.enabled_patterns
             ],
             word_filter=str(values.get("word_filter", defaults.word_filter)),
+            filter_selections={key: list(value) for key, value in
+                               values.get("filter_selections", {}).items()},
+            polite_to_plain=bool(values.get("polite_to_plain", True)),
+            plain_to_polite=bool(values.get("plain_to_polite", False)),
+            word_chain_length=_safe_int(values.get("word_chain_length", 1), 1),
             quantity_range_enabled=bool(
                 values.get(
                     "quantity_range_enabled",
@@ -222,13 +241,17 @@ class GrammarQuizSettings:
         # These controls are intentionally no longer user-configurable.
         self.number_of_tries = 1
         self.random_order = True
-        if self.mode != MODE_POLISH_TO_JAPANESE:
+        if self.mode not in MODE_LABELS:
             raise GrammarQuizError(f"Nieznany tryb quizu: {self.mode}")
         if not self.enabled_forms:
             raise GrammarQuizError("Wybierz co najmniej jedną formę.")
         if not self.enabled_patterns:
             raise GrammarQuizError("Wybierz co najmniej jeden wzorzec zdania.")
-        if not self.plain_output and not self.polite_output:
+        if self.mode == MODE_TRANSFORMATION and not (self.polite_to_plain or self.plain_to_polite):
+            raise GrammarQuizError("Wybierz co najmniej jeden kierunek zmiany formy.")
+        if not 1 <= self.word_chain_length <= 3:
+            raise GrammarQuizError("Liczba słów w łańcuchu musi wynosić 1–3.")
+        if self.mode == MODE_POLISH_TO_JAPANESE and not self.plain_output and not self.polite_output:
             raise GrammarQuizError(
                 "Wybierz co najmniej jeden styl japońskiej odpowiedzi."
             )
@@ -252,7 +275,12 @@ class GrammarQuizSettings:
             validate_mobile_button_font_scale(self.mobile_button_font_scale)
         except (TypeError, ValueError) as exception:
             raise GrammarQuizError(str(exception)) from exception
-        parse_slot_filter(self.word_filter)
+        parse_slot_filter(self.effective_word_filter())
+
+    def effective_word_filter(self) -> str:
+        from kotomi.application.quiz_filters import selection_filter_text
+        return ";".join(filter(None, (self.word_filter,
+                                     selection_filter_text(self.filter_selections))))
 
     def summary(self) -> str:
         forms = ", ".join(FORM_GROUPS[name]["label"] for name in self.enabled_forms)
@@ -376,9 +404,12 @@ def _rules_for_engine_slot(
 ) -> List[SlotFilterRule]:
     """Map simple quiz filter names onto engine-owned selector slots."""
 
-    aliases = {slot}
+    aliases = {slot, *(alias for alias, target in analysis.alias_slots.items() if target == slot)}
     definition = analysis.slots[slot]
-    if slot == analysis.focus_slot:
+    kind = slot.split("@", 1)[0]
+    if kind != "verb":
+        aliases.add(kind)
+    if slot == analysis.focus_slot and definition.dictionary == "verbs":
         aliases.add("verb")
     if definition.kind == "entity":
         aliases.add("noun")
@@ -437,6 +468,37 @@ def resolve_project_path() -> Path:
     raise GrammarQuizError("Nie znaleziono quiz_project.xml.")
 
 
+def chain_slot(project, analysis):
+    """Recognize the bounded adjective composition supported by the renderer.
+
+    Multi-clause patterns retain their authored structure. A chain is offered
+    only for a single adjective with an optional copula and noun.
+    """
+    slots = [s for s in analysis.word_slots
+             if project.dictionary_schemas.get(analysis.slots[s].dictionary) == "adjective"]
+    if len(slots) != 1 or slots[0] in analysis.fixed_words:
+        return None
+    if any(project.dictionary_schemas.get(analysis.slots[s].dictionary)
+           not in {"adjective", "copula"} for s in analysis.word_slots):
+        return None
+    if len(analysis.entity_slots) > 1 or any(t.kind == "relative" for t in analysis.placeholders):
+        return None
+    return slots[0]
+
+
+def target_form_group(project, target_form):
+    """Resolve presentation labels using the same catalog as generation."""
+    for catalog in project.form_definitions.values():
+        definition = catalog.get(target_form)
+        if definition is None or not definition.register or not definition.polarity:
+            continue
+        category = "past" if definition.context == "past" else "nonpast"
+        if definition.polarity == "negative":
+            category = "past_negative" if category == "past" else "negative"
+        return category, definition.register
+    return None
+
+
 def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) -> None:
     """Configure this reusable quiz UI from one XML quiz definition."""
 
@@ -465,6 +527,7 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
     global SUPPORTED_PATTERNS
     global PATTERN_EXPANSIONS
     global SUPPORTS_NUMERIC_QUANTITY_RANGE
+    global FILTER_OPTIONS, SUPPORTS_WORD_CHAINS
     global MOBILE_APP_TITLE
     global MOBILE_SUBTITLE
     global MOBILE_SETTINGS_TITLE
@@ -494,6 +557,12 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
         )
         for pattern_id in effective_ids
         if pattern_id in project.patterns
+    )
+    from kotomi.application.quiz_filters import filter_options
+    FILTER_OPTIONS = filter_options(project, effective_ids, quiz.filters)
+    SUPPORTS_WORD_CHAINS = all(
+        chain_slot(project, project.analyze_pattern(project.patterns[pid])) is not None
+        for pid in effective_ids
     )
     MOBILE_APP_TITLE = f"Kotomi, {quiz.label}"
     MOBILE_SUBTITLE = quiz.description
@@ -531,10 +600,35 @@ class SettingsStore:
 
     def load(self) -> GrammarQuizSettings:
         if not self.path.exists():
+            legacy = getattr(type(self), "legacy_filename", "")
+            legacy_path = self.path.with_name(legacy) if legacy else None
+            if legacy_path is not None and legacy_path.exists():
+                try:
+                    values = load_settings(legacy_path)
+                except (OSError, ValueError, TypeError, AttributeError):
+                    return self.settings_class()
+                if legacy.startswith("adjective"):
+                    values["word_chain_length"] = values.pop("adjective_count", 1)
+                    values["filter_selections"] = {"adjective.type": [value for value, flag in
+                        (("i_adjective", "enable_i_adjectives"), ("na_adjective", "enable_na_adjectives"))
+                        if values.get(flag, True)]}
+                    expressions = []
+                    for expression in values.get("word_filter", "").split(";"):
+                        if expression.strip():
+                            key, sep, value = expression.partition("=")
+                            expressions.append((key if "." in key else "adjective." + key) + sep + value)
+                    values["word_filter"] = ";".join(expressions)
+                try:
+                    settings = self.settings_class.from_dict(values)
+                except (ValueError, TypeError):
+                    # An invalid legacy selection is kept intact for rollback.
+                    return self.settings_class()
+                self.save(settings)
+                return settings
             return self.settings_class()
         try:
             return self.settings_class.from_dict(load_settings(self.path))
-        except (OSError, ValueError):
+        except (OSError, ValueError, TypeError, AttributeError):
             return self.settings_class()
 
     def save(self, settings: GrammarQuizSettings) -> None:
@@ -580,29 +674,32 @@ class GrammarQuizEngine:
         self.shared_engine = SharedQuizEngine(self.project, self.rng)
         self._validate_project()
 
-    def build_generation_rules(
-        self, settings: GrammarQuizSettings
-    ) -> List[GenerationRule]:
+    def build_generation_rules(self, settings, pattern_id=None):
         settings.validate()
-        rules: List[GenerationRule] = []
+        catalog = None
+        if pattern_id is not None:
+            analysis = self.shared_engine.analyze_pattern(pattern_id)
+            if analysis.dynamic_slot:
+                schema = self.project.dictionary_schemas.get(
+                    analysis.slots[analysis.dynamic_slot].dictionary, "")
+                catalog = self.project.form_definitions.get(schema, {})
+        rules = []
         for category in settings.enabled_forms:
             group = FORM_GROUPS[category]
-            for style, enabled in (
-                ("plain", settings.plain_output),
-                ("polite", settings.polite_output),
-            ):
-                if enabled:
-                    rules.append(
-                        GenerationRule(
-                            category=category,
-                            source_form="",
-                            target_form=str(group[style]),
-                            target_label=(
-                                f"{str(group['label']).lower()}, styl "
-                                f"{FORM_STYLE_LABELS[style]}"
-                            ),
-                        )
-                    )
+            context = "past" if category in {"past", "past_negative"} else "present"
+            polarity = "negative" if category in {"negative", "past_negative"} else "affirmative"
+            names = {style: (group[style] if catalog is None or group[style] in catalog else
+                      next((f.name for f in catalog.values()
+                      if (f.context in ({"present", "nonpast"} if context == "present" else {context})
+                          and f.polarity == polarity and f.register == style)), ""))
+                     for style in ("plain", "polite")}
+            for style in ("plain", "polite"):
+                transform = settings.mode == MODE_TRANSFORMATION
+                enabled = (settings.polite_to_plain if style == "plain" else settings.plain_to_polite) if transform else getattr(settings, style + "_output")
+                other = "polite" if style == "plain" else "plain"
+                if enabled and names[style] and (not transform or names[other]):
+                    rules.append(GenerationRule(category, names[other] if transform else "",
+                        names[style], f"{group['label'].lower()}, styl {FORM_STYLE_LABELS[style]}"))
         return rules
 
     def build_combinations(
@@ -615,6 +712,7 @@ class GrammarQuizEngine:
         return self._build_combinations(settings)
 
     def _build_combinations(self, settings: GrammarQuizSettings) -> List[GenerationCombination]:
+        settings.validate()
         combinations: List[GenerationCombination] = []
         for selected_id in settings.enabled_patterns:
             for pattern_id in self.pattern_expansions.get(
@@ -631,6 +729,8 @@ class GrammarQuizEngine:
                 if not analysis.focus_slot and not analysis.entity_slots:
                     continue
                 if not analysis.dynamic_slots:
+                    if settings.mode == MODE_TRANSFORMATION:
+                        continue
                     combinations.append(
                         GenerationCombination(
                             pattern_id,
@@ -648,8 +748,9 @@ class GrammarQuizEngine:
                 )
                 combinations.extend(
                     GenerationCombination(pattern_id, rule)
-                    for rule in self.build_generation_rules(settings)
+                    for rule in self.build_generation_rules(settings, pattern_id)
                     if rule.target_form in eligible_forms
+                    and (not rule.source_form or rule.source_form in eligible_forms)
                 )
         if not combinations:
             raise GrammarQuizError(
@@ -798,7 +899,7 @@ class GrammarQuizEngine:
         word_usage: Optional[Mapping[_HistoryKey, int]] = None,
         recent_word_ids: Optional[Sequence[_HistoryKey]] = None,
     ) -> GrammarQuestion:
-        rules = parse_slot_filter(settings.word_filter)
+        rules = parse_slot_filter(settings.effective_word_filter())
         combinations = self.build_combinations(settings)
         if preferred is not None:
             combinations = [preferred] + [
@@ -824,6 +925,12 @@ class GrammarQuizEngine:
                 continue
             if question is not None and question.key not in seen_keys:
                 return question
+        if seen_keys:
+            for combination in combinations:
+                for question in self._remaining_questions(settings, combination, rules):
+                    if question.key not in seen_keys:
+                        return question
+            raise GrammarQuizExhausted("Wykorzystano wszystkie dostępne pytania.")
         if not combinations and rejected:
             raise GrammarQuizError("Brak zgodnych słów lub form. " + "; ".join(rejected))
         raise GrammarQuizError(
@@ -839,10 +946,8 @@ class GrammarQuizEngine:
         word_usage: Mapping[_HistoryKey, int],
         recent_word_ids: Sequence[_HistoryKey],
     ) -> Optional[GrammarQuestion]:
-        choice_scope = self.choice_scope(
-            settings,
-            combination.pattern_id,
-        )
+        analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
+        choice_scope = self._statistics_choice_scope(settings, combination.pattern_id, analysis, rules)
         selected = self._select_bindings(
             combination.pattern_id,
             combination.rule.target_form,
@@ -869,6 +974,13 @@ class GrammarQuizEngine:
             rng=self.rng,
         )
 
+        return self._question_from_preview(settings, combination, preview)
+
+    def _question_from_preview(self, settings, combination, preview, selected_chains=None):
+        rendered = self._render_question(settings, combination, preview, selected_chains=selected_chains)
+        if rendered is None:
+            return None
+        source_sentence, expected_answer, chains, context_question = rendered
         analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
         main_slot = analysis.focus_slot or analysis.entity_slots[0]
         main_dictionary = analysis.slots[main_slot].dictionary
@@ -892,8 +1004,14 @@ class GrammarQuizEngine:
             (
                 combination.pattern_id,
                 combination.rule.target_form,
-                preview.source,
-                preview.answer,
+                combination.rule.source_form,
+                source_sentence,
+                expected_answer,
+                preview.context_pool,
+                preview.context_option,
+                repr(tuple(sorted(preview.words.items()))),
+                repr(tuple(sorted(preview.entities.items()))),
+                repr(tuple((slot, tuple(ids)) for slot, ids in sorted(chains.items()))),
             )
         )
         context_translation, context_kana = selected_context_hint(
@@ -901,16 +1019,18 @@ class GrammarQuizEngine:
             preview,
             analysis=analysis,
         )
-        vocabulary_hints = selected_vocabulary_hints(self.project, preview, analysis=analysis)
+        vocabulary_hints = selected_vocabulary_hints(self.project, preview, analysis=analysis, word_chains=chains)
+        if chains:
+            bindings += ", " + ", ".join(f"{slot}=" + "+".join(ids) for slot, ids in chains.items())
         return GrammarQuestion(
             key=key,
-            source_sentence=preview.source,
-            expected_answer=preview.answer,
+            source_sentence=source_sentence,
+            expected_answer=expected_answer,
             target_label=combination.rule.target_label,
-            context_question="",
+            context_question=context_question if combination.rule.source_form else "",
             pattern_id=combination.pattern_id,
             target_form=combination.rule.target_form,
-            source_form="",
+            source_form=combination.rule.source_form,
             word_id=main_word.id,
             _history_key=(main_dictionary, main_word.id),
             word_meaning=self.project.instruction_language.translation(main_word),
@@ -923,9 +1043,105 @@ class GrammarQuizEngine:
             context_kana=context_kana,
         )
 
+    def _remaining_questions(self, settings, combination, rules):
+        """Enumerate lazily only after repeated random collisions."""
+        from itertools import permutations
+        analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
+        scope = self._statistics_choice_scope(settings, combination.pattern_id, analysis, rules)
+        for preview in iter_quiz_previews(self.shared_engine, combination.pattern_id,
+                form_name=combination.rule.target_form, choice_scope=scope):
+            matches = True
+            for slot in (*analysis.word_slots, *analysis.entity_slots):
+                item = (self.project.entities[preview.entities[slot]] if slot in analysis.entity_slots
+                        else compatibility_solver.resolve_word_selection(self.project,
+                            analysis.slots[slot].dictionary, preview.words[slot]))
+                if item is None or not _item_matches(item, _rules_for_engine_slot(rules, analysis, slot),
+                                                    self.project.effective_entity_categories):
+                    matches = False
+                    break
+            if not matches:
+                continue
+            variants = ({},)
+            if settings.word_chain_length > 1:
+                slot, candidates = self._chain_candidates(settings, combination.pattern_id, preview)
+                variants = ({slot: [word.id for word in prefix] + [preview.words[slot]]}
+                            for prefix in permutations(candidates, settings.word_chain_length - 1))
+            for chains in variants:
+                question = self._question_from_preview(settings, combination, preview, chains)
+                if question is not None:
+                    yield question
+
     def _hint_pairs(self, pattern_id: str, preview: object) -> List[tuple[str, str]]:
         return [(hint.translation, hint.kana)
                 for hint in selected_vocabulary_hints(self.project, preview)]
+
+    def _chain_candidates(self, settings, pattern_id, preview, candidate_cache=None):
+        analysis = self.shared_engine.analyze_pattern(pattern_id)
+        slot = chain_slot(self.project, analysis)
+        if slot is None:
+            raise GrammarQuizError("Ten wzorzec nie obsługuje łańcucha słów.")
+        definition = analysis.slots[slot]
+        rules = _rules_for_engine_slot(parse_slot_filter(settings.effective_word_filter()), analysis, slot)
+        subject_slot = analysis.entity_for_adjective.get(slot)
+        subject = self.project.entities.get(preview.entities.get(subject_slot, ""))
+        cache_key = (pattern_id, subject.id if subject is not None else "")
+        candidates = candidate_cache.get(cache_key) if candidate_cache is not None else None
+        if candidates is None:
+            candidates = [word for word in compatibility_solver.base_word_candidates(
+                self.project, slot, analysis, dynamic_form=preview.dynamic_form, check_form=False)
+                if "connective" in word.forms
+                and _item_matches(word, rules, self.project.effective_entity_categories)
+                and (subject is None or compatibility_solver.adjective_matches(self.project, word, subject))]
+            if candidate_cache is not None:
+                candidate_cache[cache_key] = candidates
+        return slot, [word for word in candidates if word.id != preview.words[slot]]
+
+    def _chain_count(self, settings, pattern_id, preview, candidate_cache=None):
+        if settings.word_chain_length == 1:
+            return 1
+        import math
+        _slot, candidates = self._chain_candidates(settings, pattern_id, preview, candidate_cache)
+        count = settings.word_chain_length - 1
+        return math.perm(len(candidates), count) if len(candidates) >= count else 0
+
+    def _render_question(self, settings, combination, preview, *, sample_chains=True, selected_chains=None):
+        """Render both sides from identical bindings and context selections."""
+        analysis = self.shared_engine.analyze_pattern(combination.pattern_id)
+        chains = selected_chains or {}
+        if selected_chains is None and settings.word_chain_length > 1:
+            slot, candidates = self._chain_candidates(settings, combination.pattern_id, preview)
+            count = settings.word_chain_length - 1
+            if len(candidates) < count:
+                return None
+            prefix = self.rng.sample(candidates, count) if sample_chains else candidates[:count]
+            chains[slot] = [w.id for w in prefix] + [preview.words[slot]]
+        source, answer = preview.source, preview.answer
+        if chains:
+            source, answer = self.shared_engine.render_bound_pattern(
+                combination.pattern_id, word_choices=preview.words, entity_choices=preview.entities,
+                word_chains=chains, form_overrides=preview.forms,
+                context_pool=preview.context_pool, context_option=preview.context_option)
+        context_question = source
+        if combination.rule.source_form:
+            overrides = {}
+            for slot in analysis.dynamic_slots:
+                word = compatibility_solver.resolve_word_selection(self.project,
+                    analysis.slots[slot].dictionary, preview.words[slot])
+                source_form = word.forms.get(combination.rule.source_form)
+                target_form = word.forms.get(preview.forms[slot])
+                if source_form is None or target_form is None or source_form.context != target_form.context:
+                    return None
+                overrides[slot] = source_form.name
+            if chains:
+                _, source = self.shared_engine.render_bound_pattern(
+                    combination.pattern_id, word_choices=preview.words, entity_choices=preview.entities,
+                    word_chains=chains, form_overrides={**preview.forms, **overrides},
+                    context_pool=preview.context_pool, context_option=preview.context_option)
+            else:
+                source = self.shared_engine.render_answer_with_forms(preview, overrides)
+            if normalize_japanese(source) == normalize_japanese(answer):
+                return None
+        return source, answer, chains, context_question
 
     def _statistics_choice_scope(self, settings, pattern_id, analysis, rules):
         """Push lexical filters into the solver before rendering possibilities.
@@ -937,7 +1153,7 @@ class GrammarQuizEngine:
         allowed = dict(scope.allowed_by_slot)
         for slot in (*analysis.word_slots, *analysis.entity_slots):
             slot_rules = _rules_for_engine_slot(rules, analysis, slot)
-            if not slot_rules or slot in analysis.fixed_words:
+            if not slot_rules:
                 continue
             definition = analysis.slots[slot]
             if definition.number_range is not None:
@@ -955,12 +1171,15 @@ class GrammarQuizEngine:
         return replace(scope, allowed_by_slot=allowed)
 
     def statistics(self, settings: GrammarQuizSettings) -> Dict[str, int]:
-        rules = parse_slot_filter(settings.word_filter)
+        rules = parse_slot_filter(settings.effective_word_filter())
         combinations = self.build_combinations(settings)
         possible = 0
         eligible_words: Set[tuple[str, str]] = set()
         active_patterns: Set[str] = set()
         scopes = {}
+        chain_counts = {}
+        chain_candidates = {}
+        source_settings = replace(settings, word_chain_length=1)
         for combination_index, combination in enumerate(combinations):
             with progress_step(combination_index, len(combinations)):
                 active_patterns.add(combination.pattern_id)
@@ -973,9 +1192,15 @@ class GrammarQuizEngine:
                     )
                 choice_scope = scopes[combination.pattern_id]
                 counted = getattr(self.shared_engine, "iter_counted_previews", None)
-                if counted is not None and not rules:
+                # Lexical scope is exact; generated numeric metadata filters
+                # retain the post-render path instead of enumerating their range here.
+                numeric_filters = any(_rules_for_engine_slot(rules, analysis, slot)
+                    and analysis.slots[slot].number_range is not None for slot in analysis.word_slots)
+                factor_context = chain_slot(self.project, analysis) is not None
+                if counted is not None and not numeric_filters and (not rules or factor_context):
                     previews = counted(combination.pattern_id,
-                        form_name=combination.rule.target_form, choice_scope=choice_scope)
+                        form_name=combination.rule.target_form, choice_scope=choice_scope,
+                        factor_context=factor_context)
                 else:
                     # Older application hosts and post-render word filters keep
                     # the original exact path, including fixed-slot filtering.
@@ -1013,7 +1238,15 @@ class GrammarQuizEngine:
                             matches = False
                             break
                     if matches:
-                        possible += multiplicity
+                        if combination.rule.source_form and self._render_question(source_settings, combination, preview, sample_chains=False) is None:
+                            continue
+                        chain_key = (combination.pattern_id, tuple(preview.words.items()), tuple(preview.entities.items()))
+                        if chain_key not in chain_counts:
+                            chain_counts[chain_key] = self._chain_count(settings, combination.pattern_id, preview, chain_candidates)
+                        chain_count = chain_counts[chain_key]
+                        if not chain_count:
+                            continue
+                        possible += multiplicity * chain_count
                         selections = preview.words if analysis.focus_slot else preview.entities
                         eligible_words.update((main_dictionary, value) for value in
                             independent_entities.get(main_slot, (selections[main_slot],)))
@@ -1030,26 +1263,24 @@ class GrammarQuizEngine:
     def has_possible_question(self, settings: GrammarQuizSettings) -> bool:
         """Stop after the first assignment that runtime can render."""
 
-        rules = parse_slot_filter(settings.word_filter)
+        rules = parse_slot_filter(settings.effective_word_filter())
         combinations = self.build_combinations(settings)
         rejected = []
         for attempt in range(128):
             if not combinations:
                 break
             combination = combinations[attempt % len(combinations)]
-            question = self._question_for_combination(
-                settings,
-                combination,
-                rules,
-                {},
-                (),
-            )
+            try:
+                question = self._question_for_combination(settings, combination, rules, {}, ())
+            except NoCompatibleChoices:
+                combinations = [value for value in combinations if value != combination]
+                continue
             if question is not None:
                 return True
         return False
 
 
-GrammarQuizSession = AvailabilityQuizSession
+GrammarQuizSession = SentenceQuizSession
 QUIZ_SETTINGS_CLASS = GrammarQuizSettings
 QUIZ_ENGINE_CLASS = GrammarQuizEngine
 QUIZ_SESSION_CLASS = GrammarQuizSession
@@ -1061,21 +1292,31 @@ def snapshot_quiz_policy():
     """Freeze this profile for one host without retaining mutable module state."""
     policy = SimpleNamespace(**{name: globals()[name] for name in __all__})
     policy.PATTERN_LABELS = dict(PATTERN_LABELS)
+    policy.FILTER_OPTIONS = dict(FILTER_OPTIONS)
     policy.PATTERN_EXPANSIONS = dict(PATTERN_EXPANSIONS)
 
     class ProfileSettings(GrammarQuizSettings):
         supported_patterns = tuple(SUPPORTED_PATTERNS)
         pattern_labels = dict(PATTERN_LABELS)
+        filter_options = dict(FILTER_OPTIONS)
+
+        def __post_init__(self):
+            super().__post_init__()
+            for key, values in self.filter_options.items():
+                self.filter_selections.setdefault(key, list(values))
 
     class ProfileEngine(GrammarQuizEngine):
         profile_expansions = dict(PATTERN_EXPANSIONS)
 
     class ProfileStore(SettingsStore):
         settings_class = ProfileSettings
+        legacy_filename = {"verbs": "verb_quiz_settings.xml", "adjectives": "adjective_quiz_settings.xml",
+                           "availability": "availability_quiz_settings.xml"}.get(ACTIVE_QUIZ_ID, "")
 
     policy.QUIZ_SETTINGS_CLASS = ProfileSettings
     policy.QUIZ_ENGINE_CLASS = ProfileEngine
     policy.SETTINGS_STORE_CLASS = ProfileStore
+    policy.SettingsStore = ProfileStore
     filename = SETTINGS_FILENAME
     policy.quiz_settings_path = lambda: settings_path(INSTALL_ROOT, filename)
     return policy
@@ -1117,6 +1358,10 @@ __all__ = [
     "SUPPORTED_PATTERNS",
     "PATTERN_EXPANSIONS",
     "SUPPORTS_NUMERIC_QUANTITY_RANGE",
+    "FILTER_OPTIONS",
+    "SUPPORTS_WORD_CHAINS",
+    "MOBILE_DIRECTION_TOGGLES",
+    "MODE_TRANSFORMATION",
     "SettingsStore",
     "SlotFilterRule",
     "SubmissionResult",
@@ -1127,4 +1372,5 @@ __all__ = [
     "quiz_settings_path",
     "resolve_project_path",
     "selected_context_hint",
+    "target_form_group",
 ]

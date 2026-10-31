@@ -57,33 +57,7 @@ PATTERN_LABELS = {
 }
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 
-FORM_GROUPS = {
-    "nonpast": {
-        "label": "Nieprzeszła twierdząca",
-        "plain": "dictionary",
-        "polite": "polite_nonpast",
-    },
-    "negative": {
-        "label": "Nieprzeszła przecząca",
-        "plain": "plain_negative",
-        "polite": "polite_negative",
-    },
-    "past": {
-        "label": "Przeszła twierdząca",
-        "plain": "past_plain",
-        "polite": "past_polite",
-    },
-    "past_negative": {
-        "label": "Przeszła przecząca",
-        "plain": "past_negative_plain",
-        "polite": "past_negative_polite",
-    },
-}
-
-FORM_STYLE_LABELS = {
-    "plain": "potoczna",
-    "polite": "uprzejma",
-}
+from kotomi.application.sentence_session import FORM_GROUPS, FORM_STYLE_LABELS, SubmissionResult
 
 FILTER_FIELDS = {
     "dictionary",
@@ -273,13 +247,6 @@ class AvailabilityQuestion:
     context_translation: str = ""
     context_kana: str = ""
     vocabulary_hints: tuple[QuizVocabularyHint, ...] | None = None
-
-
-@dataclass
-class SubmissionResult:
-    state: str
-    message: str
-    expected_answer: str = ""
 
 
 def _safe_int(value: object, default: int) -> int:
@@ -690,113 +657,7 @@ class AvailabilityQuizEngine:
         }
 
 
-class AvailabilityQuizSession:
-    """Quiz progress and retry behavior, independent from Kivy."""
-
-    def __init__(
-        self,
-        engine: AvailabilityQuizEngine,
-        settings: AvailabilityQuizSettings,
-    ) -> None:
-        settings.validate()
-        self.engine = engine
-        self.settings = settings
-        self.combinations = engine.build_combinations(settings)
-        if settings.random_order:
-            engine.rng.shuffle(self.combinations)
-        self.seen_keys: Set[str] = set()
-        self.word_usage: Dict[str | tuple[str, str], int] = {}
-        self.recent_word_ids: List[str | tuple[str, str]] = []
-        self.current_question: Optional[AvailabilityQuestion] = None
-        self.current_index = -1
-        self.current_try = 0
-        self.correct_answers = 0
-        self.wrong_answers = 0
-        self.accepted_answers = 0
-        self.waiting_for_next = False
-        self.current_outcome = ""
-
-    @property
-    def complete(self) -> bool:
-        return self.current_index >= self.settings.question_count
-
-    def next_question(self) -> Optional[AvailabilityQuestion]:
-        next_index = self.current_index + 1
-        if next_index >= self.settings.question_count:
-            self.current_index = self.settings.question_count
-            self.current_question = None
-            self.waiting_for_next = False
-            return None
-        preferred = self.combinations[
-            next_index % len(self.combinations)
-        ]
-        question = self.engine.generate_question(
-            self.settings,
-            seen_keys=self.seen_keys,
-            preferred=preferred,
-            word_usage=self.word_usage,
-            recent_word_ids=self.recent_word_ids,
-        )
-        self.seen_keys.add(question.key)
-        history_key = getattr(question, "_history_key", None) or question.word_id
-        self.word_usage[history_key] = (
-            self.word_usage.get(history_key, 0) + 1
-        )
-        self.recent_word_ids.append(history_key)
-        if len(self.recent_word_ids) > RECENT_MAIN_VERB_WINDOW:
-            self.recent_word_ids = self.recent_word_ids[-RECENT_MAIN_VERB_WINDOW:]
-        self.current_question = question
-        self.current_index = next_index
-        self.current_try = 0
-        self.waiting_for_next = False
-        self.current_outcome = ""
-        return question
-
-    def submit(self, answer: str) -> SubmissionResult:
-        if self.current_question is None or self.waiting_for_next:
-            return SubmissionResult("ignored", "")
-        expected = self.current_question.expected_answer
-        if normalize_japanese(answer) == normalize_japanese(expected):
-            self.correct_answers += 1
-            self.waiting_for_next = True
-            self.current_outcome = "correct"
-            return SubmissionResult(
-                "correct",
-                "Dobrze!",
-                expected,
-            )
-        self.current_try += 1
-        if self.current_try >= self.settings.number_of_tries:
-            self.wrong_answers += 1
-            self.waiting_for_next = True
-            self.current_outcome = "wrong"
-            return SubmissionResult(
-                "wrong",
-                "Niepoprawnie. Poniżej jest oczekiwana odpowiedź.",
-                expected,
-            )
-        return SubmissionResult(
-            "retry",
-            (
-                "Jeszcze nie. Spróbuj ponownie "
-                f"({self.current_try}/{self.settings.number_of_tries})."
-            ),
-        )
-
-    def accept_or_skip(self) -> None:
-        if self.current_question is None:
-            return
-        if not self.waiting_for_next:
-            self.correct_answers += 1
-            self.accepted_answers += 1
-            self.current_outcome = "accepted"
-        elif self.current_outcome == "wrong":
-            if self.wrong_answers > 0:
-                self.wrong_answers -= 1
-            self.correct_answers += 1
-            self.accepted_answers += 1
-            self.current_outcome = "accepted"
-        self.waiting_for_next = True
+from kotomi.application.sentence_session import SentenceQuizSession as AvailabilityQuizSession
 
 
 __all__ = [
