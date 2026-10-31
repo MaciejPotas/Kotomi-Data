@@ -157,7 +157,7 @@ def create_app_class():
     def prepare_text_font(kwargs):
         value = kwargs["font_size"]
         base = sp(float(value[:-2])) if isinstance(value, str) and value.endswith("sp") else float(value)
-        kwargs["font_size"] = base * current_text_scale()
+        kwargs["font_size"] = base
         return base
 
     def ui_text(key: str, fallback: str = "", **values: object) -> str:
@@ -279,6 +279,7 @@ def create_app_class():
             self._preferred_font_sp = float(
                 kwargs.pop("preferred_font_sp", 18.0)
             )
+            self._appearance_question = kwargs.pop("appearance_question", False)
             self._minimum_font_sp = float(kwargs.pop("minimum_font_sp", 12.0))
             self._fit_horizontal_padding = float(
                 kwargs.pop("fit_horizontal_padding", 4.0)
@@ -332,13 +333,13 @@ def create_app_class():
                 probe = CoreLabel(
                     text=self._fit_plain_text,
                     font_name=self.font_name,
-                    font_size=sp((self._preferred_font_sp * current_text_scale())),
+                    font_size=sp((self._preferred_font_sp * (current_text_scale() if self._appearance_question else 1.0))),
                 )
                 probe.refresh()
                 fitted_lines, fitted_sp = fitted_compact_text_layout(
                     float(probe.texture.size[0]),
                     available_width,
-                    preferred_sp=(self._preferred_font_sp * current_text_scale()),
+                    preferred_sp=(self._preferred_font_sp * (current_text_scale() if self._appearance_question else 1.0)),
                     minimum_sp=self._minimum_font_sp,
                     maximum_lines=self._maximum_fit_lines,
                 )
@@ -391,14 +392,12 @@ def create_app_class():
             self._mobile_button_font = True
             self._mobile_base_height = base_height
 
-            def fit_text(instance, _value=None) -> None:
-                instance.text_size = (
-                    max(0, instance.width - dp(18)),
-                    max(0, instance.height - dp(10)),
-                )
+            self.bind(size=self._fit_font_to_width, text=self._fit_font_to_width)
+            self._fit_font_to_width()
 
-            self.bind(size=fit_text)
-            fit_text(self)
+        def _fit_font_to_width(self, *_):
+            from platforms.mobile.quiz_widgets import fit_button_text
+            fit_button_text(self, quiz_button_font_size(current_button_font_scale()))
 
     class JapaneseButton(AppButton):
         def __init__(self, **kwargs):
@@ -572,8 +571,9 @@ def create_app_class():
         row = BoxLayout(
             size_hint_y=None,
             height=dp(scaled_button_height(height, button_scale)),
-            spacing=dp(8),
+            spacing=dp(controller.appearance.button_spacing),
         )
+        row._appearance_spacing = True
         row._mobile_base_height = dp(height)
         for button in buttons:
             row.add_widget(button)
@@ -660,13 +660,25 @@ def create_app_class():
                 bad=True,
             )
 
+    from platforms.mobile.quiz_widgets import QuizTitle, quiz_content_viewport
+
+    class LessonTitle(QuizTitle):
+        def __init__(self, **kwargs):
+            kwargs.pop("font_size", None)
+            kwargs.setdefault("font_name", MOBILE_FONT)
+            kwargs.setdefault("size_hint_y", None)
+            kwargs.setdefault("height", dp(48))
+            super().__init__(preferred_sp=22 * quiz_app().appearance.title_font_scale,
+                             layout_mode="multiline", **kwargs)
+            self._appearance_title = True
+
     class LessonsScreen(BaseScreen):
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             self.open_groups: set[str] = set()
             self.open_courses: set[tuple[str, str]] = set()
             self.root_layout = vertical_root()
-            self.title = AppLabel(
+            self.title = LessonTitle(
                 text=ui_text('hub.app.lessons.title', ""),
                 font_size="24sp",
                 color=ACCENT_COLOR,
@@ -797,25 +809,13 @@ def create_app_class():
             )
             self.target.text = "1"
             settings_content.add_widget(target_row)
-            size_row, self.button_scale = number_setting(
-                ui_text("mobile.button_scale", ""), AppInput, AppLabel,
-            )
-            self.button_scale.text = "100"
-            text_row, self.text_scale_slider = size_setting(ui_text("specialized.text_scale"), MOBILE_FONT)
-            font_row, self.button_font_scale_slider = size_setting(ui_text("mobile.button_font_scale"), MOBILE_FONT)
-            reset_sizes = AppButton(text=ui_text("mobile.reset_sizes"))
-            reset_sizes.bind(on_release=lambda *_: self._reset_sizes())
-            self.display_widgets = (text_row, font_row, size_row, reset_sizes)
-            display = AppButton(text=ui_text("specialized.section.size_behavior"))
-            self.display_button = display
-            display.bind(on_release=lambda *_: open_settings_panel(
-                self, display.text, self.display_widgets, ui_text, MOBILE_FONT,
-                editable_fields=((self.button_scale, "text"),
-                                 (self.text_scale_slider, "value"),
-                                 (self.button_font_scale_slider, "value")),
-            ))
-            style_settings_action(display)
-            settings_content.add_widget(display)
+            if not getattr(self.kotomi, "embedded_mode", False):
+                from platforms.mobile.quiz_appearance import appearance_text, show_quiz_appearance
+                appearance = AppButton(text=appearance_text(
+                    getattr(self.kotomi, "interface_language", "pl"), "title"))
+                appearance.bind(on_release=lambda *_: show_quiz_appearance(
+                    self.kotomi, on_saved=self.kotomi.apply_appearance))
+                settings_content.add_widget(appearance)
             settings_content.add_widget(
                 AppLabel(
                     text=(
@@ -839,14 +839,6 @@ def create_app_class():
             self.asked.text = field_label(settings.asked_field)
             self.answer.text = field_label(settings.answer_field)
             self.target.text = str(settings.required_correct_answers)
-            self.button_scale.text = str(round(settings.mobile_button_scale * 100))
-            self.text_scale_slider.value = settings.mobile_text_scale
-            self.button_font_scale_slider.value = settings.mobile_button_font_scale
-
-        def _reset_sizes(self) -> None:
-            self.button_scale.text = "100"
-            self.text_scale_slider.value = 1.0
-            self.button_font_scale_slider.value = 1.0
 
         def flip(self) -> None:
             asked = self.asked.text
@@ -859,9 +851,6 @@ def create_app_class():
                 settings.asked_field = field_from_label(self.asked.text)
                 settings.answer_field = field_from_label(self.answer.text)
                 settings.required_correct_answers = int(self.target.text)
-                settings.mobile_button_scale = int(self.button_scale.text) / 100.0
-                settings.mobile_text_scale = float(self.text_scale_slider.value)
-                settings.mobile_button_font_scale = float(self.button_font_scale_slider.value)
                 settings.validate()
             except (TypeError, ValueError) as exception:
                 self.show_error(mobile_error_text(self, exception))
@@ -876,7 +865,7 @@ def create_app_class():
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             root = vertical_root()
-            self.title = AppLabel(font_size="22sp", color=ACCENT_COLOR)
+            self.title = LessonTitle(font_size="22sp", color=ACCENT_COLOR)
             root.add_widget(self.title)
             back_button = AppButton(text=ui_text("action.back", ""))
             back_button.bind(on_release=lambda *_: setattr(self.manager, "current", "lessons"))
@@ -896,7 +885,7 @@ def create_app_class():
             root.add_widget(button_row([forms, sentences]))
             self.scroll, self.stack = scroll_stack()
             root.add_widget(self.scroll)
-            self.add_widget(root)
+            self.add_widget(quiz_content_viewport(root, fill_height=True))
 
         def on_pre_enter(self, *_args):
             lesson = self.kotomi.current_lesson()
@@ -954,7 +943,7 @@ def create_app_class():
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             root = vertical_root()
-            self.title = AppLabel(font_size="22sp", color=ACCENT_COLOR)
+            self.title = LessonTitle(font_size="22sp", color=ACCENT_COLOR)
             root.add_widget(self.title)
             root.add_widget(
                 AppLabel(text=ui_text("settings.show", ""))
@@ -989,7 +978,7 @@ def create_app_class():
             root.add_widget(button_row([back, start]))
             self.asked.bind(text=lambda *_: self.refresh_count())
             self.answer.bind(text=lambda *_: self.refresh_count())
-            self.add_widget(root)
+            self.add_widget(quiz_content_viewport(root, fill_height=True))
 
         def on_pre_enter(self, *_args):
             label = (
@@ -1051,7 +1040,7 @@ def create_app_class():
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             root = vertical_root()
-            self.title = AppLabel(font_size="22sp", color=ACCENT_COLOR)
+            self.title = LessonTitle(font_size="22sp", color=ACCENT_COLOR)
             root.add_widget(self.title)
             root.add_widget(
                 AppLabel(text=ui_text(
@@ -1081,7 +1070,7 @@ def create_app_class():
             back = AppButton(text=ui_text("action.back", ""))
             back.bind(on_release=lambda *_: setattr(self.manager, "current", "lesson"))
             root.add_widget(button_row([back, start]))
-            self.add_widget(root)
+            self.add_widget(quiz_content_viewport(root, fill_height=True))
 
         def set_all_forms(self, active: bool) -> None:
             for check in self.checks.values():
@@ -1136,7 +1125,7 @@ def create_app_class():
         def __init__(self, **kwargs):
             super().__init__(**kwargs)
             root = vertical_root()
-            self.title = AppLabel(
+            self.title = LessonTitle(
                 text=ui_text("quiz.sentence_title", ""),
                 font_size="22sp",
                 color=ACCENT_COLOR,
@@ -1184,7 +1173,7 @@ def create_app_class():
             style_settings_action(calculate, primary=True)
             root.add_widget(calculate)
             root.add_widget(button_row([back, start]))
-            self.add_widget(root)
+            self.add_widget(quiz_content_viewport(root, fill_height=True))
 
         def on_pre_enter(self, *_args):
             controller = self.kotomi
@@ -1689,8 +1678,8 @@ def create_app_class():
             if not question.options:
                 self.mount_answer_row()
 
-            # A regular BoxLayout keeps the quiz pinned to the top.  A final
-            # flexible spacer consumes spare room without enabling drag/scroll.
+            # Reserved question/answer slots retain their geometry. Only
+            # genuine overflow enables scrolling on compact viewports.
             self.content_layout = BoxLayout(
                 orientation="vertical",
                 spacing=dp(MOBILE_QUIZ_LAYOUT.content_spacing),
@@ -1705,10 +1694,10 @@ def create_app_class():
             self.content_layout.bind(
                 minimum_height=self.content_layout.setter("height")
             )
-            content_anchor = AnchorLayout(anchor_x="left", anchor_y="top")
-            content_anchor.add_widget(self.content_layout)
-            self.root_layout.add_widget(content_anchor)
+            from platforms.mobile.quiz_widgets import quiz_content_viewport
+            self.root_layout.add_widget(quiz_content_viewport(self.content_layout))
             self.prompt_label = AdaptiveSingleLineLabel(
+                appearance_question=True,
                 text=self.question_markup(question),
                 fit_plain_text=self.question_plain_text(question),
                 markup=True,
@@ -1736,20 +1725,13 @@ def create_app_class():
         def render_choices(self, question: Question) -> None:
             if self.content_layout is None:
                 return
-            scale = self.kotomi.settings.mobile_button_scale
-            option_height = scaled_button_height(
-                MOBILE_QUIZ_LAYOUT.action_height,
-                scale,
-            )
             options = GridLayout(
                 cols=1,
-                spacing=dp(6),
+                spacing=dp(self.kotomi.appearance.button_spacing),
                 size_hint_y=None,
-                height=dp(
-                    option_height * len(question.options)
-                    + 6 * max(0, len(question.options) - 1)
-                ),
             )
+            options._appearance_spacing = True
+            options.bind(minimum_height=options.setter("height"))
             for option in question.options:
                 button = ChoiceButton(
                     text=option,
@@ -2183,7 +2165,7 @@ def create_app_class():
             self.working_lesson: Optional[Lesson] = None
             self.selected_word_id = ""
             root = vertical_root(padding=8, spacing=5)
-            self.title = AppLabel(font_size="21sp", color=ACCENT_COLOR)
+            self.title = LessonTitle(font_size="21sp", color=ACCENT_COLOR)
             root.add_widget(self.title)
             self.group = AppInput(hint_text=ui_text("lesson.group", ""))
             self.main_name = AppInput(
@@ -2391,6 +2373,10 @@ def create_app_class():
                 values, self.sentence_engine.project.form_definitions,
             )
 
+            from platforms.mobile.quiz_appearance import QuizAppearanceStore
+            self.appearance = QuizAppearanceStore().load()
+            self.appearance.apply_to(self.settings)
+
             self.manager = ScreenManager()
             self.manager.add_widget(LessonsScreen(name="lessons"))
             self.manager.add_widget(SettingsScreen(name="settings"))
@@ -2459,13 +2445,28 @@ def create_app_class():
             if quiz.answer_input is not None:
                 quiz.answer_input.focus = False
 
+        def apply_appearance(self, appearance) -> None:
+            self.appearance = appearance
+            appearance.apply_to(self.settings)
+            self.apply_button_scale(appearance.button_height_scale)
+            self.apply_text_sizes()
+            def visit(widget):
+                if getattr(widget, "_appearance_spacing", False):
+                    widget.spacing = dp(appearance.button_spacing)
+                if getattr(widget, "_appearance_title", False):
+                    widget.preferred_sp = 22 * appearance.title_font_scale
+                    widget.fit()
+                for child in widget.children:
+                    visit(child)
+            visit(self.manager)
+
         def apply_text_sizes(self) -> None:
             apply_quiz_button_fonts(self.manager, self.settings.mobile_button_font_scale)
 
             def resize(widget):
                 base = getattr(widget, "_mobile_text_base_font", None)
                 if base is not None:
-                    widget.font_size = base * self.settings.mobile_text_scale
+                    widget.font_size = base
                     refit = getattr(widget, "_fit_font_to_width", None)
                     if callable(refit):
                         refit()
