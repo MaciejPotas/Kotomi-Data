@@ -287,7 +287,7 @@ def validate_lesson_references(root: Path | None = None) -> None:
 
 
 def validate_sentence_quiz_references(root: Path | None = None) -> None:
-    """Every published quiz reference must name a declared sentence pattern."""
+    """Resolve declared and expanded composite IDs using pattern metadata only."""
     root = ROOT if root is None else root
     manifest = ET.parse(root / "quiz_project.xml").getroot()
     maps = manifest.find("sentence_maps")
@@ -295,11 +295,39 @@ def validate_sentence_quiz_references(root: Path | None = None) -> None:
     if maps is None or quizzes is None:
         raise AssertionError("Project requires sentence_maps and sentence_quizzes")
     patterns = ET.parse(root / maps.get("file")).getroot()
-    identifiers = {node.get("id") for node in patterns.findall("./sentence_patterns/sentence_pattern")}
+    definitions = {node.get("id"): node for node in patterns.findall("./sentence_patterns/sentence_pattern")}
+    memo = {}
+
+    def expanded(identifier, stack=()):
+        if identifier in stack:
+            raise AssertionError(f"Cyclic composite pattern reference: {identifier}")
+        if identifier in memo:
+            return memo[identifier]
+        node = definitions.get(identifier)
+        if node is None:
+            for parent in definitions:
+                if identifier.startswith(parent + " / ") and identifier in expanded(parent, stack):
+                    return {identifier}
+            raise AssertionError(f"Missing composite source pattern: {identifier}")
+        embedded = node.find("patterns")
+        if embedded is None:
+            result = {identifier}
+        else:
+            result = {identifier + " / " + source
+                      for child in embedded.findall("pattern")
+                      for source in expanded(child.get("ref", ""), (*stack, identifier))}
+        memo[identifier] = result
+        return result
+
     for quiz in ET.parse(root / quizzes.get("file")).getroot().findall("./quiz"):
         for reference in quiz.findall("./patterns/pattern"):
-            if reference.get("ref") not in identifiers:
-                raise AssertionError(f"Quiz {quiz.get('id')} references missing pattern {reference.get('ref')}")
+            identifier = reference.get("ref", "")
+            if identifier in definitions:
+                expanded(identifier)
+                continue
+            if not any(identifier.startswith(parent + " / ") and identifier in expanded(parent)
+                       for parent in definitions):
+                raise AssertionError(f"Quiz {quiz.get('id')} references missing pattern {identifier}")
 
 
 def validate_noun_category_catalog(root: Path, manifest):
