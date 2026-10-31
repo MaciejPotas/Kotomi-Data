@@ -26,3 +26,17 @@ zainstalować przed aktualizacją Content. Ustawienia lekcji nie wymagają migra
 Od rewizji Content 72 stare wpisy menu nie wracają po usunięciu migrowanego
 profilu. Zmiana nazwy zachowuje identyfikator i ustawienia. Po wyczerpaniu
 dostępnej puli pytań sesja kończy się wynikiem.
+
+Tryby, kierunki i formy wynikają z wybranych wzorców. Przy mieszanym wyborze używane
+są tylko wzorce obsługujące wybrany tryb; nie trzeba odznaczać pozostałych. Stałe
+wzorce liczbowe udostępniają zwykłe generowanie i zakres, bez opcji transformacji.
+Forma występująca tylko w polskim poleceniu nie oznacza możliwości transformacji
+japońskiej odpowiedzi. Zmiana wzorców lub form odświeża dostępne opcje. Jeśli zapisany
+tryb przestał być obsługiwany, ustawienia wyjaśniają zmianę i wybierają dostępny tryb,
+zachowując pozostałe wybory.
+
+Next przygotowuje pytania w wątku roboczym i w razie potrzeby używa istniejącego
+wskaźnika ładowania. Ponowne żądanie Next jest ignorowane podczas przygotowania.
+Wyjście z quizu anuluje oczekujące przygotowanie; spóźniony wynik nie aktualizuje
+opuszczonego ekranu. Wyszukiwanie pozostałych pytań jest leniwe i wznawia się od
+poprzedniej pozycji. Start nie wylicza całej puli pytań.
