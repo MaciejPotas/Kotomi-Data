@@ -660,7 +660,7 @@ def create_app_class():
                 bad=True,
             )
 
-    from platforms.mobile.quiz_widgets import QuizTitle
+    from platforms.mobile.quiz_widgets import QuizTitle, quiz_content_viewport
 
     class LessonTitle(QuizTitle):
         def __init__(self, **kwargs):
@@ -668,7 +668,8 @@ def create_app_class():
             kwargs.setdefault("font_name", MOBILE_FONT)
             kwargs.setdefault("size_hint_y", None)
             kwargs.setdefault("height", dp(48))
-            super().__init__(preferred_sp=22 * quiz_app().appearance.title_font_scale, **kwargs)
+            super().__init__(preferred_sp=22 * quiz_app().appearance.title_font_scale,
+                             layout_mode="multiline", **kwargs)
             self._appearance_title = True
 
     class LessonsScreen(BaseScreen):
@@ -884,7 +885,7 @@ def create_app_class():
             root.add_widget(button_row([forms, sentences]))
             self.scroll, self.stack = scroll_stack()
             root.add_widget(self.scroll)
-            self.add_widget(root)
+            self.add_widget(quiz_content_viewport(root, fill_height=True))
 
         def on_pre_enter(self, *_args):
             lesson = self.kotomi.current_lesson()
@@ -977,7 +978,7 @@ def create_app_class():
             root.add_widget(button_row([back, start]))
             self.asked.bind(text=lambda *_: self.refresh_count())
             self.answer.bind(text=lambda *_: self.refresh_count())
-            self.add_widget(root)
+            self.add_widget(quiz_content_viewport(root, fill_height=True))
 
         def on_pre_enter(self, *_args):
             label = (
@@ -1069,7 +1070,7 @@ def create_app_class():
             back = AppButton(text=ui_text("action.back", ""))
             back.bind(on_release=lambda *_: setattr(self.manager, "current", "lesson"))
             root.add_widget(button_row([back, start]))
-            self.add_widget(root)
+            self.add_widget(quiz_content_viewport(root, fill_height=True))
 
         def set_all_forms(self, active: bool) -> None:
             for check in self.checks.values():
@@ -1172,7 +1173,7 @@ def create_app_class():
             style_settings_action(calculate, primary=True)
             root.add_widget(calculate)
             root.add_widget(button_row([back, start]))
-            self.add_widget(root)
+            self.add_widget(quiz_content_viewport(root, fill_height=True))
 
         def on_pre_enter(self, *_args):
             controller = self.kotomi
