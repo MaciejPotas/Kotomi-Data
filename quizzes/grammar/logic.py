@@ -29,6 +29,7 @@ if str(INSTALL_ROOT) not in sys.path:
     sys.path.insert(0, str(INSTALL_ROOT))
 
 from kotomi.core.project import Entity, ProjectError, Word
+from kotomi.core.project.errors import SourceGrammarUnavailable
 from kotomi.core.project.errors import NoCompatibleChoices
 from kotomi.application.generation_engine import SharedQuizEngine
 from kotomi.application.quiz_preflight import iter_quiz_previews
@@ -41,7 +42,7 @@ from kotomi.core.generation.counting import NumericRangeCandidates
 from kotomi.core.generation.models import ChoiceScope, NumericRangeScope
 from platforms.mobile.presentation import DEFAULT_MOBILE_BUTTON_SCALE, validate_mobile_button_scale
 from kotomi.application.settings import validate_mobile_button_font_scale
-from kotomi.application.settings_xml import load_settings, save_settings, settings_path
+from kotomi.application.settings_xml import load_settings, save_settings, settings_path, safe_int as _safe_int
 from kotomi.application.sentence_session import (
     SentenceQuizSession,
     QuestionSpaceExhausted,
@@ -346,13 +347,6 @@ class GrammarQuestion:
     _history_key: tuple[str, str] | None = field(default=None, repr=False, compare=False)
 
 
-def _safe_int(value: object, default: int) -> int:
-    try:
-        return int(value)
-    except (TypeError, ValueError):
-        return default
-
-
 def _safe_float(value: object, default: float) -> float:
     try:
         return float(value)
@@ -512,7 +506,13 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
     expansions = project.sentence_quiz_pattern_expansions(quiz)
     selection_ids = list(expansions)
     effective_ids = list(dict.fromkeys(value for values in expansions.values() for value in values))
-    if not effective_ids or not selection_ids:
+    from kotomi.languages.contract import source_grammar_enabled
+    if not selection_ids and quiz.pattern_ids and not source_grammar_enabled(project.instruction_language):
+        # Keep the profile openable so the shared preflight can explain how to
+        # enable the required source grammar. No unsupported question is generated.
+        expansions = {reference: () for reference in quiz.pattern_ids}
+        selection_ids = list(expansions)
+    if not selection_ids:
         if quiz.pattern_ids:
             details = "; ".join(project.composite_diagnostics.values())
             raise GrammarQuizError(
@@ -547,24 +547,20 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
         )
     SUPPORTED_PATTERNS = tuple(selection_ids)
     PATTERN_EXPANSIONS = expansions
+    analyses = {}
+    for pattern_id in effective_ids:
+        try:
+            analyses[pattern_id] = project.analyze_pattern(project.patterns[pattern_id])
+        except SourceGrammarUnavailable:
+            continue
     SUPPORTS_NUMERIC_QUANTITY_RANGE = any(
-        any(
-            slot.number_range is not None
-            and not slot.fixed_word_id
-            and not slot.number_sets
-            for slot in project.analyze_pattern(
-                project.patterns[pattern_id]
-            ).slots.values()
-        )
-        for pattern_id in effective_ids
-        if pattern_id in project.patterns
-    )
+        slot.number_range is not None and not slot.fixed_word_id and not slot.number_sets
+        for analysis in analyses.values() for slot in analysis.slots.values())
     from kotomi.application.quiz_filters import filter_options
-    FILTER_OPTIONS = filter_options(project, effective_ids, quiz.filters)
+    FILTER_OPTIONS = {key: values for key, values in
+        filter_options(project, analyses, quiz.filters).items() if values}
     SUPPORTS_WORD_CHAINS = any(
-        chain_slot(project, project.analyze_pattern(project.patterns[pid])) is not None
-        for pid in effective_ids
-    )
+        chain_slot(project, analysis) is not None for analysis in analyses.values())
     MOBILE_APP_TITLE = f"Kotomi, {quiz.label}"
     MOBILE_SUBTITLE = quiz.description
     MOBILE_SETTINGS_TITLE = f"Ustawienia: {quiz.label}"
@@ -725,6 +721,8 @@ class GrammarQuizEngine:
                     continue
                 try:
                     analysis = self.shared_engine.analyze_pattern(pattern)
+                except SourceGrammarUnavailable:
+                    continue
                 except ProjectError as error:
                     raise GrammarQuizError(f"Pattern '{pattern_id}': {error}") from error
                 if not analysis.focus_slot and not analysis.entity_slots:

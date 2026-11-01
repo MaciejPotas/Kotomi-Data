@@ -16,15 +16,21 @@ still apply; fixed values and named numeric sets are preserved. A disjoint range
 has no available question. Relative-clause profiles do not acquire extra lexical
 controls unless their author explicitly selects filters.
 
-Existing Verbs, Adjectives and Availability identities migrate to profiles when
-both repository updates are installed. Their saved selections and relevant
-settings migrate once. Original settings and legacy package entrypoints remain
-available for rollback with older Content. Install the application update before
-the companion Content update. No lesson settings need migration.
+Existing Verbs, Adjectives and Availability keep their stable profile IDs, selected
+patterns and settings. Original settings files are preserved and migrate only when
+the profile settings file does not yet exist. Executable packages are now only
+`grammar` and `lessons`; deleting or renaming a profile never restores an old engine.
 
-Content revision 72 suppresses the legacy menu entries even if a migrated profile
-is deleted. Renaming changes the label while keeping the stable ID and settings.
-A session ends cleanly when its available question pool is exhausted.
+Upgrade in order: Application 1.1.11 or later, Content revision 72 or later, then
+approve Quiz Update (catalog 1.1.13, Grammar 1.1.12). Quiz Update verifies the
+replacement files before atomically retiring the three old first-party packages.
+Old Content blocks retirement. Settings, progress and unrelated custom packages
+are preserved. Restart after the package update. Downgrading Content below 72 or
+reinstalling the retired catalog is unsupported; restore a complete compatible
+installation backup instead. Lesson settings and generation do not change.
+
+Renaming a profile changes its label while keeping its ID and settings. A session
+ends normally when its available question pool is exhausted.
 
 Modes, directions and forms follow the selected patterns. A mixed selection uses
 only the patterns supporting the chosen mode; it does not require deselecting

@@ -17,15 +17,22 @@ obowiązują; stałe wartości i nazwane zbiory liczb pozostają zachowane. Roz�
 zakresy nie tworzą żadnego pytania. Profile zdań przydawkowych nie dostają dodatkowych
 filtrów słownikowych, dopóki autor ich nie wybierze.
 
-Dotychczasowe identyfikatory Czasowników, Przymiotników i Dostępności przechodzą na
-profile po instalacji zmian z obu repozytoriów. Zapisane wybory i pasujące ustawienia
-są migrowane jednokrotnie. Oryginalne pliki ustawień i stare pakiety pozostają na
-potrzeby wycofania aktualizacji przy starszym Content. Aktualizację aplikacji należy
-zainstalować przed aktualizacją Content. Ustawienia lekcji nie wymagają migracji.
+Czasowniki, Przymiotniki i Dostępność zachowują identyfikatory profili, wybrane
+wzorce i ustawienia. Oryginalne pliki ustawień są zachowane; migracja następuje tylko,
+gdy nie istnieje jeszcze plik ustawień profilu. Pozostają dwa pakiety wykonawcze:
+`grammar` i `lessons`. Usunięcie lub zmiana nazwy profilu nie przywraca starego silnika.
 
-Od rewizji Content 72 stare wpisy menu nie wracają po usunięciu migrowanego
-profilu. Zmiana nazwy zachowuje identyfikator i ustawienia. Po wyczerpaniu
-dostępnej puli pytań sesja kończy się wynikiem.
+Kolejność aktualizacji: aplikacja 1.1.11 lub nowsza, Content w rewizji 72 lub nowszej,
+a następnie zatwierdzona Quiz Update (katalog 1.1.13, Grammar 1.1.12). Quiz Update
+weryfikuje pliki zastępcze przed atomowym wycofaniem trzech starych pakietów pierwszej
+strony. Starszy Content blokuje usuwanie. Ustawienia, postęp i niezależne pakiety
+użytkownika pozostają zachowane. Po aktualizacji pakietów uruchom aplikację ponownie.
+Cofnięcie Content poniżej 72 lub ponowna instalacja wycofanego katalogu nie jest
+obsługiwana; należy odtworzyć kompletną zgodną kopię instalacji. Ustawienia i generowanie
+quizów lekcji nie zmieniają się.
+
+Zmiana nazwy profilu zachowuje identyfikator i ustawienia. Po wyczerpaniu puli pytań
+sesja kończy się normalnie.
 
 Tryby, kierunki i formy wynikają z wybranych wzorców. Przy mieszanym wyborze używane
 są tylko wzorce obsługujące wybrany tryb; nie trzeba odznaczać pozostałych. Stałe
