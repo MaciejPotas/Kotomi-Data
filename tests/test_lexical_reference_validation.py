@@ -24,6 +24,19 @@ class LexicalReferenceValidationTests(unittest.TestCase):
         tree.getroot().find(xpath).attrib.update(attributes)
         tree.write(path, encoding="utf-8")
 
+    def test_quiz_filter_values_schema(self):
+        valid = '<quiz filters="adjective.type"><vocabulary_filters><filter key="adjective.type" allowed="i_adjective na_adjective" defaults="na_adjective" /></vocabulary_filters></quiz>'
+        validator.validate_quiz_filter_configuration(ET.fromstring(valid))
+        validator.validate_quiz_filter_configuration(ET.fromstring('<quiz filters="adjective.type"/>'))
+        mutations = [valid.replace('defaults="na_adjective"', 'defaults=""'),
+                     valid.replace('defaults="na_adjective"', 'defaults="missing"'),
+                     valid.replace('adjective.type', 'verb[role:companion].category'),
+                     valid.replace('i_adjective na_adjective', 'i_adjective i_adjective'),
+                     valid.replace('</vocabulary_filters>', '<filter key="adjective.type" allowed="i_adjective" defaults="i_adjective"/></vocabulary_filters>')]
+        for changed in mutations:
+            with self.subTest(xml=changed), self.assertRaises(AssertionError):
+                validator.validate_quiz_filter_configuration(ET.fromstring(changed))
+
     def test_lesson_and_context_share_one_word(self):
         validator.validate_lesson_references(self.root)
         validator.validate_context_references(self.root)

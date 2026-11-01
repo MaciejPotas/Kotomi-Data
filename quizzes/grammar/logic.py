@@ -80,6 +80,9 @@ SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 PATTERN_EXPANSIONS = {pattern_id: (pattern_id,) for pattern_id in SUPPORTED_PATTERNS}
 SUPPORTS_NUMERIC_QUANTITY_RANGE = False
 FILTER_OPTIONS = {}
+FILTER_DEFAULTS = {}
+FILTER_TARGETS = {}
+FILTER_VALUE_LABELS = {}
 SUPPORTS_WORD_CHAINS = False
 MOBILE_DIRECTION_TOGGLES = (("polite_to_plain", "specialized.polite_to_plain"),
                             ("plain_to_polite", "specialized.plain_to_polite"))
@@ -399,17 +402,8 @@ def _rules_for_engine_slot(
 ) -> List[SlotFilterRule]:
     """Map simple quiz filter names onto engine-owned selector slots."""
 
-    aliases = {slot, *(alias for alias, target in analysis.alias_slots.items() if target == slot)}
-    definition = analysis.slots[slot]
-    kind = slot.split("@", 1)[0]
-    if kind != "verb":
-        aliases.add(kind)
-    if slot == analysis.focus_slot and definition.dictionary == "verbs":
-        aliases.add("verb")
-    if definition.kind == "entity":
-        aliases.add("noun")
-    if definition.dictionary == "adjectives":
-        aliases.add("adjective")
+    from kotomi.core.project.quiz_filters import slot_filter_aliases
+    aliases = slot_filter_aliases(analysis, slot)
     return [rule for rule in rules if rule.slot in aliases]
 
 
@@ -528,7 +522,7 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
     global SUPPORTED_PATTERNS
     global PATTERN_EXPANSIONS
     global SUPPORTS_NUMERIC_QUANTITY_RANGE
-    global FILTER_OPTIONS, SUPPORTS_WORD_CHAINS
+    global FILTER_OPTIONS, FILTER_DEFAULTS, FILTER_TARGETS, FILTER_VALUE_LABELS, SUPPORTS_WORD_CHAINS
     global MOBILE_APP_TITLE
     global MOBILE_SUBTITLE
     global MOBILE_SETTINGS_TITLE
@@ -556,9 +550,9 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
     SUPPORTS_NUMERIC_QUANTITY_RANGE = any(
         slot.number_range is not None and not slot.fixed_word_id and not slot.number_sets
         for analysis in analyses.values() for slot in analysis.slots.values())
-    from kotomi.application.quiz_filters import filter_options
-    FILTER_OPTIONS = {key: values for key, values in
-        filter_options(project, analyses, quiz.filters).items() if values}
+    from kotomi.application.quiz_filters import profile_filter_contract, value_labels
+    FILTER_OPTIONS, FILTER_DEFAULTS, FILTER_TARGETS = profile_filter_contract(project, quiz)
+    FILTER_VALUE_LABELS = value_labels(project)
     SUPPORTS_WORD_CHAINS = any(
         chain_slot(project, analysis) is not None for analysis in analyses.values())
     MOBILE_APP_TITLE = f"Kotomi, {quiz.label}"
@@ -702,6 +696,7 @@ class GrammarQuizEngine:
     def build_combinations(
         self, settings: GrammarQuizSettings
     ) -> List[GenerationCombination]:
+        settings.validate()
         cache = getattr(self, "precalculation", None)
         if cache is not None:
             return cache.combinations(self, settings, GenerationCombination, GenerationRule,
@@ -807,7 +802,8 @@ class GrammarQuizEngine:
     def reconcile_settings(self, settings):
         """Repair only unsupported controls, retaining unrelated saved values."""
         capabilities = self.capabilities(settings)
-        changed = False
+        changed = bool(getattr(settings, '_filters_corrected', False))
+        settings._filters_corrected = False
         if (not capabilities['modes'] and settings.enabled_forms and capabilities['forms']
                 and not set(settings.enabled_forms).intersection(capabilities['forms'])):
             settings.enabled_forms = list(capabilities['forms'])
@@ -1413,11 +1409,38 @@ def snapshot_quiz_policy():
         supported_patterns = tuple(SUPPORTED_PATTERNS)
         pattern_labels = dict(PATTERN_LABELS)
         filter_options = dict(FILTER_OPTIONS)
+        filter_defaults = dict(FILTER_DEFAULTS)
+        filter_targets = dict(FILTER_TARGETS)
 
         def __post_init__(self):
             super().__post_init__()
-            for key, values in self.filter_options.items():
-                self.filter_selections.setdefault(key, list(values))
+            for key, values in self.filter_defaults.items():
+                if values:
+                    self.filter_selections.setdefault(key, list(values))
+
+        @classmethod
+        def from_dict(cls, values):
+            from kotomi.application.quiz_filters import reconcile_selections
+            selections, corrected = reconcile_selections(values.get('filter_selections', {}),
+                                                         cls.filter_options, cls.filter_defaults)
+            inactive = set(cls.filter_defaults) - set(cls.filter_options)
+            original = values.get('filter_selections', {})
+            selections.update({key: list(original[key]) for key in inactive if key in original})
+            corrected = any(original.get(key) != selected for key, selected in selections.items() if key in original) or bool(set(original) - set(cls.filter_defaults))
+            result = super().from_dict({**values, 'filter_selections': selections})
+            result._filters_corrected = corrected
+            return result
+
+        def validate(self):
+            from kotomi.application.quiz_filters import filter_label
+            for key in self.filter_options:
+                if not self.filter_selections.get(key):
+                    caption = filter_label(key, lambda value: value, self.filter_targets)
+                    raise GrammarQuizError(f'Choose at least one value for {caption}.')
+            super().validate()
+            for key, values in self.filter_selections.items():
+                if key not in self.filter_defaults or (key in self.filter_options and not set(values) <= set(self.filter_options[key])):
+                    raise GrammarQuizError('The vocabulary filter selection is no longer allowed. Reopen quiz settings.')
 
     class ProfileEngine(GrammarQuizEngine):
         profile_expansions = dict(PATTERN_EXPANSIONS)
@@ -1473,6 +1496,9 @@ __all__ = [
     "PATTERN_EXPANSIONS",
     "SUPPORTS_NUMERIC_QUANTITY_RANGE",
     "FILTER_OPTIONS",
+    "FILTER_DEFAULTS",
+    "FILTER_TARGETS",
+    "FILTER_VALUE_LABELS",
     "SUPPORTS_WORD_CHAINS",
     "MOBILE_DIRECTION_TOGGLES",
     "MODE_TRANSFORMATION",

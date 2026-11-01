@@ -51,7 +51,7 @@ The published manifest is `quiz_update_manifest.json`. It must not contain `data
 The package files below `quizzes/` are generated from the private Kotomi repository's `apps/` directory and should not be edited independently. From a Kotomi checkout with this repository mounted as its `data` submodule, publish the current Quiz catalog with:
 
 ```text
-python tools/updates/publish_quiz_packages.py 1.1.13
+python tools/updates/publish_quiz_packages.py 1.1.14
 ```
 
 The Quiz catalog version is independent from the Content revision.

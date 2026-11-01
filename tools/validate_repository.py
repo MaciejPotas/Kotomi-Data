@@ -286,6 +286,34 @@ def validate_lesson_references(root: Path | None = None) -> None:
                 )
 
 
+def validate_quiz_filter_configuration(quiz):
+    """Standalone publication schema check; slot semantics belong to Kotomi."""
+    fields = (quiz.get('filters') or '').split()
+    if len(fields) != len(set(fields)):
+        raise AssertionError('Duplicate quiz filter')
+    groups = quiz.findall('vocabulary_filters')
+    if len(groups) > 1 or any(node.tag != 'filter' for group in groups for node in group):
+        raise AssertionError('Invalid vocabulary_filters list')
+    seen = set()
+    for node in quiz.findall('./vocabulary_filters/filter'):
+        key = node.get('key', '')
+        if key in seen or len(node) or set(node.attrib) != {'key', 'allowed', 'defaults'}:
+            raise AssertionError('Invalid or duplicate vocabulary filter')
+        seen.add(key)
+        if key not in fields:
+            fields.append(key)
+        allowed = (node.get('allowed') or '').split()
+        defaults = (node.get('defaults') or '').split()
+        if any(not values or len(values) != len(set(values)) or any(
+                v != v.casefold() or any(c in v for c in ',;=') for v in values)
+                for values in (allowed, defaults)):
+            raise AssertionError('Vocabulary filter needs nonempty unique values')
+        if not set(defaults) <= set(allowed):
+            raise AssertionError('Vocabulary filter defaults must be allowed')
+    if any(not re.fullmatch(r'[a-z][a-z0-9_]*\.(type|category|feature)', key) for key in fields):
+        raise AssertionError('Invalid quiz filter identifier')
+
+
 def validate_sentence_quiz_references(root: Path | None = None) -> None:
     """Resolve declared and expanded composite IDs using pattern metadata only."""
     root = ROOT if root is None else root
@@ -320,6 +348,7 @@ def validate_sentence_quiz_references(root: Path | None = None) -> None:
         return result
 
     for quiz in ET.parse(root / quizzes.get("file")).getroot().findall("./quiz"):
+        validate_quiz_filter_configuration(quiz)
         for reference in quiz.findall("./patterns/pattern"):
             identifier = reference.get("ref", "")
             if identifier in definitions:
