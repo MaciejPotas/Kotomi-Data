@@ -1,5 +1,7 @@
 # Lesson 26 relative clauses
 
+Historical implementation/performance report: references to dedicated quiz engines describe that earlier revision. Current Studio profiles run the shared Grammar package; Lessons remains separate.
+
 Content 65 extends the existing `relative_clauses` quiz. Deploy the paired Kotomi changes first: subject binding before object government, explicit neutral context precedence, and the `progressive`/`desiderative` form catalog entries. Content alone does not update the engine.
 
 This is representative coverage of task families A–H, **not support for every sentence in the PDF**. The limitations below are part of the release scope.

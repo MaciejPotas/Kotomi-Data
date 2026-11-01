@@ -13,10 +13,8 @@ import sys
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 INSTALL_ROOT = SCRIPT_DIR.parents[1]
-AVAILABILITY_DIR = INSTALL_ROOT / "apps" / "availability"
-for import_root in (INSTALL_ROOT, AVAILABILITY_DIR):
-    if str(import_root) not in sys.path:
-        sys.path.insert(0, str(import_root))
+if str(INSTALL_ROOT) not in sys.path:
+    sys.path.insert(0, str(INSTALL_ROOT))
 
 from apps.grammar import logic as _logic
 from apps.grammar import mobile as _mobile
@@ -30,6 +28,8 @@ _PROFILE_EXPORTS = (
     "SUPPORTED_PATTERNS",
     "PATTERN_EXPANSIONS",
     "SUPPORTS_NUMERIC_QUANTITY_RANGE",
+    "FILTER_OPTIONS",
+    "SUPPORTS_WORD_CHAINS",
     "MOBILE_APP_TITLE",
     "MOBILE_SUBTITLE",
     "MOBILE_SETTINGS_TITLE",

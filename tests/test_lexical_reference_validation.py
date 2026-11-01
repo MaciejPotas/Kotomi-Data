@@ -24,6 +24,19 @@ class LexicalReferenceValidationTests(unittest.TestCase):
         tree.getroot().find(xpath).attrib.update(attributes)
         tree.write(path, encoding="utf-8")
 
+    def test_quiz_filter_values_schema(self):
+        valid = '<quiz filters="adjective.type"><vocabulary_filters><filter key="adjective.type" allowed="i_adjective na_adjective" defaults="na_adjective" /></vocabulary_filters></quiz>'
+        validator.validate_quiz_filter_configuration(ET.fromstring(valid))
+        validator.validate_quiz_filter_configuration(ET.fromstring('<quiz filters="adjective.type"/>'))
+        mutations = [valid.replace('defaults="na_adjective"', 'defaults=""'),
+                     valid.replace('defaults="na_adjective"', 'defaults="missing"'),
+                     valid.replace('adjective.type', 'verb[role:companion].category'),
+                     valid.replace('i_adjective na_adjective', 'i_adjective i_adjective'),
+                     valid.replace('</vocabulary_filters>', '<filter key="adjective.type" allowed="i_adjective" defaults="i_adjective"/></vocabulary_filters>')]
+        for changed in mutations:
+            with self.subTest(xml=changed), self.assertRaises(AssertionError):
+                validator.validate_quiz_filter_configuration(ET.fromstring(changed))
+
     def test_lesson_and_context_share_one_word(self):
         validator.validate_lesson_references(self.root)
         validator.validate_context_references(self.root)
@@ -101,4 +114,39 @@ class LexicalReferenceValidationTests(unittest.TestCase):
         root[1].find('./patterns/pattern').set('ref', 'missing')
         ET.ElementTree(root).write(path, encoding='utf-8')
         with self.assertRaisesRegex(AssertionError, 'missing pattern'):
+            validator.validate_sentence_quiz_references(self.root)
+
+    def prepare_composite_quiz(self):
+        manifest_path = self.root / 'quiz_project.xml'
+        manifest = ET.parse(manifest_path)
+        ET.SubElement(manifest.getroot(), 'sentence_maps', file='maps.xml')
+        ET.SubElement(manifest.getroot(), 'sentence_quizzes', file='quizzes.xml')
+        manifest.write(manifest_path, encoding='utf-8')
+        (self.root / 'maps.xml').write_text(
+            '<sentence_maps><sentence_patterns>'
+            '<sentence_pattern id="plain"/><sentence_pattern id="unselected"/>'
+            '<sentence_pattern id="inner"><patterns><pattern ref="plain"/></patterns></sentence_pattern>'
+            '<sentence_pattern id="outer"><patterns><pattern ref="inner"/></patterns></sentence_pattern>'
+            '</sentence_patterns></sentence_maps>', encoding='utf-8')
+
+    def test_quiz_references_resolve_only_declared_composite_expansions(self):
+        self.prepare_composite_quiz()
+        path = self.root / 'quizzes.xml'
+        for reference in ('plain', 'inner', 'inner / plain', 'outer / inner / plain'):
+            path.write_text(f'<sentence_quizzes><quiz id="synthetic"><patterns><pattern ref="{reference}"/>'
+                            '</patterns></quiz></sentence_quizzes>', encoding='utf-8')
+            validator.validate_sentence_quiz_references(self.root)
+        path.write_text('<sentence_quizzes><quiz id="synthetic"><patterns><pattern ref="inner / unselected"/>'
+                        '</patterns></quiz></sentence_quizzes>', encoding='utf-8')
+        with self.assertRaisesRegex(AssertionError, 'missing pattern'):
+            validator.validate_sentence_quiz_references(self.root)
+
+    def test_composite_reference_cycles_are_reported(self):
+        self.prepare_composite_quiz()
+        (self.root / 'maps.xml').write_text('<sentence_maps><sentence_patterns>'
+            '<sentence_pattern id="loop"><patterns><pattern ref="loop"/></patterns></sentence_pattern>'
+            '</sentence_patterns></sentence_maps>', encoding='utf-8')
+        (self.root / 'quizzes.xml').write_text('<sentence_quizzes><quiz id="synthetic"><patterns>'
+            '<pattern ref="loop"/></patterns></quiz></sentence_quizzes>', encoding='utf-8')
+        with self.assertRaisesRegex(AssertionError, 'Cyclic composite'):
             validator.validate_sentence_quiz_references(self.root)

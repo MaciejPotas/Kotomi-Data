@@ -19,7 +19,7 @@ The two public update channels have deliberately different responsibilities. **C
 | `content_update_manifest.json` | Atomic Content update inventory. | Content |
 | `quiz_update_manifest.json` | Executable quiz package inventory. | Quiz |
 
-A Kotomi installation mirrors declarative content below `data/` and executable quiz packages below `apps/`. For example, `dictionaries/verbs.xml` is installed as `data/dictionaries/verbs.xml`, while `quizzes/verbs/logic.py` is installed as `apps/verbs/logic.py`.
+A Kotomi installation mirrors declarative content below `data/` and executable quiz packages below `apps/`. For example, `dictionaries/verbs.xml` is installed as `data/dictionaries/verbs.xml`, while `quizzes/grammar/logic.py` is installed as `apps/grammar/logic.py`.
 
 ## Content Update
 
@@ -51,7 +51,7 @@ The published manifest is `quiz_update_manifest.json`. It must not contain `data
 The package files below `quizzes/` are generated from the private Kotomi repository's `apps/` directory and should not be edited independently. From a Kotomi checkout with this repository mounted as its `data` submodule, publish the current Quiz catalog with:
 
 ```text
-python tools/updates/publish_quiz_packages.py 1.1.1
+python tools/updates/publish_quiz_packages.py 1.1.14
 ```
 
 The Quiz catalog version is independent from the Content revision.
@@ -143,3 +143,5 @@ Adverb semantic categories (Kotomi 1.8.0+): [English](docs/eng/adverb_categories
 Semantic category catalog: [English](docs/eng/semantic_category_catalog.md) / [Polski](docs/pl/semantic_category_catalog.md).
 
 Architecture, extension workflow and cleanup decisions: [English](docs/eng/repository_cleanup.md) / [Polski](docs/pl/repository_cleanup.md).
+
+The current built-in executable catalog contains Grammar and Lessons only. Studio profiles remain separate launcher entries. See [safe package retirement and upgrade order](quizzes/README.md).
