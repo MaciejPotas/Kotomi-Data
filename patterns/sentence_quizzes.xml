@@ -92,7 +92,7 @@
     </patterns>
   </quiz>
   <quiz id="adjectives" label="Przymiotniki" description="Zdania i formy" selection="references">
-    <quick_filters>
+    <quick_filters required="adjective.type">
       <quick_filter id="i_adjectives" label="i-adjectives" target="adjective" property="type" values="i_adjective" default_enabled="true" />
       <quick_filter id="na_adjectives" label="na-adjectives" target="adjective" property="type" values="na_adjective" default_enabled="true" />
     </quick_filters>

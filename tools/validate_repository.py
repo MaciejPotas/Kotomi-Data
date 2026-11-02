@@ -291,6 +291,18 @@ def validate_quiz_filter_configuration(quiz):
     quick_groups = quiz.findall('quick_filters')
     if len(quick_groups) > 1 or any(node.tag != 'quick_filter' for group in quick_groups for node in group):
         raise AssertionError('Invalid quick_filters list')
+    if any(set(group.attrib) - {'required'} for group in quick_groups):
+        raise AssertionError('Unsupported Quick Filter group attributes')
+    required = quick_groups[0].get('required', '').split() if quick_groups else []
+    if len(required) != len(set(required)):
+        raise AssertionError('Duplicate required Quick Filter group')
+    for key in required:
+        if not re.fullmatch(r'[a-z][a-z0-9_]*\.(type|category|feature)', key):
+            raise AssertionError('Invalid required Quick Filter group')
+        if not any(node.get('target', '') + '.' + node.get('property', '') == key
+                   and node.get('default_enabled') == 'true'
+                   for node in quiz.findall('./quick_filters/quick_filter')):
+            raise AssertionError('Required Quick Filter group needs an enabled default')
     if quick_groups and (quiz.get('filters') or quiz.findall('vocabulary_filters')):
         raise AssertionError('Do not mix Quick Filters and legacy definitions')
     quick_ids = set()

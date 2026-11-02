@@ -80,6 +80,7 @@ SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 PATTERN_EXPANSIONS = {pattern_id: (pattern_id,) for pattern_id in SUPPORTED_PATTERNS}
 SUPPORTS_NUMERIC_QUANTITY_RANGE = False
 QUICK_FILTERS = ()
+REQUIRED_FILTER_GROUPS = ()
 LEGACY_FILTER_BOUNDS = ""
 SUPPORTS_WORD_CHAINS = False
 MOBILE_DIRECTION_TOGGLES = (("polite_to_plain", "specialized.polite_to_plain"),
@@ -150,6 +151,15 @@ ENTITY_FILTER_FIELDS = {
 
 class GrammarQuizError(ValueError):
     """Raised for invalid grammar settings or unavailable questions."""
+
+class RequiredQuickFilterSelectionError(GrammarQuizError):
+    def __init__(self, settings):
+        self.settings = settings
+        super().__init__(self.localized(lambda key: key))
+
+    def localized(self, tr):
+        return self.settings.quick_filter_notice(tr)
+
 
 class GrammarQuizExhausted(GrammarQuizError, QuestionSpaceExhausted):
     """All renderable questions have already been used."""
@@ -282,7 +292,14 @@ class GrammarQuizSettings:
             raise GrammarQuizError(str(exception)) from exception
         parse_slot_filter(self.effective_word_filter())
 
+    def quick_filter_notice(self, tr=lambda key: key):
+        from kotomi.application.quiz_filters import required_selection_notice
+        return required_selection_notice(getattr(type(self), 'quick_filters', ()),
+            self.quick_filter_states, getattr(type(self), 'required_filter_groups', ()), tr)
+
     def effective_word_filter(self) -> str:
+        if self.quick_filter_notice():
+            raise RequiredQuickFilterSelectionError(self)
         from kotomi.application.quiz_filters import quick_filter_text
         return ";".join(filter(None, (self.word_filter,
             quick_filter_text(getattr(type(self), 'quick_filters', ()), self.quick_filter_states))))
@@ -522,7 +539,7 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
     global SUPPORTED_PATTERNS
     global PATTERN_EXPANSIONS
     global SUPPORTS_NUMERIC_QUANTITY_RANGE
-    global QUICK_FILTERS, LEGACY_FILTER_BOUNDS, SUPPORTS_WORD_CHAINS
+    global QUICK_FILTERS, REQUIRED_FILTER_GROUPS, LEGACY_FILTER_BOUNDS, SUPPORTS_WORD_CHAINS
     global MOBILE_APP_TITLE
     global MOBILE_SUBTITLE
     global MOBILE_SETTINGS_TITLE
@@ -552,6 +569,7 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
         for analysis in analyses.values() for slot in analysis.slots.values())
     from kotomi.application.quiz_filters import profile_filter_contract, selection_filter_text
     QUICK_FILTERS, _targets = profile_filter_contract(project, quiz)
+    REQUIRED_FILTER_GROUPS = tuple(getattr(quiz, 'required_filter_groups', ()))
     LEGACY_FILTER_BOUNDS = selection_filter_text({key: spec.allowed for key, spec in quiz.filter_values.items()})
     SUPPORTS_WORD_CHAINS = any(
         chain_slot(project, analysis) is not None for analysis in analyses.values())
@@ -805,11 +823,18 @@ class GrammarQuizEngine:
     def reconcile_settings(self, settings):
         """Repair only unsupported controls, retaining unrelated saved values."""
         migration_error = getattr(settings, 'quick_filter_migration_error', '')
-        if migration_error:
+        selection_error = settings.quick_filter_notice()
+        if migration_error or selection_error:
             # Capabilities are structural. Keep the real settings blocked while
             # hosts show editable controls and the required migration notice.
-            probe = replace(settings, quick_filter_migration_error='')
-            return self.capabilities(probe), migration_error
+            from kotomi.application.quiz_filters import empty_required_groups
+            definitions = getattr(type(settings), 'quick_filters', ())
+            empty = empty_required_groups(definitions, settings.quick_filter_states,
+                                          getattr(type(settings), 'required_filter_groups', ()))
+            states = {q.id: q.default_enabled if q.key in empty else settings.quick_filter_states.get(q.id, q.default_enabled)
+                      for q in definitions}
+            probe = replace(settings, quick_filter_migration_error='', quick_filter_states=states)
+            return self.capabilities(probe), selection_error or migration_error
         capabilities = self.capabilities(settings)
         changed = bool(getattr(settings, '_filters_corrected', False))
         settings._filters_corrected = False
@@ -1418,6 +1443,7 @@ def snapshot_quiz_policy():
         supported_patterns = tuple(SUPPORTED_PATTERNS)
         pattern_labels = dict(PATTERN_LABELS)
         quick_filters = tuple(QUICK_FILTERS)
+        required_filter_groups = tuple(REQUIRED_FILTER_GROUPS)
         legacy_filter_bounds = LEGACY_FILTER_BOUNDS
 
         def __post_init__(self):
@@ -1439,9 +1465,17 @@ def snapshot_quiz_policy():
             from kotomi.application.quiz_filters import migrate_quick_settings
             migrated, corrected = migrate_quick_settings(values, cls.quick_filters, cls.legacy_filter_bounds)
             error = migrated.pop('quick_filter_migration_error', '')
+            # Validate all unrelated settings with valid temporary group defaults.
+            # Restore the learner's exact choices, including newly invalid empty groups.
+            from kotomi.application.quiz_filters import empty_required_groups
+            saved_states = dict(migrated['quick_filter_states'])
+            empty = empty_required_groups(cls.quick_filters, saved_states, cls.required_filter_groups)
+            migrated['quick_filter_states'] = {q.id: q.default_enabled if q.key in empty else saved_states[q.id]
+                                               for q in cls.quick_filters}
             result = super().from_dict(migrated)
+            result.quick_filter_states = saved_states
             result.quick_filter_migration_error = error
-            result._filters_corrected = corrected or bool(error)
+            result._filters_corrected = corrected or bool(error) or bool(empty)
             return result
 
         def validate(self):
@@ -1507,6 +1541,7 @@ __all__ = [
     "PATTERN_EXPANSIONS",
     "SUPPORTS_NUMERIC_QUANTITY_RANGE",
     "QUICK_FILTERS",
+    "REQUIRED_FILTER_GROUPS",
     "LEGACY_FILTER_BOUNDS",
     "SUPPORTS_WORD_CHAINS",
     "MOBILE_DIRECTION_TOGGLES",

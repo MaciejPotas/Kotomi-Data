@@ -52,6 +52,16 @@ class LexicalReferenceValidationTests(unittest.TestCase):
             with self.subTest(xml=changed), self.assertRaises(AssertionError):
                 validator.validate_quiz_filter_configuration(ET.fromstring(changed))
 
+    def test_required_quick_filter_groups(self):
+        valid = '<quiz><quick_filters required="noun.category"><quick_filter id="people" label="People" target="noun" property="category" values="person" default_enabled="true" /></quick_filters></quiz>'
+        validator.validate_quiz_filter_configuration(ET.fromstring(valid))
+        for changed in (valid.replace('default_enabled="true"', 'default_enabled="false"'),
+                        valid.replace('required="noun.category"', 'required="noun.type"'),
+                        valid.replace('required="noun.category"', 'required="noun.category noun.category"'),
+                        valid.replace('required=', 'unknown=')):
+            with self.subTest(xml=changed), self.assertRaises(AssertionError):
+                validator.validate_quiz_filter_configuration(ET.fromstring(changed))
+
     def test_lesson_and_context_share_one_word(self):
         validator.validate_lesson_references(self.root)
         validator.validate_context_references(self.root)
