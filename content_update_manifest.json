@@ -89,8 +89,8 @@
     },
     {
       "path": "data/patterns/sentence_quizzes.xml",
-      "sha256": "ff3b0cb74152ddae87d725df78fa68e799b307b8028ce1d747d37551f3a5855b",
-      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=ff3b0cb74152ddae87d725df78fa68e799b307b8028ce1d747d37551f3a5855b"
+      "sha256": "7448668da49478aa62ae98be71bedc36b4d99c7ee4d32f3a70440ca676810441",
+      "url": "patterns/sentence_quizzes.xml?kotomi_sha256=7448668da49478aa62ae98be71bedc36b4d99c7ee4d32f3a70440ca676810441"
     },
     {
       "path": "data/quiz_project.xml",

@@ -81,7 +81,7 @@
       <pattern ref="Numer piętra" />
     </patterns>
   </quiz>
-  <quiz id="verbs" label="Czasowniki" description="Zdania i formy" selection="references">
+  <quiz id="verbs" label="Czasowniki" description="Zdania z czasownikami" selection="references">
     <patterns>
       <pattern ref="Sam czasownik" />
       <pattern ref="Czasownik z dopełnieniem" />
@@ -91,7 +91,7 @@
       <pattern ref="Środek transportu" />
     </patterns>
   </quiz>
-  <quiz id="adjectives" label="Przymiotniki" description="Zdania i formy" selection="references">
+  <quiz id="adjectives" label="Przymiotniki" description="Zdania z przymiotnikami" selection="references">
     <quick_filters required="adjective.type">
       <quick_filter id="i_adjectives" label="i-adjectives" target="adjective" property="type" values="i_adjective" default_enabled="true" />
       <quick_filter id="na_adjectives" label="na-adjectives" target="adjective" property="type" values="na_adjective" default_enabled="true" />
@@ -102,7 +102,7 @@
       <pattern ref="Przymiotnik przed rzeczownikiem" />
     </patterns>
   </quiz>
-  <quiz id="availability" label="Dostępność" description="Zdania i formy" selection="references">
+  <quiz id="availability" label="Dostępność" description="Różne wariacje koto ga aru" selection="references">
     <patterns>
       <pattern ref="Dostępność 〜がある / Sam czasownik" />
       <pattern ref="Dostępność 〜がある / Czasownik z dopełnieniem" />
