@@ -1,7 +1,7 @@
 """Mobile adapter for data-defined Grammar quizzes.
 
 Grammar owns only its platform-neutral policy. The complete Kivy presentation
-is shared with Availability and receives the live Grammar logic module, so an
+receives the live Grammar logic module, so an
 XML profile change immediately affects the rendered settings and questions.
 """
 

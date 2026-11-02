@@ -1,5 +1,7 @@
 # Przydawki z lekcji 26
 
+Historyczny raport implementacji i wydajności: odniesienia do osobnych silników opisują wcześniejszą rewizję. Obecne profile Studio używają wspólnego pakietu Grammar; Lessons pozostaje osobny.
+
 Content 65 rozszerza istniejący quiz `relative_clauses`. Wymaga powiązanej poprawki Kotomi: wiązania podmiotu przed dopełnieniem, jawnego neutralnego kontekstu oraz katalogu form `progressive` i `desiderative`. Najpierw należy wdrożyć aplikację z tymi zmianami. Sam Content nie aktualizuje silnika.
 
 To reprezentatywne pokrycie wszystkich rodzin A–H z zadania, **nie obsługa każdego zdania z PDF**. Poniższe ograniczenia są częścią zakresu wydania.

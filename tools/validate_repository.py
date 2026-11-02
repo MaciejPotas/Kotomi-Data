@@ -286,8 +286,76 @@ def validate_lesson_references(root: Path | None = None) -> None:
                 )
 
 
+def validate_quiz_filter_configuration(quiz):
+    """Standalone publication schema check; slot semantics belong to Kotomi."""
+    quick_groups = quiz.findall('quick_filters')
+    if len(quick_groups) > 1 or any(node.tag != 'quick_filter' for group in quick_groups for node in group):
+        raise AssertionError('Invalid quick_filters list')
+    if any(set(group.attrib) - {'required'} for group in quick_groups):
+        raise AssertionError('Unsupported Quick Filter group attributes')
+    required = quick_groups[0].get('required', '').split() if quick_groups else []
+    if len(required) != len(set(required)):
+        raise AssertionError('Duplicate required Quick Filter group')
+    for key in required:
+        if not re.fullmatch(r'[a-z][a-z0-9_]*\.(type|ending|category|feature|role)', key):
+            raise AssertionError('Invalid required Quick Filter group')
+        if not any(key in [target + '.' + node.get('property', '') for target in (node.get('targets') or node.get('target') or '').split()]
+                   and node.get('default_enabled') == 'true'
+                   for node in quiz.findall('./quick_filters/quick_filter')):
+            raise AssertionError('Required Quick Filter group needs an enabled default')
+    if quick_groups and (quiz.get('filters') or quiz.findall('vocabulary_filters')):
+        raise AssertionError('Do not mix Quick Filters and legacy definitions')
+    quick_ids = set()
+    for node in quiz.findall('./quick_filters/quick_filter'):
+        identity = node.get('id', '')
+        if not re.fullmatch(r'[a-z][a-z0-9_]*', identity) or identity in quick_ids:
+            raise AssertionError('Quick Filter IDs must be unique')
+        quick_ids.add(identity)
+        if len(node) or set(node.attrib) - {'id', 'label', 'target', 'targets', 'property', 'values', 'default_enabled'}:
+            raise AssertionError('Unsupported Quick Filter attributes')
+        if not node.get('label', '').strip():
+            raise AssertionError('Quick Filter name must not be empty')
+        if ('target' in node.attrib) == ('targets' in node.attrib):
+            raise AssertionError('Quick Filter needs either target or targets')
+        targets = (node.get('targets') or node.get('target') or '').split()
+        if not targets or (node.get('target') is not None and len(targets) != 1) or len(targets) != len(set(targets)) or any(target.startswith('target_') or not re.fullmatch(r'[a-z][a-z0-9_]*', target) for target in targets):
+            raise AssertionError('Quick Filter target must be a vocabulary role')
+        if node.get('property') not in {'type', 'ending', 'category', 'feature', 'role'}:
+            raise AssertionError('Invalid Quick Filter property')
+        if node.get('default_enabled', 'false') not in {'true', 'false'}:
+            raise AssertionError('Invalid Quick Filter default')
+        values = node.get('values', '').split()
+        if not values or len(values) != len(set(values)) or any(
+                v != v.casefold() or any(c in v for c in ',;=') for v in values):
+            raise AssertionError('Invalid Quick Filter values')
+    fields = (quiz.get('filters') or '').split()
+    if len(fields) != len(set(fields)):
+        raise AssertionError('Duplicate quiz filter')
+    groups = quiz.findall('vocabulary_filters')
+    if len(groups) > 1 or any(node.tag != 'filter' for group in groups for node in group):
+        raise AssertionError('Invalid vocabulary_filters list')
+    seen = set()
+    for node in quiz.findall('./vocabulary_filters/filter'):
+        key = node.get('key', '')
+        if key in seen or len(node) or set(node.attrib) != {'key', 'allowed', 'defaults'}:
+            raise AssertionError('Invalid or duplicate vocabulary filter')
+        seen.add(key)
+        if key not in fields:
+            fields.append(key)
+        allowed = (node.get('allowed') or '').split()
+        defaults = (node.get('defaults') or '').split()
+        if any(not values or len(values) != len(set(values)) or any(
+                v != v.casefold() or any(c in v for c in ',;=') for v in values)
+                for values in (allowed, defaults)):
+            raise AssertionError('Vocabulary filter needs nonempty unique values')
+        if not set(defaults) <= set(allowed):
+            raise AssertionError('Vocabulary filter defaults must be allowed')
+    if any(not re.fullmatch(r'[a-z][a-z0-9_]*\.(type|ending|category|feature|role)', key) for key in fields):
+        raise AssertionError('Invalid quiz filter identifier')
+
+
 def validate_sentence_quiz_references(root: Path | None = None) -> None:
-    """Every published quiz reference must name a declared sentence pattern."""
+    """Resolve declared and expanded composite IDs using pattern metadata only."""
     root = ROOT if root is None else root
     manifest = ET.parse(root / "quiz_project.xml").getroot()
     maps = manifest.find("sentence_maps")
@@ -295,11 +363,40 @@ def validate_sentence_quiz_references(root: Path | None = None) -> None:
     if maps is None or quizzes is None:
         raise AssertionError("Project requires sentence_maps and sentence_quizzes")
     patterns = ET.parse(root / maps.get("file")).getroot()
-    identifiers = {node.get("id") for node in patterns.findall("./sentence_patterns/sentence_pattern")}
+    definitions = {node.get("id"): node for node in patterns.findall("./sentence_patterns/sentence_pattern")}
+    memo = {}
+
+    def expanded(identifier, stack=()):
+        if identifier in stack:
+            raise AssertionError(f"Cyclic composite pattern reference: {identifier}")
+        if identifier in memo:
+            return memo[identifier]
+        node = definitions.get(identifier)
+        if node is None:
+            for parent in definitions:
+                if identifier.startswith(parent + " / ") and identifier in expanded(parent, stack):
+                    return {identifier}
+            raise AssertionError(f"Missing composite source pattern: {identifier}")
+        embedded = node.find("patterns")
+        if embedded is None:
+            result = {identifier}
+        else:
+            result = {identifier + " / " + source
+                      for child in embedded.findall("pattern")
+                      for source in expanded(child.get("ref", ""), (*stack, identifier))}
+        memo[identifier] = result
+        return result
+
     for quiz in ET.parse(root / quizzes.get("file")).getroot().findall("./quiz"):
+        validate_quiz_filter_configuration(quiz)
         for reference in quiz.findall("./patterns/pattern"):
-            if reference.get("ref") not in identifiers:
-                raise AssertionError(f"Quiz {quiz.get('id')} references missing pattern {reference.get('ref')}")
+            identifier = reference.get("ref", "")
+            if identifier in definitions:
+                expanded(identifier)
+                continue
+            if not any(identifier.startswith(parent + " / ") and identifier in expanded(parent)
+                       for parent in definitions):
+                raise AssertionError(f"Quiz {quiz.get('id')} references missing pattern {identifier}")
 
 
 def validate_noun_category_catalog(root: Path, manifest):
