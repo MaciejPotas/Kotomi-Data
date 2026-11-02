@@ -831,7 +831,7 @@ class GrammarQuizEngine:
             definitions = getattr(type(settings), 'quick_filters', ())
             empty = empty_required_groups(definitions, settings.quick_filter_states,
                                           getattr(type(settings), 'required_filter_groups', ()))
-            states = {q.id: q.default_enabled if q.key in empty else settings.quick_filter_states.get(q.id, q.default_enabled)
+            states = {q.id: q.default_enabled if set(q.keys) & set(empty) else settings.quick_filter_states.get(q.id, q.default_enabled)
                       for q in definitions}
             probe = replace(settings, quick_filter_migration_error='', quick_filter_states=states)
             return self.capabilities(probe), selection_error or migration_error
@@ -1470,7 +1470,7 @@ def snapshot_quiz_policy():
             from kotomi.application.quiz_filters import empty_required_groups
             saved_states = dict(migrated['quick_filter_states'])
             empty = empty_required_groups(cls.quick_filters, saved_states, cls.required_filter_groups)
-            migrated['quick_filter_states'] = {q.id: q.default_enabled if q.key in empty else saved_states[q.id]
+            migrated['quick_filter_states'] = {q.id: q.default_enabled if set(q.keys) & set(empty) else saved_states[q.id]
                                                for q in cls.quick_filters}
             result = super().from_dict(migrated)
             result.quick_filter_states = saved_states

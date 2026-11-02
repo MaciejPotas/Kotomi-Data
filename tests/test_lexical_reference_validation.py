@@ -66,6 +66,17 @@ class LexicalReferenceValidationTests(unittest.TestCase):
         validator.validate_lesson_references(self.root)
         validator.validate_context_references(self.root)
 
+    def test_multi_target_supported_metadata_schema(self):
+        valid = '<quiz><quick_filters><quick_filter id="scope" label="Scope" targets="first second third" property="category" values="food animal" default_enabled="true" /></quick_filters></quiz>'
+        for prop in ('category', 'type', 'ending', 'feature', 'role'):
+            validator.validate_quiz_filter_configuration(ET.fromstring(valid.replace('property="category"', f'property="{prop}"')))
+        validator.validate_quiz_filter_configuration(ET.fromstring(valid.replace('<quick_filters>', '<quick_filters required="first.category third.category">')))
+        for scope in ('targets=""', 'targets=" "', 'targets="first first"',
+                      'target="first second"', 'targets="first" target="second"',
+                      'targets="first" target=""', 'targets="noun@first"'):
+            with self.subTest(scope=scope), self.assertRaises(AssertionError):
+                validator.validate_quiz_filter_configuration(ET.fromstring(valid.replace('targets="first second third"', scope)))
+
     def test_missing_lesson_word_is_rejected(self):
         self.change("lessons/lessons.xml", "./lessons/lesson/word/dictionary_ref", {"word": "missing"})
         with self.assertRaisesRegex(AssertionError, "missing word"):

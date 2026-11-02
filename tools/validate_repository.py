@@ -297,9 +297,9 @@ def validate_quiz_filter_configuration(quiz):
     if len(required) != len(set(required)):
         raise AssertionError('Duplicate required Quick Filter group')
     for key in required:
-        if not re.fullmatch(r'[a-z][a-z0-9_]*\.(type|category|feature)', key):
+        if not re.fullmatch(r'[a-z][a-z0-9_]*\.(type|ending|category|feature|role)', key):
             raise AssertionError('Invalid required Quick Filter group')
-        if not any(node.get('target', '') + '.' + node.get('property', '') == key
+        if not any(key in [target + '.' + node.get('property', '') for target in (node.get('targets') or node.get('target') or '').split()]
                    and node.get('default_enabled') == 'true'
                    for node in quiz.findall('./quick_filters/quick_filter')):
             raise AssertionError('Required Quick Filter group needs an enabled default')
@@ -311,14 +311,16 @@ def validate_quiz_filter_configuration(quiz):
         if not re.fullmatch(r'[a-z][a-z0-9_]*', identity) or identity in quick_ids:
             raise AssertionError('Quick Filter IDs must be unique')
         quick_ids.add(identity)
-        if len(node) or set(node.attrib) - {'id', 'label', 'target', 'property', 'values', 'default_enabled'}:
+        if len(node) or set(node.attrib) - {'id', 'label', 'target', 'targets', 'property', 'values', 'default_enabled'}:
             raise AssertionError('Unsupported Quick Filter attributes')
         if not node.get('label', '').strip():
             raise AssertionError('Quick Filter name must not be empty')
-        target = node.get('target', '')
-        if target.startswith('target_') or not re.fullmatch(r'[a-z][a-z0-9_]*', target):
+        if ('target' in node.attrib) == ('targets' in node.attrib):
+            raise AssertionError('Quick Filter needs either target or targets')
+        targets = (node.get('targets') or node.get('target') or '').split()
+        if not targets or (node.get('target') is not None and len(targets) != 1) or len(targets) != len(set(targets)) or any(target.startswith('target_') or not re.fullmatch(r'[a-z][a-z0-9_]*', target) for target in targets):
             raise AssertionError('Quick Filter target must be a vocabulary role')
-        if node.get('property') not in {'type', 'category', 'feature'}:
+        if node.get('property') not in {'type', 'ending', 'category', 'feature', 'role'}:
             raise AssertionError('Invalid Quick Filter property')
         if node.get('default_enabled', 'false') not in {'true', 'false'}:
             raise AssertionError('Invalid Quick Filter default')
@@ -348,7 +350,7 @@ def validate_quiz_filter_configuration(quiz):
             raise AssertionError('Vocabulary filter needs nonempty unique values')
         if not set(defaults) <= set(allowed):
             raise AssertionError('Vocabulary filter defaults must be allowed')
-    if any(not re.fullmatch(r'[a-z][a-z0-9_]*\.(type|category|feature)', key) for key in fields):
+    if any(not re.fullmatch(r'[a-z][a-z0-9_]*\.(type|ending|category|feature|role)', key) for key in fields):
         raise AssertionError('Invalid quiz filter identifier')
 
 
