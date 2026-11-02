@@ -48,8 +48,8 @@
     },
     {
       "path": "apps/grammar/logic.py",
-      "sha256": "78837459e3019ce03d1cca0774c5caf267a6880de4f949437287dbdae2a51119",
-      "url": "quizzes/grammar/logic.py?kotomi_sha256=78837459e3019ce03d1cca0774c5caf267a6880de4f949437287dbdae2a51119"
+      "sha256": "bda57dc6ff49dfd916d1acaf4fe950caa986e5c7bd7709772f86c3571c6e9688",
+      "url": "quizzes/grammar/logic.py?kotomi_sha256=bda57dc6ff49dfd916d1acaf4fe950caa986e5c7bd7709772f86c3571c6e9688"
     },
     {
       "path": "apps/grammar/mobile.py",

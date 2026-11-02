@@ -804,6 +804,12 @@ class GrammarQuizEngine:
 
     def reconcile_settings(self, settings):
         """Repair only unsupported controls, retaining unrelated saved values."""
+        migration_error = getattr(settings, 'quick_filter_migration_error', '')
+        if migration_error:
+            # Capabilities are structural. Keep the real settings blocked while
+            # hosts show editable controls and the required migration notice.
+            probe = replace(settings, quick_filter_migration_error='')
+            return self.capabilities(probe), migration_error
         capabilities = self.capabilities(settings)
         changed = bool(getattr(settings, '_filters_corrected', False))
         settings._filters_corrected = False
