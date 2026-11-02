@@ -79,10 +79,8 @@ PATTERN_LABELS = {
 SUPPORTED_PATTERNS = tuple(PATTERN_LABELS)
 PATTERN_EXPANSIONS = {pattern_id: (pattern_id,) for pattern_id in SUPPORTED_PATTERNS}
 SUPPORTS_NUMERIC_QUANTITY_RANGE = False
-FILTER_OPTIONS = {}
-FILTER_DEFAULTS = {}
-FILTER_TARGETS = {}
-FILTER_VALUE_LABELS = {}
+QUICK_FILTERS = ()
+LEGACY_FILTER_BOUNDS = ""
 SUPPORTS_WORD_CHAINS = False
 MOBILE_DIRECTION_TOGGLES = (("polite_to_plain", "specialized.polite_to_plain"),
                             ("plain_to_polite", "specialized.plain_to_polite"))
@@ -165,7 +163,9 @@ class GrammarQuizSettings:
     enabled_forms: List[str] = field(default_factory=lambda: list(FORM_GROUPS))
     enabled_patterns: List[str] | None = None
     word_filter: str = ""
-    filter_selections: Dict[str, List[str]] = field(default_factory=dict)
+    filter_selections: Dict[str, List[str]] = field(default_factory=dict)  # read-only migration input
+    quick_filter_states: Dict[str, bool] = field(default_factory=dict)
+    quick_filter_migration_error: str = ""
     polite_to_plain: bool = True
     plain_to_polite: bool = False
     word_chain_length: int = 1
@@ -204,8 +204,8 @@ class GrammarQuizSettings:
                 if str(value) in defaults.enabled_patterns
             ],
             word_filter=str(values.get("word_filter", defaults.word_filter)),
-            filter_selections={key: list(value) for key, value in
-                               values.get("filter_selections", {}).items()},
+            quick_filter_states=dict(values.get("quick_filter_states", {})),
+            quick_filter_migration_error=str(values.get("quick_filter_migration_error", "")),
             polite_to_plain=bool(values.get("polite_to_plain", True)),
             plain_to_polite=bool(values.get("plain_to_polite", False)),
             word_chain_length=_safe_int(values.get("word_chain_length", 1), 1),
@@ -283,9 +283,9 @@ class GrammarQuizSettings:
         parse_slot_filter(self.effective_word_filter())
 
     def effective_word_filter(self) -> str:
-        from kotomi.application.quiz_filters import selection_filter_text
+        from kotomi.application.quiz_filters import quick_filter_text
         return ";".join(filter(None, (self.word_filter,
-                                     selection_filter_text(self.filter_selections))))
+            quick_filter_text(getattr(type(self), 'quick_filters', ()), self.quick_filter_states))))
 
     def summary(self) -> str:
         forms = ", ".join(FORM_GROUPS[name]["label"] for name in self.enabled_forms)
@@ -522,7 +522,7 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
     global SUPPORTED_PATTERNS
     global PATTERN_EXPANSIONS
     global SUPPORTS_NUMERIC_QUANTITY_RANGE
-    global FILTER_OPTIONS, FILTER_DEFAULTS, FILTER_TARGETS, FILTER_VALUE_LABELS, SUPPORTS_WORD_CHAINS
+    global QUICK_FILTERS, LEGACY_FILTER_BOUNDS, SUPPORTS_WORD_CHAINS
     global MOBILE_APP_TITLE
     global MOBILE_SUBTITLE
     global MOBILE_SETTINGS_TITLE
@@ -550,9 +550,9 @@ def configure_quiz_profile(quiz_id: str, *, project: QuizProject | None = None) 
     SUPPORTS_NUMERIC_QUANTITY_RANGE = any(
         slot.number_range is not None and not slot.fixed_word_id and not slot.number_sets
         for analysis in analyses.values() for slot in analysis.slots.values())
-    from kotomi.application.quiz_filters import profile_filter_contract, value_labels
-    FILTER_OPTIONS, FILTER_DEFAULTS, FILTER_TARGETS = profile_filter_contract(project, quiz)
-    FILTER_VALUE_LABELS = value_labels(project)
+    from kotomi.application.quiz_filters import profile_filter_contract, selection_filter_text
+    QUICK_FILTERS, _targets = profile_filter_contract(project, quiz)
+    LEGACY_FILTER_BOUNDS = selection_filter_text({key: spec.allowed for key, spec in quiz.filter_values.items()})
     SUPPORTS_WORD_CHAINS = any(
         chain_slot(project, analysis) is not None for analysis in analyses.values())
     MOBILE_APP_TITLE = f"Kotomi, {quiz.label}"
@@ -614,7 +614,8 @@ class SettingsStore:
                 except (ValueError, TypeError):
                     # An invalid legacy selection is kept intact for rollback.
                     return self.settings_class()
-                self.save(settings)
+                if not settings.quick_filter_migration_error:
+                    self.save(settings)
                 return settings
             return self.settings_class()
         try:
@@ -624,7 +625,9 @@ class SettingsStore:
 
     def save(self, settings: GrammarQuizSettings) -> None:
         settings.validate()
-        save_settings(self.path, asdict(settings))
+        values = asdict(settings)
+        values.pop("filter_selections", None)
+        save_settings(self.path, values)
 
 
 class GrammarQuizEngine:
@@ -1402,45 +1405,47 @@ def snapshot_quiz_policy():
     """Freeze this profile for one host without retaining mutable module state."""
     policy = SimpleNamespace(**{name: globals()[name] for name in __all__})
     policy.PATTERN_LABELS = dict(PATTERN_LABELS)
-    policy.FILTER_OPTIONS = dict(FILTER_OPTIONS)
+    policy.QUICK_FILTERS = tuple(QUICK_FILTERS)
     policy.PATTERN_EXPANSIONS = dict(PATTERN_EXPANSIONS)
 
     class ProfileSettings(GrammarQuizSettings):
         supported_patterns = tuple(SUPPORTED_PATTERNS)
         pattern_labels = dict(PATTERN_LABELS)
-        filter_options = dict(FILTER_OPTIONS)
-        filter_defaults = dict(FILTER_DEFAULTS)
-        filter_targets = dict(FILTER_TARGETS)
+        quick_filters = tuple(QUICK_FILTERS)
+        legacy_filter_bounds = LEGACY_FILTER_BOUNDS
 
         def __post_init__(self):
             super().__post_init__()
-            for key, values in self.filter_defaults.items():
-                if values:
-                    self.filter_selections.setdefault(key, list(values))
+            from kotomi.application.quiz_filters import migrate_quick_settings
+            values, corrected = migrate_quick_settings({
+                'word_filter': self.word_filter, 'filter_selections': self.filter_selections,
+                'quick_filter_states': self.quick_filter_states,
+                'quick_filter_migration_error': self.quick_filter_migration_error,
+            }, self.quick_filters, self.legacy_filter_bounds)
+            self.quick_filter_states = values['quick_filter_states']
+            self.word_filter = values['word_filter']
+            self.quick_filter_migration_error = values['quick_filter_migration_error']
+            self.filter_selections = {}
+            self._filters_corrected = corrected
 
         @classmethod
         def from_dict(cls, values):
-            from kotomi.application.quiz_filters import reconcile_selections
-            selections, corrected = reconcile_selections(values.get('filter_selections', {}),
-                                                         cls.filter_options, cls.filter_defaults)
-            inactive = set(cls.filter_defaults) - set(cls.filter_options)
-            original = values.get('filter_selections', {})
-            selections.update({key: list(original[key]) for key in inactive if key in original})
-            corrected = any(original.get(key) != selected for key, selected in selections.items() if key in original) or bool(set(original) - set(cls.filter_defaults))
-            result = super().from_dict({**values, 'filter_selections': selections})
-            result._filters_corrected = corrected
+            from kotomi.application.quiz_filters import migrate_quick_settings
+            migrated, corrected = migrate_quick_settings(values, cls.quick_filters, cls.legacy_filter_bounds)
+            error = migrated.pop('quick_filter_migration_error', '')
+            result = super().from_dict(migrated)
+            result.quick_filter_migration_error = error
+            result._filters_corrected = corrected or bool(error)
             return result
 
         def validate(self):
-            from kotomi.application.quiz_filters import filter_label
-            for key in self.filter_options:
-                if not self.filter_selections.get(key):
-                    caption = filter_label(key, lambda value: value, self.filter_targets)
-                    raise GrammarQuizError(f'Choose at least one value for {caption}.')
+            if self.quick_filter_migration_error:
+                raise GrammarQuizError(self.quick_filter_migration_error)
+            if any(not isinstance(value, bool) for value in self.quick_filter_states.values()):
+                raise GrammarQuizError('Quick Filter states must be enabled or disabled.')
+            if set(self.quick_filter_states) - {q.id for q in self.quick_filters}:
+                raise GrammarQuizError('Quick Filters changed. Reopen quiz settings.')
             super().validate()
-            for key, values in self.filter_selections.items():
-                if key not in self.filter_defaults or (key in self.filter_options and not set(values) <= set(self.filter_options[key])):
-                    raise GrammarQuizError('The vocabulary filter selection is no longer allowed. Reopen quiz settings.')
 
     class ProfileEngine(GrammarQuizEngine):
         profile_expansions = dict(PATTERN_EXPANSIONS)
@@ -1495,10 +1500,8 @@ __all__ = [
     "SUPPORTED_PATTERNS",
     "PATTERN_EXPANSIONS",
     "SUPPORTS_NUMERIC_QUANTITY_RANGE",
-    "FILTER_OPTIONS",
-    "FILTER_DEFAULTS",
-    "FILTER_TARGETS",
-    "FILTER_VALUE_LABELS",
+    "QUICK_FILTERS",
+    "LEGACY_FILTER_BOUNDS",
     "SUPPORTS_WORD_CHAINS",
     "MOBILE_DIRECTION_TOGGLES",
     "MODE_TRANSFORMATION",

@@ -48,35 +48,46 @@ Wyjście z quizu anuluje oczekujące przygotowanie; spóźniony wynik nie aktual
 opuszczonego ekranu. Wyszukiwanie pozostałych pytań jest leniwe i wznawia się od
 poprzedniej pozycji. Start nie wylicza całej puli pytań.
 
-## Filtry słownictwa
+## Szybkie filtry
 
-Edytor Studio pokazuje tylko skonfigurowane filtry. Wybierz **+ Dodaj filtr**, a następnie:
+Szybkie filtry to nazwane skróty on/off do istniejącego zaawansowanego filtra słów. Wybierz **+ Dodaj szybki filtr**, wpisz nazwę, wybierz rolę słownictwa i właściwość, zaznacz jedną lub więcej wartości oraz opcjonalnie włącz skrót domyślnie. Edycja i usuwanie działają na kompaktowych wierszach. Edytor nie zawiera wyboru osobnych wzorców, kolumny dozwolonych wartości ani ustawień domyślnych dla każdej wartości.
 
-1. Wybierz element słownictwa. Okno pokazuje wzorce objęte filtrem, aby odróżnić role główne, zagnieżdżone i dopełnienia.
-2. Wybierz typ słowa, kategorię semantyczną lub cechy gramatyczne. Właściwości bez wartości nie są proponowane.
-3. Zaznacz wartości, z których może korzystać uczeń.
-4. Wybierz niepusty zestaw domyślny i zapisz. Edycja i usuwanie zmieniają definicję, a nie bieżące ustawienia ćwiczenia ucznia.
+Uczeń widzi jeden checkbox na skrót, oparty na wspólnym modelu ustawień Windows i Mobile. Etykietą jest nazwa filtra. Zaawansowany filtr słów pozostaje dostępny. Profil przymiotników definiuje w XML dwa skróty, i-adjectives i na-adjectives, domyślnie włączone. Oba włączone wybierają oba typy, jeden wybiera swój typ, a oba wyłączone nie dodają ograniczenia typu.
 
-W odtwarzaczu każdy skonfigurowany filtr korzysta ze wspólnych ustawień Windows/Mobile. Małe grupy mają checkboxy. W istniejących profilach typów przymiotników początkowo zaznaczone są i-adjective i na-adjective. Poprawny zapisany wybór ma pierwszeństwo. Odznaczenie obu jest błędem, nigdy domyślnym wyborem wszystkich słów.
+Włączone skróty dla **tej samej roli i właściwości łączy OR**, również dla wielu wartości jednego skrótu. Różne grupy i zaawansowany filtr słów łączy **AND**. Puste grupy nie dodają ograniczenia. Istniejący parser i solver zgodności obsługują generowanie, wykonalność, dokładne statystyki i wyczerpanie pytań. Obowiązkowe ograniczenia gramatyczne i semantyczne zawsze obowiązują. Nie powstaje drugi silnik filtrów ani rozszerzenie DSL gramatyki.
 
-Wartości jednej grupy łączy **OR**. Oddzielne grupy i dodatkowy filtr tekstowy łączy **AND**. Ograniczenia wzorca, zgodność semantyczna i zgodność form pozostają obowiązkowe. Powtórzone lub nakładające się kontrolki tej samej właściwości danego elementu są odrzucane, zamiast tworzyć ukryty dodatkowy warunek.
+Cele filtrów to role w całym quizie, odczytywane z przeanalizowanych aliasów: czasownik główny, czasownik zagnieżdżony, rzeczownik, rzeczownik zagnieżdżony, przymiotnik lub inna jednoznaczna rola. Edytor nie pokazuje identyfikatorów wygenerowanych wzorców ani zakodowanych selektorów pojedynczych slotów. Brak danej roli w alternatywie oznacza brak ograniczenia dla tej roli. Obecna rola bez zgodnych kandydatów wyklucza daną alternatywę. Jeśli nie pozostaje żadna zgodna alternatywa, pojawia się zwykły komunikat o braku pytań, a skrót pozostaje włączony. Nakładające się różne aliasy tej samej właściwości są odrzucane; alternatywy OR powinny używać tego samego celu.
 
-Elementy słownictwa i ich nazwy pochodzą z rozwiniętych alternatyw konstrukcji. Opcjonalny filtr dotyczy wyłącznie alternatyw zawierających jego element; inna poprawna alternatywa pozostaje dostępna. Obowiązkowe ograniczenia konstrukcji pozostają we wzorcu i uczeń nie może ich wyłączyć. Okno pokazuje objęte filtrem alternatywy. Niejednoznaczny element, usuniętą referencję lub niedostępną wartość trzeba poprawić przed zapisem. Zakresy liczb i łańcuchy przymiotników pozostają osobnymi ustawieniami zależnymi od możliwości wzorca.
+Wartości pochodzą z całych właściwych słowników i ich zadeklarowanych metadanych, a nie z kandydatów jednego wzorca. Znana wartość może obecnie nie dawać żadnych zgodnych pytań. Dialog wyraźnie informuje o tej możliwości. Kategoria jest dostępna dla rzeczywistych metadanych kategorii; zgodnościowy fallback `Word.categories` do cech nie tworzy zdublowanej kontrolki kategorii. Zaawansowany filtr zachowuje dotychczasową semantykę. Zakresy liczb i łańcuchy przymiotników pozostają osobnymi istniejącymi ustawieniami.
 
-Ustawienia należą do identyfikatora profilu. Po zmianie konfiguracji poprawne wartości pozostają zaznaczone, nieobsługiwane są usuwane, a domyślne wracają tylko wtedy, gdy wcześniejszy niepusty wybór utracił wszystkie wartości. Usunięcie filtra nie zeruje pozostałych ustawień. Istotna korekta jest wyjaśniana w istniejącym komunikacie ustawień. Jawnie pusty wybór pozostaje niepoprawny.
-
-### Format definicji
-
-Dotychczasowe `filters="adjective.type"` nadal udostępnia wszystkie dostępne wartości i domyślnie zaznacza wszystkie. Studio może dodatkowo zapisać:
+### Definicja XML
 
 ```xml
-<vocabulary_filters>
-  <filter key="adjective.type"
-          allowed="i_adjective na_adjective"
-          defaults="i_adjective na_adjective" />
-</vocabulary_filters>
+<quick_filters>
+  <quick_filter id="i_adjectives" label="i-adjectives"
+                target="adjective" property="type" values="i_adjective"
+                default_enabled="true" />
+  <quick_filter id="na_adjectives" label="na-adjectives"
+                target="adjective" property="type" values="na_adjective"
+                default_enabled="true" />
+  <quick_filter id="people_animals_food" label="Ludzie, zwierzęta i jedzenie"
+                target="noun" property="category" values="person animal food"
+                default_enabled="false" />
+</quick_filters>
 ```
 
-Klucz należy do listy `filters` quizu; loader obsługuje też klucz zadeklarowany bezpośrednio w `vocabulary_filters`. Zestawy dozwolony i domyślny są niepuste, a wartości domyślne muszą należeć do dozwolonych. Autor korzysta z okna edycji, a nie XML ani DSL. Rozszerzony kontrakt wymaga Application 1.1.12+ i Grammar 1.1.13+. W tym wydaniu Content pozostaje w rewizji 72, a istniejące definicje profili nie zmieniają się.
+ID jest unikalne w quizie i nie zmienia się po edycji nazwy, warunku ani stanu domyślnego. Nazwa i wartości są niepuste. Jeden skrót ma jeden cel, jedną właściwość i jedną lub więcej wartości. `default_enabled` ma wartość `true` albo `false` (pominięcie oznacza false). Elementy znajdują się w istniejącej definicji quizu, obok `patterns`. Quiz nie może mieszać nowych i starszych definicji filtrów.
 
-Jeśli gramatyka języka źródłowego jest czasowo niedostępna, definicje filtrów i zapisane wybory pozostają zachowane. Sprawdzanie elementów wraca po udostępnieniu tej gramatyki.
+### Zapisane ustawienia i starsze definicje
+
+Nowe ustawienia zapisują `quick_filter_states` według stabilnego ID. Zapisany stan ma pierwszeństwo przed domyślnym; nowe ID korzysta z wartości domyślnej; usunięte ID jest odrzucane z istniejącym komunikatem korekty. Pozostałe ustawienia i zaawansowane warunki pozostają zachowane. Filtry korzystają z istniejącej tożsamości cache zależnej od słownictwa i nie czyszczą innych cache. Czasowa niedostępność gramatyki języka źródłowego nie usuwa zadeklarowanych skrótów ani ich stanów.
+
+Starszy XML `filters` / `vocabulary_filters` jest nadal odczytywany przez adapter zgodności, który tworzy jeden skrót na dawną wartość. Niezwiązana edycja w Studio zachowuje ten XML. Edycja/usunięcie jego skrótu jawnie konwertuje definicję na opcjonalne szybkie filtry; Studio pokazuje informację o konwersji. Dawnych kolumn wartości dozwolonych i domyślnych już nie ma.
+
+Starsze wybory i/na i inne wybory, które można dokładnie odwzorować, stają się stanami checkboxów. Jeśli ograniczenia nie można odwzorować dokładnie, pozostaje ono warunkiem zaawansowanego filtra słów, a skróty tej grupy są wyłączane, aby nie dodać przypadkowego przecięcia. Dawne jawne ograniczenia wartości dozwolonych przez autora również pozostają zaawansowanymi warunkami w zapisanych ustawieniach. Można je sprawdzić i zmienić w istniejącym edytorze zaawansowanym. Dawny pusty wybór był błędny, więc nie staje się po cichu brakiem ograniczeń: uruchomienie wymaga sprawdzenia i zapisania ustawień. Odczyt nie nadpisuje oryginalnego pliku. Powtarzany odczyt/zapis nie dopisuje powtórzonych warunków.
+
+### Motyw i kolejność aktualizacji
+
+Edytor quizów i dialog skrótu używają aktywnego motywu Studio dla natywnych pól tekstowych/list, kontenerów przewijania i etykiet/pól ttk. Zmiana motywu odświeża kolory bez przebudowy modelu quizu. Nawigacja klawiaturą, Escape i przewijanie pozostają dostępne.
+
+Zainstaluj Application **1.1.13+**, następnie Content **73**, a potem zatwierdź katalog **1.1.15** (Grammar **1.1.14**). Pakiet nadal obsługuje Content 72 przez adapter zgodności. Content 73 deklaruje dwa skróty przymiotników w XML. Lessons pozostaje **1.1.9**. XML tłumaczeń i niezwiązane słowniki nie są zmieniane.

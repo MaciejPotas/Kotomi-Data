@@ -37,6 +37,21 @@ class LexicalReferenceValidationTests(unittest.TestCase):
             with self.subTest(xml=changed), self.assertRaises(AssertionError):
                 validator.validate_quiz_filter_configuration(ET.fromstring(changed))
 
+    def test_quick_filter_schema(self):
+        valid = '<quiz><quick_filters><quick_filter id="people" label="People and animals" target="noun" property="category" values="person animal" default_enabled="false" /></quick_filters></quiz>'
+        validator.validate_quiz_filter_configuration(ET.fromstring(valid))
+        mutations = [valid.replace('label="People and animals"', 'label=" "'),
+                     valid.replace('values="person animal"', 'values=""'),
+                     valid.replace('values="person animal"', 'values="person person"'),
+                     valid.replace('default_enabled="false"', 'default_enabled="yes"'),
+                     valid.replace('target="noun"', 'target="verb[role:companion]"'),
+                     valid.replace('property="category"', 'property="arbitrary"'),
+                     valid.replace('<quiz>', '<quiz filters="noun.category">'),
+                     valid.replace('</quick_filters>', '<quick_filter id="people" label="Duplicate" target="noun" property="category" values="person" /></quick_filters>')]
+        for changed in mutations:
+            with self.subTest(xml=changed), self.assertRaises(AssertionError):
+                validator.validate_quiz_filter_configuration(ET.fromstring(changed))
+
     def test_lesson_and_context_share_one_word(self):
         validator.validate_lesson_references(self.root)
         validator.validate_context_references(self.root)

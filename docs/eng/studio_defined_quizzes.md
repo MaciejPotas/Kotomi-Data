@@ -46,35 +46,46 @@ the quiz cancels pending preparation; a late result cannot update the departed
 screen. Exhaustion search stays lazy and continues from its previous position.
 There is no startup enumeration of all questions.
 
-## Vocabulary filters
+## Quick filters
 
-The Studio editor lists only configured filters. Choose **+ Add filter**, then:
+Quick Filters are named on/off shortcuts to the existing advanced Word Filter. Choose **+ Add Quick Filter**, enter a name, choose a vocabulary role and property, check one or more values, and optionally enable the shortcut by default. Edit and Remove act on compact rows. The editor has no per-pattern selection, allowed-values column or per-value defaults.
 
-1. Select a vocabulary target. The dialog lists the affected patterns so that main, embedded and object roles can be distinguished.
-2. Select word type, semantic category or grammar features. Properties without values are not offered.
-3. Select the values learners may use.
-4. Select a nonempty default subset and save. Edit and Remove change this definition, not the learner's current practice settings.
+The player shows one checkbox per shortcut, using the same settings model on Windows and Mobile. The name is the learner-facing label. Existing advanced Word Filter editing remains available. The adjective profile defines two XML shortcuts, i-adjectives and na-adjectives, both initially on. Both on selects both types; either one on selects that type; both off adds no type restriction.
 
-In the player, every configured filter uses the shared Windows/Mobile settings controls. Small groups use checkboxes. For adjective type, both i-adjective and na-adjective are selected initially in existing profiles. A valid saved choice takes precedence. Neither checked is an error, never an implicit request for all words.
+Enabled shortcuts for the **same target and property use OR**, including multiple values within a shortcut. Different groups and the advanced Word Filter use **AND**. Empty groups add no restriction. The existing parser and compatibility solver handle generation, feasibility, exact counts and exhaustion. Mandatory grammar/semantic restrictions always apply. No second filtering engine or grammar DSL extension is introduced.
 
-Values within one group use **OR**. Separate groups and any advanced text filters use **AND**. Grammar constraints, semantic compatibility and form compatibility always remain mandatory. Repeated or overlapping controls for the same target/property are rejected rather than creating a hidden extra intersection.
+Targets are quiz-wide conceptual roles obtained from analyzed aliases: main verb, embedded verb, noun, embedded noun, adjective or another unambiguous role. The editor does not expose generated pattern IDs or encoded exact-slot selectors. A target absent from an alternative contributes no restriction there. A present target with no compatible candidates makes that alternative unavailable. If all alternatives are unavailable, the normal no-compatible-questions message is shown; the shortcut stays enabled. Overlapping different aliases for one property are rejected; use the same target for OR alternatives.
 
-Effective composite alternatives supply the targets and labels. An optional filter applies only to alternatives containing its target; an unrelated alternative remains usable. Mandatory construction restrictions remain in the pattern and cannot be disabled by the learner. The dialog names the affected alternatives. An ambiguous target, removed reference or unavailable value must be repaired before saving. Numeric ranges and adjective chains remain separate capability-based settings.
+Values come from the relevant whole dictionaries and their declared metadata, not the candidates of a single pattern. A known value can currently have no usable questions. The dialog explicitly warns about this possibility. Category is offered for real category metadata; the compatibility fallback from `Word.categories` to features does not create a duplicate Category control. Advanced filtering keeps its previous semantics. Numeric ranges and adjective chains remain independent existing capabilities.
 
-Settings belong to each profile ID. After a configuration change, retained values remain selected, unsupported values are removed, and defaults are used only when a previously nonempty selection has lost all its values. Removed filters do not reset other settings. A meaningful correction appears in the existing settings notice. An explicitly empty selection remains invalid.
-
-### Definition format
-
-Existing `filters="adjective.type"` still exposes all available values and defaults to all. Studio can additionally store:
+### XML definition
 
 ```xml
-<vocabulary_filters>
-  <filter key="adjective.type"
-          allowed="i_adjective na_adjective"
-          defaults="i_adjective na_adjective" />
-</vocabulary_filters>
+<quick_filters>
+  <quick_filter id="i_adjectives" label="i-adjectives"
+                target="adjective" property="type" values="i_adjective"
+                default_enabled="true" />
+  <quick_filter id="na_adjectives" label="na-adjectives"
+                target="adjective" property="type" values="na_adjective"
+                default_enabled="true" />
+  <quick_filter id="people_animals_food" label="People, animals and food"
+                target="noun" property="category" values="person animal food"
+                default_enabled="false" />
+</quick_filters>
 ```
 
-The key belongs to the quiz's `filters` list; the loader also accepts a key declared directly in `vocabulary_filters`. Allowed values and defaults are nonempty and defaults must be allowed. Normal authoring uses the dialog, not XML or DSL. Use Application 1.1.12+ and Grammar 1.1.13+ for this extended contract. Content revision 72 and the existing profile definitions remain unchanged in this release.
+IDs are unique within a quiz and remain unchanged when editing a name, expression or default. Names and values are nonempty. One shortcut has one target/property and one or more values. `default_enabled` is `true` or `false` (omitted means false). These elements live inside the existing quiz, alongside `patterns`. A quiz cannot mix new and legacy filter definitions.
 
-If source grammar is temporarily unavailable, its filter definitions and saved selections are retained. Target checks resume when that grammar becomes available.
+### Saved settings and older definitions
+
+New settings store `quick_filter_states` by stable ID. Existing states override defaults; new IDs use defaults; removed IDs are discarded with the existing correction notice. Other settings and advanced expressions are preserved. Filters use the existing vocabulary-dependent cache identity and do not clear unrelated caches. Source grammar becoming temporarily unavailable does not erase declared shortcuts or their states.
+
+Old `filters` / `vocabulary_filters` XML remains readable through a compatibility adapter. It creates one shortcut per legacy value. An unrelated Studio edit preserves that XML unchanged. Editing/removing its shortcut explicitly converts the definition to optional Quick Filters; Studio displays a conversion notice. The old allowed/default columns are gone.
+
+Old adjective i/na selections and other exactly representable selections become checkbox states. If an old restriction cannot be represented exactly, it is preserved as an advanced Word Filter condition and shortcuts for that group are disabled to avoid adding an accidental intersection. Old explicit author allowed-value bounds are also retained as advanced conditions in saved settings. They can be reviewed and changed in the existing advanced editor. An old empty selection was invalid, so it is not silently treated as unrestricted: starting is blocked until the learner reviews and saves settings. Loading does not overwrite the original file. Repeated load/save does not append duplicate restrictions.
+
+### Theme and update order
+
+The quiz editor and shortcut dialog use the active Studio theme for native text/list controls, scrolling containers and ttk labels/inputs. Theme changes refresh their colors without rebuilding the quiz model. Keyboard navigation, Escape and scrolling remain available.
+
+Install Application **1.1.13+**, then Content **73**, then approve catalog **1.1.15** (Grammar **1.1.14**). The package still accepts Content 72 through its legacy adapter. Content 73 declares the two adjective shortcuts in XML. Lessons remains **1.1.9**. No translation XML or unrelated learning dictionary is changed.

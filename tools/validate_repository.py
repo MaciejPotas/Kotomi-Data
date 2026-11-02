@@ -288,6 +288,32 @@ def validate_lesson_references(root: Path | None = None) -> None:
 
 def validate_quiz_filter_configuration(quiz):
     """Standalone publication schema check; slot semantics belong to Kotomi."""
+    quick_groups = quiz.findall('quick_filters')
+    if len(quick_groups) > 1 or any(node.tag != 'quick_filter' for group in quick_groups for node in group):
+        raise AssertionError('Invalid quick_filters list')
+    if quick_groups and (quiz.get('filters') or quiz.findall('vocabulary_filters')):
+        raise AssertionError('Do not mix Quick Filters and legacy definitions')
+    quick_ids = set()
+    for node in quiz.findall('./quick_filters/quick_filter'):
+        identity = node.get('id', '')
+        if not re.fullmatch(r'[a-z][a-z0-9_]*', identity) or identity in quick_ids:
+            raise AssertionError('Quick Filter IDs must be unique')
+        quick_ids.add(identity)
+        if len(node) or set(node.attrib) - {'id', 'label', 'target', 'property', 'values', 'default_enabled'}:
+            raise AssertionError('Unsupported Quick Filter attributes')
+        if not node.get('label', '').strip():
+            raise AssertionError('Quick Filter name must not be empty')
+        target = node.get('target', '')
+        if target.startswith('target_') or not re.fullmatch(r'[a-z][a-z0-9_]*', target):
+            raise AssertionError('Quick Filter target must be a vocabulary role')
+        if node.get('property') not in {'type', 'category', 'feature'}:
+            raise AssertionError('Invalid Quick Filter property')
+        if node.get('default_enabled', 'false') not in {'true', 'false'}:
+            raise AssertionError('Invalid Quick Filter default')
+        values = node.get('values', '').split()
+        if not values or len(values) != len(set(values)) or any(
+                v != v.casefold() or any(c in v for c in ',;=') for v in values):
+            raise AssertionError('Invalid Quick Filter values')
     fields = (quiz.get('filters') or '').split()
     if len(fields) != len(set(fields)):
         raise AssertionError('Duplicate quiz filter')

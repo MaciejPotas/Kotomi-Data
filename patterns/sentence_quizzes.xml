@@ -91,7 +91,11 @@
       <pattern ref="Środek transportu" />
     </patterns>
   </quiz>
-  <quiz id="adjectives" label="Przymiotniki" description="Zdania i formy" selection="references" filters="adjective.type">
+  <quiz id="adjectives" label="Przymiotniki" description="Zdania i formy" selection="references">
+    <quick_filters>
+      <quick_filter id="i_adjectives" label="i-adjectives" target="adjective" property="type" values="i_adjective" default_enabled="true" />
+      <quick_filter id="na_adjectives" label="na-adjectives" target="adjective" property="type" values="na_adjective" default_enabled="true" />
+    </quick_filters>
     <patterns>
       <pattern ref="Przymiotnik po temacie" />
       <pattern ref="Sam przymiotnik" />
